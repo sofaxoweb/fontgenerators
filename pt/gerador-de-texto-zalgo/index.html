@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Zalgo Online</title>
+  <meta content="Crie texto zalgo assustador online grátis com o gerador de texto zalgo: glitch e efeitos corrompidos para nicks e posts. Copie e divirta-se com amigos!" name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-zalgo/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gerador de Texto Zalgo Online">
+  <meta property="og:description" content="Crie texto zalgo assustador online grátis com o gerador de texto zalgo: glitch e efeitos corrompidos para nicks e posts. Copie e divirta-se com amigos!">
+  <meta property="og:url" content="https://fontgenerators.online/pt/gerador-de-texto-zalgo/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gerador de Texto Zalgo Online">
+  <meta name="twitter:description" content="Crie texto zalgo assustador online grátis com o gerador de texto zalgo: glitch e efeitos corrompidos para nicks e posts. Copie e divirta-se com amigos!">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/zalgo-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/zalgo-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-zalgo/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-zalgo/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/zalgo-metin-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .intensity-slider {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .output-box {
+      padding: 1.5rem;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+      min-height: 100px;
+      word-break: break-all;
+      line-height: 2;
+    }
+
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/zalgo-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-zalgo/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-zalgo/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/zalgo-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/zalgo-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-zalgo/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-zalgo/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/zalgo-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/zalgo-text-generator/", "es": "/es/generador-de-texto-zalgo/", "pt": "/pt/gerador-de-texto-zalgo/", "tr": "/tr/zalgo-metin-olusturucu/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Ferramentas de Texto
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/contador-de-palavras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palavras</span>
+            </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/pt/limpador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/pt/remover-linhas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Removedor de Linhas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/pt/conversor-para-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Conversor para Title Case</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Gerador de Texto Invertido</span>
+            </a>
+            <a class="sidebar-link active" href="/pt/gerador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Gerador de Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+
+        <div class="tool-input-section">
+          <p class="tool-title">👻 Gerador de Texto Zalgo</p>
+          <p class="tool-description">Create creepy glitch text with adjustable intensity</p>
+          <textarea class="tool-input" id="text-input" oninput="generateZalgo()"
+            placeholder="Digite seu texto para o vazio..." rows="3"></textarea>
+          <div class="slider-label">
+            <span>Mild</span>
+            <span>Intensity: <strong id="intensity-value">5</strong></span>
+            <span>Insane</span>
+          </div>
+          <input class="intensity-slider" id="intensity" max="15" min="1" oninput="updateIntensity()" type="range"
+            value="5" />
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <label><input checked="" id="up" onchange="generateZalgo()" type="checkbox" /> Above</label>
+            <label><input checked="" id="mid" onchange="generateZalgo()" type="checkbox" /> Middle</label>
+            <label><input checked="" id="down" onchange="generateZalgo()" type="checkbox" /> Below</label>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Z̷̨̛̟̈́̑a̶͎̓l̵͕̀g̷̨̈́o̵͔͛ Resultado</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    
+        <!-- content start -->
+<section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/pt/">Início</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/pt/ferramentas-de-texto/">Ferramentas de Texto</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Gerador de Texto Zalgo</span>
+</nav>
+
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+
+<h1>Gerador de Texto Zalgo</h1>
+
+<p>Um gerador de texto zalgo cria texto assustador, com glitch, distorcido &mdash; o estilo "amaldiçoado" &mdash; empilhando dezenas de marcas combinantes Unicode acima e abaixo das suas letras &mdash; transformando "hello" numa bagunça corrompida e distorcida. Digite acima, arraste o controle de intensidade do sutil à corrupção total, e copie o resultado onde quer que texto simples funcione.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Pontos principais</strong></p>
+  <ul>
+    <li>Empilha marcas diacríticas combinantes (faixa U+0300–U+036F) acima, através e abaixo de cada letra.</li>
+    <li>Um controle de intensidade define quantas marcas se acumulam em cada caractere.</li>
+    <li>A saída é texto Unicode de verdade &mdash; cola no Discord, Instagram e comentários sem instalar fonte.</li>
+    <li>O nome vem de um meme de terror da internet de 2004 sobre texto corrompido e "possuído".</li>
+    <li>Zalgo pesado pode quebrar layouts e irritar leitores de tela &mdash; use com moderação.</li>
+  </ul>
+</div>
+
+<h2>O que é texto zalgo?</h2>
+<p><strong>Texto zalgo é</strong> texto normal corrompido com caracteres combinantes Unicode empilhados &mdash; marcas diacríticas feitas para ficar acima, abaixo ou através de uma letra base. Como o Unicode permite empilhamento ilimitado, amontoar dezenas de marcas num caractere produz o visual alto, glitchado e "amaldiçoado". O nome vem de um meme de terror da internet de 2004 com uma entidade chamada Zalgo, e o estilo virou sinônimo de dado possuído ou quebrado online.</p>
+
+<h2>Como este gerador de texto zalgo funciona</h2>
+<p>A ferramenta sorteia marcas aleatórias de três conjuntos de marcas diacríticas combinantes: marcas de <strong>cima</strong> que ficam acima da letra (agudos, graves, tis, anéis e ganchos combinantes do bloco U+0300), marcas do <strong>meio</strong> que a atravessam (barras e sobreposições combinantes) e marcas de <strong>baixo</strong> que pendem embaixo (cedilhas, pontos e pontes combinantes da faixa U+0316–U+0362). O controle de intensidade define quantas marcas grudam em cada caractere &mdash; valores baixos dão um brilho inquietante, valores máximos enterram cada letra numa pilha vertical de distorção.</p>
+<p>Como as marcas combinantes são caracteres Unicode comuns, as letras zalgo corrompidas são texto genuíno copiável. Renderiza onde quer que Unicode renderize, sem imagens e sem downloads de fonte. As marcas são escolhidas aleatoriamente a cada geração, então rodar a mesma entrada duas vezes dá um padrão de corrupção um pouco diferente.</p>
+
+<h2>Exemplo prático: faça texto glitch</h2>
+<p>Entrada: <code>hello</code> em intensidade média produz algo como <code>h̷͌e̶̐l̵͘l̴̈́o̷͑</code> &mdash; as marcas exatas variam por geração, mas a estrutura é sempre a mesma:</p>
+<table>
+  <thead>
+    <tr><th>Intensidade</th><th>O que acontece por letra</th><th>Visual típico</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Baixa (1–3)</td><td>Poucas marcas acima e abaixo</td><td>Levemente assombrado, ainda legível</td></tr>
+    <tr><td>Média (4–7)</td><td>Marcas acima, através e abaixo</td><td>Claramente corrompido, palavras decifráveis</td></tr>
+    <tr><td>Alta (8+)</td><td>Pilhas verticais densas</td><td>"Texto amaldiçoado" quase ilegível</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: A palavra "hello" nos níveis baixo, médio e máximo de intensidade Zalgo | alt sugerido: "Texto zalgo em intensidade de corrupção baixa, média e alta"]
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+  <li><strong>Digite seu texto</strong> no campo de entrada acima.</li>
+  <li><strong>Arraste o controle de intensidade</strong> para escolher corrupção sutil ou extrema.</li>
+  <li>A versão Zalgo <strong>gera na hora</strong> &mdash; gere de novo para um padrão aleatório novo.</li>
+  <li><strong>Copie</strong> e cole em conversas, bios ou comentários.</li>
+</ol>
+
+<h2>Zalgo vs texto glitch: qual a diferença?</h2>
+<p>As pessoas usam "texto glitch" para os dois, mas a mecânica difere. <strong>Zalgo</strong> (esta ferramenta) empilha marcas diacríticas combinantes na vertical &mdash; a corrupção cresce para cima e para baixo de cada letra. O <a href="/pt/gerador-de-texto-glitch/">gerador de texto glitch</a> aplica distorções decorativas: letras entre colchetes, riscadas, sublinhadas e molduras em bloco. Zalgo parece dado corrompido; efeitos glitch parecem estética de erro estilizada. Para a vibe cyberpunk de "erro de sistema", use a ferramenta glitch &mdash; para terror e memes de texto amaldiçoado, fique aqui.</p>
+
+<h2>Onde texto assustador é usado (e onde não deveria)</h2>
+<p>Texto zalgo prospera em conteúdo de terror: creepypasta, posts de Halloween, enigmas de ARG e legendas de "imagem amaldiçoada" onde a ilegibilidade é a estética. Para um rápido copiar-e-colar de zalgo assustador, gere em intensidade média &mdash; cola direitinho em mensagens do Discord e bios do Instagram. Gamers usam Zalgo leve em nicks para um visual ousado. Mas Zalgo pesado tem custos reais: pilhas altas de marcas podem estourar contêineres e quebrar layouts de página, os filtros de algumas plataformas removem ou colapsam marcas combinantes em excesso, e leitores de tela anunciam cada marca individualmente &mdash; uma palavra Zalgo pode levar um minuto para ser "lida". Guarde para textos decorativos curtos e nunca o use para informação que as pessoas precisam entender.</p>
+
+<h2>Limitações</h2>
+<p>Ressalvas honestas. Primeiro, a renderização varia por fonte e plataforma: alguns sistemas limitam quantas marcas combinantes empilham, então Zalgo extremo pode parecer mais manso em certos celulares. Segundo, copiar e colar pode deturpar a saída &mdash; alguns apps normalizam ou removem marcas combinantes, "curando" silenciosamente seu texto amaldiçoado. Terceiro, cada geração é aleatória, então você não reproduz um padrão exato depois; copie a versão que gostar na hora. Quarto, texto zalgo infla muito a contagem de caracteres &mdash; uma letra visível pode ter mais de 10 pontos de código, o que estoura limites de bio e nome de usuário. Por fim, o uso exagerado dispara filtros de spam em algumas plataformas.</p>
+
+<h2>Gerador de texto zalgo vs alternativas</h2>
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ideal para</th><th>Atenção</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Este gerador Zalgo</strong></td><td>Texto assustador/amaldiçoado ajustável com controle de intensidade</td><td>Padrão aleatório a cada geração</td></tr>
+    <tr><td><a href="/pt/gerador-de-texto-glitch/">Gerador de texto glitch</a></td><td>Distorções decorativas (colchetes, riscado, blocos)</td><td>Não é o visual Zalgo vertical</td></tr>
+    <tr><td><a href="/pt/gerador-de-texto-espelhado/">Gerador de texto espelhado</a></td><td>Letras refletidas</td><td>Estética totalmente diferente</td></tr>
+    <tr><td>Marcas combinantes manuais</td><td>Controle artístico total</td><td>Extremamente tedioso caractere por caractere</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: Comparação de texto zalgo de marcas empilhadas contra texto glitch estilo colchetes | alt sugerido: "Texto zalgo comparado com estilos decorativos de texto glitch"]
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">O que é texto zalgo?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Texto zalgo é texto normal com muitas marcas combinantes Unicode empilhadas acima, através e abaixo de cada letra, criando um visual corrompido e assustador. O nome vem de um meme de terror da internet de 2004 sobre texto possuído.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Como faço texto glitch?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Digite no gerador acima e ajuste o controle de intensidade. A ferramenta empilha marcas diacríticas combinantes aleatórias em cada letra. Copie o resultado e cole onde quiser &mdash; é texto Unicode de verdade, não imagem.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Por que o mesmo texto fica diferente a cada geração?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">As marcas combinantes são sorteadas dos conjuntos de cima/meio/baixo a cada geração. Copie o padrão que gostar na hora &mdash; você não reproduz uma corrupção exata depois.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Texto zalgo funciona no Discord e no Instagram?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim, ambos renderizam marcas combinantes, então Zalgo cola bem em mensagens do Discord e bios do Instagram. Zalgo muito pesado pode ser colapsado pela normalização de texto de alguns apps &mdash; intensidade média é o mais seguro.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Qual a diferença entre zalgo e texto glitch?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Zalgo empilha marcas combinantes na vertical para um visual de dado corrompido. Efeitos glitch usam distorções decorativas como colchetes, riscados e molduras em bloco. Esta página faz Zalgo; o <a href="/pt/gerador-de-texto-glitch/">gerador de texto glitch</a> faz os estilos decorativos.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Por que meu texto zalgo aparece como quadradinhos?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Quadradinhos (tofu) significam que a fonte do aparelho não tem essas marcas combinantes. A maioria dos celulares e navegadores modernos as renderiza, mas sistemas antigos podem não. Se aparecerem quadradinhos, tente intensidade menor ou outro aparelho.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Texto zalgo pode quebrar meu layout?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Pilhas altas de marcas podem estourar contêineres e sobrepor linhas vizinhas, especialmente em intensidade alta. Teste no contexto antes de publicar, e prefira intensidade baixa a média em layouts apertados.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Leitores de tela leem texto zalgo?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Muito mal &mdash; leitores de tela anunciam cada marca combinante, transformando uma palavra numa recitação longa. Nunca use Zalgo para informação essencial; deixe decorativo e ponha texto simples por perto se o sentido importar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Texto zalgo conta contra limites de caracteres?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim, e muito &mdash; cada marca combinante é um ponto de código separado, então uma letra visível pode consumir 10+ caracteres de um limite de bio ou nome de usuário. Deixe os textos Zalgo curtos em plataformas com limites apertados.</p>
+    </div>
+  </div>
+</div>
+
+<p>Mais efeitos de texto: o <a href="/pt/gerador-de-texto-glitch/">gerador de texto glitch</a> para distorções decorativas, o <a href="/pt/gerador-de-texto-espelhado/">gerador de texto espelhado</a> para letras refletidas, e o <a href="/pt/gerador-de-texto-invertido/">gerador de texto invertido</a> para texto de trás para frente &mdash; todos nas nossas coleções de <a href="/pt/ferramentas-de-texto/">ferramentas de texto</a> e <a href="/pt/ferramentas-de-texto-divertido/">ferramentas de texto divertido</a>.</p>
+
+
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas de Texto</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/contador-de-palavras/">📊 Contador de Palavras</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/pt/limpador-de-texto/">🧹 Limpador de Texto</a>
+        <a class="sidebar-link" href="/pt/conversor-para-titulo/">🔠 Conversor para Title Case</a>
+      </nav>
+    </div>
+  </div>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+
+    const zalgoUp = ['\u030d', '\u030e', '\u0304', '\u0305', '\u033f', '\u0311', '\u0306', '\u0310', '\u0352', '\u0357', '\u0351', '\u0307', '\u0308', '\u030a', '\u0342', '\u0343', '\u0344', '\u034a', '\u034b', '\u034c', '\u0303', '\u0302', '\u030c', '\u0350', '\u0300', '\u0301', '\u030b', '\u030f', '\u0312', '\u0313', '\u0314', '\u033d', '\u0309', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036a', '\u036b', '\u036c', '\u036d', '\u036e', '\u036f', '\u033e', '\u035b'];
+    const zalgoMid = ['\u0315', '\u031b', '\u0340', '\u0341', '\u0358', '\u0321', '\u0322', '\u0327', '\u0328', '\u0334', '\u0335', '\u0336', '\u034f', '\u035c', '\u035d', '\u035e', '\u035f', '\u0360', '\u0362', '\u0338', '\u0337', '\u0361', '\u0489'];
+    const zalgoDown = ['\u0316', '\u0317', '\u0318', '\u0319', '\u031c', '\u031d', '\u031e', '\u031f', '\u0320', '\u0324', '\u0325', '\u0326', '\u0329', '\u032a', '\u032b', '\u032c', '\u032d', '\u032e', '\u032f', '\u0330', '\u0331', '\u0332', '\u0333', '\u0339', '\u033a', '\u033b', '\u033c', '\u0345', '\u0347', '\u0348', '\u0349', '\u034d', '\u034e', '\u0353', '\u0354', '\u0355', '\u0356', '\u0359', '\u035a', '\u0323'];
+
+    function updateIntensity() {
+      document.getElementById('intensity-value').textContent = document.getElementById('intensity').value;
+      generateZalgo();
+    }
+
+    function generateZalgo() {
+      const text = document.getElementById('text-input').value;
+      const intensity = parseInt(document.getElementById('intensity').value);
+      const useUp = document.getElementById('up').checked;
+      const useMid = document.getElementById('mid').checked;
+      const useDown = document.getElementById('down').checked;
+
+      if (!text.trim()) {
+        document.getElementById('output-text').textContent = '';
+        return;
+      }
+
+      let result = '';
+      for (const char of text) {
+        result += char;
+        const count = Math.floor(Math.random() * intensity) + 1;
+        for (let i = 0; i < count; i++) {
+          if (useUp) result += zalgoUp[Math.floor(Math.random() * zalgoUp.length)];
+          if (useMid) result += zalgoMid[Math.floor(Math.random() * zalgoMid.length)];
+          if (useDown) result += zalgoDown[Math.floor(Math.random() * zalgoDown.length)];
+        }
+      }
+
+      document.getElementById('output-text').textContent = result;
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é texto zalgo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto zalgo é texto normal com muitas marcas combinantes Unicode empilhadas acima, através e abaixo de cada letra, criando um visual corrompido e assustador. O nome vem de um meme de terror da internet de 2004 sobre texto possuído."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço texto glitch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite no gerador acima e ajuste o controle de intensidade. A ferramenta empilha marcas diacríticas combinantes aleatórias em cada letra. Copie o resultado e cole onde quiser — é texto Unicode de verdade, não imagem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que o mesmo texto fica diferente a cada geração?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As marcas combinantes são sorteadas dos conjuntos de cima/meio/baixo a cada geração. Copie o padrão que gostar na hora — você não reproduz uma corrupção exata depois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto zalgo funciona no Discord e no Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, ambos renderizam marcas combinantes, então Zalgo cola bem em mensagens do Discord e bios do Instagram. Zalgo muito pesado pode ser colapsado pela normalização de texto de alguns apps — intensidade média é o mais seguro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre zalgo e texto glitch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zalgo empilha marcas combinantes na vertical para um visual de dado corrompido. Efeitos glitch usam distorções decorativas como colchetes, riscados e molduras em bloco. Esta página faz Zalgo; o gerador de texto glitch faz os estilos decorativos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que meu texto zalgo aparece como quadradinhos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quadradinhos (tofu) significam que a fonte do aparelho não tem essas marcas combinantes. A maioria dos celulares e navegadores modernos as renderiza, mas sistemas antigos podem não. Se aparecerem quadradinhos, tente intensidade menor ou outro aparelho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto zalgo pode quebrar meu layout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pilhas altas de marcas podem estourar contêineres e sobrepor linhas vizinhas, especialmente em intensidade alta. Teste no contexto antes de publicar, e prefira intensidade baixa a média em layouts apertados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Leitores de tela leem texto zalgo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muito mal — leitores de tela anunciam cada marca combinante, transformando uma palavra numa recitação longa. Nunca use Zalgo para informação essencial; deixe decorativo e ponha texto simples por perto se o sentido importar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto zalgo conta contra limites de caracteres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, e muito — cada marca combinante é um ponto de código separado, então uma letra visível pode consumir 10+ caracteres de um limite de bio ou nome de usuário. Deixe os textos Zalgo curtos em plataformas com limites apertados."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
