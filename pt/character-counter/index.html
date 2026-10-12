@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Contador de caracteres - ferramenta de contagem de palavras e caracteres ao vivo</title>
+  <meta
+    content="Conte caracteres, palavras, espaços, frases e parágrafos em tempo real. Analise suas estatísticas de texto instantaneamente com este contador online gratuito."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/character-counter/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/character-counter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/character-counter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/character-counter/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/character-counter/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/character-counter/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .platform-limits {
+      margin-top: 1.5rem;
+    }
+
+    .platform-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.5rem;
+    }
+
+    .platform-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .platform-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--surface-secondary);
+      border-radius: 4px;
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+
+    .platform-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .platform-fill.safe {
+      background: var(--success);
+    }
+
+    .platform-fill.warning {
+      background: var(--warning);
+    }
+
+    .platform-fill.danger {
+      background: var(--danger);
+    }
+
+    .platform-count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Utility Tools
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Word Counter</span>
+            </a>
+            <a class="sidebar-link active" href="../character-counter/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Character Counter</span>
+            </a>
+            <a class="sidebar-link" href="../text-cleaner/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Text Cleaner</span>
+            </a>
+            <a class="sidebar-link" href="../remove-duplicate-lines/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Remove Duplicates</span>
+            </a>
+            <a class="sidebar-link" href="../title-case-converter/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Title Case</span>
+            </a>
+            <a class="sidebar-link" href="../lowercase-converter/">
+              <span class="link-icon">🔡</span>
+              <span class="link-text">Lowercase</span>
+            </a>
+            <a class="sidebar-link" href="../uppercase-converter/">
+              <span class="link-icon">🔤</span>
+              <span class="link-text">Uppercase</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Browse Tools
+        </button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">🔢 Contador de caracteres</h1>
+          <p class="tool-description">Count characters, letters, digits, and check platform limits</p>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Cole ou digite seu texto aqui..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Paste</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="total-chars">0</div>
+            <div class="stat-label">Total Characters</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="chars-no-space">0</div>
+            <div class="stat-label">Without Spaces</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="letter-count">0</div>
+            <div class="stat-label">Letters</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="digit-count">0</div>
+            <div class="stat-label">Digits</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="space-count">0</div>
+            <div class="stat-label">Spaces</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="special-count">0</div>
+            <div class="stat-label">Special Chars</div>
+          </div>
+        </div>
+        <div class="platform-limits">
+          <h3>Limites de caracteres da plataforma</h3>
+          <div id="platform-checks"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>O que é um contador de caracteres?</h2>
+        <p>Um contador de caracteres é uma ferramenta leve de análise de texto que conta cada caractere em uma sequência
+          de texto —
+          incluindo letras, números, pontuação, espaços e quebras de linha. Ele difere de um contador de palavras por
+          medir
+          no nível de caracteres individuais, o que é importante para plataformas como Twitter, SMS (limite de 160
+          caracteres por
+          mensagem), descrições da loja de aplicativos e campos de entrada do banco de dados com restrições VARCHAR.
+          Compreendendo o personagem
+          a contagem também ajuda com SEO – o Google trunca tags de título além de 60 caracteres e meta descrições além
+          de 158
+          caracteres nos resultados da pesquisa.</p>
+
+        <h2>Como usar o contador de caracteres</h2>
+        <ol>
+          <li><strong>Digite ou cole</strong> seu texto no campo de entrada acima.</li>
+          <li>O contador é atualizado <strong>instantaneamente</strong> — sem necessidade de clicar em nenhum botão.
+          </li>
+          <li>Alterne entre <strong>com espaços</strong> e <strong>sem espaços</strong> usando a alternância de
+            exibição.
+          </li>
+          <li>Use o recurso <strong>aviso de limite</strong> para definir um máximo de caracteres personalizados e
+            receber alertas visuais.
+          </li>
+          <li>Clique em <strong>Limpar</strong> para redefinir e iniciar uma nova contagem.</li>
+        </ol>
+
+        <h2>Por que a contagem de caracteres é importante</h2>
+        <p>Cada plataforma digital possui um orçamento de personagens. Excedê-lo significa que o texto será cortado, os
+          links quebrarão ou
+          submissões são rejeitadas. Para profissionais de SEO, tags de título que excedem 60 caracteres ficam truncadas
+          em
+          SERPs do Google, reduzindo as taxas de cliques. Para desenvolvedores de aplicativos, os campos VARCHAR do
+          banco de dados geram erros se
+          a entrada excede os limites definidos. Para gerentes de mídia social, uma legenda muito longa perde a primeira
+          linha
+          engajamento. Conhecer a contagem de caracteres antes de publicar evita esses erros caros.</p>
+
+        <h2>Exemplos do mundo real</h2>
+        <ul>
+          <li><strong>Título SEO:</strong> "Melhores tênis de corrida para pés chatos 2024 - revisado por especialistas"
+            = 54 caracteres.
+            Seguro para exibição no Google.</li>
+          <li><strong>Tweet:</strong> "Acabei de lançar meu novo curso sobre redação de conteúdo. Link na bio! 🚀
+            #ContentMarketing" = 81 caracteres. Muito espaço.</li>
+          <li><strong>SMS:</strong> uma mensagem de 162 caracteres se divide em duas partes SMS e custa o dobro. O
+            contador
+            ajuda você a ficar abaixo dos 160 anos.</li>
+          <li><strong>Listagem da App Store:</strong> as legendas do Google Play têm no máximo 80 caracteres. Nosso
+            contador mostra
+            exatamente quando você atinge esse limite.</li>
+        </ul>
+
+        <h2>Limites de caracteres por plataforma</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform / Use Case</th>
+              <th>Character Limit</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Twitter / X Post</td>
+              <td>280</td>
+              <td>URLs count as 23 chars regardless of length</td>
+            </tr>
+            <tr>
+              <td>SMS Message</td>
+              <td>160</td>
+              <td>Beyond 160 = multiple messages billed</td>
+            </tr>
+            <tr>
+              <td>Google Title Tag</td>
+              <td>~60</td>
+              <td>Pixel-based; ~580px wide</td>
+            </tr>
+            <tr>
+              <td>Meta Description</td>
+              <td>~158</td>
+              <td>Truncated to ~920px in SERPs</td>
+            </tr>
+            <tr>
+              <td>Instagram Caption</td>
+              <td>2,200</td>
+              <td>Only 125 chars shown before "more"</td>
+            </tr>
+            <tr>
+              <td>YouTube Title</td>
+              <td>100</td>
+              <td>60 chars displayed in search</td>
+            </tr>
+            <tr>
+              <td>App Store Subtitle</td>
+              <td>30</td>
+              <td>Apple App Store limit</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Um espaço conta como um caractere?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim, espaços são caracteres. A maioria das plataformas os conta. O contador mostra
+                ambos 'com
+                totais de espaços 'e' sem espaços 'para que você possa verificar qualquer padrão que sua plataforma use.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Os emojis contam como mais de um caractere?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim. A maioria dos emojis são codificados como duas unidades de código UTF-16, portanto
+                contam como 2 caracteres em
+                a maioria dos sistemas. Alguns emojis complexos (como variantes de tom de pele) podem usar de 4 a 8
+                unidades de código.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">A pontuação conta como caractere?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cada caractere visível e invisível conta – pontos, vírgulas, apóstrofos, citações
+                marcas e até mesmo quebras de linha. A contagem 'sem espaços' exclui apenas caracteres de espaço, não
+                pontuação.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Qual é a diferença entre caracteres e bytes?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Caracteres são unidades de linguagem (letras, dígitos, símbolos). Os bytes dependem da
+                codificação. Em
+                UTF-8, caracteres ASCII têm 1 byte, mas letras acentuadas ou emojis podem ter 2–4 bytes. Para a maioria
+                da web
+                propósitos, a contagem de caracteres é o que importa.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Posso definir um limite de caracteres personalizado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim. Insira o limite desejado no campo 'limite' e a ferramenta irá destacar quando
+                você se aproxima ou excede - útil para escritores que trabalham com orçamentos editoriais rígidos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas utilitárias</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="../word-counter/">📊 Word Counter</a>
+        <a class="sidebar-link active" href="../character-counter/">🔢 Character Counter</a>
+        <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+      </nav>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const platforms = [
+      { name: 'Twitter/X', icon: '🐦', limit: 280 },
+      { name: 'Instagram Bio', icon: '📸', limit: 150 },
+      { name: 'TikTok Caption', icon: '🎵', limit: 2200 },
+      { name: 'YouTube Title', icon: '▶️', limit: 100 },
+      { name: 'SMS', icon: '📱', limit: 160 },
+      { name: 'Meta Title', icon: '🔍', limit: 60 },
+      { name: 'Meta Description', icon: '📝', limit: 160 }
+    ];
+
+    function analyzeText() {
+      const text = document.getElementById('text-input').value;
+
+      document.getElementById('total-chars').textContent = text.length;
+      document.getElementById('chars-no-space').textContent = text.replace(/\s/g, '').length;
+      document.getElementById('letter-count').textContent = (text.match(/[a-zA-Z]/g) || []).length;
+      document.getElementById('digit-count').textContent = (text.match(/[0-9]/g) || []).length;
+      document.getElementById('space-count').textContent = (text.match(/\s/g) || []).length;
+      document.getElementById('special-count').textContent = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
+
+      updatePlatformLimits(text.length);
+    }
+
+    function updatePlatformLimits(charCount) {
+      const container = document.getElementById('platform-checks');
+      container.innerHTML = platforms.map(p => {
+        const percent = Math.min((charCount / p.limit) * 100, 100);
+        const status = percent <= 80 ? 'safe' : percent <= 100 ? 'warning' : 'danger';
+        return `
+                    <div class="platform-item">
+                        <span class="platform-name">${p.icon} ${p.name}</span>
+                        <div class="platform-bar">
+                            <div class="platform-fill ${status}" style="width: ${percent}%"></div>
+                        </div>
+                        <span class="platform-count">${charCount}/${p.limit}</span>
+                    </div>
+                `;
+      }).join('');
+    }
+
+    function clearText() {
+      document.getElementById('text-input').value = '';
+      analyzeText();
+    }
+
+    function pasteText() {
+      navigator.clipboard.readText().then(text => {
+        document.getElementById('text-input').value = text;
+        analyzeText();
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    analyzeText();
+  </script>
+</body>
+
+</html>

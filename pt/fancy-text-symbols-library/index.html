@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Biblioteca de símbolos de texto sofisticados - ferramentas de texto online gratuitas</title>
+  <meta
+    content="Ferramenta online gratuita de biblioteca de símbolos de texto extravagante. Utilitários de formatação e estilo de texto rápidos, seguros e com proteção de privacidade."
+    name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/fancy-text-symbols-library/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/fancy-text-symbols-library/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/fancy-text-symbols-library/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/fancy-text-symbols-library/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/fancy-text-symbols-library/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/fancy-text-symbols-library/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .search-container {
+      position: sticky;
+      top: 0;
+      background: var(--background);
+      padding: 1rem 0;
+      z-index: 100;
+      margin-bottom: 1rem;
+    }
+
+    .symbol-search {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+    }
+
+    .symbol-search:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all var(--transition);
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .symbol-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+      gap: 0.35rem;
+    }
+
+    .symbol-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.25rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 1.5rem;
+      position: relative;
+    }
+
+    .symbol-item:hover {
+      border-color: var(--primary);
+      transform: scale(1.15);
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+    }
+
+    .symbol-item.copied::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      background: var(--success);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.2rem;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">😊</span>
+            Emoji &amp; Symbol Tools
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../emoji-text-maker/"><span class="link-icon">😊</span><span
+                class="link-text">Emoji Text Maker</span></a>
+            <a class="sidebar-link" href="../emoji-combiner/"><span class="link-icon">🎨</span><span
+                class="link-text">Emoji Combiner</span></a>
+            <a class="sidebar-link" href="../kaomoji-generator/"><span class="link-icon">(◕‿◕)</span><span
+                class="link-text">Kaomoji Generator</span></a>
+            <a class="sidebar-link" href="../emoticon-maker/"><span class="link-icon">:)</span><span
+                class="link-text">Emoticon Maker</span></a>
+            <a class="sidebar-link" href="../heart-symbol-generator/"><span class="link-icon">♥</span><span
+                class="link-text">Heart Symbols</span></a>
+            <a class="sidebar-link" href="../sparkle-symbol-generator/"><span class="link-icon">✨</span><span
+                class="link-text">Sparkle Symbols</span></a>
+            <a class="sidebar-link" href="../arrow-symbol-generator/"><span class="link-icon">→</span><span
+                class="link-text">Arrow Symbols</span></a>
+            <a class="sidebar-link" href="../aesthetic-borders-generator/"><span class="link-icon">『』</span><span
+                class="link-text">Aesthetic Borders</span></a>
+            <a class="sidebar-link active" href="../fancy-text-symbols-library/"><span class="link-icon">☆</span><span
+                class="link-text">Symbols Library</span></a>
+            <a class="sidebar-link" href="../divider-line-generator/"><span class="link-icon">═</span><span
+                class="link-text">Divider Lines</span></a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">☆ Biblioteca de símbolos de texto sofisticados</h1>
+          <p class="tool-description">Browse thousands of symbols - click to copy!</p>
+          <div class="search-container">
+            <input class="symbol-search" id="symbol-search" oninput="filterSymbols()"
+              placeholder="🔍 Pesquise símbolos..." type="text" />
+          </div>
+          <div class="category-nav" id="category-nav"></div>
+          <div class="stats-bar"><span id="symbol-count">Loading...</span><span>Click to copy</span></div>
+          <div id="symbols-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>O que é a biblioteca de símbolos de texto sofisticados?</h2>
+        <p>A sofisticada biblioteca de símbolos de texto é um utilitário de formatação de texto que converte texto de
+          entrada padrão em um texto estilizado.
+          ou versão transformada usando caracteres Unicode ou algoritmos de processamento de texto. Essas saídas geradas
+          são
+          caracteres de texto reais - não imagens - o que significa que eles são copiados, colados e exibidos
+          corretamente em praticamente todos
+          aplicativos modernos, plataformas de mídia social e serviços de mensagens que renderizam texto unicode.</p>
+
+        <h2>Como usar esta ferramenta</h2>
+        <ol>
+          <li><strong>Digite ou cole seu texto</strong> no campo de entrada acima.</li>
+          <li>A ferramenta <strong>processa instantaneamente</strong> sua entrada e mostra o resultado.</li>
+          <li>Navegue pelas opções ou configurações de estilo que aparecem.</li>
+          <li>Clique em <strong>Copiar</strong> para copiar seu resultado.</li>
+          <li><strong>Cole</strong> no Instagram, Discord, Twitter, WhatsApp ou em qualquer campo de texto.</li>
+        </ol>
+
+        <h2>Por que usar a biblioteca de símbolos de texto sofisticados?</h2>
+        <p>Usar a sofisticada biblioteca de símbolos de texto economiza tempo e traz uma identidade visual exclusiva à
+          sua presença digital.
+          Em vez de texto padrão simples que se mistura a todas as outras postagens ou perfis, o texto estilizado capta
+          imediatamente
+          o olho e comunica personalidade. Isto é particularmente valioso em plataformas como Instagram, TikTok,
+          Discord e redes de jogos em que se destacar em um feed lotado ou em uma lista de jogadores impacta diretamente
+          o engajamento
+          e descoberta. A ferramenta funciona inteiramente no seu navegador – sem instalação, sem conta, sem dados
+          armazenados.
+        </p>
+
+        <h2>Casos de uso comuns</h2>
+        <ul>
+          <li><strong>Biografias de mídia social:</strong> torne sua biografia do Instagram, TikTok ou Twitter
+            visualmente distinta.</li>
+          <li><strong>Perfis de jogos:</strong> destaque-se no Roblox, Steam e outros lobbies de jogos com um estilo
+            único
+            nome.</li>
+          <li><strong>Servidores Discord:</strong> use texto estilizado para nomes de canais e descrições de servidores.
+          </li>
+          <li><strong>Escrita criativa:</strong> adicione variedade visual a legendas, citações e postagens narrativas.
+          </li>
+          <li><strong>Criação de conteúdo:</strong> diferencie os cabeçalhos das seções em legendas longas do Instagram
+            ou LinkedIn
+            postagens.</li>
+        </ul>
+
+        <h2>Compatibilidade de plataforma</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Works?</th>
+              <th>Recommended Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Instagram</td>
+              <td>✅ Yes</td>
+              <td>Bio, captions, comments</td>
+            </tr>
+            <tr>
+              <td>TikTok</td>
+              <td>✅ Yes</td>
+              <td>Bio, video description</td>
+            </tr>
+            <tr>
+              <td>Twitter / X</td>
+              <td>✅ Yes</td>
+              <td>Display name, bio, tweets</td>
+            </tr>
+            <tr>
+              <td>Discord</td>
+              <td>✅ Yes</td>
+              <td>Username, messages, server names</td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td>✅ Yes</td>
+              <td>Status, name, messages</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>✅ Yes</td>
+              <td>Posts, bio</td>
+            </tr>
+            <tr>
+              <td>Roblox</td>
+              <td>✅ Yes</td>
+              <td>Display name</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Esta ferramenta é totalmente gratuita?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim - a sofisticada biblioteca de símbolos de texto é 100% gratuita e sem limites. Não
+                há
+                conta necessária, sem marca d'água na saída e sem limite de uso diário.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">A saída funciona em dispositivos móveis?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim. O texto estilizado é unicode padrão que é exibido corretamente em todos os iOS e
+                Dispositivos Android. Basta copiar o resultado e colar em qualquer aplicativo móvel.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Meu texto é armazenado ou compartilhado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Não. A sofisticada biblioteca de símbolos de texto processa seu texto inteiramente em
+                seu navegador usando
+                JavaScript. Nada é carregado em um servidor. Sua entrada nunca é armazenada, registrada ou
+                compartilhada.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Posso usar o resultado no meu nome de usuário?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">A maioria das plataformas permite Unicode em nomes de exibição, mas restringe nomes de
+                usuário/identificadores reais a
+                Caracteres ASCII. Os nomes de exibição no Instagram, Discord, Twitter e TikTok geralmente oferecem
+                suporte a Unicode.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">E se alguns caracteres aparecerem como caixas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">As caixas indicam que o dispositivo não tem suporte para fontes Unicode específicas.
+                personagens. Experimente uma variante de estilo diferente ou atualize o software do sistema do seu
+                dispositivo para incluir
+                cobertura de fonte unicode.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>😊 Ferramentas de emojis</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="../fancy-text-symbols-library/">☆ Symbols Library</a>
+        <a class="sidebar-link" href="../heart-symbol-generator/">♥ Hearts</a>
+        <a class="sidebar-link" href="../sparkle-symbol-generator/">✨ Sparkles</a>
+      </nav>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const symbolData = {
+      'Stars': { icon: '⭐', symbols: '★☆✡✦✧✩✪✫✬✭✮✯✰✴✵✶✷✸✹✺✻✼✽✾✿❀❁❂❃❇❈❉❊❋⁂⁎⁑✱✲✳⋆' },
+      'Hearts': { icon: '♥', symbols: '♥♡❤❥❣❦❧♠♣♦💕💖💗💘💙💚💛💜💝💞💟❤️🧡💛💚💙💜🖤🤍🤎💔' },
+      'Arrows': { icon: '→', symbols: '←↑→↓↔↕↖↗↘↙↚↛↜↝↞↟↠↡↢↣↤↥↦↧↨↩↪↫↬↭↮↯↰↱↲↳↴↵↶↷↸↹↺↻⇄⇅⇆⇇⇈⇉⇊⇋⇌⇍⇎⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇚⇛⇜⇝⇞⇟⇠⇡⇢⇣⇤⇥⇦⇧⇨⇩⇪➔➘➙➚➛➜➝➞➟➠➡➢➣➤➥➦➧➨➩➪➫➬➭➮➯➱➲➳➴➵➶➷➸➹➺➻➼➽➾' },
+      'Math': { icon: '∞', symbols: '∞±×÷≠≈≤≥∑∏∫√∂∆∇∈∉∋∌∩∪⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋∀∃∄∅∧∨¬⊕⊖⊗⊘⊙⊚⊛⊜⊝∴∵∶∷∼∽∾∿≀≁≂≃≄≅≆≇≈≉≊≋≌≍≎≏' },
+      'Music': { icon: '♪', symbols: '♩♪♫♬♭♮♯🎵🎶🎼🎤🎧🎸🎹🎺🎻🥁🎷' },
+      'Currency': { icon: '💲', symbols: '¢£¤¥€₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵₶₷₸₹₺₻₼₽₾₿$¢£¥€₹₽₿' },
+      'Zodiac': { icon: '♈', symbols: '♈♉♊♋♌♍♎♏♐♑♒♓⛎' },
+      'Chess': { icon: '♔', symbols: '♔♕♖♗♘♙♚♛♜♝♞♟' },
+      'Cards': { icon: '♠', symbols: '♠♣♥♦🂠🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂬🂭🂮🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃌🃍🃎🃏' },
+      'Weather': { icon: '☀', symbols: '☀☁☂☃☄★☆☇☈☉☊☋☌☍☾☽❄❅❆⛄⛅⛆⛇⛈☔⚡🌈🌤🌥🌦🌧🌨🌩🌪🌫🌬' },
+      'Brackets': { icon: '【】', symbols: '「」『』【】〖〗〘〙〚〛〔〕〈〉《》⌈⌉⌊⌋❨❩❪❫❬❭❮❯❰❱❲❳❴❵⟦⟧⟨⟩⟪⟫⦃⦄⦅⦆⦇⦈⦉⦊⦋⦌⦍⦎⦏⦐' },
+      'Lines': { icon: '─', symbols: '─━│┃┄┅┆┇┈┉┊┋╌╍╎╏═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬' },
+      'Geometric': { icon: '◆', symbols: '■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱▲△▴▵▶▷▸▹►▻▼▽▾▿◀◁◂◃◄◅◆◇◈◉◊○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◢◣◤◥◦◧◨◩◪◫◬◭◮◯' },
+      'Flowers': { icon: '❀', symbols: '✿❀❁❃❇❈❉❊❋✾✽✼✻✺✹✸✷✶✵✴❂✱✲✳⚘🌸🌹🌺🌻🌼🌷🌱🌲🌳🌴🌵🌾🌿🍀🍁🍂🍃' },
+      'Hands': { icon: '👍', symbols: '👍👎👌✌🤞🤟🤘🤙👈👉👆👇☝️✋🤚🖐🖖👋🤝👏🙌🙏✍💪🦾🖕' },
+      'Misc': { icon: '☯', symbols: '☯☮✝☪✡☸✴⚛♻⚠☢☣⚡⚜✠✞✟♰♱☩☦☧☨✙✚✛✜✢✣✤✥†‡' }
+    };
+
+    let currentCategory = 'all';
+
+    function init() {
+      renderCategories();
+      renderAllSymbols();
+    }
+
+    function renderCategories() {
+      const nav = document.getElementById('category-nav');
+      let html = '<button class="category-btn active" onclick="showAll()">📋 All</button>';
+      for (const [name, data] of Object.entries(symbolData)) {
+        html += `<button class="category-btn" onclick="showCategory('${name}')">${data.icon} ${name}</button>`;
+      }
+      nav.innerHTML = html;
+    }
+
+    function renderAllSymbols() {
+      const container = document.getElementById('symbols-container');
+      let html = '';
+      let totalCount = 0;
+
+      for (const [name, data] of Object.entries(symbolData)) {
+        const symbols = [...data.symbols];
+        totalCount += symbols.length;
+        html += `<div class="symbol-section" data-category="${name}">
+                    <h3 class="section-header">${data.icon} ${name} <span style="font-weight:normal;color:var(--muted);font-size:0.85rem;">(${symbols.length})</span></h3>
+                    <div class="symbol-grid">${symbols.map(s => `<div class="symbol-item" onclick="copySymbol(this, '${s}')">${s}</div>`).join('')}</div>
+                </div>`;
+      }
+
+      container.innerHTML = html;
+      document.getElementById('symbol-count').textContent = `${totalCount} symbols`;
+    }
+
+    function showAll() {
+      currentCategory = 'all';
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.category-btn').classList.add('active');
+      document.querySelectorAll('.symbol-section').forEach(s => s.style.display = '');
+      document.getElementById('symbol-search').value = '';
+    }
+
+    function showCategory(name) {
+      currentCategory = name;
+      document.querySelectorAll('.category-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent.includes(name));
+      });
+      document.querySelectorAll('.symbol-section').forEach(s => {
+        s.style.display = s.dataset.category === name ? '' : 'none';
+      });
+    }
+
+    function filterSymbols() {
+      const query = document.getElementById('symbol-search').value.toLowerCase().trim();
+      if (!query) { showAll(); return; }
+
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.symbol-section').forEach(section => {
+        const name = section.dataset.category.toLowerCase();
+        const symbols = section.querySelectorAll('.symbol-item');
+        let hasMatch = false;
+
+        if (name.includes(query)) {
+          section.style.display = '';
+          symbols.forEach(s => s.style.display = '');
+          hasMatch = true;
+        } else {
+          symbols.forEach(s => {
+            const char = s.textContent;
+            const show = char.includes(query);
+            s.style.display = show ? '' : 'none';
+            if (show) hasMatch = true;
+          });
+          section.style.display = hasMatch ? '' : 'none';
+        }
+      });
+    }
+
+    function copySymbol(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 600);
+      });
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) { document.getElementById('mobile-sidebar').classList.remove('active'); document.body.style.overflow = ''; } }
+
+    init();
+  </script>
+</body>
+
+</html>

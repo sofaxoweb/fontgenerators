@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Outro Text Generator - Copie e cole fontes elegantes</title>
+<meta content="Outro gerador de texto online gratuito. Gere e copie estilos de fonte, letras e configurações de texto personalizados exclusivos para biografias e postagens em mídias sociais." name="description"/>
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .outro-preview {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+            padding: 3rem;
+            border-radius: var(--radius);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .outro-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .outro-subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        .outro-cta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .cta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+        }
+
+        .cta-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .style-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .style-card {
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            cursor: pointer;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .style-card:hover,
+        .style-card.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .style-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .style-card p {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .text-output {
+            background: var(--surface-secondary);
+            padding: 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 1.1rem;
+            word-break: break-word;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/pt/outro-text-generator/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/outro-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/outro-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/outro-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/outro-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/outro-text-generator/" />
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+<div class="sidebar-section">
+<div class="sidebar-header">
+<span class="icon">🎮</span>
+                        Fun Text Tools
+                    </div>
+<nav class="sidebar-nav">
+<a class="sidebar-link" href="../typing-effect-text-generator/">
+<span class="link-icon">⌨️</span>
+<span class="link-text">Typing Effect</span>
+</a>
+<a class="sidebar-link" href="../glitch-effect-text-generator/">
+<span class="link-icon">📺</span>
+<span class="link-text">Glitch Effect</span>
+</a>
+<a class="sidebar-link" href="../matrix-text-generator/">
+<span class="link-icon">💊</span>
+<span class="link-text">Matrix Text</span>
+</a>
+<a class="sidebar-link" href="../animated-text-generator/">
+<span class="link-icon">🎬</span>
+<span class="link-text">Animated Text</span>
+</a>
+<a class="sidebar-link active" href="../outro-text-generator/">
+<span class="link-icon">🎬</span>
+<span class="link-text">Outro Text</span>
+</a>
+</nav>
+</div>
+</aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Browse Tools
+                </button>
+<div class="tool-input-section">
+<h1 class="tool-title">🎬 Outro Gerador de Texto</h1>
+<p class="tool-description">Create stylish video outro text for YouTube, TikTok &amp; more</p>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Channel/Brand Name</label>
+<input id="channel-name" oninput="updatePreview()" type="text" value="MY CHANNEL"/>
+</div>
+<div class="setting-item">
+<label>Tagline/Subtitle</label>
+<input id="tagline" oninput="updatePreview()" type="text" value="Thanks for watching!"/>
+</div>
+</div>
+<h3>Escolha o estilo</h3>
+<div class="style-cards">
+<div class="style-card active" onclick="setStyle(this, 'minimal')">
+<h4>Minimal</h4>
+<p>Clean &amp; Simple</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'gaming')">
+<h4>Gaming</h4>
+<p>Bold &amp; Energetic</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'elegant')">
+<h4>Elegant</h4>
+<p>Classy &amp; Refined</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'neon')">
+<h4>Neon</h4>
+<p>Glowing Effects</p>
+</div>
+</div>
+</div>
+<div class="outro-preview" id="outro-preview">
+<div class="outro-title" id="display-title">MY CHANNEL</div>
+<div class="outro-subtitle" id="display-tagline">Thanks for watching!</div>
+<div class="outro-cta">
+<div class="cta-item">
+<div class="cta-icon">👍</div>
+<span class="cta-text">LIKE</span>
+</div>
+<div class="cta-item">
+<div class="cta-icon">🔔</div>
+<span class="cta-text">SUBSCRIBE</span>
+</div>
+<div class="cta-item">
+<div class="cta-icon">💬</div>
+<span class="cta-text">COMMENT</span>
+</div>
+</div>
+</div>
+<div class="tool-output-section">
+<h3>Copiar e colar versões de texto</h3>
+<div id="text-outputs"></div>
+</div>
+</div>
+</div>
+
+<!-- ═══ SEO CONTENT SECTION ═══ -->
+<section class="seo-content-section">
+  <div class="container">
+
+    <h2>O que é outro gerador de texto?</h2>
+<p>O outro gerador de texto é um utilitário de formatação de texto que converte o texto de entrada padrão em uma versão estilizada ou transformada usando caracteres Unicode ou algoritmos de processamento de texto. Essas saídas geradas são caracteres de texto reais – não imagens – o que significa que eles são copiados, colados e exibidos corretamente em praticamente todos os aplicativos modernos, plataformas de mídia social e serviços de mensagens que renderizam texto unicode.</p>
+
+    <h2>Como usar esta ferramenta</h2>
+<ol>
+  <li><strong>Digite ou cole seu texto</strong> no campo de entrada acima.</li>
+  <li>A ferramenta <strong>processa instantaneamente</strong> sua entrada e mostra o resultado.</li>
+  <li>Navegue pelas opções ou configurações de estilo que aparecem.</li>
+  <li>Clique em <strong>Copiar</strong> para copiar seu resultado.</li>
+  <li><strong>Cole</strong> no Instagram, Discord, Twitter, WhatsApp ou em qualquer campo de texto.</li>
+</ol>
+
+    <h2>Por que usar o Outro Text Generator?</h2>
+<p>Usar o gerador de texto final economiza tempo e traz uma identidade visual única para sua presença digital. Em vez de texto padrão simples que se mistura a qualquer outra postagem ou perfil, o texto estilizado chama imediatamente a atenção e comunica personalidade. Isso é particularmente valioso em plataformas como Instagram, TikTok, Discord e redes de jogos, onde se destacar em um feed lotado ou em uma lista de jogadores afeta diretamente o envolvimento e a descoberta. A ferramenta funciona inteiramente no seu navegador – sem instalação, sem conta, sem dados armazenados.</p>
+
+    <h2>Casos de uso comuns</h2>
+<ul>
+  <li><strong>Biografias de mídia social:</strong> torne sua biografia do Instagram, TikTok ou Twitter visualmente distinta.</li>
+  <li><strong>Perfis de jogos:</strong> destaque-se no Roblox, Steam e outros lobbies de jogos com um nome de estilo exclusivo.</li>
+  <li><strong>Servidores Discord:</strong> use texto estilizado para nomes de canais e descrições de servidores.</li>
+  <li><strong>Escrita criativa:</strong> adicione variedade visual a legendas, citações e postagens narrativas.</li>
+  <li><strong>Criação de conteúdo:</strong> diferencie os cabeçalhos das seções em legendas longas do Instagram ou postagens do LinkedIn.</li>
+</ul>
+
+    <h2>Compatibilidade de plataforma</h2>
+<table>
+  <thead><tr><th>Platform</th><th>Works?</th><th>Recommended Use</th></tr></thead>
+  <tbody>
+    <tr><td>Instagram</td><td>✅ Yes</td><td>Bio, captions, comments</td></tr>
+    <tr><td>TikTok</td><td>✅ Yes</td><td>Bio, video description</td></tr>
+    <tr><td>Twitter / X</td><td>✅ Yes</td><td>Display name, bio, tweets</td></tr>
+    <tr><td>Discord</td><td>✅ Yes</td><td>Username, messages, server names</td></tr>
+    <tr><td>WhatsApp</td><td>✅ Yes</td><td>Status, name, messages</td></tr>
+    <tr><td>Facebook</td><td>✅ Yes</td><td>Posts, bio</td></tr>
+    <tr><td>Roblox</td><td>✅ Yes</td><td>Display name</td></tr>
+  </tbody>
+</table>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Esta ferramenta é totalmente gratuita?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim - o gerador de texto final é 100% gratuito e sem limites. Não é necessária nenhuma conta, nenhuma marca d'água na saída e nenhum limite de uso diário.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">A saída funciona em dispositivos móveis?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. O texto estilizado é unicode padrão que é exibido corretamente em todos os dispositivos iOS e Android modernos. Basta copiar o resultado e colar em qualquer aplicativo móvel.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Meu texto é armazenado ou compartilhado?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. O gerador de texto final processa seu texto inteiramente em seu navegador usando JavaScript. Nada é carregado em um servidor. Sua entrada nunca é armazenada, registrada ou compartilhada.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Posso usar o resultado no meu nome de usuário?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">A maioria das plataformas permite Unicode em nomes de exibição, mas restringe nomes de usuário/identificadores reais a caracteres ASCII. Os nomes de exibição no Instagram, Discord, Twitter e TikTok geralmente oferecem suporte a Unicode.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">E se alguns caracteres aparecerem como caixas?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">As caixas indicam que o dispositivo não tem suporte de fonte para esses caracteres Unicode específicos. Experimente uma variante de estilo diferente ou atualize o software do sistema do seu dispositivo para incluir uma cobertura mais ampla de fontes Unicode.</p>
+    </div>
+  </div>
+    </div>
+
+  </div>
+</section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+<div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+<div class="mobile-sidebar-header">
+<h3>🎮 Ferramentas divertidas</h3>
+<button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+</div>
+</div>
+</div>
+<div id="footer-placeholder"></div>
+<script defer="" src="../../js/includes.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        let currentStyle = 'minimal';
+
+        const styles = {
+            minimal: {
+                bg: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%)',
+                titleColor: '#fff',
+                titleShadow: 'none'
+            },
+            gaming: {
+                bg: 'linear-gradient(135deg, #ff0844 0%, #ffb199 100%)',
+                titleColor: '#fff',
+                titleShadow: '3px 3px 0 #000'
+            },
+            elegant: {
+                bg: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+                titleColor: '#f1c40f',
+                titleShadow: '0 2px 10px rgba(0,0,0,0.3)'
+            },
+            neon: {
+                bg: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)',
+                titleColor: '#0ff',
+                titleShadow: '0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff'
+            }
+        };
+
+        function setStyle(card, style) {
+            document.querySelectorAll('.style-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            currentStyle = style;
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const name = document.getElementById('channel-name').value || 'CHANNEL';
+            const tagline = document.getElementById('tagline').value || 'Thanks for watching!';
+            const style = styles[currentStyle];
+            
+            const preview = document.getElementById('outro-preview');
+            const title = document.getElementById('display-title');
+            const subtitle = document.getElementById('display-tagline');
+            
+            preview.style.background = style.bg;
+            title.textContent = name.toUpperCase();
+            title.style.color = style.titleColor;
+            title.style.textShadow = style.titleShadow;
+            subtitle.textContent = tagline;
+            
+            generateTextOutputs(name, tagline);
+        }
+
+        function generateTextOutputs(name, tagline) {
+            const outputs = [
+                { label: 'Minimal', text: `✦ ${name.toUpperCase()} ✦\n${tagline}\n\n👍 LIKE  |  🔔 SUBSCRIBE  |  💬 COMMENT` },
+                { label: 'Fancy Box', text: `╔══════════════════════╗\n║  ${name.toUpperCase()}  ║\n╚══════════════════════╝\n\n${tagline}` },
+                { label: 'Stars', text: `★═══════════════════★\n✦ ${name.toUpperCase()} ✦\n${tagline}\n★═══════════════════★` },
+                { label: 'Gaming', text: `▶▶▶ ${name.toUpperCase()} ◀◀◀\n━━━━━━━━━━━━━━━\n${tagline}\n\n🎮 LIKE | SHARE | SUBSCRIBE 🎮` }
+            ];
+
+            document.getElementById('text-outputs').innerHTML = outputs.map(o => `
+                <div style="margin-bottom: 1rem;">
+                    <strong>${o.label}</strong>
+                    <div class="text-output" style="margin-top: 0.5rem; white-space: pre-line;">${o.text}</div>
+                    <button class="btn btn-secondary btn-sm" onclick="copyText(\`${o.text.replace(/`/g, '\\`')}\`)" style="margin-top: 0.5rem;">📋 Copy</button>
+                </div>
+            `).join('');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        updatePreview();
+    </script>
+</body>
+</html>

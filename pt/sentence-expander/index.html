@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Expansor de frases - ferramentas de texto online gratuitas</title>
+  <meta
+    content="Ferramenta online gratuita de expansão de frases. Utilitários de formatação e estilo de texto rápidos, seguros e com proteção de privacidade."
+    name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/sentence-expander/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/sentence-expander/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/sentence-expander/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/sentence-expander/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/sentence-expander/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/sentence-expander/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .expansion-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .exp-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .exp-btn:hover,
+    .exp-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Utility Tools</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">📊 Word Counter</a>
+            <a class="sidebar-link active" href="../sentence-expander/">📝 Sentence Expander</a>
+            <a class="sidebar-link" href="../paragraph-shortener/">✂️ Paragraph Shortener</a>
+            <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">📝 Expansor de frases</h1>
+          <p class="tool-description">Expand short sentences into longer, more detailed text</p>
+          <textarea class="tool-input" id="text-input" placeholder="Digite seu texto curto para expandir..."
+            rows="4"></textarea>
+          <h3>Estilo de expansão</h3>
+          <div class="expansion-options">
+            <button class="exp-btn active" onclick="setStyle(this, 'detailed')">Detailed</button>
+            <button class="exp-btn" onclick="setStyle(this, 'formal')">Formal</button>
+            <button class="exp-btn" onclick="setStyle(this, 'creative')">Creative</button>
+            <button class="exp-btn" onclick="setStyle(this, 'academic')">Academic</button>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="expandText()">📝 Expand Text</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Limpar</button>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Texto Expandido</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>O que é expansão de frase?</h2>
+        <p>A expansão de frase é o processo de adicionar detalhes de apoio, contexto, exemplos e explicação a um
+          declaração concisa. Uma frase básica como "Exercício é importante" pode ser expandida para incluir: <em>por
+            que</em> é
+          importante (saúde cardiovascular, bem-estar mental), <em>quanto</em> é recomendado (150 minutos por semana),
+          <em>quem se beneficia</em> (todas as faixas etárias) e <em>quais são as consequências da inação</em>. Boa
+          expansão
+          não preenche – acrescenta valor informativo genuíno. O resultado é um conteúdo mais rico que constrói o leitor
+          compreensão e aumenta a profundidade da ideia original.
+        </p>
+
+        <h2>Como usar o expansor de frases</h2>
+        <ol>
+          <li><strong>Digite sua frase curta ou ideia</strong> no campo de entrada.</li>
+          <li>Escolha um <strong>nível de expansão</strong>: Curto (1–2 frases), Médio (1 parágrafo) ou Longo (2–3
+            frases).
+            parágrafos).</li>
+          <li>Selecione o <strong>tom</strong>: formal, coloquial, acadêmico ou criativo.</li>
+          <li>O texto expandido aparece no painel de saída.</li>
+          <li><strong>Copie</strong> o resultado e incorpore-o ao seu documento ou rascunho.</li>
+        </ol>
+
+        <h2>Por que a expansão de frases melhora a escrita</h2>
+        <p>A escrita superficial é o motivo mais comum pelo qual o conteúdo apresenta baixo desempenho - tanto para
+          leitores humanos quanto para pesquisa
+          algoritmos. O sistema de Conteúdo Útil do Google recompensa profundidade e especificidade. Um parágrafo bem
+          expandido que
+          explica o mecanismo por trás de uma afirmação, cita o contexto e aborda as prováveis perguntas de
+          acompanhamento do leitor
+          tem um desempenho dramaticamente melhor tanto nas métricas de engajamento quanto na classificação de pesquisa.
+          Para os estudantes, a expansão se desenvolve
+          pensamento crítico – a capacidade de identificar por que algo é verdade, como funciona e por que é importante
+          – habilidades
+          que se transferem para todas as disciplinas acadêmicas.</p>
+
+        <h2>Exemplos de expansão</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Short Sentence</th>
+              <th>Expanded Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"Hydration is important."</td>
+              <td>"Staying adequately hydrated supports virtually every system in the human body. Water regulates body
+                temperature through perspiration, cushions joints, aids digestion, and facilitates the transport of
+                nutrients to cells. Adults should aim for approximately 2–3 liters daily, with higher intake during
+                exercise, hot weather, or illness."</td>
+            </tr>
+            <tr>
+              <td>"Social media takes time."</td>
+              <td>"Managing multiple social media accounts is a significant time commitment that many businesses
+                underestimate. Between content creation, scheduling, community management, and analytics review,
+                effective social media marketing can consume 15–20 hours per week — time that must be factored into
+                marketing strategy and budget planning."</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Comparação de níveis de expansão</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Added Content</th>
+              <th>Output Length</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light</td>
+              <td>1 supporting detail</td>
+              <td>2–3 sentences</td>
+              <td>Quick elaboration</td>
+            </tr>
+            <tr>
+              <td>Medium</td>
+              <td>Context + example</td>
+              <td>1 paragraph</td>
+              <td>Blog body paragraphs</td>
+            </tr>
+            <tr>
+              <td>Full</td>
+              <td>Why + How + Example + So What</td>
+              <td>2–3 paragraphs</td>
+              <td>Academic writing, long-form</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como o expansor adiciona conteúdo sem inventar?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O expansor usa elaboração baseada em padrões – adicionando estruturas factuais (causa,
+                efeito,
+                exemplo, comparação, qualificação) em torno da afirmação principal. Para profundidade factual, sempre
+                verifique expandido
+                conteúdo contra fontes confiáveis.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Posso expandir os marcadores em parágrafos?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim. Insira cada marcador ou frase curta como uma frase e expanda-os
+                individualmente. A ferramenta funciona em qualquer declaração declarativa, não apenas em frases
+                completas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">O conteúdo expandido é bom para SEO?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O conteúdo expandido adiciona profundidade semântica, aumenta a contagem de palavras e
+                cobre mais assuntos relacionados
+                entidades – todos sinais positivos de SEO. No entanto, texto preenchido artificialmente (expansão de
+                preenchimento sem
+                valor informativo) pode prejudicar as classificações. Use a expansão para explicar ideias genuinamente,
+                não apenas para encontrar palavras
+                contar.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Os falantes não nativos de inglês podem usar isso para redação
+              acadêmica?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim — esta ferramenta é particularmente útil para falantes não nativos que têm uma
+                ideia clara
+                mas tenho dificuldade em elaborar em inglês. Use a saída expandida como rascunho inicial e refine-a com
+                sua própria voz e exemplos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">A ferramenta funciona para ficção e escrita criativa?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O expansor funciona melhor para redação informativa e expositiva. Para ficção criativa,
+                use-o para expandir as descrições das cenas ou pensamentos dos personagens e, em seguida, refaça o
+                resultado para corresponder ao seu
+                voz narrativa.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas utilitárias</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    let currentStyle = 'detailed';
+
+    const expansions = {
+      detailed: {
+        prefixes: ['In essence, ', 'To elaborate further, ', 'More specifically, ', 'In other words, '],
+        connectors: [', which means that ', ', and this implies that ', ', furthermore, ', ', additionally, '],
+        suffixes: [' in a significant way.', ' to a considerable extent.', ', among other things.', ' in this particular context.']
+      },
+      formal: {
+        prefixes: ['It is worth noting that ', 'It should be mentioned that ', 'One must consider that ', 'It is important to recognize that '],
+        connectors: [', consequently, ', ', therefore, ', ', as a result, ', ', hence, '],
+        suffixes: [' in accordance with established principles.', ' within the given framework.', ' as per standard conventions.', '.']
+      },
+      creative: {
+        prefixes: ['Imagine this: ', 'Picture this scenario: ', 'Consider the fascinating idea that ', 'Here\'s the thing: '],
+        connectors: [', and interestingly enough, ', ', which beautifully illustrates how ', ', and remarkably, ', ', sparking the realization that '],
+        suffixes: [' in ways we never imagined.', ', creating endless possibilities.', ', opening new horizons.', ' with remarkable elegance.']
+      },
+      academic: {
+        prefixes: ['Research suggests that ', 'According to current understanding, ', 'Evidence indicates that ', 'Studies have shown that '],
+        connectors: [', which demonstrates that ', ', thereby indicating that ', ', as evidenced by the fact that ', ', suggesting that '],
+        suffixes: [' within the scope of this analysis.', ' as documented in relevant literature.', ' based on empirical observations.', '.']
+      }
+    };
+
+    function setStyle(btn, style) {
+      document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStyle = style;
+    }
+
+    function expandText() {
+      const text = document.getElementById('text-input').value.trim();
+      if (!text) {
+        document.getElementById('output-text').value = '';
+        return;
+      }
+
+      const style = expansions[currentStyle];
+      const sentences = text.split(/(?<=[.!?])\s+/).filter(s => s.trim());
+
+      const expanded = sentences.map(sentence => {
+        const prefix = style.prefixes[Math.floor(Math.random() * style.prefixes.length)];
+        const connector = style.connectors[Math.floor(Math.random() * style.connectors.length)];
+        const suffix = style.suffixes[Math.floor(Math.random() * style.suffixes.length)];
+
+        let expanded = sentence.trim();
+        if (!expanded.endsWith('.') && !expanded.endsWith('!') && !expanded.endsWith('?')) {
+          expanded += '.';
+        }
+
+        return prefix + expanded.charAt(0).toLowerCase() + expanded.slice(1, -1) + connector + 'this concept is particularly relevant' + suffix;
+      });
+
+      document.getElementById('output-text').value = expanded.join(' ');
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Line Break Fixer - Ferramentas de texto online gratuitas</title>
+  <meta
+    content="Ferramenta online gratuita para fixar quebra de linha. Utilitários de formatação e estilo de texto rápidos, seguros e com proteção de privacidade."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/line-break-fixer/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/line-break-fixer/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/line-break-fixer/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/line-break-fixer/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/line-break-fixer/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/line-break-fixer/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .mode-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .mode-btn {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .mode-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .mode-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Utility Tools
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../text-cleaner/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Text Cleaner</span>
+            </a>
+            <a class="sidebar-link" href="../remove-duplicate-lines/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Remove Duplicates</span>
+            </a>
+            <a class="sidebar-link active" href="../line-break-fixer/">
+              <span class="link-icon">↵</span>
+              <span class="link-text">Line Break Fixer</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Browse Tools
+        </button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">↵ Fixador de quebra de linha</h1>
+          <p class="tool-description">Fix broken lines, remove unwanted line breaks, or format text into
+            proper paragraphs</p>
+          <textarea class="tool-input" id="text-input" placeholder="Cole o texto com linhas quebradas aqui..."
+            rows="8"></textarea>
+          <h3 style="margin-top: 1rem;">Selecione o modo</h3>
+          <div class="mode-buttons">
+            <button class="mode-btn active" data-mode="join" onclick="setMode(this, 'join')">Join broken lines</button>
+            <button class="mode-btn" data-mode="single" onclick="setMode(this, 'single')">Single line</button>
+            <button class="mode-btn" data-mode="double" onclick="setMode(this, 'double')">Double spacing</button>
+            <button class="mode-btn" data-mode="number" onclick="setMode(this, 'number')">Add line numbers</button>
+            <button class="mode-btn" data-mode="remove-empty" onclick="setMode(this, 'remove-empty')">Remove empty
+              lines</button>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="fixLineBreaks()">🔧 Fix Line Breaks</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Limpar</button>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Resultado</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Fixed text will appear here..."
+            readonly=""></textarea>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Copy Result</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>O que é o Corretor de Quebras de Linha?</h2>
+        <p>O Corretor de Quebras de Linha é uma ferramenta essencial para recuperar textos com quebras de linha
+          indesejadas decorrentes de cópias de PDFs, e-mails ou leituras OCR. Junta frases interrompidas e organiza
+          parágrafos contínuos prontos para publicação.</p>
+
+        <h2>Como usar esta ferramenta</h2>
+        <ol>
+          <li><strong>Cole o texto quebrado</strong> no campo de entrada.</li>
+          <li><strong>Escolha a ação de limpeza:</strong> unir frases quebradas ou eliminar linhas em branco extras.
+          </li>
+          <li><strong>Veja o texto corrigido</strong> formatado com leitura contínua.</li>
+          <li>Clique em <strong>Copiar</strong> para utilizar o conteúdo restaurado.</li>
+
+        </ol>
+
+        <h2>Por que usar o fixador de quebra de linha?</h2>
+        <p>Utilizar o fixador de quebra de linha economiza tempo e traz uma identidade visual única para sua presença
+          digital. Em vez disso
+          do que o texto padrão simples que combina com qualquer outra postagem ou perfil, o texto estilizado chama
+          imediatamente a atenção
+          e comunica personalidade. Isso é particularmente valioso em plataformas como Instagram, TikTok, Discord e
+          redes de jogos onde se destacar em um feed lotado ou em uma lista de jogadores impacta diretamente o
+          engajamento e
+          descoberta. A ferramenta funciona inteiramente no seu navegador – sem instalação, sem conta, sem dados
+          armazenados.</p>
+
+        <h2>Casos de uso comuns</h2>
+        <ul>
+          <li><strong>Biografias de mídia social:</strong> torne sua biografia do Instagram, TikTok ou Twitter
+            visualmente distinta.</li>
+          <li><strong>Perfis de jogos:</strong> destaque-se no Roblox, Steam e outros lobbies de jogos com um estilo
+            único
+            nome.</li>
+          <li><strong>Servidores Discord:</strong> use texto estilizado para nomes de canais e descrições de servidores.
+          </li>
+          <li><strong>Escrita criativa:</strong> adicione variedade visual a legendas, citações e postagens narrativas.
+          </li>
+          <li><strong>Criação de conteúdo:</strong> diferencie os cabeçalhos das seções em legendas longas do Instagram
+            ou LinkedIn
+            postagens.</li>
+        </ul>
+
+        <h2>Compatibilidade de plataforma</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Works?</th>
+              <th>Recommended Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Instagram</td>
+              <td>✅ Yes</td>
+              <td>Bio, captions, comments</td>
+            </tr>
+            <tr>
+              <td>TikTok</td>
+              <td>✅ Yes</td>
+              <td>Bio, video description</td>
+            </tr>
+            <tr>
+              <td>Twitter / X</td>
+              <td>✅ Yes</td>
+              <td>Display name, bio, tweets</td>
+            </tr>
+            <tr>
+              <td>Discord</td>
+              <td>✅ Yes</td>
+              <td>Username, messages, server names</td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td>✅ Yes</td>
+              <td>Status, name, messages</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>✅ Yes</td>
+              <td>Posts, bio</td>
+            </tr>
+            <tr>
+              <td>Roblox</td>
+              <td>✅ Yes</td>
+              <td>Display name</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Esta ferramenta é totalmente gratuita?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim – o fixador de quebra de linha é 100% gratuito e sem limites. Não há conta
+                obrigatório, sem marca d'água na saída e sem limite de uso diário.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">A saída funciona em dispositivos móveis?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim. O texto estilizado é unicode padrão que é exibido corretamente em todos os iOS e
+                Dispositivos Android. Basta copiar o resultado e colar em qualquer aplicativo móvel.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Meu texto é armazenado ou compartilhado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Não. O fixador de quebra de linha processa seu texto inteiramente em seu navegador
+                usando JavaScript.
+                Nada é carregado em um servidor. Sua entrada nunca é armazenada, registrada ou compartilhada.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Posso usar o resultado no meu nome de usuário?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">A maioria das plataformas permite Unicode em nomes de exibição, mas restringe nomes de
+                usuário/identificadores reais a
+                Caracteres ASCII. Os nomes de exibição no Instagram, Discord, Twitter e TikTok geralmente oferecem
+                suporte a Unicode.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">E se alguns caracteres aparecerem como caixas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">As caixas indicam que o dispositivo não tem suporte para fontes Unicode específicas.
+                personagens. Experimente uma variante de estilo diferente ou atualize o software do sistema do seu
+                dispositivo para incluir
+                cobertura de fonte unicode.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas utilitárias</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="../line-break-fixer/">↵ Line Break Fixer</a>
+        <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+      </nav>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    let currentMode = 'join';
+
+    function setMode(btn, mode) {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = mode;
+      fixLineBreaks();
+    }
+
+    function fixLineBreaks() {
+      const text = document.getElementById('text-input').value;
+      let result = '';
+
+      switch (currentMode) {
+        case 'join':
+          result = text.replace(/([^\n])\n([^\n])/g, '$1 $2').replace(/  +/g, ' ');
+          break;
+        case 'single':
+          result = text.replace(/\n+/g, ' ').replace(/  +/g, ' ').trim();
+          break;
+        case 'double':
+          result = text.split('\n').filter(l => l.trim()).join('\n\n');
+          break;
+        case 'number':
+          result = text.split('\n').map((line, i) => `${i + 1}. ${line}`).join('\n');
+          break;
+        case 'remove-empty':
+          result = text.split('\n').filter(l => l.trim()).join('\n');
+          break;
+      }
+
+      document.getElementById('output-text').value = result;
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => {
+        alert('Copied!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contador de comprimento de legenda - Contador de estatísticas de caracteres e texto ao vivo</title>
+<meta content="Conte palavras, caracteres e espaços em tempo real. Um contador de comprimento de legenda online gratuito para verificar o comprimento do texto e o tempo de conversação de forma dinâmica." name="description"/>
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .platform-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            transition: all var(--transition);
+        }
+
+        .platform-card.good {
+            border-color: var(--success);
+            background: var(--success-light);
+        }
+
+        .platform-card.warning {
+            border-color: var(--warning);
+            background: var(--warning-light);
+        }
+
+        .platform-card.bad {
+            border-color: var(--danger);
+            background: var(--danger-light);
+        }
+
+        .platform-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .platform-icon {
+            font-size: 1.5rem;
+        }
+
+        .platform-name {
+            font-weight: 600;
+        }
+
+        .platform-type {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .platform-status {
+            text-align: right;
+        }
+
+        .char-display {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .status-text {
+            font-size: 0.75rem;
+        }
+
+        .main-counter {
+            text-align: center;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-counter .count {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .main-counter .label {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--foreground);
+        }
+
+        .stat-box .label {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/pt/caption-length-counter/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/caption-length-counter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/caption-length-counter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/caption-length-counter/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/caption-length-counter/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/caption-length-counter/" />
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+<div class="sidebar-section">
+<div class="sidebar-header">
+<span class="icon">📱</span>
+                        Social Media Tools
+                    </div>
+<nav class="sidebar-nav">
+<a class="sidebar-link" href="../instagram-caption-generator/">
+<span class="link-icon">📸</span>
+<span class="link-text">Instagram Caption</span>
+</a>
+<a class="sidebar-link" href="../tiktok-caption-generator/">
+<span class="link-icon">🎵</span>
+<span class="link-text">TikTok Caption</span>
+</a>
+<a class="sidebar-link" href="../youtube-title-generator/">
+<span class="link-icon">▶️</span>
+<span class="link-text">YouTube Title</span>
+</a>
+<a class="sidebar-link" href="../instagram-bio-generator/">
+<span class="link-icon">✨</span>
+<span class="link-text">Instagram Bio</span>
+</a>
+<a class="sidebar-link" href="../tiktok-bio-formatter/">
+<span class="link-icon">🎭</span>
+<span class="link-text">TikTok Bio</span>
+</a>
+<a class="sidebar-link active" href="../caption-length-counter/">
+<span class="link-icon">📊</span>
+<span class="link-text">Length Counter</span>
+</a>
+<a class="sidebar-link" href="../hashtag-generator/">
+<span class="link-icon">#️⃣</span>
+<span class="link-text">Hashtag Generator</span>
+</a>
+</nav>
+</div>
+</aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Browse Tools
+                </button>
+<div class="tool-input-section">
+<h1 class="tool-title">📊 Contador de comprimento da legenda</h1>
+<p class="tool-description">Check if your text fits social media character limits</p>
+<label class="tool-label">Cole sua legenda ou biografia</label>
+<textarea class="tool-input" id="text-input" oninput="updateCount()" placeholder="Cole seu texto aqui para verificar o comprimento..." style="min-height: 150px;"></textarea>
+<div class="main-counter">
+<div class="count" id="main-count">0</div>
+<div class="label">characters</div>
+</div>
+<div class="stats-row">
+<div class="stat-box">
+<div class="value" id="word-count">0</div>
+<div class="label">Words</div>
+</div>
+<div class="stat-box">
+<div class="value" id="line-count">0</div>
+<div class="label">Lines</div>
+</div>
+<div class="stat-box">
+<div class="value" id="emoji-count">0</div>
+<div class="label">Emojis</div>
+</div>
+</div>
+<h3 style="margin-bottom: 1rem;">Compatibilidade de plataforma</h3>
+<div id="platforms-container"></div>
+</div>
+</div>
+</div>
+
+<!-- ═══ SEO CONTENT SECTION ═══ -->
+<section class="seo-content-section">
+  <div class="container">
+
+    <h2>O que é o contador de comprimento da legenda?</h2>
+<p>O contador de comprimento de legenda é um utilitário de formatação de texto que converte texto de entrada padrão em uma versão estilizada ou transformada usando caracteres Unicode ou algoritmos de processamento de texto. Essas saídas geradas são caracteres de texto reais – não imagens – o que significa que eles copiam, colam e são exibidos corretamente em praticamente todos os aplicativos modernos, plataformas de mídia social e serviços de mensagens que renderizam texto unicode.</p>
+
+    <h2>Como usar esta ferramenta</h2>
+<ol>
+  <li><strong>Digite ou cole seu texto</strong> no campo de entrada acima.</li>
+  <li>A ferramenta <strong>processa instantaneamente</strong> sua entrada e mostra o resultado.</li>
+  <li>Navegue pelas opções ou configurações de estilo que aparecem.</li>
+  <li>Clique em <strong>Copiar</strong> para copiar seu resultado.</li>
+  <li><strong>Cole</strong> no Instagram, Discord, Twitter, WhatsApp ou em qualquer campo de texto.</li>
+</ol>
+
+    <h2>Por que usar o contador de comprimento da legenda?</h2>
+<p>Usar o contador de comprimento da legenda economiza tempo e traz uma identidade visual exclusiva para sua presença digital. Em vez de texto padrão simples que se mistura a qualquer outra postagem ou perfil, o texto estilizado chama imediatamente a atenção e comunica personalidade. Isso é particularmente valioso em plataformas como Instagram, TikTok, Discord e redes de jogos, onde se destacar em um feed lotado ou em uma lista de jogadores impacta diretamente o envolvimento e a descoberta. A ferramenta funciona inteiramente no seu navegador – sem instalação, sem conta, sem dados armazenados.</p>
+
+    <h2>Casos de uso comuns</h2>
+<ul>
+  <li><strong>Biografias de mídia social:</strong> torne sua biografia do Instagram, TikTok ou Twitter visualmente distinta.</li>
+  <li><strong>Perfis de jogos:</strong> destaque-se no Roblox, Steam e outros lobbies de jogos com um nome de estilo exclusivo.</li>
+  <li><strong>Servidores Discord:</strong> use texto estilizado para nomes de canais e descrições de servidores.</li>
+  <li><strong>Escrita criativa:</strong> adicione variedade visual a legendas, citações e postagens narrativas.</li>
+  <li><strong>Criação de conteúdo:</strong> diferencie os cabeçalhos das seções em legendas longas do Instagram ou postagens do LinkedIn.</li>
+</ul>
+
+    <h2>Compatibilidade de plataforma</h2>
+<table>
+  <thead><tr><th>Platform</th><th>Works?</th><th>Recommended Use</th></tr></thead>
+  <tbody>
+    <tr><td>Instagram</td><td>✅ Yes</td><td>Bio, captions, comments</td></tr>
+    <tr><td>TikTok</td><td>✅ Yes</td><td>Bio, video description</td></tr>
+    <tr><td>Twitter / X</td><td>✅ Yes</td><td>Display name, bio, tweets</td></tr>
+    <tr><td>Discord</td><td>✅ Yes</td><td>Username, messages, server names</td></tr>
+    <tr><td>WhatsApp</td><td>✅ Yes</td><td>Status, name, messages</td></tr>
+    <tr><td>Facebook</td><td>✅ Yes</td><td>Posts, bio</td></tr>
+    <tr><td>Roblox</td><td>✅ Yes</td><td>Display name</td></tr>
+  </tbody>
+</table>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Esta ferramenta é totalmente gratuita?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim - o contador de comprimento da legenda é 100% gratuito e sem limites. Não é necessária nenhuma conta, nenhuma marca d'água na saída e nenhum limite de uso diário.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">A saída funciona em dispositivos móveis?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. O texto estilizado é unicode padrão que é exibido corretamente em todos os dispositivos iOS e Android modernos. Basta copiar o resultado e colar em qualquer aplicativo móvel.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Meu texto é armazenado ou compartilhado?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. O contador de comprimento da legenda processa seu texto inteiramente em seu navegador usando JavaScript. Nada é carregado em um servidor. Sua entrada nunca é armazenada, registrada ou compartilhada.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Posso usar o resultado no meu nome de usuário?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">A maioria das plataformas permite Unicode em nomes de exibição, mas restringe nomes de usuário/identificadores reais a caracteres ASCII. Os nomes de exibição no Instagram, Discord, Twitter e TikTok geralmente oferecem suporte a Unicode.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">E se alguns caracteres aparecerem como caixas?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">As caixas indicam que o dispositivo não tem suporte de fonte para esses caracteres Unicode específicos. Experimente uma variante de estilo diferente ou atualize o software do sistema do seu dispositivo para incluir uma cobertura mais ampla de fontes Unicode.</p>
+    </div>
+  </div>
+    </div>
+
+  </div>
+</section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+<div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+<div class="mobile-sidebar-header">
+<h3>📱 Ferramentas de mídia social</h3>
+<button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+</div>
+<nav class="sidebar-nav">
+<a class="sidebar-link active" href="../caption-length-counter/">📊 Length Counter</a>
+<a class="sidebar-link" href="../hashtag-generator/">#️⃣ Hashtag Generator</a>
+</nav>
+</div>
+</div>
+<div id="footer-placeholder"></div>
+<script defer="" src="../../js/includes.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        const platforms = [
+            { name: 'Twitter/X', icon: '🐦', type: 'Post', limit: 280 },
+            { name: 'Instagram', icon: '📸', type: 'Caption', limit: 2200 },
+            { name: 'Instagram', icon: '📸', type: 'Bio', limit: 150 },
+            { name: 'TikTok', icon: '🎵', type: 'Caption', limit: 2200 },
+            { name: 'TikTok', icon: '🎵', type: 'Bio', limit: 80 },
+            { name: 'YouTube', icon: '▶️', type: 'Title', limit: 100 },
+            { name: 'YouTube', icon: '▶️', type: 'Description', limit: 5000 },
+            { name: 'LinkedIn', icon: '💼', type: 'Post', limit: 3000 },
+            { name: 'Facebook', icon: '👤', type: 'Post', limit: 63206 },
+            { name: 'Pinterest', icon: '📌', type: 'Description', limit: 500 }
+        ];
+
+        function updateCount() {
+            const text = document.getElementById('text-input').value;
+            const charCount = text.length;
+            const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
+            const lineCount = text ? text.split('\n').length : 0;
+            const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu;
+            const emojis = text.match(emojiRegex);
+            const emojiCount = emojis ? emojis.length : 0;
+
+            document.getElementById('main-count').textContent = charCount;
+            document.getElementById('word-count').textContent = wordCount;
+            document.getElementById('line-count').textContent = lineCount;
+            document.getElementById('emoji-count').textContent = emojiCount;
+
+            renderPlatforms(charCount);
+        }
+
+        function renderPlatforms(charCount) {
+            const container = document.getElementById('platforms-container');
+            container.innerHTML = platforms.map(p => {
+                const percentage = (charCount / p.limit) * 100;
+                let statusClass = 'good';
+                let statusText = '✓ Fits perfectly';
+                
+                if (percentage > 100) {
+                    statusClass = 'bad';
+                    statusText = `❌ ${charCount - p.limit} over`;
+                } else if (percentage > 80) {
+                    statusClass = 'warning';
+                    statusText = `⚠️ ${p.limit - charCount} left`;
+                } else {
+                    statusText = `✓ ${p.limit - charCount} left`;
+                }
+
+                return `
+                <div class="platform-card ${statusClass}">
+                    <div class="platform-info">
+                        <span class="platform-icon">${p.icon}</span>
+                        <div>
+                            <div class="platform-name">${p.name}</div>
+                            <div class="platform-type">${p.type} (${p.limit} max)</div>
+                        </div>
+                    </div>
+                    <div class="platform-status">
+                        <div class="char-display">${charCount}/${p.limit}</div>
+                        <div class="status-text">${statusText}</div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize
+        updateCount();
+    </script>
+</body>
+</html>

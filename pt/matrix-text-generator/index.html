@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Matrix Text Generator - Copie e cole fontes elegantes</title>
+<meta content="Gerador de texto matricial online gratuito. Gere e copie estilos de fonte, letras e configurações de texto personalizados exclusivos para biografias e postagens em mídias sociais." name="description"/>
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .matrix-preview {
+            background: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        #matrix-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .matrix-text-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            z-index: 10;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #0f0;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input,
+        .setting-item select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .text-styles {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .style-item {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .style-text {
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            font-size: 1.1rem;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/pt/matrix-text-generator/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/matrix-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/matrix-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/matrix-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/matrix-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/matrix-text-generator/" />
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+<div class="sidebar-section">
+<div class="sidebar-header">
+<span class="icon">🎮</span>
+                        Fun Text Tools
+                    </div>
+<nav class="sidebar-nav">
+<a class="sidebar-link" href="../typing-effect-text-generator/">
+<span class="link-icon">⌨️</span>
+<span class="link-text">Typing Effect</span>
+</a>
+<a class="sidebar-link" href="../glitch-effect-text-generator/">
+<span class="link-icon">📺</span>
+<span class="link-text">Glitch Effect</span>
+</a>
+<a class="sidebar-link active" href="../matrix-text-generator/">
+<span class="link-icon">💊</span>
+<span class="link-text">Matrix Text</span>
+</a>
+<a class="sidebar-link" href="../animated-text-generator/">
+<span class="link-icon">🎬</span>
+<span class="link-text">Animated Text</span>
+</a>
+</nav>
+</div>
+</aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Browse Tools
+                </button>
+<div class="tool-input-section">
+<h1 class="tool-title">💊 Gerador de texto matricial</h1>
+<p class="tool-description">Create Matrix-style digital rain and text effects</p>
+<div class="setting-item" style="margin-bottom: 1rem;">
+<label>Your Text</label>
+<input class="tool-input" id="text-input" oninput="updateDisplay()" style="font-size: 1.2rem;" type="text" value="THE MATRIX"/>
+</div>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Rain Speed</label>
+<select id="rain-speed" onchange="restartMatrix()">
+<option value="slow">Slow</option>
+<option selected="" value="medium">Medium</option>
+<option value="fast">Fast</option>
+</select>
+</div>
+<div class="setting-item">
+<label>Rain Density</label>
+<select id="rain-density" onchange="restartMatrix()">
+<option value="light">Light</option>
+<option selected="" value="medium">Medium</option>
+<option value="heavy">Heavy</option>
+</select>
+</div>
+</div>
+<div class="tool-actions">
+<button class="btn btn-primary" onclick="restartMatrix()">🔄 Restart Animation</button>
+<button class="btn btn-secondary" onclick="toggleText()">👁️ Toggle Text</button>
+</div>
+</div>
+<div class="matrix-preview">
+<canvas id="matrix-canvas"></canvas>
+<div class="matrix-text-display" id="matrix-text">THE MATRIX</div>
+</div>
+<div class="tool-output-section">
+<h3>Texto em estilo de matriz (copiar e colar)</h3>
+<div class="text-styles" id="text-styles"></div>
+</div>
+</div>
+</div>
+
+<!-- ═══ SEO CONTENT SECTION ═══ -->
+<section class="seo-content-section">
+  <div class="container">
+
+    <h2>O que é o Gerador de Texto Matrix?</h2>
+        <p>O Gerador de Texto Matrix é uma ferramenta visual interativa inspirada na icônica "chuva digital" de código verde do clássico filme Matrix. Permite que você personalize e transforme suas frases em caracteres de terminal caindo em animação ou copie tipografias hacker em fonte monoespaçada. Perfeito para biografias de desenvolvedores, streams de games, servidores no Discord e temas cyberpunk.</p>
+
+    <h2>Como usar esta ferramenta</h2>
+<ol>
+          <li><strong>Digite sua frase ou palavra</strong> no campo de entrada acima.</li>
+          <li><strong>Selecione o estilo cyberpunk desejado:</strong> ajuste a fonte de terminal, velocidade da chuva ou glifos verdes.</li>
+          <li><strong>Personalize as cores:</strong> escolha o clássico verde fósforo Matrix, azul ciber ou roxo neon.</li>
+          <li><strong>Copie a tipografia hacker</strong> ou utilize a animação em canvas para seus projetos.</li>
+      
+        </ol>
+
+    <h2>Por que usar o gerador de texto matricial?</h2>
+<p>Utilizar o gerador de texto matricial economiza tempo e traz uma identidade visual única para sua presença digital. Em vez de texto padrão simples que se mistura a qualquer outra postagem ou perfil, o texto estilizado chama imediatamente a atenção e comunica personalidade. Isso é particularmente valioso em plataformas como Instagram, TikTok, Discord e redes de jogos, onde se destacar em um feed lotado ou em uma lista de jogadores afeta diretamente o envolvimento e a descoberta. A ferramenta funciona inteiramente no seu navegador – sem instalação, sem conta, sem dados armazenados.</p>
+
+    <h2>Casos de uso comuns</h2>
+<ul>
+  <li><strong>Biografias de mídia social:</strong> torne sua biografia do Instagram, TikTok ou Twitter visualmente distinta.</li>
+  <li><strong>Perfis de jogos:</strong> destaque-se no Roblox, Steam e outros lobbies de jogos com um nome de estilo exclusivo.</li>
+  <li><strong>Servidores Discord:</strong> use texto estilizado para nomes de canais e descrições de servidores.</li>
+  <li><strong>Escrita criativa:</strong> adicione variedade visual a legendas, citações e postagens narrativas.</li>
+  <li><strong>Criação de conteúdo:</strong> diferencie os cabeçalhos das seções em legendas longas do Instagram ou postagens do LinkedIn.</li>
+</ul>
+
+    <h2>Compatibilidade de plataforma</h2>
+<table>
+  <thead><tr><th>Platform</th><th>Works?</th><th>Recommended Use</th></tr></thead>
+  <tbody>
+    <tr><td>Instagram</td><td>✅ Yes</td><td>Bio, captions, comments</td></tr>
+    <tr><td>TikTok</td><td>✅ Yes</td><td>Bio, video description</td></tr>
+    <tr><td>Twitter / X</td><td>✅ Yes</td><td>Display name, bio, tweets</td></tr>
+    <tr><td>Discord</td><td>✅ Yes</td><td>Username, messages, server names</td></tr>
+    <tr><td>WhatsApp</td><td>✅ Yes</td><td>Status, name, messages</td></tr>
+    <tr><td>Facebook</td><td>✅ Yes</td><td>Posts, bio</td></tr>
+    <tr><td>Roblox</td><td>✅ Yes</td><td>Display name</td></tr>
+  </tbody>
+</table>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Esta ferramenta é totalmente gratuita?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim - o gerador de texto matricial é 100% gratuito e sem limites. Não é necessária nenhuma conta, nenhuma marca d'água na saída e nenhum limite de uso diário.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">A saída funciona em dispositivos móveis?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. O texto estilizado é unicode padrão que é exibido corretamente em todos os dispositivos iOS e Android modernos. Basta copiar o resultado e colar em qualquer aplicativo móvel.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Meu texto é armazenado ou compartilhado?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. O gerador de texto matricial processa seu texto inteiramente em seu navegador usando JavaScript. Nada é carregado em um servidor. Sua entrada nunca é armazenada, registrada ou compartilhada.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Posso usar o resultado no meu nome de usuário?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">A maioria das plataformas permite Unicode em nomes de exibição, mas restringe nomes de usuário/identificadores reais a caracteres ASCII. Os nomes de exibição no Instagram, Discord, Twitter e TikTok geralmente oferecem suporte a Unicode.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">E se alguns caracteres aparecerem como caixas?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">As caixas indicam que o dispositivo não tem suporte de fonte para esses caracteres Unicode específicos. Experimente uma variante de estilo diferente ou atualize o software do sistema do seu dispositivo para incluir uma cobertura mais ampla de fontes Unicode.</p>
+    </div>
+  </div>
+    </div>
+
+  </div>
+</section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+<div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+<div class="mobile-sidebar-header">
+<h3>🎮 Ferramentas divertidas</h3>
+<button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+</div>
+</div>
+</div>
+<div id="footer-placeholder"></div>
+<script defer="" src="../../js/includes.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        let animationId;
+        let showText = true;
+
+        const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const chars = katakana + latin + nums;
+
+        let columns, drops;
+
+        function initMatrix() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            const density = document.getElementById('rain-density').value;
+            const fontSize = density === 'light' ? 18 : density === 'medium' ? 14 : 10;
+            
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+            
+            return fontSize;
+        }
+
+        function drawMatrix() {
+            const speed = document.getElementById('rain-speed').value;
+            const fontSize = initMatrix();
+            
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+            
+            const delay = speed === 'slow' ? 80 : speed === 'medium' ? 50 : 30;
+            animationId = setTimeout(() => requestAnimationFrame(drawMatrix), delay);
+        }
+
+        function restartMatrix() {
+            if (animationId) {
+                clearTimeout(animationId);
+                cancelAnimationFrame(animationId);
+            }
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            drawMatrix();
+        }
+
+        function updateDisplay() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            document.getElementById('matrix-text').textContent = text;
+            generateStyles();
+        }
+
+        function toggleText() {
+            showText = !showText;
+            document.getElementById('matrix-text').style.display = showText ? 'block' : 'none';
+        }
+
+        function generateStyles() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            const upper = text.toUpperCase();
+            
+            const styles = [
+                { name: 'Matrix Style', text: '【 ' + upper + ' 】' },
+                { name: 'Binary Frame', text: '01 ' + upper + ' 10' },
+                { name: 'Hacker', text: '> ' + upper + ' _' },
+                { name: 'System', text: '[SYSTEM]: ' + upper },
+                { name: 'Code', text: '$ sudo ' + text.toLowerCase() },
+                { name: 'Glowing', text: '✦ ' + upper + ' ✦' },
+                { name: 'Terminal', text: 'C:\\> ' + upper },
+                { name: 'Access', text: '▓▓▓ ' + upper + ' ▓▓▓' }
+            ];
+
+            document.getElementById('text-styles').innerHTML = styles.map(s => `
+                <div class="style-item">
+                    <span class="style-text">${escapeHtml(s.text)}</span>
+                    <button class="btn btn-secondary btn-sm" onclick="copyStyle('${s.text.replace(/'/g, "\\'")}')">📋</button>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function copyStyle(text) {
+            navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize
+        window.addEventListener('resize', () => {
+            restartMatrix();
+        });
+        
+        restartMatrix();
+        generateStyles();
+    </script>
+</body>
+</html>

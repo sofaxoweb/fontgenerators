@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Paragraph Shortener - Free Online Text Tools</title>
+  <meta
+    content="Free online Paragraph Shortener tool. Quick, secure, and privacy-safe text formatting and style utilities."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/paragraph-shortener/" rel="canonical" />
+  <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/paragraph-shortener/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/paragraph-shortener/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/paragraph-shortener/" />
+  <link href="../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .stat {
+      color: var(--muted);
+    }
+
+    .stat strong {
+      color: var(--primary);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Utility Tools</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">📊 Word Counter</a>
+            <a class="sidebar-link" href="../sentence-expander/">📝 Sentence Expander</a>
+            <a class="sidebar-link active" href="../paragraph-shortener/">✂️ Paragraph Shortener</a>
+            <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">✂️ Paragraph Shortener</h1>
+          <p class="tool-description">Condense long paragraphs by removing filler words and shortening
+            sentences</p>
+          <textarea class="tool-input" id="text-input" placeholder="Paste your long text here..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="shortenText()">✂️ Shorten Text</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+          </div>
+        </div>
+        <div class="stats-row">
+          <span class="stat">Original: <strong id="orig-words">0</strong> words</span>
+          <span class="stat">Shortened: <strong id="short-words">0</strong> words</span>
+          <span class="stat">Reduced by: <strong id="reduction">0%</strong></span>
+        </div>
+        <div class="tool-output-section">
+          <h3>Shortened Text</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>What Is Paragraph Shortening?</h2>
+        <p>Paragraph shortening (also called text condensation or summarization) is the process of reducing text length
+          while preserving the core meaning and key information. It differs from summarization in that shortening
+          maintains the first-person voice and detail level — it just cuts redundant phrasing, filler words, passive
+          voice, and over-explanation. Common techniques include: removing adverb-adjective pairs where one suffices,
+          replacing verbose phrases ("in the event that" → "if"), converting passive to active voice, and eliminating
+          repetition that doesn't add emphasis.</p>
+
+        <h2>How to Shorten Paragraphs</h2>
+        <ol>
+          <li><strong>Paste your paragraph</strong> into the input box above.</li>
+          <li>Set a <strong>target length</strong> or choose a compression level (25%, 50%, 75% shorter).</li>
+          <li>The tool <strong>suggests a condensed version</strong> while preserving key points.</li>
+          <li><strong>Review the output</strong> and tweak anything that needs adjustment.</li>
+          <li><strong>Copy</strong> the shortened version into your document.</li>
+        </ol>
+
+        <h2>Why Shorter Writing Is More Effective</h2>
+        <p>The average web reader scans rather than reads — studies show only 20–28% of words on a web page are actually
+          read. Shorter, denser paragraphs have higher comprehension rates because each sentence carries more weight. In
+          email, messages under 100 words get 50% higher response rates than those over 500 words. In marketing copy,
+          the best converting ads use simple, direct language. In academic writing, journals have strict word limits
+          precisely because brevity signals clear thinking. Learning to say more with less is one of the highest-value
+          writing skills you can develop.</p>
+
+        <h2>Before & After Shortening</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Text</th>
+              <th>Word Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Original</td>
+              <td>"It is absolutely essential that all team members make a concerted effort to ensure that all project
+                deliverables are completed in a timely manner and submitted to the appropriate stakeholders before the
+                deadline that has been previously established."</td>
+              <td>42 words</td>
+            </tr>
+            <tr>
+              <td>Shortened</td>
+              <td>"All team members must submit project deliverables to stakeholders before the established deadline."
+              </td>
+              <td>12 words</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Common Filler Phrases to Remove</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Verbose Phrase</th>
+              <th>Shortened Alternative</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In the event that</td>
+              <td>If</td>
+            </tr>
+            <tr>
+              <td>Due to the fact that</td>
+              <td>Because</td>
+            </tr>
+            <tr>
+              <td>At this point in time</td>
+              <td>Now</td>
+            </tr>
+            <tr>
+              <td>In order to</td>
+              <td>To</td>
+            </tr>
+            <tr>
+              <td>It is important to note that</td>
+              <td>Note: (or just state it)</td>
+            </tr>
+            <tr>
+              <td>Has the ability to</td>
+              <td>Can</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Will shortening my text change its meaning?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">The tool is designed to preserve core meaning while removing redundancy. However,
+                always review the output — some nuance may be trimmed that matters in your specific context. Use the
+                shortened version as a starting point.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">How much can you realistically shorten text?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Most paragraphs can be reduced by 20–40% without losing meaning. Legal text, which is
+                inherently verbose by design, is harder to shorten significantly without affecting interpretation.
+                Marketing copy can often be cut by 50%+ and become more effective.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Does shortening hurt SEO?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Excessively short content (under 300 words for a full article) can underperform in
+                search. But within articles, tight paragraphs improve readability metrics (dwell time, scroll depth)
+                which positively impact rankings. Trim for clarity, not for minimum word count.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Can I use this for academic writing?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes — academic writing often benefits from condensation. Cut nominalizations ('the
+                implementation of' → 'implementing'), passive voice, and hedging phrases. Some academic genres require
+                specific verbose conventions, so condense within those norms.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">What's the minimum length for a paragraph?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">A paragraph can technically be one sentence, but 3–5 sentences is optimal for
+                readability in most contexts. A single-sentence paragraph is powerful for emphasis when used sparingly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Utility Tools</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const fillerWords = ['very', 'really', 'actually', 'basically', 'literally', 'absolutely', 'completely', 'totally', 'quite', 'rather', 'somewhat', 'just', 'simply', 'definitely', 'certainly', 'obviously', 'clearly', 'essentially', 'virtually', 'practically', 'in order to', 'due to the fact that', 'in the event that', 'at this point in time', 'in my opinion', 'i think that', 'i believe that', 'it is important to note that', 'it should be noted that', 'needless to say'];
+
+    const replacements = {
+      'in order to': 'to',
+      'due to the fact that': 'because',
+      'in the event that': 'if',
+      'at this point in time': 'now',
+      'at the present time': 'now',
+      'in the near future': 'soon',
+      'a large number of': 'many',
+      'a small number of': 'few',
+      'in spite of the fact that': 'although',
+      'for the purpose of': 'for',
+      'with regard to': 'about',
+      'in reference to': 'about',
+      'on a daily basis': 'daily',
+      'each and every': 'every',
+      'first and foremost': 'first',
+      'one and only': 'only'
+    };
+
+    function shortenText() {
+      let text = document.getElementById('text-input').value;
+      const originalWords = text.trim().split(/\s+/).filter(w => w).length;
+
+      // Apply phrase replacements
+      for (const [phrase, replacement] of Object.entries(replacements)) {
+        const regex = new RegExp(phrase, 'gi');
+        text = text.replace(regex, replacement);
+      }
+
+      // Remove standalone filler words
+      for (const filler of fillerWords) {
+        const regex = new RegExp(`\\b${filler}\\b\\s*`, 'gi');
+        text = text.replace(regex, '');
+      }
+
+      // Clean up extra spaces
+      text = text.replace(/\s+/g, ' ').replace(/\s+([.,!?])/g, '$1').trim();
+
+      const shortenedWords = text.trim().split(/\s+/).filter(w => w).length;
+      const reduction = originalWords > 0 ? Math.round((1 - shortenedWords / originalWords) * 100) : 0;
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-words').textContent = originalWords;
+      document.getElementById('short-words').textContent = shortenedWords;
+      document.getElementById('reduction').textContent = reduction + '%';
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-words').textContent = '0';
+      document.getElementById('short-words').textContent = '0';
+      document.getElementById('reduction').textContent = '0%';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html>
