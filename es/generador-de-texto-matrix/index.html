@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Generador de Texto Matrix | FontGenerators.online</title>
+    <meta name="description" content="Mira la lluvia digital Matrix en vivo con tu texto brillando encima, más 8 estilos hacker copiables. Generador gratuito: pega tu texto y pruébalo ahora." />
+<meta content="Watch live Matrix digital rain with your text glowing over it, plus 8 copyable hacker text styles. Free matrix text generator — paste text and try it now." name="description" />
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .matrix-preview {
+            background: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        #matrix-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .matrix-text-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            z-index: 10;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #0f0;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input,
+        .setting-item select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .text-styles {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .style-item {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .style-text {
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            font-size: 1.1rem;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/es/generador-de-texto-matrix/" rel="canonical" />
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Generador de Texto Matrix | FontGenerators.online">
+    <meta property="og:description" content="Mira la lluvia digital Matrix en vivo con tu texto brillando encima, más 8 estilos hacker copiables. Generador gratuito: pega tu texto y pruébalo ahora.">
+    <meta property="og:url" content="https://fontgenerators.online/es/generador-de-texto-matrix/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Generador de Texto Matrix | FontGenerators.online">
+    <meta name="twitter:description" content="Mira la lluvia digital Matrix en vivo con tu texto brillando encima, más 8 estilos hacker copiables. Generador gratuito: pega tu texto y pruébalo ahora.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/matrix-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/matrix-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-matrix/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-matrix/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/matrix-metin-olusturucu/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo creo texto estilo Matrix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escribe tu texto en la herramienta de arriba y copia cualquiera de los ocho estilos hacker (Matrix, Binario, Hacker, Sistema, Código, Luminoso, Terminal, Acceso) con su botón de copiar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El generador de texto Matrix es gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí: gratis, sin cuenta y sin límites. Todo funciona en tu navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo descargar la animación de lluvia digital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La lluvia es un canvas en vivo de esta página, no un video ni un GIF. Lo que sí puedes llevarte son los ocho estilos de texto hacker copiables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué caracteres usa la lluvia digital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Katakana, letras latinas mayúsculas (A–Z) y dígitos (0–9), como en la película original de 1999: columnas de glifos verdes sobre negro que sugieren código crudo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo ajusto la velocidad y densidad de la lluvia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con los selectores sobre el canvas: velocidad lenta/media/rápida y densidad ligera/media/densa. La densidad ligera se lee calma y cinematográfica; la densa da el look de \"mainframe\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los estilos hacker funcionan en Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, son texto Unicode puro. Ten en cuenta que los lectores de pantalla los anuncian literalmente: úsalos en cadenas cortas, no en información esencial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La animación consume mucha batería?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El canvas usa CPU continuamente mientras la pestaña está abierta, así que puede calentar teléfonos modestos. Es inherente al efecto; cierra la pestaña cuando termines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar la lluvia digital en mi propia web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La técnica (columnas de glifos aleatorios + desvanecido translúcido) es una receta conocida de canvas de unas 30 líneas que puedes reimplementar en tu proyecto."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/matrix-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-matrix/" class="dropdown-link lang-choice active" data-lang="es" style="font-weight:bold;">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-matrix/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/matrix-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/matrix-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-matrix/" class="mobile-dropdown-link lang-choice active" data-lang="es" style="font-weight:bold;">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-matrix/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/matrix-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-header">
+              <span class="icon">🎮</span> Herramientas Divertidas
+            </div>
+            <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/generador-de-efecto-maquina-de-escribir/">
+              <span class="link-icon">⌨️</span>
+              <span class="link-text">Máquina de Escribir</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-texto-glitch/">
+              <span class="link-icon">📺</span>
+              <span class="link-text">Efecto Glitch</span>
+            </a>
+            <a class="sidebar-link active" href="/es/generador-de-texto-matrix/">
+              <span class="link-icon">💊</span>
+              <span class="link-text">Efecto Matrix</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-texto-animado/">
+              <span class="link-icon">🎬</span>
+              <span class="link-text">Texto Animado</span>
+            </a>
+            </nav>
+          </div>
+        </aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Explorar herramientas
+                </button>
+<div class="tool-input-section">
+<div class="tool-title">💊 Generador de Texto Matrix</div>
+<p class="tool-description">Crea lluvia digital estilo Matrix y efectos de texto</p>
+<div class="setting-item" style="margin-bottom: 1rem;">
+<label>Tu texto</label>
+<input class="tool-input" id="text-input" oninput="updateDisplay()" style="font-size: 1.2rem;" type="text" value="THE MATRIX"/>
+</div>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Velocidad de lluvia</label>
+<select id="rain-speed" onchange="restartMatrix()">
+<option value="slow">Lenta</option>
+<option selected="" value="medium">Media</option>
+<option value="fast">Rápida</option>
+</select>
+</div>
+<div class="setting-item">
+<label>Densidad de lluvia</label>
+<select id="rain-density" onchange="restartMatrix()">
+<option value="light">Ligera</option>
+<option selected="" value="medium">Media</option>
+<option value="heavy">Densa</option>
+</select>
+</div>
+</div>
+<div class="tool-actions">
+<button class="btn btn-primary" onclick="restartMatrix()">🔄 Reiniciar animación</button>
+<button class="btn btn-secondary" onclick="toggleText()">👁️ Mostrar/ocultar texto</button>
+</div>
+</div>
+<div class="matrix-preview">
+<canvas id="matrix-canvas"></canvas>
+<div class="matrix-text-display" id="matrix-text">THE MATRIX</div>
+</div>
+<div class="tool-output-section">
+<h3>Texto estilo Matrix (copiar y pegar)</h3>
+<div class="text-styles" id="text-styles"></div>
+</div>
+</div>
+</div>
+
+<!-- ═══
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/es/">Inicio</a> &nbsp;/&nbsp; <a href="/es/herramientas-de-texto-divertido/">Herramientas de Texto Divertido</a> &nbsp;/&nbsp; <span>Generador de Texto Matrix</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por el equipo editorial de FontGenerators · Última actualización: 12 de octubre de 2026</p>
+<h1>Generador de Texto Matrix</h1>
+<p>Un <strong>generador de texto Matrix</strong> recrea el icónico look de lluvia digital: katakana verde en cascada, letras y números sobre negro, con tu propio texto brillando sobre el aguacero. Ajusta la velocidad y densidad de la lluvia arriba, activa tu overlay de texto y copia cualquiera de los ocho formatos de texto estilo hacker para bios, chats y diseños.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Conclusiones clave</h3>
+<ul style="margin-bottom:0">
+<li>Animación de canvas en vivo de lluvia digital estilo Matrix: katakana + A–Z + 0–9 en verde luminoso.</li>
+<li>Controles de velocidad (lenta/media/rápida) y densidad (ligera/media/densa) que remodelan el aguacero.</li>
+<li>Tu texto aparece como overlay luminoso sobre la lluvia, activable o no.</li>
+<li>Genera 8 estilos de texto hacker copiables: Matrix, Binario, Hacker, Sistema, Código, Luminoso, Terminal, Acceso.</li>
+<li>Funciona por completo en tu navegador: nada se sube.</li>
+</ul>
+</div>
+
+<h2>¿Qué es el texto de lluvia digital Matrix?</h2>
+<p>La lluvia digital Matrix es el visual de caracteres en cascada de la película Matrix (1999): columnas de glifos verdes (originalmente katakana espejado, dígitos y letras latinas) cayendo sobre negro, sugiriendo un flujo de código crudo. Se ha convertido en la taquigrafía visual universal para hacking, terminales y ciberespacio. Quien busca texto con efecto de lluvia digital suele querer una de dos cosas: la lluvia animada en sí (previsualizada en vivo arriba) o texto hacker con estilo (los ocho formatos copiables de abajo). Esta página te da ambas.</p>
+
+<h2>Cómo funciona este generador de texto Matrix</h2>
+<p>La lluvia en sí es una animación de canvas HTML en vivo dibujada en tu navegador: cada columna elige caracteres aleatorios de un pool de katakana, letras latinas mayúsculas y dígitos, mostrados en verde monoespaciado con un efecto de estela que se desvanece (cada cuadro pinta un overlay negro translúcido, así los caracteres se disuelven al caer). El selector de velocidad cambia el retardo entre cuadros (lenta, media, rápida); la densidad cambia el tamaño del glifo, lo que fija cuántas columnas caben en el canvas. Tu entrada aparece como overlay de texto luminoso centrado en la lluvia: actívalo o no.</p>
+<p>Por separado, como generador de texto hacker, la herramienta produce ocho estilos de texto para copiar y pegar desde tus palabras: estilo Matrix (), marco Binario (01 TEXTO 10), Hacker (&gt; TEXTO _), Sistema ([SISTEMA]: TEXTO), Código ($ sudo texto), Luminoso (✦ TEXTO ✦), Terminal (C:\&gt; TEXTO) — un estilo de texto de terminal que imita el prompt de comandos — y Acceso (▓▓▓ TEXTO ▓▓▓). La animación del canvas es para verla aquí; los ocho estilos de texto son lo que copias y te llevas.</p>
+
+<h2>Ejemplo práctico: texto estilo Matrix</h2>
+<p>Entrada: <code>neo</code> → la herramienta lo pasa a mayúsculas y produce estos estilos de código Matrix:</p>
+<table>
+<thead><tr><th>Estilo</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td><strong>Estilo Matrix</strong></td><td></td></tr>
+<tr><td><strong>Marco binario</strong></td><td>01 NEO 10</td></tr>
+<tr><td><strong>Hacker</strong></td><td>&gt; NEO _</td></tr>
+<tr><td><strong>Sistema</strong></td><td>[SISTEMA]: NEO</td></tr>
+<tr><td><strong>Código</strong></td><td>$ sudo neo</td></tr>
+<tr><td><strong>Luminoso</strong></td><td>✦ NEO ✦</td></tr>
+<tr><td><strong>Terminal</strong></td><td>C:\&gt; NEO</td></tr>
+<tr><td><strong>Acceso</strong></td><td>▓▓▓ NEO ▓▓▓</td></tr>
+</tbody>
+</table>
+
+<h2>Cómo usar esta herramienta</h2>
+<ol>
+<li>Escribe tu texto en el campo de entrada: aparece brillando sobre la lluvia.</li>
+<li>Ajusta velocidad y densidad de la lluvia a gusto; activa o no el overlay de texto.</li>
+<li>Copia cualquiera de los ocho estilos de texto bajo el canvas con su botón de copiar.</li>
+<li>Pega el texto con estilo en bios, Discord o diseños.</li>
+</ol>
+
+<h2>Sacándole partido a los controles de lluvia</h2>
+<p>La densidad cambia el ambiente más de lo esperado: ligera (glifos grandes, pocas columnas) se lee calma y cinematográfica, bien tras un titular; densa (glifos pequeños, muchas columnas) es el look denso de "mainframe". La velocidad es directa: lenta para ambiente, rápida para energía. La animación se reinicia sola al redimensionar la ventana, así la lluvia siempre llena su contenedor. Una nota práctica: el canvas es una vista previa en vivo de esta página, no un video exportable. Si necesitas lluvia digital en tu propio proyecto, la técnica (columnas de glifos aleatorios + desvanecido translúcido) es una receta conocida de canvas de unas 30 líneas que puedes reimplementar.</p>
+
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>La animación de lluvia no se puede descargar ni copiar:</strong> es un canvas en vivo de esta página, no un video ni un GIF; solo los ocho estilos de texto viajan contigo.</li>
+<li><strong>La animación del canvas usa CPU continuamente</strong> mientras la pestaña está abierta, así que puede calentar teléfonos modestos: es inherente al efecto, no un error.</li>
+<li><strong>Los estilos de texto son Unicode decorativo,</strong> no salida real de terminal: no engañarán a nadie que mire de cerca.</li>
+<li><strong>Como siempre con Unicode decorativo,</strong> los lectores de pantalla anuncian los símbolos literalmente: reserva estos estilos para cadenas cortas de display.</li>
+</ul>
+
+<h2>Texto Matrix frente a alternativas</h2>
+<table>
+<thead><tr><th>Método</th><th>Ideal para</th><th>Ojo con</th></tr></thead>
+<tbody>
+<tr><td><strong>Este generador Matrix</strong></td><td>Vista previa de lluvia en vivo + 8 estilos hacker copiables</td><td>La animación no es exportable</td></tr>
+<tr><td><a href="/es/generador-de-efecto-maquina-de-escribir/">Generador de efecto máquina de escribir</a></td><td>Efecto terminal de tipeo</td><td>Sin lluvia digital</td></tr>
+<tr><td><a href="/es/generador-de-texto-glitch/">Generador de texto glitch</a></td><td>Distorsión estilo error del sistema</td><td>Estático, sin animación</td></tr>
+<tr><td><strong>Editor de video</strong></td><td>Lluvia digital animada para redes</td><td>Produce video, no texto</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">¿Cómo creo texto estilo Matrix?</h3><div class="faq-answer"><p>Escribe tu texto en la herramienta de arriba y copia cualquiera de los ocho estilos hacker (Matrix, Binario, Hacker, Sistema, Código, Luminoso, Terminal, Acceso) con su botón de copiar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿El generador de texto Matrix es gratis?</h3><div class="faq-answer"><p>Sí: gratis, sin cuenta y sin límites. Todo funciona en tu navegador.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Puedo descargar la animación de lluvia digital?</h3><div class="faq-answer"><p>No. La lluvia es un canvas en vivo de esta página, no un video ni un GIF. Lo que sí puedes llevarte son los ocho estilos de texto hacker copiables.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Qué caracteres usa la lluvia digital?</h3><div class="faq-answer"><p>Katakana, letras latinas mayúsculas (A–Z) y dígitos (0–9), como en la película original de 1999: columnas de glifos verdes sobre negro que sugieren código crudo.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Cómo ajusto la velocidad y densidad de la lluvia?</h3><div class="faq-answer"><p>Con los selectores sobre el canvas: velocidad lenta/media/rápida y densidad ligera/media/densa. La densidad ligera se lee calma y cinematográfica; la densa da el look de "mainframe".</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Los estilos hacker funcionan en Discord?</h3><div class="faq-answer"><p>Sí, son texto Unicode puro. Ten en cuenta que los lectores de pantalla los anuncian literalmente: úsalos en cadenas cortas, no en información esencial.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿La animación consume mucha batería?</h3><div class="faq-answer"><p>El canvas usa CPU continuamente mientras la pestaña está abierta, así que puede calentar teléfonos modestos. Es inherente al efecto; cierra la pestaña cuando termines.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Puedo usar la lluvia digital en mi propia web?</h3><div class="faq-answer"><p>La técnica (columnas de glifos aleatorios + desvanecido translúcido) es una receta conocida de canvas de unas 30 líneas que puedes reimplementar en tu proyecto.</p></div></div>
+</div>
+
+<h2>Herramientas relacionadas</h2>
+<ul>
+<li><a href="/es/generador-de-texto-glitch/">Generador de Texto Glitch</a> — distorsión estilo error del sistema</li>
+<li><a href="/es/generador-de-efecto-maquina-de-escribir/">Generador de Efecto Máquina de Escribir</a> — animación de tipeo terminal</li>
+<li><a href="/es/generador-de-texto-animado/">Generador de Texto Animado</a> — animaciones CSS para webs</li>
+<li><a href="/es/herramientas-de-texto-divertido/">Todas las Herramientas de Texto Divertido</a> — explora la colección completa</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+          <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+              <h3>🎮 Diversión</h3>
+              <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+              
+            </nav>
+          </div>
+        </div>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        let animationId;
+        let showText = true;
+
+        const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const chars = katakana + latin + nums;
+
+        let columns, drops;
+
+        function initMatrix() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            const density = document.getElementById('rain-density').value;
+            const fontSize = density === 'light' ? 18 : density === 'medium' ? 14 : 10;
+            
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+            
+            return fontSize;
+        }
+
+        function drawMatrix() {
+            const speed = document.getElementById('rain-speed').value;
+            const fontSize = initMatrix();
+            
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+            
+            const delay = speed === 'slow' ? 80 : speed === 'medium' ? 50 : 30;
+            animationId = setTimeout(() => requestAnimationFrame(drawMatrix), delay);
+        }
+
+        function restartMatrix() {
+            if (animationId) {
+                clearTimeout(animationId);
+                cancelAnimationFrame(animationId);
+            }
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            drawMatrix();
+        }
+
+        function updateDisplay() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            document.getElementById('matrix-text').textContent = text;
+            generateStyles();
+        }
+
+        function toggleText() {
+            showText = !showText;
+            document.getElementById('matrix-text').style.display = showText ? 'block' : 'none';
+        }
+
+        function generateStyles() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            const upper = text.toUpperCase();
+            
+            const styles = [
+                { name: 'Estilo Matrix', text: '【 ' + upper + ' 】' },
+                { name: 'Marco binario', text: '01 ' + upper + ' 10' },
+                { name: 'Hacker', text: '> ' + upper + ' _' },
+                { name: 'Sistema', text: '[SYSTEM]: ' + upper },
+                { name: 'Código', text: '$ sudo ' + text.toLowerCase() },
+                { name: 'Brillante', text: '✦ ' + upper + ' ✦' },
+                { name: 'Terminal', text: 'C:\\> ' + upper },
+                { name: 'Acceso', text: '▓▓▓ ' + upper + ' ▓▓▓' }
+            ];
+
+            document.getElementById('text-styles').innerHTML = styles.map(s => `
+                <div class="style-item">
+                    <span class="style-text">${escapeHtml(s.text)}</span>
+                    <button class="btn btn-secondary btn-sm" onclick="copyStyle('${s.text.replace(/'/g, "\\'")}')">📋</button>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function copyStyle(text) {
+            navigator.clipboard.writeText(text).then(() => alert('¡Copiado!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize
+        window.addEventListener('resize', () => {
+            restartMatrix();
+        });
+        
+        restartMatrix();
+        generateStyles();
+    </script>
+</body>
+</html></body>
+
+</html>
