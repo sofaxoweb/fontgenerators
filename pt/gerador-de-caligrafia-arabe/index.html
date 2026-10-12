@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Caligrafia Árabe | FontGenerators.online</title>
+  <meta name="description" content="Crie caligrafia árabe estilizada — digite em latim e translitere para o árabe ou cole texto árabe direto, escolha entre 10 fontes e exporte em PNG ou SVG." />
+  <link href="https://fontgenerators.online/pt/gerador-de-caligrafia-arabe/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/arabic-calligraphy-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/arabic-calligraphy-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-caligrafia-arabe/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-caligrafia-arabe/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/arapca-kaligrafi-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Scheherazade+New:wght@400;700&amp;family=Lateef&amp;family=Harmattan:wght@400;700&amp;family=Reem+Kufi:wght@400;700&amp;family=Aref+Ruqaa:wght@400;700&amp;family=Marhey:wght@400;700&amp;family=Rakkas&amp;family=Lalezar&amp;family=Katibeh&amp;display=swap"
+    rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <style>
+    .arabic-generator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .generator-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    /* Make the preview canvas sticky */
+    .preview-section {
+      position: relative;
+      /* parent needs position relative */
+    }
+
+    .canvas-wrapperstiky {
+      position: sticky;
+      /* sticky within parent */
+      top: 30px;
+      /* distance from top of viewport */
+    }
+
+    @media (min-width: 1024px) {
+      .generator-layout {
+        grid-template-columns: 1fr 320px;
+      }
+    }
+
+    .preview-section {
+      padding: 1.5rem;
+      background: var(--background);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .preview-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--foreground);
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .canvas-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      min-height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    #preview-canvas {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .controls-section {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .canvas-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      /* so sticky aligns to top */
+      min-height: 400px;
+    }
+
+    .canvas-wrapper-sticky {
+      position: sticky;
+      top: 30px;
+      /* distance from top of viewport */
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px;
+      /* match canvas width */
+    }
+
+    @media (max-width: 1024px) {
+      .canvas-wrapper-sticky {
+        top: 10px;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .controls-section {
+        border-top: none;
+        border-left: 1px solid var(--border);
+        max-height: none;
+      }
+    }
+
+    .control-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .control-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .control-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      background: var(--background);
+      color: var(--foreground);
+      transition: all var(--transition);
+    }
+
+    .control-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .control-textarea {
+      min-height: 100px;
+      resize: vertical;
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .control-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.5rem;
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .color-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-input {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: none;
+    }
+
+    .color-input::-webkit-color-swatch-wrapper {
+      padding: 2px;
+    }
+
+    .color-input::-webkit-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+
+    .color-hex {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-family: monospace;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .style-btn {
+      padding: 0.6rem 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .style-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .style-btn.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+
+    .range-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .range-input {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .range-input::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .range-value {
+      min-width: 45px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--foreground);
+      background: var(--background);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .export-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .export-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .export-btn {
+      padding: 0.75rem;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .export-btn-primary {
+      background: var(--primary);
+      color: white;
+      grid-column: span 2;
+    }
+
+    .export-btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .export-btn-secondary {
+      background: var(--surface-secondary);
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+
+    .export-btn-secondary:hover {
+      background: var(--border);
+    }
+
+    .presets-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .preset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .preset-btn {
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+      font-size: 0.7rem;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .sample-text-section {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .sample-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .sample-btn {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      background: var(--background);
+      font-size: 0.75rem;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: 'Amiri', serif;
+    }
+
+    .sample-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .font-preview {
+      font-size: 1.1rem;
+      padding: 0.4rem 0;
+      direction: rtl;
+    }
+
+    /* Decorative pattern option */
+    .pattern-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pattern-checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .pattern-label {
+      font-size: 0.85rem;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .preview-section {
+        min-height: 300px;
+      }
+
+      .canvas-container {
+        min-height: 250px;
+      }
+
+      .style-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .export-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .export-btn-primary {
+        grid-column: span 1;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como converter inglês para escrita árabe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite sua palavra em letras latinas com o botão de transliteração ligado. A ferramenta converte foneticamente — \"salam\" vira سالام, \"noor\" vira نور. Lembre-se: é aproximação por som, não tradução de sentido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significam os números 3, 7 e 5 no chat árabe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eles substituem sons árabes sem equivalente latino: 3 = ع (ayn), 7 = ح (ha), 5 = خ (kha), e 2 = ء (hamza). Esta ferramenta os entende, então \"7abibi 3albi\" converte para حابيبي عالبي."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Transliteração é o mesmo que tradução?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Transliteração mapeia sons para letras (\"salam\" → سالام); tradução converte sentido entre idiomas. Esta ferramenta translitera — não traduz frases do inglês para o árabe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso estilizar texto árabe que eu digitar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Desmarque o botão de transliteração e digite ou cole árabe direto. Depois escolha entre 10 fontes, ajuste cores e tamanho, adicione bordas ou ornamentos, e exporte como PNG ou SVG."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Para que serve o botão Copiar árabe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ele copia o texto árabe (a string transliterada) para sua área de transferência como texto puro — útil para colar no Word, Canva, Photoshop ou redes sociais sem o design do canvas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual fonte parece mais com caligrafia clássica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amiri dá o ar naskh mais clássico e serve para versos e frases formais. Reem Kufi captura o estilo Kufi geométrico para designs ousados. As dez são fontes web de qualidade, mas nenhuma substitui um calígrafo humano para trabalho formal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso baixar meu design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — exporte como PNG (imagem raster) ou SVG (vetor escalável) para impressão e trabalho de design, ou copie a imagem renderizada direto para sua área de transferência. O botão Copiar árabe copia só o texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que meu nome parece diferente da grafia árabe padrão?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque transliteração é fonética, não baseada em dicionário — ela renderiza como as letras soam, o que frequentemente difere de grafias estabelecidas (muhammad → موهامماد vs. o padrão محمد). Para grafias corretas de nomes, confira com um falante nativo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meu texto é enviado para algum lugar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Transliteração, renderização e exportação acontecem no seu navegador. Seu texto nunca sai do seu aparelho."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/arabic-calligraphy-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/arabic-calligraphy-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">✨</span>
+                        Ferramentas Aesthetic
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/gerador-de-texto-aesthetic/">
+                            <span class="link-icon">🌸</span>
+                            <span class="link-text">Gerador de Texto Aesthetic</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-brat/">
+                            <span class="link-icon">💚</span>
+                            <span class="link-text">Gerador de Texto Brat</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-caligrafia/">
+                            <span class="link-icon">🖋️</span>
+                            <span class="link-text">Gerador de Caligrafia</span>
+                        </a>
+            <a class="sidebar-link active" href="/pt/gerador-de-caligrafia-arabe/">
+                            <span class="link-icon">🕌</span>
+                            <span class="link-text">Gerador de Caligrafia Árabe</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-manuscrito/">
+                            <span class="link-icon">✍️</span>
+                            <span class="link-text">Gerador de Texto Manuscrito</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/criador-de-assinaturas/">
+                            <span class="link-icon">🖊️</span>
+                            <span class="link-text">Criador de Assinaturas</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-gotico/">
+                            <span class="link-icon">🖤</span>
+                            <span class="link-text">Gerador de Texto Gótico</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-elegante/">
+                            <span class="link-icon">⭐</span>
+                            <span class="link-text">Gerador de Texto Elegante</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-cursivo/">
+                            <span class="link-icon">✒️</span>
+                            <span class="link-text">Gerador de Texto Cursivo</span>
+                        </a>
+          </nav>
+        </div>
+      </aside>
+<div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+        <div class="arabic-generator">
+          <div class="generator-layout">
+            <!-- Preview Section -->
+            <div class="preview-section">
+              <div class="preview-header">
+                <span class="preview-title">🕌 Prévia da Caligrafia Árabe</span>
+                <div class="preview-actions">
+                  <button class="btn btn-sm btn-secondary" onclick="resetToDefault()">Redefinir</button>
+                </div>
+              </div>
+              <div class="canvas-container">
+                <div class="canvas-wrapper-sticky">
+                  <canvas height="400" id="preview-canvas" width="800"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- Controls Section -->
+            <div class="controls-section">
+              <div class="control-group">
+                <label class="control-label" for="transliterate-toggle">Modo de entrada</label>
+                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer;">
+                  <input type="checkbox" id="transliterate-toggle" class="pattern-checkbox" checked>
+                  <span class="pattern-label">Transliterar latim para árabe (ex.: "salam" &rarr; "&#1587;&#1604;&#1575;&#1605;")</span>
+                </label>
+                <p style="font-size:0.8rem;color:var(--text-muted,#555);margin:0.4rem 0 0;">Ativado: letras latinas viram escrita árabe por fonética. Desativado: digite ou cole árabe diretamente.</p>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-input">Seu texto</label>
+                <textarea id="text-input" class="control-input control-textarea" rows="3">&#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607; &#1575;&#1604;&#1585;&#1581;&#1605;&#1606; &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;</textarea>
+                <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                  <button class="btn btn-secondary btn-sm" onclick="copyArabic()">&#128203; Copiar Árabe</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Fonte de caligrafia</label>
+                <div class="style-grid">
+                  <button class="style-btn active" data-font="Amiri" onclick="setFont(this, 'Amiri')">Amiri</button>
+                  <button class="style-btn" data-font="Scheherazade New" onclick="setFont(this, 'Scheherazade New')">Scheherazade</button>
+                  <button class="style-btn" data-font="Lateef" onclick="setFont(this, 'Lateef')">Lateef</button>
+                  <button class="style-btn" data-font="Harmattan" onclick="setFont(this, 'Harmattan')">Harmattan</button>
+                  <button class="style-btn" data-font="Reem Kufi" onclick="setFont(this, 'Reem Kufi')">Reem Kufi</button>
+                  <button class="style-btn" data-font="Aref Ruqaa" onclick="setFont(this, 'Aref Ruqaa')">Aref Ruqaa</button>
+                  <button class="style-btn" data-font="Marhey" onclick="setFont(this, 'Marhey')">Marhey</button>
+                  <button class="style-btn" data-font="Rakkas" onclick="setFont(this, 'Rakkas')">Rakkas</button>
+                  <button class="style-btn" data-font="Lalezar" onclick="setFont(this, 'Lalezar')">Lalezar</button>
+                  <button class="style-btn" data-font="Katibeh" onclick="setFont(this, 'Katibeh')">Katibeh</button>
+                </div>
+              </div>
+              <div class="sample-text-section">
+                <label class="control-label">Textos de exemplo</label>
+                <div class="sample-grid">
+                  <button class="sample-btn" onclick="setSampleText('&#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607; &#1575;&#1604;&#1585;&#1581;&#1605;&#1606; &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;')">Basmala</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1575;&#1604;&#1587;&#1604;&#1575;&#1605; &#1593;&#1604;&#1610;&#1603;&#1605;')">Salam</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1605;&#1581;&#1605;&#1583;')">Muhammad</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1606;&#1608;&#1585;')">Noor</button>
+                </div>
+              </div>
+              <div class="control-group" style="margin-top:1.25rem;">
+                <label class="control-label" for="font-size">Tamanho da fonte</label>
+                <div class="range-wrapper">
+                  <input type="range" id="font-size" class="range-input" min="24" max="160" value="72">
+                  <span class="range-value" id="font-size-value">72px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-color">Cor do texto</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="text-color" class="color-input" value="#1a1a2e">
+                  <input type="text" id="text-color-hex" class="color-hex" value="#1a1a2e">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="bg-color">Cor de fundo</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="bg-color" class="color-input" value="#f5f0e8">
+                  <input type="text" id="bg-color-hex" class="color-hex" value="#f5f0e8">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="canvas-width">Tamanho da tela</label>
+                <div class="control-row">
+                  <input type="number" id="canvas-width" class="control-input" value="800" min="200" max="2000">
+                  <input type="number" id="canvas-height" class="control-input" value="400" min="200" max="2000">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="shadow-blur">Sombra do texto</label>
+                <div class="range-wrapper">
+                  <input type="range" id="shadow-blur" class="range-input" min="0" max="30" value="0">
+                  <span class="range-value" id="shadow-blur-value">0px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
+                  <input type="checkbox" id="show-border" class="pattern-checkbox">
+                  <span class="pattern-label">Borda decorativa</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:0.5rem;margin-top:0.75rem;cursor:pointer;">
+                  <input type="checkbox" id="add-ornament" class="pattern-checkbox">
+                  <span class="pattern-label">Ornamento islâmico (&#1758;)</span>
+                </label>
+              </div>
+              <div class="presets-section">
+                <label class="control-label">Cores prontas</label>
+                <div class="preset-grid">
+                  <button class="preset-btn" onclick="applyPreset('#1a1a2e', '#f5f0e8')">Classic</button>
+                  <button class="preset-btn" onclick="applyPreset('#ffffff', '#0f0f23')">Night</button>
+                  <button class="preset-btn" onclick="applyPreset('#b8860b', '#1a1a1a')">Gold</button>
+                </div>
+              </div>
+              <div class="export-section">
+                <label class="control-label">Exportar</label>
+                <div class="export-grid">
+                  <button class="export-btn export-btn-primary" onclick="downloadPNG()">&#128190; Baixar PNG</button>
+                  <button class="export-btn export-btn-secondary" onclick="downloadSVG()">Baixar SVG</button>
+                  <button class="export-btn export-btn-secondary" onclick="copyToClipboard()">&#128203; Copiar imagem</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tool Info Section -->
+        <main class="">
+          <article class="">
+            <h2>Free Arabic Calligraphy Generator - Create Beautiful Arabic Text Designs Online</h2>
+            <p>An arabic calligraphy generator is a digital tool that allows you to transform Latin
+              characters into elegant Arabic script, showcasing the beauty of Islamic calligraphy. It
+              works by transcribing the phonetic sounds of a name or word into Arabic letters and then
+              rendering it in a chosen calligraphic style. The main benefits include ease of use,
+              accessibility for those without formal calligraphy training, and the ability to create
+              unique designs for various purposes. You can use an Arabic Calligraphy Generator to
+              design personalized art for T-shirts, mugs, posters, or even create unique digital art.
+              The core components involve a text input field, a selection of Arabic calligraphy styles
+              (such as Thuluth, Diwani, and Kufi), and a rendering engine that produces the final
+              image. It is a tool for both those curious about seeing their name in Arabic and those
+              looking to create Islamic art.</p>
+          </article>
+          <div>
+            <h2>How to Use This Arabic Calligraphy Generator</h2>
+            <ol>
+              <li><strong>Enter Arabic or phonetic text</strong> into the generator field.</li>
+              <li><strong>Choose a calligraphy script style:</strong> choose from Thuluth, Diwani, Naskh, or modern
+                decorative fonts.</li>
+              <li><strong>Customize visual settings:</strong> select typography size, ink color, stroke weight, and
+                background canvas style.</li>
+              <li><strong>Preview your design</strong> on the interactive canvas viewport.</li>
+              <li>Click <strong>Download Image</strong> to export your high-resolution calligraphy graphic as PNG or
+                JPEG.</li>
+
+            </ol>
+            <h2>Supported Output Formats</h2>
+            <ul>
+              <li>Copy &amp; Paste: Instantly copy Arabic calligraphy into Word, Canva, Photoshop, or
+                social media
+              </li>
+              <li>Image &amp; Vector Export: PNG, SVG, JPG, and transparent background supported</li>
+              <li>3D &amp; Circular Designs: Create modern or artistic calligraphy</li>
+            </ul>
+            <h2>Advanced Features with AI Integration</h2>
+            <ul>
+              <li>AI Phonetic Conversion: Convert English text to Arabic calligraphy with accurate
+                pronunciation</li>
+              <li>Multiple Style Preview: Compare Thuluth, Kufi, Nastaliq, Ruqaa, and Diwani designs
+                before
+                exporting</li>
+              <li>Custom Effects: Add color, 3D effects, circular or heart-shaped layouts</li>
+            </ul>
+            Why Choose This Arabic Calligraphy Generator?
+            Fast and Free: No software, no downloads, unlimited usage
+            Multi-format Support: PNG, SVG, JPG, vector, transparent background
+            Copy &amp; Paste Ready: Works on Instagram, Canva, Photoshop, and websites
+            Mobile &amp; Desktop Compatible: Fully responsive tool
+            Multi-style Options: Traditional, modern, and 3D Arabic fonts
+          </div>
+          <div>
+            <section class="my-5">
+              <h2>Arabic Calligraphy Styles</h2>
+              <p>Arabic calligraphy, or <strong>khatt</strong>, is more than just writing; it's a
+                revered art form in the Islamic world. Over centuries, various distinct styles have
+                emerged, each with its own rules and aesthetic qualities. Some of the most
+                well-known include:</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Kufi:</strong> One of the oldest forms of Arabic script, Kufi is
+                  characterized by its angular, geometric shapes. It's often used in architectural
+                  decoration and early copies of the Q’uran. Geometric kufic designs are a popular
+                  variation.
+                </li>
+                <li class="list-group-item">
+                  <strong>Naskh:</strong> A more rounded and legible script, Naskh is widely used
+                  for everyday writing and printing. Its clarity makes it suitable for books,
+                  newspapers, and other texts requiring easy readability.
+                </li>
+                <li class="list-group-item">
+                  <strong>Thuluth:</strong> Known for its elegant, flowing curves and complex
+                  compositions, Thuluth is often used for decorative purposes, such as
+                  inscriptions in mosques and on banners. Animated thuluth scripts offer a modern
+                  twist.
+                </li>
+                <li class="list-group-item">
+                  <strong>Diwani:</strong> An ornate and highly stylized script, Diwani was
+                  developed during the Ottoman Empire and used in official documents. Its
+                  intricate letterforms and overlapping characters give it a distinctive
+                  appearance. Diwani Jali compositions are even more elaborate.
+                </li>
+                <li class="list-group-item">
+                  <strong>Reqaa:</strong> A simple, cursive style commonly used in handwriting
+                  across the Arab world. It's a practical and efficient script for everyday
+                  communication.
+                </li>
+                <li class="list-group-item">
+                  <strong>Nastaliq:</strong> Predominantly used in Persian, Urdu, and other
+                  languages influenced by Persian culture, Nastaliq is characterized by its
+                  sloping lines and graceful curves. Persian nasta'liq variations are highly
+                  prized.
+                </li>
+                <li class="list-group-item">
+                  <strong>Al Battar:</strong> Al Battar is a modern calligraphy font inspired by
+                  traditional Arabic scripts but tailored for contemporary design needs.
+                </li>
+              </ul>
+              <p>These are just a few examples, and many regional variations and sub-styles exist. An
+                Arabic calligraphy generator may offer a selection of these styles to allow users to
+                experiment with different aesthetic effects.</p>
+            </section>
+          </div>
+          <div>
+            <section class="my-5">
+              <h2>Popular Arabic Calligraphy Uses</h2>
+              <p>Arabic calligraphy is deeply embedded in Islamic culture and art, finding its way
+                into various applications:</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Religious Texts:</strong> Historically, Arabic calligraphy's primary
+                  purpose was to transcribe the Q’uran and other Islamic texts. The beauty and
+                  precision of the script were seen as a way to honor the divine word.
+                </li>
+                <li class="list-group-item">
+                  <strong>Decorative Arts:</strong> Arabic calligraphy is extensively used in
+                  decorative arts, including ceramics, metalwork, textiles, and woodwork.
+                  Calligraphic inscriptions add a layer of beauty and meaning to these objects.
+                </li>
+                <li class="list-group-item">
+                  <strong>Architecture:</strong> Mosques and other Islamic buildings often feature
+                  calligraphic panels and inscriptions, adorning walls, domes, and minarets.
+                  Architectural kufic designs are particularly prominent.
+                </li>
+                <li class="list-group-item">
+                  <strong>Graphic Design:</strong> In modern times, Arabic calligraphy is used in
+                  graphic design for logos, posters, T-shirts, mugs, stickers, cards, letters, and
+                  other promotional materials. Its unique aesthetic appeal makes it a popular
+                  choice for brands and organizations seeking to convey a sense of elegance and
+                  tradition.
+                </li>
+                <li class="list-group-item">
+                  <strong>Personalized Gifts:</strong> Many people use Arabic calligraphy to
+                  create personalized gifts, such as necklaces, tattoos, and framed artwork. An
+                  Arabic Calligraphy Generator can help design these items quickly and easily.
+                </li>
+                <li class="list-group-item">
+                  <strong>Caligraffiti:</strong> A fusion of calligraphy and graffiti art,
+                  caligraffiti combines traditional Arabic script with modern urban art styles.
+                  It's used to create striking murals and street art.
+                </li>
+                <li class="list-group-item">
+                  <strong>Protest Signs:</strong> Arabic calligraphy can be used to create
+                  visually compelling protest signs.
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div>
+            <section class="my-3">
+              <h2>Similarities of Arabic Calligraphy with Other Languages</h2>
+              <p>
+                Arabic, with over three hundred million native speakers worldwide, has influenced
+                many other languages and scripts, particularly in the Islamic world. The Islamic
+                script shares similarities with languages like
+                <strong>Urdu (Pakistan)</strong>, <strong>Persian and Farsi (Iran, India)</strong>,
+                <strong>Sindhi (India)</strong>, <strong>Uyghur</strong>, <strong>Kirgiz (Central
+                  Asia)</strong>, <strong>Berber (North Africa)</strong>, <strong>Pashtun
+                  (Afghanistan)</strong>, <strong>Kurdish</strong>, <strong>Baluchi</strong>,
+                <strong>Jawi</strong>, and several African languages.
+                These scripts are often recognizable to those familiar with any of these languages,
+                reflecting a shared cultural and linguistic heritage. Mastering the art of writing
+                these scripts by hand requires great skill, and countless hours of practice, and
+                carries a proud tradition in many Middle Eastern cultures.
+              </p>
+            </section>
+          </div>
+
+          <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/fun-text-tools/">Fun Text Tools</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Arabic Calligraphy Generator</span>
+</nav>
+
+<p class="byline">By FontGenerators Editorial Team · Last updated: October 12, 2026</p>
+
+<div class="tool-title">🕌 Gerador de Caligrafia Árabe</div>
+
+<p>An Arabic calligraphy generator — an Arabic text converter and design tool — turns your words into beautiful Arabic-script designs — and this one works two ways. <strong>Transliteration mode</strong> (on by default) converts Latin letters to Arabic script phonetically, so typing "salam" produces "سالام". <strong>Direct mode</strong> lets you type or paste Arabic text and style it on a canvas with calligraphic fonts, colors, and ornaments, then export it as PNG or SVG.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Key takeaways</strong></p>
+  <ul>
+    <li><strong>Two modes:</strong> Latin→Arabic phonetic transliteration, and direct styling of Arabic-script text on canvas.</li>
+    <li>Transliteration is <strong>phonetic approximation, not translation</strong> — it maps sounds to letters.</li>
+    <li>Supports Arabizi digit conventions: 3=ع, 7=ح, 5=خ, 2=ء; capitals give emphatic letters (S=ص, H=ح, T=ط).</li>
+    <li>10 Arabic web fonts (Amiri, Reem Kufi, Aref Ruqaa, Rakkas…), colors, shadows, borders, and ornaments.</li>
+    <li>Export as PNG or SVG, copy the image to clipboard, or copy the Arabic text with one click.</li>
+  </ul>
+</div>
+
+<h2>What is an Arabic calligraphy generator?</h2>
+<p><strong>An Arabic calligraphy generator is</strong> a tool that renders text in Arabic script with calligraphic styling — decorative letterforms in the tradition of Islamic khatt — the art behind Islamic calligraphy text. Classical styles include Kufi (geometric, angular), Naskh (rounded and legible), Thuluth (elegant flowing curves), Diwani (ornate Ottoman), Ruqaa (simple cursive handwriting), and Nastaliq (sloping Persianate). This tool combines two jobs: converting Latin input into Arabic letters phonetically, and styling Arabic text on a design canvas.</p>
+
+<h2>How this tool works: the two modes</h2>
+<p><strong>Mode 1 — Transliterate Latin to Arabic</strong> (checkbox on, the default). For English to Arabic text conversion, type Latin letters and the tool maps them to Arabic script sound-by-sound before rendering. This English to Arabic text conversion is phonetic: it maps sounds, not meaning. It uses longest-match-first digraphs — "sh" becomes ش, "th" becomes ث, "kh" becomes خ, "gh" becomes غ — then single letters, so "shams" renders as شامس. This is <strong>transliteration, not translation</strong>: it approximates pronunciation; it does not convert meaning. "salam" gives سالام (a phonetic rendering), which is close to but not identical with the standard spelling سلام.</p>
+<p><strong>Mode 2 — Style Arabic text directly</strong> (uncheck the box). Type or paste Arabic script yourself — a name, a verse, a phrase — and the canvas renders it in your chosen calligraphic font with full styling control: 10 fonts, size, ink color, background, shadow, decorative border, and Islamic ornament. Export the finished design as PNG or SVG, copy the image to your clipboard, or use the <strong>Copy Arabic</strong> button for arabic calligraphy copy paste into Word, Canva, Photoshop, or social apps.</p>
+<p>Both modes run entirely in your browser; nothing is uploaded.</p>
+
+<h2>Worked example: Latin to Arabic transliteration</h2>
+<p>With the transliteration toggle on, Latin input converts as you type (verified against the tool's actual mapping):</p>
+<table>
+  <thead>
+    <tr><th>You type</th><th>Tool produces</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>salam</code></td><td>سالام</td><td>Phonetic — compare standard سلام</td></tr>
+    <tr><td><code>noor</code></td><td>نور</td><td>"oo" digraph → و</td></tr>
+    <tr><td><code>shams</code></td><td>شامس</td><td>"sh" digraph → ش</td></tr>
+    <tr><td><code>7abibi 3albi</code></td><td>حابيبي عالبي</td><td>Arabizi digits: 7→ح, 3→ع</td></tr>
+    <tr><td><code>Salam</code> (capital S)</td><td>صالام</td><td>Capitals map to emphatics: S→ص</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Diagram showing Latin input "salam" converting to Arabic script with the transliteration toggle | Suggested alt: "Latin word salam transliterated into Arabic script"]
+
+<h2>The chat-Arabic digit conventions</h2>
+<p>Arabic speakers online have long written Arabic sounds with Latin letters and digits — "Arabizi" or Franco-Arabic. This tool understands the core conventions: <strong>3</strong> for ع (ayn), <strong>7</strong> for ح (ha), <strong>5</strong> for خ (kha), <strong>2</strong> for ء (hamza), plus digraphs like sh/th/kh/gh. Capitals add another layer: <strong>H</strong>→ح, <strong>S</strong>→ص, <strong>D</strong>→ض, <strong>T</strong>→ط, <strong>Z</strong>→ظ — the "emphatic" consonants. So "7abibi" becomes حابيبي and "Salam" becomes صالام. If your results look off, check whether you intended a capital or a digit.</p>
+
+<h2>How to use this tool</h2>
+<ol>
+  <li><strong>Choose your mode:</strong> leave <em>Transliterate Latin to Arabic</em> checked to type Latin, or uncheck it to type Arabic directly.</li>
+  <li><strong>Type your text</strong> — watch it convert (mode 1) or appear as-is (mode 2).</li>
+  <li><strong>Pick a font:</strong> Amiri, Scheherazade New, Lateef, Harmattan, Reem Kufi, Aref Ruqaa, Marhey, Rakkas, Lalezar, or Katibeh.</li>
+  <li><strong>Style it:</strong> font size, ink and background colors, shadow, decorative border, Islamic ornament.</li>
+  <li><strong>Export:</strong> download PNG or SVG, copy the image, or click <strong>Copy Arabic</strong> for the text.</li>
+</ol>
+
+<h2>The 10 calligraphic fonts, honestly described</h2>
+<p>As an arabic script generator, the canvas renders your text in Arabic web fonts loaded from Google Fonts — professional typefaces in calligraphic styles, not a hand-lettering engine. <strong>Amiri</strong> and <strong>Scheherazade New</strong> are refined naskh styles, the most legible for longer phrases. <strong>Reem Kufi</strong> is geometric Kufi-inspired, great for logos and bold designs. <strong>Aref Ruqaa</strong> follows the ruqaa handwriting style. <strong>Rakkas</strong>, <strong>Marhey</strong>, <strong>Lalezar</strong>, and <strong>Katibeh</strong> are display faces with decorative flair; <strong>Lateef</strong> and <strong>Harmattan</strong> are clean and highly readable. For a Quranic-verse look, start with Amiri; for a modern logo, try Reem Kufi or Rakkas.</p>
+
+<h2>Limitations — read this before inking a tattoo</h2>
+<p>This section matters. <strong>Transliteration is phonetic approximation, not translation.</strong> It maps sounds to letters without understanding meaning, grammar, or standard spelling — "muhammad" produces موهامماد, while the standard spelling is محمد. <strong>No diacritics:</strong> the tool does not add tashkeel (vowel marks), so output is unvocalized script. <strong>Dialect variance:</strong> the same Latin spelling can represent different pronunciations across Egyptian, Levantine, Gulf, and Maghrebi dialects — one mapping cannot serve all. <strong>Not a calligrapher:</strong> the fonts approximate classical styles; true khatt follows strict proportional rules no automated tool reproduces. Practical advice: for tattoos, logos, wedding invitations, or anything permanent, have a native Arabic speaker or professional calligrapher review the output first.</p>
+
+<h2>Arabic calligraphy generator vs alternatives</h2>
+<table>
+  <thead>
+    <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>This generator</strong></td><td>Latin→Arabic transliteration + styled canvas export</td><td>Phonetic approximation; review important work</td></tr>
+    <tr><td>Professional calligrapher</td><td>Tattoos, logos, formal art</td><td>Cost and turnaround time</td></tr>
+    <tr><td>Machine translation (Google Translate)</td><td>Actual meaning translation</td><td>Doesn't do calligraphic styling</td></tr>
+    <tr><td><a href="/calligraphy-text-generator/">Calligraphy text generator</a></td><td>Latin-script calligraphic styles</td><td>No Arabic script support</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Canvas preview showing Arabic calligraphy with decorative border and ornament | Suggested alt: "Arabic calligraphy design on canvas with decorative border"]
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">How to convert English to Arabic script?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Type your word in Latin letters with the transliteration toggle on. The tool converts it phonetically — "salam" becomes سالام, "noor" becomes نور. Remember this is sound-based approximation, not translation of meaning.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">What do the numbers 3, 7, and 5 mean in Arabic chat?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">They stand in for Arabic sounds with no Latin equivalent: 3 = ع (ayn), 7 = ح (ha), 5 = خ (kha), and 2 = ء (hamza). This tool understands them, so "7abibi 3albi" converts to حابيبي عالبي.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Is transliteration the same as translation?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. Transliteration maps sounds to letters ("salam" → سالام); translation converts meaning between languages. This tool transliterates — it does not translate English sentences into Arabic.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Can I style Arabic text I type myself?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. Uncheck the transliteration toggle and type or paste Arabic directly. Then choose from 10 fonts, adjust colors and size, add borders or ornaments, and export as PNG or SVG.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">What is the Copy Arabic button for?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">It copies the Arabic text (the transliterated string) to your clipboard as plain text — useful for pasting into Word, Canva, Photoshop, or social media without the canvas design.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Which font looks most like classical calligraphy?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Amiri gives the most classical naskh feel and suits verses and formal phrases. Reem Kufi captures the geometric Kufi style for bold designs. All ten are quality web fonts, but none replaces a human calligrapher for formal work.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Can I download my design?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes — export as PNG (raster image) or SVG (scalable vector) for print and design work, or copy the rendered image straight to your clipboard. The Copy Arabic button copies just the text.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Why does my name look different from the standard Arabic spelling?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Because transliteration is phonetic, not dictionary-based — it renders how the letters sound, which often differs from established spellings (muhammad → موهامماد vs. standard محمد). For correct spellings of names, check with a native speaker.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Is my text uploaded anywhere?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. Transliteration, rendering, and export all happen in your browser. Your text never leaves your device.</p>
+    </div>
+  </div>
+</div>
+
+<p>Related tools: the <a href="/calligraphy-text-generator/">calligraphy text generator</a> for Latin-script calligraphic styles, the <a href="/aesthetic-text-generator/">aesthetic text generator</a> for decorative Unicode text, and the <a href="/fancy-text-generator/">fancy text generator</a> for stylish fonts — all in our <a href="/fun-text-tools/">fun text tools</a> collection.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+        </main>
+      </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🕌 Ferramentas</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/gerador-de-texto-aesthetic/">
+ Gerador de Texto Aesthetic</a>
+        <a class="sidebar-link" href="/pt/gerador-de-texto-brat/">
+ Gerador de Texto Brat</a>
+        <a class="sidebar-link" href="/pt/gerador-de-caligrafia/">
+ Gerador de Caligrafia</a>
+        <a class="sidebar-link active" href="/pt/gerador-de-caligrafia-arabe/">
+ Gerador de Caligrafia Árabe</a>
+        <a class="sidebar-link" href="/pt/gerador-de-texto-manuscrito/">
+ Gerador de Texto Manuscrito</a>
+        <a class="sidebar-link" href="/pt/criador-de-assinaturas/">
+ Criador de Assinaturas</a>
+        <a class="sidebar-link" href="/pt/gerador-de-texto-gotico/">
+ Gerador de Texto Gótico</a>
+        <a class="sidebar-link" href="/pt/gerador-de-texto-elegante/">
+ Gerador de Texto Elegante</a>
+      </nav>
+    </div>
+  </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-texto-divertido/">Ferramentas de Texto Divertido</a> &nbsp;/&nbsp; <span>Gerador de Caligrafia Árabe</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Gerador de Caligrafia Árabe</h1>
+<p>Um <strong>gerador de caligrafia árabe</strong> — um conversor de texto árabe e ferramenta de design — transforma suas palavras em belos designs em escrita árabe — e este funciona de dois jeitos. O modo de transliteração (ligado por padrão) converte letras latinas para escrita árabe foneticamente, então digitar "salam" produz "سالام". O modo direto deixa você digitar ou colar texto árabe e estilizá-lo num canvas com fontes caligráficas, cores e ornamentos, depois exportar como PNG ou SVG.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>Dois modos: transliteração fonética latim→árabe, e estilização direta de texto em escrita árabe no canvas.</li>
+<li>Transliteração é aproximação fonética, não tradução — mapeia sons para letras.</li>
+<li>Entende convenções de dígitos do Arabizi: 3=ع, 7=ح, 5=خ, 2=ء; maiúsculas dão letras enfáticas (S=ص, H=ح, T=ط).</li>
+<li>10 fontes árabes da web (Amiri, Reem Kufi, Aref Ruqaa, Rakkas…), cores, sombras, bordas e ornamentos.</li>
+<li>Exporte como PNG ou SVG, copie a imagem para a área de transferência, ou copie o texto árabe com um clique.</li>
+</ul>
+</div>
+
+<h2>O que é um gerador de caligrafia árabe?</h2>
+<p>Um gerador de caligrafia árabe é uma ferramenta que renderiza texto em escrita árabe com estilo caligráfico — formas decorativas na tradição do khatt islâmico — a arte por trás do texto de caligrafia islâmica. Estilos clássicos incluem Kufi (geométrico, anguloso), Naskh (arredondado e legível), Thuluth (curvas elegantes e fluídas), Diwani (otomano ornamentado), Ruqaa (caligrafia cursiva simples) e Nastaliq (persa inclinado). Esta ferramenta combina dois trabalhos: converter entrada latina em letras árabes foneticamente, e estilizar texto árabe num canvas de design.</p>
+
+<h2>Como esta ferramenta funciona: os dois modos</h2>
+<p><strong>Modo 1 — Transliterar latim para árabe</strong> (caixa marcada, o padrão). Para conversão de texto inglês→árabe, digite letras latinas e a ferramenta as mapeia para escrita árabe som por som antes de renderizar. Esta conversão é fonética: mapeia sons, não sentido. Usa dígrafos de correspondência mais longa primeiro — "sh" vira ش, "th" vira ث, "kh" vira خ, "gh" vira غ — depois letras simples, então "shams" renderiza como شامس. Isto é transliteração, não tradução: aproxima a pronúncia; não converte sentido. "salam" dá سالام (uma renderização fonética), próxima mas não idêntica à grafia padrão سلام.</p>
+<p><strong>Modo 2 — Estilizar texto árabe direto</strong> (desmarque a caixa). Digite ou cole você mesmo a escrita árabe — um nome, um verso, uma frase — e o canvas a renderiza na fonte caligráfica escolhida com controle total de estilo: 10 fontes, tamanho, cor da tinta, fundo, sombra, borda decorativa e ornamento islâmico. Exporte o design pronto como PNG ou SVG, copie a imagem para sua área de transferência, ou use o botão Copiar árabe para copiar-colar caligrafia árabe no Word, Canva, Photoshop ou apps sociais. Ambos os modos rodam inteiramente no seu navegador; nada é enviado.</p>
+
+<h2>Exemplo prático: transliteração de latim para árabe</h2>
+<p>Com o botão de transliteração ligado, a entrada latina converte enquanto você digita (conferido contra o mapeamento real da ferramenta):</p>
+<table>
+<thead><tr><th>Você digita</th><th>A ferramenta produz</th><th>Notas</th></tr></thead>
+<tbody>
+<tr><td>salam</td><td>سالام</td><td>Fonético — compare com o padrão سلام</td></tr>
+<tr><td>noor</td><td>نور</td><td>Dígrafo "oo" → و</td></tr>
+<tr><td>shams</td><td>شامس</td><td>Dígrafo "sh" → ش</td></tr>
+<tr><td>7abibi 3albi</td><td>حابيبي عالبي</td><td>Dígitos Arabizi: 7→ح, 3→ع</td></tr>
+<tr><td>Salam (S maiúsculo)</td><td>صالام</td><td>Maiúsculas mapeiam para enfáticas: S→ص</td></tr>
+</tbody>
+</table>
+
+<h2>As convenções de dígitos do árabe de chat</h2>
+<p>Falantes de árabe online há muito escrevem sons árabes com letras latinas e dígitos — "Arabizi" ou franco-árabe. Esta ferramenta entende as convenções centrais: 3 para ع (ayn), 7 para ح (ha), 5 para خ (kha), 2 para ء (hamza), além de dígrafos como sh/th/kh/gh. Maiúsculas adicionam outra camada: H →ح, S →ص, D →ض, T →ط, Z →ظ — as consoantes "enfáticas". Então "7abibi" vira حابيبي e "Salam" vira صالام. Se seus resultados parecerem errados, confira se você queria uma maiúscula ou um dígito.</p>
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+<li><strong>Escolha seu modo:</strong> deixe Transliterar latim para árabe marcado para digitar em latim, ou desmarque para digitar árabe direto.</li>
+<li><strong>Digite seu texto</strong> — veja converter (modo 1) ou aparecer como está (modo 2).</li>
+<li><strong>Escolha uma fonte:</strong> Amiri, Scheherazade New, Lateef, Harmattan, Reem Kufi, Aref Ruqaa, Marhey, Rakkas, Lalezar ou Katibeh.</li>
+<li><strong>Estilize:</strong> tamanho da fonte, cores da tinta e do fundo, sombra, borda decorativa, ornamento islâmico.</li>
+<li><strong>Exporte:</strong> baixe PNG ou SVG, copie a imagem, ou clique em Copiar árabe para o texto.</li>
+</ol>
+
+<h2>As 10 fontes caligráficas, descritas honestamente</h2>
+<p>Como gerador de escrita árabe, o canvas renderiza seu texto em fontes árabes da web carregadas do Google Fonts — tipografias profissionais em estilos caligráficos, não um motor de caligrafia manual. Amiri e Scheherazade New são estilos naskh refinados, os mais legíveis para frases longas. Reem Kufi é inspirada no Kufi geométrico, ótima para logos e designs ousados. Aref Ruqaa segue o estilo de caligrafia ruqaa. Rakkas, Marhey, Lalezar e Katibeh são faces display com floreio decorativo; Lateef e Harmattan são limpas e muito legíveis. Para um visual de verso corânico, comece com Amiri; para um logo moderno, tente Reem Kufi ou Rakkas.</p>
+
+<h2>Limitações — leia isto antes de tatuar</h2>
+<p>Esta seção importa. <strong>Transliteração é aproximação fonética, não tradução.</strong> Mapeia sons para letras sem entender sentido, gramática ou grafia padrão — "muhammad" produz موهامماد, enquanto a grafia padrão é محمد. <strong>Sem diacríticos:</strong> a ferramenta não adiciona tashkeel (marcas de vogal), então a saída é escrita sem vocalização. <strong>Variação dialetal:</strong> a mesma grafia latina pode representar pronúncias diferentes nos dialetos egípcio, levantino, do Golfo e magrebino — um mapeamento só não serve a todos. <strong>Não é um calígrafo:</strong> as fontes aproximam estilos clássicos; o khatt verdadeiro segue regras estritas de proporção que nenhuma ferramenta automatizada reproduz. Conselho prático: para tatuagens, logos, convites de casamento ou qualquer coisa permanente, peça a um falante nativo de árabe ou calígrafo profissional para revisar a saída primeiro.</p>
+
+<h2>Gerador de caligrafia árabe vs. alternativas</h2>
+<table>
+<thead><tr><th>Método</th><th>Melhor para</th><th>Atenção</th></tr></thead>
+<tbody>
+<tr><td><strong>Este gerador</strong></td><td>Transliteração latim→árabe + exportação de canvas estilizado</td><td>Aproximação fonética; revise trabalhos importantes</td></tr>
+<tr><td>Calígrafo profissional</td><td>Tatuagens, logos, arte formal</td><td>Custo e prazo</td></tr>
+<tr><td>Tradução automática (Google Tradutor)</td><td>Tradução real de sentido</td><td>Não faz estilo caligráfico</td></tr>
+<tr><td><a href="/pt/gerador-de-caligrafia/">Gerador de Caligrafia</a></td><td>Estilos caligráficos em escrita latina</td><td>Sem suporte a escrita árabe</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Como converter inglês para escrita árabe?</h3><div class="faq-answer"><p>Digite sua palavra em letras latinas com o botão de transliteração ligado. A ferramenta converte foneticamente — "salam" vira سالام, "noor" vira نور. Lembre-se: é aproximação por som, não tradução de sentido.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O que significam os números 3, 7 e 5 no chat árabe?</h3><div class="faq-answer"><p>Eles substituem sons árabes sem equivalente latino: 3 = ع (ayn), 7 = ح (ha), 5 = خ (kha), e 2 = ء (hamza). Esta ferramenta os entende, então "7abibi 3albi" converte para حابيبي عالبي.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Transliteração é o mesmo que tradução?</h3><div class="faq-answer"><p>Não. Transliteração mapeia sons para letras ("salam" → سالام); tradução converte sentido entre idiomas. Esta ferramenta translitera — não traduz frases do inglês para o árabe.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso estilizar texto árabe que eu digitar?</h3><div class="faq-answer"><p>Sim. Desmarque o botão de transliteração e digite ou cole árabe direto. Depois escolha entre 10 fontes, ajuste cores e tamanho, adicione bordas ou ornamentos, e exporte como PNG ou SVG.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Para que serve o botão Copiar árabe?</h3><div class="faq-answer"><p>Ele copia o texto árabe (a string transliterada) para sua área de transferência como texto puro — útil para colar no Word, Canva, Photoshop ou redes sociais sem o design do canvas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual fonte parece mais com caligrafia clássica?</h3><div class="faq-answer"><p>Amiri dá o ar naskh mais clássico e serve para versos e frases formais. Reem Kufi captura o estilo Kufi geométrico para designs ousados. As dez são fontes web de qualidade, mas nenhuma substitui um calígrafo humano para trabalho formal.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso baixar meu design?</h3><div class="faq-answer"><p>Sim — exporte como PNG (imagem raster) ou SVG (vetor escalável) para impressão e trabalho de design, ou copie a imagem renderizada direto para sua área de transferência. O botão Copiar árabe copia só o texto.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Por que meu nome parece diferente da grafia árabe padrão?</h3><div class="faq-answer"><p>Porque transliteração é fonética, não baseada em dicionário — ela renderiza como as letras soam, o que frequentemente difere de grafias estabelecidas (muhammad → موهامماد vs. o padrão محمد). Para grafias corretas de nomes, confira com um falante nativo.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Meu texto é enviado para algum lugar?</h3><div class="faq-answer"><p>Não. Transliteração, renderização e exportação acontecem no seu navegador. Seu texto nunca sai do seu aparelho.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-caligrafia/">Gerador de Caligrafia</a> — estilos caligráficos em escrita latina</li>
+<li><a href="/pt/gerador-de-texto-aesthetic/">Gerador de Texto Aesthetic</a> — texto Unicode decorativo</li>
+<li><a href="/pt/gerador-de-texto-elegante/">Gerador de Texto Elegante</a> — fontes estilosas</li>
+<li><a href="/pt/ferramentas-de-texto-divertido/">Todas as Ferramentas de Texto Divertido</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+// Latin -> Arabic phonetic transliteration (for arabic-calligraphy-generator)
+// Longest-match-first so digraphs (sh, th, kh...) win over single letters.
+function transliterateLatinToArabic(input) {
+  const DIGRAPHS = {
+    'th': 'ث', 'sh': 'ش', 'kh': 'خ', 'dh': 'ذ', 'gh': 'غ', 'ch': 'تش',
+    'aa': 'ا', 'ee': 'ي', 'oo': 'و', 'ai': 'اي', 'au': 'او'
+  };
+  const SINGLE = {
+    'a': 'ا', 'b': 'ب', 't': 'ت', 'j': 'ج', 'h': 'ه', 'd': 'د',
+    'r': 'ر', 'z': 'ز', 's': 'س', 'c': 'ك', 'f': 'ف', 'v': 'ف',
+    'q': 'ق', 'k': 'ك', 'l': 'ل', 'm': 'م', 'n': 'ن',
+    'w': 'و', 'y': 'ي', 'i': 'ي', 'o': 'و', 'u': 'و', 'e': 'ي',
+    'p': 'ب', 'g': 'ج', 'x': 'كس',
+    '3': 'ع', '7': 'ح', '5': 'خ', "'": 'ء', '`': 'ء', '2': 'ء'
+  };
+  // capital H/S/D/T/Z map to ح ص ض ط ظ (emphatic consonants)
+  const EMPHATIC = { 'H': 'ح', 'S': 'ص', 'D': 'ض', 'T': 'ط', 'Z': 'ظ' };
+  let out = '', i = 0;
+  const s = input;
+  while (i < s.length) {
+    const two = s.slice(i, i + 2).toLowerCase();
+    const one = s[i];
+    if (EMPHATIC[one]) { out += EMPHATIC[one]; i += 1; continue; }
+    if (DIGRAPHS[two]) { out += DIGRAPHS[two]; i += 2; continue; }
+    const lo = one.toLowerCase();
+    if (SINGLE[lo] !== undefined) { out += SINGLE[lo]; i += 1; continue; }
+    out += one; i += 1; // keep spaces, punctuation, existing Arabic as-is
+  }
+  return out;
+}
+if (typeof module !== 'undefined') module.exports = transliterateLatinToArabic;
+
+function copyArabic() {
+  var t = (typeof state !== 'undefined' && state.text) ? state.text : document.getElementById('text-input').value;
+  navigator.clipboard.writeText(t).then(function(){ alert('Texto árabe copiado!'); });
+}
+
+  
+
+    // State
+    let state = {
+      text: 'بسم الله الرحمن الرحيم',
+      font: 'Amiri',
+      fontSize: 72,
+      textColor: '#1a1a2e',
+      bgColor: '#f5f0e8',
+      canvasWidth: 800,
+      canvasHeight: 400,
+      shadowBlur: 0,
+      showBorder: false,
+      addOrnament: false
+    };
+
+    // DOM Elements
+    const canvas = document.getElementById('preview-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      setupEventListeners();
+      render();
+    });
+
+    function setupEventListeners() {
+      // Text input
+      document.getElementById('text-input').addEventListener('input', (e) => {
+        let val = e.target.value;
+        const transliterateToggle = document.getElementById('transliterate-toggle');
+        if (transliterateToggle && transliterateToggle.checked && /[a-zA-Z]/.test(val)) {
+          val = transliterateLatinToArabic(val);
+          e.target.value = val;
+        }
+        state.text = val;
+        render();
+      });
+
+      // Font size
+      document.getElementById('font-size').addEventListener('input', (e) => {
+        state.fontSize = parseInt(e.target.value);
+        document.getElementById('font-size-value').textContent = state.fontSize + 'px';
+        render();
+      });
+
+      // Text color
+      document.getElementById('text-color').addEventListener('input', (e) => {
+        state.textColor = e.target.value;
+        document.getElementById('text-color-hex').value = e.target.value;
+        render();
+      });
+      document.getElementById('text-color-hex').addEventListener('change', (e) => {
+        state.textColor = e.target.value;
+        document.getElementById('text-color').value = e.target.value;
+        render();
+      });
+
+      // Background color
+      document.getElementById('bg-color').addEventListener('input', (e) => {
+        state.bgColor = e.target.value;
+        document.getElementById('bg-color-hex').value = e.target.value;
+        render();
+      });
+      document.getElementById('bg-color-hex').addEventListener('change', (e) => {
+        state.bgColor = e.target.value;
+        document.getElementById('bg-color').value = e.target.value;
+        render();
+      });
+
+      // Canvas size
+      document.getElementById('canvas-width').addEventListener('change', (e) => {
+        state.canvasWidth = parseInt(e.target.value) || 800;
+        render();
+      });
+      document.getElementById('canvas-height').addEventListener('change', (e) => {
+        state.canvasHeight = parseInt(e.target.value) || 400;
+        render();
+      });
+
+      // Shadow
+      document.getElementById('shadow-blur').addEventListener('input', (e) => {
+        state.shadowBlur = parseInt(e.target.value);
+        document.getElementById('shadow-blur-value').textContent = state.shadowBlur + 'px';
+        render();
+      });
+
+      // Decorative options
+      document.getElementById('show-border').addEventListener('change', (e) => {
+        state.showBorder = e.target.checked;
+        render();
+      });
+      document.getElementById('add-ornament').addEventListener('change', (e) => {
+        state.addOrnament = e.target.checked;
+        render();
+      });
+    }
+
+    function setFont(btn, fontName) {
+      state.font = fontName;
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    }
+
+    function setSampleText(text) {
+      state.text = text;
+      document.getElementById('text-input').value = text;
+      render();
+    }
+
+    function applyPreset(textColor, bgColor) {
+      state.textColor = textColor;
+      state.bgColor = bgColor;
+      document.getElementById('text-color').value = textColor;
+      document.getElementById('text-color-hex').value = textColor;
+      document.getElementById('bg-color').value = bgColor;
+      document.getElementById('bg-color-hex').value = bgColor;
+      render();
+    }
+
+    function resetToDefault() {
+      state = {
+        text: 'بسم الله الرحمن الرحيم',
+        font: 'Amiri',
+        fontSize: 72,
+        textColor: '#1a1a2e',
+        bgColor: '#f5f0e8',
+        canvasWidth: 800,
+        canvasHeight: 400,
+        shadowBlur: 0,
+        showBorder: false,
+        addOrnament: false
+      };
+
+      document.getElementById('text-input').value = state.text;
+      document.getElementById('font-size').value = state.fontSize;
+      document.getElementById('font-size-value').textContent = state.fontSize + 'px';
+      document.getElementById('text-color').value = state.textColor;
+      document.getElementById('text-color-hex').value = state.textColor;
+      document.getElementById('bg-color').value = state.bgColor;
+      document.getElementById('bg-color-hex').value = state.bgColor;
+      document.getElementById('canvas-width').value = state.canvasWidth;
+      document.getElementById('canvas-height').value = state.canvasHeight;
+      document.getElementById('shadow-blur').value = state.shadowBlur;
+      document.getElementById('shadow-blur-value').textContent = '0px';
+      document.getElementById('show-border').checked = false;
+      document.getElementById('add-ornament').checked = false;
+
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.style-btn[data-font="Amiri"]').classList.add('active');
+
+      render();
+    }
+
+    function render() {
+      canvas.width = state.canvasWidth;
+      canvas.height = state.canvasHeight;
+
+      // Background
+      ctx.fillStyle = state.bgColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Decorative border
+      if (state.showBorder) {
+        drawDecorativeBorder();
+      }
+
+      // Islamic ornament
+      if (state.addOrnament) {
+        drawIslamicOrnament();
+      }
+
+      // Text shadow
+      if (state.shadowBlur > 0) {
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = state.shadowBlur;
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+      } else {
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+      }
+
+      // Draw text
+      ctx.fillStyle = state.textColor;
+      ctx.font = `${state.fontSize}px "${state.font}", serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.direction = 'rtl';
+
+      // Wrap text if needed
+      const text = state.text || 'اكتب النص هنا';
+      const maxWidth = canvas.width - 80;
+      const lines = wrapText(text, maxWidth);
+      const lineHeight = state.fontSize * 1.4;
+      const totalHeight = lines.length * lineHeight;
+      const startY = (canvas.height - totalHeight) / 2 + lineHeight / 2;
+
+      lines.forEach((line, index) => {
+        ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);
+      });
+    }
+
+    function wrapText(text, maxWidth) {
+      const words = text.split(' ');
+      const lines = [];
+      let currentLine = '';
+
+      words.forEach(word => {
+        const testLine = currentLine ? currentLine + ' ' + word : word;
+        const metrics = ctx.measureText(testLine);
+
+        if (metrics.width > maxWidth && currentLine) {
+          lines.push(currentLine);
+          currentLine = word;
+        } else {
+          currentLine = testLine;
+        }
+      });
+
+      if (currentLine) {
+        lines.push(currentLine);
+      }
+
+      return lines.length ? lines : [text];
+    }
+
+    function drawDecorativeBorder() {
+      const padding = 20;
+      const borderWidth = 3;
+
+      ctx.strokeStyle = state.textColor;
+      ctx.lineWidth = borderWidth;
+
+      // Outer border
+      ctx.strokeRect(padding, padding, canvas.width - padding * 2, canvas.height - padding * 2);
+
+      // Inner border
+      ctx.lineWidth = 1;
+      ctx.strokeRect(padding + 8, padding + 8, canvas.width - padding * 2 - 16, canvas.height - padding * 2 - 16);
+
+      // Corner decorations
+      const cornerSize = 15;
+      const corners = [
+        [padding, padding],
+        [canvas.width - padding, padding],
+        [padding, canvas.height - padding],
+        [canvas.width - padding, canvas.height - padding]
+      ];
+
+      ctx.fillStyle = state.textColor;
+      corners.forEach(([x, y]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function drawIslamicOrnament() {
+      const ornament = '۞';
+      ctx.font = '40px "Amiri", serif';
+      ctx.fillStyle = state.textColor;
+      ctx.globalAlpha = 0.3;
+
+      // Top center
+      ctx.fillText(ornament, canvas.width / 2, 50);
+      // Bottom center
+      ctx.fillText(ornament, canvas.width / 2, canvas.height - 30);
+
+      ctx.globalAlpha = 1;
+    }
+
+    function downloadPNG() {
+      const link = document.createElement('a');
+      link.download = 'arabic-calligraphy.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function downloadSVG() {
+      const text = state.text || 'اكتب النص هنا';
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${state.canvasWidth}" height="${state.canvasHeight}" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="${state.bgColor}"/>
+    <text x="50%" y="50%" 
+          font-family="${state.font}, serif" 
+          font-size="${state.fontSize}px" 
+          fill="${state.textColor}" 
+          text-anchor="middle" 
+          dominant-baseline="middle"
+          direction="rtl">${escapeXML(text)}</text>
+</svg>`;
+
+      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = 'arabic-calligraphy.svg';
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function copyToClipboard() {
+      canvas.toBlob(blob => {
+        const item = new ClipboardItem({ 'image/png': blob });
+        navigator.clipboard.write([item]).then(() => {
+          alert('Imagem copiada para a área de transferência!');
+        }).catch(() => {
+          alert('Falha ao copiar. Tente baixar.');
+        });
+      });
+    }
+
+    function escapeXML(str) {
+      return str.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  
+    </script>
+
+</body>
+
+</html>
