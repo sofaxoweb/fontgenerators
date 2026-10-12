@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Corretor de Quebras de Linha Online</title>
+  <meta content="Corrija quebras de linha quebradas e parágrafos desformatados grátis com o corretor de quebras de linha online. Cole o texto e recupere a formatação ideal." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/corretor-de-quebras-de-linha/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Corretor de Quebras de Linha Online">
+  <meta property="og:description" content="Corrija quebras de linha quebradas e parágrafos desformatados grátis com o corretor de quebras de linha online. Cole o texto e recupere a formatação ideal.">
+  <meta property="og:url" content="https://fontgenerators.online/pt/corretor-de-quebras-de-linha/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Corretor de Quebras de Linha Online">
+  <meta name="twitter:description" content="Corrija quebras de linha quebradas e parágrafos desformatados grátis com o corretor de quebras de linha online. Cole o texto e recupere a formatação ideal.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/line-break-fixer/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/line-break-fixer/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/corrector-de-saltos-de-linea/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/corretor-de-quebras-de-linha/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/satir-sonu-duzeltici/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .mode-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .mode-btn {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .mode-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .mode-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/line-break-fixer/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/corrector-de-saltos-de-linea/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/corretor-de-quebras-de-linha/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/satir-sonu-duzeltici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/line-break-fixer/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/corrector-de-saltos-de-linea/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/corretor-de-quebras-de-linha/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/satir-sonu-duzeltici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/line-break-fixer/", "es": "/es/corrector-de-saltos-de-linea/", "pt": "/pt/corretor-de-quebras-de-linha/", "tr": "/tr/satir-sonu-duzeltici/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Ferramentas de Texto
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/contador-de-palavras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palavras</span>
+            </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/pt/limpador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/pt/remover-linhas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Removedor de Linhas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/pt/conversor-para-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Conversor para Title Case</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Gerador de Texto Invertido</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Gerador de Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+
+        <div class="tool-input-section">
+          <p class="tool-title">↵ Fixador de quebra de linha</p>
+          <p class="tool-description">Fix broken lines, remove unwanted line breaks, or format text into
+            proper paragraphs</p>
+          <textarea class="tool-input" id="text-input" placeholder="Cole o texto com linhas quebradas aqui..."
+            rows="8"></textarea>
+          <h3 style="margin-top: 1rem;">Selecione o modo</h3>
+          <div class="mode-buttons">
+            <button class="mode-btn active" data-mode="join" onclick="setMode(this, 'join')">Join broken lines</button>
+            <button class="mode-btn" data-mode="single" onclick="setMode(this, 'single')">Single line</button>
+            <button class="mode-btn" data-mode="double" onclick="setMode(this, 'double')">Double spacing</button>
+            <button class="mode-btn" data-mode="number" onclick="setMode(this, 'number')">Add line numbers</button>
+            <button class="mode-btn" data-mode="remove-empty" onclick="setMode(this, 'remove-empty')">Remove empty
+              lines</button>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="fixLineBreaks()">🔧 Fix Line Breaks</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Limpar</button>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Resultado</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Fixed text will appear here..."
+            readonly=""></textarea>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Copy Result</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+        <!-- content start -->
+<section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/ferramentas-de-texto/">Ferramentas de Texto</a> &rsaquo; <span>Corretor de Quebras de Linha</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última atualização: 12 de outubro de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Corretor de Quebras de Linha &mdash; Arrume Quebras</h1>
+<p>Cole texto de um PDF ou de uma página da web e quase sempre cada linha quebra no lugar errado &mdash; frases cortadas no meio do pensamento, parágrafos estilhaçados em fragmentos. Este corretor de quebras de linha grátis repara linhas quebradas de cinco jeitos: juntar linhas quebradas em parágrafos, reduzir tudo a uma linha, adicionar espaçamento de parágrafo, numerar linhas ou tirar linhas vazias. Cole seu texto, escolha um modo e receba parágrafos limpos.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Pontos principais</p>
+<ul style="margin: 0;">
+<li>Cinco modos: juntar linhas quebradas, linha única, espaçamento duplo, numerar linhas, remover linhas vazias.</li>
+<li>"Juntar linhas quebradas" une quebras simples, mas preserva as quebras de parágrafo das linhas em branco &mdash; ideal para colagens de PDF.</li>
+<li>"Linha única" reduz tudo (incluindo parágrafos) a uma linha aparada.</li>
+<li>"Numerar linhas" numera cada linha, incluindo as em branco.</li>
+<li>Roda todo no seu navegador; nada é enviado.</li>
+</ul>
+</div>
+<h2>O Que É um Corretor de Quebras de Linha?</h2>
+<p><strong>Um corretor de quebras de linha é uma ferramenta online que repara quebras de linha indesejadas no texto.</strong> Ao copiar de PDFs, e-books, páginas da web ou apps de conversa, o texto costuma chegar com uma quebra dura no fim de cada linha visual &mdash; dividindo frases e destruindo a estrutura dos parágrafos. Um formatador de parágrafos como este rejunta esses fragmentos, remove linhas em branco extras ou reformata o espaçamento para o texto voltar a ler como parágrafos de verdade.</p>
+[IMAGEM: Diagrama de antes/depois mostrando texto copiado de PDF com quebras no meio das frases reparado em parágrafos fluídos &mdash; alt: "Quebras de linha quebradas de uma colagem de PDF reparadas em parágrafos limpos"]
+<h2>Como Este Corretor de Quebras de Linha Funciona</h2>
+<p>Escolha um dos cinco modos; a correção se aplica na caixa de saída na hora (ou clique em "Corrigir Quebras de Linha"):</p>
+<ul>
+<li><strong>Juntar linhas quebradas</strong> (padrão) &mdash; quebras simples viram espaços, então as linhas quebradas se rejuntam em frases fluídas. Linhas em branco são preservadas, então as quebras de parágrafo sobrevivem. Este é o modo para copiar e colar de PDF.</li>
+<li><strong>Linha única</strong> &mdash; cada quebra de linha vira um espaço e o texto inteiro colapsa em uma linha aparada. A estrutura de parágrafos é descartada.</li>
+<li><strong>Espaçamento duplo</strong> &mdash; linhas vazias são descartadas e as restantes são unidas com uma linha em branco entre cada uma, dando parágrafos espaçados por igual.</li>
+<li><strong>Numerar linhas</strong> &mdash; cada linha ganha um número ("1. ", "2. ", ...), incluindo as em branco.</li>
+<li><strong>Remover linhas vazias</strong> &mdash; linhas só com espaços são apagadas; todo o resto fica exatamente como está.</li>
+</ul>
+<p><strong>Copiar Resultado</strong> copia o texto corrigido. <strong>Limpar</strong> esvazia as duas caixas.</p>
+<h2>Exemplo Prático</h2>
+<p>Um poema colado com quebras duras:</p>
+<p><code>Roses are red,<br>violets are blue.<br><br>Sugar is sweet,<br>and so are you.</code></p>
+<p><strong>Juntar linhas quebradas</strong> produz:</p>
+<p><code>Roses are red, violets are blue.<br><br>Sugar is sweet, and so are you.</code></p>
+<p>Os dois versos se juntaram em frases, enquanto a linha em branco entre as estrofes sobreviveu &mdash; a ferramenta só une quebras <em>simples</em>. O modo <strong>linha única</strong> na mesma entrada dá uma linha só: <code>Roses are red, violets are blue. Sugar is sweet, and so are you.</code></p>
+<h2>Como Usar o Corretor de Quebras de Linha</h2>
+<ol>
+<li><strong>Cole</strong> o texto quebrado na caixa de entrada.</li>
+<li><strong>Escolha um modo:</strong> "Juntar linhas quebradas" para colagens de PDF/web, "Remover linhas vazias" para textos cheios de buracos, "Linha única" para campos de uma linha.</li>
+<li><strong>Confira o resultado</strong> &mdash; a saída atualiza assim que você troca de modo.</li>
+<li><strong>Copie o Resultado</strong> e cole o texto corrigido no seu documento.</li>
+</ol>
+<h2>Juntar Linhas Quebradas vs Linha Única: Qual Modo?</h2>
+<p>Os dois modos mais usados resolvem problemas diferentes:</p>
+<ul>
+<li><strong>Use "juntar linhas quebradas"</strong> quando o texto tem estrutura real de parágrafos que você quer manter &mdash; artigos, redações, capítulos de e-book. Ele cura as linhas quebradas, mas respeita as quebras de parágrafo das linhas em branco.</li>
+<li><strong>Use "linha única"</strong> quando a estrutura precisa sumir por completo: colar num campo de formulário de uma linha, numa célula de planilha, no editor de tuíte ou numa caixa de prompt de IA. Tudo vira uma linha aparada.</li>
+</ul>
+<p>Um fluxo comum: junte as linhas quebradas primeiro para restaurar os parágrafos e, se precisar de saída em linha única, troque para o modo linha única &mdash; trocar de modo reprocessa a partir da sua entrada original a cada vez. Com a estrutura corrigida, confira o tamanho final com o <a href="/pt/contador-de-palavras/">contador de palavras</a>.</p>
+<h2>Por Que Copiar de PDF Quebra as Linhas</h2>
+<p>PDFs guardam o texto como glifos posicionados na página, não como parágrafos fluídos. Ao copiar, a área de transferência recebe uma quebra de linha onde quer que a linha visual terminasse &mdash; muitas vezes no meio da frase &mdash; além de artefatos de hifenização ("docu-\nmento"). O modo de juntar foi feito exatamente para isso: ele une essas quebras de linha visual de volta em espaços. O que ele não corrige sozinho:</p>
+<ul>
+<li>Palavras hifenizadas divididas entre linhas ("docu- mento") &mdash; remova o hífen manualmente ou com localizar e substituir.</li>
+<li>Cabeçalhos, rodapés e números de página copiados no meio &mdash; apague antes ou depois de corrigir.</li>
+<li>Layouts de duas colunas, que intercalam as colunas linha a linha &mdash; esses pedem reordenação manual.</li>
+</ul>
+[IMAGEM: Diagrama explicando por que PDFs inserem quebras de linha no fim das linhas visuais ao copiar texto &mdash; alt: "Por que copiar de um PDF cria quebras de linha quebradas no meio da frase"]
+<h2>Limitações</h2>
+<ul>
+<li><strong>"Numerar linhas" numera as em branco também</strong> &mdash; rode "Remover linhas vazias" antes se quiser numeração contínua só das linhas com conteúdo.</li>
+<li><strong>Hifens de quebra de linha não são rejuntados</strong> ("docu-\nmento" mantém o hífen).</li>
+<li><strong>Sem detecção inteligente de parágrafos:</strong> o modo "juntar" confia nas linhas em branco como quebras de parágrafo; se sua fonte não tem nenhuma, use "espaçamento duplo" depois de juntar para reconstruí-las.</li>
+<li><strong>Espaços dentro das linhas não são tocados</strong> exceto no modo linha única; para limpeza de espaçamento use o <a href="/pt/limpador-de-texto/">limpador de texto</a>.</li>
+</ul>
+<h2>Corretor de Quebras de Linha vs Alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>Ideal para</th><th>Numera?</th></tr></thead>
+<tbody>
+<tr><td><strong>Este corretor de quebras de linha</strong></td><td>Cinco modos de reparo em um só lugar, na hora, sem cadastro</td><td>Sim</td></tr>
+<tr><td><a href="/pt/limpador-de-texto/">Limpador de texto</a></td><td>Tirar sujeira de caracteres e normalizar espaços</td><td>Não</td></tr>
+<tr><td>Localizar e substituir do Word (^p &rarr; espaço)</td><td>Corrigir quebras dentro de um documento do Word</td><td>Não</td></tr>
+<tr><td><a href="/pt/formatador-de-legendas/">Formatador de legendas</a></td><td>Preservar quebras intencionais em legendas de Instagram/TikTok</td><td>Não</td></tr>
+</tbody>
+</table>
+<p>Use esta ferramenta para <em>remover</em> quebras indesejadas; use o <a href="/pt/formatador-de-legendas/">formatador de legendas</a> quando quiser <em>manter</em> quebras caprichadas em posts sociais.</p>
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como corrijo quebras de linha quebradas de um PDF?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cole o texto e use o modo padrão "Juntar linhas quebradas": ele transforma quebras simples em espaços (rejuntando frases quebradas) e preserva as linhas em branco como quebras de parágrafo. Depois apague manualmente cabeçalhos, números de página ou hifens que o PDF trouxe.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como tiro quebras de linha do texto por completo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Escolha o modo "Linha única". Cada quebra de linha vira um espaço e o texto inteiro colapsa em uma linha aparada &mdash; ideal para campos de formulário de uma linha, células de planilha ou caixas de prompt.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Qual a diferença entre "juntar linhas quebradas" e "linha única"?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">"Juntar linhas quebradas" une só quebras simples e mantém a estrutura de parágrafos das linhas em branco. "Linha única" descarta toda a estrutura e reduz tudo a uma linha. Use juntar para artigos e redações; linha única para destinos de uma linha.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como numero as linhas de um texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Selecione o modo "Numerar linhas" &mdash; cada linha recebe seu número no início. Note que as linhas em branco também são numeradas; rode "Remover linhas vazias" antes se quiser numerar só as linhas com conteúdo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como removo linhas em branco extras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O modo "Remover linhas vazias" apaga cada linha só com espaços e deixa todas as outras intocadas &mdash; o jeito mais rápido de tirar quebras extras sem juntar nada. Para parágrafos espaçados por igual, use "Espaçamento duplo".</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Por que texto copiado de PDF tem quebras no meio da frase?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">PDFs guardam glifos posicionados em vez de parágrafos fluídos, então copiar insere uma quebra no fim de cada linha visual. O modo de juntar desta ferramenta reverte exatamente esse estrago.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Dá para formatar texto em parágrafos de verdade?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim: "Juntar linhas quebradas" restaura o fluxo dos parágrafos a partir das linhas quebradas, e "Espaçamento duplo" reconstrói a separação uniforme entre parágrafos depois de descartar as linhas vazias.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Meu texto é enviado para um servidor?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Não. Os cinco modos rodam em JavaScript no seu navegador. Seu texto nunca sai do seu aparelho.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Ele corrige palavras hifenizadas divididas entre linhas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Não &mdash; "docu-\nmento" mantém o hífen depois de juntar. Remova esses hifens com localizar e substituir (busque "- " nos fins de linha) antes ou depois de corrigir.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas de Texto</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/contador-de-palavras/">📊 Contador de Palavras</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/pt/limpador-de-texto/">🧹 Limpador de Texto</a>
+        <a class="sidebar-link" href="/pt/conversor-para-titulo/">🔠 Conversor para Title Case</a>
+      </nav>
+    </div>
+  </div>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+
+    let currentMode = 'join';
+
+    function setMode(btn, mode) {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = mode;
+      fixLineBreaks();
+    }
+
+    function fixLineBreaks() {
+      const text = document.getElementById('text-input').value;
+      let result = '';
+
+      switch (currentMode) {
+        case 'join':
+          result = text.replace(/([^\n])\n([^\n])/g, '$1 $2').replace(/  +/g, ' ');
+          break;
+        case 'single':
+          result = text.replace(/\n+/g, ' ').replace(/  +/g, ' ').trim();
+          break;
+        case 'double':
+          result = text.split('\n').filter(l => l.trim()).join('\n\n');
+          break;
+        case 'number':
+          result = text.split('\n').map((line, i) => `${i + 1}. ${line}`).join('\n');
+          break;
+        case 'remove-empty':
+          result = text.split('\n').filter(l => l.trim()).join('\n');
+          break;
+      }
+
+      document.getElementById('output-text').value = result;
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => {
+        alert('Copied!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como corrijo quebras de linha quebradas de um PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cole o texto e use o modo padrão \"Juntar linhas quebradas\": ele transforma quebras simples em espaços (rejuntando frases quebradas) e preserva as linhas em branco como quebras de parágrafo. Depois apague manualmente cabeçalhos, números de página ou hifens que o PDF trouxe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como tiro quebras de linha do texto por completo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escolha o modo \"Linha única\". Cada quebra de linha vira um espaço e o texto inteiro colapsa em uma linha aparada — ideal para campos de formulário de uma linha, células de planilha ou caixas de prompt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre \"juntar linhas quebradas\" e \"linha única\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "\"Juntar linhas quebradas\" une só quebras simples e mantém a estrutura de parágrafos das linhas em branco. \"Linha única\" descarta toda a estrutura e reduz tudo a uma linha. Use juntar para artigos e redações; linha única para destinos de uma linha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como numero as linhas de um texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Selecione o modo \"Numerar linhas\" — cada linha recebe seu número no início. Note que as linhas em branco também são numeradas; rode \"Remover linhas vazias\" antes se quiser numerar só as linhas com conteúdo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como removo linhas em branco extras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O modo \"Remover linhas vazias\" apaga cada linha só com espaços e deixa todas as outras intocadas — o jeito mais rápido de tirar quebras extras sem juntar nada. Para parágrafos espaçados por igual, use \"Espaçamento duplo\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que texto copiado de PDF tem quebras no meio da frase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDFs guardam glifos posicionados em vez de parágrafos fluídos, então copiar insere uma quebra no fim de cada linha visual. O modo de juntar desta ferramenta reverte exatamente esse estrago."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para formatar texto em parágrafos de verdade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim: \"Juntar linhas quebradas\" restaura o fluxo dos parágrafos a partir das linhas quebradas, e \"Espaçamento duplo\" reconstrói a separação uniforme entre parágrafos depois de descartar as linhas vazias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meu texto é enviado para um servidor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Os cinco modos rodam em JavaScript no seu navegador. Seu texto nunca sai do seu aparelho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ele corrige palavras hifenizadas divididas entre linhas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não — \"docu-\\nmento\" mantém o hífen depois de juntar. Remova esses hifens com localizar e substituir (busque \"- \" nos fins de linha) antes ou depois de corrigir."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
