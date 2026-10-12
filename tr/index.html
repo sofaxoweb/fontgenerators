@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şekilli Metin Oluşturucu ve Metin Araçları | FontGenerators</title>
+    <meta name="description" content="74 ücretsiz metin oluşturucu — şekilli, estetik Unicode üsluplar. Instagram biyoları, TikTok açıklamaları, oyun ve Discord için kopyala-yapıştır metinler.">
+
+    <link rel="shortcut icon" href="https://fontgenerators.online/assets/favicon.png" type="image/x-icon">
+    <link href="https://fontgenerators.online/tr/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/" />
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+<style>
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #666); margin-bottom: 1.5rem; }
+    .intro-section { padding: 2.5rem 0; background: var(--cream, #FDF9F4); }
+    .intro-section p { line-height: 1.8; color: var(--text-muted, #444); margin-bottom: 1rem; max-width: 820px; }
+    .intro-section h3 { margin: 1.5rem 0 0.5rem; }
+    .intro-section ol { padding-left: 1.4rem; }
+    .intro-section li { line-height: 1.75; margin-bottom: 0.4rem; }
+  </style>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/',es:'/es/',pt:'/pt/',tr:'/tr/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main>
+<section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Ücretsiz Şekilli Metin Oluşturucu ve Metin Araçları</h1>
+                <p class="hero-subtitle">74 ücretsiz çevrimiçi metin oluşturma aracı — sosyal medya, oyun ve gündelik yazı için şekilli yazılar, estetik üsluplar, semboller, açıklamalar ve metin araçları.</p>
+                <div class="hero-search">
+                    <input type="text" id="tool-search" placeholder="Bir araç arayın..." class="search-input">
+                    <button class="btn btn-primary" onclick="searchTools()">Ara</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <h2 class="section-title">FontGenerators.online Nedir?</h2>
+                <p>FontGenerators.online, düz kelimeleri şık, kopyala-yapıştır metne dönüştüren 74 ücretsiz çevrimiçi metin oluşturma aracının koleksiyonudur. Metninizi bir kez yazın ya da yapıştırın, herhangi bir araç sayfasından bir üslup seçin; sonucu Instagram, TikTok, Discord, WhatsApp, Roblox, X ya da metin kabul eden her uygulamaya kopyalayın. Her şey tarayıcınızda çalışır — hesap yok, kurulum yok, ücret yok, sınır yok.</p>
+                <p>Site beş tür insana hizmet eder. Öğrenciler ve içerik üreticiler biyolarını, açıklamalarını ve ders notlarını süsler. Oyuncular ve yayıncılar Fortnite, Roblox ve Discord'un kalabalık lobilerinde öne çıkan kullanıcı adları ve klan etiketleri kurar. Yazarlar, editörler ve pazarlamacılar günlük işler için kelime sayaçlarına, harf düzeni çeviricilere, açıklama düzenleyicilere ve metin temizleyicilere uzanır. Küçük işletme sahipleri tasarımcı tutmadan dükkân adlarını ve sosyal profillerini üsluplandırır. Geri kalan herkes sadece bir mesaj, şaka ekran görüntüsü ya da video outro için eğlenceli bir efekt ister.</p>
+                <p>Başlamadan dürüst bir not: bu araçlar gerçek yazı tipi oluşturmaz. Harflerinizi Unicode standardındaki benzer görünümlü karakterlerle değiştirirler — telefonunuzun ve bilgisayarınızın zaten kullandığı aynı karakter seti. Buradaki kalın harf aslında ayrı bir Unicode karakterdir (Matematiksel Alfanümerik Semboller bloğundan &#119808; gibi); A harfine uygulanmış kalın üslup değil. Bu yüzden sonuç, biçimlendirmeyi ayıklayan uygulamalara yapıştırıldığında görünümünü korur: bu düz metindir, biçimlendirme değil.</p>
+                <p>Bu ayrım iki açıdan önemli. Birincisi, görüntüleme: nadiren bir cihaz, yazı tipinde eksik karakter yerine kutu (&#9633;) gösterebilir — o olursa başka üslup varyantı deneyin. İkincisi, erişilebilirlik: ekran okuyucular şık harfleri tek tek okuyabilir; uzun paragraflar ya da önemli bilgiler için Unicode üsluplarından kaçının. Adlar, kısa biyolar, başlıklar ve vurgular için kullanın; gövde metnini düz tutun.</p>
+                <h3>Nasıl Çalışır?</h3>
+                <ol>
+                    <li>Aşağıdaki araçlardan birini açın — örneğin <a href="/tr/suslu-metin-olusturucu/">süslü metin oluşturucu</a> ya da <a href="/tr/estetik-metin-olusturucu/">estetik metin oluşturucu</a>.</li>
+                    <li>Metninizi yazın ya da yapıştırın. Anında onlarca üslup varyantı belirir.</li>
+                    <li>Beğendiğiniz üslubun yanındaki kopyala düğmesine tıklayın, sonra her yere yapıştırın.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Araç Kategorileri</h2>
+                <div class="categories-grid">
+                    <a href="/tr/estetik-metin-araclari/" class="category-card">
+                        <div class="category-icon">✨</div>
+                        <h3>Estetik ve Üslup</h3>
+                        <p>Estetik alt kültür üslupları — vaporwave, kawaii, soft girl, brat, neon — havanıza uyan profil biyoları ve açıklamalar için.</p>
+                        <span class="category-count">16 Araç</span>
+                    </a>
+                    <a href="/tr/sekilli-yazi-araclari/" class="category-card">
+                        <div class="category-icon">🔤</div>
+                        <h3>Şekilli ve Şık Yazılar</h3>
+                        <p>Unicode yazı tipi üslubu çeviriciler: kalın, italik, gotik, el yazısı, küçük büyük harf. Bir kez yazın, onlarca kopyala-yapıştır üslup alın.</p>
+                        <span class="category-count">15 Araç</span>
+                    </a>
+                    <a href="/tr/emoji-sembol-araclari/" class="category-card">
+                        <div class="category-icon">😊</div>
+                        <h3>Emoji ve Sembol Araçları</h3>
+                        <p>Kopyala-yapıştır sembol kütüphaneleri: kaomoji, kalpler, oklar, ışıltılar, sınırlar ve ayırıcılarla her metni süsleyin.</p>
+                        <span class="category-count">10 Araç</span>
+                    </a>
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="category-card">
+                        <div class="category-icon">📱</div>
+                        <h3>Sosyal Medya Açıklamaları</h3>
+                        <p>Instagram, TikTok ve YouTube için platforma özel açıklama, biyo ve hashtag araçları — artı uzunluk denetleyiciler ve düzenleyiciler.</p>
+                        <span class="category-count">10 Araç</span>
+                    </a>
+                    <a href="/tr/metin-araclari/" class="category-card">
+                        <div class="category-icon">🔧</div>
+                        <h3>Metin Araçları</h3>
+                        <p>Yazarın alet çantası: gündelik işler için kelime ve karakter sayaçları, harf düzeni çeviriciler, metin temizleyiciler ve satır düzelticiler.</p>
+                        <span class="category-count">15 Araç</span>
+                    </a>
+                    <a href="/tr/eglenceli-metin-araclari/" class="category-card">
+                        <div class="category-icon">🎮</div>
+                        <h3>Eğlenceli ve Görsel Metin</h3>
+                        <p>Neşeli efektler: şaka ve gönderiler için glitch metin, matrix yağmuru, sahte sohbet ekran görüntüleri ve animasyonlu metin.</p>
+                        <span class="category-count">8 Araç</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-tools">
+            <div class="container">
+                <h2 class="section-title">Popüler Araçlar</h2>
+                <div class="tools-grid">
+                    <a href="/tr/suslu-metin-olusturucu/" class="tool-card">
+                        <div class="tool-icon">⭐</div>
+                        <h3>Süslü Metin Oluşturucu</h3>
+                        <p>Ad ve biyoları şık Unicode yazı tipi üsluplarına çevirin.</p>
+                    </a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="tool-card">
+                        <div class="tool-icon">🌸</div>
+                        <h3>Estetik Metin Oluşturucu</h3>
+                        <p>Biyo ve açıklamalar için yumuşak, dekoratif estetik metin üslupları.</p>
+                    </a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="tool-card">
+                        <div class="tool-icon">💎</div>
+                        <h3>Şekilli Yazı Oluşturucu</h3>
+                        <p>Yıldız, kalp ve ışıltı sınırlı dekoratif kullanıcı adı üslupları.</p>
+                    </a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="tool-card">
+                        <div class="tool-icon">🔠</div>
+                        <h3>Unicode Metin Oluşturucu</h3>
+                        <p>Unicode bloklarını keşfedin: fullwidth, kapalı, matematik sembolleri ve dahası.</p>
+                    </a>
+                    <a href="/tr/kaomoji-olusturucu/" class="tool-card">
+                        <div class="tool-icon">(◕‿◕)</div>
+                        <h3>Kaomoji Oluşturucu</h3>
+                        <p>Aramalı 10 kategoride 190 Japon kaomoji yüzü.</p>
+                    </a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="tool-card">
+                        <div class="tool-icon">📸</div>
+                        <h3>Instagram Açıklamaları</h3>
+                        <p>Gönderi ve reel’leriniz için taze açıklama fikirleri.</p>
+                    </a>
+                    <a href="/tr/hashtag-olusturucu/" class="tool-card">
+                        <div class="tool-icon">#️⃣</div>
+                        <h3>Hashtag Oluşturucu</h3>
+                        <p>Erişiminizi büyüten alakalı hashtag setleri.</p>
+                    </a>
+                    <a href="/tr/kelime-sayaci/" class="tool-card">
+                        <div class="tool-icon">📊</div>
+                        <h3>Kelime Sayacı</h3>
+                        <p>Kelime, karakter, cümle ve okuma süresini anında sayın.</p>
+                    </a>
+                    <a href="/tr/kalin-metin-cevirici/" class="tool-card">
+                        <div class="tool-icon">🅱️</div>
+                        <h3>Kalın Metin Çevirici</h3>
+                        <p>Facebook gönderileri, biyolar ve yorumlar için metni kalın yapın.</p>
+                    </a>
+                    <a href="/tr/zalgo-metin-olusturucu/" class="tool-card">
+                        <div class="tool-icon">👻</div>
+                        <h3>Zalgo Metin Oluşturucu</h3>
+                        <p>Birleştiren karakterlerle ürkütücü bozuk metin.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-tools">
+            <div class="container">
+                <h2 class="section-title">Tüm Estetik ve Üslup Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/estetik-metin-olusturucu/" class="tool-list-item">Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="tool-list-item">Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="tool-list-item">Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="tool-list-item">Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="tool-list-item">Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="tool-list-item">Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="tool-list-item">Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="tool-list-item">Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="tool-list-item">Retro Metin Oluşturucu</a>
+                    <a href="/tr/el-yazisi-olusturucu/" class="tool-list-item">El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="tool-list-item">İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="tool-list-item">Kaligrafi Oluşturucu</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="tool-list-item">Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="tool-list-item">Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="tool-list-item">Minimal Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="tool-list-item">Siber Metin Oluşturucu</a>
+                </div>
+                <h2 class="section-title">Tüm Şekilli Yazı Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="tool-list-item">Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="tool-list-item">Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="tool-list-item">Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="tool-list-item">Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="tool-list-item">İtalik Metin Çevirici</a>
+                    <a href="/tr/altti-cizgili-metin-olusturucu/" class="tool-list-item">Altı Çizgili Metin Oluşturucu</a>
+                    <a href="/tr/ustu-cizili-metin-olusturucu/" class="tool-list-item">Üstü Çizili Metin Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="tool-list-item">Monospace Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="tool-list-item">Küçük Büyük Harf Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="tool-list-item">Balon Harf Oluşturucu</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="tool-list-item">Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="tool-list-item">Gotik Metin Oluşturucu</a>
+                    <a href="/tr/eski-ingilizce-yazi-tipi/" class="tool-list-item">Eski İngilizce Yazı Tipi</a>
+                    <a href="/tr/anime-yazi-tipi-olusturucu/" class="tool-list-item">Anime Yazı Tipi Oluşturucu</a>
+                    <a href="/tr/manga-metin-olusturucu/" class="tool-list-item">Manga Metin Oluşturucu</a>
+                </div>
+                <h2 class="section-title">Tüm Emoji ve Sembol Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/emojili-metin-olusturucu/" class="tool-list-item">Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="tool-list-item">Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="tool-list-item">Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="tool-list-item">İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="tool-list-item">Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="tool-list-item">Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="tool-list-item">Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="tool-list-item">Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="tool-list-item">Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="tool-list-item">Ayırıcı Çizgiler</a>
+                </div>
+                <h2 class="section-title">Tüm Sosyal Medya Açıklama Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="tool-list-item">Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="tool-list-item">TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="tool-list-item">YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="tool-list-item">Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="tool-list-item">TikTok Biyografileri</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="tool-list-item">Uzunluk Sayacı</a>
+                    <a href="/tr/sosyal-medya-aciklama-duzenleyici/" class="tool-list-item">Açıklama Düzenleyici</a>
+                    <a href="/tr/hashtag-olusturucu/" class="tool-list-item">Hashtag Oluşturucu</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="tool-list-item">Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="tool-list-item">Emojili Açıklamalar</a>
+                </div>
+                <h2 class="section-title">Tüm Metin Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/kelime-sayaci/" class="tool-list-item">Kelime Sayacı</a>
+                    <a href="/tr/karakter-sayaci/" class="tool-list-item">Karakter Sayacı</a>
+                    <a href="/tr/metin-temizleyici/" class="tool-list-item">Metin Temizleyici</a>
+                    <a href="/tr/yinelenen-satirlari-kaldir/" class="tool-list-item">Yinelenen Satırları Kaldır</a>
+                    <a href="/tr/satir-sonu-duzeltici/" class="tool-list-item">Satır Sonu Düzeltici</a>
+                    <a href="/tr/cumle-genisletici/" class="tool-list-item">Cümle Genişletici</a>
+                    <a href="/tr/paragraf-kisaltici/" class="tool-list-item">Paragraf Kısaltıcı</a>
+                    <a href="/tr/baslik-duzeni-cevirici/" class="tool-list-item">Başlık Düzeni Çevirici</a>
+                    <a href="/tr/kucuk-harf-cevirici/" class="tool-list-item">Küçük Harf Çevirici</a>
+                    <a href="/tr/buyuk-harf-cevirici/" class="tool-list-item">Büyük Harf Çevirici</a>
+                    <a href="/tr/camelcase-cevirici/" class="tool-list-item">CamelCase Çevirici</a>
+                    <a href="/tr/ters-metin-olusturucu/" class="tool-list-item">Ters Metin Oluşturucu</a>
+                    <a href="/tr/aynali-metin-olusturucu/" class="tool-list-item">Aynalı Metin Oluşturucu</a>
+                    <a href="/tr/zalgo-metin-olusturucu/" class="tool-list-item">Zalgo Metin Oluşturucu</a>
+                    <a href="/tr/spoiler-metin-olusturucu/" class="tool-list-item">Spoiler Metin Oluşturucu</a>
+                </div>
+                <h2 class="section-title">Tüm Eğlenceli ve Görsel Metin Araçları</h2>
+                <div class="tools-list">
+                    <a href="/tr/sahte-mesaj-olusturucu/" class="tool-list-item">Sahte Mesaj Oluşturucu</a>
+                    <a href="/tr/sahte-whatsapp-sohbet-olusturucu/" class="tool-list-item">Sahte WhatsApp Sohbet Oluşturucu</a>
+                    <a href="/tr/daktilo-efekti-olusturucu/" class="tool-list-item">Daktilo Efekti Oluşturucu</a>
+                    <a href="/tr/glitch-metin-olusturucu/" class="tool-list-item">Glitch Metin Oluşturucu</a>
+                    <a href="/tr/matrix-metin-olusturucu/" class="tool-list-item">Matrix Metin Oluşturucu</a>
+                    <a href="/tr/animasyonlu-metin-olusturucu/" class="tool-list-item">Animasyonlu Metin Oluşturucu</a>
+                    <a href="/tr/outro-metin-olusturucu/" class="tool-list-item">Outro Metin Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="tool-list-item">Arapça Kaligrafi</a>
+                </div>
+            </div>
+        </section>
+        <section class="seo-content-section">
+            <div class="container">
+                <p class="byline">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+
+                <h2>Unicode Karakterler, Yazı Tipi Değil: Dürüst Gerçek</h2>
+                <p>Bu sitedeki her üslup Unicode karakterlerden kurulur. Unicode Konsorsiyumu, her karaktere — harf, sembol, emoji — benzersiz bir kod noktası atayan standardı korur. Araçlarımız düz harflerinizi Matematiksel Alfanümerik Semboller, Kapalı Alfanümerikler, Harf Benzeri Semboller ve Yarım/Tam Genişlikli Biçimler gibi bloklardaki görsel benzer karakterlerle eşler. Çıktı sıradan metin olduğu için resim, eklenti ya da yazı tipi kurulumu olmadan her uygulamaya yapışır.</p>
+                <p>Bu yüzden buradaki hiçbir şey <em>her yerde</em> çalışmaz. Kullanıcı adlarındaki ASCII dışı karakterleri ayıklayan bir platform, görünen adda kabul ettiği şık metni handle alanında reddeder. Bazı eski cihazlarda belli bloklar eksiktir, tofu kutuları gösterir. Arama motorları üslubu değil kod noktalarını görür — SEO'ya önem veriyorsanız sayfa başlıklarınızda ya da başlıklarınızda Unicode üsluplu metin kullanmayın. Sosyal profiller, açıklamalar ve sohbetler içinse bu karakterler öne çıkmanın hafif ve güvenilir yoludur.</p>
+
+                <h2>Bu Araçlar En İyi Nerede Çalışır?</h2>
+                <p>Instagram ve TikTok biyoları görünen ad ve biyolarda Unicode kabul eder; bu siteyi en popüler kullanım durumu yapar. Discord mesajlarda, sunucu adlarında ve kanal konularında şık metni destekler. WhatsApp ve Telegram mesaj ve durum güncellemelerinde görüntüler. Oyun platformları değişir: Roblox, Fortnite ve Steam görünen adlarda Unicode kabul eder ama giriş kullanıcı adlarını sık sık düz ASCII ile sınırlar; karar vermeden önce test edin. Facebook gönderi ve yorumları şık metni kabul eder; bu da <a href="/tr/kalin-metin-cevirici/">kalın metin çeviriciyi</a> doğal biçimlendirme kullanamayan gönderilerin gözdesi yapar.</p>
+
+                <h2>Sıkça Sorulan Sorular</h2>
+                <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Metin oluşturma araçları gerçekten ücretsiz mi?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Evet. FontGenerators.online'daki 74 aracın tamamı kullanım sınırsız, kayıtsız ve filigransız ücretsizdir. Araçlar tamamen tarayıcınızda çalışır; kurulacak bir şey, ödenecek bir şey yoktur.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Şekilli yazılar ile gerçek yazı tipleri arasındaki fark nedir?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Burada yazı tipi dosyası yoktur. Gerçek yazı tipi, A harfinin cihazınızdaki görünümünü değiştirir. Araçlarımız A'yı, zaten kalın, italik ya da süslü görünen farklı bir Unicode karakterle değiştirir — örneğin Matematiksel Alfanümerik Semboller bloğundan &#119808;. Bu yüzden üslup, biçimlendirmeyi ayıklayan uygulamalara kopyala-yapıştırda yaşar.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Bazı karakterler neden kutu (&#9633;) görünüyor?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Kutu, cihazda ya da uygulamada o Unicode karakteri kapsayan yazı tipi olmadığı anlamına gelir. Bu yazı tipi desteği sorunudur; araçta hata değil. Aynı araç sayfasında başka üslup varyantı seçin — çoğu sayfa onlarca sunar — ya da daha geniş Unicode kapsamı için cihaz yazılımınızı güncelleyin.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Bu üslupları Instagram ya da TikTok kullanıcı adımda kullanabilir miyim?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Kullanıcı adı/handle'ın kendisinde genelde hayır; çoğu platform bunları düz harf, rakam ve birkaç sembolle sınırlar. Ama Instagram, TikTok ve X'te görünen adlar, biyolar, açıklamalar ve yorumlar Unicode üslupları kabul eder; çoğu kişi onları orada kullanır.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Şık metin ekran okuyucular için erişilebilir mi?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Kısmen. Ekran okuyucular şık karakterleri harf harf okuyabilir ya da alışılmadık adlar seslendirebilir; bu yavaş ve kafa karıştırıcıdır. Unicode üsluplarını kısa süs öğeleri — adlar, biyolar, başlıklar — için kullanın; önemli bilgileri ve uzun paragrafları düz metin tutun.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Araç kullanırken metnim saklanıyor mu?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Hayır. Her araç metninizi JavaScript ile tarayıcınızda yerel işler. Sunucuya hiçbir şey yüklenmez; girdiniz asla saklanmaz, kaydedilmez ya da kimseyle paylaşılmaz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script defer>
+        function searchTools() {
+            const query = document.getElementById('tool-search').value.toLowerCase();
+            const toolItems = document.querySelectorAll('.tool-list-item, .tool-card');
+            let found = false;
+            toolItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                    if (!found) {
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        found = true;
+                    }
+                } else {
+                    item.style.display = query ? 'none' : '';
+                }
+            });
+        }
+        document.getElementById('tool-search').addEventListener('keyup', function (e) {
+            if (e.key === 'Enter') searchTools();
+        });
+    </script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Metin oluşturma araçları gerçekten ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. FontGenerators.online'daki 74 aracın tamamı kullanım sınırsız, kayıtsız ve filigransız ücretsizdir. Araçlar tamamen tarayıcınızda çalışır; kurulacak bir şey, ödenecek bir şey yoktur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şekilli yazılar ile gerçek yazı tipleri arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Burada yazı tipi dosyası yoktur. Gerçek yazı tipi, A harfinin cihazınızdaki görünümünü değiştirir. Araçlarımız A'yı, zaten kalın, italik ya da süslü görünen farklı bir Unicode karakterle değiştirir — örneğin Matematiksel Alfanümerik Semboller bloğundan 𝐀. Bu yüzden üslup, biçimlendirmeyi ayıklayan uygulamalara kopyala-yapıştırda yaşar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bazı karakterler neden kutu (□) görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kutu, cihazda ya da uygulamada o Unicode karakteri kapsayan yazı tipi olmadığı anlamına gelir. Bu yazı tipi desteği sorunudur; araçta hata değil. Aynı araç sayfasında başka üslup varyantı seçin — çoğu sayfa onlarca sunar — ya da daha geniş Unicode kapsamı için cihaz yazılımınızı güncelleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu üslupları Instagram ya da TikTok kullanıcı adımda kullanabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kullanıcı adı/handle'ın kendisinde genelde hayır; çoğu platform bunları düz harf, rakam ve birkaç sembolle sınırlar. Ama Instagram, TikTok ve X'te görünen adlar, biyolar, açıklamalar ve yorumlar Unicode üslupları kabul eder; çoğu kişi onları orada kullanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şık metin ekran okuyucular için erişilebilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kısmen. Ekran okuyucular şık karakterleri harf harf okuyabilir ya da alışılmadık adlar seslendirebilir; bu yavaş ve kafa karıştırıcıdır. Unicode üsluplarını kısa süs öğeleri — adlar, biyolar, başlıklar — için kullanın; önemli bilgileri ve uzun paragrafları düz metin tutun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Araç kullanırken metnim saklanıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Her araç metninizi JavaScript ile tarayıcınızda yerel işler. Sunucuya hiçbir şey yüklenmez; girdiniz asla saklanmaz, kaydedilmez ya da kimseyle paylaşılmaz."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
