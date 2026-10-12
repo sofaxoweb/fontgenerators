@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Contador de Palabras Gratis | FontGenerators.online</title>
+  <meta content="Cuenta palabras, caracteres, oraciones y tiempo de lectura al instante con este contador de palabras gratis. Sin registro, sin límite, con estadísticas en vivo." name="description" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --bg: #ffffff;
+      --surface: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .tool-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .tool-description {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tool-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 200px;
+      transition: border 0.2s;
+    }
+
+    .tool-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .tool-actions {
+      display: flex;
+      gap: 10px;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .time-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .time-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .time-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .section-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+
+    .metric-label {
+      color: var(--muted);
+    }
+
+    .metric-value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .readability-score {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .score-excellent {
+      color: var(--secondary);
+    }
+
+    .score-good {
+      color: #3b82f6;
+    }
+
+    .score-fair {
+      color: var(--warning);
+    }
+
+    .score-poor {
+      color: var(--danger);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tab {
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--muted);
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab:hover {
+      color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .file-upload {
+      border: 2px dashed var(--border);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin: 1rem 0;
+    }
+
+    .file-upload:hover {
+      border-color: var(--primary);
+      background: var(--surface);
+    }
+
+    .file-upload input {
+      display: none;
+    }
+
+    @media (max-width:768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tool-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link rel="canonical" href="https://fontgenerators.online/es/contador-de-palabras/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/word-counter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/word-counter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/contador-de-palabras/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/contador-de-palavras/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/kelime-sayaci/" />
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/word-counter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/contador-de-palabras/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/contador-de-palavras/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/kelime-sayaci/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/word-counter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/contador-de-palabras/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/contador-de-palavras/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/kelime-sayaci/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>Herramientas de utilidad</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="/es/contador-de-palabras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palabras</span>
+            </a>
+            <a class="sidebar-link" href="/es/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/es/limpiador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpiador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/es/eliminar-lineas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Eliminar Líneas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/es/conversor-a-tipo-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Tipo Título</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Texto Invertido</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar herramientas
+        </button>
+        <section class="tool-hero"
+          style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); color: #fff; padding: 2rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+          <p style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">📊 Contador de palabras online gratis</p>
+          <p style="font-size: 1rem; opacity: 0.95; margin: 0;">Cuenta palabras, caracteres, oraciones, párrafos y
+            tiempo de lectura en tiempo real</p>
+        </section>
+        <div class="tool-container">
+          <div class="file-upload" onclick="document.getElementById('file-input').click()">
+            <input accept=".txt,.rtf,.docx,.pdf,.csv,.md,.json" id="file-input" onchange="handleFileUpload(event)"
+              type="file" />
+            📁 Haz clic para subir un archivo o pega el texto abajo
+          </div>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Paste or type your text here..." rows="10"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Borrar</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Pegar</button>
+            <button class="btn btn-secondary" onclick="sampleText()">📝 Ejemplo</button>
+            <button class="btn btn-secondary" onclick="cleanText()">✨ Limpiar texto</button>
+            <button class="btn btn-primary" onclick="copyStats()">📋 Copiar estadísticas</button>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="word-count">0</div>
+              <div class="stat-label">Palabras</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="char-count">0</div>
+              <div class="stat-label">Caracteres</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="char-no-space">0</div>
+              <div class="stat-label">Caracteres (sin espacios)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="sentence-count">0</div>
+              <div class="stat-label">Oraciones</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="paragraph-count">0</div>
+              <div class="stat-label">Párrafos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="line-count">0</div>
+              <div class="stat-label">Líneas</div>
+            </div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab(event,'basic')">📊 Estadísticas básicas</button>
+            <button class="tab" onclick="switchTab(event,'advanced')">🎯 Avanzado</button>
+            <button class="tab" onclick="switchTab(event,'readability')">📖 Legibilidad</button>
+          </div>
+          <div class="tab-content active" id="tab-basic">
+            <div class="time-stats">
+              <div class="time-card">
+                <div class="time-value" id="reading-time">0 min</div>
+                <div class="stat-label">📖 Tiempo de lectura (200 ppm)</div>
+              </div>
+              <div class="time-card">
+                <div class="time-value" id="speaking-time">0 min</div>
+                <div class="stat-label">🎤 Tiempo de habla (150 ppm)</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-advanced">
+            <div class="section-box">
+              <div class="section-title">📐 Análisis de la estructura del texto</div>
+              <div class="metric-row"><span class="metric-label">Longitud media de palabra</span><span class="metric-value"
+                  id="avg-word-length">0</span></div>
+              <div class="metric-row"><span class="metric-label">Longitud media de oración</span><span
+                  class="metric-value" id="avg-sentence-length">0 palabras</span></div>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-readability">
+            <div class="section-box">
+              <div class="section-title">📖 Legibilidad Analysis</div>
+              <div class="readability-score" id="readability-score">-</div>
+              <div id="readability-label" style="text-align:center; color:var(--muted); margin-bottom:2rem;">Facilidad de lectura
+                de Flesch</div>
+            </div>
+          </div>
+        </div>
+        <!-- content start -->
+      </div>
+    </div>
+    
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a> &rsaquo; <span>Contador de palabras</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Contador de palabras gratis</h1>
+<p>Un contador de palabras es una herramienta online que mide la extensión de lo que escribes: palabras, caracteres, oraciones, párrafos y tiempo estimado de lectura. Este contador de palabras gratis actualiza cada estadística en vivo mientras escribes, funciona por completo en tu navegador y no pone ningún límite a la longitud del texto. Pega tu ensayo, artículo o publicación en el cuadro de arriba y cuenta las palabras al instante.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Lo esencial</p>
+<ul style="margin: 0;">
+<li>Cuenta palabras, caracteres (con y sin espacios), oraciones, párrafos y líneas &mdash; en vivo, mientras escribes.</li>
+<li>El tiempo de lectura se calcula a 200 palabras por minuto; el tiempo de habla, a 150 palabras por minuto.</li>
+<li>Una «palabra» es cualquier secuencia separada por espacios: <em>don't</em>, <em>well-known</em> y <em>hello@example.com</em> cuentan como una sola palabra cada una.</li>
+<li>Todo el conteo ocurre en tu navegador &mdash; tu texto nunca se sube ni se guarda.</li>
+<li>Gratis y sin límite de palabras: ideal para ensayos, tareas, artículos y contenido SEO.</li>
+</ul>
+</div>
+<h2>¿Qué es un contador de palabras?</h2>
+<p><strong>Un contador de palabras es una herramienta de análisis de texto que mide la longitud de un escrito.</strong> Informa el número de palabras, de caracteres con y sin espacios, de oraciones, de párrafos y de líneas, y suele estimar el tiempo de lectura o de habla. Los estudiantes usan un contador de palabras online para respetar los límites de sus tareas, los redactores para alcanzar los objetivos de sus artículos y los editores para calcular cuánto tardará el público en leer un texto.</p>
+<p>A diferencia de los contadores básicos que traen los procesadores de texto, esta herramienta de conteo de palabras añade métricas avanzadas: longitud media de palabra, longitud media de oración y una estimación de legibilidad Flesch Reading Ease &mdash; todo actualizándose en tiempo real.</p>
+[IMAGE: Diagrama de la cuadrícula de estadísticas del contador de palabras con cada métrica etiquetada (palabras, caracteres, oraciones, párrafos, líneas, tiempo de lectura) &mdash; alt: "Cuadrícula de estadísticas del contador de palabras con métricas de texto en vivo"]
+<h2>Cómo funciona este contador de palabras</h2>
+<p>Esta herramienta analiza tu texto con reglas sencillas y transparentes &mdash; sin cajas negras. Esto es exactamente lo que mide:</p>
+<ul>
+<li><strong>Palabras:</strong> se recorta el texto y se divide en cada secuencia de espacios en blanco (espacios, tabulaciones, saltos de línea). Cada fragmento cuenta como una palabra. Un cuadro vacío muestra 0.</li>
+<li><strong>Caracteres:</strong> la longitud total del texto, incluidos los espacios. <strong>Caracteres sin espacios</strong> elimina primero todos los espacios en blanco.</li>
+<li><strong>Oraciones:</strong> el texto se divide en grupos de <code>.</code> <code>!</code> <code>?</code>; cada fragmento no vacío cuenta como una oración.</li>
+<li><strong>Párrafos:</strong> bloques de texto separados por líneas en blanco. Un solo bloque cuenta como un párrafo.</li>
+<li><strong>Líneas:</strong> cada línea no vacía.</li>
+<li><strong>Tiempo de lectura:</strong> número de palabras dividido entre 200 palabras por minuto, redondeado hacia arriba al minuto completo siguiente.</li>
+<li><strong>Tiempo de habla:</strong> número de palabras dividido entre 150 palabras por minuto, redondeado hacia arriba &mdash; útil para discursos, guiones y presentaciones.</li>
+<li><strong>Pestaña Avanzado:</strong> longitud media de palabra (con un decimal) y longitud media de oración en palabras.</li>
+<li><strong>Pestaña Legibilidad:</strong> una estimación de Facilidad de lectura de Flesch. Ten en cuenta que usa una estimación fija de 1,5 sílabas por palabra, así que tómalo como una guía aproximada y no como una puntuación lingüística precisa.</li>
+</ul>
+<p>La herramienta también incluye extras prácticos: <strong>Borrar</strong> vacía el cuadro, <strong>Pegar</strong> trae texto de tu portapapeles, <strong>Ejemplo</strong> carga un texto de muestra, <strong>Limpiar texto</strong> reduce todos los espacios sobrantes a espacios simples y <strong>Copiar estadísticas</strong> copia el conteo de palabras. También puedes subir archivos <code>.txt</code>, <code>.rtf</code>, <code>.docx</code>, <code>.pdf</code>, <code>.csv</code>, <code>.md</code> o <code>.json</code>, que se leen como texto plano.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Pega esta oración en el contador de palabras:</p>
+<p><em>"The quick brown fox jumps over the lazy dog."</em></p>
+<table>
+<thead><tr><th>Métrica</th><th>Resultado</th><th>Por qué</th></tr></thead>
+<tbody>
+<tr><td>Palabras</td><td>9</td><td>9 fragmentos separados por espacios</td></tr>
+<tr><td>Caracteres</td><td>44</td><td>Incluye espacios y el punto</td></tr>
+<tr><td>Caracteres (sin espacios)</td><td>36</td><td>44 menos 8 espacios</td></tr>
+<tr><td>Oraciones</td><td>1</td><td>Un fragmento que termina en punto</td></tr>
+<tr><td>Párrafos / Líneas</td><td>1 / 1</td><td>Un solo bloque de texto</td></tr>
+<tr><td>Tiempo de lectura</td><td>1 min</td><td>9 &divide; 200, redondeado hacia arriba</td></tr>
+<tr><td>Tiempo de habla</td><td>1 min</td><td>9 &divide; 150, redondeado hacia arriba</td></tr>
+<tr><td>Longitud media de palabra</td><td>4,0 caracteres</td><td>36 letras &divide; 9 palabras</td></tr>
+</tbody>
+</table>
+<p>Como el tiempo de lectura se redondea hacia arriba, cualquier texto de hasta 200 palabras muestra «1 min» &mdash; uno de 201 palabras muestra «2 min». Para una estimación más fina en textos largos, nuestra <a href="/es/calculadora-de-tiempo-de-lectura/">calculadora de tiempo de lectura</a> usa la misma fórmula en un formato dedicado.</p>
+<h2>Cómo usar este contador de palabras</h2>
+<ol>
+<li><strong>Pega o escribe</strong> tu texto en el cuadro de arriba &mdash; o haz clic en la zona de subida para importar un archivo.</li>
+<li><strong>Lee las estadísticas en vivo</strong> en la cuadrícula: palabras, caracteres, oraciones, párrafos y líneas se actualizan con cada tecla.</li>
+<li><strong>Cambia de pestaña</strong> para más detalle: Estadísticas básicas muestra el tiempo de lectura y de habla, Avanzado muestra la longitud media de palabra y de oración, y Legibilidad muestra la puntuación Flesch.</li>
+<li><strong>Ordena el texto</strong> con el botón Limpiar texto si tu pegado trae espacios irregulares, y usa Copiar estadísticas para tomar el conteo. Si te preguntabas cómo contar palabras de un documento rápido, pegarlo aquí es el método más veloz &mdash; sin instalar nada.</li>
+</ol>
+<h2>Por qué el conteo varía entre herramientas</h2>
+<p>Si cuentas las palabras aquí, en Microsoft Word y en Google Docs, es posible que obtengas cifras ligeramente distintas para el mismo documento. Es normal: cada programa define «palabra» a su manera. Esta herramienta usa la definición más simple &mdash; fragmentos separados por espacios en blanco &mdash; mientras que los procesadores de texto aplican sus propios criterios, que pueden tratar de forma distinta los compuestos con guion, las contracciones, los números y la puntuación. También pueden incluir o excluir notas al pie, cuadros de texto y comentarios.</p>
+<p>Lo que aquí cuenta como una palabra:</p>
+<ul>
+<li><em>don't</em> &rarr; 1 palabra &nbsp;|&nbsp; <em>well-known</em> &rarr; 1 palabra &nbsp;|&nbsp; <em>state-of-the-art</em> &rarr; 1 palabra</li>
+<li><em>42</em> &rarr; 1 palabra &nbsp;|&nbsp; <em>hello@example.com</em> &rarr; 1 palabra &nbsp;|&nbsp; <em>https://example.com</em> &rarr; 1 palabra</li>
+</ul>
+<p>Si una editorial o una universidad te impone un límite de palabras, pregunta con qué herramienta lo miden &mdash; o revisa tu borrador en la misma herramienta que usarán ellos.</p>
+<h2>De palabras a páginas: la fórmula de las editoriales</h2>
+<p>Los límites de palabras y de páginas se intercambian con una conversión aproximada. La regla de oro editorial: una <strong>página a doble espacio tiene unas 250 palabras</strong> y una <strong>página a espacio sencillo, unas 500 palabras</strong> (fuente estándar de 12 pt y márgenes de 1 pulgada).</p>
+<table>
+<thead><tr><th>Palabras</th><th>Páginas a doble espacio</th><th>Páginas a espacio sencillo</th></tr></thead>
+<tbody>
+<tr><td>500</td><td>&asymp; 2</td><td>&asymp; 1</td></tr>
+<tr><td>1.000</td><td>&asymp; 4</td><td>&asymp; 2</td></tr>
+<tr><td>1.500</td><td>&asymp; 6</td><td>&asymp; 3</td></tr>
+<tr><td>2.000</td><td>&asymp; 8</td><td>&asymp; 4</td></tr>
+</tbody>
+</table>
+<p>Son estimaciones: los márgenes amplios, las fuentes grandes, los títulos y los diálogos cambian la cifra real. Usa la tabla para planificar y el contador de palabras para la cifra exacta.</p>
+[IMAGE: Gráfico de conversión de conteos de palabras a número de páginas para documentos a doble espacio y a espacio sencillo &mdash; alt: "Gráfico de conversión de palabras a páginas"]
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>La puntuación de legibilidad es aproximada.</strong> La estimación Flesch supone 1,5 sílabas por palabra en lugar de contar sílabas reales &mdash; sirve como señal orientativa, no para investigación.</li>
+<li><strong>Los archivos se leen como texto sin formato.</strong> Un <code>.docx</code> o un <code>.pdf</code> pueden mostrar restos de formato o fragmentos binarios; los formatos de texto plano (<code>.txt</code>, <code>.md</code>, <code>.csv</code>) dan los resultados más limpios.</li>
+<li><strong>Copiar estadísticas solo copia el conteo de palabras</strong> («Palabras: 42»), no toda la cuadrícula.</li>
+<li><strong>Otros alfabetos:</strong> los idiomas que separan con espacios (español, francés, árabe) se cuentan con normalidad, pero los sistemas sin espacios entre palabras (chino, japonés) darán un conteo bajo.</li>
+<li><strong>Los emojis y el Unicode especial</strong> pueden inflar el conteo de caracteres, porque algunos símbolos ocupan más de una unidad de código.</li>
+</ul>
+<h2>Contador de palabras frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Ideal para</th><th>¿Requiere instalación?</th></tr></thead>
+<tbody>
+<tr><td><strong>Este contador de palabras</strong></td><td>Conteos rápidos con tiempo de lectura, legibilidad y promedios avanzados &mdash; sin registro</td><td>No</td></tr>
+<tr><td>Contador de palabras de Microsoft Word</td><td>Contar dentro de un documento que ya estás editando, incluidas las notas al pie</td><td>Sí</td></tr>
+<tr><td>Contador de palabras de Google Docs</td><td>Contar dentro de un archivo de Docs mientras colaboras</td><td>No (requiere cuenta)</td></tr>
+<tr><td><a href="/es/contador-de-caracteres/">Contador de caracteres</a></td><td>Cuando el límite es de caracteres, no de palabras (bios sociales, meta tags, SMS)</td><td>No</td></tr>
+<tr><td><a href="/es/calculadora-de-tiempo-de-lectura/">Calculadora de tiempo de lectura</a></td><td>Estimaciones dedicadas de tiempo de lectura y de habla para guiones y artículos</td><td>No</td></tr>
+</tbody>
+</table>
+<p>Usa esta página cuando quieras la foto completa en un solo lugar; usa el <a href="/es/contador-de-caracteres/">contador de caracteres</a> cuando una plataforma limite caracteres, y el <a href="/es/limpiador-de-texto/">limpiador de texto</a> primero si tu pegado trae un formato desordenado.</p>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo cuento las palabras de un texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Pega o escribe tu texto en el cuadro de arriba y el conteo aparece al instante &mdash; sin pulsar ningún botón y sin registrarte. Las palabras se cuentan en vivo mientras escribes, y la cuadrícula de estadísticas también muestra caracteres, oraciones, párrafos, líneas y tiempo de lectura.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué cuenta como «palabra» en esta herramienta?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Todo lo separado por espacios en blanco cuenta como una palabra: los espacios, las tabulaciones y los saltos de línea son los límites. Las contracciones (don't), los compuestos con guion (well-known), los números (42), los correos y las URL cuentan como una palabra cada uno.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Este contador de palabras tiene límite?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. Es un contador de palabras sin límite &mdash; puedes pegar desde un tuit hasta un capítulo entero de tesis. Todo se procesa localmente en tu navegador, así que los documentos muy largos solo pueden tardar un momento en analizarse.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo se calcula el tiempo de lectura?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El tiempo de lectura divide tu conteo de palabras entre una velocidad media de lectura silenciosa de 200 palabras por minuto y redondea hacia arriba al minuto completo siguiente. El tiempo de habla usa 150 palabras por minuto, el ritmo típico de discursos y presentaciones.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué Microsoft Word muestra otro conteo de palabras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Los procesadores de texto usan sus propios criterios: pueden dividir las palabras con guion, tratar la puntuación de otra forma o incluir notas al pie y cuadros de texto. Esta herramienta usa la definición más simple &mdash; fragmentos separados por espacios &mdash;, así que pequeñas diferencias de unas pocas palabras en documentos largos son normales.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Este contador de palabras guarda o sube mi texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. Todo el análisis se ejecuta en JavaScript dentro de tu navegador. Tu texto nunca se envía a un servidor, ni se guarda, registra o comparte &mdash; es seguro para borradores, manuscritos y documentos confidenciales.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo contar palabras de un PDF o un documento de Word?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí &mdash; usa la zona de subida de archivos para importar archivos .txt, .rtf, .docx, .pdf, .csv, .md o .json. Se leen como texto plano, así que los .docx y .pdf pueden incluir restos de formato; los formatos de texto plano dan los conteos más limpios.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué es la puntuación Flesch Reading Ease?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Es una estimación de legibilidad de 0 a 100 que se muestra en la pestaña Legibilidad: cuanto más alta, más fácil de leer. Esta herramienta usa una versión simplificada con una estimación fija de sílabas, así que tómalo como una guía aproximada y no como una medición lingüística precisa.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuántas páginas son 1.000 palabras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Aproximadamente 4 páginas a doble espacio o 2 a espacio sencillo, según la regla de oro editorial (250 palabras por página a doble espacio, 500 a espacio sencillo). Las páginas reales varían con la fuente, los márgenes y los títulos.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/es/contador-de-palabras/">📊 Contador de Palabras</a>
+        <a class="sidebar-link" href="/es/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/es/limpiador-de-texto/">🧹 Limpiador de Texto</a>
+        <a class="sidebar-link" href="/es/conversor-a-tipo-titulo/">🔠 Tipo Título</a>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- webadvance schema -->
+  
+  <!-- organization schema -->
+  
+  <!-- faq schema -->
+  
+  <!-- entity schema -->
+  
+  <!-- tool js -->
+  <script defer="">
+    let currentStats = {};
+
+    function analyzeText() {
+      const text = document.getElementById('text-input').value;
+
+      const words = text.trim() ? text.trim().split(/\s+/) : [];
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+      const paragraphs = text.split(/\n\n+/).filter(p => p.trim().length > 0);
+      const lines = text.split(/\n/).filter(l => l.trim().length > 0);
+
+      document.getElementById('word-count').textContent = words.length;
+      document.getElementById('char-count').textContent = text.length;
+      document.getElementById('char-no-space').textContent = text.replace(/\s/g, '').length;
+      document.getElementById('sentence-count').textContent = sentences.length;
+      document.getElementById('paragraph-count').textContent = paragraphs.length || (text.trim() ? 1 : 0);
+      document.getElementById('line-count').textContent = lines.length || (text.trim() ? 1 : 0);
+
+      document.getElementById('reading-time').textContent = words.length > 0 ? Math.ceil(words.length / 200) + ' min' : '0 min';
+      document.getElementById('speaking-time').textContent = words.length > 0 ? Math.ceil(words.length / 150) + ' min' : '0 min';
+
+      const totalChars = words.join('').length;
+      document.getElementById('avg-word-length').textContent = words.length > 0 ? (totalChars / words.length).toFixed(1) + ' caracteres' : '0 chars';
+      document.getElementById('avg-sentence-length').textContent = sentences.length > 0 ? Math.round(words.length / sentences.length) + ' palabras' : '0 palabras';
+
+      // Readability (simple Flesch estimate)
+      const syllables = words.length * 1.5;
+      const avgSentenceLength = sentences.length > 0 ? words.length / sentences.length : 1;
+      const avgWordLength = words.length > 0 ? totalChars / words.length : 1;
+      const score = Math.max(0, Math.min(100, Math.round(206.835 - 1.015 * avgSentenceLength - 84.6 * (syllables / words.length))));
+      document.getElementById('readability-score').textContent = score;
+    }
+
+    function switchTab(e, tabName) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      document.getElementById('tab-' + tabName).classList.add('active');
+    }
+
+    function clearText() { document.getElementById('text-input').value = ''; analyzeText(); }
+    function sampleText() { document.getElementById('text-input').value = 'Texto de ejemplo para el análisis.'; analyzeText(); }
+    function pasteText() { navigator.clipboard.readText().then(t => { document.getElementById('text-input').value = t; analyzeText(); }); }
+    function cleanText() { let t = document.getElementById('text-input').value; t = t.replace(/\s+/g, ' ').trim(); document.getElementById('text-input').value = t; analyzeText(); }
+    function handleFileUpload(e) { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { document.getElementById('text-input').value = ev.target.result; analyzeText(); }; r.readAsText(f); }
+    function copyStats() { navigator.clipboard.writeText('Palabras: ' + document.getElementById('word-count').textContent); alert('¡Estadísticas copiadas!'); }
+
+    analyzeText();
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo cuento las palabras de un texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pega o escribe tu texto en el cuadro de arriba y el conteo aparece al instante — sin pulsar ningún botón y sin registrarte. Las palabras se cuentan en vivo mientras escribes, y la cuadrícula de estadísticas también muestra caracteres, oraciones, párrafos, líneas y tiempo de lectura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué cuenta como «palabra» en esta herramienta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todo lo separado por espacios en blanco cuenta como una palabra: los espacios, las tabulaciones y los saltos de línea son los límites. Las contracciones (don't), los compuestos con guion (well-known), los números (42), los correos y las URL cuentan como una palabra cada uno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Este contador de palabras tiene límite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es un contador de palabras sin límite — puedes pegar desde un tuit hasta un capítulo entero de tesis. Todo se procesa localmente en tu navegador, así que los documentos muy largos solo pueden tardar un momento en analizarse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula el tiempo de lectura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El tiempo de lectura divide tu conteo de palabras entre una velocidad media de lectura silenciosa de 200 palabras por minuto y redondea hacia arriba al minuto completo siguiente. El tiempo de habla usa 150 palabras por minuto, el ritmo típico de discursos y presentaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué Microsoft Word muestra otro conteo de palabras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los procesadores de texto usan sus propios criterios: pueden dividir las palabras con guion, tratar la puntuación de otra forma o incluir notas al pie y cuadros de texto. Esta herramienta usa la definición más simple — fragmentos separados por espacios —, así que pequeñas diferencias de unas pocas palabras en documentos largos son normales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Este contador de palabras guarda o sube mi texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Todo el análisis se ejecuta en JavaScript dentro de tu navegador. Tu texto nunca se envía a un servidor, ni se guarda, registra o comparte — es seguro para borradores, manuscritos y documentos confidenciales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo contar palabras de un PDF o un documento de Word?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — usa la zona de subida de archivos para importar archivos .txt, .rtf, .docx, .pdf, .csv, .md o .json. Se leen como texto plano, así que los .docx y .pdf pueden incluir restos de formato; los formatos de texto plano dan los conteos más limpios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la puntuación Flesch Reading Ease?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una estimación de legibilidad de 0 a 100 que se muestra en la pestaña Legibilidad: cuanto más alta, más fácil de leer. Esta herramienta usa una versión simplificada con una estimación fija de sílabas, así que tómalo como una guía aproximada y no como una medición lingüística precisa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas páginas son 1.000 palabras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aproximadamente 4 páginas a doble espacio o 2 a espacio sencillo, según la regla de oro editorial (250 palabras por página a doble espacio, 500 a espacio sencillo). Las páginas reales varían con la fuente, los márgenes y los títulos."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
