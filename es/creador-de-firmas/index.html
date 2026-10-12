@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Creador de Firmas Online | FontGenerators.online</title>
+  <meta content="Crea una firma de texto elegante online con 10 estilos script: clásica, con florituras y real. Ideal para foros y firmas de correo. Gratis y sin registro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/creador-de-firmas/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/signature-text-maker/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/signature-text-maker/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/creador-de-firmas/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/criador-de-assinaturas/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/imza-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to make a text signature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type your name into the generator above, choose one of the 10 script styles (Classic, Flourish, Underlined, Royal, and more), click Copy, and paste it wherever you want your signature to appear — bios, forums, display names, or email sign-offs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy and paste a signature font?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For signature font copy paste, these Unicode characters copy and paste into any app that supports Unicode — Instagram, Discord, forums, and email. Nothing needs installing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a text signature legally binding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A decorative Unicode signature — like any digital signature text made of characters — is purely visual and carries no legal weight. Legally binding electronic signatures require proper e-signature services with identity verification and audit trails."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this as an email signature generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For decorative purposes, yes — paste a script signature above your typed name and contact details. Always keep the plain-text version too, for screen readers, search, and recipients whose clients can't render script characters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the underlined signature work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Underlined style appends U+0332 (combining low line) to every character, so the underline is part of the text itself rather than separate underscore characters. It copies, pastes, and moves with your name."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a signature maker and handwriting text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The signature maker frames script lettering with signature-specific ornaments — flourishes, crowns, rules, underlines. The handwriting generator offers casual script alphabets with note and letter decorations. Use the signature maker for names, handwriting for general text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my signature show correctly everywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On modern phones, browsers, and email clients, yes. Very old systems may show boxes for script characters — the Classic Signature (bold script) style has the broadest support if compatibility is a concern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can screen readers read my text signature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not well — script characters are announced by their technical Unicode names. Always pair a decorative signature with your plain-text name so everyone can read it."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/signature-text-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/signature-text-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../herramientas-de-texto-aesthetic/">Herramientas Aesthetic</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Creador de Firmas</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="../../signature-text-maker/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="./" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="../pt/criador-de-assinaturas/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../tr/imza-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+
+<section class="tool-hero" style="background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);">
+      <div class="container">
+        <div class="h1">🖊️ Creador de texto de firma</div>
+        <p>Crea estilos de firma elegantes y profesionales</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Introduce tu nombre</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('signature')"
+            placeholder="Escribe tu nombre..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Generated Signatures</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Todo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpiar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🖊️</div>
+              <p>Ingrese su nombre arriba para generar estilos de firma</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+<h1>Creador de Firmas</h1>
+<p class="byline">Por el equipo editorial de FontGenerators · Actualizado: 12 de octubre de 2026</p>
+<p class="lead">Un <strong>creador de firmas de texto</strong> convierte tu nombre en una elegante firma script —𝓐𝓿𝓪, ~ 𝒜𝓋𝒶 ~, ❧ 𝒜𝓋𝒶 ❧— usando letras Unicode que puedes copiar y pegar donde quieras. Este <strong>creador de firmas elegante</strong> gratuito crea 10 estilos de <strong>fuente de firma</strong>, de lo clásico y formal a lo florido y real. Sin registro.</p>
+<div class="takeaways">
+<p><strong>Puntos clave</strong></p>
+<ul>
+<li>10 estilos construidos con alfabetos script Unicode (Símbolos alfanuméricos matemáticos) más marcos decorativos y florituras.</li>
+<li>El estilo Subrayada usa un <strong>subrayado combinante</strong> real (U+0332) pegado a cada letra: un subrayado tipográfico genuino, no guiones bajos.</li>
+<li>Perfecta para nombres visibles, firmas de foros, bios sociales y estilo de <strong>firma de correo</strong>.</li>
+<li>Importante: una firma de texto decorativa <strong>no</strong> es una firma digital legalmente válida.</li>
+<li>Escribe tu nombre completo para el resultado más parecido a una firma; los nombres solos van bien con los estilos Real y Floritura.</li>
+</ul>
+</div>
+
+<h2>¿Qué es una firma de texto?</h2>
+<div class="definition"><p>Una <strong>firma de texto</strong> es tu nombre dibujado con elegantes letras script —como 𝓐𝓿𝓪— usando caracteres Unicode, diseñada para parecer una firma personal en contextos digitales: biografías, pies de foros, nombres visibles y despedidas decorativas de correo.</p></div>
+<p><strong>Cómo crear una firma de texto:</strong> escribe tu nombre en el generador, elige entre 10 estilos y copia el resultado. Las letras vienen de los alfabetos script de Unicode —la misma familia detrás del <a href="/es/generador-de-texto-manuscrito/">generador de texto manuscrito</a>—, pero el enmarcado aquí es específico de firmas: florituras (❧), coronas (♔), filetes (—) y un verdadero subrayado combinante.</p>
+<p>Una distinción esencial: esto crea una firma <em>elegante</em>, no una <em>legal</em>. Una firma Unicode decorativa no tiene peso criptográfico ni legal: no firmará contratos ni verificará identidad. Para firmas legalmente válidas necesitas un servicio adecuado de firma electrónica.</p>
+
+<h2>Cómo funciona este generador de fuentes de firma</h2>
+<p>Tu nombre se reasigna letra por letra sobre dos alfabetos script —script negrita (𝓐𝓿𝓪) y script ligero (𝒜𝓋𝒶)— y se remata con ornamentos estilo firma. Los 10 estilos, comprobados con la salida real para «Ava»:</p>
+<table>
+<thead><tr><th>Estilo</th><th>Ejemplo</th><th>Carácter</th></tr></thead>
+<tbody>
+<tr><td>Firma clásica</td><td>𝓐𝓿𝓪</td><td>Script negrita, sin marco: la opción de todos los días</td></tr>
+<tr><td>Firma elegante</td><td>~ 𝒜𝓋𝒶 ~</td><td>Script ligero con florituras de tilde</td></tr>
+<tr><td>Estilo formal</td><td>— 𝓐𝓋𝒶 —</td><td>Script negrita entre rayas</td></tr>
+<tr><td>Floritura</td><td>❧ 𝒜𝓋𝒶 ❧</td><td>Corazones florales rotados</td></tr>
+<tr><td>Ejecutiva</td><td>✦ 𝓐𝓋𝒶 ✦</td><td>Acentos de estrella, energía de sala de juntas</td></tr>
+<tr><td>Profesional</td><td>• 𝒜𝓋𝒶 •</td><td>Marco mínimo de puntos</td></tr>
+<tr><td>Artística</td><td>« 𝓐𝓋𝒶 »</td><td>Marco de comillas latinas, aire de galería</td></tr>
+<tr><td>Real</td><td>♔ 𝒜𝓋𝒶 ♔</td><td>Coronas de rey de ajedrez</td></tr>
+<tr><td>Subrayada</td><td>A̲v̲a̲</td><td>Línea baja combinante U+0332 en cada letra</td></tr>
+<tr><td>Firma de pluma</td><td>✒ 𝒜𝓋𝒶</td><td>Ornamento de plumín de estilográfica</td></tr>
+</tbody>
+</table>
+<p>El estilo <strong>Subrayada</strong> merece una mirada de cerca: en vez de dibujar guiones bajos debajo de tu nombre, agrega U+0332 (línea baja combinante) a <em>cada</em> carácter, así que el subrayado forma parte del propio texto y se mueve con él al copiarlo. Es el truco más «firma de verdad» del conjunto.</p>
+[IMAGE: Primer plano del estilo Subrayada del creador de firmas, con los subrayados combinantes pegados a cada letra | alt="Estilo Subrayada del creador de firmas usando caracteres de subrayado combinante"]
+
+<h2>Ejemplo paso a paso</h2>
+<p>Escribe <strong>Ava Stone</strong> y elige <strong>Floritura</strong>:</p>
+<div class="example-box"><p>❧ 𝒜𝓋𝒶 𝒮𝓉𝑜𝓃𝑒 ❧</p></div>
+<p>El espacio entre nombres queda plano, cada nombre recibe el tratamiento script ligero, y los ornamentos ❧ (corazones florales rotados del bloque Dingbats) enmarcan toda la firma. ¿Necesitas una <strong>firma elegante para tu nombre</strong>? Para un contexto de negocios, el <strong>Estilo formal</strong> —𝓐𝓿𝓪 𝓢𝓽𝓸𝓷𝓮— se lee más limpio.</p>
+
+<h2>Cómo crear una firma de texto</h2>
+<ol>
+<li><strong>Escribe tu nombre</strong> en el cuadro de arriba: nombre completo para lo formal, solo el nombre para lo casual.</li>
+<li>Explora los 10 estilos de <strong>firma elegante</strong>.</li>
+<li>Haz clic en <strong>Copiar</strong> en el que encaje con tu contexto.</li>
+<li>Pégalo como tu firma de foro, bio social, nombre visible o despedida decorativa de correo.</li>
+<li>Mantén cerca una versión de tu nombre en texto plano para legibilidad y búsqueda.</li>
+</ol>
+
+<h2>Cómo usar una firma elegante en el correo</h2>
+<p><strong>¿Puedo usar esto como generador de firmas de correo?</strong> Como decoración, sí: pega una firma script sobre tu nombre escrito, tu cargo y tus datos de contacto. La mayoría de los clientes de correo dibujan bien el Unicode script. Pero sigue dos reglas: incluye siempre tu nombre en texto plano (los lectores de pantalla y la búsqueda lo necesitan), y no confíes nunca en una firma Unicode donde se requiera una firma real: contratos, formularios y documentos legales necesitan herramientas adecuadas de firma electrónica, no caracteres bonitos.</p>
+
+<h2>Creador de firmas vs. herramientas similares</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Qué hace</th><th>Úsala cuando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/es/generador-de-texto-manuscrito/">Generador de texto manuscrito</a></td><td>Alfabetos script casuales y estilos de nota</td><td>Quieras texto de <strong>fuente manuscrita</strong> cotidiano, no una firma</td></tr>
+<tr><td><a href="/es/generador-de-caligrafia/">Generador de caligrafía</a></td><td>Caligrafía ornamental blackletter y script con marcos florales</td><td>Quieras formalidad de invitación de boda</td></tr>
+<tr><td><a href="/es/generador-de-texto-cursivo/">Generador de texto cursivo</a></td><td>Formas cursivas conectadas</td><td>Quieras estilo de escritura ligada</td></tr>
+<tr><td><a href="/es/generador-de-texto-elegante/">Generador de texto elegante</a></td><td>Estilos de fuente negrita, itálica y decorativos</td><td>Quieras alternativas de <strong>firma elegante</strong> más allá del script</td></tr>
+<tr><td><a href="/es/generador-de-texto-doodle/">Generador de texto doodle</a></td><td>Marcos juguetones dibujados a mano</td><td>Tu «firma» es por diversión, no por formalidad</td></tr>
+</tbody>
+</table>
+<p>Encuentra cada herramienta de rotulación en <a href="/es/herramientas-de-texto-aesthetic/">herramientas de texto aesthetic</a>.</p>
+
+<h2>Consejos para una gran firma de texto</h2>
+<p><strong>Estilo según el contexto.</strong> Clásica o Formal para uso profesional; Floritura o Real para perfiles creativos; Profesional (• •) cuando quieras casi nada de decoración.</p>
+<p><strong>Los nombres completos se ven más como firmas.</strong> Dos palabras les dan aire a los ornamentos: compara 𝓐𝓋𝒶 con 𝓐𝓿𝓪 𝓢𝓽𝓸𝓷𝓮.</p>
+<p><strong>Prueba el subrayado.</strong> El subrayado combinante se ve precioso en dispositivos modernos pero puede verse tenue en algunas fuentes: revísalo antes de adoptarlo.</p>
+
+<h2>Limitaciones</h2>
+<ul>
+<li>Una firma de texto decorativa no tiene validez legal: no puede firmar documentos ni verificar identidad.</li>
+<li>Los alfabetos script son símbolos matemáticos Unicode; los lectores de pantalla pueden anunciarlos de forma extraña.</li>
+<li>Algunos clientes de correo o sistemas antiguos dibujan los caracteres script como cuadros: pruébalo siempre.</li>
+<li>Los números y la puntuación de los nombres quedan en estilo plano; solo A–Z/a–z se transforman.</li>
+</ul>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cómo se crea una firma de texto?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Escribe tu nombre en el generador de arriba, elige uno de los 10 estilos script (Clásica, Floritura, Subrayada, Real y más), haz clic en Copiar y pégalo donde quieras que aparezca tu firma: biografías, foros, nombres visibles o firmas de correo.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Puedo copiar y pegar una fuente de firma?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sí. Para copiar y pegar fuentes de firma, estos caracteres Unicode se copian y pegan en cualquier app que admita Unicode: Instagram, Discord, foros y correo. No hay nada que instalar.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Una firma de texto es legalmente válida?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No. Una firma Unicode decorativa —como cualquier texto de firma digital hecho de caracteres— es puramente visual y no tiene peso legal. Las firmas electrónicas legalmente válidas requieren servicios adecuados de firma electrónica con verificación de identidad y registros de auditoría.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Puedo usarlo como generador de firmas de correo?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Con fines decorativos, sí: pega una firma script sobre tu nombre escrito y tus datos de contacto. Mantén siempre también la versión en texto plano, para los lectores de pantalla, la búsqueda y los destinatarios cuyo cliente no dibuje los caracteres script.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cómo funciona la firma subrayada?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">El estilo Subrayada agrega U+0332 (línea baja combinante) a cada carácter, así que el subrayado forma parte del propio texto y no son guiones bajos separados. Se copia, se pega y se mueve con tu nombre.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cuál es la diferencia entre un creador de firmas y el texto manuscrito?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">El creador de firmas enmarca la caligrafía script con ornamentos propios de firmas: florituras, coronas, filetes, subrayados. El generador de texto manuscrito ofrece alfabetos script casuales con decoraciones de notas y cartas. Usa el creador de firmas para nombres, y el manuscrito para texto general.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Mi firma se verá bien en todas partes?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">En teléfonos, navegadores y clientes de correo modernos, sí. Los sistemas muy antiguos pueden mostrar cuadros en los caracteres script: el estilo Firma clásica (script negrita) tiene el soporte más amplio si la compatibilidad te preocupa.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Pueden leer mi firma de texto los lectores de pantalla?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No muy bien: los caracteres script se anuncian por sus nombres técnicos Unicode. Acompaña siempre una firma decorativa con tu nombre en texto plano para que todos puedan leerlo.</p></div>
+</div>
+</div>
+    <!-- ═══ END SEO CONTENT ═══ -->
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+<script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('signature');
+    });
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se crea una firma de texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escribe tu nombre en el generador de arriba, elige uno de los 10 estilos script (Clásica, Floritura, Subrayada, Real y más), haz clic en Copiar y pégalo donde quieras que aparezca tu firma: biografías, foros, nombres visibles o firmas de correo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo copiar y pegar una fuente de firma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Para copiar y pegar fuentes de firma, estos caracteres Unicode se copian y pegan en cualquier app que admita Unicode: Instagram, Discord, foros y correo. No hay nada que instalar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Una firma de texto es legalmente válida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Una firma Unicode decorativa —como cualquier texto de firma digital hecho de caracteres— es puramente visual y no tiene peso legal. Las firmas electrónicas legalmente válidas requieren servicios adecuados de firma electrónica con verificación de identidad y registros de auditoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usarlo como generador de firmas de correo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con fines decorativos, sí: pega una firma script sobre tu nombre escrito y tus datos de contacto. Mantén siempre también la versión en texto plano, para los lectores de pantalla, la búsqueda y los destinatarios cuyo cliente no dibuje los caracteres script."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la firma subrayada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El estilo Subrayada agrega U+0332 (línea baja combinante) a cada carácter, así que el subrayado forma parte del propio texto y no son guiones bajos separados. Se copia, se pega y se mueve con tu nombre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre un creador de firmas y el texto manuscrito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El creador de firmas enmarca la caligrafía script con ornamentos propios de firmas: florituras, coronas, filetes, subrayados. El generador de texto manuscrito ofrece alfabetos script casuales con decoraciones de notas y cartas. Usa el creador de firmas para nombres, y el manuscrito para texto general."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi firma se verá bien en todas partes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En teléfonos, navegadores y clientes de correo modernos, sí. Los sistemas muy antiguos pueden mostrar cuadros en los caracteres script: el estilo Firma clásica (script negrita) tiene el soporte más amplio si la compatibilidad te preocupa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden leer mi firma de texto los lectores de pantalla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No muy bien: los caracteres script se anuncian por sus nombres técnicos Unicode. Acompaña siempre una firma decorativa con tu nombre en texto plano para que todos puedan leerlo."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
