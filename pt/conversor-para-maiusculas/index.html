@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Conversor para Maiúsculas Online</title>
+  <meta content="Converta qualquer texto para LETRAS MAIÚSCULAS online grátis com o conversor para maiúsculas. Cole o texto, clique e copie o resultado em segundos. Simples!" name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/conversor-para-maiusculas/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Conversor para Maiúsculas Online">
+  <meta property="og:description" content="Converta qualquer texto para LETRAS MAIÚSCULAS online grátis com o conversor para maiúsculas. Cole o texto, clique e copie o resultado em segundos. Simples!">
+  <meta property="og:url" content="https://fontgenerators.online/pt/conversor-para-maiusculas/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Conversor para Maiúsculas Online">
+  <meta name="twitter:description" content="Converta qualquer texto para LETRAS MAIÚSCULAS online grátis com o conversor para maiúsculas. Cole o texto, clique e copie o resultado em segundos. Simples!">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/conversor-a-mayusculas/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/conversor-para-maiusculas/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/buyuk-harf-cevirici/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-box {
+      padding: 1rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      min-height: 100px;
+      font-size: 1.1rem;
+      word-break: break-word;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/uppercase-converter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/conversor-a-mayusculas/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/conversor-para-maiusculas/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/buyuk-harf-cevirici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/uppercase-converter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/conversor-a-mayusculas/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/conversor-para-maiusculas/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/buyuk-harf-cevirici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/uppercase-converter/", "es": "/es/conversor-a-mayusculas/", "pt": "/pt/conversor-para-maiusculas/", "tr": "/tr/buyuk-harf-cevirici/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Ferramentas de Texto
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/contador-de-palavras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palavras</span>
+            </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/pt/limpador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/pt/remover-linhas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Removedor de Linhas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/pt/conversor-para-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Conversor para Title Case</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Gerador de Texto Invertido</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Gerador de Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+
+        <div class="tool-input-section">
+          <p class="tool-title">🔤 Conversor de maiúsculas</p>
+          <p class="tool-description">Convert all text to UPPERCASE letters</p>
+          <textarea class="tool-input" id="text-input" oninput="convertText()" placeholder="Digite seu texto aqui..."
+            rows="5"></textarea>
+        </div>
+        <div class="tool-output-section">
+          <h3>RESULTADO EM MAIÚSCULAS</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    
+        <!-- content start -->
+<section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/pt/">Início</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/pt/ferramentas-de-texto/">Ferramentas de Texto</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Conversor para Maiúsculas</span>
+</nav>
+
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+
+<h1>Conversor para Maiúsculas</h1>
+
+<p>Um conversor para maiúsculas troca cada letrinha do seu texto pela forma maiúscula &mdash; "hello world" vira "HELLO WORLD" &mdash; na hora e no seu navegador. Para converter para maiúsculas, cole qualquer texto acima e receba uma versão toda em caps com números, pontuação e espaçamento preservados exatamente.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Pontos principais</strong></p>
+  <ul>
+    <li>Converte todas as minúsculas (a&ndash;z mais formas acentuadas) para maiúsculas; todo o resto fica intacto.</li>
+    <li>Roda 100% no seu navegador &mdash; sem envio, sem conta, sem espera.</li>
+    <li>Útil para títulos, textos jurídicos padrão, códigos SKU e normalizar texto gritado para análise.</li>
+    <li>Reserve o caps para textos curtos: parágrafos longos em maiúsculas são comprovadamente mais difíceis de ler.</li>
+    <li>Maiúsculas podem parecer grito online &mdash; use com intenção.</li>
+  </ul>
+</div>
+
+<h2>O que é texto em maiúsculas?</h2>
+<p><strong>Texto em maiúsculas é</strong> a escrita que usa a forma capital das letras do alfabeto (A, B, C) do início ao fim &mdash; chame de caixa alta ou all-caps. O nome vem da tipografia antiga, onde as maiúsculas ficavam na metade de cima da caixa de tipos. No uso moderno, a maiúscula sinaliza ênfase, marca títulos e rótulos, e é exigida para certos códigos, constantes e textos legais.</p>
+
+<h2>Como este conversor para maiúsculas funciona</h2>
+<p>A ferramenta aplica o mapeamento Unicode de caixa alta no seu navegador com a conversão nativa do JavaScript. Cada caractere é verificado: se tem forma maiúscula &mdash; incluindo letras acentuadas como é, ü e ñ, além de grego e cirílico &mdash; ele é substituído. Caracteres sem caixa (dígitos, pontuação, emojis, espaços) passam intactos.</p>
+<p>Tudo roda no cliente, então não há atraso de servidor e seu texto nunca sai do seu aparelho. O mapeamento segue o padrão do Consórcio Unicode, que também trata casos especiais como o ß alemão (que vira "SS" no mapeamento padrão de maiúsculas).</p>
+
+<h2>Exemplo prático: deixar texto em maiúsculas</h2>
+<table>
+  <thead>
+    <tr><th>Entrada</th><th>Saída em maiúsculas</th><th>Uso típico</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>hello world</td><td>HELLO WORLD</td><td>Título enfático</td></tr>
+    <tr><td>order #4821 – shipped</td><td>ORDER #4821 – SHIPPED</td><td>Rótulos de status</td></tr>
+    <tr><td>straße</td><td>STRASSE</td><td>Mapeamento do ß alemão → SS</td></tr>
+    <tr><td>user@example.com</td><td>USER@EXAMPLE.COM</td><td>Exibição normalizada de código</td></tr>
+    <tr><td>sale ends friday!</td><td>SALE ENDS FRIDAY!</td><td>Texto de banner</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: Diagrama de antes/depois de texto em minúsculas convertido para maiúsculas | alt sugerido: "Exemplo de texto convertido de minúsculas para maiúsculas"]
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+  <li><strong>Cole seu texto</strong> na caixa de entrada acima.</li>
+  <li>A ferramenta <strong>capitaliza na hora</strong> cada letra.</li>
+  <li>Dígitos, pontuação e quebras de linha ficam <strong>exatamente onde estavam</strong>.</li>
+  <li>Clique em <strong>Copiar</strong> e cole o resultado onde precisar.</li>
+</ol>
+
+<h2>Quando maiúsculas são a escolha certa</h2>
+<p>A maiúscula merece seu lugar em textos curtos e de alta visibilidade: rótulos de navegação, cabeçalhos de tabela, faixas de aviso, códigos SKU e seriais, e frases jurídicas como "AS IS" que precisam se destacar. Programadores também dependem dela &mdash; constantes na maioria das linguagens são escritas em UPPER_SNAKE_CASE (por exemplo, <code>MAX_RETRIES</code>), e como conversor de maiúsculas esta ferramenta é o jeito mais rápido de normalizar identificadores para esse estilo. Nosso <a href="/pt/conversor-camelcase/">conversor CamelCase</a> também produz esse estilo a partir de palavras simples.</p>
+<p>O cuidado é com o tamanho. Pesquisas de legibilidade mostram consistentemente que parágrafos em caps diminuem a velocidade de leitura, porque as palavras perdem seus formatos distintos &mdash; o olho lê o contorno da palavra tanto quanto as letras. Guarde as maiúsculas para uma ou duas linhas; para ênfase mais longa, negrito ou tamanho maior funcionam melhor. Online, uma mensagem inteira em caps soa como grito, então combine o tom com seu público.</p>
+
+<h2>Convenções de maiúsculas por contexto</h2>
+<table>
+  <thead>
+    <tr><th>Contexto</th><th>Convenção</th><th>Exemplo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Constantes de programação</td><td>UPPER_SNAKE_CASE</td><td>API_TIMEOUT_MS</td></tr>
+    <tr><td>Documentos jurídicos</td><td>Termos-chave em caps</td><td>LIMITATION OF LIABILITY</td></tr>
+    <tr><td>Códigos seriais / SKU</td><td>Alfanuméricos maiúsculos</td><td>XJ-2024-Q9</td></tr>
+    <tr><td>Rótulos de aviso</td><td>Tudo em caps, curto</td><td>DO NOT SHAKE</td></tr>
+    <tr><td>Banco de dados (estilo)</td><td>Palavras-chave SQL maiúsculas</td><td>SELECT * FROM orders</td></tr>
+    <tr><td>Aviação e rádio</td><td>Indicativos em maiúsculas</td><td>BAW249</td></tr>
+  </tbody>
+</table>
+
+<h2>Limitações</h2>
+<p>Algumas ressalvas honestas. Primeiro, o mapeamento de caixa aqui é insensível a localidade: o turco é o caso clássico, onde o "i" minúsculo deveria virar "İ" (I maiúsculo com ponto) &mdash; esta ferramenta produz "I". Segundo, passar para maiúsculas só perde informação num sentido: você sempre pode voltar com o <a href="/pt/conversor-para-minusculas/">conversor para minúsculas</a>, mas nomes próprios e siglas do original se foram de qualquer jeito, então guarde um backup. Terceiro, o ß alemão vira "SS", o que muda o tamanho da palavra e pode afetar layouts de largura fixa. Por fim, nunca passe senhas ou tokens sensíveis a caixa para "normalizá-los" &mdash; "aB3$xQ" e "AB3$XQ" são credenciais diferentes na maioria dos sistemas.</p>
+
+<h2>Conversor para maiúsculas vs alternativas</h2>
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ideal para</th><th>Atenção</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Este conversor online</strong></td><td>Conversão rápida e avulsa de texto colado</td><td>Etapa manual de copiar e colar</td></tr>
+    <tr><td><a href="/pt/conversor-para-minusculas/">Conversor para minúsculas</a></td><td>O reverso: texto todo pequeno para URLs e código</td><td>Perde as maiúsculas de nomes próprios</td></tr>
+    <tr><td><a href="/pt/conversor-para-titulo/">Conversor para title case</a></td><td>Capitalização estilo manchete</td><td>Manuais de estilo discordam nas palavras menores</td></tr>
+    <tr><td>CSS <code>text-transform: uppercase</code></td><td>Caps só de exibição em sites</td><td>Texto de base inalterado (leitores de tela podem soletrar)</td></tr>
+    <tr><td>Teclados de celular</td><td>Rajadas curtas de caps no mobile</td><td>Toque duplo no shift é chato para textos longos</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: Comparação lado a lado de legibilidade de um parágrafo em maiúsculas contra um parágrafo normal | alt sugerido: "Comparação de legibilidade mostrando que texto em maiúsculas é mais difícil de escanear que texto normal"]
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Como deixo um texto em maiúsculas?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Cole seu texto no conversor acima. Cada letra minúscula vira sua forma maiúscula na hora &mdash; "hello" vira "HELLO" &mdash; enquanto números, pontuação e espaçamento ficam iguais. Clique em Copiar para usar o resultado.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Este gerador de maiúsculas funciona online grátis?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. Este gerador de maiúsculas é grátis, funciona em qualquer navegador moderno e não pede cadastro. A conversão acontece no seu aparelho, então funciona offline depois que a página carregou.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Ele muda números ou pontuação?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. Só letras com caixa são afetadas. "order #4821 – shipped" vira "ORDER #4821 – SHIPPED": os dígitos, a cerquilha e o travessão ficam intactos.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Por que o ß vira SS em maiúsculas?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">O ß alemão (Eszett) historicamente não tinha forma maiúscula, então o mapeamento padrão de maiúsculas do Unicode o rende como "SS". Um ẞ maiúsculo existe desde 2017, mas a conversão padrão de caixa ainda produz "SS".</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Escrever tudo em caps é considerado grito?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Em conversas, e-mails e posts sociais, sim &mdash; uma mensagem inteira em caps soa como grito. Em rótulos, títulos, códigos e textos jurídicos, o all-caps é uma convenção neutra. Combine o formato com o contexto.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Texto em maiúsculas prejudica a leitura?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Em trechos maiores que uma ou duas linhas, sim. Leitores reconhecem palavras em parte pelo contorno, e o all-caps faz cada palavra virar um retângulo. Guarde as maiúsculas para textos curtos e use negrito ou tamanho para ênfase mais longa.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Dá para voltar maiúsculas para texto normal?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">O <a href="/pt/conversor-para-minusculas/">conversor para minúsculas</a> reverte a mecânica, transformando "HELLO" em "hello". Mas a informação perdida na primeira conversão &mdash; como quais palavras eram nomes próprios &mdash; não pode ser restaurada automaticamente.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Ele lida com letras acentuadas como é e ñ?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. O mapeamento Unicode de caixa cobre letras latinas acentuadas (é→É, ñ→Ñ) e também grego e cirílico. Só casos de borda por localidade, como o İ turco com ponto, pedem tratamento especial.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Meu texto é enviado para algum lugar?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. A conversão roda inteiramente no seu navegador com o JavaScript nativo. Nada é enviado a um servidor, armazenado ou registrado.</p>
+    </div>
+  </div>
+</div>
+
+<p>Explore mais ferramentas de caixa: o <a href="/pt/conversor-para-minusculas/">conversor para minúsculas</a> para o trabalho reverso, o <a href="/pt/conversor-para-titulo/">conversor para title case</a> para manchetes, e o <a href="/pt/conversor-camelcase/">conversor CamelCase</a> para identificadores estilo programador &mdash; todos na nossa coleção de <a href="/pt/ferramentas-de-texto/">ferramentas de texto</a>.</p>
+
+
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas de Texto</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/contador-de-palavras/">📊 Contador de Palavras</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/pt/limpador-de-texto/">🧹 Limpador de Texto</a>
+        <a class="sidebar-link" href="/pt/conversor-para-titulo/">🔠 Conversor para Title Case</a>
+      </nav>
+    </div>
+  </div>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+
+    function convertText() {
+      const text = document.getElementById('text-input').value;
+      document.getElementById('output-text').textContent = text.toUpperCase();
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como deixo um texto em maiúsculas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cole seu texto no conversor acima. Cada letra minúscula vira sua forma maiúscula na hora — \"hello\" vira \"HELLO\" — enquanto números, pontuação e espaçamento ficam iguais. Clique em Copiar para usar o resultado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Este gerador de maiúsculas funciona online grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Este gerador de maiúsculas é grátis, funciona em qualquer navegador moderno e não pede cadastro. A conversão acontece no seu aparelho, então funciona offline depois que a página carregou."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ele muda números ou pontuação?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Só letras com caixa são afetadas. \"order #4821 – shipped\" vira \"ORDER #4821 – SHIPPED\": os dígitos, a cerquilha e o travessão ficam intactos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que o ß vira SS em maiúsculas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O ß alemão (Eszett) historicamente não tinha forma maiúscula, então o mapeamento padrão de maiúsculas do Unicode o rende como \"SS\". Um ẞ maiúsculo existe desde 2017, mas a conversão padrão de caixa ainda produz \"SS\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Escrever tudo em caps é considerado grito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em conversas, e-mails e posts sociais, sim — uma mensagem inteira em caps soa como grito. Em rótulos, títulos, códigos e textos jurídicos, o all-caps é uma convenção neutra. Combine o formato com o contexto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto em maiúsculas prejudica a leitura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em trechos maiores que uma ou duas linhas, sim. Leitores reconhecem palavras em parte pelo contorno, e o all-caps faz cada palavra virar um retângulo. Guarde as maiúsculas para textos curtos e use negrito ou tamanho para ênfase mais longa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para voltar maiúsculas para texto normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O conversor para minúsculas reverte a mecânica, transformando \"HELLO\" em \"hello\". Mas a informação perdida na primeira conversão — como quais palavras eram nomes próprios — não pode ser restaurada automaticamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ele lida com letras acentuadas como é e ñ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O mapeamento Unicode de caixa cobre letras latinas acentuadas (é→É, ñ→Ñ) e também grego e cirílico. Só casos de borda por localidade, como o İ turco com ponto, pedem tratamento especial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meu texto é enviado para algum lugar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A conversão roda inteiramente no seu navegador com o JavaScript nativo. Nada é enviado a um servidor, armazenado ou registrado."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
