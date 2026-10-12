@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Criador de Legendas para Stories | FontGenerators.online</title>
+<meta name="description" content="Crie textos estilizados para stories do Instagram — fontes diferentes, emojis e efeitos prontos para copiar e colar nos seus stories. Rápido e grátis." />
+  <meta name="description" content="Crie textos estilizados para stories do Instagram — fontes diferentes, emojis e efeitos prontos para copiar e colar nos seus stories. Rápido e grátis." />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/criador-de-legendas-stories/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/story-caption-maker/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/story-caption-maker/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/creador-de-subtitulos-historias/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/criador-de-legendas-stories/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/hikaye-aciklama-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quais são as melhores legendas para stories do Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As melhores legendas de story têm menos de três linhas, pedem uma ação específica (vote, responda, toque) e combinam com a figurinha correspondente. Escolha acima o tipo de story que combina com seu objetivo — enquete, pergunta, CTA, humor ou contagem regressiva — e mantenha o texto curto o bastante para ler em dois segundos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde encontro legendas curtas para stories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite o tema do seu story acima, escolha um tipo e gere — cada legenda é escrita curta para o formato story. O tipo humor dá legendas de vibe de uma linha; engajamento dá linhas que puxam ação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são boas ideias de story para IG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enquetes (\"isto ou aquilo\"), caixinhas de pergunta (AMAs, recomendações), contagens regressivas (lançamentos, eventos) e bastidores ganham toques consistentemente. Os seis tipos desta ferramenta mapeiam exatamente esses formatos — gere uma legenda para o formato que você vai postar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual deve ser o tamanho de uma legenda de story?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma a três linhas curtas. Quem vê stories decide em uns dois segundos, e blocos longos de texto cobrem a foto — derrotando o propósito. Cada legenda que esta ferramenta gera mostra sua contagem para você escolher a opção forte mais curta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Legendas de story devem combinar com a figurinha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — sempre. Uma legenda de enquete precisa da figurinha de enquete, uma legenda de pergunta precisa da caixinha de pergunta, uma legenda de contagem precisa da figurinha de contagem. Texto e figurinha desencontrados confundem e matam o toque que você queria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar essas legendas nos stories do TikTok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. As legendas são textos curtos neutros de plataforma — cole nos stories do TikTok do mesmo jeito. Para vídeos completos do TikTok (não stories), use o Gerador de Legendas do TikTok ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Stories precisam de hashtags?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma hashtag de localização ou de nicho pode ajudar na descoberta, mas stories são mostrados principalmente para seguidores existentes — hashtags importam bem menos que em posts do feed. Se adicionar uma, encolha pequena e enfie num canto em vez de deixar dominar a legenda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O criador de legendas para stories é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Totalmente grátis, sem conta — gere e copie quantas legendas quiser. Seus temas nunca saem do seu navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre este e o gerador de legendas do Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Formato e duração. Esta ferramenta escreve legendas curtas e interativas para stories de 24 horas (enquetes, perguntas, contagens). O gerador de legendas do Instagram escreve legendas mais completas para posts permanentes do feed e Reels. Use cada um onde o conteúdo vive."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/story-caption-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/story-caption-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">📱</span>
+                        Ferramentas de Redes Sociais
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-instagram/">
+                            <span class="link-icon">📸</span>
+                            <span class="link-text">Gerador de Legendas do Instagram</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-tiktok/">
+                            <span class="link-icon">🎵</span>
+                            <span class="link-text">Gerador de Legendas do TikTok</span>
+                        </a>
+            <a class="sidebar-link active" href="/pt/criador-de-legendas-stories/">
+                            <span class="link-icon">📖</span>
+                            <span class="link-text">Criador de Legendas para Stories</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-hashtags/">
+                            <span class="link-icon">#️⃣</span>
+                            <span class="link-text">Gerador de Hashtags</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-com-emojis/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Gerador de Legendas com Emojis</span>
+                        </a>
+          </nav>
+        </div>
+      </aside>
+<div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+        <div class="tool-input-section">
+          <div class="tool-title">📖 Criador de Legendas para Stories</h1>
+          <p class="tool-description">Crie legendas envolventes para stories do Instagram e TikTok</p>
+          <label class="tool-label">Sobre o que é a sua história?</label>
+          <input class="tool-input" id="topic-input"
+            placeholder="por exemplo, rotina matinal, novo produto, perguntas e respostas..."
+            style="padding: 1rem; margin-bottom: 1rem;" type="text" />
+          <label class="tool-label">Tipo de story</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <button class="btn btn-sm type-btn active" data-type="engagement" onclick="setType(this)">💬
+              Engajamento</button>
+            <button class="btn btn-sm type-btn" data-type="poll" onclick="setType(this)">📊 Enquete
+              Ideias</button>
+            <button class="btn btn-sm type-btn" data-type="question" onclick="setType(this)">❓
+              Perguntas</button>
+            <button class="btn btn-sm type-btn" data-type="cta" onclick="setType(this)">👆 Chamada para
+              ação</button>
+            <button class="btn btn-sm type-btn" data-type="mood" onclick="setType(this)">✨
+              Humor/Estilo</button>
+            <button class="btn btn-sm type-btn" data-type="countdown" onclick="setType(this)">⏰
+              Contagem regressiva</button>
+          </div>
+          <button class="btn btn-primary" onclick="generateCaptions()"
+            style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+            📖 Gerar legendas de stories
+          </button>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Legendas de stories e ideias</span>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">📖</div>
+              <p>Insira um tópico e gere legendas para histórias</p>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>📱 Ferramentas de Redes Sociais</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/pt/criador-de-legendas-stories/">📖 Criador de Legendas para Stories</a>
+        <a class="sidebar-link" href="/pt/gerador-de-hashtags/">#️⃣ Gerador de Hashtags</a>
+      </nav>
+    </div>
+  </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-legendas/">Ferramentas de Legendas</a> &nbsp;/&nbsp; <span>Criador de Legendas para Stories</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Criador de Legendas para Stories</h1>
+<p>Um <strong>criador de legendas para stories</strong> é uma ferramenta grátis que escreve legendas curtas para stories do Instagram e do TikTok a partir do tema do seu story e do tipo de story. Digite sobre o que é o story — "corte de cabelo novo", "promoção de fim de semana", "café da manhã" — escolha um dos 6 tipos como enquete, pergunta ou contagem regressiva, e receba textos de story prontos para copiar na hora. Sem cadastro.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>Gera legendas curtas de story em 6 tipos: engajamento, enquete, pergunta, CTA, humor e contagem regressiva.</li>
+<li>Cada tipo tem 8 modelos — 48 no total — com seu tema preenchido.</li>
+<li>Feito para conteúdo de 24 horas: figurinhas, enquetes e links combinam com cada legenda.</li>
+<li>Cada legenda mostra sua contagem de caracteres, com cópia em um clique.</li>
+<li>Grátis, instantâneo, privado: tudo roda no seu navegador.</li>
+</ul>
+</div>
+
+<h2>O que é um criador de legendas para stories?</h2>
+<p>Um criador de legendas para stories é uma ferramenta online que cria textos curtos de legenda para Instagram Stories e stories do TikTok. Você digita o tema do story e escolhe o tipo; a ferramenta preenche modelos focados em interação com seu tema e devolve opções para copiar e colar.</p>
+<p>Stories são um meio diferente de posts do feed — verticais, efêmeros, tocáveis — então estas legendas são escritas curtas, conversacionais e pareadas com ações: vote, responda, toque, arraste. Esta ferramenta de ideias de story para IG é baseada em modelos e instantânea. Ela não escreve sua história de vida; escreve as cinco palavras que conseguem o toque — o texto da enquete, a linha da contagem regressiva, o texto da caixinha de perguntas — que é exatamente para isso que legendas de story servem.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<ol>
+<li><strong>Entrada de tema do story.</strong> Poucas palavras sobre o que o story mostra. O tema preenche o espaço {topic} de cada modelo. (Os modelos são em inglês — digite o tema em inglês para as melhores saídas.)</li>
+<li><strong>Seleção de tipo de story.</strong> Seis botões — engajamento, enquete, pergunta, CTA (chamada para ação), humor, contagem regressiva — definem o trabalho da legenda. Engajamento é o padrão.</li>
+<li><strong>Preenchimento de modelo.</strong> Cada tipo tem 8 modelos curtos. A ferramenta os embaralha, escolhe um conjunto e insere seu tema.</li>
+<li><strong>Contagem de caracteres.</strong> Cada legenda mostra seu tamanho — caixas de texto de story são pequenas, então curto vence.</li>
+<li><strong>Cópia com um clique.</strong> Copie qualquer legenda e cole na ferramenta de texto ou figurinha do seu story.</li>
+</ol>
+<p>Regenerar embaralha os modelos de novo, e trocar de tipo muda todo o trabalho da legenda — de gerar respostas (pergunta) a gerar urgência (contagem regressiva).</p>
+
+<h2>Exemplo prático: entrada real, saída real</h2>
+<p>Rodamos a ferramenta com o tema "new haircut" e o tipo de story enquete. Três legendas que ela realmente devolveu:</p>
+<ul>
+<li>"Poll: new haircut - Yes or No? 🤔"</li>
+<li>"This or That: new haircut edition 👀"</li>
+<li>"Rate my new haircut: 1-10 ⭐"</li>
+</ul>
+<p>São saídas literais — note o padrão: cada legenda de enquete termina com o mecanismo (Sim/Não, A/B, escala 1-10) porque uma legenda de enquete sem instrução de voto é ignorada. Combine qualquer uma com a figurinha de enquete de verdade do Instagram e a legenda + figurinha fazem o mesmo trabalho duas vezes, que é o ponto: redundância entre texto e figurinha pega tanto leitores quanto tocadores.</p>
+
+<h2>Como usar esta ferramenta de legendas de story</h2>
+<ol>
+<li><strong>Digite o tema do seu story</strong> (flash sale, gym selfie, new blog post).</li>
+<li><strong>Escolha o tipo de story</strong> que combina com seu objetivo — enquete para opiniões, CTA para toques em link, contagem regressiva para lançamentos.</li>
+<li><strong>Clique em Gerar</strong> e escolha a opção mais curta que diga tudo.</li>
+<li><strong>Copie e cole no texto do seu story</strong> — depois adicione a figurinha correspondente (enquete, pergunta, contagem regressiva).</li>
+<li><strong>Mantenha o texto na tela em ~3 linhas</strong> para nunca cobrir a foto.</li>
+</ol>
+
+<h2>Criador de Legendas para Stories vs. ferramentas relacionadas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que faz</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Criador de Legendas para Stories</strong></td><td>Legendas curtas e interativas para stories de 24 horas</td><td>Você vai postar nos Stories</td></tr>
+<tr><td><a href="/pt/gerador-de-legendas-instagram/">Gerador de Legendas do Instagram</a></td><td>Legendas completas para posts do feed e Reels</td><td>O conteúdo é um post permanente, não um story</td></tr>
+<tr><td><a href="/pt/gerador-de-legendas-tiktok/">Gerador de Legendas do TikTok</a></td><td>Legendas de vídeo com ganchos de tendência</td><td>Você vai postar um vídeo do TikTok</td></tr>
+<tr><td><a href="/pt/gerador-de-legendas-com-emojis/">Gerador de Legendas com Emojis</a></td><td>Decora seu texto automaticamente com emojis de humor</td><td>Seu texto de story precisa de enfeite de emoji</td></tr>
+</tbody>
+</table>
+
+<h2>Combine cada legenda com sua figurinha</h2>
+<p>Legendas de story falham quando o texto e a figurinha pedem coisas diferentes — uma legenda de enquete sobre uma figurinha de link, uma legenda de pergunta sem caixinha de pergunta. Os seis tipos mapeiam direto para as figurinhas interativas do Instagram e do TikTok: legendas de enquete vão com a figurinha de enquete, pergunta com a caixinha de pergunta, contagem regressiva com a figurinha de contagem, CTA com a figurinha de link. Gere a legenda primeiro, depois adicione a figurinha que completa sua frase. Quem lê o texto toca a figurinha; quem só vê a figurinha ainda entende — essa redundância é o que levanta as interações do story, que é a métrica que mantém seus stories na frente da bandeja.</p>
+<p>Posicionamento importa tanto quanto pareamento. O texto do story compete com a foto, a barra de progresso e o campo de resposta — mantenha legendas no terço superior ou médio, com menos de três linhas, em cor de alto contraste. Uma legenda perfeita escondida atrás da caixa de resposta é como se não existisse.</p>
+
+<h2>Urgência é o superpoder do formato story</h2>
+<p>Stories somem em 24 horas, e as legendas que melhor performam abraçam isso em vez de lutar contra. O tipo contagem regressiva existe exatamente para isso: "restam 48 horas", "portas fecham hoje à noite" — prazos que são reais porque o formato os impõe. Até stories não comerciais ganham: "respondendo essas pela próxima hora" (tipo pergunta) ou "votação termina hoje à noite" (tipo enquete) fabricam o agora-ou-nunca que posts do feed não conseguem. A regra: se uma legenda de story funcionaria idêntica como legenda de feed, ela não está usando o formato — adicione o elemento de tempo e veja as respostas subirem.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>Só texto — sem lógica de figurinha.</strong> A ferramenta escreve as palavras; você ainda adiciona a figurinha real de enquete/pergunta/contagem no app.</li>
+<li><strong>Curtíssimo por design.</strong> São legendas de uma a duas linhas. Qualquer coisa narrativa pertence a um post do feed — veja o <a href="/pt/gerador-de-legendas-instagram/">gerador de legendas do Instagram</a>.</li>
+<li><strong>Só em inglês.</strong> Todos os 48 modelos são escritos em inglês.</li>
+<li><strong>Urgência genérica.</strong> Modelos de contagem dizem "em breve" e "hoje à noite" — preencha seu prazo real antes de postar, ou a urgência soa vazia.</li>
+<li><strong>Repete ao regenerar.</strong> Oito modelos por tipo significa que regenerar com frequência traz legendas de volta.</li>
+</ul>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Quais são as melhores legendas para stories do Instagram?</h3><div class="faq-answer"><p>As melhores legendas de story têm menos de três linhas, pedem uma ação específica (vote, responda, toque) e combinam com a figurinha correspondente. Escolha acima o tipo de story que combina com seu objetivo — enquete, pergunta, CTA, humor ou contagem regressiva — e mantenha o texto curto o bastante para ler em dois segundos.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Onde encontro legendas curtas para stories?</h3><div class="faq-answer"><p>Digite o tema do seu story acima, escolha um tipo e gere — cada legenda é escrita curta para o formato story. O tipo humor dá legendas de vibe de uma linha; engajamento dá linhas que puxam ação.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quais são boas ideias de story para IG?</h3><div class="faq-answer"><p>Enquetes ("isto ou aquilo"), caixinhas de pergunta (AMAs, recomendações), contagens regressivas (lançamentos, eventos) e bastidores ganham toques consistentemente. Os seis tipos desta ferramenta mapeiam exatamente esses formatos — gere uma legenda para o formato que você vai postar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual deve ser o tamanho de uma legenda de story?</h3><div class="faq-answer"><p>Uma a três linhas curtas. Quem vê stories decide em uns dois segundos, e blocos longos de texto cobrem a foto — derrotando o propósito. Cada legenda que esta ferramenta gera mostra sua contagem para você escolher a opção forte mais curta.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Legendas de story devem combinar com a figurinha?</h3><div class="faq-answer"><p>Sim — sempre. Uma legenda de enquete precisa da figurinha de enquete, uma legenda de pergunta precisa da caixinha de pergunta, uma legenda de contagem precisa da figurinha de contagem. Texto e figurinha desencontrados confundem e matam o toque que você queria.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso usar essas legendas nos stories do TikTok?</h3><div class="faq-answer"><p>Sim. As legendas são textos curtos neutros de plataforma — cole nos stories do TikTok do mesmo jeito. Para vídeos completos do TikTok (não stories), use o <a href="/pt/gerador-de-legendas-tiktok/">Gerador de Legendas do TikTok</a>.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Stories precisam de hashtags?</h3><div class="faq-answer"><p>Uma hashtag de localização ou de nicho pode ajudar na descoberta, mas stories são mostrados principalmente para seguidores existentes — hashtags importam bem menos que em posts do feed. Se adicionar uma, encolha pequena e enfie num canto em vez de deixar dominar a legenda.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O criador de legendas para stories é grátis?</h3><div class="faq-answer"><p>Totalmente grátis, sem conta — gere e copie quantas legendas quiser. Seus temas nunca saem do seu navegador.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre este e o gerador de legendas do Instagram?</h3><div class="faq-answer"><p>Formato e duração. Esta ferramenta escreve legendas curtas e interativas para stories de 24 horas (enquetes, perguntas, contagens). O <a href="/pt/gerador-de-legendas-instagram/">gerador de legendas do Instagram</a> escreve legendas mais completas para posts permanentes do feed e Reels. Use cada um onde o conteúdo vive.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-legendas-instagram/">Gerador de Legendas do Instagram</a> — quando o story vira post</li>
+<li><a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a> — adicione tags</li>
+<li><a href="/pt/gerador-de-legendas-com-emojis/">Gerador de Legendas com Emojis</a> — enfeite o texto</li>
+<li><a href="/pt/ferramentas-de-legendas/">Todas as Ferramentas de Legendas</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+    let currentType = 'engagement';
+
+    const captionTemplates = {
+      engagement: [
+        "Double tap if you love {topic} 💕",
+        "Tag someone who needs to see this {topic} 👇",
+        "Share to your story! 📲 {topic}",
+        "Reply with an emoji if this is you 😅 {topic}",
+        "Swipe up for more {topic} ⬆️",
+        "Save this for later! 📌 {topic}",
+        "DM me '{topic}' for details 💬",
+        "Link in bio! 🔗 {topic}"
+      ],
+      poll: [
+        "Enquete: {topic} - Yes or No? 🤔",
+        "This or That: {topic} edition 👀",
+        "Rate my {topic}: 1-10 ⭐",
+        "Which {topic} do you prefer? A or B",
+        "Hot take: {topic} - Agree/Disagree?",
+        "Quiz: How much do you know about {topic}?",
+        "{topic}: Love it 💕 or Leave it 👋",
+        "Slide to rate this {topic} 📊"
+      ],
+      question: [
+        "What's your favorite {topic}? 🤔",
+        "Ask me anything about {topic}! ❓",
+        "What do you want to see next? {topic} ideas?",
+        "Share your {topic} story! 📖",
+        "How do YOU feel about {topic}?",
+        "Best {topic} tips? Drop them below! 👇",
+        "What's your {topic} hot take? 🔥",
+        "Unpopular opinion about {topic}?"
+      ],
+      cta: [
+        "Tap the link! 👆 {topic}",
+        "Swipe up NOW! ⬆️ {topic}",
+        "Don't miss out! {topic} 🚨",
+        "Limited time only! {topic} ⏰",
+        "Click the link in bio! 🔗 {topic}",
+        "DM me to learn more! 💬 {topic}",
+        "Comment '{topic}' and I'll send it!",
+        "Share this with a friend! 🙌 {topic}"
+      ],
+      mood: [
+        "Current mood: {topic} ✨",
+        "Vibing with {topic} today 🌟",
+        "That {topic} feeling 💫",
+        "In my {topic} era 🦋",
+        "{topic} state of mind 🧘",
+        "Main character energy: {topic} 👑",
+        "This is your sign for {topic} 🌙",
+        "Soft {topic} hours 🌸"
+      ],
+      countdown: [
+        "⏰ {topic} drops in...",
+        "🚨 Only X days until {topic}!",
+        "The {topic} countdown is ON!",
+        "⏳ {topic} coming soon...",
+        "Mark your calendars! 📅 {topic}",
+        "Get ready for {topic}! 🎉",
+        "It's almost time... {topic} 👀",
+        "{topic} launching in 3...2...1... 🚀"
+      ]
+    };
+
+    function setType(btn) {
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentType = btn.dataset.type;
+    }
+
+    function generateCaptions() {
+      const topic = document.getElementById('topic-input').value.trim() || 'this';
+      const templates = captionTemplates[currentType];
+
+      const captions = templates.map(template =>
+        template.replace(/{topic}/g, topic)
+      );
+
+      renderCaptions(captions);
+    }
+
+    function renderCaptions(captions) {
+      const container = document.getElementById('results-container');
+      container.innerHTML = captions.map((caption, i) => `
+                <div class="result-item">
+                    <div class="result-content">
+                        <span class="result-name">Idea ${i + 1}</span>
+                        <div class="result-text">${caption}</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyCaption(this, \`${caption.replace(/`/g, '\\`')}\`)">📋 Copy</button>
+                </div>
+            `).join('');
+    }
+
+    function copyCaption(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy', 2000);
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.getElementById('topic-input').addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') generateCaptions();
+    });
+  
+    </script>
+
+</body>
+
+</html>
