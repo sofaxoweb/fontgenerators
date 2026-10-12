@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Limpiador de Texto Online Gratis | FontGenerators.online</title>
+  <meta content="Limpia texto copiado online gratis: elimina espacios extra, líneas vacías, etiquetas HTML, URL y puntuación con 9 opciones. Funciona en vivo, sin registro." name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/limpiador-de-texto/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/limpiador-de-texto/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/limpador-de-texto/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/metin-temizleyici/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .option-item:hover {
+      border-color: var(--primary);
+    }
+
+    .option-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .option-item label {
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .output-section {
+      margin-top: 1.5rem;
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      background: var(--surface-secondary);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/text-cleaner/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/limpiador-de-texto/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/limpador-de-texto/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/metin-temizleyici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/text-cleaner/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/limpiador-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/limpador-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/metin-temizleyici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Herramientas de utilidad</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/contador-de-palabras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palabras</span>
+            </a>
+            <a class="sidebar-link" href="/es/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link active" href="/es/limpiador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpiador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/es/eliminar-lineas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Eliminar Líneas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/es/corrector-de-saltos-de-linea/">
+              <span class="link-icon">↵</span>
+              <span class="link-text">Corrector de Saltos de Línea</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar herramientas
+        </button>
+        <div class="tool-input-section">
+          <p class="tool-title">🧹 Limpiador de texto</p>
+          <p class="tool-description">Clean up messy text by removing extra spaces, line breaks, and unwanted
+            characters</p>
+          <textarea class="tool-input" id="text-input" oninput="cleanText()" placeholder="Paste your messy text here..."
+            rows="6"></textarea>
+          <div class="options-grid">
+            <div class="option-item">
+              <input checked="" id="opt-spaces" onchange="cleanText()" type="checkbox" />
+              <label for="opt-spaces">Eliminar espacios sobrantes</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-lines" onchange="cleanText()" type="checkbox" />
+              <label for="opt-lines">Eliminar líneas vacías</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-trim" onchange="cleanText()" type="checkbox" />
+              <label for="opt-trim">Recortar espacios al inicio y fin de línea</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-breaks" onchange="cleanText()" type="checkbox" />
+              <label for="opt-breaks">Eliminar todos los saltos de línea</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-punct" onchange="cleanText()" type="checkbox" />
+              <label for="opt-punct">Eliminar puntuación</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-numbers" onchange="cleanText()" type="checkbox" />
+              <label for="opt-numbers">Eliminar números</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-special" onchange="cleanText()" type="checkbox" />
+              <label for="opt-special">Eliminar caracteres especiales</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-html" onchange="cleanText()" type="checkbox" />
+              <label for="opt-html">Eliminar etiquetas HTML</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-urls" onchange="cleanText()" type="checkbox" />
+              <label for="opt-urls">Eliminar URL</label>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="cleanText()">🧹 Limpiar texto</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🗑️ Borrar</button>
+          </div>
+        </div>
+        <div class="output-section">
+          <h3>Texto limpio</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Cleaned text will appear here..."
+            readonly=""></textarea>
+          <div class="stats-row">
+            <span>Original: <strong id="orig-caracteres">0</strong> caracteres</span>
+            <span>Limpio: <strong id="clean-caracteres">0</strong> caracteres</span>
+            <span>Eliminados: <strong id="removed-caracteres">0</strong> caracteres</span>
+          </div>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Copy Texto limpio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a> &rsaquo; <span>Limpiador de texto</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Limpiador de texto &mdash; Limpia texto online</h1>
+<p>Un limpiador de texto elimina la basura del texto copiado: espacios extra, líneas en blanco, etiquetas HTML, URL y puntuación suelta. Este limpiador de texto gratis te ofrece nueve opciones activables, limpia en vivo mientras escribes e informa exactamente cuántos caracteres se eliminaron. Pega el texto desordenado arriba, marca las opciones que necesites y copia un texto plano y ordenado.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Lo esencial</p>
+<ul style="margin: 0;">
+<li>Nueve opciones de limpieza: espacios extra, líneas vacías, espacios en bordes de línea, saltos de línea, puntuación, números, caracteres especiales, etiquetas HTML y URL.</li>
+<li>Las opciones se ejecutan en un orden fijo &mdash; por ejemplo, las URL se eliminan antes que la puntuación, y eso cambia el resultado.</li>
+<li>«Eliminar puntuación» ataca una lista fija (.,!?;:'"()[]{}); los guiones, los puntos suspensivos y las comillas tipográficas sobreviven.</li>
+<li>Los contadores en vivo de caracteres originales, limpios y eliminados muestran exactamente qué cambió.</li>
+<li>Funciona por completo en tu navegador; tu texto nunca sale de tu dispositivo.</li>
+</ul>
+</div>
+<h2>¿Qué es un limpiador de texto?</h2>
+<p><strong>Un limpiador de texto es una herramienta online que elimina el formato y los caracteres no deseados de un texto.</strong> Al copiar y pegar desde páginas web, PDF, documentos de Word y correos, el texto suele llegar con espacios duplicados, líneas en blanco, etiquetas HTML, URL de rastreo y puntuación suelta. Una herramienta de limpieza normaliza todo eso en un texto plano y uniforme que puedes pegar con seguridad en un CMS, un editor de código, una hoja de cálculo o un prompt de IA &mdash; sin arrastrar formato oculto.</p>
+[IMAGE: Diagrama de antes y después que muestra un texto copiado desordenado transformado en texto plano limpio, con los elementos eliminados resaltados &mdash; alt: "Ejemplo de antes y después de un texto limpio de etiquetas HTML, URL y espacios extra"]
+<h2>Cómo funciona este limpiador de texto</h2>
+<p>Marca cualquier combinación de las nueve opciones; la limpieza se ejecuta en vivo con cada tecla, en este orden fijo:</p>
+<ol>
+<li><strong>Eliminar etiquetas HTML</strong> &mdash; quita todo lo que parezca <code>&lt;b&gt;</code> o <code>&lt;a href=...&gt;</code>, dejando el texto interior.</li>
+<li><strong>Eliminar URL</strong> &mdash; borra los enlaces <code>http://</code> y <code>https://</code>.</li>
+<li><strong>Eliminar puntuación</strong> &mdash; borra exactamente estos caracteres: <code>. , ! ? ; : ' " ( ) [ ] { }</code>.</li>
+<li><strong>Eliminar números</strong> &mdash; borra los dígitos 0&ndash;9.</li>
+<li><strong>Eliminar caracteres especiales</strong> &mdash; borra todo lo que no sea letra, dígito o espacio en blanco (se conservan los saltos de línea).</li>
+<li><strong>Recortar espacios al inicio y fin de línea</strong> &mdash; elimina los espacios al principio y al final de cada línea. <em>(Activado por defecto.)</em></li>
+<li><strong>Eliminar espacios extra</strong> &mdash; reduce las secuencias de espacios y tabulaciones a uno solo. <em>(Activado por defecto.)</em></li>
+<li><strong>Eliminar líneas vacías</strong> &mdash; reduce las líneas en blanco a saltos de línea simples. <em>(Activado por defecto.)</em></li>
+<li><strong>Eliminar todos los saltos de línea</strong> &mdash; une todo en una sola línea, compactando los espacios. <em>(Desactivado por defecto.)</em></li>
+</ol>
+<p>Tras los pasos seleccionados, el resultado se recorta y se muestra con tres contadores: caracteres originales, caracteres limpios y caracteres eliminados. <strong>Copiar texto limpio</strong> copia el resultado a tu portapapeles.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Empieza con este pegado desordenado (espacios extra, una etiqueta de negrita, una URL y una línea en blanco):</p>
+<p><code>&nbsp;&nbsp;Visit &lt;b&gt;our site&lt;/b&gt; at https://example.com &mdash; it costs $50!<br><br>&nbsp;&nbsp;Call now...&nbsp;&nbsp;</code></p>
+<p>Con <strong>etiquetas HTML + URL</strong> activadas (más las tres opciones por defecto), el resultado es:</p>
+<p><code>Visit our site at &mdash; it costs $50!<br>Call now...</code></p>
+<p>Las etiquetas y el enlace desaparecieron, la línea en blanco se compactó y los espacios de los bordes se recortaron &mdash; mientras la raya, el signo de dólar y los puntos suspensivos sobreviven, porque ninguna de las opciones activadas los ataca. Marca también <strong>Eliminar puntuación</strong> y el <code>!</code> y los <code>...</code> desaparecen (la raya sobrevive &mdash; no está en la lista de puntuación).</p>
+<h2>Cómo usar este limpiador de texto</h2>
+<ol>
+<li><strong>Pega</strong> tu texto desordenado en el cuadro de entrada &mdash; la forma más rápida de limpiar texto copiado de PDF, páginas web y correos.</li>
+<li><strong>Marca las opciones</strong> que necesites &mdash; las tres opciones de espacios vienen activadas por defecto y resuelven la mayoría del desorden del copiar-pegar.</li>
+<li><strong>Vigila los contadores</strong> para confirmar cuántos caracteres se eliminaron.</li>
+<li><strong>Copia el texto limpio</strong> y pega el resultado donde lo necesites.</li>
+</ol>
+<h2>El orden de las operaciones importa</h2>
+<p>Como los nueve pasos se ejecutan en una secuencia fija, el mismo conjunto de opciones en un orden imaginado distinto podría dar otro resultado. Dos casos que conviene conocer:</p>
+<ul>
+<li><strong>URL antes que puntuación:</strong> con ambas opciones activadas, <code>https://example.com</code> se borra entero. Solo con «eliminar puntuación», la misma URL se degrada a <code>https//examplecom</code> &mdash; los <code>:</code> y <code>.</code> se eliminan pero las letras quedan. Si quieres que los enlaces desaparezcan, marca «Eliminar URL».</li>
+<li><strong>Caracteres especiales antes que espacios:</strong> «eliminar caracteres especiales» conserva los saltos de línea, así que activarlo junto con «eliminar líneas vacías» te deja una estructura de párrafos limpia &mdash; la estructura se normaliza después de quitar los símbolos.</li>
+</ul>
+<p>Regla práctica: activa primero en tu cabeza las eliminaciones estructurales (HTML, URL), luego las de caracteres y después la normalización de espacios &mdash; que es exactamente el orden que usa la herramienta.</p>
+[IMAGE: Diagrama de flujo de los nueve pasos de limpieza en su orden fijo de ejecución &mdash; alt: "Orden de procesamiento del limpiador de texto, desde eliminar HTML hasta normalizar espacios"]
+<h2>Lo que «Eliminar puntuación» no elimina</h2>
+<p>La opción de puntuación ataca una lista fija y documentada: punto, coma, exclamación, interrogación, punto y coma, dos puntos, comillas simples, paréntesis y corchetes cuadrados y de llave. Todo lo demás sobrevive:</p>
+<ul>
+<li>Guiones y rayas: <code>-</code>, <code>&ndash;</code>, <code>&mdash;</code></li>
+<li>Puntos suspensivos <code>&hellip;</code> y comillas tipográficas <code>&ldquo; &rdquo;</code></li>
+<li>Símbolos de moneda y matemáticas: <code>$</code>, <code>%</code>, <code>+</code>, <code>=</code>, <code>/</code></li>
+<li>Guiones bajos y otros símbolos fuera de la lista</li>
+</ul>
+<p>Para quitar esos también, usa <strong>Eliminar caracteres especiales</strong>, que borra todo excepto letras, dígitos y espacios en blanco. Ten en cuenta que también elimina caracteres acentuados y alfabetos no latinos &mdash; solo conserva A&ndash;Z.</p>
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>No es un conversor de texto enriquecido.</strong> Quitar las etiquetas HTML elimina el marcado pero no lo convierte (una <code>&lt;table&gt;</code> se vuelve texto de celdas pegado, no una lista ordenada).</li>
+<li><strong>La limpieza es destructiva.</strong> No hay deshacer después de copiar el resultado &mdash; mantén la pestaña original abierta hasta estar seguro.</li>
+<li><strong>«Eliminar caracteres especiales» piensa en ASCII:</strong> las letras acentuadas (&eacute;, &ntilde;) y los alfabetos no latinos se borran junto con los símbolos.</li>
+<li><strong>Eliminar URL necesita http(s)://</strong> &mdash; los dominios sueltos como <code>example.com</code> sin esquema se dejan intactos.</li>
+<li><strong>Eliminar puntuación también quita puntos dentro de palabras</strong> (p.&nbsp;ej. <code>U.S.A</code> &rarr; <code>USA</code>, decimales <code>3.14</code> &rarr; <code>314</code>).</li>
+</ul>
+<h2>Limpiador de texto frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Ideal para</th><th>¿Opciones detalladas?</th></tr></thead>
+<tbody>
+<tr><td><strong>Este limpiador de texto</strong></td><td>Limpieza de texto pegado en una pasada, con interruptores por categoría</td><td>Sí &mdash; 9 opciones</td></tr>
+<tr><td><a href="/es/corrector-de-saltos-de-linea/">Corrector de saltos de línea</a></td><td>Reparar la estructura de líneas rotas en concreto (5 modos dedicados)</td><td>Modos, no interruptores</td></tr>
+<tr><td><a href="/es/eliminar-lineas-duplicadas/">Eliminar líneas duplicadas</a></td><td>Quitar duplicados de listas línea por línea</td><td>4 opciones de duplicados</td></tr>
+<tr><td>«Borrar formato» de Word</td><td>Quitar formato dentro de un documento de Word</td><td>No</td></tr>
+<tr><td>Pegar como texto plano (Ctrl+Mayús+V)</td><td>Evitar el formato al pegar</td><td>No</td></tr>
+</tbody>
+</table>
+<p>Para reparar solo la estructura de líneas usa el <a href="/es/corrector-de-saltos-de-linea/">corrector de saltos de línea</a>; para la higiene de listas usa <a href="/es/eliminar-lineas-duplicadas/">eliminar líneas duplicadas</a>; para problemas de mayúsculas usa el <a href="/es/conversor-a-tipo-titulo/">conversor a tipo título</a> o el <a href="/es/conversor-a-minusculas/">conversor a minúsculas</a>.</p>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo quito el formato de un texto copiado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Pega el texto en el limpiador y asegúrate de que las tres opciones por defecto estén activadas: recortar espacios de línea, eliminar espacios extra y eliminar líneas vacías. Corrigen el desorden más común del copiar-pegar al instante. Añade «Eliminar etiquetas HTML» si pegaste desde una página web.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo limpio texto copiado de un PDF?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Los pegados de PDF suelen sufrir de saltos de línea rotos y guiones de corte. Pasa primero este limpiador de texto para los espacios y caracteres basura, y luego usa el <a href="/es/corrector-de-saltos-de-linea/">corrector de saltos de línea</a> en modo «unir líneas rotas» para reparar la estructura de párrafos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El limpiador de texto elimina etiquetas HTML?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí &mdash; marca «Eliminar etiquetas HTML» y todo lo que coincida con &lt;...&gt; se quita, dejando el texto interior. Ten en cuenta que elimina el marcado sin convertirlo: una tabla se vuelve texto pegado, no una lista.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué mi URL se convirtió en «https//examplecom»?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Ocurre cuando «Eliminar puntuación» se ejecuta sin «Eliminar URL»: los dos puntos y los puntos se quitan pero las letras quedan. Marca «Eliminar URL» para borrar los enlaces completos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo quitar todos los saltos de línea para hacer un solo párrafo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí &mdash; marca «Eliminar todos los saltos de línea». Cada salto se convierte en un espacio y todo el texto colapsa en una sola línea, con los espacios sobrantes normalizados.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Esta herramienta borra los caracteres acentuados?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Solo si marcas «Eliminar caracteres especiales», que conserva letras de A&ndash;Z, dígitos y espacios en blanco y borra todo lo demás &mdash; incluidas &eacute;, &ntilde; y otros alfabetos. Las demás opciones respetan los acentos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Mi texto se sube a algún servidor?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. La limpieza se ejecuta por completo en tu navegador. Tu texto nunca se envía a un servidor ni se guarda.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué diferencia hay entre «eliminar espacios extra» y «recortar espacios de línea»?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">«Eliminar espacios extra» reduce varios espacios o tabulaciones entre palabras a uno solo. «Recortar espacios de línea» quita los espacios al inicio y al final de cada línea. Se complementan: una normaliza el interior, la otra los bordes.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo deshacer la limpieza?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No hay botón de deshacer &mdash; el cuadro de entrada conserva tu original hasta que lo borres, así que mantén esa pestaña abierta hasta haber copiado y verificado el texto limpio.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/es/limpiador-de-texto/">🧹 Limpiador de Texto</a>
+        <a class="sidebar-link" href="/es/eliminar-lineas-duplicadas/">📋 Eliminar Líneas Duplicadas</a>
+        <a class="sidebar-link" href="/es/corrector-de-saltos-de-linea/">↵ Corrector de Saltos de Línea</a>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    function cleanText() {
+      let text = document.getElementById('text-input').value;
+      const originalLength = text.length;
+
+      if (document.getElementById('opt-html').checked) {
+        text = text.replace(/<[^>]*>/g, '');
+      }
+      if (document.getElementById('opt-urls').checked) {
+        text = text.replace(/https?:\/\/[^\s]+/g, '');
+      }
+      if (document.getElementById('opt-punct').checked) {
+        text = text.replace(/[.,!?;:'"()\[\]{}]/g, '');
+      }
+      if (document.getElementById('opt-numbers').checked) {
+        text = text.replace(/[0-9]/g, '');
+      }
+      if (document.getElementById('opt-special').checked) {
+        text = text.replace(/[^a-zA-Z0-9\s\n]/g, '');
+      }
+      if (document.getElementById('opt-trim').checked) {
+        text = text.split('\n').map(line => line.trim()).join('\n');
+      }
+      if (document.getElementById('opt-spaces').checked) {
+        text = text.replace(/[ \t]+/g, ' ');
+      }
+      if (document.getElementById('opt-lines').checked) {
+        text = text.replace(/\n\s*\n/g, '\n');
+      }
+      if (document.getElementById('opt-breaks').checked) {
+        text = text.replace(/\n/g, ' ').replace(/\s+/g, ' ');
+      }
+
+      text = text.trim();
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-caracteres').textContent = originalLength;
+      document.getElementById('clean-caracteres').textContent = text.length;
+      document.getElementById('removed-caracteres').textContent = originalLength - text.length;
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-caracteres').textContent = '0';
+      document.getElementById('clean-caracteres').textContent = '0';
+      document.getElementById('removed-caracteres').textContent = '0';
+    }
+
+    function copyOutput() {
+      const output = document.getElementById('output-text');
+      navigator.clipboard.writeText(output.value).then(() => {
+        alert('¡Copiado al portapapeles!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo quito el formato de un texto copiado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pega el texto en el limpiador y asegúrate de que las tres opciones por defecto estén activadas: recortar espacios de línea, eliminar espacios extra y eliminar líneas vacías. Corrigen el desorden más común del copiar-pegar al instante. Añade «Eliminar etiquetas HTML» si pegaste desde una página web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo limpio texto copiado de un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los pegados de PDF suelen sufrir de saltos de línea rotos y guiones de corte. Pasa primero este limpiador de texto para los espacios y caracteres basura, y luego usa el corrector de saltos de línea en modo «unir líneas rotas» para reparar la estructura de párrafos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El limpiador de texto elimina etiquetas HTML?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — marca «Eliminar etiquetas HTML» y todo lo que coincida con <...> se quita, dejando el texto interior. Ten en cuenta que elimina el marcado sin convertirlo: una tabla se vuelve texto pegado, no una lista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi URL se convirtió en «https//examplecom»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ocurre cuando «Eliminar puntuación» se ejecuta sin «Eliminar URL»: los dos puntos y los puntos se quitan pero las letras quedan. Marca «Eliminar URL» para borrar los enlaces completos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo quitar todos los saltos de línea para hacer un solo párrafo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — marca «Eliminar todos los saltos de línea». Cada salto se convierte en un espacio y todo el texto colapsa en una sola línea, con los espacios sobrantes normalizados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esta herramienta borra los caracteres acentuados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo si marcas «Eliminar caracteres especiales», que conserva letras de A–Z, dígitos y espacios en blanco y borra todo lo demás — incluidas é, ñ y otros alfabetos. Las demás opciones respetan los acentos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi texto se sube a algún servidor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La limpieza se ejecuta por completo en tu navegador. Tu texto nunca se envía a un servidor ni se guarda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre «eliminar espacios extra» y «recortar espacios de línea»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "«Eliminar espacios extra» reduce varios espacios o tabulaciones entre palabras a uno solo. «Recortar espacios de línea» quita los espacios al inicio y al final de cada línea. Se complementan: una normaliza el interior, la otra los bordes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo deshacer la limpieza?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hay botón de deshacer — el cuadro de entrada conserva tu original hasta que lo borres, así que mantén esa pestaña abierta hasta haber copiado y verificado el texto limpio."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
