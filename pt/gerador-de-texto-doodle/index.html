@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Doodle | FontGenerators.online</title>
+  <meta content="Emoldure palavras com decorações estilo desenho à mão — estrelas, corações, setas e flores — em 12 estilos doodle fofos. Copie e cole grátis. Sem cadastro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-doodle/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/doodle-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/doodle-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-doodle/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-doodle/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/karalama-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como criar texto estilo doodle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite suas palavras no gerador acima e copie um dos 12 estilos doodle — seu texto é emoldurado com ornamentos estilo desenho à mão como ★·.·´¯`·.·★ ou ♥‿♥. Cole o resultado em qualquer lugar onde texto Unicode funcione."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde posso colar texto fofo desenhado à mão?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em qualquer lugar onde Unicode funcione: bios do Instagram e TikTok, Discord, WhatsApp, apps de diário e comentários. Texto doodle são caracteres comuns, então nada precisa ser instalado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre texto doodle e texto kawaii?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto doodle usa ornamentos estilo caderno (estrelas, setas, lápis, colchetes); texto kawaii usa carinhas kaomoji japonesas como (◕‿◕). Doodle é aconchego de caderno; kawaii é fofura de anime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que um estilo usa caracteres tailandeses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O ๑ do Swirl Doodle é o dígito tailandês \"um\", emprestado puramente pela forma redonda — uma técnica clássica da arte em texto de saquear as escritas do mundo por glifos bonitos. É decoração, não escrita tailandesa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar texto doodle para anotações de estudo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — é um ótimo caso de uso. Use Pencil Sketch (✎) ou Arrow Doodle (»»——➤) para cabeçalhos de seção em anotações digitais, e mantenha o corpo em texto normal para leitura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto doodle muda minhas letras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Cada estilo doodle mantém seu texto exato — mesmas letras, mesma caixa — e só adiciona ornamentos em volta. Suas palavras continuam totalmente legíveis e pesquisáveis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto doodle aparece em todos os dispositivos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em dispositivos modernos, sim. Os ornamentos vêm de blocos bem suportados (dingbats, formas geométricas, setas). Sistemas muito antigos podem perder um glifo das faixas javanesa ou tibetana — os estilos mais simples (Pencil Sketch, Music Doodle) são os mais seguros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fontes doodle são fontes de verdade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não aqui — as \"fontes doodle\" desta página são ornamentos Unicode arranjados em volta do seu texto. Nada é instalado, e os estilos funcionam em qualquer app com suporte a Unicode."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/doodle-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link">Gerador de Texto Sublinhado</a>
+            <a href="/pt/gerador-de-texto-riscado/" class="mobile-dropdown-link">Gerador de Texto Riscado</a>
+            <a href="/pt/fonte-ingles-antigo/" class="mobile-dropdown-link">Gerador de Fonte Old English</a>
+            <a href="/pt/gerador-de-fonte-anime/" class="mobile-dropdown-link">Gerador de Fonte Anime</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link">Gerador de Texto Mangá</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/doodle-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/pt/">Início</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/pt/ferramentas-de-texto-aesthetic/">Ferramentas de Texto Aesthetic</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Gerador de Texto Doodle</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/doodle-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-doodle/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-doodle/" class="lang-link active" title="Português">🇵🇹 PT</a>
+      <a href="/tr/karalama-metin-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #f2709c 0%, #ff9472 100%);">
+      <div class="container">
+        <p class="h1 mb-0">🎨 Gerador de Texto Doodle</p>
+        <p>Crie texto divertido e artístico em estilo doodle</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Digite seu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('doodle')"
+            placeholder="Digite algo criativo..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Estilos Gerados</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Tudo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🎨</div>
+              <p>Digite algum texto acima para gerar estilos de doodle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<h1>Gerador de Texto Doodle</h1>
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<p class="lead">Um <strong>gerador de texto doodle</strong> emoldura suas palavras com decorações estilo desenho à mão — estrelas, corações, setas, flores e colchetes rabiscados — como rabiscos na margem de um caderno. Este <strong>gerador de fonte fofa desenhada à mão</strong> gratuito cria 12 estilos de <strong>texto doodle fofo</strong> que você pode copiar e colar em bios, diários e legendas. Sem cadastro.</p>
+<div class="takeaways">
+<p><strong>Principais conclusões</strong></p>
+<ul>
+<li>12 estilos envolvem seu texto inalterado em molduras estilo doodle: ★·.·´¯`·.·★, ♥‿♥, ๑۩۩๑, ꧁༺ ༻꧂ e mais.</li>
+<li>Suas palavras nunca são alteradas — só decoradas — então o texto doodle continua legível.</li>
+<li>As decorações pegam caracteres emprestados de várias escritas (dígitos tailandeses, colchetes javaneses, katakana), uma técnica clássica da arte em texto.</li>
+<li>Perfeito para vibes de <strong>texto desenhado à mão</strong> em diários, planners, anotações de estudo e bios aconchegantes.</li>
+<li>Para fofura em estilo japonês, experimente o <a href="/pt/gerador-de-texto-kawaii/">gerador de texto kawaii</a>.</li>
+</ul>
+</div>
+
+<h2>O Que É Texto Doodle?</h2>
+<div class="definition"><p><strong>Texto doodle</strong> é um texto comum decorado com ornamentos brincalhões estilo desenho à mão — estrelas, corações, espirais, setas e colchetes rabiscados — imitando os desenhos que as pessoas rabiscam nas margens de cadernos, planners e páginas de diário.</p></div>
+<p>Diferente de "fontes" cursivas que mudam as formas das letras, as <strong>letras doodle</strong> mantêm suas palavras exatamente como digitadas e desenham em volta delas. Os ornamentos vêm de uma coleção variada do Unicode: dígitos tailandeses (๑), colchetes javaneses (꧁༺), brilhos katakana (･ﾟ), dingbats (✿) e a boa e velha arte ASCII (»»——➤). Artistas de texto saqueiam as escritas do mundo assim há décadas — é o mesmo espírito dos kaomoji, aplicado a molduras em vez de carinhas.</p>
+
+<h2>Como Este Gerador de Fonte Doodle Funciona</h2>
+<p>Cada estilo ensanduícha sua entrada entre ornamentos doodle combinando. Nada nas suas letras muda. Os 12 estilos, verificados na saída real para "fun":</p>
+<table>
+<thead><tr><th>Estilo</th><th>Exemplo</th><th>Origem do ornamento</th></tr></thead>
+<tbody>
+<tr><td>Star Doodle</td><td>★·.·´¯`·.·★ fun ★·.·´¯`·.·★</td><td>Estrelas + acentos</td></tr>
+<tr><td>Heart Doodle</td><td>♥‿♥ fun ♥‿♥</td><td>Corações + undertie</td></tr>
+<tr><td>Swirl Doodle</td><td>๑۩۩๑ fun ๑۩۩๑</td><td>Dígito um tailandês + ornamentos de encadernação</td></tr>
+<tr><td>Flower Doodle</td><td>✿◕ ‿ ◕✿ fun ✿◕ ‿ ◕✿</td><td>Flores + carinhas</td></tr>
+<tr><td>Arrow Doodle</td><td>»»——➤ fun ←——««</td><td>Setas e traços</td></tr>
+<tr><td>Wave Doodle</td><td>～～ fun ～～</td><td>Tildes fullwidth</td></tr>
+<tr><td>Pencil Sketch</td><td>✎ fun ✎</td><td>Dingbats de lápis</td></tr>
+<tr><td>Art Palette</td><td>🎨 fun 🎨</td><td>Paleta em emoji</td></tr>
+<tr><td>Curly Doodle</td><td>꧁༺ fun ༻꧂</td><td>Colchetes javaneses + tibetanos</td></tr>
+<tr><td>Cute Doodle</td><td>(◕ᴗ◕✿) fun (✿◕ᴗ◕)</td><td>Carinhas kaomoji</td></tr>
+<tr><td>Music Doodle</td><td>♪♫ fun ♫♪</td><td>Notas musicais</td></tr>
+<tr><td>Sparkle Doodle</td><td>·:*¨¨* fun *¨¨*:·</td><td>Brilhos em arte ASCII</td></tr>
+</tbody>
+</table>
+<p>Detalhe divertido: o ๑ do <strong>Swirl Doodle</strong> é o dígito tailandês "um" — artistas de texto adoram pegar dígitos e letras de outras escritas emprestados puramente pelas formas. Os colchetes do <strong>Curly Doodle</strong> vêm da pontuação javanesa (꧁꧂) e tibetana (༺༻), usados aqui como decoração em vez de escrita.</p>
+[IMAGE: Ilustração estilo margem mostrando estilos de texto doodle como rabiscos de caderno | alt="Estilos do gerador de texto doodle mostrados como rabiscos de margem de caderno desenhados à mão"]
+
+<h2>Exemplo Prático</h2>
+<p>Digite <strong>study notes</strong> e escolha <strong>Pencil Sketch</strong>:</p>
+<div class="example-box"><p>✎ study notes ✎</p></div>
+<p>Simples, temático, legível — ideal como cabeçalho para anotações de estudo de verdade. Para um título de playlist, <strong>Music Doodle</strong> dá ♪♫ study notes ♫♪ (bem — melhor com "chill beats": ♪♫ chill beats ♫♪).</p>
+
+<h2>Como Usar o Gerador de Texto Doodle</h2>
+<ol>
+<li><strong>Digite seu texto</strong> na caixa acima — títulos, nomes e frases curtas.</li>
+<li>Explore os 12 resultados de <strong>estilo doodle</strong>.</li>
+<li>Clique em <strong>Copiar</strong> no seu doodle favorito — <strong>copiar e colar texto estilo doodle</strong> em um clique.</li>
+<li>Cole no seu app de diário, bio, legenda ou chat.</li>
+<li>Combine o ornamento com o tema: lápis para estudo, notas musicais para playlists, corações para bilhetes de amor.</li>
+</ol>
+
+<h2>Onde o Texto Doodle Funciona</h2>
+<table>
+<thead><tr><th>Caso de uso</th><th>Estilo recomendado</th></tr></thead>
+<tbody>
+<tr><td>Cabeçalhos de diário / planner digital</td><td>Pencil Sketch (✎), Star Doodle</td></tr>
+<tr><td>Anotações de estudo e flashcards</td><td>Arrow Doodle (»»——➤) para pontos-chave</td></tr>
+<tr><td>Bios aconchegantes do Instagram</td><td>Heart Doodle (♥‿♥), Flower Doodle</td></tr>
+<tr><td>Títulos de playlist</td><td>Music Doodle (♪♫)</td></tr>
+<tr><td>Tópicos de canal do Discord</td><td>Curly Doodle (꧁༺ ༻꧂) — marcante e compacto</td></tr>
+</tbody>
+</table>
+
+<h2>Gerador de Texto Doodle vs. Ferramentas Parecidas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que faz</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/pt/gerador-de-texto-kawaii/">Gerador de texto kawaii</a></td><td>Carinhas kaomoji japonesas e molduras doces</td><td>Você quer carinhas <strong>fofas desenhadas à mão</strong> especificamente</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-aesthetic/">Gerador de texto aesthetic</a></td><td>Estilos fullwidth, espaçados e molduras suaves</td><td>Você quer minimalista em vez de rabiscado</td></tr>
+<tr><td><a href="/pt/gerador-de-letras-bolha/">Gerador de letras bolha</a></td><td>Alfabetos bolha encapsulados (ⓗⓘ)</td><td>Você quer <strong>letras redondas</strong>, não molduras</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-manuscrito/">Gerador de texto manuscrito</a></td><td>Alfabetos Unicode cursivos</td><td>Você quer que as <em>letras</em> pareçam manuscritas</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-soft-girl/">Gerador de texto soft girl</a></td><td>Molduras de emoji pastéis e sonhadoras</td><td>Você quer romântico em vez de rabiscado</td></tr>
+</tbody>
+</table>
+<p>Mais estilos brincalhões em <a href="/pt/ferramentas-de-texto-aesthetic/">ferramentas de texto aesthetic</a>.</p>
+
+<h2>Dicas para os Doodles Mais Fofos</h2>
+<p><strong>Deixe o ornamento definir o tema.</strong> O doodle é a mensagem — ✎ diz "anotações", ♪♫ diz "música", ♥‿♥ diz "doçura".</p>
+<p><strong>Texto curto.</strong> Ornamentos largos como ★·.·´¯`·.·★ sobrecarregam frases longas; eles emolduram 1 a 4 palavras lindamente.</p>
+<p><strong>Misture com texto normal.</strong> Um cabeçalho doodle acima de corpo em texto normal parece uma página de diário de verdade — e continua legível.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li>Ornamentos pegam caracteres de várias escritas emprestados; dispositivos extremamente antigos podem renderizar um ou dois glifos errado.</li>
+<li>A ferramenta decora o texto — não muda as formas das letras, então não existe "fonte doodle" de verdade.</li>
+<li>Molduras largas consomem rápido o orçamento de caracteres em bios com limites rígidos.</li>
+<li>Leitores de tela soletram os ornamentos literalmente; mantenha o texto doodle curto e decorativo.</li>
+</ul>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como criar texto estilo doodle?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Digite suas palavras no gerador acima e copie um dos 12 estilos doodle — seu texto é emoldurado com ornamentos estilo desenho à mão como ★·.·´¯`·.·★ ou ♥‿♥. Cole o resultado em qualquer lugar onde texto Unicode funcione.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Onde posso colar texto fofo desenhado à mão?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Em qualquer lugar onde Unicode funcione: bios do Instagram e TikTok, Discord, WhatsApp, apps de diário e comentários. Texto doodle são caracteres comuns, então nada precisa ser instalado.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Qual a diferença entre texto doodle e texto kawaii?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Texto doodle usa ornamentos estilo caderno (estrelas, setas, lápis, colchetes); texto kawaii usa carinhas kaomoji japonesas como (◕‿◕). Doodle é aconchego de caderno; kawaii é fofura de anime.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Por que um estilo usa caracteres tailandeses?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">O ๑ do Swirl Doodle é o dígito tailandês "um", emprestado puramente pela forma redonda — uma técnica clássica da arte em texto de saquear as escritas do mundo por glifos bonitos. É decoração, não escrita tailandesa.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Posso usar texto doodle para anotações de estudo?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sim — é um ótimo caso de uso. Use Pencil Sketch (✎) ou Arrow Doodle (»»——➤) para cabeçalhos de seção em anotações digitais, e mantenha o corpo em texto normal para leitura.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Texto doodle muda minhas letras?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Não. Cada estilo doodle mantém seu texto exato — mesmas letras, mesma caixa — e só adiciona ornamentos em volta. Suas palavras continuam totalmente legíveis e pesquisáveis.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Texto doodle aparece em todos os dispositivos?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Em dispositivos modernos, sim. Os ornamentos vêm de blocos bem suportados (dingbats, formas geométricas, setas). Sistemas muito antigos podem perder um glifo das faixas javanesa ou tibetana — os estilos mais simples (Pencil Sketch, Music Doodle) são os mais seguros.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Fontes doodle são fontes de verdade?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Não aqui — as "fontes doodle" desta página são ornamentos Unicode arranjados em volta do seu texto. Nada é instalado, e os estilos funcionam em qualquer app com suporte a Unicode.</p></div>
+</div>
+</div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('doodle');
+    });
+  </script>
+</body>
+
+</html>
