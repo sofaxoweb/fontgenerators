@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Hashtags | FontGenerators.online</title>
+<meta name="description" content="Gere hashtags relevantes para Instagram e TikTok — digite o tema, receba listas prontas por alcance, nicho e popularidade e copie tudo de uma vez grátis." />
+  <meta name="description" content="Gere hashtags relevantes para Instagram e TikTok — digite o tema, receba listas prontas por alcance, nicho e popularidade e copie tudo de uma vez grátis." />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-hashtags/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/hashtag-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/hashtag-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-hashtags/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-hashtags/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/hashtag-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .hashtag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hashtag-tag {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .hashtag-tag:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hashtag-tag.selected {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary-dark);
+    }
+
+    .selected-hashtags {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      min-height: 80px;
+      margin-top: 1rem;
+    }
+
+    .category-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .category-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quais são as melhores hashtags para Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As melhores hashtags são específicas do seu post e dimensionadas para sua conta: 3–5 tags misturando uma ampla, duas de comunidade (50 mil–500 mil posts) e uma personalizada. Digite seu tema acima para montar um conjunto assim — relevância vence popularidade bruta sempre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como achar hashtags em tendência?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Esta ferramenta fornece tags estáveis e selecionadas, não dados ao vivo de tendências. Para tags genuinamente em alta, olhe a página Descobrir do TikTok ou as sugestões de busca do Instagram para seu nicho — depois combine-as com os conjuntos perenes gerados aqui para uma mistura equilibrada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Existe gerador de hashtags para Reels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — este aqui. Reels usam o mesmo sistema de hashtags dos posts do feed, então gere um conjunto de 3–5 tags acima e cole depois da legenda do Reel. Para vídeos do TikTok, o Gerador de Legendas do TikTok embute tags de tendência direto nas legendas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantas hashtags devo usar por post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Instagram permite até 30, mas 3–5 tags muito relevantes geralmente performam melhor — você consegue de fato rankear em tags médias em vez de se afogar nas gigantes. Selecione suas 3–5 acima com clique e copie só essas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde coloco as hashtags — na legenda ou nos comentários?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na legenda, depois do texto — separadas por algumas quebras de linha ou uma divisória para a visualização do feed ficar limpa. Hashtags em comentários funcionam, mas são menos confiáveis para descoberta e mais difíceis de gerenciar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtags podem causar shadowban na minha conta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usar tags banidas ou associadas a spam pode limitar o alcance de um post, o que chamam de shadowban. Fique em tags relevantes e legítimas como as selecionadas aqui, evite repetir blocos idênticos de 30 tags em cada post e confira qualquer tag desconhecida na busca do Instagram antes de usar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtags ainda funcionam em 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, mas o papel delas estreitou: legendas ricas em palavras-chave e a categorização do próprio algoritmo fazem mais trabalho de descoberta que antes. Hashtags funcionam melhor agora como categorização precisa — poucas tags exatas vencem uma parede de esperançosas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso copiar as hashtags direto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — clique nas tags para selecioná-las, depois aperte Copiar selecionadas. O texto copiado vem formatado com # e espaços, pronto para colar no Instagram ou TikTok."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O gerador de hashtags é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Totalmente grátis, sem conta, sem limites — gere, selecione e copie quantos conjuntos quiser. Seus temas nunca saem do seu navegador."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/hashtag-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/hashtag-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">📱</span>
+                        Ferramentas de Redes Sociais
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-instagram/">
+                            <span class="link-icon">📸</span>
+                            <span class="link-text">Gerador de Legendas do Instagram</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-tiktok/">
+                            <span class="link-icon">🎵</span>
+                            <span class="link-text">Gerador de Legendas do TikTok</span>
+                        </a>
+            <a class="sidebar-link active" href="/pt/gerador-de-hashtags/">
+                            <span class="link-icon">#️⃣</span>
+                            <span class="link-text">Gerador de Hashtags</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres-legendas/">
+                            <span class="link-icon">📊</span>
+                            <span class="link-text">Contador de Caracteres de Legendas</span>
+                        </a>
+            <a class="sidebar-link" href="/pt/gerador-de-legendas-com-emojis/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Gerador de Legendas com Emojis</span>
+                        </a>
+          </nav>
+        </div>
+      </aside>
+<div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+        <div class="tool-input-section">
+          <div class="tool-title">#️⃣ Gerador de Hashtags</h1>
+          <p class="tool-description">Gere hashtags relevantes para seu conteúdo</p>
+          <label class="tool-label">Sobre o que é o seu conteúdo?</label>
+          <input class="tool-input" id="topic-input" oninput="generateHashtags()"
+            placeholder="por exemplo, viagens, alimentação, fitness, moda..."
+            style="padding: 1rem; margin-bottom: 1rem;" type="text" />
+          <div id="hashtags-container"></div>
+          <div class="selected-hashtags">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-weight: 600;">Hashtags selecionadas (<span id="selected-count">0</span>)</span>
+              <div>
+                <button class="btn btn-sm btn-secondary" onclick="clearSelected()">Limpar</button>
+                <button class="btn btn-sm btn-primary" onclick="copySelected()">📋 Copiar tudo</button>
+              </div>
+            </div>
+            <div id="selected-display" style="word-wrap: break-word; color: var(--primary);">
+              Clique nas hashtags acima para adicioná-las aqui...
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>📱 Ferramentas de Redes Sociais</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/pt/gerador-de-hashtags/">#️⃣ Gerador de Hashtags</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres-legendas/">📊 Contador de Caracteres de Legendas</a>
+      </nav>
+    </div>
+  </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-legendas/">Ferramentas de Legendas</a> &nbsp;/&nbsp; <span>Gerador de Hashtags</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Gerador de Hashtags</h1>
+<p>Um <strong>gerador de hashtags</strong> é uma ferramenta grátis que monta conjuntos de hashtags relevantes para seus posts a partir de um tema. Digite sobre o que é seu conteúdo — viagens, comida, fitness, moda — e receba hashtags selecionadas em 8 categorias mais tags personalizadas feitas das palavras do seu tema. Clique para selecionar as que você quer, copie o conjunto e cole. Sem cadastro.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>8 categorias de hashtags — popular, viagens, comida, fitness, moda, beleza, fotografia, arte — 15 tags cada, de hashtags virais a tags de nicho.</li>
+<li>Digitar um tema revela categorias correspondentes mais 10 hashtags personalizadas feitas das palavras do seu tema.</li>
+<li>Selecione por clique qualquer tag e copie só o conjunto escolhido — sem digitar na mão.</li>
+<li>3–5 hashtags muito relevantes superam 30 genéricas para a maioria das contas.</li>
+<li>Grátis, instantâneo, privado: tudo roda no seu navegador.</li>
+</ul>
+</div>
+
+<h2>O que é um gerador de hashtags?</h2>
+<p>Um gerador de hashtags é uma ferramenta online que cria conjuntos de hashtags combinadas com o tema do seu conteúdo. Você digita sobre o que é o post; a ferramenta devolve hashtags agrupadas — tags populares amplas mais categorias de nicho como viagens, comida ou fitness — e até inventa tags personalizadas das palavras do seu tema (por exemplo, "travel" vira #travellife, #travelgram, #travelvibes). Você toca nas tags que quer e copia a seleção.</p>
+<p>Ele substitui o ritual de redigitar as mesmas 30 tags — ou pior, chutá-las — a cada post. Este criador de hashtags usa uma biblioteca selecionada, não dados ao vivo de tendências: 120 tags escolhidas a dedo em 8 categorias. Isso significa tags estáveis e relevantes em vez de perseguir os picos desta semana — uma troca deliberada, coberta na seção de limitações.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<ol>
+<li><strong>Entrada de tema.</strong> Digite o tema do seu conteúdo ("travel", "skincare", "home workout"). A ferramenta minúscula e apara para a correspondência. Dica: o banco de tags é em inglês, então digite o tema em inglês para melhores correspondências.</li>
+<li><strong>Tags populares sempre aparecem.</strong> A categoria 🔥 Popular (15 tags: #fyp, #viral, #trending, #explorepage, #instagood, #photooftheday …) aparece sempre como reserva inicial.</li>
+<li><strong>Correspondência inteligente de categorias.</strong> Se seu tema casa com um nome de categoria ou qualquer tag dentro dela — "travel" casa com a categoria de viagens, "yoga" casa com tags dentro de fitness — as 15 tags daquela categoria aparecem também.</li>
+<li><strong>Tags personalizadas das suas palavras.</strong> Seu tema também gera 10 hashtags personalizadas: o próprio tema mais variantes como tema + s, tema + life, tema + lover, insta + tema, tema + gram, tema + photography, tema + vibes, tema + goals e my + tema (filtradas para no máximo 30 caracteres).</li>
+<li><strong>Selecione e copie.</strong> Clique em qualquer tag para ligá-la à sua seleção, depois copie o conjunto escolhido — exatamente as tags que você quer, formatadas com # e espaçadas, prontas para colar. Sem tema? Deixar a caixa vazia mostra as 8 categorias, para navegar e escolher à mão.</li>
+</ol>
+
+<h2>Exemplo prático: entrada real, saída real</h2>
+<p>Rodamos a ferramenta com o tema "travel". Aqui está o que ela genuinamente devolveu:</p>
+<ul>
+<li>🔥 Popular: #fyp #viral #trending #explorepage #foryou #foryoupage #explore #instagood #photooftheday #love #beautiful #happy #cute #followme #picoftheday</li>
+<li>📍 Travel (categoria correspondente): #travel #travelgram #travelphotography #instatravel #wanderlust #traveltheworld #vacation #adventure #explore #trip #traveling #travelblogger #tourism #holiday #getaway</li>
+<li>✨ Personalizadas: #travel #travels #travellife #travellover #instatravel #travelgram #travelphotography #travelvibes #travelgoals #mytravel</li>
+</ul>
+<p>Dessas 40 tags você pode selecionar 5 — digamos #travelphotography #wanderlust #travellife #instatravel #travelgram — misturando uma tag ampla, tags de comunidade de nicho e uma personalizada. Essa mistura de 5 tags é a estratégia que a próxima seção explica.</p>
+
+<h2>Como usar este criador de hashtags</h2>
+<ol>
+<li><strong>Digite o tema do seu conteúdo</strong> (uma ou duas palavras funcionam melhor — em inglês: travel, vegan recipes, streetwear).</li>
+<li><strong>Clique em Gerar hashtags</strong> e revise as categorias correspondentes mais as tags personalizadas.</li>
+<li><strong>Clique para selecionar as melhores hashtags</strong> para seu post (3–5): misture ampla (#travel), de comunidade (#travelblogger) e personalizada (#travellife).</li>
+<li><strong>Clique em Copiar selecionadas</strong> e cole depois da sua legenda (abaixo de uma divisória, para limpeza).</li>
+<li><strong>Guarde seus melhores conjuntos</strong> no app de notas — reutilizar vence regenerar para séries consistentes.</li>
+</ol>
+
+<h2>Gerador de Hashtags vs. ferramentas relacionadas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que faz</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Gerador de Hashtags</strong></td><td>Conjuntos de hashtags por tema com seleção por clique</td><td>Você precisa de tags de descoberta para um post ou Reel</td></tr>
+<tr><td><a href="/pt/gerador-de-legendas-instagram/">Gerador de Legendas do Instagram</a></td><td>Escreve o texto da legenda em 8 humores</td><td>Você precisa primeiro das palavras da legenda</td></tr>
+<tr><td><a href="/pt/gerador-de-legendas-tiktok/">Gerador de Legendas do TikTok</a></td><td>Legendas de vídeo com tags estilo #fyp embutidas</td><td>Você vai postar no TikTok e quer tags na legenda</td></tr>
+<tr><td><a href="/pt/formatador-de-legendas/">Formatador de Legendas</a></td><td>Espaçamento e divisórias para legendas prontas</td><td>Você quer uma divisória separando legenda de hashtags</td></tr>
+</tbody>
+</table>
+
+<h2>A estratégia de 3–5 tags (por que menos vence 30)</h2>
+<p>O Instagram permite 30 hashtags por post, o que tenta todo mundo a usar 30. O problema: tags como #love (bilhões de posts) te enterram em segundos, enquanto 30 tags diluem o sinal sobre do que seu post realmente é. A estrutura que funciona para a maioria das contas é 3–5 tags em especificidade decrescente: uma tag ampla para volume (#travel), duas tags de comunidade onde você consegue rankear (#travelblogger, #travelphotography) e uma tag personalizada ou de marca (#travellife). Cada tag deve descrever o post com tanta precisão que um estranho clicando nela encontre exatamente o que esperava — relevância é o fator de ranqueamento que você controla.</p>
+<p>Rote, não repita igual. Postar as mesmas 30 tags em cada post parece automatizado e desperdiça a chance de testar. Mantenha 2–3 tags âncora constantes para consistência de série e troque o resto por post usando este gerador — para isso serve a seção de tags personalizadas: #myparisguide neste post, #myitalyguide no próximo.</p>
+
+<h2>Achando tags que realmente combinam com seu nicho</h2>
+<p>A lógica de correspondência aqui premia temas específicos: "travel" revela a categoria de viagens, mas "vegan" casa com tags dentro de comida, e um tema como "skincare" atinge beleza. Teste seu nicho de três jeitos — o termo amplo, o termo de comunidade (em inglês, "bookstagram" não "books") e a atividade ("mealprep") — e compare qual devolve as tags mais úteis. Depois confira o tamanho das tags no app do Instagram antes de cravar: o ponto ideal para contas pequenas e médias é tags com cerca de 50 mil–500 mil posts, grandes o bastante para ter audiência, pequenas o bastante para seu post aparecer nos Top posts. Este gerador dá as palavras; o app dá os tamanhos; juntos fazem o conjunto.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>Biblioteca selecionada, não tendências ao vivo.</strong> As 120 tags são escolhidas a dedo e estáveis — a ferramenta não vai revelar a tag viral desta semana nem avisar que uma tag está banida ou saturada. Confira a saúde da tag no app para posts importantes.</li>
+<li><strong>Tags só em inglês.</strong> Todas as categorias e padrões personalizados são em inglês.</li>
+<li><strong>Tags personalizadas são formulaicas.</strong> Padrões como insta + tema produzem tags com cara de reais (#instatravel), mas também fracassos — olhe cada tag personalizada antes de usar.</li>
+<li><strong>Sem dados de desempenho.</strong> A ferramenta não diz quais tags geraram alcance; acompanhe isso no Instagram Insights ou no analytics do TikTok.</li>
+<li><strong>Correspondência é por palavra-chave.</strong> Temas incomuns podem não casar com nenhuma categoria além de Popular — aí as tags personalizadas carregam o piano.</li>
+</ul>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Quais são as melhores hashtags para Instagram?</h3><div class="faq-answer"><p>As melhores hashtags são específicas do seu post e dimensionadas para sua conta: 3–5 tags misturando uma ampla, duas de comunidade (50 mil–500 mil posts) e uma personalizada. Digite seu tema acima para montar um conjunto assim — relevância vence popularidade bruta sempre.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Como achar hashtags em tendência?</h3><div class="faq-answer"><p>Esta ferramenta fornece tags estáveis e selecionadas, não dados ao vivo de tendências. Para tags genuinamente em alta, olhe a página Descobrir do TikTok ou as sugestões de busca do Instagram para seu nicho — depois combine-as com os conjuntos perenes gerados aqui para uma mistura equilibrada.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Existe gerador de hashtags para Reels?</h3><div class="faq-answer"><p>Sim — este aqui. Reels usam o mesmo sistema de hashtags dos posts do feed, então gere um conjunto de 3–5 tags acima e cole depois da legenda do Reel. Para vídeos do TikTok, o <a href="/pt/gerador-de-legendas-tiktok/">Gerador de Legendas do TikTok</a> embute tags de tendência direto nas legendas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quantas hashtags devo usar por post?</h3><div class="faq-answer"><p>O Instagram permite até 30, mas 3–5 tags muito relevantes geralmente performam melhor — você consegue de fato rankear em tags médias em vez de se afogar nas gigantes. Selecione suas 3–5 acima com clique e copie só essas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Onde coloco as hashtags — na legenda ou nos comentários?</h3><div class="faq-answer"><p>Na legenda, depois do texto — separadas por algumas quebras de linha ou uma divisória para a visualização do feed ficar limpa. Hashtags em comentários funcionam, mas são menos confiáveis para descoberta e mais difíceis de gerenciar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Hashtags podem causar shadowban na minha conta?</h3><div class="faq-answer"><p>Usar tags banidas ou associadas a spam pode limitar o alcance de um post, o que chamam de shadowban. Fique em tags relevantes e legítimas como as selecionadas aqui, evite repetir blocos idênticos de 30 tags em cada post e confira qualquer tag desconhecida na busca do Instagram antes de usar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Hashtags ainda funcionam em 2026?</h3><div class="faq-answer"><p>Sim, mas o papel delas estreitou: legendas ricas em palavras-chave e a categorização do próprio algoritmo fazem mais trabalho de descoberta que antes. Hashtags funcionam melhor agora como categorização precisa — poucas tags exatas vencem uma parede de esperançosas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso copiar as hashtags direto?</h3><div class="faq-answer"><p>Sim — clique nas tags para selecioná-las, depois aperte Copiar selecionadas. O texto copiado vem formatado com # e espaços, pronto para colar no Instagram ou TikTok.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O gerador de hashtags é grátis?</h3><div class="faq-answer"><p>Totalmente grátis, sem conta, sem limites — gere, selecione e copie quantos conjuntos quiser. Seus temas nunca saem do seu navegador.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-legendas-instagram/">Gerador de Legendas do Instagram</a> — o texto da legenda</li>
+<li><a href="/pt/formatador-de-legendas/">Formatador de Legendas</a> — separe as tags com capricho</li>
+<li><a href="/pt/criador-de-legendas-stories/">Criador de Legendas para Stories</a> — quando o post vai para os Stories também</li>
+<li><a href="/pt/ferramentas-de-legendas/">Todas as Ferramentas de Legendas</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+    const hashtagCategories = {
+      popular: ['fyp', 'viral', 'trending', 'explorepage', 'foryou', 'foryoupage', 'explore', 'instagood', 'photooftheday', 'love', 'beautiful', 'happy', 'cute', 'followme', 'picoftheday'],
+      travel: ['travel', 'travelgram', 'travelphotography', 'instatravel', 'wanderlust', 'traveltheworld', 'vacation', 'adventure', 'explore', 'trip', 'traveling', 'travelblogger', 'tourism', 'holiday', 'getaway'],
+      food: ['food', 'foodie', 'foodporn', 'instafood', 'yummy', 'delicious', 'foodstagram', 'foodphotography', 'cooking', 'homemade', 'dinner', 'lunch', 'breakfast', 'recipe', 'foodlover'],
+      fitness: ['fitness', 'gym', 'workout', 'fit', 'motivation', 'fitnessmotivation', 'bodybuilding', 'training', 'health', 'healthy', 'exercise', 'muscle', 'gains', 'fitfam', 'lifestyle'],
+      fashion: ['fashion', 'style', 'ootd', 'fashionblogger', 'fashionista', 'streetstyle', 'outfit', 'instafashion', 'fashionstyle', 'lookoftheday', 'trendy', 'stylish', 'clothing', 'dress', 'fashionable'],
+      beauty: ['beauty', 'makeup', 'skincare', 'beautyblogger', 'makeupartist', 'cosmetics', 'beautytips', 'mua', 'glam', 'lipstick', 'skincareroutine', 'beautycommunity', 'makeuptutorial', 'selfcare', 'beautylover'],
+      photography: ['photography', 'photooftheday', 'photographer', 'photo', 'portrait', 'naturephotography', 'photographylovers', 'streetphotography', 'canon', 'nikon', 'photographyislife', 'instaphoto', 'photoshoot', 'camera', 'picoftheday'],
+      art: ['art', 'artist', 'artwork', 'artistsoninstagram', 'drawing', 'illustration', 'painting', 'sketch', 'creative', 'digitalart', 'design', 'artistsofinstagram', 'artoftheday', 'instaart', 'artsy']
+    };
+
+    let selectedHashtags = new Set();
+
+    function generateHashtags() {
+      const topic = document.getElementById('topic-input').value.toLowerCase().trim();
+      const container = document.getElementById('hashtags-container');
+
+      let html = '';
+
+      // Always show popular
+      html += renderCategory('🔥 Popular', hashtagCategories.popular);
+
+      // Show relevant categories based on topic
+      if (topic) {
+        Object.keys(hashtagCategories).forEach(cat => {
+          if (cat !== 'popular' && (cat.includes(topic) || topic.includes(cat) || hashtagCategories[cat].some(h => h.includes(topic)))) {
+            html += renderCategory(`📌 ${cat.charAt(0).toUpperCase() + cat.slice(1)}`, hashtagCategories[cat]);
+          }
+        });
+
+        // Generate custom hashtags from topic
+        const customTags = [topic, topic + 's', topic + 'life', topic + 'lover', 'insta' + topic, topic + 'gram', topic + 'photography', topic + 'vibes', topic + 'goals', 'my' + topic];
+        html += renderCategory('✨ Custom', customTags.filter(t => t.length <= 30));
+      }
+
+      // Show all categories if no specific match
+      if (!topic || html.split('category-section').length < 3) {
+        Object.keys(hashtagCategories).forEach(cat => {
+          if (cat !== 'popular') {
+            html += renderCategory(`📌 ${cat.charAt(0).toUpperCase() + cat.slice(1)}`, hashtagCategories[cat]);
+          }
+        });
+      }
+
+      container.innerHTML = html;
+      updateSelectedDisplay();
+    }
+
+    function renderCategory(title, hashtags) {
+      return `
+                <div class="category-section">
+                    <div class="category-title">${title}</div>
+                    <div class="hashtag-grid">
+                        ${hashtags.map(tag => `
+                            <span class="hashtag-tag ${selectedHashtags.has(tag) ? 'selected' : ''}" onclick="toggleHashtag('${tag}')">#${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+    }
+
+    function toggleHashtag(tag) {
+      if (selectedHashtags.has(tag)) {
+        selectedHashtags.delete(tag);
+      } else {
+        selectedHashtags.add(tag);
+      }
+      generateHashtags();
+    }
+
+    function updateSelectedDisplay() {
+      const display = document.getElementById('selected-display');
+      const count = document.getElementById('selected-count');
+
+      count.textContent = selectedHashtags.size;
+
+      if (selectedHashtags.size === 0) {
+        display.textContent = 'Clique nas hashtags acima para adicioná-las aqui...';
+        display.style.color = 'var(--muted)';
+      } else {
+        display.textContent = Array.from(selectedHashtags).map(t => '#' + t).join(' ');
+        display.style.color = 'var(--primary)';
+      }
+    }
+
+    function clearSelected() {
+      selectedHashtags.clear();
+      generateHashtags();
+    }
+
+    function copySelected() {
+      if (selectedHashtags.size === 0) {
+        alert('Selecione algumas hashtags primeiro!');
+        return;
+      }
+      const text = Array.from(selectedHashtags).map(t => '#' + t).join(' ');
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied ' + selectedHashtags.size + ' hashtags!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Initialize
+    generateHashtags();
+  
+    </script>
+
+</body>
+
+</html>
