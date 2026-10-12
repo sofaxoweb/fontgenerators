@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Zalgo Metin Oluşturucu | FontGenerators</title>
+  <meta content="Zalgo metin oluşturucu ile ürkütücü bozuk metinler yaratın. Yoğunluk kaydırıcılı, ücretsiz çevrimiçi glitch metin üretici; Discord ve Instagram uyumlu." name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  
+  <link href="https://fontgenerators.online/tr/zalgo-metin-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zalgo Metin Oluşturucu | FontGenerators">
+    <meta property="og:description" content="Zalgo metin oluşturucu ile ürkütücü bozuk metinler yaratın. Yoğunluk kaydırıcılı, ücretsiz çevrimiçi glitch metin üretici; Discord ve Instagram uyumlu.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/zalgo-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Zalgo Metin Oluşturucu | FontGenerators">
+    <meta name="twitter:description" content="Zalgo metin oluşturucu ile ürkütücü bozuk metinler yaratın. Yoğunluk kaydırıcılı, ücretsiz çevrimiçi glitch metin üretici; Discord ve Instagram uyumlu.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/zalgo-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/zalgo-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-zalgo/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-zalgo/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/zalgo-metin-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .intensity-slider {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .output-box {
+      padding: 1.5rem;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+      min-height: 100px;
+      word-break: break-all;
+      line-height: 2;
+    }
+
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/zalgo-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-zalgo/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-zalgo/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/zalgo-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/zalgo-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-zalgo/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-zalgo/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/zalgo-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/zalgo-text-generator/',es:'/es/generador-de-texto-zalgo/',pt:'/pt/gerador-de-texto-zalgo/',tr:'/tr/zalgo-metin-olusturucu/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Metin Dönüşümleri</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../ters-metin-olusturucu/">🔄 Reverse Text</a>
+            <a class="sidebar-link" href="../aynali-metin-olusturucu/">🪞 Mirror Text</a>
+            <a class="sidebar-link active" href="../zalgo-metin-olusturucu/">👻 Zalgo Text</a>
+            <a class="sidebar-link" href="../spoiler-metin-olusturucu/">🙈 Spoiler Text</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Araçlara Göz At</button>
+        <div class="tool-input-section">
+          <h2 class="tool-title">👻 Zalgo Metin Oluşturucu</h2>
+          <p class="tool-description">Ayarlanabilir yoğunlukta ürkütücü glitch metin oluşturun</p>
+          <textarea class="tool-input" id="text-input" oninput="generateZalgo()"
+            placeholder="Boşluk için metninizi girin..." rows="3"></textarea>
+          <div class="slider-label">
+            <span>Hafif</span>
+            <span>Yoğunluk: <strong id="intensity-value">5</strong></span>
+            <span>Aşırı</span>
+          </div>
+          <input class="intensity-slider" id="intensity" max="15" min="1" oninput="updateIntensity()" type="range"
+            value="5" />
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <label><input checked="" id="up" onchange="generateZalgo()" type="checkbox" /> Üst</label>
+            <label><input checked="" id="mid" onchange="generateZalgo()" type="checkbox" /> Orta</label>
+            <label><input checked="" id="down" onchange="generateZalgo()" type="checkbox" /> Alt</label>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Z̷̨̛̟̈́̑a̶͎̓l̵͕̀g̷̨̈́o̵͔͛ Sonuç</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/metin-araclari/">Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Zalgo Metin Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Zalgo Metin Oluşturucu</h1>
+
+<p>Zalgo metin oluşturucu ürkütücü, bozuk, çarpıtılmış metin üretir &mdash; "lanetli" üslup &mdash; harflerinizin üstüne ve altına düzinelerce Unicode birleşen işareti yığarak; "hello"yu bozulmuş, çarpıtılmış bir karmaşaya çevirir. Yukarı yazın, yoğunluk kaydırıcısını hafiften tam bozulmaya sürükleyin, sonucu düz metnin çalıştığı her yere kopyalayın.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li>Birleşen aksan işaretlerini (U+0300&ndash;U+036F aralığı) her harfin üstüne, içinden ve altına yığar.</li>
+    <li>Yoğunluk kaydırıcısı her karaktere kaç işaret bineceğini belirler.</li>
+    <li>Çıktı gerçek Unicode metindir &mdash; yazı tipi kurmadan Discord'a, Instagram'a ve yorumlara yapışır.</li>
+    <li>Adını bozulmuş, "ele geçirilmiş" metinle ilgili 2004 internet korku meminden alır.</li>
+    <li>Ağır Zalgo düzenleri bozabilir, ekran okuyucuları yorar &mdash; ölçülü kullanın.</li>
+  </ul>
+</div>
+
+<h2>Zalgo metni nedir?</h2>
+<p><strong>Zalgo metni,</strong> üst üste yığılmış Unicode birleşen karakterlerle bozulmuş normal metindir &mdash; bir taban harfin üstüne, altına ya da içinden geçecek şekilde tasarlanmış aksan işaretleri. Unicode sınırsız yığılmaya izin verdiği için tek karaktere düzinelerce işaret bindirmek uzun, bozuk, "lanetli" görünümü üretir. Ad, Zalgo adlı bir varlığı konu alan 2004 internet korku meminden gelir; üslup çevrimiçi ortamda ele geçirilmiş ya da bozuk verinin kısaltması oldu.</p>
+
+<h2>Bu Zalgo metin oluşturucu nasıl çalışır?</h2>
+<p>Araç üç birleşen aksan işareti havuzundan rastgele işaretler çeker: harfin <strong>üstüne</strong> işleyen üst işaretler (U+0300 bloğundan birleşen akut, grav, tilde, halka ve çengeller), içinden geçen <strong>orta</strong> işaretler (birleşen eğik çizgiler ve üst bindirmeler) ve <strong>alta</strong> sarkan işaretler (U+0316&ndash;U+0362 aralığından birleşen sedil, nokta ve köprüler). Yoğunluk kaydırıcısı her karaktere kaç işaret bağlanacağını belirler &mdash; düşük değerler ürkütücü bir titreme katar, en yüksek değerler her harfi dikey bir bozulma yığınına gömer.</p>
+<p>Birleşen işaretler sıradan Unicode karakterler olduğundan bozuk zalgo harfleri gerçek kopyala-yapıştırılabilir metindir. Unicode'un işlendiği her yerde görüntülenir; görsel yok, yazı tipi indirme yok. İşaretler her üretimde rastgele seçilir; aynı girdi iki kez çalıştırılınca biraz farklı bozulma deseni verir.</p>
+
+<h2>Uygulamalı örnek: glitch metin yapma</h2>
+<p>Girdi: orta yoğunlukta <code>hello</code>; şuna benzer çıktı üretir: <code>h̷͌e̶̐l̵͘l̴̈́o̷͑</code> &mdash; işaretler her üretimde değişir, ancak yapı hep aynıdır:</p>
+<table>
+  <thead>
+    <tr><th>Yoğunluk</th><th>Harf başına ne olur</th><th>Tipik görünüm</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Düşük (1&ndash;3)</td><td>Üstte ve altta birkaç işaret</td><td>Hafif perili, hâlâ okunaklı</td></tr>
+    <tr><td>Orta (4&ndash;7)</td><td>Üstte, içten ve altta işaretler</td><td>Bariz bozuk, kelimeler çözülebilir</td></tr>
+    <tr><td>Yüksek (8+)</td><td>Sık dikey yığınlar</td><td>Zor okunur "lanetli metin"</td></tr>
+  </tbody>
+</table>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li><strong>Metninizi yazın:</strong> yukarıdaki giriş alanına.</li>
+  <li>Hafif ya da aşırı bozulma için <strong>yoğunluk kaydırıcısını sürükleyin</strong>.</li>
+  <li>Zalgo sürümü <strong>anında üretilir</strong> &mdash; yeni rastgele desen için yeniden üretin.</li>
+  <li><strong>Kopyalayın;</strong> sohbetlere, biyografilere ya da yorumlara yapıştırın.</li>
+</ol>
+
+<h2>Zalgo ve glitch metin: fark nedir?</h2>
+<p>Herkes ikisine de "glitch metin" diyor, ancak mekanik farklı. <strong>Zalgo</strong> (bu araç) birleşen aksan işaretlerini dikey yığar &mdash; bozulma her harften yukarı ve aşağı büyür. <a href="/tr/glitch-metin-olusturucu/">Glitch efekt metin oluşturucu</a> ise süsleyici çarpıtmalar uygular: köşeli harfler, üstü çizili harfler, altı çizili harfler ve blok çerçeveler. Zalgo bozuk veri gibi görünür; glitch efektleri üsluplu hata estetiği gibi. Siberpunk "sistem hatası" havası için glitch aracını, korku ve lanetli metin memleri için burayı kullanın.</p>
+
+<h2>Ürkütücü metin nerede kullanılır (nerede kullanılmamalı)?</h2>
+<p>Zalgo metni korku temalı içerikte coşar: creepypasta, Cadılar Bayramı gönderileri, ARG bulmacaları ve okunaksızlığın estetik olduğu "lanetli görsel" açıklamaları. Hızlı ürkütücü zalgo kopyala-yapıştır için orta yoğunlukta üretin &mdash; Discord mesajlarına ve Instagram biyografilerine temiz yapışır. Oyuncular havalı görünüm için kullanıcı adlarında hafif Zalgo kullanır. Ancak ağır Zalgo'nun gerçek maliyetleri var: uzun işaret yığınları kapları taşıp sayfa düzenlerini bozabilir, bazı platform filtreleri aşırı birleşen işaretleri ayıklar ya da çökertir; ekran okuyucular her işareti tek tek duyurur &mdash; tek bir Zalgo kelimesinin "okunması" bir dakika sürebilir. Kısa süs dizeleriyle sınırlı tutun, insanların anlaması gereken bilgilerde asla kullanmayın.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Dürüst uyarılar. Birincisi, görüntüleme yazı tipine ve platforma göre değişir: bazı sistemler kaç birleşen işaretin yığılacağını sınırlar; aşırı Zalgo bazı telefonlarda daha uysal görünebilir. İkincisi, kopyala-yapıştır çıktıyı bozabilir &mdash; birkaç uygulama birleşen işaretleri normalize eder ya da ayıklar; lanetli metninizi sessizce "iyileştirir". Üçüncüsü, her üretim rastgeledir; exact deseni sonra yeniden üretemezsiniz; beğendiğiniz sürümü hemen kopyalayın. Dördüncüsü, Zalgo metni karakter sayısını fena şişirir &mdash; görünen tek harf 10+ kod noktası olabilir; biyografi ve kullanıcı adı sınırlarını patlatabilir. Son olarak, aşırı kullanım bazı platformlarda spam filtrelerini tetikler.</p>
+
+<h2>Zalgo metin oluşturucu ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal</th><th>Dikkat</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu Zalgo üretici</strong></td><td>Yoğunluk kontrollü ayarlanabilir ürkütücü/lanetli metin</td><td>Her üretimde rastgele desen</td></tr>
+    <tr><td><a href="/tr/glitch-metin-olusturucu/">Glitch efekt üretici</a></td><td>Süsleyici çarpıtmalar (köşeli, çizili, blok)</td><td>Dikey Zalgo görünümü değil</td></tr>
+    <tr><td><a href="/tr/aynali-metin-olusturucu/">Aynalı metin oluşturucu</a></td><td>Yansımış harf biçimleri</td><td>Tamamen farklı estetik</td></tr>
+    <tr><td>Elle birleşen işaretler</td><td>Tam sanatsal kontrol</td><td>Karakter karakter aşırı zahmetli</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metni nedir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Zalgo metni, her harfin üstüne, içinden ve altına çok sayıda Unicode birleşen işareti yığılmış normal metindir; bozuk, ürkütücü bir görünüm yaratır. Adını ele geçirilmiş metinle ilgili 2004 internet korku meminden alır.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Glitch metin nasıl yapılır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yukarıdaki üreticiye yazın, yoğunluk kaydırıcısını ayarlayın. Araç her harfe rastgele birleşen aksan işaretleri yığar. Sonucu kopyalayıp her yere yapıştırın &mdash; gerçek Unicode metindir, görsel değil.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Aynı metin her üretimde neden farklı görünüyor?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Birleşen işaretler her üretimde üst/orta/alt havuzlarından rastgele seçilir. Beğendiğiniz deseni hemen kopyalayın &mdash; birebir bozulmayı sonra yeniden üretemezsiniz.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metni Discord ve Instagram'da çalışır mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet, ikisi de birleşen işaretleri işler; Zalgo Discord mesajlarına ve Instagram biyografilerine sorunsuz yapışır. Çok ağır Zalgo bazı uygulamaların metin normalizasyonuna takılabilir &mdash; orta yoğunluk en güvenlisidir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo ile glitch metin arasındaki fark nedir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Zalgo bozuk veri görünümü için işaretleri dikey yığar. Glitch efektleri köşeli, üstü çizili, blok çerçeveli gibi süsleyici çarpıtmalar kullanır. Bu sayfa Zalgo yapar; <a href="/tr/glitch-metin-olusturucu/">glitch efekt üretici</a> süsleyici üslupları yapar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metnim neden kutu olarak görünüyor?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Kutular (tofu), cihazın yazı tipinde bu birleşen işaretlerin olmadığı anlamına gelir. Çoğu modern telefon ve tarayıcı işler; eski sistemler işlemeyebilir. Kutu çıkarsa yoğunluğu düşürün ya da farklı cihaz deneyin.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metni düzenimi bozabilir mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Uzun işaret yığınları kapları taşıp komşu satırlarla çakışabilir; özellikle yüksek yoğunlukta. Yayınlamadan önce bağlamında test edin, sıkı düzenlerde düşük-orta yoğunluğu tercih edin.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metni ekran okuyucularca okunabilir mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Çok zor &mdash; ekran okuyucular her birleşen işareti duyurur; tek kelime uzun bir sayıklamaya dönüşür. Zalgo'yu önemli bilgilerde asla kullanmayın; süs amaçlı tutun, anlam önemliyse yakınına düz metin koyun.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Zalgo metni karakter sınırına sayılır mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet, hem de fena halde &mdash; her birleşen işaret ayrı kod noktasıdır; görünen tek harf biyografi ya da kullanıcı adı sınırından 10+ karakter yiyebilir. Sınırı sıkı platformlarda Zalgo dizelerini kısa tutun.</p>
+    </div>
+  </div>
+</div>
+
+<p>Diğer metin efektleri: süsleyici çarpıtmalar için <a href="/tr/glitch-metin-olusturucu/">glitch efekt metin oluşturucu</a>, yansımış harfler için <a href="/tr/aynali-metin-olusturucu/">aynalı metin oluşturucu</a>, tersten metin için <a href="/tr/ters-metin-olusturucu/">ters metin oluşturucu</a> &mdash; hepsi <a href="/tr/metin-araclari/">metin araçları</a> ve <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonlarımızdadır.</p>
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    const zalgoUp = ['\u030d', '\u030e', '\u0304', '\u0305', '\u033f', '\u0311', '\u0306', '\u0310', '\u0352', '\u0357', '\u0351', '\u0307', '\u0308', '\u030a', '\u0342', '\u0343', '\u0344', '\u034a', '\u034b', '\u034c', '\u0303', '\u0302', '\u030c', '\u0350', '\u0300', '\u0301', '\u030b', '\u030f', '\u0312', '\u0313', '\u0314', '\u033d', '\u0309', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036a', '\u036b', '\u036c', '\u036d', '\u036e', '\u036f', '\u033e', '\u035b'];
+    const zalgoMid = ['\u0315', '\u031b', '\u0340', '\u0341', '\u0358', '\u0321', '\u0322', '\u0327', '\u0328', '\u0334', '\u0335', '\u0336', '\u034f', '\u035c', '\u035d', '\u035e', '\u035f', '\u0360', '\u0362', '\u0338', '\u0337', '\u0361', '\u0489'];
+    const zalgoDown = ['\u0316', '\u0317', '\u0318', '\u0319', '\u031c', '\u031d', '\u031e', '\u031f', '\u0320', '\u0324', '\u0325', '\u0326', '\u0329', '\u032a', '\u032b', '\u032c', '\u032d', '\u032e', '\u032f', '\u0330', '\u0331', '\u0332', '\u0333', '\u0339', '\u033a', '\u033b', '\u033c', '\u0345', '\u0347', '\u0348', '\u0349', '\u034d', '\u034e', '\u0353', '\u0354', '\u0355', '\u0356', '\u0359', '\u035a', '\u0323'];
+
+    function updateIntensity() {
+      document.getElementById('intensity-value').textContent = document.getElementById('intensity').value;
+      generateZalgo();
+    }
+
+    function generateZalgo() {
+      const text = document.getElementById('text-input').value;
+      const intensity = parseInt(document.getElementById('intensity').value);
+      const useUp = document.getElementById('up').checked;
+      const useMid = document.getElementById('mid').checked;
+      const useDown = document.getElementById('down').checked;
+
+      if (!text.trim()) {
+        document.getElementById('output-text').textContent = '';
+        return;
+      }
+
+      let result = '';
+      for (const char of text) {
+        result += char;
+        const count = Math.floor(Math.random() * intensity) + 1;
+        for (let i = 0; i < count; i++) {
+          if (useUp) result += zalgoUp[Math.floor(Math.random() * zalgoUp.length)];
+          if (useMid) result += zalgoMid[Math.floor(Math.random() * zalgoMid.length)];
+          if (useDown) result += zalgoDown[Math.floor(Math.random() * zalgoDown.length)];
+        }
+      }
+
+      document.getElementById('output-text').textContent = result;
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Kopyalandı!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zalgo metni nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zalgo metni, her harfin üstüne, içinden ve altına çok sayıda Unicode birleşen işareti yığılmış normal metindir; bozuk, ürkütücü bir görünüm yaratır. Adını ele geçirilmiş metinle ilgili 2004 internet korku meminden alır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Glitch metin nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yukarıdaki üreticiye yazın, yoğunluk kaydırıcısını ayarlayın. Araç her harfe rastgele birleşen aksan işaretleri yığar. Sonucu kopyalayıp her yere yapıştırın — gerçek Unicode metindir, görsel değil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aynı metin her üretimde neden farklı görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Birleşen işaretler her üretimde üst/orta/alt havuzlarından rastgele seçilir. Beğendiğiniz deseni hemen kopyalayın — birebir bozulmayı sonra yeniden üretemezsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo metni Discord ve Instagram'da çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, ikisi de birleşen işaretleri işler; Zalgo Discord mesajlarına ve Instagram biyografilerine sorunsuz yapışır. Çok ağır Zalgo bazı uygulamaların metin normalizasyonuna takılabilir — orta yoğunluk en güvenlisidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo ile glitch metin arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zalgo bozuk veri görünümü için işaretleri dikey yığar. Glitch efektleri köşeli, üstü çizili, blok çerçeveli gibi süsleyici çarpıtmalar kullanır. Bu sayfa Zalgo yapar; glitch efekt üretici süsleyici üslupları yapar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo metnim neden kutu olarak görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kutular (tofu), cihazın yazı tipinde bu birleşen işaretlerin olmadığı anlamına gelir. Çoğu modern telefon ve tarayıcı işler; eski sistemler işlemeyebilir. Kutu çıkarsa yoğunluğu düşürün ya da farklı cihaz deneyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo metni düzenimi bozabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uzun işaret yığınları kapları taşıp komşu satırlarla çakışabilir; özellikle yüksek yoğunlukta. Yayınlamadan önce bağlamında test edin, sıkı düzenlerde düşük-orta yoğunluğu tercih edin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo metni ekran okuyucularca okunabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çok zor — ekran okuyucular her birleşen işareti duyurur; tek kelime uzun bir sayıklamaya dönüşür. Zalgo'yu önemli bilgilerde asla kullanmayın; süs amaçlı tutun, anlam önemliyse yakınına düz metin koyun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zalgo metni karakter sınırına sayılır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, hem de fena halde — her birleşen işaret ayrı kod noktasıdır; görünen tek harf biyografi ya da kullanıcı adı sınırından 10+ karakter yiyebilir. Sınırı sıkı platformlarda Zalgo dizelerini kısa tutun."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
