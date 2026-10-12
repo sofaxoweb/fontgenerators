@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Manuscrito | FontGenerators.online</title>
+  <meta content="Converta palavras em letras Unicode estilo manuscrito com 10 estilos de fonte manuscrita. Copie e cole grátis em bios, cartas e legendas. Sem instalar nada." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-manuscrito/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/handwriting-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/handwriting-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-manuscrito/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-manuscrito/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/el-yazisi-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como deixar o texto com cara de manuscrito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite no gerador acima e copie um dos estilos cursivos — suas letras são remapeadas para alfabetos cursivos Unicode (como 𝒽𝑒𝓁𝓁𝑜) que parecem manuscritos. Cole o resultado em qualquer lugar onde texto funcione; nada precisa ser instalado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde posso colar texto de fonte manuscrita?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bios do Instagram e TikTok, nomes e mensagens do Discord, WhatsApp, posts do Facebook e a maioria dos campos de texto aceitam esses caracteres cursivos Unicode. @usuários das plataformas costumam ser só ASCII, então use campos de nome de exibição."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "São fontes manuscritas de verdade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não — são caracteres Unicode do bloco Mathematical Alphanumeric Symbols, reaproveitados como escrita. Isso é uma vantagem: funcionam sem instalar nada e colam em qualquer app com suporte a Unicode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre texto manuscrito e texto cursivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto manuscrito aqui usa alfabetos cursivos eretos em vários pesos — casual e estilo bilhete. Texto cursivo usa formas cursivas conectadas e fluidas. Experimente o gerador de texto cursivo se quiser o clássico texto manuscrito cursivo com visual de escrita emendada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que algumas letras aparecem como caixinhas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alfabetos cursivos vivem nos planos astrais do Unicode e precisam de uma fonte com ampla cobertura. Atualize seu sistema operacional ou navegador — praticamente todos os sistemas atuais os renderizam. Se as caixinhas persistirem, o estilo em negrito tem o suporte mais amplo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Leitores de tela conseguem ler texto manuscrito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mal — eles costumam anunciar o nome técnico Unicode de cada caractere. Mantenha o texto cursivo curto e decorativo, e nunca o use para informações essenciais como dados de contato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar isso na minha assinatura de e-mail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para uma assinatura de exibição estilosa, sim — mas combine com seu nome em texto normal para que os destinatários (e seus leitores de tela) consigam ler. Note que Unicode decorativo não é uma assinatura juridicamente válida; veja a página do criador de assinaturas para detalhes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto manuscrito funciona para parágrafos longos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tecnicamente sim, mas é difícil de ler em volume e hostil a leitores de tela. Estilos cursivos brilham em nomes, títulos e frases de uma linha — mantenha o corpo do texto numa fonte normal."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/handwriting-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link">Gerador de Texto Sublinhado</a>
+            <a href="/pt/gerador-de-texto-riscado/" class="mobile-dropdown-link">Gerador de Texto Riscado</a>
+            <a href="/pt/fonte-ingles-antigo/" class="mobile-dropdown-link">Gerador de Fonte Old English</a>
+            <a href="/pt/gerador-de-fonte-anime/" class="mobile-dropdown-link">Gerador de Fonte Anime</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link">Gerador de Texto Mangá</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/handwriting-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/pt/">Início</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/pt/ferramentas-de-texto-aesthetic/">Ferramentas de Texto Aesthetic</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Gerador de Texto Manuscrito</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/handwriting-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-manuscrito/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-manuscrito/" class="lang-link active" title="Português">🇵🇹 PT</a>
+      <a href="/tr/el-yazisi-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+      <div class="container">
+        <p class="h1 mb-0">✍️ Gerador de Texto Manuscrito</p>
+        <p>Crie um texto elegante em estilo manuscrito</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Digite seu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('handwriting')"
+            placeholder="Digite algo elegante..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Estilos Gerados</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Tudo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">✍️</div>
+              <p>Insira algum texto acima para gerar estilos de escrita à mão</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<h1>Gerador de Texto Manuscrito</h1>
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<p class="lead">Um <strong>gerador de texto manuscrito</strong> converte suas palavras digitadas em letras Unicode estilo manuscrito — 𝒽𝑒𝓁𝓁𝑜, 𝓱𝓮𝓵𝓵𝓸, 𝘩𝘦𝘭𝘭𝘰 — que parecem escritas à mão e colam em qualquer lugar como texto. Esta ferramenta gratuita cria 10 estilos de <strong>fonte manuscrita</strong>, de alfabetos cursivos puros a designs decorados de bilhetes e cartas. Sem cadastro.</p>
+<div class="takeaways">
+<p><strong>Principais conclusões</strong></p>
+<ul>
+<li>4 estilos principais remapeiam suas letras para alfabetos cursivos do bloco <strong>Mathematical Alphanumeric Symbols</strong> (U+1D400–U+1D7FF).</li>
+<li>6 estilos decorados emolduram o texto cursivo como bilhetes, cartas e páginas de diário (✎ 📝 💌).</li>
+<li>O Unicode manuscrito funciona em bios do Instagram, TikTok, Discord e WhatsApp — em qualquer lugar onde texto cola.</li>
+<li>São símbolos matemáticos, não fontes de verdade: leitores de tela podem anunciá-los de forma estranha, e trechos longos ficam difíceis de ler.</li>
+<li>Para assinaturas formais, veja o <a href="/pt/criador-de-assinaturas/">criador de assinaturas</a>; para escrita ornamentada estilo casamento, o <a href="/pt/gerador-de-caligrafia/">gerador de caligrafia</a>.</li>
+</ul>
+</div>
+
+<h2>O Que É Texto Manuscrito?</h2>
+<div class="definition"><p><strong>Texto manuscrito</strong> aqui significa palavras digitadas exibidas em formas de letra cursivas fluidas — como 𝒽𝑒𝓁𝓁𝑜 — criadas ao substituir cada letra latina por um caractere correspondente dos alfabetos cursivos do Unicode, dando ao texto digital um toque pessoal de escrita à mão.</p></div>
+<p><strong>Como deixar o texto com cara de manuscrito</strong> — e conseguir <strong>copiar e colar fonte manuscrita</strong> — sem instalar fontes? O Unicode inclui vários alfabetos cursivos completos dentro do bloco <strong>Mathematical Alphanumeric Symbols</strong> — criado originalmente para notação matemática (𝒳 para variáveis), mas visualmente idêntico à escrita à mão. O gerador mapeia seu a–z/A–Z sobre quatro deles no clássico estilo de <strong>escrita cursiva à mão</strong>: cursivo leve (𝒽𝑒𝓁𝓁𝑜), cursivo em negrito (𝓱𝓮𝓵𝓵𝓸), itálico sem serifa inclinado (𝘩𝘦𝘭𝘭𝘰) e itálico com serifa (ℎ𝑒𝑙𝑙𝑜). Como cada letra tem um ponto de código dedicado, o "manuscrito" é texto de verdade — selecionável, copiável, pesquisável.</p>
+
+<h2>Como Este Gerador de Fonte Manuscrita Funciona</h2>
+<p>A ferramenta aplica uma substituição de letra um para um: cada letra ASCII vira o caractere da mesma posição num alfabeto cursivo Unicode. Dígitos e pontuação passam inalterados. Os 10 estilos, verificados na saída real para "hello":</p>
+<table>
+<thead><tr><th>Estilo</th><th>Exemplo</th><th>Alfabeto usado</th></tr></thead>
+<tbody>
+<tr><td>Script Style</td><td>𝒽𝑒𝓁𝓁𝑜</td><td>Cursivo matemático</td></tr>
+<tr><td>Bold Script</td><td>𝓱𝓮𝓵𝓵𝓸</td><td>Cursivo matemático em negrito</td></tr>
+<tr><td>Italic Hand</td><td>𝘩𝘦𝘭𝘭𝘰</td><td>Itálico matemático sem serifa</td></tr>
+<tr><td>Serif Italic</td><td>ℎ𝑒𝑙𝑙𝑜</td><td>Itálico matemático com serifa</td></tr>
+<tr><td>Pen &amp; Script</td><td>✎ 𝒽𝑒𝓁𝓁𝑜</td><td>Cursivo + símbolo de caneta</td></tr>
+<tr><td>Note Style</td><td>📝 𝓱𝓮𝓵𝓵𝓸</td><td>Cursivo em negrito + emoji de bilhete</td></tr>
+<tr><td>Letter Style</td><td>✉️ 𝒽𝑒𝓁𝓁𝑜 ✉️</td><td>Cursivo + moldura de envelope</td></tr>
+<tr><td>Journal Entry</td><td>📖 𝘩𝘦𝘭𝘭𝘰</td><td>Itálico sem serifa + emoji de livro</td></tr>
+<tr><td>Love Letter</td><td>💌 𝓱𝓮𝓵𝓵𝓸 💌</td><td>Cursivo em negrito + moldura de carta de amor</td></tr>
+<tr><td>Elegant Hand</td><td>~ 𝒽𝑒𝓁𝓁𝑜 ~</td><td>Cursivo + moldura de til</td></tr>
+</tbody>
+</table>
+<p>Uma nota técnica honesta: esses alfabetos vivem nos planos astrais do Unicode (pontos de código acima de U+FFFF), então cada "letra" é um par substituto nos bastidores. Isso ocasionalmente importa — alguns sistemas muito antigos os contam como dois caracteres, e alguns contadores de caracteres de plataformas os tratam assim.</p>
+[IMAGE: Os quatro alfabetos cursivos mostrados lado a lado com o bloco Unicode rotulado | alt="Alfabetos do gerador de texto manuscrito: transformações Unicode em cursivo, cursivo em negrito, itálico e itálico com serifa"]
+
+<h2>Exemplo Prático</h2>
+<p>Digite <strong>dear diary</strong> e escolha <strong>Journal Entry</strong>:</p>
+<div class="example-box"><p>📖 𝑑𝑒𝑎𝑟 𝑑𝑖𝑎𝑟𝑦</p></div>
+<p>O espaço continua um espaço normal, e cada letra vira sua gêmea itálica sem serifa inclinada. Para um bilhete de amor, <strong>Love Letter</strong> dá 💌 𝓭𝓮𝓪𝓻 𝓭𝓲𝓪𝓻𝔂 💌 em cursivo fluente em negrito.</p>
+
+<h2>Como Usar o Gerador de Texto Manuscrito</h2>
+<ol>
+<li><strong>Digite seu texto</strong> na caixa acima — nomes e frases curtas funcionam melhor.</li>
+<li>Explore os 10 resultados de <strong>estilo manuscrito</strong>.</li>
+<li>Clique em <strong>Copiar</strong> no seu cursivo favorito.</li>
+<li>Cole na sua bio de <strong>estilo manuscrito para Instagram</strong>, legenda do TikTok, nome do Discord ou mensagem.</li>
+<li>Mantenha os trechos curtos — alfabetos cursivos são decorativos, não fontes de leitura.</li>
+</ol>
+
+<h2>Onde o Texto Manuscrito Funciona</h2>
+<table>
+<thead><tr><th>Plataforma</th><th>Funciona?</th><th>Observações</th></tr></thead>
+<tbody>
+<tr><td>Bios do Instagram / TikTok</td><td>Sim</td><td>Nomes de exibição e bios; @usuários só ASCII</td></tr>
+<tr><td>Discord</td><td>Sim</td><td>Nomes de usuário, status, mensagens</td></tr>
+<tr><td>WhatsApp</td><td>Sim</td><td>Mensagens e texto de status</td></tr>
+<tr><td>Facebook</td><td>Sim</td><td>Posts, comentários, bios</td></tr>
+<tr><td>Alguns apps antigos</td><td>Na maioria</td><td>Caracteres de plano astral precisam de suporte moderno de fonte</td></tr>
+</tbody>
+</table>
+
+<h2>Manuscrito vs. Cursivo vs. Caligrafia</h2>
+<p>Três ferramentas, três sabores de escrita. <strong>Manuscrito</strong> (esta página) dá escrita casual estilo bilhete em quatro pesos — a escolha do dia a dia. O <a href="/pt/gerador-de-texto-cursivo/">gerador de texto cursivo</a> foca em formas cursivas conectadas. O <a href="/pt/gerador-de-caligrafia/">gerador de caligrafia</a> é formal e ornamentado: alfabetos blackletter mais molduras florais (❦ ࿐) para casamentos e convites. Para assinar seu nome com charme, o <a href="/pt/criador-de-assinaturas/">criador de assinaturas</a> adiciona floreios e sublinhados. Explore todos os estilos de letra em <a href="/pt/ferramentas-de-texto-aesthetic/">ferramentas de texto aesthetic</a>.</p>
+
+<h2>Dicas para um Texto Manuscrito Legível</h2>
+<p><strong>Mais curto, mais doce.</strong> Alfabetos cursivos encantam em nomes, títulos e frases de uma linha; parágrafos de 𝒽𝑒𝓁𝓁𝑜 cansam os olhos.</p>
+<p><strong>Escolha o peso certo.</strong> Cursivo em negrito (𝓱𝓮𝓵𝓵𝓸) continua legível em tamanhos pequenos; o cursivo leve (𝒽𝑒𝓁𝓁𝑜) combina com texto de exibição maior.</p>
+<p><strong>Estilos decorados são para ocasiões.</strong> Love Letter 💌 para legendas de Dia dos Namorados, Journal Entry 📖 para posts estilo diário.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li>São símbolos matemáticos reaproveitados como escrita — leitores de tela podem anunciá-los como "mathematical bold script small h", o que confunde.</li>
+<li>Nem toda letra tem toda variante em toda fonte; lacunas raras de renderização são possíveis em sistemas incomuns.</li>
+<li>Alfabetos cursivos cobrem só A–Z/a–z; números e pontuação ficam normais.</li>
+<li>Mecanismos de busca indexam os pontos de código, não o estilo visual — palavras estilizadas não vão bater exatamente com buscas de texto normal.</li>
+<li>Isso é texto decorativo, não uma assinatura manuscrita com validade jurídica.</li>
+</ul>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como deixar o texto com cara de manuscrito?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Digite no gerador acima e copie um dos estilos cursivos — suas letras são remapeadas para alfabetos cursivos Unicode (como 𝒽𝑒𝓁𝓁𝑜) que parecem manuscritos. Cole o resultado em qualquer lugar onde texto funcione; nada precisa ser instalado.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Onde posso colar texto de fonte manuscrita?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bios do Instagram e TikTok, nomes e mensagens do Discord, WhatsApp, posts do Facebook e a maioria dos campos de texto aceitam esses caracteres cursivos Unicode. @usuários das plataformas costumam ser só ASCII, então use campos de nome de exibição.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">São fontes manuscritas de verdade?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Não — são caracteres Unicode do bloco Mathematical Alphanumeric Symbols, reaproveitados como escrita. Isso é uma vantagem: funcionam sem instalar nada e colam em qualquer app com suporte a Unicode.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Qual a diferença entre texto manuscrito e texto cursivo?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Texto manuscrito aqui usa alfabetos cursivos eretos em vários pesos — casual e estilo bilhete. Texto cursivo usa formas cursivas conectadas e fluidas. Experimente o gerador de texto cursivo se quiser o clássico <strong>texto manuscrito cursivo</strong> com visual de escrita emendada.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Por que algumas letras aparecem como caixinhas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Alfabetos cursivos vivem nos planos astrais do Unicode e precisam de uma fonte com ampla cobertura. Atualize seu sistema operacional ou navegador — praticamente todos os sistemas atuais os renderizam. Se as caixinhas persistirem, o estilo em negrito tem o suporte mais amplo.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Leitores de tela conseguem ler texto manuscrito?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Mal — eles costumam anunciar o nome técnico Unicode de cada caractere. Mantenha o texto cursivo curto e decorativo, e nunca o use para informações essenciais como dados de contato.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Posso usar isso na minha assinatura de e-mail?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Para uma assinatura de exibição estilosa, sim — mas combine com seu nome em texto normal para que os destinatários (e seus leitores de tela) consigam ler. Note que Unicode decorativo não é uma assinatura juridicamente válida; veja a página do criador de assinaturas para detalhes.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Texto manuscrito funciona para parágrafos longos?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Tecnicamente sim, mas é difícil de ler em volume e hostil a leitores de tela. Estilos cursivos brilham em nomes, títulos e frases de uma linha — mantenha o corpo do texto numa fonte normal.</p></div>
+</div>
+</div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('handwriting');
+    });
+  </script>
+</body>
+
+</html>
