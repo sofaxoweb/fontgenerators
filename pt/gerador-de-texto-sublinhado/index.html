@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Sublinhado | FontGenerators.online</title>
+  <meta content="Adicione sublinhado ao seu texto com caracteres Unicode combinantes. Copie e cole grátis em bios, posts e mensagens. Funciona em qualquer app, sem cadastro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-sublinhado/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/underline-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/underline-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-subrayado/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-sublinhado/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/altti-cizgili-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um gerador de texto sublinhado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um gerador de texto sublinhado sublinha palavras usando marcas combinantes Unicode — caracteres que se grudam embaixo de cada letra. O resultado é texto comum com sublinhados visíveis, então funciona em bios, posts e chats onde não existe botão de sublinhado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como sublinhar texto para copiar e colar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite seu texto, escolha Single ou Double Underline, clique em Copiar e cole. O sublinhado é feito de caracteres combinantes (U+0332/U+0333) grudados em cada letra, então ele viaja com o texto para qualquer app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para sublinhar texto numa bio do Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instagram, WhatsApp, X e a maioria dos compositores de post não oferecem formatação de sublinhado. O sublinhado Unicode é hoje a única forma de colocar texto sublinhado nesses lugares — as marcas combinantes renderizam como sublinhados reais em dispositivos modernos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que o texto sublinhado usa tantos caracteres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada marca combinante conta como um caractere. \"Important\" (9 letras) com Single Underline tem 18 caracteres para o contador do app. Sublinhe palavras e frases curtas, não sentenças, em plataformas com limites apertados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sublinhado vs riscado — qual usar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sublinhado enfatiza e puxa o olhar para frente — ideal para termos-chave e chamadas para ação. Riscado sinaliza remoção, correção ou humor. Use sublinhado para destacar; use riscado para retratar ou brincar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto sublinhado funciona em todo lugar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Às vezes. Algumas plataformas removem marcas combinantes como caracteres incomuns, e alguns sistemas antigos as renderizam deslocadas ou quebradas. Celulares modernos lidam corretamente. Se o sublinhado sumir depois de colar, a plataforma removeu as marcas — experimente texto em negrito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto sublinhado é acessível para leitores de tela?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leitores de tela podem anunciar cada marca combinante individualmente, o que é tedioso para trechos longos. Mantenha o texto sublinhado curto, e use o sublinhado real do seu editor de documentos — que é acessível — onde houver formatação disponível."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Isso tem relação com o gerador de riscado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — as duas ferramentas usam a mesma técnica de marcas combinantes do bloco Combining Diacritical Marks. Sublinhado usa U+0332 (linha baixa); riscado usa U+0336 (traço longo sobreposto). São efeitos irmãos para propósitos opostos."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/underline-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-subrayado/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-sublinhado/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/altti-cizgili-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link">Gerador de Texto Sublinhado</a>
+            <a href="/pt/gerador-de-texto-riscado/" class="mobile-dropdown-link">Gerador de Texto Riscado</a>
+            <a href="/pt/fonte-ingles-antigo/" class="mobile-dropdown-link">Gerador de Fonte Old English</a>
+            <a href="/pt/gerador-de-fonte-anime/" class="mobile-dropdown-link">Gerador de Fonte Anime</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link">Gerador de Texto Mangá</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/underline-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-subrayado/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/altti-cizgili-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/pt/">Início</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/pt/ferramentas-de-fontes-elegantes/">Ferramentas de Fontes Elegantes</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Gerador de Texto Sublinhado</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/underline-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-subrayado/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-sublinhado/" class="lang-link active" title="Português">🇵🇹 PT</a>
+      <a href="/tr/altti-cizgili-metin-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+      <div class="container">
+        <p class="h1 mb-0">⎯ Gerador de Texto Sublinhado</p>
+        <p>Crie texto sublinhado para qualquer plataforma</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Digite seu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('underline')"
+            placeholder="Digite algo para sublinhar..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Underline Styles</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Tudo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">⎯</div>
+              <p>Insira algum texto acima para gerar estilos de sublinhado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<h1>Gerador de Texto Sublinhado</h1>
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<p>Um gerador de texto sublinhado adiciona sublinhados a texto que você pode copiar e colar em qualquer lugar — usando marcas combinantes Unicode em vez de formatação. Ganhe 4 estilos de sublinhado abaixo, de um sublinhado simples e limpo a versões decoradas emolduradas, todos funcionando onde o sublinhado normal não funciona.</p>
+<div class="takeaways">
+<p><strong>Principais conclusões</strong></p>
+<ul>
+<li>4 estilos: Single Underline, Double Underline, Dash Underline, Fancy Underline.</li>
+<li>Usa marcas diacríticas combinantes (U+0332, U+0333) — sublinhado real via caracteres.</li>
+<li>A única forma de sublinhar texto em bios, posts e chats sem ferramentas de formatação.</li>
+<li>Marcas combinantes adicionam caracteres, então texto sublinhado é mais longo do que parece.</li>
+<li>Grátis, instantâneo, sem cadastro.</li>
+</ul>
+</div>
+<h2>O Que É um Gerador de Texto Sublinhado?</h2>
+<p>Um gerador de texto sublinhado é uma ferramenta que sublinha suas palavras com caracteres combinantes Unicode — marcas especiais que se grudam na letra anterior e renderizam como uma linha embaixo dela. Num documento você apertaria Ctrl+U; numa bio do Instagram, num tweet ou numa mensagem do WhatsApp essa opção não existe. Esta fonte sublinhada produz texto sublinhado como caracteres comuns, então o sublinhado sobrevive ao copiar e colar para qualquer app.</p>
+<h2>Como Esta Ferramenta Funciona</h2>
+<p>O truque central é o bloco Combining Diacritical Marks. Single Underline anexa U+0332 (linha baixa combinante) a cada letra, então <strong>Important</strong> vira I̲m̲p̲o̲r̲t̲a̲n̲t̲. Double Underline usa U+0333 (linha baixa dupla combinante): I̳m̳p̳o̳r̲t̲a̲n̲t̲. Os dois estilos decorados emolduram o texto sublinhado para ênfase: Dash Underline (— I̲m̲p̲o̲r̲t̲a̲n̲t̲ —) e Fancy Underline (« I̲m̲p̲o̲r̲t̲a̲n̲t̲ »). Cada letra carrega sua própria marca de sublinhado, e é por isso que a linha continua sem quebras pela palavra inteira.</p>
+<h2>Exemplo Prático</h2>
+<p>Digite <strong>Important</strong> e escolha Single Underline: cada uma das 9 letras ganha uma marca U+0332, renderizando como um sublinhado contínuo. Copie e cole numa mensagem do WhatsApp — o destinatário vê texto sublinhado mesmo que a própria formatação do WhatsApp (códigos *_~) não consiga produzir sublinhados. Experimente Double Underline para um visual mais pesado e oficial, como sublinhar um título num e-mail em texto puro onde formatação HTML não está disponível.</p>
+<h2>Como Sublinhar Texto para Copiar e Colar</h2>
+<ol>
+<li><strong>Digite seu texto</strong> na caixa acima.</li>
+<li><strong>Escolha um estilo</strong> — Single para limpo, Double para pesado, Dash/Fancy para decoração.</li>
+<li><strong>Clique em Copiar</strong> no estilo que quiser.</li>
+<li><strong>Cole</strong> na sua bio, post, mensagem ou documento.</li>
+</ol>
+<h2>Sublinhado vs Riscado: Qual Usar</h2>
+<p>Sublinhado sinaliza importância e puxa o olhar para frente — use para termos-chave, títulos em documentos de texto puro e chamadas para ação. Riscado sinaliza remoção ou humor — correções, piadas, etiquetas de "esgotado". Eles resolvem problemas opostos: um enfatiza, o outro retrata. Se precisar dos dois efeitos, o <a href="/pt/gerador-de-texto-riscado/">gerador de texto riscado</a> deste site usa a mesma técnica de marcas combinantes com U+0336 em vez de U+0332.</p>
+<h2>Marcas Combinantes e Contagens de Caracteres</h2>
+<p>Aqui está a pegadinha do texto sublinhado: cada marca combinante é ela mesma um caractere. "Important" (9 letras) com Single Underline tem 18 caracteres para qualquer contador — as marcas são invisíveis na contagem, mas estão bem presentes. Em plataformas com limites apertados, sublinhe com moderação: uma palavra sublinhada, não uma frase inteira. Alguns sistemas antigos também renderizam marcas combinantes de forma imperfeita, mostrando o sublinhado levemente deslocado ou quebrado entre letras; celulares modernos lidam corretamente.</p>
+[IMAGE: Diagrama em close mostrando uma letra com a marca combinante U+0332 anexada, rotulada. Alt: "Diagrama da linha baixa combinante Unicode U+0332 se anexando embaixo de uma letra para criar texto sublinhado."]
+<h2>Limitações</h2>
+<p>Texto Unicode sublinhado é frágil de dois jeitos. Primeiro, leitores de tela podem anunciar cada marca combinante ("combining low line"), tornando trechos sublinhados tediosos de ouvir — mantenha-os curtos. Segundo, algumas plataformas removem marcas combinantes como "caracteres incomuns", deixando texto normal para trás; o sublinhado simplesmente some. Para documentos onde existe formatação real, prefira sempre o sublinhado do seu editor: é mais limpo, acessível e pesquisável. Use esta ferramenta para os lugares que a formatação não alcança.</p>
+<h2>Gerador de Texto Sublinhado vs Alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que faz</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/pt/gerador-de-texto-sublinhado/">Gerador de Texto Sublinhado</a></td><td>Sublinha via marcas combinantes</td><td>Você precisa de sublinhados em bios, posts, chats</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-riscado/">Gerador de Texto Riscado</a></td><td>Risca via marcas combinantes</td><td>Você quer o efeito "removido" ou de piada</td></tr>
+<tr><td><a href="/pt/conversor-de-texto-negrito/">Conversor de Texto em Negrito</a></td><td>Letras Unicode em negrito</td><td>Você quer ênfase com máxima compatibilidade</td></tr>
+</tbody>
+</table>
+<h2>Ferramentas Relacionadas</h2>
+<p>Explore o hub <a href="/pt/ferramentas-de-fontes-elegantes/">ferramentas de fontes elegantes</a>: gere <a href="/pt/gerador-de-texto-riscado/">texto riscado</a>, faça <a href="/pt/conversor-de-texto-negrito/">texto em negrito</a> para ênfase mais forte, ou experimente <a href="/pt/conversor-de-texto-italico/">texto em itálico</a> para ênfase mais suave.</p>
+<h2>Perguntas Frequentes</h2>
+          <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">O que é um gerador de texto sublinhado?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Um gerador de texto sublinhado sublinha palavras usando marcas combinantes Unicode — caracteres que se grudam embaixo de cada letra. O resultado é texto comum com sublinhados visíveis, então funciona em bios, posts e chats onde não existe botão de sublinhado.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Como sublinhar texto para copiar e colar?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Digite seu texto, escolha Single ou Double Underline, clique em Copiar e cole. O sublinhado é feito de caracteres combinantes (U+0332/U+0333) grudados em cada letra, então ele viaja com o texto para qualquer app.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Dá para sublinhar texto numa bio do Instagram?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Instagram, WhatsApp, X e a maioria dos compositores de post não oferecem formatação de sublinhado. O sublinhado Unicode é hoje a única forma de colocar texto sublinhado nesses lugares — as marcas combinantes renderizam como sublinhados reais em dispositivos modernos.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Por que o texto sublinhado usa tantos caracteres?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Cada marca combinante conta como um caractere. "Important" (9 letras) com Single Underline tem 18 caracteres para o contador do app. Sublinhe palavras e frases curtas, não sentenças, em plataformas com limites apertados.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Sublinhado vs riscado — qual usar?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Sublinhado enfatiza e puxa o olhar para frente — ideal para termos-chave e chamadas para ação. Riscado sinaliza remoção, correção ou humor. Use sublinhado para destacar; use riscado para retratar ou brincar.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Texto sublinhado funciona em todo lugar?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Às vezes. Algumas plataformas removem marcas combinantes como caracteres incomuns, e alguns sistemas antigos as renderizam deslocadas ou quebradas. Celulares modernos lidam corretamente. Se o sublinhado sumir depois de colar, a plataforma removeu as marcas — experimente texto em negrito.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Texto sublinhado é acessível para leitores de tela?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Leitores de tela podem anunciar cada marca combinante individualmente, o que é tedioso para trechos longos. Mantenha o texto sublinhado curto, e use o sublinhado real do seu editor de documentos — que é acessível — onde houver formatação disponível.</p>
+              </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="faq-question" itemprop="name">Isso tem relação com o gerador de riscado?</h3>
+              <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Sim — as duas ferramentas usam a mesma técnica de marcas combinantes do bloco Combining Diacritical Marks. Sublinhado usa U+0332 (linha baixa); riscado usa U+0336 (traço longo sobreposto). São efeitos irmãos para propósitos opostos.</p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('underline');
+    });
+  </script>
+</body>
+
+</html>
