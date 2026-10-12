@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gerador de Símbolos de Coração | FontGenerators.online</title>
+<meta name="description" content="Copie símbolos de coração ♥ ♡ ❤ — centenas de corações Unicode que funcionam em Instagram, TikTok, WhatsApp e nomes de usuário. Clique e cole. Grátis." />
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .symbol-search {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition);
+        }
+
+        .symbol-search:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-light);
+        }
+
+        .symbol-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .symbol-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+        }
+
+        .symbol-item:hover {
+            border-color: var(--accent);
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+        }
+
+        .symbol-char {
+            font-size: 2rem;
+        }
+
+        .symbol-name {
+            font-size: 0.65rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .symbol-item.copied::after {
+            content: '✓';
+            position: absolute;
+            inset: 0;
+            background: var(--success);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pattern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .pattern-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .pattern-item:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .text-decorator {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .decorator-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .decorator-results {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .decorator-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            cursor: pointer;
+        }
+
+        .decorator-result:hover {
+            background: var(--accent-light);
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/pt/gerador-de-simbolos-de-coracao/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/heart-symbol-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/heart-symbol-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-simbolos-de-corazon/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-simbolos-de-coracao/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/kalp-sembol-olusturucu/" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como copio e colo símbolos de coração?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clique em qualquer coração na grade — ele copia para sua área de transferência na hora. Depois cole na sua bio, legenda, mensagem ou documento. Os 59 símbolos são texto Unicode puro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre ♥ e ♡?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "♥ (U+2665) é o naipe de coração preto sólido e ♡ (U+2661) é sua versão branca (contorno), ambos do bloco Símbolos Diversos do Unicode. A versão de contorno soa mais suave e é popular em bios aesthetic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que o ❤️ às vezes aparece preto em vez de vermelho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O U+2764 HEAVY BLACK HEART pode renderizar como texto (preto) ou emoji (vermelho) dependendo do seletor de variação e da plataforma. O ❤️ inclui o VS16, pedindo apresentação emoji; sem ele, alguns sistemas mostram um coração monocromático."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como coloco corações ao redor do meu texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite suas palavras no decorador de texto desta página. Ele gera 10 versões emolduradas — ♥ texto ♥, texto, ━━♥━━ texto ━━♥━━ e mais — cada uma clicável para copiar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os tipos de símbolos de coração?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A biblioteca os agrupa em corações emoji (❤️💜🖤), corações de texto (♥ ♡ ❥ ❣), corações decorativos e padrões de vários caracteres — 59 símbolos no total, pesquisáveis por nome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar símbolos de coração na minha bio do Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Corações colam em bios, legendas e comentários do Instagram sem problema. Corações de texto (♥ ♡) são a escolha mais segura porque renderizam idênticos no iOS e no Android."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Símbolos de coração funcionam no Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — em mensagens, apelidos e nomes de canal. O Discord renderiza corações de texto e corações emoji nativamente, sem precisar de Nitro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significa 💜 comparado ao ❤️?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por convenção da comunidade, ❤️ sinaliza amor romântico enquanto 💜 costuma significar carinho, amizade ou apreço de fandom. Esses sentidos são sociais, não oficiais — o contexto decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O gerador de símbolos de coração é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — grátis, sem conta e sem limites. A cópia é ilimitada e nada é enviado; a ferramenta roda inteiramente no seu navegador."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/heart-symbol-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/heart-symbol-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+<div class="sidebar-section">
+<div class="sidebar-header">
+<span class="icon">😊</span>
+                        Ferramentas de Emojis e Símbolos
+<nav class="sidebar-nav">
+<a class="sidebar-link" href="/pt/criador-de-texto-com-emojis/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Criador de Texto com Emojis</span>
+                        </a>
+<a class="sidebar-link" href="/pt/combinador-de-emojis/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Combinador de Emojis</span>
+                        </a>
+<a class="sidebar-link" href="/pt/gerador-kaomoji/">
+                            <span class="link-icon">(◕‿◕)</span>
+                            <span class="link-text">Gerador Kaomoji</span>
+                        </a>
+<a class="sidebar-link" href="/pt/criador-de-emoticons/">
+                            <span class="link-icon">:)</span>
+                            <span class="link-text">Criador de Emoticons</span>
+                        </a>
+<a class="sidebar-link active" href="/pt/gerador-de-simbolos-de-coracao/">
+                            <span class="link-icon">♥</span>
+                            <span class="link-text">Gerador de Símbolos de Coração</span>
+                        </a>
+<a class="sidebar-link" href="/pt/gerador-de-simbolos-brilhantes/">
+                            <span class="link-icon">✨</span>
+                            <span class="link-text">Gerador de Símbolos Brilhantes</span>
+                        </a>
+<a class="sidebar-link" href="/pt/gerador-de-simbolos-de-setas/">
+                            <span class="link-icon">→</span>
+                            <span class="link-text">Gerador de Símbolos de Setas</span>
+                        </a>
+<a class="sidebar-link" href="/pt/gerador-de-bordas-aesthetic/">
+                            <span class="link-icon">『』</span>
+                            <span class="link-text">Gerador de Bordas Aesthetic</span>
+                        </a>
+<a class="sidebar-link" href="/pt/biblioteca-de-simbolos/">
+                            <span class="link-icon">☆</span>
+                            <span class="link-text">Biblioteca de Símbolos</span>
+                        </a>
+<a class="sidebar-link" href="/pt/gerador-de-linhas-divisorias/">
+                            <span class="link-icon">═</span>
+                            <span class="link-text">Gerador de Linhas Divisórias</span>
+                        </a>
+</nav>
+</div>
+</aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Explorar Ferramentas
+                </button>
+<div class="tool-input-section">
+<div class="tool-title">♥ Gerador de Símbolos de Coração</h1>
+<p class="tool-description">Clique em qualquer coração para copiar na hora!</p>
+<input class="symbol-search" id="symbol-search" oninput="filterSymbols()" placeholder="🔍 Pesquise corações (por exemplo, vermelho, quebrado, flecha...)" type="text"/>
+<div class="text-decorator">
+<h3 style="margin-bottom: 1rem;">💕 Decore seu texto com corações</h3>
+<input class="decorator-input" id="text-input" oninput="decorateText()" placeholder="Enter your text..." type="text"/>
+<div class="decorator-results" id="decorator-results">
+<div style="color: var(--muted); text-align: center; padding: 1rem;">Digite algo para ver
+                                decoração de coraçãos</div>
+</div>
+</div>
+<div class="symbol-section" id="emoji-hearts-section">
+<h3 class="section-header">❤️ Emojis de coração</h3>
+<div class="symbol-grid" id="emoji-hearts"></div>
+</div>
+<div class="symbol-section" id="text-hearts-section">
+<h3 class="section-header">♥ Símbolos de coração de texto</h3>
+<div class="symbol-grid" id="text-hearts"></div>
+</div>
+<div class="symbol-section" id="decorative-hearts-section">
+<h3 class="section-header">💝 Corações Decorativos</h3>
+<div class="symbol-grid" id="decorative-hearts"></div>
+</div>
+<div class="symbol-section" id="patterns-section">
+<h3 class="section-header">💕 Padrões e bordas de coração</h3>
+<div class="pattern-grid" id="heart-patterns"></div>
+</div>
+</div>
+</div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+<div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+<div class="mobile-sidebar-header">
+<h3>😊 Ferramentas de Emojis</h3>
+<button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+</div>
+<nav class="sidebar-nav">
+<a class="sidebar-link active" href="/pt/gerador-de-simbolos-de-coracao/">♥ Gerador de Símbolos de Coração</a>
+<a class="sidebar-link" href="/pt/gerador-de-simbolos-brilhantes/">✨ Gerador de Símbolos Brilhantes</a>
+<a class="sidebar-link" href="/pt/gerador-kaomoji/">(◕‿◕) Gerador Kaomoji</a>
+<a class="sidebar-link" href="/pt/criador-de-texto-com-emojis/">😊 Criador de Texto com Emojis</a>
+</nav>
+</div>
+</div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-emojis-e-simbolos/">Ferramentas de Emojis e Símbolos</a> &nbsp;/&nbsp; <span>Gerador de Símbolos de Coração</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Gerador de Símbolos de Coração</h1>
+<p>Um <strong>gerador de símbolos de coração</strong> reúne todos os corações que valem um copiar e colar — corações emoji, corações de texto monocromáticos ♥ ♡ e padrões decorativos de coração — numa biblioteca pesquisável de símbolos de coração. Copie qualquer um dos 59 símbolos com um clique, ou digite seu próprio texto e envolva-o em corações na hora.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>59 corações fofos e símbolos de coração em 4 grupos: corações emoji, corações de texto, corações decorativos e padrões.</li>
+<li>Corações de texto (♥ U+2665, ♡ U+2661) — o clássico ♡ heart text — renderizam idênticos em todo aparelho; corações emoji (❤️) variam por sistema.</li>
+<li>Busque por nome — tente "partido", "flecha" ou "brilhante" — ou navegue pela grade.</li>
+<li>O decorador de texto envolve suas palavras em 10 estilos de coração, ex.: ♥ amor ♥.</li>
+<li>Toda a saída é Unicode puro: cole em bios, legendas, Discord e documentos.</li>
+</ul>
+</div>
+
+<h2>O que é um gerador de símbolos de coração?</h2>
+<p><strong>Definição:</strong> um gerador de símbolos de coração é uma ferramenta online grátis que oferece símbolos de coração para copiar e colar em todos os estilos — do clássico coração de texto ♥ aos corações emoji coloridos como ❤️💜🖤 — além de padrões decorativos e um decorador de texto que emoldura suas palavras em corações.</p>
+<p>Corações são os símbolos de amor mais pedidos do site, e com razão: um único ♥ carrega carinho, ênfase ou moldura aesthetic em qualquer idioma. Esta página existe para você nunca mais precisar caçar num mapa de caracteres.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<p>A biblioteca tem 59 entradas em quatro grupos. Corações emoji são pictogramas coloridos (❤️ 🧡 💛 💚 💙 💜 🖤 🤍). Corações de texto são caracteres Unicode monocromáticos como ♥ (U+2665 BLACK HEART SUIT), ♡ (U+2661 WHITE HEART SUIT), ❥, ❣ e ❦, dos blocos Símbolos Diversos e Dingbats. Corações decorativos trazem variantes estilizadas, e padrões são desenhos prontos de vários caracteres. Clicar em qualquer símbolo copia; a caixa de busca filtra por nome enquanto você digita. O decorador de texto é uma segunda mini-ferramenta na página: digite qualquer texto e ele gera 10 versões emolduradas — ♥ amor ♥, ❤️ amor ❤️, ♡ amor ♡, ♥‿♥ amor ♥‿♥, ✿♥ amor ♥✿, ━━♥━━ amor ━━♥━━, amor e mais — cada uma com clique para copiar.</p>
+
+<h2>Exemplo prático</h2>
+<p>Você quer um símbolo de coração partido para um post. Digite <em>partido</em> na busca — 💔 (Coração partido) aparece; um clique copia. Agora decore uma frase. Digite <em>o amor vence</em> no decorador e escolha entre os resultados: ♥ o amor vence ♥, o amor vence, ━━♥━━ o amor vence ━━♥━━. Clique em qualquer versão decorada para copiar e cole direto na sua bio do Instagram ou no status do Discord.</p>
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+<li><strong>Navegue ou busque na grade de símbolos</strong> — tente "flecha", "brilhante" ou "crescendo".</li>
+<li><strong>Clique em qualquer coração</strong> para copiá-lo na hora.</li>
+<li><strong>Ou digite texto no decorador</strong> para receber 10 versões das suas palavras emolduradas em corações.</li>
+<li><strong>Cole</strong> em bios, legendas, mensagens ou documentos.</li>
+</ol>
+
+<h2>Corações de texto vs. corações emoji</h2>
+<table>
+<thead><tr><th></th><th>Corações de texto (♥ ♡)</th><th>Corações emoji (❤️ 💜)</th></tr></thead>
+<tbody>
+<tr><td><strong>Aparência</strong></td><td>Glifo de cor única, idêntico em todo lugar</td><td>Arte colorida, muda por aparelho</td></tr>
+<tr><td><strong>Unicode</strong></td><td>U+2665, U+2661 (Símbolos Diversos)</td><td>U+2764 + seletor de variação, ou blocos de pictogramas</td></tr>
+<tr><td><strong>Ideal para</strong></td><td>Bios aesthetic, divisórias, identidade consistente</td><td>Mensagens expressivas, reações</td></tr>
+<tr><td><strong>Leitores de tela</strong></td><td>Anunciado uma vez, brevemente</td><td>Anunciado com nomes de cores</td></tr>
+<tr><td><strong>Aparelhos antigos</strong></td><td>Renderiza em quase todo lugar</td><td>Pode virar quadrado em sistemas desatualizados</td></tr>
+</tbody>
+</table>
+<p>Regra de bolso: para decoração que precisa ficar igual para todo mundo, escolha corações de texto; para cor emocional na mensagem, escolha corações emoji.</p>
+
+<h2>Significado das cores dos corações</h2>
+<p>Corações emoji carregam convenções informais de cor que vale conhecer antes de colar: ❤️ amor e romance, 💜 carinho ou fandom de BTS, 🖤 humor ácido ou luto, 💛 amizade, 💚 natureza ou inveja, 💙 confiança, 🤍 pureza ou solidariedade, 💔 coração partido. São convenções da comunidade, não definições oficiais — o Unicode Consortium padroniza os caracteres, não o sentido social deles.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>Corações emoji variam por plataforma.</strong> O ❤️ fica diferente em aparelhos Apple, Google e Samsung — o ponto de código é padrão, a arte não.</li>
+<li><strong>Renderização de ❤️ vs ❤.</strong> O U+2764 pode aparecer como emoji vermelho ou texto preto dependendo do seletor de variação e dos padrões da plataforma.</li>
+<li><strong>Padrões são arte de largura fixa.</strong> Padrões de coração de várias linhas podem desalinhar em fontes proporcionais; ficam melhores em contextos monoespaçados.</li>
+<li><strong>Leitores de tela anunciam cada coração.</strong> Uma sequência longa de corações cansa quando lida em voz alta — mantenha as sequências decorativas curtas.</li>
+</ul>
+
+<h2>Gerador de Símbolos de Coração vs. alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que cria</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Gerador de Símbolos de Coração</strong> (esta página)</td><td>Só corações, mais um decorador de texto</td><td>Corações são exatamente o que você precisa</td></tr>
+<tr><td><a href="/pt/gerador-de-simbolos-brilhantes/">Gerador de Símbolos Brilhantes</a></td><td>✧ ★ brilhos e estrelas</td><td>Você quer decoração cintilante em vez de romântica</td></tr>
+<tr><td><a href="/pt/biblioteca-de-simbolos/">Biblioteca de Símbolos</a></td><td>707 símbolos em 16 categorias</td><td>Você precisa de corações misturados com setas, estrelas e mais</td></tr>
+<tr><td><a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a></td><td>Texto emoldurado como 『 amor 』</td><td>Você quer suas palavras numa moldura completa</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Como copio e colo símbolos de coração?</h3><div class="faq-answer"><p>Clique em qualquer coração na grade — ele copia para sua área de transferência na hora. Depois cole na sua bio, legenda, mensagem ou documento. Os 59 símbolos são texto Unicode puro.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre ♥ e ♡?</h3><div class="faq-answer"><p>♥ (U+2665) é o naipe de coração preto sólido e ♡ (U+2661) é sua versão branca (contorno), ambos do bloco Símbolos Diversos do Unicode. A versão de contorno soa mais suave e é popular em bios aesthetic.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Por que o ❤️ às vezes aparece preto em vez de vermelho?</h3><div class="faq-answer"><p>O U+2764 HEAVY BLACK HEART pode renderizar como texto (preto) ou emoji (vermelho) dependendo do seletor de variação e da plataforma. O ❤️ inclui o VS16, pedindo apresentação emoji; sem ele, alguns sistemas mostram um coração monocromático.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Como coloco corações ao redor do meu texto?</h3><div class="faq-answer"><p>Digite suas palavras no decorador de texto desta página. Ele gera 10 versões emolduradas — ♥ texto ♥, texto, ━━♥━━ texto ━━♥━━ e mais — cada uma clicável para copiar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quais são os tipos de símbolos de coração?</h3><div class="faq-answer"><p>A biblioteca os agrupa em corações emoji (❤️💜🖤), corações de texto (♥ ♡ ❥ ❣), corações decorativos e padrões de vários caracteres — 59 símbolos no total, pesquisáveis por nome.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso usar símbolos de coração na minha bio do Instagram?</h3><div class="faq-answer"><p>Sim. Corações colam em bios, legendas e comentários do Instagram sem problema. Corações de texto (♥ ♡) são a escolha mais segura porque renderizam idênticos no iOS e no Android.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Símbolos de coração funcionam no Discord?</h3><div class="faq-answer"><p>Sim — em mensagens, apelidos e nomes de canal. O Discord renderiza corações de texto e corações emoji nativamente, sem precisar de Nitro.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O que significa 💜 comparado ao ❤️?</h3><div class="faq-answer"><p>Por convenção da comunidade, ❤️ sinaliza amor romântico enquanto 💜 costuma significar carinho, amizade ou apreço de fandom. Esses sentidos são sociais, não oficiais — o contexto decide.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O gerador de símbolos de coração é grátis?</h3><div class="faq-answer"><p>Sim — grátis, sem conta e sem limites. A cópia é ilimitada e nada é enviado; a ferramenta roda inteiramente no seu navegador.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-simbolos-brilhantes/">Gerador de Símbolos Brilhantes</a> — símbolos de brilho ✧ ★ para bios</li>
+<li><a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a> — envolva texto em molduras decorativas fofas</li>
+<li><a href="/pt/gerador-de-linhas-divisorias/">Gerador de Linhas Divisórias</a> — separadores aesthetic para bios e posts</li>
+<li><a href="/pt/ferramentas-de-emojis-e-simbolos/">Todas as Ferramentas de Emojis e Símbolos</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+        const heartData = {
+            emoji: [
+                { char: '❤️', name: 'Coração vermelho' },
+                { char: '🧡', name: 'Coração laranja' },
+                { char: '💛', name: 'Coração amarelo' },
+                { char: '💚', name: 'Coração verde' },
+                { char: '💙', name: 'Coração azul' },
+                { char: '💜', name: 'Coração roxo' },
+                { char: '🖤', name: 'Coração preto' },
+                { char: '🤍', name: 'Coração branco' },
+                { char: '🤎', name: 'Coração marrom' },
+                { char: '💔', name: 'Coração partido' },
+                { char: '❣️', name: 'Coração exclamação' },
+                { char: '💕', name: 'Dois corações' },
+                { char: '💞', name: 'Corações girando' },
+                { char: '💓', name: 'Coração batendo' },
+                { char: '💗', name: 'Coração crescendo' },
+                { char: '💖', name: 'Coração brilhante' },
+                { char: '💘', name: 'Coração com flecha' },
+                { char: '💝', name: 'Coração com laço' },
+                { char: '💟', name: 'Decoração de coração' },
+                { char: '😍', name: 'Olhos de coração' },
+                { char: '🥰', name: 'Corações sorridentes' },
+                { char: '😘', name: 'Coração de beijo' },
+                { char: '😻', name: 'Gato com olhos de coração' },
+                { char: '💋', name: 'Marca de beijo' },
+                { char: '💑', name: 'Coração de casal' },
+                { char: '💏', name: 'Beijo' },
+                { char: '🫀', name: 'Coração anatômico' },
+                { char: '❤️‍🔥', name: 'Coração em chamas' },
+                { char: '❤️‍🩹', name: 'Coração se curando' },
+                { char: '🩷', name: 'Coração rosa' },
+                { char: '🩵', name: 'Coração azul-claro' },
+                { char: '🩶', name: 'Coração cinza' }
+            ],
+            text: [
+                { char: '♥', name: 'Naipe de coração preto' },
+                { char: '♡', name: 'Naipe de coração branco' },
+                { char: '❤', name: 'Coração pesado' },
+                { char: '❥', name: 'Coração girado' },
+                { char: '❦', name: 'Coração floral' },
+                { char: '❧', name: 'Floral girado' },
+                { char: '☙', name: 'Coração invertido' },
+                { char: '❣', name: 'Coração exclamação' },
+                { char: '❢', name: 'Coração estrela' },
+                { char: '❡', name: 'Ponto de coração' },
+                { char: '۵', name: 'Coração árabe' },
+                { char: '💙', name: 'Azul' },
+                { char: '♥️', name: 'Naipe de copas' },
+                { char: '❥', name: 'Coração bala' },
+                { char: '웃', name: 'Coração coreano' }
+            ],
+            decorative: [
+                { char: '♥‿♥', name: 'Rosto com olhos de coração' },
+                { char: '(♡°▽°♡)', name: 'Kaomoji de amor' },
+                { char: '(◕‿◕)♡', name: 'Amor feliz' },
+                { char: '(´∀`)♡', name: 'Amor satisfeito' },
+                { char: '♡(◡‿◡)', name: 'Amor doce' },
+                { char: '(♡ω♡)', name: 'Rosto de coração' },
+                { char: '(๑♡⌓♡๑)', name: 'Amor profundo' },
+                { char: '♡＾▽＾♡', name: 'Amor alegre' },
+                { char: '(˘︶˘).♡', name: 'Tranquilo' },
+                { char: '(灬♥ω♥灬)', name: 'Corado' },
+                { char: '(*♡∀♡)', name: 'Surpreso' },
+                { char: '(´,,•ω•,,)♡', name: 'Amor tímido' }
+            ],
+            patterns: [
+                '♥♡♥♡♥',
+                '❤️🧡💛💚💙💜',
+                '•♥•♥•♥•',
+                '╔══❤══╗',
+                '♡´・ᴗ・`♡',
+                '━━━━━♡━━━━━',
+                '✿♥‿♥✿',
+                '★·.·♥·.·★',
+                '❥❥❥❥❥',
+                '♥ ♥ ♥ ♥ ♥',
+                '꒰♡꒱',
+                '【♥】',
+                '❤‿❤',
+                '(っ◔◡◔)っ ♥',
+                '♥(ˆ⌣ˆԅ)',
+                '❣️💕❣️💕❣️'
+            ]
+        };
+
+        function init() {
+            renderHearts('emoji-hearts', heartData.emoji);
+            renderHearts('text-hearts', heartData.text);
+            renderHearts('decorative-hearts', heartData.decorative);
+            renderPatterns();
+        }
+
+        function renderHearts(containerId, items) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = items.map(item => `
+                <div class="symbol-item" onclick="copySymbol(this, '${escapeAttr(item.char)}')" data-name="${item.name.toLowerCase()}">
+                    <div class="symbol-char">${item.char}</div>
+                    <div class="symbol-name">${item.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderPatterns() {
+            const container = document.getElementById('heart-patterns');
+            container.innerHTML = heartData.patterns.map(pattern => `
+                <div class="pattern-item" onclick="copySymbol(this, '${escapeAttr(pattern)}')">${pattern}</div>
+            `).join('');
+        }
+
+        function filterSymbols() {
+            const query = document.getElementById('symbol-search').value.toLowerCase().trim();
+            
+            document.querySelectorAll('.symbol-item').forEach(item => {
+                const name = item.dataset.name || '';
+                const char = item.querySelector('.symbol-char')?.textContent || '';
+                const matches = name.includes(query) || char.includes(query);
+                item.style.display = matches ? '' : 'none';
+            });
+
+            // Show/hide sections based on visible items
+            document.querySelectorAll('.symbol-section').forEach(section => {
+                const visibleItems = section.querySelectorAll('.symbol-item:not([style*="display: none"])');
+                section.style.display = visibleItems.length > 0 ? '' : 'none';
+            });
+        }
+
+        function decorateText() {
+            const text = document.getElementById('text-input').value.trim();
+            const container = document.getElementById('decorator-results');
+            
+            if (!text) {
+                container.innerHTML = '<div style="color: var(--muted); text-align: center; padding: 1rem;">Digite algo para ver decoração de coraçãos</div>';
+                return;
+            }
+
+            const decorations = [
+                `♥ ${text} ♥`,
+                `❤️ ${text} ❤️`,
+                `💕 ${text} 💕`,
+                `♡ ${text} ♡`,
+                `💖 ${text} 💖`,
+                `❣️ ${text} ❣️`,
+                `♥‿♥ ${text} ♥‿♥`,
+                `✿♥ ${text} ♥✿`,
+                `━━♥━━ ${text} ━━♥━━`,
+                `【♡】${text}【♡】`
+            ];
+
+            container.innerHTML = decorations.map(d => `
+                <div class="decorator-result" onclick="copyText(this, '${escapeAttr(d)}')">
+                    <span>${d}</span>
+                    <span style="color: var(--muted); font-size: 0.8rem;">Click to copy</span>
+                </div>
+            `).join('');
+        }
+
+        function copySymbol(element, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                element.classList.add('copied');
+                setTimeout(() => element.classList.remove('copied'), 800);
+            });
+        }
+
+        function copyText(element, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = element.innerHTML;
+                element.innerHTML = '<span style="color: var(--success);">✓ Copied!</span>';
+                setTimeout(() => element.innerHTML = originalText, 1000);
+            });
+        }
+
+        function escapeAttr(text) {
+            return text.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        init();
+    
+    </script>
+
+</body>
+
+</html>
