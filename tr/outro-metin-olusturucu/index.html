@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Outro Metin Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Outro metin oluşturucu ile YouTube videolarınıza şık kapanış metinleri hazırlayın. Kanal adınız ve sloganınızla dört hazır outro tarzı alın. Ücretsizdir.">
+<meta content="Design video outro text with your channel name, tagline, and subscribe CTA in 4 styles. Free outro text generator with 4 copy-paste text outros included." name="description" />
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .outro-preview {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+            padding: 3rem;
+            border-radius: var(--radius);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .outro-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .outro-subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        .outro-cta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .cta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+        }
+
+        .cta-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .style-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .style-card {
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            cursor: pointer;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .style-card:hover,
+        .style-card.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .style-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .style-card p {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .text-output {
+            background: var(--surface-secondary);
+            padding: 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 1.1rem;
+            word-break: break-word;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/tr/outro-metin-olusturucu/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Outro Metin Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Outro metin oluşturucu ile YouTube videolarınıza şık kapanış metinleri hazırlayın. Kanal adınız ve sloganınızla dört hazır outro tarzı alın. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/outro-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Outro Metin Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Outro metin oluşturucu ile YouTube videolarınıza şık kapanış metinleri hazırlayın. Kanal adınız ve sloganınızla dört hazır outro tarzı alın. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/outro-text-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/outro-text-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-outro/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-outro/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/outro-metin-olusturucu/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "YouTube outroma ne koymalıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kanal adınız, \"Thanks for watching!\" gibi kısa bir slogan ve tek bir net harekete geçirici ifade — genelde abone ol. Bunları yukarıdaki oluşturucuya yazın; dört stilize outro'ya anında biçimler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Videolar için en iyi outro metinleri nelerdir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En iyi outro'lar kısa ve tutarlıdır: ad + slogan + tek CTA, nişinize uyan tarzda. Bu aracın dört hazır ayarı (Minimal, Gaming, Elegant, Neon) en yaygın kanal estetiklerini kapsar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metin outro'ları video açıklamamda kullanabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — tam bunun içindirler. Minimal, Fancy Box, Stars ve Gaming çıktıları emojili sade Unicode metindir; YouTube açıklamalarına, sabitlenmiş yorumlara ve topluluk gönderilerine temiz yapıştırılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu araç video bitiş ekranı yapar mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Stilize önizleme kartları ve kopyala-yapıştır metin outro'lar yaratır, MP4 dosyası değil. Metni ve tarzı tasarım referansınız yapın; gerçek bitiş ekranını video düzenleyicinizde kurun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi outro tarzını seçmeliyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nişinize uydurun: oyun kanallarına Gaming, yaşam tarzı ya da eğitime Elegant, teknolojiye Neon, güvenli varsayılan olarak Minimal. Hangisini seçerseniz seçin tutarlı kullanın; izleyiciler işareti öğrensin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Video kapanış metni ne uzunlukta olmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çok kısa — izleyiciler saniyeler içinde karar verir. Kanal adı, bir slogan, bir harekete geçirici ifade. Fazlası atlanır; bu yüzden aracın dört çıktısı da aynen bu formülü izler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kutu çizimi çerçeveler her yerde doğru görünür mü?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YouTube, Discord ve modern telefonlarda evet. Alışılmadık yazı tipli bazı uygulamalar kutu karakterlerini (╔ ═ ╝) kaydırır; bu yüzden Fancy Box outro'yu paylaşacağınız yerde güvenmeden önce önizleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "YouTube outro fikirlerini nerede bulurum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Burada: aracın dört hazır ayarı dört hazır YouTube outro fikridir — temiz kanallara Minimal, oyun içeriğine Gaming, yaşam tarzı ya da eğitime Elegant, teknolojiye Neon. Her birine kanal adınızı yazıp uyanı seçin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kanal adım bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Önizleme ve tüm metin outro'lar tarayıcınızda üretilir. Sunucuya hiçbir şey gönderilmez."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/outro-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-outro/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-outro/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/outro-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/outro-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-outro/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-outro/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/outro-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">🎮</span>
+                        Eğlenceli Araçlar
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">
+                            <span class="link-icon">⌨️</span>
+                            <span class="link-text">Daktilo Efekti Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../glitch-metin-olusturucu/">
+                            <span class="link-icon">📺</span>
+                            <span class="link-text">Glitch Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../matrix-metin-olusturucu/">
+                            <span class="link-icon">💊</span>
+                            <span class="link-text">Matrix Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../animasyonlu-metin-olusturucu/">
+                            <span class="link-icon">🎬</span>
+                            <span class="link-text">Animasyonlu Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link active" href="../outro-metin-olusturucu/">
+                            <span class="link-icon">🎬</span>
+                            <span class="link-text">Outro Metin Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+<div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+<div class="tool-title">🎬 Outro Metin Oluşturucu</div>
+<p class="tool-description">YouTube, TikTok ve daha fazlası için şık video outro metni oluşturun</p>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Kanal/Marka Adı</label>
+<input id="channel-name" oninput="updatePreview()" type="text" value="KANALIM"/>
+</div>
+<div class="setting-item">
+<label>Slogan/Alt Başlık</label>
+<input id="tagline" oninput="updatePreview()" type="text" value="İzlediğiniz için teşekkürler!"/>
+</div>
+</div>
+<h3>Stil Seç</h3>
+<div class="style-cards">
+<div class="style-card active" onclick="setStyle(this, 'minimal')">
+<h4>Minimal</h4>
+<p>Sade &amp; Temiz</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'gaming')">
+<h4>Gaming</h4>
+<p>Cesur &amp; Enerjik</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'elegant')">
+<h4>Elegant</h4>
+<p>Klas &amp; Zarif</p>
+</div>
+<div class="style-card" onclick="setStyle(this, 'neon')">
+<h4>Neon</h4>
+<p>Işıltılı Efektler</p>
+</div>
+</div>
+</div>
+<div class="outro-preview" id="outro-preview">
+<div class="outro-title" id="display-title">KANALIM</div>
+<div class="outro-subtitle" id="display-tagline">İzlediğiniz için teşekkürler!</div>
+<div class="outro-cta">
+<div class="cta-item">
+<div class="cta-icon">👍</div>
+<span class="cta-text">BEĞEN</span>
+</div>
+<div class="cta-item">
+<div class="cta-icon">🔔</div>
+<span class="cta-text">ABONE OL</span>
+</div>
+<div class="cta-item">
+<div class="cta-icon">💬</div>
+<span class="cta-text">YORUM</span>
+</div>
+</div>
+</div>
+<div class="tool-output-section">
+<h3>Metin Versiyonlarını Kopyala-Yapıştır</h3>
+<div id="text-outputs"></div>
+</div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Outro Metin Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Outro Metin Oluşturucu</h1>
+
+<p>Outro metin oluşturucu, videolarınız için şık YouTube outro metinleri yaratır — kanal adınız, "İzlediğiniz için teşekkürler!" gibi bir slogan ve bir harekete geçirici ifade. Yukarıda dört görsel tarzdan seçin, outro kartını canlı önizleyin ve dört hazır metin outro'dan birini kopyalayıp açıklamalara, yorumlara ya da topluluk gönderilerine yapıştırın.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li>Kanal adınız + sloganınızdan, canlı stilize önizlemeli video kapanış metni tasarlar.</li>
+    <li>4 görsel kart tarzı: Minimal, Gaming, Elegant ve Neon.</li>
+    <li>4 kopyala-yapıştır metin outro üretir: Minimal, Fancy Box, Stars ve Gaming — beğen/abone ol CTA'larıyla.</li>
+    <li>Metin outro'lar sade Unicode'dur; açıklamalara, yorumlara ve gönderilere her yerde yapıştırılır.</li>
+    <li>Tamamen tarayıcınızda çalışır — hiçbir şey yüklenmez.</li>
+  </ul>
+</div>
+
+<h2>Outro metni nedir?</h2>
+<p><strong>Outro metni</strong>, bir videonun kapanış mesajıdır — sonda beliren "izlediğiniz için teşekkürler" kartı, kanal adı ve harekete geçirici ifade (beğen, abone ol, yorum yap). İçerik üreticiler sıradan izleyiciyi aboneye çevirmek için kullanır: birinin gördüğü son şey, harekete geçmesi en kolay şeydir. İyi outro metni kısadır, markaya uygundur ve hep tek bir net sonraki adım içerir.</p>
+
+<h2>Bu outro metin oluşturucu nasıl çalışır?</h2>
+<p><strong>Kanal adınızı</strong> ve <strong>sloganınızı</strong> yazın (varsayılan "Thanks for watching!") ve dört tarz karttan birini seçin. <strong>Minimal</strong> beyaz yazılı koyu, temiz bir karttır. <strong>Gaming</strong> sert gölgeli yazıyla koyu kırmızı gradyan kullanır. <strong>Elegant</strong> mavi gradyanı altın harflerle eşleştirir. <strong>Neon</strong> siyaha yakın zeminde camgöbeği parlar. Önizleme yazdıkça canlı güncellenir; bitiş kartının nasıl okunduğunu aynen gösterir.</p>
+<p>Önizlemenin altında araç, aynı girdilerden <strong>dört kopyala-yapıştır metin outro</strong> üretir: <strong>Minimal</strong> (<code>✦ NAME ✦</code> + slogan + beğen/abone ol/yorum satırı), <strong>Fancy Box</strong> (adınız <code>╔═╗</code> kutu çizimi çerçevede), <strong>Stars</strong> (yıldız bölmeli bant) ve <strong>Gaming</strong> (oyun CTA satırlı ▶ ▶ ▶ oklar). Bunlar emoji ve kutu çizimi karakterli sade metin tasarımlardır — görsel kartın gidemediği video açıklamalarına, sabitlenmiş yorumlara ya da topluluk gönderilerine yapıştırın.</p>
+
+<h2>Uygulamalı örnek: video kapanış metni</h2>
+<p>Kanal adı: <code>Pixel Plays</code>, slogan: <code>Thanks for watching!</code></p>
+<table>
+  <thead>
+    <tr><th>Metin outro</th><th>Ne alırsınız?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Minimal</td><td><code>✦ PIXEL PLAYS ✦</code> + slogan + 👍 LIKE | 🔔 SUBSCRIBE | 💬 COMMENT</td></tr>
+    <tr><td>Fancy Box</td><td><code>╔══════╗</code> kutu sanatında kanal adı çerçeveli + slogan</td></tr>
+    <tr><td>Stars</td><td>Ad ve sloganlı <code>★════★</code> bant</td></tr>
+    <tr><td>Gaming</td><td><code>▶▶▶ PIXEL PLAYS ◀◀◀</code> + 🎮 LIKE | SHARE | SUBSCRIBE 🎮</td></tr>
+  </tbody>
+</table>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li>Yukarıdaki alanlara <strong>kanal adınızı</strong> ve <strong>sloganınızı</strong> yazın.</li>
+  <li><strong>Bir tarz kart seçin</strong> — Minimal, Gaming, Elegant ya da Neon — ve canlı önizleyin.</li>
+  <li>Kopyalama düğmesiyle bir <strong>metin outro kopyalayın</strong> (Minimal, Fancy Box, Stars ya da Gaming).</li>
+  <li>Video açıklamanıza, sabitlenmiş yorumunuza ya da topluluk gönderinize <strong>yapıştırın</strong>.</li>
+</ol>
+
+<h2>Outroyu gerçekten işler kılan nedir?</h2>
+<p>En yüksek dönüşümlü outro'lar üç özelliği paylaşır. <strong>Tek net eylem:</strong> "abone ol", beş istekli bir menüyü yener — en önemli tek davranışı seçin ve onunla başlayın. <strong>Kısalık:</strong> izleyiciler bitiş ekranında kalıp kalmamaya beş saniyede karar verir; adınız, bir slogan, bir CTA tüm formüldür. Yalnızca basit bir teşekkür metnine ihtiyacınız varsa varsayılan sloganlı Minimal tarz yeter. <strong>Tutarlılık:</strong> videolarda aynı outro metni ve tarzı kullanmak, izleyicilere işareti tanımayı öğretir. Tarzı nişinize uydurun — oyun kanallarına Gaming, yaşam tarzı ya da eğitime Elegant, teknolojiye Neon, şüphede Minimal.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Dürüst kapsam: bu araç <strong>metin ve stilize önizleme kartları</strong> tasarlar, işlenmiş video dosyaları değil — MP4 bitiş ekranı dışa aktarmaz; onun için tasarımı video düzenleyicinizde yeniden yapın. Dört tarz sabit hazır ayardır; özel marka renkleri kavramı kendiniz düzenlemek demektir. Metin outro'lar kutu çizimi karakterlerine ve emojilere dayanır; YouTube, Discord ve çoğu telefonda iyi görünür ama alışılmadık yazı tipli uygulamalarda kayabilir. Kanal adlarını makul kısa tutun — uzun adlar Fancy Box çerçevesinden taşar.</p>
+
+<h2>Outro metin oluşturucu ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal?</th><th>Neye dikkat?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu oluşturucu</strong></td><td>Anında stilize outro'lar + kopyala-yapıştır metin sürümleri</td><td>Video dışa aktarma yok</td></tr>
+    <tr><td>Video düzenleyiciler (Premiere, CapCut)</td><td>Gerçek animasyonlu bitiş ekranları</td><td>Video başına elle tasarım işi</td></tr>
+    <tr><td>YouTube bitiş ekranı öğeleri</td><td>Tıklanabilir abone/video kartları</td><td>Yalnızca YouTube; özel metin tasarımı yok</td></tr>
+    <tr><td><a href="/tr/estetik-cerceve-olusturucu/">Estetik çerçeve oluşturucu</a></td><td>Metin için dekoratif çerçeveler</td><td>Genel çerçeveler, outro'ya özel değil</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">YouTube outroma ne koymalıyım?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Kanal adınız, "Thanks for watching!" gibi kısa bir slogan ve tek bir net harekete geçirici ifade — genelde abone ol. Bunları yukarıdaki oluşturucuya yazın; dört stilize outro'ya anında biçimler.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Videolar için en iyi outro metinleri nelerdir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">En iyi outro'lar kısa ve tutarlıdır: ad + slogan + tek CTA, nişinize uyan tarzda. Bu aracın dört hazır ayarı (Minimal, Gaming, Elegant, Neon) en yaygın kanal estetiklerini kapsar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Metin outro'ları video açıklamamda kullanabilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet — tam bunun içindirler. Minimal, Fancy Box, Stars ve Gaming çıktıları emojili sade Unicode metindir; YouTube açıklamalarına, sabitlenmiş yorumlara ve topluluk gönderilerine temiz yapıştırılır.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Bu araç video bitiş ekranı yapar mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Stilize önizleme kartları ve kopyala-yapıştır metin outro'lar yaratır, MP4 dosyası değil. Metni ve tarzı tasarım referansınız yapın; gerçek bitiş ekranını video düzenleyicinizde kurun.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Hangi outro tarzını seçmeliyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Nişinize uydurun: oyun kanallarına Gaming, yaşam tarzı ya da eğitime Elegant, teknolojiye Neon, güvenli varsayılan olarak Minimal. Hangisini seçerseniz seçin tutarlı kullanın; izleyiciler işareti öğrensin.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Video kapanış metni ne uzunlukta olmalı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Çok kısa — izleyiciler saniyeler içinde karar verir. Kanal adı, bir slogan, bir harekete geçirici ifade. Fazlası atlanır; bu yüzden aracın dört çıktısı da aynen bu formülü izler.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kutu çizimi çerçeveler her yerde doğru görünür mü?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">YouTube, Discord ve modern telefonlarda evet. Alışılmadık yazı tipli bazı uygulamalar kutu karakterlerini (╔ ═ ╝) kaydırır; bu yüzden Fancy Box outro'yu paylaşacağınız yerde güvenmeden önce önizleyin.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">YouTube outro fikirlerini nerede bulurum?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Burada: aracın dört hazır ayarı dört hazır YouTube outro fikridir — temiz kanallara Minimal, oyun içeriğine Gaming, yaşam tarzı ya da eğitime Elegant, teknolojiye Neon. Her birine kanal adınızı yazıp uyanı seçin.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kanal adım bir yere yükleniyor mu?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Önizleme ve tüm metin outro'lar tarayıcınızda üretilir. Sunucuya hiçbir şey gönderilmez.</p>
+    </div>
+  </div>
+</div>
+
+<p>Daha fazla içerik üretici aracı: hareketli manşet efektleri için <a href="/tr/animasyonlu-metin-olusturucu/">animasyonlu metin oluşturucu</a>, video başlıkları için <a href="/tr/youtube-baslik-olusturucu/">YouTube başlık oluşturucu</a> ve dekoratif çerçeveler için <a href="/tr/estetik-cerceve-olusturucu/">estetik çerçeve oluşturucu</a> — <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> ve <a href="/tr/sosyal-medya-aciklama-araclari/">sosyal medya araçları</a> koleksiyonlarımızda.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>🎮 Eğlenceli Araçlar</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">⌨️ Daktilo Efekti Oluşturucu</a>
+                <a class="sidebar-link" href="../glitch-metin-olusturucu/">📺 Glitch Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../matrix-metin-olusturucu/">💊 Matrix Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../animasyonlu-metin-olusturucu/">🎬 Animasyonlu Metin Oluşturucu</a>
+                <a class="sidebar-link active" href="../outro-metin-olusturucu/">🎬 Outro Metin Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        let currentStyle = 'minimal';
+
+        const styles = {
+            minimal: {
+                bg: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%)',
+                titleColor: '#fff',
+                titleShadow: 'none'
+            },
+            gaming: {
+                bg: 'linear-gradient(135deg, #ff0844 0%, #ffb199 100%)',
+                titleColor: '#fff',
+                titleShadow: '3px 3px 0 #000'
+            },
+            elegant: {
+                bg: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+                titleColor: '#f1c40f',
+                titleShadow: '0 2px 10px rgba(0,0,0,0.3)'
+            },
+            neon: {
+                bg: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)',
+                titleColor: '#0ff',
+                titleShadow: '0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff'
+            }
+        };
+
+        function setStyle(card, style) {
+            document.querySelectorAll('.style-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            currentStyle = style;
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const name = document.getElementById('channel-name').value || 'CHANNEL';
+            const tagline = document.getElementById('tagline').value || 'İzlediğiniz için teşekkürler!';
+            const style = styles[currentStyle];
+            
+            const preview = document.getElementById('outro-preview');
+            const title = document.getElementById('display-title');
+            const subtitle = document.getElementById('display-tagline');
+            
+            preview.style.background = style.bg;
+            title.textContent = name.toUpperCase();
+            title.style.color = style.titleColor;
+            title.style.textShadow = style.titleShadow;
+            subtitle.textContent = tagline;
+            
+            generateTextOutputs(name, tagline);
+        }
+
+        function generateTextOutputs(name, tagline) {
+            const outputs = [
+                { label: 'Minimal', text: `✦ ${name.toUpperCase()} ✦\n${tagline}\n\n👍 BEĞEN  |  🔔 ABONE OL  |  💬 YORUM` },
+                { label: 'Fancy Box', text: `╔══════════════════════╗\n║  ${name.toUpperCase()}  ║\n╚══════════════════════╝\n\n${tagline}` },
+                { label: 'Stars', text: `★═══════════════════★\n✦ ${name.toUpperCase()} ✦\n${tagline}\n★═══════════════════★` },
+                { label: 'Gaming', text: `▶▶▶ ${name.toUpperCase()} ◀◀◀\n━━━━━━━━━━━━━━━\n${tagline}\n\n🎮 BEĞEN | SHARE | ABONE OL 🎮` }
+            ];
+
+            document.getElementById('text-outputs').innerHTML = outputs.map(o => `
+                <div style="margin-bottom: 1rem;">
+                    <strong>${o.label}</strong>
+                    <div class="text-output" style="margin-top: 0.5rem; white-space: pre-line;">${o.text}</div>
+                    <button class="btn btn-secondary btn-sm" onclick="copyText(\`${o.text.replace(/`/g, '\\`')}\`)" style="margin-top: 0.5rem;">📋 Kopyala</button>
+                </div>
+            `).join('');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => alert('Kopyalandı!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        updatePreview();
+    </script>
+</body>
+</html></body>
+
+</html>
