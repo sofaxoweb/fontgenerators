@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CamelCase Converter - Pascal, Snake &amp; Kebab Case Converter</title>
+  <meta
+    content="Convert standard text to camelCase, PascalCase, snake_case, or kebab-case instantly. Perfect for programmers and developers."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/camelcase-converter/" rel="canonical" />
+  <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/camelcase-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/camelcase-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/camelcase-converter/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/camelcase-converter/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/camelcase-converter/" />
+</head>
+
+<body>
+  <div class="header"></div>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../text-utility-tools/">Utility Tools</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>CamelCase Converter</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="./" class="lang-link active" title="English">🇺🇸 EN</a>
+        <a href="../es/camelcase-converter/" class="lang-link" title="Español">🇪🇸 ES</a>
+        <a href="../pt/camelcase-converter/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../tr/camelcase-converter/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="tool-hero" style="background: var(--gradient-primary);">
+      <div class="container">
+        <h1>🐪 CamelCase Converter</h1>
+        <p>Convert your text to CamelCase, snake_case, and kebab-case formats</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Enter your text</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('camelcase')"
+            placeholder="Type something to convert to CamelCase..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Converted Cases</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copy All</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Clear</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🐪</div>
+              <p>Enter some text above to convert cases</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>What Is the CamelCase Converter?</h2>
+        <p>The CamelCase Converter is a text utility designed for programmers, developers, and writers to convert
+          sentences and word lists into standard programming naming conventions. It seamlessly converts plain text into
+          lowerCamelCase (e.g., myVariableName) or UpperCamelCase / PascalCase (e.g., MyClassName), eliminating spaces
+          and punctuations while ensuring clean code identifiers, database field names, and social media hashtag
+          readability.</p>
+
+        <h2>How to Use the Case Converter</h2>
+        <ol>
+          <li><strong>Type or paste your text</strong> into the input box above.</li>
+          <li><strong>Select your target casing convention:</strong> choose standard camelCase or PascalCase.</li>
+          <li><strong>Instant conversion:</strong> the tool automatically strips spaces, capitalizes demarcated word
+            boundaries, and outputs clean syntax.</li>
+          <li>Click <strong>Copy</strong> to copy your formatted identifier directly into your IDE or code editor.</li>
+
+        </ol>
+
+        <h2>Why Consistent Naming Matters</h2>
+        <p>Inconsistent naming is a leading cause of bugs and code review rejections. When a team uses
+          <code>getUserData</code> in one file and <code>get_user_data</code> in another, it creates confusion, breaks
+          autocomplete, and causes import errors. Most linters (ESLint, Pylint, StyleLint) enforce naming conventions
+          and fail builds when violated. This converter helps individual developers stay consistent, helps teams agree
+          on a standard, and speeds up the process of renaming variables during refactoring sessions.
+        </p>
+
+        <h2>Real Conversion Examples</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Input Text</th>
+              <th>camelCase</th>
+              <th>PascalCase</th>
+              <th>snake_case</th>
+              <th>kebab-case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user profile image</td>
+              <td>userProfileImage</td>
+              <td>UserProfileImage</td>
+              <td>user_profile_image</td>
+              <td>user-profile-image</td>
+            </tr>
+            <tr>
+              <td>get total price</td>
+              <td>getTotalPrice</td>
+              <td>GetTotalPrice</td>
+              <td>get_total_price</td>
+              <td>get-total-price</td>
+            </tr>
+            <tr>
+              <td>max retry count</td>
+              <td>maxRetryCount</td>
+              <td>MaxRetryCount</td>
+              <td>max_retry_count</td>
+              <td>max-retry-count</td>
+            </tr>
+            <tr>
+              <td>api base url</td>
+              <td>apiBaseUrl</td>
+              <td>ApiBaseUrl</td>
+              <td>api_base_url</td>
+              <td>api-base-url</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>When to Use Each Case Convention</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Convention</th>
+              <th>Example</th>
+              <th>Used In</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>camelCase</td>
+              <td>getUserName</td>
+              <td>JS/TS variables, Java methods, JSON keys</td>
+            </tr>
+            <tr>
+              <td>PascalCase</td>
+              <td>UserProfile</td>
+              <td>Classes, React components, C# types</td>
+            </tr>
+            <tr>
+              <td>snake_case</td>
+              <td>get_user_name</td>
+              <td>Python, Ruby, SQL, file names</td>
+            </tr>
+            <tr>
+              <td>kebab-case</td>
+              <td>user-profile</td>
+              <td>CSS classes, URLs, HTML attributes</td>
+            </tr>
+            <tr>
+              <td>SCREAMING_SNAKE</td>
+              <td>MAX_RETRY_COUNT</td>
+              <td>Constants, environment variables</td>
+            </tr>
+            <tr>
+              <td>dot.notation</td>
+              <td>config.db.host</td>
+              <td>Config files, namespaces</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">What's the difference between camelCase and PascalCase?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">camelCase starts with a lowercase letter (getUserData). PascalCase starts with an
+                uppercase letter (GetUserData). In most languages, camelCase is used for variables and functions, while
+                PascalCase is used for class and component names.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Does the converter handle numbers?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes. Numbers are treated as word boundaries. 'get user 2 profile' converts to
+                getUser2Profile in PascalCase and get_user_2_profile in snake_case.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">What happens with special characters and punctuation?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Special characters like hyphens, underscores, slashes, and punctuation are treated as
+                word separators and stripped from the output. 'user-profile/image' becomes userProfileImage.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Can I convert multiple lines at once?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">The converter processes the full input as one phrase. For batch conversions of multiple
+                variable names, put each name on a separate line — or copy them individually.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Which case should I use for REST API endpoints?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Industry standard for REST API URLs is kebab-case: /api/user-profiles/get-by-id. JSON
+                response keys typically use camelCase. Database column names use snake_case.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="footer"></div>
+  <script defer="" src="../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('camelcase');
+    });
+  </script>
+</body>
+
+</html>

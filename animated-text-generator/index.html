@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Animated Text Generator - Cool CSS &amp; HTML Text Effects</title>
+  <meta
+    content="Create dynamic text animations like bounce, neon glow, and rainbow wave with copyable CSS and HTML codes. Elevate your web design."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/tools.css" rel="stylesheet" />
+  <style>
+    /* Rainbow Animation */
+    .rainbow-anim {
+      background: linear-gradient(to right, #ff007f, #ff00ff, #7f00ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff007f);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 3s linear infinite;
+    }
+
+    @keyframes rainbow {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    /* Neon Glow Animation */
+    .neon-anim {
+      color: #fff;
+      text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f, 0 0 20px #ff007f;
+      animation: neon-glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon-glow {
+      from {
+        text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f;
+      }
+
+      to {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+      }
+    }
+
+    /* Glitch Shake Animation */
+    .glitch-anim {
+      color: #fff;
+      position: relative;
+      animation: glitch-shake 0.3s infinite;
+    }
+
+    @keyframes glitch-shake {
+      0% {
+        transform: translate(0)
+      }
+
+      20% {
+        transform: translate(-2px, 2px)
+      }
+
+      40% {
+        transform: translate(-2px, -2px)
+      }
+
+      60% {
+        transform: translate(2px, 2px)
+      }
+
+      80% {
+        transform: translate(2px, -2px)
+      }
+
+      100% {
+        transform: translate(0)
+      }
+    }
+
+    /* Bouncing Animation */
+    .bounce-anim {
+      display: inline-block;
+      animation: bounce-text 0.6s infinite alternate;
+    }
+
+    @keyframes bounce-text {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/animated-text-generator/" rel="canonical" />
+  <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/animated-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/animated-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/animated-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/animated-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/animated-text-generator/" />
+</head>
+
+<body>
+  <div class="header"></div>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../fun-text-tools/">Fun Tools</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Animated Text</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="./" class="lang-link active" title="English">🇺🇸 EN</a>
+        <a href="../es/animated-text-generator/" class="lang-link" title="Español">🇪🇸 ES</a>
+        <a href="../pt/animated-text-generator/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../tr/animated-text-generator/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="tool-hero" style="background: var(--gradient-primary);">
+      <div class="container">
+        <h1>🎬 Animated Text Generator</h1>
+        <p>Create dynamic text effects with live previews and copyable code</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Enter your text</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateAnimatedText()"
+            placeholder="Type something to animate..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Animated Previews</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Clear</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🎬</div>
+              <p>Enter some text above to generate animations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>What Is Animated Text Generator?</h2>
+        <p>The animated text generator is a text formatting utility that converts standard input text into a styled or
+          transformed version using unicode characters or text processing algorithms. These generated outputs are real
+          text characters — not images — which means they copy, paste, and display correctly across virtually all modern
+          apps, social media platforms, and messaging services that render unicode text.</p>
+
+        <h2>How to Use This Tool</h2>
+        <ol>
+          <li><strong>Type or paste your text</strong> into the input field above.</li>
+          <li>The tool <strong>instantly processes</strong> your input and shows the result.</li>
+          <li>Browse any style options or settings that appear.</li>
+          <li>Click <strong>Copy</strong> to copy your result.</li>
+          <li><strong>Paste</strong> into Instagram, Discord, Twitter, WhatsApp, or any text field.</li>
+        </ol>
+
+        <h2>Why Use Animated Text Generator?</h2>
+        <p>Using the animated text generator saves time and brings a unique visual identity to your digital presence.
+          Rather than plain default text that blends into every other post or profile, styled text immediately catches
+          the eye and communicates personality. This is particularly valuable on platforms like Instagram, TikTok,
+          Discord, and gaming networks where standing out in a crowded feed or player list directly impacts engagement
+          and discoverability. The tool works entirely in your browser — no installation, no account, no data stored.
+        </p>
+
+        <h2>Common Use Cases</h2>
+        <ul>
+          <li><strong>Social media bios:</strong> Make your Instagram, TikTok, or Twitter bio visually distinctive.</li>
+          <li><strong>Gaming profiles:</strong> Stand out in Roblox, Steam, and other game lobbies with a unique styled
+            name.</li>
+          <li><strong>Discord servers:</strong> Use styled text for channel names and server descriptions.</li>
+          <li><strong>Creative writing:</strong> Add visual variety to captions, quotes, and storytelling posts.</li>
+          <li><strong>Content creation:</strong> Differentiate section headers in long Instagram captions or LinkedIn
+            posts.</li>
+        </ul>
+
+        <h2>Platform Compatibility</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Works?</th>
+              <th>Recommended Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Instagram</td>
+              <td>✅ Yes</td>
+              <td>Bio, captions, comments</td>
+            </tr>
+            <tr>
+              <td>TikTok</td>
+              <td>✅ Yes</td>
+              <td>Bio, video description</td>
+            </tr>
+            <tr>
+              <td>Twitter / X</td>
+              <td>✅ Yes</td>
+              <td>Display name, bio, tweets</td>
+            </tr>
+            <tr>
+              <td>Discord</td>
+              <td>✅ Yes</td>
+              <td>Username, messages, server names</td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td>✅ Yes</td>
+              <td>Status, name, messages</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>✅ Yes</td>
+              <td>Posts, bio</td>
+            </tr>
+            <tr>
+              <td>Roblox</td>
+              <td>✅ Yes</td>
+              <td>Display name</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Is this tool completely free?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes — the animated text generator is 100% free to use with no limits. There's no
+                account required, no watermark on output, and no daily usage cap.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Does the output work on mobile?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes. The styled text is standard unicode that displays correctly on all modern iOS and
+                Android devices. Simply copy the result and paste into any mobile app.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Is my text stored or shared?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. The animated text generator processes your text entirely in your browser using
+                JavaScript. Nothing is uploaded to a server. Your input is never stored, logged, or shared.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Can I use the result in my username?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Most platforms allow unicode in display names but restrict actual usernames/handles to
+                ASCII characters. Display names on Instagram, Discord, Twitter, and TikTok typically support unicode.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">What if some characters appear as boxes?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Boxes indicate that the device doesn't have font support for those specific unicode
+                characters. Try a different style variant or update your device's system software to include broader
+                unicode font coverage.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="footer"></div>
+  <script defer="" src="../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../js/tools.js"></script>
+  <script defer="">
+    const cssMap = {
+      'rainbow-anim': `@keyframes rainbow { to { background-position: 200% center; } }
+.rainbow-anim {
+  background: linear-gradient(to right, #ff007f, #ff00ff, #7f00ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff007f);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 3s linear infinite;
+}`,
+      'neon-anim': `@keyframes neon-glow {
+  from { text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f; }
+  to { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+}
+.neon-anim {
+  color: #fff;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}`,
+      'glitch-anim': `@keyframes glitch-shake {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+.glitch-anim {
+  position: relative;
+  animation: glitch-shake 0.3s infinite;
+}`,
+      'bounce-anim': `@keyframes bounce-text {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+.bounce-anim {
+  display: inline-block;
+  animation: bounce-text 0.6s infinite alternate;
+}`
+    };
+
+    function generateAnimatedText() {
+      const input = document.getElementById('text-input');
+      const resultsContainer = document.getElementById('results-container');
+      if (!input || !resultsContainer) return;
+      const text = input.value.trim();
+      if (!text) {
+        resultsContainer.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🎬</div><p>Enter some text above to generate animations</p></div>';
+        return;
+      }
+
+      const styles = [
+        { name: 'Rainbow Gradient Wave', class: 'rainbow-anim', desc: 'Flowing multi-color text effect' },
+        { name: 'Neon Glow Pulse', class: 'neon-anim', desc: 'Glowing neon sign pulsing effect' },
+        { name: 'Glitch Shake', class: 'glitch-anim', desc: 'Jittery, glitching tech style text' },
+        { name: 'Bouncing Letters', class: 'bounce-anim', desc: 'Playful floating vertical bounce' }
+      ];
+
+      resultsContainer.innerHTML = styles.map(style => {
+        const htmlCode = `<span class="${style.class}">${text}</span>`;
+        return `
+                    <div class="result-item" style="flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+                            <span class="result-name" style="font-weight: 700;">${style.name}</span>
+                            <span style="font-size: 0.8rem; color: var(--muted);">${style.desc}</span>
+                        </div>
+                        <div class="animation-preview-box" style="padding: 1.5rem; background: var(--black); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                            <span class="${style.class}" style="font-size: 1.5rem; font-weight: 700; color: #fff;">${text}</span>
+                        </div>
+                        <div class="code-box" style="font-family: monospace; font-size: 0.8rem; background: var(--surface-secondary); padding: 0.75rem; border-radius: var(--radius-sm); word-break: break-all; white-space: pre-wrap; margin-top: 0.5rem; border: 1px solid var(--border);">HTML: &lt;span class="${style.class}"&gt;${text}&lt;/span&gt;</div>
+                        <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                            <button class="btn btn-sm btn-secondary" onclick="copyTextDirect(this, '${escapeForAttribute(htmlCode)}')">📋 Copy HTML</button>
+                            <button class="btn btn-sm btn-primary" onclick="copyCSSCode(this, '${style.class}')">📋 Copy CSS</button>
+                        </div>
+                    </div>
+                `;
+      }).join('');
+    }
+
+    function copyCSSCode(btn, className) {
+      const code = cssMap[className];
+      navigator.clipboard.writeText(code).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Copied CSS!';
+        setTimeout(() => btn.textContent = old, 2000);
+      });
+    }
+
+    function copyTextDirect(btn, val) {
+      navigator.clipboard.writeText(val).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = old, 2000);
+      });
+    }
+
+    document.getElementById('text-input').addEventListener('input', generateAnimatedText);
+  </script>
+</body>
+
+</html>
