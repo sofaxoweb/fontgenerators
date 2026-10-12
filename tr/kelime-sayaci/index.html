@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Kelime Sayacı — Ücretsiz Çevrimiçi | FontGenerators</title>
+  <meta content="Ücretsiz kelime sayacı ile kelime, karakter, cümle ve paragraf sayısını anında öğrenin. Okuma süresi ve okunabilirlik analiziyle tarayıcıda çalışan hızlı sayaç." name="description" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --bg: #ffffff;
+      --surface: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .tool-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .tool-description {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tool-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 200px;
+      transition: border 0.2s;
+    }
+
+    .tool-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .tool-actions {
+      display: flex;
+      gap: 10px;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .time-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .time-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .time-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .section-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+
+    .metric-label {
+      color: var(--muted);
+    }
+
+    .metric-value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .readability-score {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .score-excellent {
+      color: var(--secondary);
+    }
+
+    .score-good {
+      color: #3b82f6;
+    }
+
+    .score-fair {
+      color: var(--warning);
+    }
+
+    .score-poor {
+      color: var(--danger);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tab {
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--muted);
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab:hover {
+      color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .file-upload {
+      border: 2px dashed var(--border);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin: 1rem 0;
+    }
+
+    .file-upload:hover {
+      border-color: var(--primary);
+      background: var(--surface);
+    }
+
+    .file-upload input {
+      display: none;
+    }
+
+    @media (max-width:768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tool-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/tr/kelime-sayaci/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kelime Sayacı — Ücretsiz Çevrimiçi | FontGenerators">
+    <meta property="og:description" content="Ücretsiz kelime sayacı ile kelime, karakter, cümle ve paragraf sayısını anında öğrenin. Okuma süresi ve okunabilirlik analiziyle tarayıcıda çalışan hızlı sayaç.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/kelime-sayaci/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kelime Sayacı — Ücretsiz Çevrimiçi | FontGenerators">
+    <meta name="twitter:description" content="Ücretsiz kelime sayacı ile kelime, karakter, cümle ve paragraf sayısını anında öğrenin. Okuma süresi ve okunabilirlik analiziyle tarayıcıda çalışan hızlı sayaç.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/word-counter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/word-counter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/contador-de-palabras/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/contador-de-palavras/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/kelime-sayaci/" />
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/word-counter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/contador-de-palabras/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/contador-de-palavras/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/kelime-sayaci/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/word-counter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/contador-de-palabras/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/contador-de-palavras/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/kelime-sayaci/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/word-counter/',es:'/es/contador-de-palabras/',pt:'/pt/contador-de-palavras/',tr:'/tr/kelime-sayaci/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Metin Araçları
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="../kelime-sayaci/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Kelime Sayacı</span>
+            </a>
+            <a class="sidebar-link" href="../karakter-sayaci/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Karakter Sayacı</span>
+            </a>
+            <a class="sidebar-link" href="../metin-temizleyici/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Metin Temizleyici</span>
+            </a>
+            <a class="sidebar-link" href="../yinelenen-satirlari-kaldir/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Tekrarları Kaldır</span>
+            </a>
+            <a class="sidebar-link" href="../baslik-duzeni-cevirici/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Başlık Düzeni</span>
+            </a>
+            <a class="sidebar-link" href="../ters-metin-olusturucu/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Ters Metin</span>
+            </a>
+            <a class="sidebar-link" href="../zalgo-metin-olusturucu/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Zalgo Metni</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Araçlara Göz At
+        </button>
+        <section class="tool-hero"
+          style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); color: #fff; padding: 2rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+          <p style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">📊 Ücretsiz Çevrimiçi Kelime Sayacı</p>
+          <p style="font-size: 1rem; opacity: 0.95; margin: 0;">Kelimeleri, karakterleri, cümleleri, paragrafları ve okuma süresini gerçek zamanlı sayın</p>
+        </section>
+        <div class="tool-container">
+          <div class="file-upload" onclick="document.getElementById('file-input').click()">
+            <input accept=".txt,.rtf,.docx,.pdf,.csv,.md,.json" id="file-input" onchange="handleFileUpload(event)"
+              type="file" />
+            📁 Dosya yüklemek için tıklayın ya da metni aşağı yapıştırın
+          </div>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Metninizi buraya yapıştırın ya da yazın..." rows="10"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Temizle</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Yapıştır</button>
+            <button class="btn btn-secondary" onclick="sampleText()">📝 Örnek</button>
+            <button class="btn btn-secondary" onclick="cleanText()">✨ Metni Düzenle</button>
+            <button class="btn btn-primary" onclick="copyStats()">📋 İstatistikleri Kopyala</button>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="word-count">0</div>
+              <div class="stat-label">Kelime</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="char-count">0</div>
+              <div class="stat-label">Karakter</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="char-no-space">0</div>
+              <div class="stat-label">Karakter (boşluksuz)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="sentence-count">0</div>
+              <div class="stat-label">Cümle</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="paragraph-count">0</div>
+              <div class="stat-label">Paragraf</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="line-count">0</div>
+              <div class="stat-label">Satır</div>
+            </div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab(event,'basic')">📊 Temel İstatistikler</button>
+            <button class="tab" onclick="switchTab(event,'advanced')">🎯 Gelişmiş</button>
+            <button class="tab" onclick="switchTab(event,'readability')">📖 Okunabilirlik</button>
+          </div>
+          <div class="tab-content active" id="tab-basic">
+            <div class="time-stats">
+              <div class="time-card">
+                <div class="time-value" id="reading-time">0 dk</div>
+                <div class="stat-label">📖 Okuma Süresi (200 kelime/dk)</div>
+              </div>
+              <div class="time-card">
+                <div class="time-value" id="speaking-time">0 dk</div>
+                <div class="stat-label">🎤 Konuşma Süresi (150 kelime/dk)</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-advanced">
+            <div class="section-box">
+              <div class="section-title">📐 Metin Yapısı Analizi</div>
+              <div class="metric-row"><span class="metric-label">Ortalama kelime uzunluğu</span><span class="metric-value"
+                  id="avg-word-length">0</span></div>
+              <div class="metric-row"><span class="metric-label">Ortalama cümle uzunluğu</span><span
+                  class="metric-value" id="avg-sentence-length">0 kelime</span></div>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-readability">
+            <div class="section-box">
+              <div class="section-title">📖 Okunabilirlik Analizi</div>
+              <div class="readability-score" id="readability-score">-</div>
+              <div id="readability-label" style="text-align:center; color:var(--muted); margin-bottom:2rem;">Flesch Okuma Kolaylığı</div>
+            </div>
+          </div>
+        </div>
+        <!-- content start -->
+      </div>
+    </div>
+    
+    <section class="seo-content-section">
+      <div class="container">
+
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/metin-araclari/">Metin Araçları</a> &rsaquo; <span>Kelime Sayacı</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Ücretsiz Kelime Sayacı &mdash; Kelimeleri Sayın</h1>
+<p>Kelime sayacı, yazınızın uzunluğunu ölçen çevrimiçi bir araçtır: kelime, karakter, cümle, paragraf sayısı ve tahmini okuma süresi. Bu ücretsiz kelime sayacı yazdıkça tüm istatistikleri anında günceller, tamamen tarayıcınızda çalışır ve metin uzunluğuna sınır koymaz. Kelimeleri anında saymak için makalenizi, ödevinizi ya da gönderinizi yukarıdaki kutuya yapıştırın.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Öne çıkanlar</p>
+<ul style="margin: 0;">
+<li>Kelime, karakter (boşluklu ve boşluksuz), cümle, paragraf ve satır sayısını yazdıkça canlı hesaplar.</li>
+<li>Okuma süresi dakikada 200 kelime, konuşma süresi dakikada 150 kelime varsayımıyla hesaplanır.</li>
+<li>"Kelime", boşluklarla ayrılmış her dizgedir: <em>bugün</em>, <em>çok-iyi</em> ve <em>ornek@eposta.com</em> birer kelime sayılır.</li>
+<li>Tüm sayım tarayıcınızda yapılır &mdash; metniniz asla yüklenmez ya da saklanmaz.</li>
+<li>Kelime sınırı olmadan ücretsiz: ödevler, makaleler, tezler ve SEO içerikleri için ideal.</li>
+</ul>
+</div>
+<h2>Kelime Sayacı Nedir?</h2>
+<p><strong>Kelime sayacı, bir metnin uzunluğunu ölçen metin analiz aracıdır.</strong> Kelime, boşluklu ve boşluksuz karakter, cümle, paragraf ve satır sayısını verir; ayrıca okuma ya da konuşma süresini tahmin eder. Öğrenciler ödev sınırlarına uymak için, yazarlar makale hedeflerini tutturmak için, editörler ise bir metnin okunmasının ne kadar süreceğini anlamak için çevrimiçi kelime sayacı kullanır.</p>
+<p>Kelime işlemcilerin basit sayaçlarından farklı olarak bu kelime sayma aracı gelişmiş ölçümler de sunar: ortalama kelime uzunluğu, ortalama cümle uzunluğu ve Flesch Okuma Kolaylığı puanı &mdash; hepsi gerçek zamanlı güncellenir.</p>
+<h2>Bu Kelime Sayacı Nasıl Çalışır?</h2>
+<p>Bu araç metninizi basit ve şeffaf kurallarla analiz eder &mdash; kapalı kutu yok. Ölçtüğü her şey:</p>
+<ul>
+<li><strong>Kelime:</strong> metin kırpılır, ardından her boşluk dizisinden (boşluk, sekme, satır sonu) bölünür. Her parça bir kelimedir. Boş kutu 0 gösterir.</li>
+<li><strong>Karakter:</strong> boşluklar dahil metnin tamamının uzunluğu. <strong>Boşluksuz karakter</strong> önce tüm boşlukları atar.</li>
+<li><strong>Cümle:</strong> metin <code>.</code> <code>!</code> <code>?</code> gruplarından bölünür; boş olmayan her parça bir cümledir.</li>
+<li><strong>Paragraf:</strong> boş satırlarla ayrılmış metin blokları. Tek blok metin bir paragraf sayılır.</li>
+<li><strong>Satır:</strong> boş olmayan her satır.</li>
+<li><strong>Okuma süresi:</strong> kelime sayısı dakikada 200 kelimeye bölünür, sonraki tam dakikaya yuvarlanır.</li>
+<li><strong>Konuşma süresi:</strong> kelime sayısı dakikada 150 kelimeye bölünür, yukarı yuvarlanır &mdash; konuşmalar, senaryolar ve sunumlar için.</li>
+<li><strong>Gelişmiş sekmesi:</strong> ortalama kelime uzunluğu (ondalık bir basamak) ve kelime cinsinden ortalama cümle uzunluğu.</li>
+<li><strong>Okunabilirlik sekmesi:</strong> Flesch Okuma Kolaylığı tahmini. Not: kelime başına sabit 1,5 hece varsayar; bunu kesin bir dilbilim puanı değil kaba bir gösterge olarak değerlendirin.</li>
+</ul>
+<p>Araçta kullanışlı ekstralar da var: <strong>Temizle</strong> kutuyu boşaltır, <strong>Yapıştır</strong> panonuzdaki metni alır, <strong>Örnek</strong> tanıtım metni yükler, <strong>Metni Düzenle</strong> tüm gereksiz boşlukları tek boşluğa indirir, <strong>İstatistikleri Kopyala</strong> kelime sayısını kopyalar. Ayrıca <code>.txt</code>, <code>.rtf</code>, <code>.docx</code>, <code>.pdf</code>, <code>.csv</code>, <code>.md</code> veya <code>.json</code> dosyaları yükleyebilirsiniz; bunlar düz metin olarak okunur.</p>
+<h2>Uygulamalı Örnek</h2>
+<p>Şu cümleyi kelime sayacına yapıştırın:</p>
+<p><em>"Hızlı kahverengi tilki tembel köpeğin üzerinden atlar."</em></p>
+<table>
+<thead><tr><th>Ölçüm</th><th>Sonuç</th><th>Neden</th></tr></thead>
+<tbody>
+<tr><td>Kelime</td><td>7</td><td>7 boşlukla ayrılmış parça</td></tr>
+<tr><td>Karakter</td><td>54</td><td>Boşluklar ve nokta dahil</td></tr>
+<tr><td>Karakter (boşluksuz)</td><td>48</td><td>54 eksi 6 boşluk</td></tr>
+<tr><td>Cümle</td><td>1</td><td>Noktayla biten tek parça</td></tr>
+<tr><td>Paragraf / Satır</td><td>1 / 1</td><td>Tek metin bloğu</td></tr>
+<tr><td>Okuma süresi</td><td>1 dk</td><td>7 &divide; 200, yukarı yuvarlandı</td></tr>
+<tr><td>Konuşma süresi</td><td>1 dk</td><td>7 &divide; 150, yukarı yuvarlandı</td></tr>
+<tr><td>Ort. kelime uzunluğu</td><td>6,7 harf</td><td>47 harf &divide; 7 kelime</td></tr>
+</tbody>
+</table>
+<p>Okuma süresi yukarı yuvarlandığı için 200 kelimeye kadar her şey "1 dk" görünür &mdash; 201 kelimelik metin "2 dk" gösterir. Uzun metinlerde daha ince bir tahmin için <a href="/tr/okuma-suresi-hesaplayici/">okuma süresi hesaplayıcı</a> aynı matematiği özel bir arayüzle sunar.</p>
+<h2>Bu Kelime Sayacı Nasıl Kullanılır?</h2>
+<ol>
+<li><strong>Yapıştırın ya da yazın:</strong> metninizi yukarıdaki giriş kutusuna yazın &mdash; ya da dosya yüklemek için yükleme alanına tıklayın.</li>
+<li><strong>Canlı istatistikleri okuyun:</strong> kelime, karakter, cümle, paragraf ve satır sayıları her tuş vuruşunda güncellenir.</li>
+<li><strong>Sekmeleri değiştirin:</strong> Temel İstatistikler okuma ve konuşma süresini, Gelişmiş ortalama kelime ve cümle uzunluğunu, Okunabilirlik Flesch puanını gösterir.</li>
+<li><strong>Düzenleyin:</strong> yapıştırdığınız metinde bozuk boşluklar varsa Metni Düzenle düğmesini kullanın, ardından kelime sayısını almak için İstatistikleri Kopyala'ya basın. Bir belgede kelimeleri hızlı saymanın yolu merak ediyorsanız, metni buraya yapıştırmak en hızlı yöntemdir &mdash; kurulum gerektirmez.</li>
+</ol>
+<h2>Kelime Sayımları Araçlara Göre Neden Farklı Çıkar?</h2>
+<p>Aynı belgeyi burada, Microsoft Word'de ve Google Dokümanlar'da sayarsanız biraz farklı sonuçlar alabilirsiniz. Bu normaldir: her program "kelime"yi farklı tanımlar. Bu araç en basit tanımı kullanır &mdash; boşlukla ayrılmış parçalar &mdash; kelime işlemciler ise tireli bileşik kelimeleri, kısaltmaları, sayıları ve noktalama işaretlerini farklı değerlendiren kendi ayırıcılarını uygular. Ayrıca dipnotları, metin kutularını ve yorumları dahil edip etmeyebilirler.</p>
+<p>Burada bir kelime sayılanlar:</p>
+<ul>
+<li><em>bugün</em> &rarr; 1 kelime &nbsp;|&nbsp; <em>çok-iyi</em> &rarr; 1 kelime &nbsp;|&nbsp; <em>en-iyi-şekilde</em> &rarr; 1 kelime</li>
+<li><em>42</em> &rarr; 1 kelime &nbsp;|&nbsp; <em>ornek@eposta.com</em> &rarr; 1 kelime &nbsp;|&nbsp; <em>https://ornek.com</em> &rarr; 1 kelime</li>
+</ul>
+<p>Bir yayınevi ya da üniversite size kelime sınırı verdiyse hangi aracın tanımını kullandıklarını sorun &mdash; ya da taslağınızı onların kullanacağı araçta kontrol edin.</p>
+<h2>Kelimeden Sayfaya: Yayıncıların Kullandığı Matematik</h2>
+<p>Kelime sınırları ve sayfa sınırları kaba bir çeviriyle birbirine dönüştürülebilir. Yayıncılıkta pratik kural: <strong>çift aralıklı bir sayfa yaklaşık 250 kelime</strong>, <strong>tek aralıklı bir sayfa yaklaşık 500 kelime</strong> tutar (12 punto standart yazı tipi, 2,5 cm kenar boşluğu).</p>
+<table>
+<thead><tr><th>Kelime</th><th>Çift aralıklı sayfa</th><th>Tek aralıklı sayfa</th></tr></thead>
+<tbody>
+<tr><td>500</td><td>&asymp; 2</td><td>&asymp; 1</td></tr>
+<tr><td>1.000</td><td>&asymp; 4</td><td>&asymp; 2</td></tr>
+<tr><td>1.500</td><td>&asymp; 6</td><td>&asymp; 3</td></tr>
+<tr><td>2.000</td><td>&asymp; 8</td><td>&asymp; 4</td></tr>
+</tbody>
+</table>
+<p>Bunlar tahmindir: geniş kenar boşlukları, büyük yazı tipleri, başlıklar ve diyaloglar gerçek sayıyı değiştirir. Planlama için tabloyu, kesin sayı için kelime sayacını kullanın.</p>
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Okunabilirlik puanı yaklaşıktır.</strong> Flesch tahmini gerçek heceleri saymak yerine kelime başına 1,5 hece varsayar &mdash; kaba bir sinyal için yeterli, araştırma için değil.</li>
+<li><strong>Yüklenen dosyalar ham metin olarak okunur.</strong> <code>.docx</code> veya <code>.pdf</code> dosyasında biçimlendirme artıkları ya da ikili parçalar görünebilir; düz metin biçimleri (<code>.txt</code>, <code>.md</code>, <code>.csv</code>) en temiz sonucu verir.</li>
+<li><strong>İstatistikleri Kopyala yalnızca kelime sayısını kopyalar</strong> ("Kelime: 42"), tüm istatistik tablosunu değil.</li>
+<li><strong>İngilizce dışı diller:</strong> boşlukla ayrılan diller (İspanyolca, Fransızca, Arapça) normal sayılır; ancak kelime boşluğu kullanmayan diller (Çince, Japonca) eksik sayılır.</li>
+<li><strong>Emojiler ve özel Unicode karakterler</strong> karakter sayısını şişirebilir; bazı semboller birden fazla kod birimi kaplar.</li>
+</ul>
+<h2>Kelime Sayacı ve Alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne için ideal</th><th>Kurulum gerekir mi?</th></tr></thead>
+<tbody>
+<tr><td><strong>Bu kelime sayacı</strong></td><td>Okuma süresi, okunabilirlik ve gelişmiş ortalamalarla hızlı sayım &mdash; kayıtsız</td><td>Hayır</td></tr>
+<tr><td>Microsoft Word kelime sayısı</td><td>Dipnotlar dahil, zaten düzenlediğiniz belgenin içinde sayım</td><td>Evet</td></tr>
+<tr><td>Google Dokümanlar kelime sayısı</td><td>İş birliği yaparken Docs dosyasında sayım</td><td>Hayır (hesap gerekir)</td></tr>
+<tr><td><a href="/tr/karakter-sayaci/">Karakter sayacı</a></td><td>Sınır kelime değil karakterse (sosyal medya biyografileri, meta etiketler, SMS)</td><td>Hayır</td></tr>
+<tr><td><a href="/tr/okuma-suresi-hesaplayici/">Okuma süresi hesaplayıcı</a></td><td>Senaryo ve makaleler için özel okuma/konuşma süresi tahminleri</td><td>Hayır</td></tr>
+</tbody>
+</table>
+<p>Her şeyi tek yerde görmek istediğinizde bu sayfayı kullanın; platform karakter sınırı koyduğunda <a href="/tr/karakter-sayaci/">karakter sayacı</a>na geçin; yapıştırdığınız metin bozuk biçimlendiriliyse önce <a href="/tr/metin-temizleyici/">metin temizleyici</a>yi kullanın.</p>
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metindeki kelimeler nasıl sayılır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Metninizi yukarıdaki kutuya yapıştırın ya da yazın; sayı anında görünür &mdash; düğmeye basmak, kayıt olmak gerekmez. Kelimeler yazdıkça canlı sayılır; istatistik tablosunda ayrıca karakter, cümle, paragraf, satır ve okuma süresi gösterilir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Bu araçta "kelime" ne sayılır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Boşlukla ayrılan her şey bir kelimedir: boşluk, sekme ve satır sonları sınırdır. Kısaltmalar, tireli bileşik kelimeler, sayılar (42), e-posta adresleri ve URL'ler birer kelime sayılır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Bu kelime sayacında kelime sınırı var mı?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Bu sınırsız bir kelime sayacıdır &mdash; bir tweetten tez bölümüne kadar her şeyi yapıştırabilirsiniz. Her şey tarayıcınızda yerel olarak işlenir; çok uzun belgelerin analizi yalnızca biraz zaman alabilir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Okuma süresi nasıl hesaplanır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Okuma süresi, kelime sayınızı ortalama sessiz okuma hızı olan dakikada 200 kelimeye böler ve sonraki tam dakikaya yuvarlar. Konuşma süresi, konuşma ve sunumların tipik temposu olan dakikada 150 kelimeyi kullanır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Microsoft Word neden farklı kelime sayısı gösteriyor?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Kelime işlemciler kendi ayırıcılarını kullanır: tireli kelimeleri bölebilir, noktalama işaretlerini farklı ele alabilir, dipnot ve metin kutularını dahil edebilir. Bu araç daha basit boşluk-parçası tanımını kullanır; uzun belgelerde birkaç kelimelik küçük farklar normaldir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Bu kelime sayacı metnimi kaydediyor ya da yüklüyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Tüm analiz tarayıcınızın içindeki JavaScript ile çalışır. Metniniz asla bir sunucuya gönderilmez, saklanmaz, kaydedilmez ya da paylaşılmaz &mdash; taslaklar, el yazmaları ve gizli belgeler için güvenlidir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">PDF ya da Word belgesindeki kelimeleri sayabilir miyim?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Evet &mdash; dosya yükleme alanıyla .txt, .rtf, .docx, .pdf, .csv, .md veya .json dosyaları içe aktarabilirsiniz. Bunlar düz metin olarak okunur; .docx ve .pdf dosyalarında biçimlendirme artıkları çıkabilir, düz metin biçimleri en temiz sayımı verir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Flesch Okuma Kolaylığı puanı nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Okunabilirlik sekmesinde gösterilen 0&ndash;100 arası okunabilirlik tahminidir; yüksek puan daha kolay okunur demektir. Bu araç sabit hece tahminli basitleştirilmiş sürümü kullanır; bunu kesin bir dilbilim ölçüsü değil kaba bir gösterge olarak değerlendirin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">1.000 kelime kaç sayfa eder?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yayıncılık pratik kuralına göre (çift aralıklı sayfada 250, tek aralıklı sayfada 500 kelime) yaklaşık 4 çift aralıklı ya da 2 tek aralıklı sayfa. Gerçek sayfa sayısı yazı tipine, kenar boşluklarına ve başlıklara göre değişir.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Metin Araçları</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    let currentStats = {};
+
+    function analyzeText() {
+      const text = document.getElementById('text-input').value;
+
+      const words = text.trim() ? text.trim().split(/\s+/) : [];
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+      const paragraphs = text.split(/\n\n+/).filter(p => p.trim().length > 0);
+      const lines = text.split(/\n/).filter(l => l.trim().length > 0);
+
+      document.getElementById('word-count').textContent = words.length;
+      document.getElementById('char-count').textContent = text.length;
+      document.getElementById('char-no-space').textContent = text.replace(/\s/g, '').length;
+      document.getElementById('sentence-count').textContent = sentences.length;
+      document.getElementById('paragraph-count').textContent = paragraphs.length || (text.trim() ? 1 : 0);
+      document.getElementById('line-count').textContent = lines.length || (text.trim() ? 1 : 0);
+
+      document.getElementById('reading-time').textContent = words.length > 0 ? Math.ceil(words.length / 200) + ' dk' : '0 min';
+      document.getElementById('speaking-time').textContent = words.length > 0 ? Math.ceil(words.length / 150) + ' dk' : '0 min';
+
+      const totalChars = words.join('').length;
+      document.getElementById('avg-word-length').textContent = words.length > 0 ? (totalChars / words.length).toFixed(1) + ' harf' : '0 chars';
+      document.getElementById('avg-sentence-length').textContent = sentences.length > 0 ? Math.round(words.length / sentences.length) + ' kelime' : '0 words';
+
+      // Readability (simple Flesch estimate)
+      const syllables = words.length * 1.5;
+      const avgSentenceLength = sentences.length > 0 ? words.length / sentences.length : 1;
+      const avgWordLength = words.length > 0 ? totalChars / words.length : 1;
+      const score = Math.max(0, Math.min(100, Math.round(206.835 - 1.015 * avgSentenceLength - 84.6 * (syllables / words.length))));
+      document.getElementById('readability-score').textContent = score;
+    }
+
+    function switchTab(e, tabName) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      document.getElementById('tab-' + tabName).classList.add('active');
+    }
+
+    function clearText() { document.getElementById('text-input').value = ''; analyzeText(); }
+    function sampleText() { document.getElementById('text-input').value = 'Analiz için örnek metin.'; analyzeText(); }
+    function pasteText() { navigator.clipboard.readText().then(t => { document.getElementById('text-input').value = t; analyzeText(); }); }
+    function cleanText() { let t = document.getElementById('text-input').value; t = t.replace(/\s+/g, ' ').trim(); document.getElementById('text-input').value = t; analyzeText(); }
+    function handleFileUpload(e) { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { document.getElementById('text-input').value = ev.target.result; analyzeText(); }; r.readAsText(f); }
+    function copyStats() { navigator.clipboard.writeText('Kelime: ' + document.getElementById('word-count').textContent); alert('İstatistikler kopyalandı!'); }
+
+    analyzeText();
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Metindeki kelimeler nasıl sayılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metninizi yukarıdaki kutuya yapıştırın ya da yazın; sayı anında görünür — düğmeye basmak, kayıt olmak gerekmez. Kelimeler yazdıkça canlı sayılır; istatistik tablosunda ayrıca karakter, cümle, paragraf, satır ve okuma süresi gösterilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu araçta \"kelime\" ne sayılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Boşlukla ayrılan her şey bir kelimedir: boşluk, sekme ve satır sonları sınırdır. Kısaltmalar, tireli bileşik kelimeler, sayılar (42), e-posta adresleri ve URL'ler birer kelime sayılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu kelime sayacında kelime sınırı var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Bu sınırsız bir kelime sayacıdır — bir tweetten tez bölümüne kadar her şeyi yapıştırabilirsiniz. Her şey tarayıcınızda yerel olarak işlenir; çok uzun belgelerin analizi yalnızca biraz zaman alabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Okuma süresi nasıl hesaplanır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Okuma süresi, kelime sayınızı ortalama sessiz okuma hızı olan dakikada 200 kelimeye böler ve sonraki tam dakikaya yuvarlar. Konuşma süresi, konuşma ve sunumların tipik temposu olan dakikada 150 kelimeyi kullanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Microsoft Word neden farklı kelime sayısı gösteriyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kelime işlemciler kendi ayırıcılarını kullanır: tireli kelimeleri bölebilir, noktalama işaretlerini farklı ele alabilir, dipnot ve metin kutularını dahil edebilir. Bu araç daha basit boşluk-parçası tanımını kullanır; uzun belgelerde birkaç kelimelik küçük farklar normaldir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu kelime sayacı metnimi kaydediyor ya da yüklüyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Tüm analiz tarayıcınızın içindeki JavaScript ile çalışır. Metniniz asla bir sunucuya gönderilmez, saklanmaz, kaydedilmez ya da paylaşılmaz — taslaklar, el yazmaları ve gizli belgeler için güvenlidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PDF ya da Word belgesindeki kelimeleri sayabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — dosya yükleme alanıyla .txt, .rtf, .docx, .pdf, .csv, .md veya .json dosyaları içe aktarabilirsiniz. Bunlar düz metin olarak okunur; .docx ve .pdf dosyalarında biçimlendirme artıkları çıkabilir, düz metin biçimleri en temiz sayımı verir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Flesch Okuma Kolaylığı puanı nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Okunabilirlik sekmesinde gösterilen 0–100 arası okunabilirlik tahminidir; yüksek puan daha kolay okunur demektir. Bu araç sabit hece tahminli basitleştirilmiş sürümü kullanır; bunu kesin bir dilbilim ölçüsü değil kaba bir gösterge olarak değerlendirin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1.000 kelime kaç sayfa eder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yayıncılık pratik kuralına göre (çift aralıklı sayfada 250, tek aralıklı sayfada 500 kelime) yaklaşık 4 çift aralıklı ya da 2 tek aralıklı sayfa. Gerçek sayfa sayısı yazı tipine, kenar boşluklarına ve başlıklara göre değişir."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
