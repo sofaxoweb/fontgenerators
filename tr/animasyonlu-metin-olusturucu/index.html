@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Animasyonlu Metin Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Animasyonlu metin oluşturucu ile gökkuşağı, neon ve dalga efektli CSS animasyonları yaratın. Canlı önizleyin, kodu kopyalayıp sitenize ekleyin. Ücretsizdir.">
+  <meta content="Preview your text with live CSS animations — rainbow wave, neon glow, glitch shake, bouncing letters — and copy the code. Free animated text tool online." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    /* Rainbow Animation */
+    .rainbow-anim {
+      background: linear-gradient(to right, #ff007f, #ff00ff, #7f00ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff007f);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 3s linear infinite;
+    }
+
+    @keyframes rainbow {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    /* Neon Glow Animation */
+    .neon-anim {
+      color: #fff;
+      text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f, 0 0 20px #ff007f;
+      animation: neon-glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon-glow {
+      from {
+        text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f;
+      }
+
+      to {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+      }
+    }
+
+    /* Glitch Shake Animation */
+    .glitch-anim {
+      color: #fff;
+      position: relative;
+      animation: glitch-shake 0.3s infinite;
+    }
+
+    @keyframes glitch-shake {
+      0% {
+        transform: translate(0)
+      }
+
+      20% {
+        transform: translate(-2px, 2px)
+      }
+
+      40% {
+        transform: translate(-2px, -2px)
+      }
+
+      60% {
+        transform: translate(2px, 2px)
+      }
+
+      80% {
+        transform: translate(2px, -2px)
+      }
+
+      100% {
+        transform: translate(0)
+      }
+    }
+
+    /* Bouncing Animation */
+    .bounce-anim {
+      display: inline-block;
+      animation: bounce-text 0.6s infinite alternate;
+    }
+
+    @keyframes bounce-text {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/tr/animasyonlu-metin-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Animasyonlu Metin Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Animasyonlu metin oluşturucu ile gökkuşağı, neon ve dalga efektli CSS animasyonları yaratın. Canlı önizleyin, kodu kopyalayıp sitenize ekleyin. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/animasyonlu-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Animasyonlu Metin Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Animasyonlu metin oluşturucu ile gökkuşağı, neon ve dalga efektli CSS animasyonları yaratın. Canlı önizleyin, kodu kopyalayıp sitenize ekleyin. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/animated-text-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/animated-text-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-animado/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-animado/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/animasyonlu-metin-olusturucu/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Metin nasıl canlandırılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web siteleri için CSS animasyonları standart yöntemdir. Metninizi yukarıdaki oluşturucuya yazın, dört efekti önizleyin ve beğendiğiniz tarzın CSS kodunu kendi stil dosyanıza kopyalayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Animasyonlu metni Instagram'a kopyalayıp yapıştırabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır — yapıştırılan metin CSS animasyonlarını taşıyamaz. Bu araç web siteleri için CSS çıktısı verir, animasyonlu karakter değil. Instagram için bunun yerine bir video düzenleyiciden video dışa aktarmanız gerekir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu araç GIF ya da video oluşturur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Sayfada canlı CSS animasyonlarını önizler ve yeniden kullanacağınız CSS kodunu verir. İndirilebilir video ya da GIF dosyası yok — animasyon yalnızca stil dosyası kodu olarak vardır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dört efekt hangi CSS tekniklerini kullanır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gökkuşağı background-clip: text ile animasyonlu gradyan kullanır; neon katmanlı text-shadow'ları nabız gibi atar; glitch sarsıntısı translate() keyframe'leriyle titrer; zıplama translateY ile yüzer. Hepsi saf CSS @keyframes'tir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kopyalanan CSS tüm tarayıcılarda çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tüm modern tarayıcılarda evet. Çok eski tarayıcılar background-clip: text'i yok sayar ve sade, stilsiz metne döner; bu güvenli bir bozulmadır — kelimeleriniz yine görünür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CSS animasyonları SEO'ya zarar verir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Metin, arama motorlarının normal okuduğu gerçek HTML metni olarak kalır — resme ya da videoya gömülü metnin aksine. Animasyon tamamen sunumsaldır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metin animasyonlarını erişilebilir yapma nasıl olur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prefers-reduced-motion'a saygı gösterin: animasyonları @media (prefers-reduced-motion: no-preference) içine alın; hareket hassasiyeti olan ziyaretçiler statik metin alır. Uzun paragrafları canlandırmaktan kaçının — hareket okunurluğu bozar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir efektin renklerini ya da hızını değiştirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — kopyalanan CSS'i düzenleyin. Renkler gradyan, text-shadow ya da color değerlerinde; hız animasyon süresinde (örn. 3s) yaşar. Araç size başlangıç kodunu verir; özelleştirme standart CSS'tir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yazdığım metin bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Önizleme tarayıcınızda CSS ile çizilir ve sunucuya hiçbir şey gönderilmez."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/animated-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-animado/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-animado/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/animasyonlu-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/animated-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-animado/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-animado/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/animasyonlu-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+    <div class="container breadcrumb-row">
+            <nav class="breadcrumb container">
+        <a href="../">Ana Sayfa</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Animasyonlu Metin Oluşturucu</span>
+      </nav>
+            <div class="lang-switcher">
+        <a href="../../animated-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="../../es/generador-de-texto-animado/" class="lang-link" title="Español">🇪🇸 ES</a>
+        <a href="../../pt/gerador-de-texto-animado/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="./" class="lang-link active" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="tool-hero" style="background: var(--gradient-primary);">
+      <div class="container">
+        <h2>🎬 Animasyonlu Metin Oluşturucu</h2>
+        <p>Canlı önizlemeli ve kopyalanabilir kodlu dinamik metin efektleri oluşturun</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Metninizi girin</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateAnimatedText()"
+            placeholder="Canlandırılacak bir şey yazın..."></textarea>
+          <div class="char-count" id="char-count">0 karakter</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Animasyonlu Önizlemeler</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Temizle</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🎬</div>
+              <p>Animasyon oluşturmak için yukarıya bir miktar metin girin</p>
+            </div>
+          </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Animasyonlu Metin Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Animasyonlu Metin Oluşturucu</h1>
+
+<p>Animasyonlu metin oluşturucu, kelimelerinizi canlı CSS metin animasyonlarıyla önizler — gökkuşağı dalgaları, neon parlama nabzı, glitch sarsıntıları ve zıplayan harfler. Yukarıya yazarak metninizin dört tarzda hareketini görün; sonra sevdiğiniz tarzın hazır CSS'ini kopyalayıp kendi web sitenize yapıştırın.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li>Metninizi 4 canlı CSS animasyonunda önizler: Gökkuşağı Gradyan Dalgası, Neon Parlama Nabzı, Glitch Sarsıntısı, Zıplayan Harfler.</li>
+    <li>Her tarz, kendi siteniz için <strong>kopyalanabilir CSS kodu</strong> (@keyframes + sınıf) içerir.</li>
+    <li>Animasyonlar saf CSS'tir — JavaScript kütüphanesi yok, video dosyası yok, GIF yok.</li>
+    <li>Metniniz aynen geri verilir; animasyon sayfada uygulanan bir stildir.</li>
+    <li>Tamamen tarayıcınızda çalışır — hiçbir şey yüklenmez.</li>
+  </ul>
+</div>
+
+<h2>Animasyonlu metin nedir?</h2>
+<p><strong>Animasyonlu metin</strong>, CSS animasyonlarıyla zaman içinde hareket eden ya da değişen metindir — dönen renkler, nabız gibi atan parlamalar, sarsılan ya da zıplayan harfler. Video ya da GIF'in aksine CSS animasyonlu metin sayfada gerçek, seçilebilir, aranabilir metin olarak kalır: ekran okuyucular ve arama motorları kelimeleri görür, ziyaretçiler hareketi. Dikkat çekici başlıklar, hero bölümleri ve yayın katmanları için standart tekniktir.</p>
+
+<h2>Bu animasyonlu metin oluşturucu nasıl çalışır?</h2>
+<p>Girdiye yazın; araç kelimelerinizin aynısını sayfada dört şekilde çizer; her biri bir CSS <code>@keyframes</code> kuralıyla sürülür — CSS metin efektlerinin ardındaki standart teknik. <strong>Gökkuşağı Gradyan Dalgası</strong> — klasik bir gökkuşağı metin animasyonu — <code>background-clip: text</code> kullanarak harflerin üstünden çok renkli bir gradyan geçirir. <strong>Neon Parlama Nabzı</strong>, vızıldayan tabela etkisi için katmanlı <code>text-shadow</code> değerlerini değiştirir. <strong>Glitch Sarsıntısı</strong>, hızlı küçük <code>transform: translate()</code> adımlarıyla metni titretir. <strong>Zıplayan Harfler</strong>, sonsuz dönüşümlü animasyonla metni yukarı aşağı yüzdürür.</p>
+<p>İşte dürüst kısmı: araç metninizi değiştirmez ve video ya da GIF dışa aktarmaz. Aldığınız, canlı önizleme artı her efektin tam CSS'idir — <code>@keyframes</code> bloğu ve uygulanacak sınıf — kendi stil dosyanıza kopyalayıp yapıştırırsınız. Sosyal medya için animasyonlu görsele ihtiyacınız varsa bir video düzenleyici istersiniz; web sitesinde hareketli metne ihtiyacınız varsa bu CSS tam doğru malzemedir.</p>
+
+<h2>Uygulamalı örnek: metninizi canlandırın</h2>
+<p>Girdi: <code>SALE ENDS FRIDAY</code>. Sayfa bunu dört şekilde gösterir; neon tarzın kopyalanabilir CSS'i şuna benzer:</p>
+<table>
+  <thead>
+    <tr><th>Stil</th><th>Sayfadaki etki</th><th>CSS tekniği</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Gökkuşağı Gradyan Dalgası</td><td>Renkler harflerin üstünden akar</td><td>Animasyonlu <code>background-position</code> + <code>background-clip: text</code></td></tr>
+    <tr><td>Neon Parlama Nabzı</td><td>Pembe parlama nefes alıp verir</td><td>Dönüşümlü <code>text-shadow</code> katmanları</td></tr>
+    <tr><td>Glitch Sarsıntısı</td><td>Metin hızlı titrer</td><td>0.3 sn sonsuz <code>translate()</code> keyframe'leri</td></tr>
+    <tr><td>Zıplayan Harfler</td><td>Metin yukarı aşağı yüzer</td><td>0.6 sn sonsuz dönüşümlü <code>translateY</code></td></tr>
+  </tbody>
+</table>
+<p>CSS'i kopyalayın, sayfanıza <code>&lt;span class="neon-anim"&gt;SALE ENDS FRIDAY&lt;/span&gt;</code> ekleyin; animasyon çalışır.</p>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li><strong>Metninizi yazın</strong> — yukarıdaki giriş alanına.</li>
+  <li><strong>Dört animasyonu da</strong> sayfada canlı önizleyin.</li>
+  <li>Beğendiğiniz tarzın altındaki <strong>CSS Kodunu Kopyala</strong>'ya tıklayın.</li>
+  <li><strong>CSS'i stil dosyanıza yapıştırın</strong> ve sınıfı metin öğenize ekleyin.</li>
+</ol>
+
+<h2>CSS metin animasyonları nerede parlar (nerede parlamaz)?</h2>
+<p>Bu havalı metin animasyonları web sitesi başlıkları, açılış sayfası hero metinleri, yayın katmanları ve dijital tabelalar için idealdir — gerçek metnin tarayıcıda yaşadığı her yer. Her boyutta keskin ölçeklenir, performansa neredeyse hiç mal olmaz; metni seçilebilir ve SEO dostu tutar. Sosyal medya gönderileri için yanlış araçtır (Instagram ve TikTok sizin CSS'inizi çalıştırmaz), e-posta bültenleri için (çoğu e-posta istemcisi animasyonları söker) ve baskı için. Yaygın bir hata gövde metnini canlandırmaktır: hareket gözü çeker; bu yüzden kısa başlıklara ve harekete geçirici ifadelere saklayın — zıplayan metinden bir paragraf okunmaz.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Bu araç hakkında sade gerçekler. <strong>Video değil, CSS kodu</strong> üretir — MP4, GIF ya da indirilebilir animasyon dosyası yok; bir platform CSS çalıştıramıyorsa efekt yapıştırılan metinle gitmez. Önizleme tarzları sabittir (dört efekt, hazır renk ve zamanlamalar); ince ayar kopyalanan CSS'i kendiniz düzenlemek demektir. Ağır eşzamanlı animasyonlar hareket hassasiyeti olan ziyaretçilerde dikkat dağıtabilir ya da vestibüler rahatsızlık tetikleyebilir — <code>prefers-reduced-motion</code> medya sorgusu bunun için var ve üretim sitelerinde buna uymalısınız. Son olarak kopyalanan CSS modern tarayıcı varsayar; çok eski tarayıcılar <code>background-clip: text</code>'i yok sayar ve sade metin gösterir (en azından güvenli bir yedek).</p>
+
+<h2>Animasyonlu metin ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal?</th><th>Neye dikkat?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu oluşturucu</strong></td><td>Web siteleri için anında önizleme + kopyala-yapıştır CSS</td><td>Sabit 4 tarz seti; yalnızca CSS</td></tr>
+    <tr><td><a href="/tr/daktilo-efekti-olusturucu/">Daktilo efekti oluşturucu</a></td><td>Kopyalanabilir CSS'li daktilo animasyonları</td><td>Tek efekt ailesi (daktilo)</td></tr>
+    <tr><td><a href="/tr/neon-metin-olusturucu/">Neon metin oluşturucu</a></td><td>Biyografiler için statik neon tarzı Unicode metin</td><td>Hareket yok; dekoratif karakterler</td></tr>
+    <tr><td>Video düzenleyiciler (After Effects, CapCut)</td><td>Sosyal video için animasyonlu metin</td><td>Video dışa aktarır, canlı metin değil; daha ağır akış</td></tr>
+    <tr><td>Animasyon kütüphaneleri (GSAP, Framer Motion)</td><td>Karmaşık betikli web animasyonları</td><td>Öğrenme eğrisi ve bağımlılıklar</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Metin nasıl canlandırılır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Web siteleri için CSS animasyonları standart yöntemdir. Metninizi yukarıdaki oluşturucuya yazın, dört efekti önizleyin ve beğendiğiniz tarzın CSS kodunu kendi stil dosyanıza kopyalayın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Animasyonlu metni Instagram'a kopyalayıp yapıştırabilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır — yapıştırılan metin CSS animasyonlarını taşıyamaz. Bu araç web siteleri için CSS çıktısı verir, animasyonlu karakter değil. Instagram için bunun yerine bir video düzenleyiciden video dışa aktarmanız gerekir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Bu araç GIF ya da video oluşturur mu?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Sayfada canlı CSS animasyonlarını önizler ve yeniden kullanacağınız CSS kodunu verir. İndirilebilir video ya da GIF dosyası yok — animasyon yalnızca stil dosyası kodu olarak vardır.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Dört efekt hangi CSS tekniklerini kullanır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Gökkuşağı background-clip: text ile animasyonlu gradyan kullanır; neon katmanlı text-shadow'ları nabız gibi atar; glitch sarsıntısı translate() keyframe'leriyle titrer; zıplama translateY ile yüzer. Hepsi saf CSS @keyframes'tir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kopyalanan CSS tüm tarayıcılarda çalışır mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Tüm modern tarayıcılarda evet. Çok eski tarayıcılar background-clip: text'i yok sayar ve sade, stilsiz metne döner; bu güvenli bir bozulmadır — kelimeleriniz yine görünür.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">CSS animasyonları SEO'ya zarar verir mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Metin, arama motorlarının normal okuduğu gerçek HTML metni olarak kalır — resme ya da videoya gömülü metnin aksine. Animasyon tamamen sunumsaldır.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Metin animasyonlarını erişilebilir yapma nasıl olur?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Prefers-reduced-motion'a saygı gösterin: animasyonları @media (prefers-reduced-motion: no-preference) içine alın; hareket hassasiyeti olan ziyaretçiler statik metin alır. Uzun paragrafları canlandırmaktan kaçının — hareket okunurluğu bozar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Bir efektin renklerini ya da hızını değiştirebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet — kopyalanan CSS'i düzenleyin. Renkler gradyan, text-shadow ya da color değerlerinde; hız animasyon süresinde (örn. 3s) yaşar. Araç size başlangıç kodunu verir; özelleştirme standart CSS'tir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Yazdığım metin bir yere yükleniyor mu?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Önizleme tarayıcınızda CSS ile çizilir ve sunucuya hiçbir şey gönderilmez.</p>
+    </div>
+  </div>
+</div>
+
+<p>Daha fazla hareket ve stil aracı: daktilo animasyonları için <a href="/tr/daktilo-efekti-olusturucu/">daktilo efekti metin oluşturucu</a>, statik parlama tarzları için <a href="/tr/neon-metin-olusturucu/">neon metin oluşturucu</a> ve bozuk estetik için <a href="/tr/glitch-metin-olusturucu/">glitch efekti metin oluşturucu</a> — hepsi <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonumuzda.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    const cssMap = {
+      'rainbow-anim': `@keyframes rainbow { to { background-position: 200% center; } }
+.rainbow-anim {
+  background: linear-gradient(to right, #ff007f, #ff00ff, #7f00ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff007f);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 3s linear infinite;
+}`,
+      'neon-anim': `@keyframes neon-glow {
+  from { text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f; }
+  to { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+}
+.neon-anim {
+  color: #fff;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}`,
+      'glitch-anim': `@keyframes glitch-shake {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+.glitch-anim {
+  position: relative;
+  animation: glitch-shake 0.3s infinite;
+}`,
+      'bounce-anim': `@keyframes bounce-text {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+.bounce-anim {
+  display: inline-block;
+  animation: bounce-text 0.6s infinite alternate;
+}`
+    };
+
+    function generateAnimatedText() {
+      const input = document.getElementById('text-input');
+      const resultsContainer = document.getElementById('results-container');
+      if (!input || !resultsContainer) return;
+      const text = input.value.trim();
+      if (!text) {
+        resultsContainer.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🎬</div><p>Enter some text above to generate animations</p></div>';
+        return;
+      }
+
+      const styles = [
+        { name: 'Rainbow Gradient Wave', class: 'rainbow-anim', desc: 'Flowing multi-color text effect' },
+        { name: 'Neon Glow Pulse', class: 'neon-anim', desc: 'Glowing neon sign pulsing effect' },
+        { name: 'Glitch Shake', class: 'glitch-anim', desc: 'Jittery, glitching tech style text' },
+        { name: 'Bouncing Letters', class: 'bounce-anim', desc: 'Playful floating vertical bounce' }
+      ];
+
+      resultsContainer.innerHTML = styles.map(style => {
+        const htmlCode = `<span class="${style.class}">${text}</span>`;
+        return `
+                    <div class="result-item" style="flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+                            <span class="result-name" style="font-weight: 700;">${style.name}</span>
+                            <span style="font-size: 0.8rem; color: var(--muted);">${style.desc}</span>
+                        </div>
+                        <div class="animation-preview-box" style="padding: 1.5rem; background: var(--black); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                            <span class="${style.class}" style="font-size: 1.5rem; font-weight: 700; color: #fff;">${text}</span>
+                        </div>
+                        <div class="code-box" style="font-family: monospace; font-size: 0.8rem; background: var(--surface-secondary); padding: 0.75rem; border-radius: var(--radius-sm); word-break: break-all; white-space: pre-wrap; margin-top: 0.5rem; border: 1px solid var(--border);">HTML: &lt;span class="${style.class}"&gt;${text}&lt;/span&gt;</div>
+                        <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                            <button class="btn btn-sm btn-secondary" onclick="copyTextDirect(this, '${escapeForAttribute(htmlCode)}')">📋 Kopyala HTML</button>
+                            <button class="btn btn-sm btn-primary" onclick="copyCSSCode(this, '${style.class}')">📋 CSS’yi Kopyala</button>
+                        </div>
+                    </div>
+                `;
+      }).join('');
+    }
+
+    function copyCSSCode(btn, className) {
+      const code = cssMap[className];
+      navigator.clipboard.writeText(code).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ CSS kopyalandı!';
+        setTimeout(() => btn.textContent = old, 2000);
+      });
+    }
+
+    function copyTextDirect(btn, val) {
+      navigator.clipboard.writeText(val).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Kopyalandı!';
+        setTimeout(() => btn.textContent = old, 2000);
+      });
+    }
+
+    document.getElementById('text-input').addEventListener('input', generateAnimatedText);
+  </script>
+</body>
+
+</html></body>
+
+</html>
