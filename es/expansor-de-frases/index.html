@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Expansor de Frases Online Gratis | FontGenerators.online</title>
+  <meta content="Expande oraciones cortas en textos más largos y detallados, gratis y online. Cuatro estilos disponibles: detallado, formal, creativo y académico. Sin registro." name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/expansor-de-frases/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/sentence-expander/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/sentence-expander/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/expansor-de-frases/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/expansor-de-frases/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/cumle-genisletici/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .expansion-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .exp-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .exp-btn:hover,
+    .exp-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/sentence-expander/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/expansor-de-frases/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/expansor-de-frases/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/cumle-genisletici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/sentence-expander/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/expansor-de-frases/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/expansor-de-frases/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/cumle-genisletici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Herramientas de utilidad</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/contador-de-palabras/">📊 Contador de Palabras</a>
+            <a class="sidebar-link active" href="/es/expansor-de-frases/">📝 Expansor de Frases</a>
+            <a class="sidebar-link" href="/es/acortador-de-parrafos/">✂️ Acortador de Párrafos</a>
+            <a class="sidebar-link" href="/es/limpiador-de-texto/">🧹 Limpiador de Texto</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Explorar herramientas</button>
+        <div class="tool-input-section">
+          <p class="tool-title">📝 Sentence Expander</p>
+          <p class="tool-description">Expande oraciones cortas en textos más largos y detallados</p>
+          <textarea class="tool-input" id="text-input" placeholder="Escribe tu texto corto para expandirlo..."
+            rows="4"></textarea>
+          <h3>Estilo de expansión</h3>
+          <div class="expansion-options">
+            <button class="exp-btn active" onclick="setStyle(this, 'detailed')">Detallado</button>
+            <button class="exp-btn" onclick="setStyle(this, 'formal')">Formal</button>
+            <button class="exp-btn" onclick="setStyle(this, 'creative')">Creativo</button>
+            <button class="exp-btn" onclick="setStyle(this, 'academic')">Académico</button>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="expandText()">📝 Expandir texto</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Borrar</button>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Texto expandido</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copiar</button>
+        </div>
+      </div>
+    </div>
+
+    
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a> &rsaquo; <span>Expansor de frases</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Expansor de frases online gratis</h1>
+<p>Un expansor de frases alarga las oraciones cortas &mdash; útil cuando un borrador no llega al conteo de palabras o una idea necesita expresarse con más amplitud. Este expansor de frases gratis ofrece cuatro estilos (detallado, formal, creativo, académico), procesa cada oración que pegues y entrega una versión expandida con un clic. Escribe o pega tu texto arriba, elige un estilo y haz clic una vez.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Lo esencial</p>
+<ul style="margin: 0;">
+<li>Expande cada oración con un prefijo, una frase de enlace y un sufijo acordes al estilo.</li>
+<li>Cuatro estilos: Detallado, Formal, Creativo y Académico &mdash; cada uno con su propio banco de frases.</li>
+<li><strong>Basado en plantillas, no en IA:</strong> alarga las oraciones con frases hechas; no añade datos ni ideas nuevas.</li>
+<li>Las frases se eligen al azar, así que la misma entrada da una expansión distinta en cada clic.</li>
+<li>Gratis, sin registro, funciona por completo en tu navegador.</li>
+</ul>
+</div>
+<h2>¿Qué es un expansor de frases?</h2>
+<p><strong>Un expansor de frases es una herramienta de escritura que alarga las oraciones cortas añadiendo frases de desarrollo.</strong> Donde un resumidor comprime, un alargador de oraciones estira: las herramientas que expanden oraciones toman una afirmación compacta y la envuelven en una expresión más amplia &mdash; introducciones como «En esencia,», puentes como «lo que significa que,» y cierres como «de forma significativa». Los estudiantes lo usan para alcanzar mínimos de palabras y los redactores para variar el ritmo o dar cuerpo a borradores escuetos.</p>
+[IMAGE: Diagrama que muestra una oración corta expandida con un prefijo, una frase de enlace y un sufijo resaltados en distintos colores &mdash; alt: "Cómo un expansor de frases alarga una oración con prefijo, conector y sufijo"]
+<h2>Cómo funciona este expansor de frases</h2>
+<p>Conviene tener claro qué es esta herramienta: un <strong>expansor basado en plantillas, no un redactor con IA</strong>. No entiende tu tema ni puede añadir información nueva de verdad. Lo que hace, de forma fiable e instantánea:</p>
+<ol>
+<li><strong>Divide</strong> tu entrada en oraciones por <code>.</code> <code>!</code> <code>?</code> seguidos de espacio.</li>
+<li><strong>Normaliza</strong> cada oración: se asegura de que termine en puntuación, pone su primera letra en minúscula (porque un prefijo la precederá) y quita la marca de puntuación final.</li>
+<li><strong>La envuelve:</strong> elige al azar un prefijo, un conector y un sufijo del banco de frases del estilo activo, unidos en torno a tu oración más la frase puente <em>«este concepto es especialmente relevante»</em>.</li>
+</ol>
+<p>Los cuatro estilos y sus bancos de frases:</p>
+<table>
+<thead><tr><th>Estilo</th><th>Tono</th><th>Prefijo de ejemplo</th></tr></thead>
+<tbody>
+<tr><td>Detallado</td><td>Desarrollo neutro</td><td>«En esencia, ...»</td></tr>
+<tr><td>Formal</td><td>Distancia profesional</td><td>«Cabe señalar que ...»</td></tr>
+<tr><td>Creativo</td><td>Lúdico, vívido</td><td>«Imagina esto: ...»</td></tr>
+<tr><td>Académico</td><td>Encuadre erudito</td><td>«Las investigaciones sugieren que ...»</td></tr>
+</tbody>
+</table>
+<p>Como las elecciones son aleatorias, pulsar «Expandir texto» dos veces sobre la misma entrada da dos redacciones distintas &mdash; útil para variar, pero nunca lo uses esperando una oración estable y citable.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Entrada, en estilo <strong>Detallado</strong>:</p>
+<p><em>«El gato se sentó en la alfombra.»</em></p>
+<p>Una posible salida:</p>
+<p><em>«En esencia, el gato se sentó en la alfombra, lo que significa que este concepto es especialmente relevante de forma significativa.»</em></p>
+<p>Siete palabras se volvieron veintiuna. Fíjate en la anatomía: prefijo («En esencia, ») + tu oración (en minúscula, sin el punto) + conector («, lo que significa que ») + el puente fijo («este concepto es especialmente relevante») + sufijo (« de forma significativa.»). Cambia a <strong>Académico</strong> y la misma entrada podría salir como: <em>«La evidencia indica que el gato se sentó en la alfombra, indicando así que este concepto es especialmente relevante como documenta la literatura relevante.»</em></p>
+<h2>Cómo usar el expansor de frases</h2>
+<ol>
+<li><strong>Escribe</strong> tu texto corto en el cuadro de entrada (una oración o varias).</li>
+<li><strong>Elige un estilo</strong> &mdash; Detallado para uso general, Formal para negocios, Creativo para narrativa, Académico para ensayos.</li>
+<li><strong>Haz clic en «Expandir texto»</strong> y lee la versión expandida.</li>
+<li><strong>Haz clic de nuevo</strong> para otra redacción aleatoria, o <strong>Copia</strong> la versión que te guste. Limpia los pegados irregulares primero con el <a href="/es/limpiador-de-texto/">limpiador de texto</a> si hace falta, y comprueba la longitud final con el <a href="/es/contador-de-palabras/">contador de palabras</a>.</li>
+</ol>
+<h2>Cuándo ayuda expandir &mdash; y cuándo perjudica</h2>
+<p>Más largo no siempre es mejor. Usa el expansor cuando:</p>
+<ul>
+<li>Un borrador no llega al mínimo de palabras y las ideas ya están completas.</li>
+<li>Quieres variedad rítmica &mdash; alternar oraciones cortas y contundentes con otras más largas y fluidas.</li>
+<li>Estás explorando formulaciones más amplias para luego recortarlas (la expansión como técnica de primer borrador).</li>
+</ul>
+<p>Evítalo cuando:</p>
+<ul>
+<li>El texto se evaluará por su contenido &mdash; frases hechas como «de forma significativa» añaden palabras, no significado, y los lectores con experiencia detectan el relleno.</li>
+<li>La claridad importa más que la longitud: instrucciones, resúmenes y resúmenes ejecutivos deben mantenerse concisos &mdash; prueba mejor el <a href="/es/acortador-de-parrafos/">acortador de párrafos</a>.</li>
+<li>Necesitas contenido genuinamente nuevo: la herramienta no puede inventar datos, ejemplos ni argumentos.</li>
+</ul>
+<h2>Expansor de plantillas frente a parafraseador con IA</h2>
+<p>Ayuda saber qué tipo de herramienta estás usando:</p>
+<table>
+<thead><tr><th></th><th>Este expansor de frases</th><th>Herramientas de parafraseo con IA</th></tr></thead>
+<tbody>
+<tr><td>Cómo funciona</td><td>Bancos de frases fijos, combinación aleatoria</td><td>Reescritura con modelo de lenguaje</td></tr>
+<tr><td>¿Añade ideas nuevas?</td><td>No &mdash; solo frases hechas</td><td>Puede (pero puede inventar datos)</td></tr>
+<tr><td>Velocidad / costo</td><td>Instantáneo, gratis, funciona sin conexión</td><td>Más lento, a menudo de pago o limitado</td></tr>
+<tr><td>Privacidad</td><td>100&nbsp;% en el navegador</td><td>El texto se envía a un servidor</td></tr>
+<tr><td>Estabilidad del resultado</td><td>Aleatorio en cada clic</td><td>Casi determinista</td></tr>
+</tbody>
+</table>
+[IMAGE: Comparación lado a lado de una expansión basada en plantillas frente a una reescritura con IA de la misma oración &mdash; alt: "Expansión de oración con plantillas frente a parafraseo con IA, comparados"]
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>Añade palabras, no significado.</strong> Cada expansión es tu oración más relleno genérico &mdash; no puede desarrollar tu tema real.</li>
+<li><strong>Resultado aleatorio:</strong> la misma entrada nunca se expande igual dos veces; no hay una versión «correcta» que reproducir.</li>
+<li><strong>Frase puente fija:</strong> cada oración expandida contiene «este concepto es especialmente relevante», lo que se nota si expandes un párrafo entero.</li>
+<li><strong>El estilo académico es cosmético:</strong> frases como «Las investigaciones sugieren que» implican evidencia que quizá no tengas &mdash; no las uses para fabricar autoridad en trabajos reales.</li>
+<li><strong>La división de oraciones es simple:</strong> abreviaturas como «p.&nbsp;ej.» o «Dr.» seguidas de espacio se tratarán como límites de oración.</li>
+</ul>
+<h2>Expansor de frases frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td><strong>Este expansor de frases</strong></td><td>Alargamiento instantáneo y privado con matiz estilístico</td></tr>
+<tr><td><a href="/es/acortador-de-parrafos/">Acortador de párrafos</a></td><td>El trabajo opuesto: apretar textos verbosos</td></tr>
+<tr><td>Edición manual</td><td>Añadir sustancia real &mdash; ejemplos, razones, evidencia</td></tr>
+<tr><td>Asistentes de escritura con IA</td><td>Desarrollo genuino cuando tienes tiempo de verificar el resultado</td></tr>
+</tbody>
+</table>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo expando una oración con esta herramienta?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Pégala en el expansor, elige un estilo y haz clic en «Expandir texto». La herramienta envuelve tu oración en frases de desarrollo &mdash; por ejemplo, «El gato se sentó.» puede volverse «En esencia, el gato se sentó, lo que significa que este concepto es especialmente relevante de forma significativa.»</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El expansor de frases usa IA?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. Funciona con plantillas: cada estilo tiene bancos de prefijos, conectores y sufijos, y la herramienta los combina al azar en torno a tu oración. Alarga el texto de forma fiable, pero no puede añadir datos nuevos ni comprender tu tema.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué obtengo un resultado distinto cada vez?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La selección de frases es aleatoria por diseño, así que cada clic produce una combinación diferente. Haz clic de nuevo para una redacción fresca, o copia la versión que más te guste.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuáles son los cuatro estilos de expansión?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Detallado (desarrollo neutro, p.&nbsp;ej. «En esencia, ...»), Formal («Cabe señalar que ...»), Creativo («Imagina esto: ...») y Académico («Las investigaciones sugieren que ...»). Cada uno tiene su propio banco de prefijos, conectores y sufijos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Me ayudará a llegar al conteo de palabras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí en el número, con un matiz: añade palabras, no sustancia. Vale para borradores y lluvia de ideas, pero el relleno se nota ante lectores con experiencia &mdash; para trabajos evaluados, añade ejemplos y razones reales.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puede expandir un párrafo entero de una vez?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí &mdash; divide tu entrada en oraciones y expande cada una. Ten en cuenta que todas reciben la misma frase puente («este concepto es especialmente relevante»), así que expande de forma selectiva y edita el resultado.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cambia el significado de mi oración?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Conserva tu oración central intacta (en minúscula y reenvuelta) y solo añade frases de encuadre genéricas, así que el significado literal se mantiene. Las frases añadidas no aportan afirmaciones nuevas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Mi texto se envía a algún lado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. La expansión se ejecuta por completo en tu navegador. Nada se sube ni se guarda.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuál es la herramienta opuesta para acortar texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El acortador de párrafos de este sitio: elimina muletillas y frases verbosas para apretar el texto en lugar de alargarlo.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Utility Tools</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    let currentStyle = 'detailed';
+
+    const expansions = {
+      detailed: {
+        prefixes: ['En esencia, ', 'Para desarrollarlo más, ', 'Más concretamente, ', 'Dicho de otro modo, '],
+        connectors: [', lo que significa que ', ', y esto implica que ', ', además, ', ', asimismo, '],
+        suffixes: [' de forma significativa.', ' en gran medida.', ', entre otras cosas.', ' en este contexto concreto.']
+      },
+      formal: {
+        prefixes: ['Cabe señalar que ', 'Conviene mencionar que ', 'Hay que tener en cuenta que ', 'Es importante reconocer que '],
+        connectors: [', por consiguiente, ', ', por lo tanto, ', ', como resultado, ', ', de ahí que '],
+        suffixes: [' conforme a los principios establecidos.', ' dentro del marco dado.', ' según las convenciones habituales.', '.']
+      },
+      creative: {
+        prefixes: ['Imagina esto: ', 'Visualiza esta escena: ', 'Piensa en la fascinante idea de que ', 'La cuestión es la siguiente: '],
+        connectors: [', y lo curioso es que ', ', lo que ilustra a la perfección cómo ', ', y lo más sorprendente, ', ', despertando la idea de que '],
+        suffixes: [' de formas que jamás imaginamos.', ', creando infinitas posibilidades.', ', abriendo nuevos horizontes.', ' con una elegancia extraordinaria.']
+      },
+      academic: {
+        prefixes: ['Las investigaciones sugieren que ', 'Según el conocimiento actual, ', 'La evidencia indica que ', 'Diversos estudios han demostrado que '],
+        connectors: [', lo que demuestra que ', ', indicando así que ', ', como lo demuestra el hecho de que ', ', lo que sugiere que '],
+        suffixes: [' dentro del alcance de este análisis.', ' como documenta la literatura relevante.', ' según observaciones empíricas.', '.']
+      }
+    };
+
+    function setStyle(btn, style) {
+      document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStyle = style;
+    }
+
+    function expandText() {
+      const text = document.getElementById('text-input').value.trim();
+      if (!text) {
+        document.getElementById('output-text').value = '';
+        return;
+      }
+
+      const style = expansions[currentStyle];
+      const sentences = text.split(/(?<=[.!?])\s+/).filter(s => s.trim());
+
+      const expanded = sentences.map(sentence => {
+        const prefix = style.prefixes[Math.floor(Math.random() * style.prefixes.length)];
+        const connector = style.connectors[Math.floor(Math.random() * style.connectors.length)];
+        const suffix = style.suffixes[Math.floor(Math.random() * style.suffixes.length)];
+
+        let expanded = sentence.trim();
+        if (!expanded.endsWith('.') && !expanded.endsWith('!') && !expanded.endsWith('?')) {
+          expanded += '.';
+        }
+
+        return prefix + expanded.charAt(0).toLowerCase() + expanded.slice(1, -1) + connector + 'este concepto es especialmente relevante' + suffix;
+      });
+
+      document.getElementById('output-text').value = expanded.join(' ');
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('¡Copiado!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo expando una oración con esta herramienta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pégala en el expansor, elige un estilo y haz clic en «Expandir texto». La herramienta envuelve tu oración en frases de desarrollo — por ejemplo, «El gato se sentó.» puede volverse «En esencia, el gato se sentó, lo que significa que este concepto es especialmente relevante de forma significativa.»"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El expansor de frases usa IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Funciona con plantillas: cada estilo tiene bancos de prefijos, conectores y sufijos, y la herramienta los combina al azar en torno a tu oración. Alarga el texto de forma fiable, pero no puede añadir datos nuevos ni comprender tu tema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué obtengo un resultado distinto cada vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La selección de frases es aleatoria por diseño, así que cada clic produce una combinación diferente. Haz clic de nuevo para una redacción fresca, o copia la versión que más te guste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los cuatro estilos de expansión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Detallado (desarrollo neutro, p. ej. «En esencia, ...»), Formal («Cabe señalar que ...»), Creativo («Imagina esto: ...») y Académico («Las investigaciones sugieren que ...»). Cada uno tiene su propio banco de prefijos, conectores y sufijos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me ayudará a llegar al conteo de palabras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí en el número, con un matiz: añade palabras, no sustancia. Vale para borradores y lluvia de ideas, pero el relleno se nota ante lectores con experiencia — para trabajos evaluados, añade ejemplos y razones reales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puede expandir un párrafo entero de una vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — divide tu entrada en oraciones y expande cada una. Ten en cuenta que todas reciben la misma frase puente («este concepto es especialmente relevante»), así que expande de forma selectiva y edita el resultado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cambia el significado de mi oración?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conserva tu oración central intacta (en minúscula y reenvuelta) y solo añade frases de encuadre genéricas, así que el significado literal se mantiene. Las frases añadidas no aportan afirmaciones nuevas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi texto se envía a algún lado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La expansión se ejecuta por completo en tu navegador. Nada se sube ni se guarda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la herramienta opuesta para acortar texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El acortador de párrafos de este sitio: elimina muletillas y frases verbosas para apretar el texto en lugar de alargarlo."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
