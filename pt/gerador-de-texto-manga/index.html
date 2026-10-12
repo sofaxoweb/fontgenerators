@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Mangá | FontGenerators.online</title>
+  <meta content="Crie efeitos de texto estilo mangá — balões de fala, gritos e efeitos sonoros — em 12 estilos. Copie e cole grátis. Funciona em qualquer app, sem cadastro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-manga/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/manga-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/manga-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-manga/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-manga/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/manga-metin-olusturucu/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um gerador de texto mangá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um gerador de texto mangá estiliza suas palavras como quadrinhos japoneses — efeitos sonoros explosivos, balões de fala, gritos dramáticos e molduras de ação. É feito para thumbnails, legendas de memes e posts que precisam de energia de gibi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como fazer texto estilo mangá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite sua palavra na caixa, explore os 12 estilos, clique em Copiar no que combina com o clima e cole na sua thumbnail, legenda ou post. Sem cadastro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais estilos mangá colocam meu texto em maiúsculas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cinco estilos colocam seu texto em maiúsculas para o clássico grito mangá: Action Manga, Dramatic, Shout Style, Impact e Explosion. Whisper faz o oposto, colocando em minúsculas para apartes silenciosos. O resto emoldura seu texto inalterado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Para que servem os estilos de efeito sonoro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mangá transformou efeitos sonoros em arte — onomatopeias gigantes que são a ilustração. Os estilos Sound Effect (※ SALE ※) e Explosion (💥 SALE 💥) canalizam essa tradição, perfeitos para legendas de memes e posts de reação onde o \"som\" da palavra importa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como fazer timing cômico em texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quadrinhos controlam volume com letras: maiúsculas grandes e angulares gritam, minúsculas pequenas e arredondadas sussurram. Use um estilo de maiúsculas para anúncios e punchlines, Whisper para apartes e humor seco — o contraste reproduz timing cômico em texto comum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gerador de texto mangá vs gerador de fonte anime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Esta página oferece efeitos de quadrinhos com mudanças de caixa e balões. O gerador de fonte anime oferece molduras kawaii fofas ao redor de texto inalterado. Escolha mangá para ação e gritos; escolha anime para decoração fofa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Estilos mangá vão mudar a caixa do nome da minha marca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A mudança de caixa é de mão única: estilos que colocam em maiúsculas vão achatar nomes de marca com caixa mista, então confira antes de colar uma marca registrada. Além disso, a moldura de emoji 💥 renderiza a partir da fonte de emoji do visualizador e pode variar entre plataformas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Balão de fala vs balão de pensamento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speech Bubble (〈 SALE 〉) emoldura texto como diálogo; Thought Bubble (〔 SALE 〕) emoldura como monólogo interno — a convenção de quadrinhos de cantos arredondados. Use fala para citações e diálogo, pensamento para apartes e voz interior."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/manga-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-manga/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-manga/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/manga-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link">Gerador de Texto Sublinhado</a>
+            <a href="/pt/gerador-de-texto-riscado/" class="mobile-dropdown-link">Gerador de Texto Riscado</a>
+            <a href="/pt/fonte-ingles-antigo/" class="mobile-dropdown-link">Gerador de Fonte Old English</a>
+            <a href="/pt/gerador-de-fonte-anime/" class="mobile-dropdown-link">Gerador de Fonte Anime</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link">Gerador de Texto Mangá</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/manga-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-manga/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/manga-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/pt/">Início</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/pt/ferramentas-de-fontes-elegantes/">Ferramentas de Fontes Elegantes</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Gerador de Texto Mangá</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/manga-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-manga/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-manga/" class="lang-link active" title="Português">🇵🇹 PT</a>
+      <a href="/tr/manga-metin-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #000000 0%, #434343 100%);">
+      <div class="container">
+        <p class="h1 mb-0">📚 Gerador de Texto Mangá</p>
+        <p>Crie mangá japonês e texto em estilo de quadrinhos</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Digite seu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('manga')"
+            placeholder="Digite algo dramático..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Manga Styles</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Tudo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">📚</div>
+              <p>Digite algum texto acima para gerar estilos de mangá</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<h1>Gerador de Texto Mangá</h1>
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<p>Um gerador de texto mangá cria efeitos de texto estilo quadrinhos e mangá — balões de fala, efeitos sonoros, gritos dramáticos e molduras de ação — para legendas, thumbnails e posts. Ganhe 12 estilos mangá abaixo, copie seu favorito e cole em qualquer lugar. Grátis, sem cadastro.</p>
+<div class="takeaways">
+<p><strong>Principais conclusões</strong></p>
+<ul>
+<li>12 estilos: Action Manga, Sound Effect, Dramatic, Speech Bubble, Thought Bubble, Shout Style, Whisper, Impact, Comic Style, Panel Border, Explosion, Speed Lines.</li>
+<li>Estilos de ação colocam seu texto em maiúsculas para o clássico grito mangá (SALE →!! SALE!!).</li>
+<li>Balões de fala e de pensamento emolduram o texto como quadrinhos de verdade.</li>
+<li>Perfeito para thumbnails de vídeo, legendas de memes e bios de fãs de mangá.</li>
+<li>Toda a saída é Unicode puro — cola em qualquer lugar.</li>
+</ul>
+</div>
+<h2>O Que É um Gerador de Texto Mangá?</h2>
+<p>Um gerador de texto mangá estiliza suas palavras como quadrinhos japoneses: os efeitos sonoros explosivos (ドン！), os balões de fala serrilhados, as linhas de velocidade dramáticas. Digite uma palavra e ganhe uma dúzia de tratamentos de quadrinhos — alguns que gritam em CAIXA ALTA, alguns que sussurram em minúsculas, alguns que emolduram seu texto em painéis e balões. É feito para thumbnails, legendas e posts que precisam de energia de gibi. Para uma fonte mangá com energia de ação mangá de verdade — o clássico estilo de texto shonen — esses doze efeitos são o kit.</p>
+<h2>Como Esta Ferramenta Funciona</h2>
+<p>Digite <strong>SALE</strong> e veja as transformações. Cinco estilos colocam em maiúsculas para impacto: Action Manga (!! SALE!!), Dramatic (!!★ SALE ★!!), Shout Style (), Impact (★ SALE ★) e Explosion (💥 SALE 💥). Um coloca em minúsculas para contraste: Whisper (( sale)) — o aparte silencioso. O resto emoldura seu texto como está: Sound Effect (※ SALE ※), Speech Bubble (〈 SALE 〉), Thought Bubble (〔 SALE 〕), Comic Style (◆ SALE ◆), Panel Border (┃ SALE ┃) e Speed Lines (/// SALE ///). Maiúsculas, minúsculas e emoldurados — o kit completo de quadrinhos.</p>
+<h2>Exemplo Prático: Uma Legenda de Thumbnail</h2>
+<p>Digamos que seu vídeo precisa de uma legenda de thumbnail para um anúncio de promoção. Digite <strong>SALE</strong> e escolha Action Manga:!! SALE!! — a exclamação dupla e as maiúsculas leem como um grito mesmo em tamanhos pequenos. Para um aparte engraçado na mesma thumbnail, Whisper dá ( sale) — minúsculo e entre parênteses, o oposto visual. Copie os dois, cole nas camadas de texto da sua thumbnail ou no título do vídeo, e o contraste faz o trabalho cômico por você.</p>
+<h2>Como Fazer Texto Mangá</h2>
+<ol>
+<li><strong>Digite sua palavra ou frase</strong> na caixa acima.</li>
+<li><strong>Explore os 12 estilos mangá</strong> — gritos, sussurros, balões, molduras.</li>
+<li><strong>Clique em Copiar</strong> no estilo que combina com o clima.</li>
+<li><strong>Cole</strong> na sua thumbnail, legenda ou post.</li>
+</ol>
+<h2>Efeitos Sonoros: A Arma Secreta do Mangá</h2>
+<p>O mangá japonês transformou efeitos sonoros numa arte — letras gigantes de ドン (don, bum) e バン (ban, bang) que <em>são</em> a ilustração. Os estilos Sound Effect (※ SALE ※) e Explosion (💥 SALE 💥) deste gerador canalizam essa tradição para texto latino. Eles funcionam brilhantemente para legendas de memes e posts de reação, onde o "som" da palavra importa mais que a palavra em si. Combine um estilo de efeito sonoro com uma imagem de verdade e você tem a sensação de página de mangá numa linha.</p>
+<h2>Gritos vs Sussurros: Timing Cômico em Texto</h2>
+<p>Quadrinhos controlam volume com letras — mangá grita em maiúsculas grandes e angulares e sussurra em minúsculas pequenas e arredondadas. Esta ferramenta dá os dois extremos do controle: os cinco estilos que colocam em maiúsculas para anúncios, hype e punchlines; Whisper para apartes, segredos e humor seco. Usá-los juntos — um grito seguido de um sussurro — reproduz o timing cômico clássico em texto comum. Isso é um truque que nenhum conversor de estilo de fonte consegue, porque depende de transformação de caixa, não de decoração.</p>
+[IMAGE: A mesma palavra mostrada nos estilos Action Manga, Whisper e Speech Bubble para demonstrar contraste de volume. Alt: "Contraste de volume em texto mangá: estilos de grito, sussurro e balão de fala aplicados à mesma palavra."]
+<h2>Limitações</h2>
+<p>As transformações de caixa são de mão única: Action Manga coloca tudo em maiúsculas, então nomes de marca com caixa mista perdem a formatação — confira antes de colar uma marca registrada. A moldura de emoji 💥 renderiza a partir da fonte de emoji do visualizador e pode parecer diferente entre plataformas. E como todo texto decorativo, esses estilos combinam com rajadas curtas — um parágrafo inteiro em estilo Explosion é ilegível.</p>
+<h2>Gerador de Texto Mangá vs Alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que faz</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/pt/gerador-de-texto-manga/">Gerador de Texto Mangá</a></td><td>12 efeitos de quadrinhos com mudança de caixa</td><td>Você quer gritos, balões e efeitos sonoros</td></tr>
+<tr><td><a href="/pt/gerador-de-fonte-anime/">Gerador de Fonte Anime</a></td><td>12 molduras kawaii, texto inalterado</td><td>Você quer decoração fofa com texto legível</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-glitch/">Gerador de Texto Glitch</a></td><td>Texto distorcido cyberpunk</td><td>Você quer uma estética digital sombria</td></tr>
+</tbody>
+</table>
+<h2>Ferramentas Relacionadas</h2>
+<p>Explore o hub <a href="/pt/ferramentas-de-fontes-elegantes/">ferramentas de fontes elegantes</a>: decore com <a href="/pt/gerador-de-fonte-anime/">estilos de texto anime</a>, experimente <a href="/pt/gerador-de-fontes-elegantes/">fontes estilosas para nicks</a>, ou faça <a href="/pt/conversor-de-texto-negrito/">texto em negrito</a> para ênfase simples.</p>
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">O que é um gerador de texto mangá?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Um gerador de texto mangá estiliza suas palavras como quadrinhos japoneses — efeitos sonoros explosivos, balões de fala, gritos dramáticos e molduras de ação. É feito para thumbnails, legendas de memes e posts que precisam de energia de gibi.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como fazer texto estilo mangá?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Digite sua palavra na caixa, explore os 12 estilos, clique em Copiar no que combina com o clima e cole na sua thumbnail, legenda ou post. Sem cadastro.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Quais estilos mangá colocam meu texto em maiúsculas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Cinco estilos colocam seu texto em maiúsculas para o clássico grito mangá: Action Manga, Dramatic, Shout Style, Impact e Explosion. Whisper faz o oposto, colocando em minúsculas para apartes silenciosos. O resto emoldura seu texto inalterado.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Para que servem os estilos de efeito sonoro?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Mangá transformou efeitos sonoros em arte — onomatopeias gigantes que são a ilustração. Os estilos Sound Effect (※ SALE ※) e Explosion (💥 SALE 💥) canalizam essa tradição, perfeitos para legendas de memes e posts de reação onde o "som" da palavra importa.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como fazer timing cômico em texto?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Quadrinhos controlam volume com letras: maiúsculas grandes e angulares gritam, minúsculas pequenas e arredondadas sussurram. Use um estilo de maiúsculas para anúncios e punchlines, Whisper para apartes e humor seco — o contraste reproduz timing cômico em texto comum.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Gerador de texto mangá vs gerador de fonte anime?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Esta página oferece efeitos de quadrinhos com mudanças de caixa e balões. O gerador de fonte anime oferece molduras kawaii fofas ao redor de texto inalterado. Escolha mangá para ação e gritos; escolha anime para decoração fofa.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Estilos mangá vão mudar a caixa do nome da minha marca?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">A mudança de caixa é de mão única: estilos que colocam em maiúsculas vão achatar nomes de marca com caixa mista, então confira antes de colar uma marca registrada. Além disso, a moldura de emoji 💥 renderiza a partir da fonte de emoji do visualizador e pode variar entre plataformas.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Balão de fala vs balão de pensamento?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Speech Bubble (〈 SALE 〉) emoldura texto como diálogo; Thought Bubble (〔 SALE 〕) emoldura como monólogo interno — a convenção de quadrinhos de cantos arredondados. Use fala para citações e diálogo, pensamento para apartes e voz interior.</p>
+</div>
+</div>
+</div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('manga');
+    });
+  </script>
+</body>
+
+</html>
