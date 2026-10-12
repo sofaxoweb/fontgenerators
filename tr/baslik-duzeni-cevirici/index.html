@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Başlık Düzeni Çevirici | FontGenerators</title>
+  <meta content="Başlık düzeni çevirici ile manşetleri AP, Chicago ya da basit üslupta doğru büyük harfle yazın. Ücretsiz çevrimiçi title case aracı; yazdıkça anında çalışır." name="description" />
+  
+  <link href="https://fontgenerators.online/tr/baslik-duzeni-cevirici/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Başlık Düzeni Çevirici | FontGenerators">
+    <meta property="og:description" content="Başlık düzeni çevirici ile manşetleri AP, Chicago ya da basit üslupta doğru büyük harfle yazın. Ücretsiz çevrimiçi title case aracı; yazdıkça anında çalışır.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/baslik-duzeni-cevirici/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Başlık Düzeni Çevirici | FontGenerators">
+    <meta name="twitter:description" content="Başlık düzeni çevirici ile manşetleri AP, Chicago ya da basit üslupta doğru büyük harfle yazın. Ücretsiz çevrimiçi title case aracı; yazdıkça anında çalışır.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/title-case-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/title-case-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/conversor-a-tipo-titulo/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/conversor-para-titulo/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/baslik-duzeni-cevirici/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .style-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .style-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .style-btn:hover,
+    .style-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .output-box {
+      padding: 1rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      min-height: 60px;
+      font-size: 1.1rem;
+      word-break: break-word;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/title-case-converter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/conversor-a-tipo-titulo/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/conversor-para-titulo/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/baslik-duzeni-cevirici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/title-case-converter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/conversor-a-tipo-titulo/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/conversor-para-titulo/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/baslik-duzeni-cevirici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/title-case-converter/',es:'/es/conversor-a-tipo-titulo/',pt:'/pt/conversor-para-titulo/',tr:'/tr/baslik-duzeni-cevirici/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Metin Araçları</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="../baslik-duzeni-cevirici/">🔠 Title Case</a>
+            <a class="sidebar-link" href="../kucuk-harf-cevirici/">🔡 Lowercase</a>
+            <a class="sidebar-link" href="../buyuk-harf-cevirici/">🔤 Uppercase</a>
+            <a class="sidebar-link" href="../camelcase-cevirici/">🐪 CamelCase</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Araçlara Göz At</button>
+        <div class="tool-input-section">
+          <p class="tool-title">🔠 Başlık Düzeni Çevirici</p>
+          <p class="tool-description">Metni doğru başlık büyük harf düzenine çevirin</p>
+          <textarea class="tool-input" id="text-input" oninput="convertText()" placeholder="Metninizi buraya girin..."
+            rows="4"></textarea>
+          <h3>Üslup</h3>
+          <div class="style-buttons">
+            <button class="style-btn active" onclick="setÜslup(this, 'ap')">AP Üslubu</button>
+            <button class="style-btn" onclick="setÜslup(this, 'chicago')">Chicago Üslubu</button>
+            <button class="style-btn" onclick="setÜslup(this, 'simple')">Basit (Tüm Kelimeler)</button>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Başlık Düzeni</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <section class="seo-content-section">
+      <div class="container">
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/metin-araclari/">Metin Araçları</a> &rsaquo; <span>Başlık Düzeni Çevirici</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Çevrimiçi Başlık Düzeni (Title Case) Çevirici</h1>
+<p>Başlık düzeni (title case), başlıktaki önemli kelimeleri büyük harfle başlatırken "and", "the", "of" gibi küçük kelimeleri küçük bırakır &mdash; ancak tam kurallar stil kılavuzlarına göre değişir. Bu ücretsiz başlık düzeni çevirici &mdash; headline case çevirici olarak da bilinir &mdash; metninizi AP üslubu, Chicago üslubu ya da her kelimeyi büyüten basit kipte, yazdıkça canlı biçimlendirir. Başlıkları doğru büyük harfle yazmak için başlığınızı yukarı yapıştırın.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Öne çıkanlar</p>
+<ul style="margin: 0;">
+<li>Üç üslup: AP (varsayılan), Chicago ve Basit (her kelimeyi büyütür).</li>
+<li>AP ve Chicago aynı 21 küçük kelimeyi küçük yazar &mdash; artikeller, kısa bağlaçlar ve edatlar.</li>
+<li>İlk ve son kelime, küçük kelime olsa bile her zaman büyük yazılır.</li>
+<li>Girdi önce küçük harfe çevrilir; TAMAMEN BÜYÜK ya da karışık metin temiz dönüşür.</li>
+<li>Tamamen tarayıcıda çalışır; ücretsiz, kayıtsız.</li>
+</ul>
+</div>
+<h2>Başlık Düzeni (Title Case) Nedir?</h2>
+<p><strong>Başlık düzeni, İngilizce başlıklarda her önemli kelimenin ilk harfinin büyük yazıldığı büyük harf üslubudur.</strong> Artikeller (<em>a</em>, <em>an</em>, <em>the</em>), sıralı bağlaçlar (<em>and</em>, <em>but</em>, <em>or</em>) ve kısa edatlar (<em>in</em>, <em>of</em>, <em>to</em>) küçük kalır &mdash; başlığı açmıyor ya da kapatmıyorsa. Kitap adları, makale manşetleri ve YouTube video başlıklarının standardıdır; cümle düzeninden (yalnızca ilk kelime büyük) ve her kelimeyi büyütmekten farklıdır.</p>
+<h2>Bu Başlık Düzeni Çevirici Nasıl Çalışır?</h2>
+<p>Araç önce girdinizin tamamını küçük harfe çevirir, sonra seçili üsluba göre kelime kelime büyütür:</p>
+<ul>
+<li><strong>AP üslubu</strong> (varsayılan; klasik AP başlık düzeni) &mdash; 21 küçük kelime hariç her kelimeyi büyütür: <em>a, an, the, and, but, or, nor, for, yet, so, at, by, in, of, on, to, up, as, if, is, it</em>.</li>
+<li><strong>Chicago üslubu</strong> &mdash; aynı küçük kelime listesini ve aynı ilk/son kelime kuralını kullanır; buradaki çıktısı AP ile aynıdır. (Chicago El Kitabı'nın tam kuralları incelikler ekler &mdash; sınırlamalara bakın.)</li>
+<li><strong>Basit (tüm kelimeler)</strong> &mdash; istisnasız her kelimenin ilk harfini büyütür.</li>
+</ul>
+<p>AP ve Chicago kiplerinde iki kural geçerlidir: <strong>ilk ve son kelime her zaman büyük yazılır</strong>, küçük kelime olsalar bile ("A Tale of Two Cities" &mdash; baştaki "A" büyük). Dönüşüm canlıdır: çıktı her tuş vuruşunda güncellenir, <strong>Kopyala</strong> sonucu kopyalar. Kelimeler arası fazla boşluklar tek boşluğa iner.</p>
+<h2>Uygulamalı Örnek</h2>
+<p>Girdi (bilerek bozuk büyük-küçük harf):</p>
+<p><em>"tHe LoRd OF tHe RiNgS"</em></p>
+<table>
+<thead><tr><th>Üslup</th><th>Çıktı</th></tr></thead>
+<tbody>
+<tr><td>AP</td><td>The Lord of the Rings</td></tr>
+<tr><td>Chicago</td><td>The Lord of the Rings</td></tr>
+<tr><td>Basit</td><td>The Lord Of The Rings</td></tr>
+</tbody>
+</table>
+<p>AP/Chicago'da "of" ve ikinci "the" küçük kelime olarak küçük kalırken Basit hepsini büyütür. Bir tane daha: <em>"a tale of two cities"</em> &rarr; AP şunu verir: <strong>"A Tale of Two Cities"</strong> &mdash; baştaki "A", ilk kelimeler her zaman büyük yazıldığı için büyük.</p>
+<h2>Başlık Düzeni Çevirici Nasıl Kullanılır?</h2>
+<ol>
+<li><strong>Yapıştırın ya da yazın:</strong> manşetinizi, başlığınızı giriş kutusuna yazın.</li>
+<li><strong>Üslup seçin:</strong> gazetecilik üslubu manşetler için AP, kitap ve akademik başlıklar için Chicago, üsluplu tüm kelime büyükleri için Basit.</li>
+<li><strong>Kopyalayın:</strong> dönüştürülmüş sonucu kopyalayın &mdash; düzenledikçe canlı güncellenir.</li>
+</ol>
+<h2>AP, Chicago ve Basit: Hangi Üslup?</h2>
+<table>
+<thead><tr><th>Üslup</th><th>Küçük kelimeler küçük mü?</th><th>Ne için kullanın</th></tr></thead>
+<tbody>
+<tr><td><strong>AP</strong></td><td>Evet (21 kelimelik liste)</td><td>Haber manşetleri, blog yazı başlıkları, basın bültenleri</td></tr>
+<tr><td><strong>Chicago</strong></td><td>Evet (burada aynı liste)</td><td>Kitap adları, akademik makaleler, resmi yayınlar</td></tr>
+<tr><td><strong>Basit</strong></td><td>Hayır &mdash; her kelime büyük</td><td>YouTube başlıkları, küçük resimler, üsluplu pazarlama başlıkları</td></tr>
+</tbody>
+</table>
+<p>Dürüst bir not: bu araçta AP ve Chicago <strong>birebir aynı çıktıyı</strong> üretir &mdash; ikisi de aynı 21 kelimelik küçük listeyi ve aynı ilk/son kelime kuralını kullanır. Gerçek Chicago El Kitabı'nın ek incelikleri vardır (örneğin bazı baskılarda edatlar uzunluğuna bakılmaksızın büyük yazılır). Yayınevininiz katı Chicago uyguluyorsa bunu %95 çözüm sayın, edatları elle kontrol edin.</p>
+<h2>Başlık Düzeni ve Cümle Düzeni</h2>
+<p>İki manşet üslubu farklı geleneklere yanıt verir:</p>
+<ul>
+<li><strong>Başlık düzeni:</strong> "The Lord of the Rings" &mdash; ABD manşetleri, kitap adları ve YouTube standardı.</li>
+<li><strong>Cümle düzeni:</strong> "The lord of the rings" &mdash; Birleşik Krallık/AB manşetleri, akademik referanslar (APA) ve e-posta konu satırları standardı.</li>
+</ul>
+<p>İkisi de "daha doğru" değil &mdash; yayınınızın ev üslubuna uyun. Tersi dönüşüm gerekiyorsa <a href="/tr/kucuk-harf-cevirici/">küçük harf çevirici</a> ve <a href="/tr/buyuk-harf-cevirici/">büyük harf çevirici</a> tam metin büyük-küçük harf değişimlerini yapar; <a href="/tr/camelcase-cevirici/">camelCase çevirici</a> programcı üslubu büyük harfleri kapsar.</p>
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Kısaltmalar önce küçültülür:</strong> "NASA launches today" &rarr; "Nasa Launches Today" olur &mdash; bilinen kısaltmaları elle düzeltin.</li>
+<li><strong>Tireli bileşikler:</strong> yalnızca ilk bölümün harfi büyütülür ("well-known" &rarr; "Well-known", "Well-Known" değil).</li>
+<li><strong>Metin içindeki özel adlar</strong> küçültülüp normal büyütülür ("eBay" &rarr; "Ebay") &mdash; marka adlarını elle düzeltin.</li>
+<li><strong>AP/Chicago basitleştirilmiştir</strong> &mdash; aynı 21 kelimelik liste; tam kılavuzların uç kuralları (Chicago'da edat uzunluğu, AP'de tireli önekler) modellenmemiştir.</li>
+<li><strong>Çok cümleli girdi</strong> tek başlık sayılır: konumsal kuralı yalnızca en baştaki ve en sondaki kelime alır.</li>
+</ul>
+<h2>Başlık Düzeni Çevirici ve Alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne için ideal</th></tr></thead>
+<tbody>
+<tr><td><strong>Bu başlık düzeni çevirici</strong></td><td>Stil kılavuzu duyarlı küçük kelime kurallarıyla manşetler, canlı</td></tr>
+<tr><td><a href="/tr/buyuk-harf-cevirici/">Büyük harf çevirici</a></td><td>TAMAMEN BÜYÜK metin</td></tr>
+<tr><td><a href="/tr/kucuk-harf-cevirici/">Küçük harf çevirici</a></td><td>Tamamen küçük metin</td></tr>
+<tr><td><a href="/tr/camelcase-cevirici/">CamelCase çevirici</a></td><td>Kod için camelCase, PascalCase, snake_case</td></tr>
+</tbody>
+</table>
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Başlık doğru büyük harfle nasıl yazılır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Manşetinizi çeviriciye yapıştırıp üslup seçin. AP ve Chicago kipleri küçük kelimeler (a, an, the, and, but, or, in, of, to, ...) hariç her kelimeyi büyütür; ilk ve son kelime her zaman büyük yazılır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">AP ile Chicago başlık düzeni arasındaki fark nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Bu araçta yok &mdash; ikisi de aynı 21 kelimelik küçük listeyi ve ilk/son kelime kuralını kullanır; çıktılar aynıdır. Yayınlanmış tam kılavuzlar uç durumlarda farklıdır (ör. Chicago'nun edat yaklaşımı); katı yayıncılık işlerinde el kitabına göre doğrulayın.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Başlık düzeninde hangi kelimeler küçük kalır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Artikeller (a, an, the), sıralı bağlaçlar (and, but, or, nor, for, yet, so) ve kısa edatlar (at, by, in, of, on, to, up, as) &mdash; artı bu aracın listesinde 'if', 'is' ve 'it'. İlk ve son kelime ne olursa olsun büyük yazılır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Başlık düzeni ile cümle düzeni nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Başlık düzeni önemli kelimeleri büyütür ('The Lord of the Rings'); cümle düzeni yalnızca ilk kelimeyi büyütür ('The lord of the rings'). ABD manşetleri ve kitap adları başlık düzenini, Birleşik Krallık manşetleri ve APA referansları genelde cümle düzenini kullanır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">'NASA' neden 'Nasa' oldu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Çevirici büyütmeden önce tüm girdiyi küçültür; kısaltmalar iç büyük harflerini kaybeder. Dönüşümden sonra bilinen kısaltmaları (NASA, FBI, HTML) elle düzeltin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Tireli kelimeleri işliyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Kısmen: 'well-known' &rarr; 'Well-known' olur &mdash; yalnızca ilk bölüm büyütülür. Stil kılavuzunuz 'Well-Known' istiyorsa elle düzeltin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">TAMAMEN BÜYÜK metni başlık düzenine çevirebilir miyim?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Evet &mdash; en iyi kullanımlarından biri. Girdi önce küçültüldüğü için 'BREAKING NEWS TODAY' yapıştırmak Basit kipte temiz 'Breaking News Today' verir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metnim bir yere yükleniyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Dönüşüm tamamen tarayıcınızda çalışır. Hiçbir şey sunucuya gönderilmez ya da saklanmaz.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metni camelCase'e nasıl çeviririm?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Bu sitedeki <a href="/tr/camelcase-cevirici/">camelCase çevirici</a>yi kullanın; kod ve tanımlayıcılar için camelCase, PascalCase, snake_case ve kebab-case yapar.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Metin Araçları</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    let currentStyle = 'ap';
+    const minorWords = ['a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'yet', 'so', 'at', 'by', 'in', 'of', 'on', 'to', 'up', 'as', 'if', 'is', 'it'];
+
+    function setStyle(btn, style) {
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStyle = style;
+      convertText();
+    }
+
+    function convertText() {
+      const text = document.getElementById('text-input').value;
+      if (!text.trim()) {
+        document.getElementById('output-text').textContent = '';
+        return;
+      }
+
+      const words = text.toLowerCase().split(/\s+/);
+      const result = words.map((word, index) => {
+        if (currentStyle === 'simple' || index === 0 || index === words.length - 1) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        if ((currentStyle === 'ap' || currentStyle === 'chicago') && minorWords.includes(word)) {
+          return word;
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      });
+
+      document.getElementById('output-text').textContent = result.join(' ');
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Kopyalandı!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Başlık doğru büyük harfle nasıl yazılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Manşetinizi çeviriciye yapıştırıp üslup seçin. AP ve Chicago kipleri küçük kelimeler (a, an, the, and, but, or, in, of, to, ...) hariç her kelimeyi büyütür; ilk ve son kelime her zaman büyük yazılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AP ile Chicago başlık düzeni arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu araçta yok — ikisi de aynı 21 kelimelik küçük listeyi ve ilk/son kelime kuralını kullanır; çıktılar aynıdır. Yayınlanmış tam kılavuzlar uç durumlarda farklıdır (ör. Chicago'nun edat yaklaşımı); katı yayıncılık işlerinde el kitabına göre doğrulayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Başlık düzeninde hangi kelimeler küçük kalır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Artikeller (a, an, the), sıralı bağlaçlar (and, but, or, nor, for, yet, so) ve kısa edatlar (at, by, in, of, on, to, up, as) — artı bu aracın listesinde 'if', 'is' ve 'it'. İlk ve son kelime ne olursa olsun büyük yazılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Başlık düzeni ile cümle düzeni nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Başlık düzeni önemli kelimeleri büyütür ('The Lord of the Rings'); cümle düzeni yalnızca ilk kelimeyi büyütür ('The lord of the rings'). ABD manşetleri ve kitap adları başlık düzenini, Birleşik Krallık manşetleri ve APA referansları genelde cümle düzenini kullanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "'NASA' neden 'Nasa' oldu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çevirici büyütmeden önce tüm girdiyi küçültür; kısaltmalar iç büyük harflerini kaybeder. Dönüşümden sonra bilinen kısaltmaları (NASA, FBI, HTML) elle düzeltin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tireli kelimeleri işliyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kısmen: 'well-known' → 'Well-known' olur — yalnızca ilk bölüm büyütülür. Stil kılavuzunuz 'Well-Known' istiyorsa elle düzeltin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TAMAMEN BÜYÜK metni başlık düzenine çevirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — en iyi kullanımlarından biri. Girdi önce küçültüldüğü için 'BREAKING NEWS TODAY' yapıştırmak Basit kipte temiz 'Breaking News Today' verir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Dönüşüm tamamen tarayıcınızda çalışır. Hiçbir şey sunucuya gönderilmez ya da saklanmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metni camelCase'e nasıl çeviririm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu sitedeki camelCase çeviriciyi kullanın; kod ve tanımlayıcılar için camelCase, PascalCase, snake_case ve kebab-case yapar."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
