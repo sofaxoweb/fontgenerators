@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Símbolos Brilhantes | FontGenerators.online</title>
+  <meta name="description" content="Copie símbolos de brilho ✧ ✦ ⋆ — estrelas e sparkles Unicode para bios, legendas e nicks que funcionam em qualquer app ou rede social. Clique para copiar." />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-simbolos-brilhantes/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/sparkle-symbol-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/sparkle-symbol-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-simbolos-brillantes/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-simbolos-brilhantes/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/parilti-sembol-olusturucu/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .symbol-search {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .symbol-search:focus {
+      outline: none;
+      border-color: var(--warning);
+      box-shadow: 0 0 0 4px var(--warning-light);
+    }
+
+    .symbol-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+
+    .symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .symbol-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .symbol-item:hover {
+      border-color: var(--warning);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+    }
+
+    .symbol-char {
+      font-size: 2rem;
+    }
+
+    .symbol-name {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .symbol-item.copied::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      background: var(--success);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .pattern-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .pattern-item:hover {
+      border-color: var(--warning);
+      background: var(--warning-light);
+    }
+
+    .text-decorator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .decorator-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .decorator-results {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .decorator-result {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: var(--background);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+
+    .decorator-result:hover {
+      background: var(--warning-light);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como copio e colo símbolos brilhantes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clique em qualquer símbolo na grade e ele copia automaticamente para sua área de transferência — copiar e colar símbolos de glitter em uma etapa. Cole na sua bio, legenda, apelido ou mensagem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é o símbolo de brilho ✧?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "✧ é o U+2727 WHITE FOUR POINTED STAR do bloco Dingbats do Unicode. É o \"brilho aesthetic\" clássico — uma estrela monocromática de quatro pontas que renderiza idêntica em todo aparelho, diferente do emoji colorido ✨."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre ★ e ☆?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "★ (U+2605 BLACK STAR) é sólida e ☆ (U+2606 WHITE STAR) é de contorno, ambas do bloco Símbolos Diversos. Estrelas sólidas servem para avaliações e ênfase; estrelas de contorno, para decoração leve e arejada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como adiciono brilhos à minha bio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite sua linha de bio no decorador de texto desta página e escolha uma das 10 versões emolduradas em brilhos, como ✨ sonhadora ✨. Ou copie símbolos ✧ avulsos e coloque-os entre as palavras manualmente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Símbolos brilhantes funcionam no Instagram e no TikTok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Tanto brilhos de texto (✧ ★) quanto o emoji ✨ colam em bios, legendas e comentários do Instagram, TikTok, Discord e X. Brilhos de texto são a escolha mais segura para um visual consistente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que os brilhos ficam diferentes no celular do meu amigo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Só brilhos emoji (✨ 💫 🌟) mudam — cada sistema desenha sua própria arte. Brilhos de texto como ✧ ★ ☆ são glifos de fonte e ficam iguais em todo lugar. Para bios consistentes, prefira as versões de texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os símbolos brilhantes fofos para bio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os mais usados são ✧, ˚₊·, ⋆ e padrões estilo ★·.·´¯`·.·★. Combine um ou dois com suas palavras — ex.: ｡･:*˚:✧｡ sonhadora ｡✧:˚*:･｡ — em vez de encher a bio inteira."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O gerador de símbolos brilhantes é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — grátis, ilimitado, sem conta. Tudo roda no seu navegador, então seu texto nunca sai do seu aparelho."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/sparkle-symbol-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/sparkle-symbol-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">😊</span>
+                        Ferramentas de Emojis e Símbolos
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../emoji-text-maker/"><span class="link-icon">😊</span><span
+                class="link-text">Emoji Text Maker</span></a>
+            <a class="sidebar-link" href="../emoji-combiner/"><span class="link-icon">🎨</span><span
+                class="link-text">Emoji Combiner</span></a>
+            <a class="sidebar-link" href="../kaomoji-generator/"><span class="link-icon">(◕‿◕)</span><span
+                class="link-text">Kaomoji Generator</span></a>
+            <a class="sidebar-link" href="../emoticon-maker/"><span class="link-icon">:)</span><span
+                class="link-text">Emoticon Maker</span></a>
+            <a class="sidebar-link" href="../heart-symbol-generator/"><span class="link-icon">♥</span><span
+                class="link-text">Heart Symbols</span></a>
+            <a class="sidebar-link active" href="../sparkle-symbol-generator/"><span class="link-icon">✨</span><span
+                class="link-text">Sparkle Symbols</span></a>
+            <a class="sidebar-link" href="../arrow-symbol-generator/"><span class="link-icon">→</span><span
+                class="link-text">Arrow Symbols</span></a>
+            <a class="sidebar-link" href="../aesthetic-borders-generator/"><span class="link-icon">『』</span><span
+                class="link-text">Aesthetic Borders</span></a>
+            <a class="sidebar-link" href="../fancy-text-symbols-library/"><span class="link-icon">☆</span><span
+                class="link-text">Symbols Library</span></a>
+            <a class="sidebar-link" href="../divider-line-generator/"><span class="link-icon">═</span><span
+                class="link-text">Divider Lines</span></a>
+          </nav>
+        </div>
+      </aside>
+<div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Explorar Ferramentas</button>
+        <div class="tool-input-section">
+          <div class="tool-title">✨ Gerador de Símbolos Brilhantes</h1>
+          <p class="tool-description">Clique em qualquer símbolo para copiar na hora!</p>
+          <input class="symbol-search" id="symbol-search" oninput="filterSymbols()"
+            placeholder="🔍 Pesquisa (por exemplo, estrela, brilho, sol...)" type="text" />
+          <div class="text-decorator">
+            <h3 style="margin-bottom: 1rem;">✨ Decore seu texto com brilhos</h3>
+            <input class="decorator-input" id="text-input" oninput="decorateText()" placeholder="Enter your text..."
+              type="text" />
+            <div class="decorator-results" id="decorator-results">
+              <div style="color: var(--muted); text-align: center; padding: 1rem;">Digite algo para ver
+                decorações de brilho</div>
+            </div>
+          </div>
+          <div class="symbol-section" id="sparkle-emojis-section">
+            <h3 class="section-header">✨ Emojis brilhantes</h3>
+            <div class="symbol-grid" id="sparkle-emojis"></div>
+          </div>
+          <div class="symbol-section" id="star-symbols-section">
+            <h3 class="section-header">⭐ Símbolos de estrelas</h3>
+            <div class="symbol-grid" id="star-symbols"></div>
+          </div>
+          <div class="symbol-section" id="sun-symbols-section">
+            <h3 class="section-header">☀️ Símbolos de Sol e Luz</h3>
+            <div class="symbol-grid" id="sun-symbols"></div>
+          </div>
+          <div class="symbol-section" id="patterns-section">
+            <h3 class="section-header">💫 Padrões de brilho</h3>
+            <div class="pattern-grid" id="sparkle-patterns"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>😊 Ferramentas de Emojis</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/pt/gerador-de-simbolos-brilhantes/">✨ Gerador de Símbolos Brilhantes</a>
+        <a class="sidebar-link" href="/pt/gerador-de-simbolos-de-coracao/">♥ Gerador de Símbolos de Coração</a>
+        <a class="sidebar-link" href="/pt/gerador-kaomoji/">(◕‿◕) Gerador Kaomoji</a>
+      </nav>
+    </div>
+  </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-emojis-e-simbolos/">Ferramentas de Emojis e Símbolos</a> &nbsp;/&nbsp; <span>Gerador de Símbolos Brilhantes</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Gerador de Símbolos Brilhantes</h1>
+<p>Um <strong>gerador de símbolos brilhantes</strong> reúne símbolos cintilantes para copiar e colar — brilhos ✧, estrelas ★ e padrões decorativos de estrelas — numa biblioteca pesquisável. Copie e cole qualquer um dos 68 símbolos de glitter com um clique, ou decore seu próprio texto com brilhos para bios, legendas e apelidos.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>68 símbolos em 4 grupos: brilhos, estrelas, símbolos de sol e padrões decorativos.</li>
+<li>Brilhos de texto (✧ U+2727, ★ U+2605) ficam idênticos em todo aparelho; o emoji ✨ varia por sistema.</li>
+<li>Busque por nome ou navegue; cada símbolo copia com um único clique.</li>
+<li>O decorador de texto envolve suas palavras em 10 estilos de brilho, ex.: ✨ brilhe ✨.</li>
+<li>A saída é Unicode puro — cole no Instagram, TikTok, Discord e documentos.</li>
+</ul>
+</div>
+
+<h2>O que é um gerador de símbolos brilhantes?</h2>
+<p><strong>Definição:</strong> um gerador de símbolos brilhantes é uma ferramenta online grátis que oferece símbolos de brilho e estrela para copiar e colar — do brilho de quatro pontas ✧ às estrelas ★ luminosas e padrões decorativos completos — além de um decorador de texto que emoldura suas palavras em glitter.</p>
+<p>Brilhos são a assinatura do estilo kawaii, coquette e soft-aesthetic na internet. Alguns caracteres ✧ transformam uma linha de bio sem graça em algo luminoso — e essas decorações de estrela estão entre os ornamentos de bio mais buscados, por isso "símbolos brilhantes para bio" é uma das buscas de decoração mais populares.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<p>A biblioteca tem 68 entradas em quatro grupos. Brilhos inclui ✧ (U+2727 WHITE FOUR POINTED STAR), ✨, 💫 e emojis de glitter. Estrelas cobre ★ (U+2605 BLACK STAR), ☆ (U+2606 WHITE STAR), ✦, ✪ e dezenas de variantes dos blocos Símbolos Diversos e Dingbats. Símbolos de sol adicionam radiantes estilo ☀, e padrões são desenhos de glitter prontos de vários caracteres. A caixa de busca filtra por nome enquanto você digita; clicar copia. O decorador de texto gera 10 versões emolduradas de qualquer texto que você digitar: ✨ brilhe ✨, ★ brilhe ★, ·:*¨¨*:· brilhe ·:*¨¨*:·, ★·.·´¯`·.·★ brilhe ★·.·´¯`·.·★, ✦ brilhe ✦ e mais — cada uma com clique para copiar.</p>
+
+<h2>Exemplo prático</h2>
+<p>Você quer uma divisória brilhante para a bio. Digite <em>sonhadora</em> no decorador e escolha entre resultados como: ✨ sonhadora ✨, ·:*¨¨*:· sonhadora ·:*¨¨*:·, ★·.·´¯`·.·★ sonhadora ★·.·´¯`·.·★. Prefere um símbolo único? Busque <em>quatro pontas</em> para achar o ✧, clique nele e cole o ✧ entre palavras no seu nome de exibição: <em>nova ✧ observadora de estrelas</em>.</p>
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+<li><strong>Navegue pelos grupos</strong> — Brilhos, Estrelas, Sol, Padrões — ou busque por nome.</li>
+<li><strong>Clique em qualquer símbolo</strong> para copiá-lo na hora.</li>
+<li><strong>Ou digite no decorador</strong> para receber 10 versões do seu texto emolduradas em brilhos.</li>
+<li><strong>Cole</strong> em bios, legendas, apelidos ou mensagens.</li>
+</ol>
+
+<h2>✧ vs. ✨ vs. ★: qual brilho usar quando</h2>
+<table>
+<thead><tr><th>Símbolo</th><th>Unicode</th><th>Aparência</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td>✧</td><td>U+2727</td><td>Brilho de quatro pontas, monocromático</td><td>Bios aesthetic — idêntico em todos os aparelhos</td></tr>
+<tr><td>✨</td><td>U+2728 + VS16</td><td>Emoji de brilhos coloridos</td><td>Mensagens divertidas onde cor é bem-vinda</td></tr>
+<tr><td>★ / ☆</td><td>U+2605 / U+2606</td><td>Estrela sólida / contorno</td><td>Avaliações, marcadores, ênfase</td></tr>
+<tr><td>💫</td><td>U+1F4AB</td><td>Emoji de estrela tonta</td><td>Decoração caprichosa</td></tr>
+<tr><td>·:*¨¨*:·</td><td>Padrão</td><td>Glitter em arte de texto</td><td>Estética vintage de fóruns / Tumblr</td></tr>
+</tbody>
+</table>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>Brilhos emoji variam por sistema.</strong> ✨ e 💫 são desenhados pela fonte de emoji de cada plataforma — só brilhos de texto (✧ ★ ☆) são consistentes em todo lugar.</li>
+<li><strong>Padrões podem desalinhar.</strong> Arte de glitter de vários caracteres assume espaçamento monoespaçado; em fontes proporcionais pode ficar irregular.</li>
+<li><strong>Leitores de tela anunciam cada símbolo.</strong> Sequências decorativas de brilhos viram ruído quando lidas em voz alta — use como acentos, não como parágrafos.</li>
+<li><strong>Exagero dilui o impacto.</strong> Um ou dois brilhos emolduram o texto; vinte o enterram.</li>
+</ul>
+
+<h2>Gerador de Símbolos Brilhantes vs. alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que cria</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Gerador de Símbolos Brilhantes</strong> (esta página)</td><td>Brilhos, estrelas e padrões de glitter</td><td>Você quer decoração luminosa e estrelada</td></tr>
+<tr><td><a href="/pt/gerador-de-simbolos-de-coracao/">Gerador de Símbolos de Coração</a></td><td>Corações ♥ ♡ ❤</td><td>Você quer decoração romântica em vez de cintilante</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-com-purpurina/">Gerador de Texto com Purpurina</a></td><td>Efeitos de texto com glitter</td><td>Você quer as palavras estilizadas, não emolduradas</td></tr>
+<tr><td><a href="/pt/biblioteca-de-simbolos/">Biblioteca de Símbolos</a></td><td>707 símbolos, 16 categorias</td><td>Você precisa de brilhos misturados com setas, corações e mais</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Como copio e colo símbolos brilhantes?</h3><div class="faq-answer"><p>Clique em qualquer símbolo na grade e ele copia automaticamente para sua área de transferência — copiar e colar símbolos de glitter em uma etapa. Cole na sua bio, legenda, apelido ou mensagem.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O que é o símbolo de brilho ✧?</h3><div class="faq-answer"><p>✧ é o U+2727 WHITE FOUR POINTED STAR do bloco Dingbats do Unicode. É o "brilho aesthetic" clássico — uma estrela monocromática de quatro pontas que renderiza idêntica em todo aparelho, diferente do emoji colorido ✨.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre ★ e ☆?</h3><div class="faq-answer"><p>★ (U+2605 BLACK STAR) é sólida e ☆ (U+2606 WHITE STAR) é de contorno, ambas do bloco Símbolos Diversos. Estrelas sólidas servem para avaliações e ênfase; estrelas de contorno, para decoração leve e arejada.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Como adiciono brilhos à minha bio?</h3><div class="faq-answer"><p>Digite sua linha de bio no decorador de texto desta página e escolha uma das 10 versões emolduradas em brilhos, como ✨ sonhadora ✨. Ou copie símbolos ✧ avulsos e coloque-os entre as palavras manualmente.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Símbolos brilhantes funcionam no Instagram e no TikTok?</h3><div class="faq-answer"><p>Sim. Tanto brilhos de texto (✧ ★) quanto o emoji ✨ colam em bios, legendas e comentários do Instagram, TikTok, Discord e X. Brilhos de texto são a escolha mais segura para um visual consistente.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Por que os brilhos ficam diferentes no celular do meu amigo?</h3><div class="faq-answer"><p>Só brilhos emoji (✨ 💫 🌟) mudam — cada sistema desenha sua própria arte. Brilhos de texto como ✧ ★ ☆ são glifos de fonte e ficam iguais em todo lugar. Para bios consistentes, prefira as versões de texto.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quais são os símbolos brilhantes fofos para bio?</h3><div class="faq-answer"><p>Os mais usados são ✧, ˚₊·, ⋆ e padrões estilo ★·.·´¯`·.·★. Combine um ou dois com suas palavras — ex.: ｡･:*˚:✧｡ sonhadora ｡✧:˚*:･｡ — em vez de encher a bio inteira.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O gerador de símbolos brilhantes é grátis?</h3><div class="faq-answer"><p>Sim — grátis, ilimitado, sem conta. Tudo roda no seu navegador, então seu texto nunca sai do seu aparelho.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-simbolos-de-coracao/">Gerador de Símbolos de Coração</a> — decorações românticas ♥ ♡</li>
+<li><a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a> — envolva texto em molduras decorativas</li>
+<li><a href="/pt/gerador-de-texto-com-purpurina/">Gerador de Texto com Purpurina</a> — efeitos de texto com glitter</li>
+<li><a href="/pt/ferramentas-de-emojis-e-simbolos/">Todas as Ferramentas de Emojis e Símbolos</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+    const sparkleData = {
+      sparkles: [
+        { char: '✨', name: 'Brilhos' },
+        { char: '💫', name: 'Estrela tonta' },
+        { char: '🌟', name: 'Estrela brilhante' },
+        { char: '⭐', name: 'Estrela' },
+        { char: '🌠', name: 'Estrela cadente' },
+        { char: '💥', name: 'Colisão' },
+        { char: '🎇', name: 'Fagulha' },
+        { char: '🎆', name: 'Fogos de artifício' },
+        { char: '🔆', name: 'Brilho alto' },
+        { char: '🔅', name: 'Brilho baixo' },
+        { char: '⚡', name: 'Raio' },
+        { char: '🌈', name: 'Arco-íris' },
+        { char: '🏆', name: 'Troféu' },
+        { char: '🥇', name: 'Medalha de ouro' },
+        { char: '💎', name: 'Diamante' },
+        { char: '🪩', name: 'Globo de discoteca' }
+      ],
+      stars: [
+        { char: '★', name: 'Estrela preta' },
+        { char: '☆', name: 'Estrela branca' },
+        { char: '✩', name: 'Estrela de estresse' },
+        { char: '✪', name: 'Estrela circulada' },
+        { char: '✫', name: 'Estrela aberta' },
+        { char: '✬', name: 'Estrela sombra' },
+        { char: '✭', name: 'Estrela contornada' },
+        { char: '✮', name: 'Estrela grossa' },
+        { char: '✯', name: 'Estrela catavento' },
+        { char: '✰', name: 'Estrela sombreada' },
+        { char: '✴', name: 'Estrela de oito pontas' },
+        { char: '✵', name: 'Oito pontas aberto' },
+        { char: '✶', name: 'Estrela de seis pontas' },
+        { char: '✷', name: 'Oito pontas retilíneo' },
+        { char: '✸', name: 'Oito pontas grosso' },
+        { char: '✹', name: 'Estrela de doze pontas' },
+        { char: '⁂', name: 'Asterismo' },
+        { char: '⁑', name: 'Dois asteriscos' },
+        { char: '⁎', name: 'Asterisco baixo' },
+        { char: '✱', name: 'Asterisco grosso' },
+        { char: '✲', name: 'Asterisco aberto' },
+        { char: '✳', name: 'Oito raios' },
+        { char: '❂', name: 'Círculo aberto' },
+        { char: '❃', name: 'Lágrima grossa' },
+        { char: '❉', name: 'Estrela balão' },
+        { char: '❊', name: 'Lágrima de oito' },
+        { char: '❋', name: 'Lágrima grossa de oito' },
+        { char: '✺', name: 'Dezesseis pontas' },
+        { char: '✻', name: 'Estrela lágrima' },
+        { char: '✼', name: 'Lágrima aberta' },
+        { char: '✽', name: 'Lágrima grossa' },
+        { char: '✾', name: 'Flor de seis pétalas' }
+      ],
+      sun: [
+        { char: '☀', name: 'Sol' },
+        { char: '☀️', name: 'Emoji de sol' },
+        { char: '🌞', name: 'Rosto de sol' },
+        { char: '🌅', name: 'Nascer do sol' },
+        { char: '🌄', name: 'Sol nascendo na montanha' },
+        { char: '☼', name: 'Sol branco' },
+        { char: '☉', name: 'Símbolo de sol' },
+        { char: '✦', name: 'Estrela de quatro pontas' },
+        { char: '✧', name: 'Quatro pontas branco' },
+        { char: '❖', name: 'Diamante preto' },
+        { char: '◆', name: 'Diamante' },
+        { char: '◇', name: 'Diamante branco' },
+        { char: '◈', name: 'Ponto de diamante' },
+        { char: '❇', name: 'Brilho' },
+        { char: '❈', name: 'Brilho forte' },
+        { char: '✵', name: 'Oito pontas aberto' },
+        { char: '🔶', name: 'Diamante laranja' },
+        { char: '🔷', name: 'Diamante azul' },
+        { char: '🔸', name: 'Laranja pequeno' },
+        { char: '🔹', name: 'Azul pequeno' }
+      ],
+      patterns: [
+        '✨✨✨',
+        '⭐✨⭐',
+        '★·.·✧·.·★',
+        '☆.。.:*・°☆',
+        '·:*¨¨*:·.',
+        '✧･ﾟ: *✧･ﾟ:*',
+        '━━━✧━━━',
+        '✦✧✦✧✦',
+        '｡･:*:･ﾟ★',
+        '˚✧₊⁎',
+        '･ﾟ✧',
+        '✩°｡⋆⸜',
+        '⁺˚*･༓☾',
+        '✮⋆˙',
+        '★☆★☆★',
+        '✦•·················•✦'
+      ]
+    };
+
+    function init() {
+      renderSymbols('sparkle-emojis', sparkleData.sparkles);
+      renderSymbols('star-symbols', sparkleData.stars);
+      renderSymbols('sun-symbols', sparkleData.sun);
+      renderPatterns();
+    }
+
+    function renderSymbols(containerId, items) {
+      document.getElementById(containerId).innerHTML = items.map(item => `
+                <div class="symbol-item" onclick="copySymbol(this, '${escapeAttr(item.char)}')" data-name="${item.name.toLowerCase()}">
+                    <div class="symbol-char">${item.char}</div>
+                    <div class="symbol-name">${item.name}</div>
+                </div>
+            `).join('');
+    }
+
+    function renderPatterns() {
+      document.getElementById('sparkle-patterns').innerHTML = sparkleData.patterns.map(p => `
+                <div class="pattern-item" onclick="copySymbol(this, '${escapeAttr(p)}')">${p}</div>
+            `).join('');
+    }
+
+    function filterSymbols() {
+      const query = document.getElementById('symbol-search').value.toLowerCase().trim();
+      document.querySelectorAll('.symbol-item').forEach(item => {
+        const name = item.dataset.name || '';
+        const char = item.querySelector('.symbol-char')?.textContent || '';
+        item.style.display = (name.includes(query) || char.includes(query)) ? '' : 'none';
+      });
+      document.querySelectorAll('.symbol-section').forEach(section => {
+        const visible = section.querySelectorAll('.symbol-item:not([style*="display: none"])');
+        section.style.display = visible.length > 0 ? '' : 'none';
+      });
+    }
+
+    function decorateText() {
+      const text = document.getElementById('text-input').value.trim();
+      const container = document.getElementById('decorator-results');
+      if (!text) {
+        container.innerHTML = '<div style="color: var(--muted); text-align: center; padding: 1rem;">Digite algo para ver decorações de brilho</div>';
+        return;
+      }
+      const decorations = [
+        `✨ ${text} ✨`, `⭐ ${text} ⭐`, `★ ${text} ★`, `☆ ${text} ☆`,
+        `✧ ${text} ✧`, `💫 ${text} 💫`, `·:*¨¨*:· ${text} ·:*¨¨*:·`,
+        `★·.·´¯\`·.·★ ${text} ★·.·´¯\`·.·★`, `✦ ${text} ✦`, `❋ ${text} ❋`
+      ];
+      container.innerHTML = decorations.map(d => `
+                <div class="decorator-result" onclick="copyText(this, '${escapeAttr(d)}')">
+                    <span>${d}</span>
+                    <span style="color: var(--muted); font-size: 0.8rem;">Click to copy</span>
+                </div>
+            `).join('');
+    }
+
+    function copySymbol(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 800);
+      });
+    }
+
+    function copyText(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = el.innerHTML;
+        el.innerHTML = '<span style="color: var(--success);">✓ Copied!</span>';
+        setTimeout(() => el.innerHTML = orig, 1000);
+      });
+    }
+
+    function escapeAttr(text) { return text.replace(/'/g, "\\'").replace(/"/g, '\\"'); }
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) { document.getElementById('mobile-sidebar').classList.remove('active'); document.body.style.overflow = ''; } }
+
+    init();
+  
+    </script>
+
+</body>
+
+</html>
