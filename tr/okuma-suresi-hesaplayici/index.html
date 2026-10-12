@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Okuma Süresi Hesaplayıcı | FontGenerators</title>
+  <meta content="Okuma süresi hesaplayıcı ile metnin kaç dakikada okunacağını öğrenin. Konuşma süresi de veren ücretsiz çevrimiçi hesaplama aracı; 200/150 kelime-dakika bazlı." name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .time-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .time-card {
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .time-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+  
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/tr/okuma-suresi-hesaplayici/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Okuma Süresi Hesaplayıcı | FontGenerators">
+    <meta property="og:description" content="Okuma süresi hesaplayıcı ile metnin kaç dakikada okunacağını öğrenin. Konuşma süresi de veren ücretsiz çevrimiçi hesaplama aracı; 200/150 kelime-dakika bazlı.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/okuma-suresi-hesaplayici/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Okuma Süresi Hesaplayıcı | FontGenerators">
+    <meta name="twitter:description" content="Okuma süresi hesaplayıcı ile metnin kaç dakikada okunacağını öğrenin. Konuşma süresi de veren ücretsiz çevrimiçi hesaplama aracı; 200/150 kelime-dakika bazlı.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/reading-time-calculator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/reading-time-calculator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/calculadora-de-tiempo-de-lectura/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/calculadora-de-tempo-de-leitura/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/okuma-suresi-hesaplayici/" />
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/reading-time-calculator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/calculadora-de-tiempo-de-lectura/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/calculadora-de-tempo-de-leitura/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/okuma-suresi-hesaplayici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/reading-time-calculator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/calculadora-de-tiempo-de-lectura/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/calculadora-de-tempo-de-leitura/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/okuma-suresi-hesaplayici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/reading-time-calculator/',es:'/es/calculadora-de-tiempo-de-lectura/',pt:'/pt/calculadora-de-tempo-de-leitura/',tr:'/tr/okuma-suresi-hesaplayici/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Metin Araçları
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../kelime-sayaci/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Kelime Sayacı</span>
+            </a>
+            <a class="sidebar-link" href="../karakter-sayaci/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Karakter Sayacı</span>
+            </a>
+            <a class="sidebar-link active" href="../okuma-suresi-hesaplayici/">
+              <span class="link-icon">⏱️</span>
+              <span class="link-text">Okuma Süresi Hesaplayıcı</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Araçlara Göz At
+        </button>
+        <div class="tool-input-section">
+          <p class="tool-title">⏱️ Okuma Süresi Hesaplayıcı</p>
+          <p class="tool-description">Her metin için okuma ve konuşma süresini tahmin edin</p>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Metninizi buraya yapıştırın ya da yazın..." rows="8"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Temizle</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Yapıştır</button>
+            <button class="btn btn-secondary" onclick="sampleText()">📝 Örnek</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="word-count">0</div>
+            <div class="stat-label">Kelime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="reading-time">0 dk</div>
+            <div class="stat-label">📖 Okuma Süresi</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="speaking-time">0 dk</div>
+            <div class="stat-label">🎤 Konuşma Süresi</div>
+          </div>
+        </div>
+        <!-- content start -->
+      </div>
+    </div>
+
+    
+    <section class="seo-content-section">
+      <div class="container">
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/metin-araclari/">Metin Araçları</a> &rsaquo; <span>Okuma Süresi Hesaplayıcı</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Çevrimiçi Okuma Süresi Hesaplayıcı</h1>
+<p>Okuma süresi hesaplayıcı bir metnin okunmasının ne kadar süreceğini tahmin eder &mdash; makalelerde gördüğünüz "5 dk okuma" etiketi. Bu ücretsiz araç ayrıca konuşmalar, senaryolar ve sunumlar için <strong>konuşma süresini</strong> tahmin eder; standart 200/150 kelime-dakika ortalamalarını kullanır. Anında okuma süresi tahmini için metninizi yukarı yapıştırın.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Öne çıkanlar</p>
+<ul style="margin: 0;">
+<li>Okuma süresi = kelime &divide; 200 KDK; konuşma süresi = kelime &divide; 150 KDK &mdash; ikisi de tam dakikaya yukarı yuvarlanır. Kelime-dakika hesaplayıcı olarak da çalışır: her kelime sayısını 200'e (okuma) ya da 150'ye (konuşma) bölün.</li>
+<li>200 KDK ortalama yetişkin sessiz okuma hızını, 150 KDK tipik sunum temposunu yansıtır.</li>
+<li>İki süre tahmininin yanında canlı kelime sayısını gösterir.</li>
+<li>Yukarı yuvarlama yüzünden kısa metinler hep "1 dk" gösterir.</li>
+<li>Ücretsiz, kayıtsız, tamamen tarayıcınızda çalışır.</li>
+</ul>
+</div>
+<h2>Okuma Süresi Hesaplayıcı Nedir?</h2>
+<p><strong>Okuma süresi hesaplayıcı, bir metnin okunmasının ne kadar süreceğini tahmin eden araçtır.</strong> Kelimeleri sayar ve ortalama okuma hızına (dakikada kelime) böler; Medium'un, haber sitelerinin ve blogların kullandığı tanıdık "X dk okuma" etiketini üretir. Okuma süresi tahmincisi yazarların beklenti belirlemesine, konuşmacıların sunumlarını zamanlamasına, okurların da bir makaleye şu an vakitleri olup olmadığına karar vermesine yardım eder.</p>
+<h2>Bu Okuma Süresi Hesaplayıcı Nasıl Çalışır?</h2>
+<p>Matematik bilerek basit ve şeffaftır:</p>
+<ul>
+<li><strong>Kelime sayısı:</strong> metniniz kırpılır, boşluklardan bölünür &mdash; her parça bir kelimedir.</li>
+<li><strong>Okuma süresi:</strong> kelime sayısı &divide; <strong>dakikada 200 kelime</strong> (ortalama yetişkin sessiz okuma hızı), sonraki tam dakikaya <strong>yukarı</strong> yuvarlanır.</li>
+<li><strong>Konuşma süresi:</strong> kelime sayısı &divide; <strong>dakikada 150 kelime</strong> (sunum ve anlatım için tipik konuşma temposu), <strong>yukarı</strong> yuvarlanır.</li>
+</ul>
+<p>Sonuçlar yazdıkça canlı güncellenir. <strong>Örnek</strong> düğmesi tanıtım paragrafı yükler, <strong>Yapıştır</strong> panodan alır, <strong>Temizle</strong> sıfırlar. Yuvarlama yüzünden 201 kelimelik metin "2 dk", 200 kelimenin altındaki her şey "1 dk" gösterir &mdash; tahmin tasarım gereği ihtiyatlıdır.</p>
+<h2>Uygulamalı Örnek</h2>
+<p>400 kelimelik makale taslağını alın:</p>
+<table>
+<thead><tr><th>Ölçüm</th><th>Hesap</th><th>Sonuç</th></tr></thead>
+<tbody>
+<tr><td>Kelime</td><td>sayıldı</td><td>400</td></tr>
+<tr><td>Okuma süresi</td><td>400 &divide; 200 = 2,0</td><td><strong>2 dk</strong></td></tr>
+<tr><td>Konuşma süresi</td><td>400 &divide; 150 = 2,67 &rarr; yukarı yuvarla</td><td><strong>3 dk</strong></td></tr>
+</tbody>
+</table>
+<p>1.500 kelimelik ödev: 1.500 &divide; 200 = 7,5 &rarr; <strong>8 dk okuma</strong>; sesli: 1.500 &divide; 150 = 10 &rarr; <strong>10 dk</strong>. Orta uzunluktaki makalelerde "8 dk okuma" etiketinin bu kadar yaygın olmasının nedeni bu 8 dakikalık rakamdır.</p>
+<h2>Okuma Süresi Hesaplayıcı Nasıl Kullanılır?</h2>
+<ol>
+<li><strong>Yapıştırın ya da yazın:</strong> metninizi kutuya (ya da denemek için Örnek'e tıklayın).</li>
+<li><strong>Üç kartı okuyun:</strong> kelime sayısı, okuma süresi ve konuşma süresi canlı güncellenir.</li>
+<li>Makale etiketleri ("5 dk okuma") için <strong>okuma süresini</strong>, konuşmalar, seslendirmeler ve video senaryoları için <strong>konuşma süresini</strong> kullanın &mdash; bu sayfa konuşma süresi hesaplayıcı olarak da çalışır.</li>
+</ol>
+<h2>200 ve 150 KDK Nereden Geliyor?</h2>
+<p>Bunlar rastgele sayılar değil:</p>
+<ul>
+<li><strong>200&ndash;250 KDK</strong>, İngilizce genel düzyazıda ortalama yetişkin sessiz okuması için yaygın alıntılanan aralıktır. Bu araç ihtiyatlı ucu (200) kullanır; tahminler "biraz uzun sürer" yönünde yanılır.</li>
+<li><strong>130&ndash;160 KDK</strong>, konuşulan İngilizce için tipik aralıktır &mdash; haber spikerleri 160'a yakın, günlük konuşma 130'a yakın. Aracın 150 KDK'sı ortaya denk gelir; sunum ve anlatıma uygundur.</li>
+</ul>
+<p>İkisi de ortalamadır: teknik metin, yabancı kelimeler ve ikinci dilde okuma daha yavaş; hafif kurgu ve göz gezdirme daha hızlıdır. Çıktıyı planlama tahmini sayın, kitlenize ve içerik zorluğuna göre ayarlayın. Bunun bir tahminci olduğunu unutmayın, okuma hızı testi değil &mdash; kişisel temponuzu ölçmek yerine sabit ortalama uygular.</p>
+<h2>Okuma Süresi ve Konuşma Süresi: Hangisini Kullanmalı?</h2>
+<table>
+<thead><tr><th>Okuma süresini şurada kullanın</th><th>Konuşma süresini şurada kullanın</th></tr></thead>
+<tbody>
+<tr><td>Blog "X dk okuma" etiketleri</td><td>Konuşma ve sunum zamanlaması</td></tr>
+<tr><td>Bülten uzunluk planlaması</td><td>Video senaryoları ve seslendirmeler</td></tr>
+<tr><td>Çalışma yükü tahmini</td><td>Podcast bölümü planlaması</td></tr>
+<tr><td>E-kitap ilerleme tahminleri</td><td>Sesli kitap uzunluk tahminleri</td></tr>
+</tbody>
+</table>
+<p>Pratik kural: gözler okuyacaksa okuma süresi, bir ses seslendirecekse konuşma süresi &mdash; ve bir kez prova yapın; çünkü duraklamalı gerçek sunum ham KDK matematiğinden uzun sürer. Platform karakter sınırı koyduğunda <a href="/tr/karakter-sayaci/">karakter sayacı</a> ile eşleştirin; gereksiz uzun taslakları önce <a href="/tr/paragraf-kisaltici/">paragraf kısaltıcı</a> ile kısaltın.</p>
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Yalnızca yukarı yuvarlama:</strong> 200 kelimenin altındaki her şey "1 dk" okunur &mdash; araç saniye gösteremez.</li>
+<li><strong>Sabit hızlar:</strong> hızlı okurlar, çocuklar ya da teknik kitleler için KDK ayarlanamaz.</li>
+<li><strong>Yalnızca kelime bazlı:</strong> makaledeki görseller, videolar, kod blokları ve tablolar hesaplayıcının görmediği gerçek tüketim süresi ekler.</li>
+<li><strong>Dil farkları:</strong> 200/150 ortalamaları İngilizceye göre kalibre edilmiştir; diğer diller farklı hızda okunur.</li>
+<li><strong>Boşlukla parçalama:</strong> tireli kelimeler ve rakamlar birer kelime sayılır; sitenin <a href="/tr/kelime-sayaci/">kelime sayacı</a> ile aynıdır.</li>
+</ul>
+<h2>Okuma Süresi Hesaplayıcı ve Alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne için ideal</th></tr></thead>
+<tbody>
+<tr><td><strong>Bu okuma süresi hesaplayıcı</strong></td><td>Canlı kelime sayımlı hızlı okuma/konuşma tahminleri, kayıtsız</td></tr>
+<tr><td><a href="/tr/kelime-sayaci/">Kelime sayacı</a></td><td>Tam metin istatistikleri (cümle, paragraf, okunabilirlik) ve okuma süresi dahil</td></tr>
+<tr><td>Elle zamanlama</td><td>Önemli bir konuşmanın kesin sunum süresi &mdash; kronometreyle prova yapın</td></tr>
+</tbody>
+</table>
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Okuma süresi nasıl hesaplanır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Kelime sayısı dakikada 200 kelimeye bölünür, sonraki tam dakikaya yukarı yuvarlanır. 400 kelimelik metin tam 2 dakika verir; 450 kelimelik metin 3 dakika verir (2,25 yukarı yuvarlanır).</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Ortalama okuma hızı KDK olarak nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">İngilizce genel metinde ortalama yetişkin sessiz okuması için dakikada 200&ndash;250 kelime civarı. Bu hesaplayıcı 200 KDK kullanır &mdash; ihtiyatlı uç &mdash; tahminler süreyi az göstermekten çok biraz fazla gösterme eğilimindedir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">1.000 kelimeyi okumak ne kadar sürer?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sessiz okumada yaklaşık 5 dakika (1.000 &divide; 200), sesli okumada yaklaşık 7 dakika (1.000 &divide; 150 = 6,67, yukarı yuvarlanır).</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Dakikada kelime olarak iyi konuşma temposu nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">İngilizce için kabaca 130&ndash;160 KDK. Haber spikerleri 160'a yaklaşır, günlük konuşma 130 civarındadır. Bu aracın konuşma süresi tahmini 150 KDK kullanır; sunum ve anlatım için sağlam bir ortadır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">300 sayfalık kitap okumak ne kadar sürer?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sayfa başına kelimeye bağlıdır &mdash; tipik karton kapakta kabaca 250&ndash;300, toplam 75.000&ndash;90.000 kelime. 200 KDK ile 6&ndash;8 saat okuma süresi eder. Kesin rakam için gerçek metni yapıştırın.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">200 kelimenin altındaki her şey neden '1 dk' gösteriyor?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hesaplayıcı tam dakikalara yukarı yuvarlar, saniye göstermez; 1&ndash;200 kelime arası her metin 1 dakika görünür. Tasarım gereği ihtiyatlıdır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Video senaryosunda okuma süresi mi konuşma süresi mi kullanılmalı?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Konuşma süresi. Senaryolar sessiz okunmaz, seslendirilir &mdash; ham KDK matematiğinin içermediği duraklama, vurgu ve tekrarlar için pay bırakın.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Makalemdeki görsel ya da video okuma süresini etkiler mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Gerçekte evet, bu araçta hayır. Hesaplayıcı yalnızca kelime bazlıdır; görseller, gömüler ve kod blokları göremediği tüketim süresi ekler. Medya yoğun sayfalarda üstüne kendi payınızı ekleyin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metnim yükleniyor ya da saklanıyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Hesaplama tamamen tarayıcınızda çalışır. Cihazınızdan hiçbir şey çıkmaz.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Metin Araçları</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    function analyzeText() {
+      const text = document.getElementById('text-input').value.trim();
+      const words = text ? text.split(/\s+/).filter(w => w.length > 0) : [];
+      const wordCount = words.length;
+      document.getElementById('word-count').textContent = wordCount;
+
+      // Reading time 200 wpm
+      const readingMinutes = Math.ceil(wordCount / 200);
+      document.getElementById('reading-time').textContent = readingMinutes + ' dk';
+
+      // Speaking time 150 wpm
+      const speakingMinutes = Math.ceil(wordCount / 150);
+      document.getElementById('speaking-time').textContent = speakingMinutes + ' dk';
+    }
+
+    function clearText() {
+      document.getElementById('text-input').value = '';
+      analyzeText();
+    }
+
+    function pasteText() {
+      navigator.clipboard.readText().then(text => {
+        document.getElementById('text-input').value = text;
+        analyzeText();
+      });
+    }
+
+    function sampleText() {
+      document.getElementById('text-input').value = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+      analyzeText();
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    analyzeText();
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Okuma süresi nasıl hesaplanır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kelime sayısı dakikada 200 kelimeye bölünür, sonraki tam dakikaya yukarı yuvarlanır. 400 kelimelik metin tam 2 dakika verir; 450 kelimelik metin 3 dakika verir (2,25 yukarı yuvarlanır)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ortalama okuma hızı KDK olarak nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İngilizce genel metinde ortalama yetişkin sessiz okuması için dakikada 200–250 kelime civarı. Bu hesaplayıcı 200 KDK kullanır — ihtiyatlı uç — tahminler süreyi az göstermekten çok biraz fazla gösterme eğilimindedir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1.000 kelimeyi okumak ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sessiz okumada yaklaşık 5 dakika (1.000 ÷ 200), sesli okumada yaklaşık 7 dakika (1.000 ÷ 150 = 6,67, yukarı yuvarlanır)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dakikada kelime olarak iyi konuşma temposu nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İngilizce için kabaca 130–160 KDK. Haber spikerleri 160'a yaklaşır, günlük konuşma 130 civarındadır. Bu aracın konuşma süresi tahmini 150 KDK kullanır; sunum ve anlatım için sağlam bir ortadır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "300 sayfalık kitap okumak ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sayfa başına kelimeye bağlıdır — tipik karton kapakta kabaca 250–300, toplam 75.000–90.000 kelime. 200 KDK ile 6–8 saat okuma süresi eder. Kesin rakam için gerçek metni yapıştırın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "200 kelimenin altındaki her şey neden '1 dk' gösteriyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hesaplayıcı tam dakikalara yukarı yuvarlar, saniye göstermez; 1–200 kelime arası her metin 1 dakika görünür. Tasarım gereği ihtiyatlıdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Video senaryosunda okuma süresi mi konuşma süresi mi kullanılmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Konuşma süresi. Senaryolar sessiz okunmaz, seslendirilir — ham KDK matematiğinin içermediği duraklama, vurgu ve tekrarlar için pay bırakın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Makalemdeki görsel ya da video okuma süresini etkiler mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gerçekte evet, bu araçta hayır. Hesaplayıcı yalnızca kelime bazlıdır; görseller, gömüler ve kod blokları göremediği tüketim süresi ekler. Medya yoğun sayfalarda üstüne kendi payınızı ekleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim yükleniyor ya da saklanıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Hesaplama tamamen tarayıcınızda çalışır. Cihazınızdan hiçbir şey çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
