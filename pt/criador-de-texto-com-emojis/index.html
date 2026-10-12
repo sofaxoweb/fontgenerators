@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Criador de Texto com Emojis | FontGenerators.online</title>
+    <meta name="description" content="Decore textos com emojis em segundos — busque entre 725 emojis, escolha 5 estilos de posicionamento e copie para Instagram, TikTok ou Discord. Grátis." />
+    <link href="../../css/variables.css" rel="stylesheet" />
+    <script crossorigin="anonymous" defer=""
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+    <link href="https://fontgenerators.online/pt/criador-de-texto-com-emojis/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/emoji-text-maker/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/emoji-text-maker/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/creador-de-texto-con-emojis/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/criador-de-texto-com-emojis/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/emojili-metin-olusturucu/" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/tools.css" rel="stylesheet" />
+    <style>
+        .emoji-picker {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-search {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-search:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .emoji-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-category-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            background: var(--surface);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+        }
+
+        .emoji-category-btn:hover,
+        .emoji-category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+            gap: 0.25rem;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            background: var(--background);
+            border-radius: var(--radius);
+        }
+
+        .emoji-item {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+
+        .emoji-item:hover {
+            background: var(--primary-light);
+            transform: scale(1.2);
+        }
+
+        .selected-emojis {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            min-height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .selected-emoji {
+            font-size: 1.5rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .selected-emoji:hover::after {
+            content: '×';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placement-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .placement-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all var(--transition);
+        }
+
+        .placement-btn:hover,
+        .placement-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Language Switcher */
+        .breadcrumb-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+        }
+
+        .lang-switcher .lang-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-muted, #555);
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid #e0d5c8;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switcher .lang-link:hover {
+            background: #fff;
+            color: var(--red, #C8102E);
+            border-color: var(--red, #C8102E);
+        }
+
+        .lang-switcher .lang-link.active {
+            background: var(--red, #C8102E);
+            color: #fff;
+            border-color: var(--red, #C8102E);
+        }
+    </style>
+
+    <style>
+        /* ─── SEO Content Section ─── */
+        .seo-content-section {
+            padding: 3rem 0 2rem;
+            background: var(--cream, #FDF9F4);
+        }
+
+        .seo-content-section h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            color: var(--black, #121212);
+
+            padding-bottom: 0.4rem;
+        }
+
+        .seo-content-section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--off-black, #1a1a1a);
+        }
+
+        .seo-content-section p {
+            line-height: 1.8;
+            color: var(--text-muted, #444);
+            margin-bottom: 1rem;
+            max-width: 780px;
+        }
+
+        .seo-content-section ul,
+        .seo-content-section ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .seo-content-section li {
+            line-height: 1.75;
+            margin-bottom: 0.4rem;
+            color: var(--text-muted, #444);
+        }
+
+        /* Table */
+        .seo-content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .seo-content-section table thead tr {
+            background: var(--black, #121212);
+            color: #fff;
+        }
+
+        .seo-content-section table th,
+        .seo-content-section table td {
+            padding: 0.65rem 1rem;
+            border: 1px solid #e0d5c8;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .seo-content-section table tbody tr:nth-child(even) {
+            background: var(--cream-dark, #FAF5EE);
+        }
+
+        /* FAQ */
+        .faq-container {
+            margin-top: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid #e0d5c8;
+            border-left: 4px solid var(--red, #C8102E);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            padding: 1rem 1.25rem;
+            background: #fff;
+        }
+
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black, #121212);
+            margin: 0 0 0.5rem;
+            cursor: pointer;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: var(--text-muted, #555);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .seo-content-section {
+                padding: 2rem 0;
+            }
+
+            .seo-content-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como adiciono emojis ao texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite seu texto na caixa de entrada, clique em até 10 emojis no seletor (ou busque por palavra-chave), escolha um estilo de posicionamento como Ao redor ou Espalhar e copie o resultado. O texto decorado cola em qualquer app que aceite texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O criador de texto com emojis é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. É grátis, sem conta, sem marca d'água e sem limite de uso. Todo o processamento acontece no seu navegador, então seu texto nunca é enviado nem armazenado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O texto decorado funciona no Instagram e no TikTok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A saída é texto Unicode padrão, que Instagram, TikTok, Discord, WhatsApp e X renderizam nativamente. Basta copiar da ferramenta e colar no campo de texto do app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que alguns emojis aparecem como quadrados vazios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quadrados (□) significam que a fonte do aparelho não tem aquele emoji — geralmente porque o sistema operacional é anterior ao lançamento Unicode do emoji. Atualizar o sistema ou escolher um emoji mais antigo e popular resolve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emojis são imagens ou texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "São texto: pontos de código Unicode que a fonte de emoji do seu aparelho desenha como figuras. Por isso dá para copiar, colar e buscar como qualquer outro caractere — e por isso a arte muda entre aparelhos Apple, Google e Samsung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre esta ferramenta e o combinador de emojis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O criador de texto com emojis decora suas palavras com emojis (texto + emojis). O Combinador de Emojis monta sequências só de emojis, sem texto, como 🎂🎉🥳, e inclui um gerador aleatório de misturas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emojis contam no limite de caracteres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A maioria das plataformas conta cada emoji como um ou mais caracteres — muitos ocupam duas unidades de código UTF-16, e sequências com várias pessoas ou bandeiras contam como várias. Fique de olho na contagem ao vivo da ferramenta ao escrever bios com limite apertado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar texto decorado no meu nome de usuário?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Geralmente só no nome de exibição. A maioria das plataformas restringe o nome de usuário/handle a letras ASCII simples, números e underlines, mas nomes de exibição no Instagram, TikTok, X e Discord aceitam emojis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantos emojis posso adicionar de uma vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você pode selecionar até 10 emojis por decoração. O seletor tem 725 emojis em 10 categorias — Rostos, Amor, Estrelas, Natureza, Animais, Comida, Atividades, Viagens, Objetos e Símbolos — com busca por palavra-chave."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/emoji-text-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/emoji-text-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">😊</span>
+                        Ferramentas de Emojis e Símbolos
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link active" href="/pt/criador-de-texto-com-emojis/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Criador de Texto com Emojis</span>
+                        </a>
+                        <a class="sidebar-link" href="/pt/combinador-de-emojis/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Combinador de Emojis</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-kaomoji/">
+                            <span class="link-icon">(◕‿◕)</span>
+                            <span class="link-text">Gerador Kaomoji</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/criador-de-emoticons/">
+                            <span class="link-icon">:)</span>
+                            <span class="link-text">Criador de Emoticons</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-de-simbolos-de-coracao/">
+                            <span class="link-icon">♥</span>
+                            <span class="link-text">Gerador de Símbolos de Coração</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-de-simbolos-brilhantes/">
+                            <span class="link-icon">✨</span>
+                            <span class="link-text">Gerador de Símbolos Brilhantes</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-de-simbolos-de-setas/">
+                            <span class="link-icon">→</span>
+                            <span class="link-text">Gerador de Símbolos de Setas</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-de-bordas-aesthetic/">
+                            <span class="link-icon">『』</span>
+                            <span class="link-text">Gerador de Bordas Aesthetic</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/biblioteca-de-simbolos/">
+                            <span class="link-icon">☆</span>
+                            <span class="link-text">Biblioteca de Símbolos</span>
+                        </a>
+                            <a class="sidebar-link" href="/pt/gerador-de-linhas-divisorias/">
+                            <span class="link-icon">═</span>
+                            <span class="link-text">Gerador de Linhas Divisórias</span>
+                        </a>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+<div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Explorar Ferramentas
+                </button>
+                <div class="tool-input-section">
+                    <div class="tool-title">😊 Criador de Texto com Emojis</div>
+                    <p class="tool-description">Adicione lindas decorações de emoji ao seu texto</p>
+                    <label class="tool-label">Seu texto</label>
+                    <textarea class="tool-input" id="text-input" oninput="generateText()"
+                        placeholder="Digite seu texto aqui..." style="min-height: 80px;"></textarea>
+                    <div class="char-count" id="char-count">0 caracteres</div>
+                    <div class="emoji-picker">
+                        <label class="tool-label">🔍 Buscar e selecionar emojis</label>
+                        <input class="emoji-search" id="emoji-search" oninput="filterEmojis()"
+                            placeholder="Buscar emojis (ex.: coração, estrela, rosto...)" type="text" />
+                        <div class="emoji-categories" id="emoji-categories"></div>
+                        <div class="emoji-grid" id="emoji-grid"></div>
+                    </div>
+                    <label class="tool-label">Emojis selecionados (clique para remover)</label>
+                    <div class="selected-emojis" id="selected-emojis">
+                        <span style="color: var(--muted); font-size: 0.9rem;">Clique nos emojis acima para selecioná-los</span>
+                    </div>
+                    <label class="tool-label">Posicionamento dos emojis</label>
+                    <div class="placement-options">
+                        <button class="placement-btn active" data-placement="surround" onclick="setPlacement(this)">🔄
+                            Ao redor</button>
+                        <button class="placement-btn" data-placement="start" onclick="setPlacement(this)">⬅️
+                            Início</button>
+                        <button class="placement-btn" data-placement="end" onclick="setPlacement(this)">➡️ Fim</button>
+                        <button class="placement-btn" data-placement="scatter" onclick="setPlacement(this)">✨
+                            Espalhar</button>
+                        <button class="placement-btn" data-placement="between" onclick="setPlacement(this)">↔️ Entre
+                            palavras</button>
+                    </div>
+                </div>
+                <div class="tool-output-section">
+                    <div class="output-header">
+                        <span class="output-title">Texto gerado</span>
+                        <div class="output-actions">
+                            <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Tudo</button>
+                            <button class="btn btn-sm btn-secondary" onclick="clearAll()">Limpar</button>
+                        </div>
+                    </div>
+                    <div class="results-container" id="results-container">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">😊</div>
+                            <p>Insira o texto e selecione emojis para criar um texto decorado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>😊 Ferramentas de Emojis</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link active" href="/pt/criador-de-texto-com-emojis/">😊 Criador de Texto com Emojis</a>
+                <a class="sidebar-link" href="/pt/combinador-de-emojis/">🎨 Combinador de Emojis</a>
+                <a class="sidebar-link" href="/pt/gerador-kaomoji/">(◕‿◕) Gerador Kaomoji</a>
+                <a class="sidebar-link" href="/pt/gerador-de-simbolos-de-coracao/">♥ Gerador de Símbolos de Coração</a>
+                <a class="sidebar-link" href="/pt/gerador-de-simbolos-brilhantes/">✨ Gerador de Símbolos Brilhantes</a>
+            </nav>
+        </div>
+    </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-emojis-e-simbolos/">Ferramentas de Emojis e Símbolos</a> &nbsp;/&nbsp; <span>Criador de Texto com Emojis</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Criador de Texto com Emojis</h1>
+<p>Um <strong>criador de texto com emojis</strong> decora suas palavras com emojis — ao redor delas, entre elas ou espalhados por elas — para que uma frase simples vire um texto com emojis que se destaca em bios, legendas e conversas. Digite seu texto, escolha até 10 emojis em uma biblioteca pesquisável com 725 opções, selecione um dos cinco estilos de posicionamento e copie o resultado.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>Esta ferramenta envolve suas próprias palavras com emojis — ela não troca letras por emojis.</li>
+<li>Cinco estilos de posicionamento: ao redor, início, fim, espalhar e entre palavras, cada um com várias formas de espaçamento.</li>
+<li>O seletor tem 725 emojis em 10 categorias e busca por palavra-chave (tente "coração" ou "estrela").</li>
+<li>A saída é texto Unicode com emojis, então cola no Instagram, TikTok, Discord e WhatsApp sem precisar de app.</li>
+<li>O desenho dos emojis muda entre iPhone, Android e Windows — os caracteres são idênticos, a arte não.</li>
+</ul>
+</div>
+
+<h2>O que é um criador de texto com emojis?</h2>
+<p><strong>Definição:</strong> um criador de texto com emojis é uma ferramenta online grátis que adiciona decorações de emoji ao texto que você digita. Você escreve uma palavra ou frase, escolhe emojis no seletor e a ferramenta gera layouts decorados — como ☀️ bom dia 🌸 — prontos para copiar e colar em qualquer lugar.</p>
+<p>Diferente de uma "fonte de emoji" ou de brinquedos que trocam letras, esta ferramenta mantém seu texto legível. As palavras continuam intactas; os emojis só emolduram. Isso importa para buscas, leitores de tela e para quem lê rápido — "letras de emoji" que substituem caracteres parecem divertidas, mas quebram a leitura, enquanto o texto decorado preserva estilo e sentido.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<p>Tudo roda no seu navegador. Quando você escolhe emojis e digita o texto, o JavaScript junta as partes com modelos simples de texto — sem servidor, sem conta, nada é enviado. A saída é Unicode padrão, por isso cola em quase qualquer app. Os emojis vêm de vários blocos Unicode mantidos pelo Unicode Consortium: Emoticons (U+1F600–U+1F64F), Símbolos Diversos (U+2600–U+26FF), Dingbats (U+2700–U+27BF), Símbolos de Transporte e Mapa, e Símbolos e Pictogramas Suplementares. Algumas entradas são sequências de vários pontos de código — por exemplo, ❤️ é U+2764 seguido do seletor de variação 16, e 👩‍❤️‍👨 junta três emojis com junções de largura zero (U+200D). É o seu sistema operacional que desenha a arte, e é por isso que o mesmo texto fica um pouco diferente no iPhone, no Pixel e no PC com Windows.</p>
+
+<h2>Exemplo prático</h2>
+<p>Entrada: <em>bom dia</em>. Emojis selecionados: ☀️ e 🌸. Posicionamento: <strong>Ao redor</strong>. A ferramenta produz quatro variações:</p>
+<ul>
+<li><strong>Ao redor:</strong> ☀️🌸 bom dia ☀️🌸</li>
+<li><strong>Ao redor dividido:</strong> ☀️ bom dia 🌸</li>
+<li><strong>Ao redor justo:</strong> ☀️🌸bom dia☀️🌸</li>
+<li><strong>Emojis espaçados:</strong> ☀️ 🌸 bom dia ☀️ 🌸</li>
+</ul>
+<p>Mude o posicionamento para <strong>Entre palavras</strong> com a mesma entrada e você recebe <em>bom ☀️ dia</em> (além das variações alternada e espaçada). Cada variação tem seu próprio botão de copiar, e o "Copiar tudo" pega todos os layouts de uma vez.</p>
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+<li><strong>Digite seu texto</strong> na caixa de entrada (há uma contagem de caracteres ao vivo logo abaixo).</li>
+<li><strong>Busque ou navegue no seletor de emojis</strong> — 10 categorias, de Rostos a Símbolos, ou digite uma palavra-chave como "fogo" no campo de busca.</li>
+<li><strong>Clique em até 10 emojis</strong> para selecioná-los; clique num emoji selecionado para removê-lo.</li>
+<li><strong>Escolha um estilo de posicionamento:</strong> Ao redor, Início, Fim, Espalhar ou Entre palavras.</li>
+<li><strong>Copie o layout</strong> de que gostar e cole na sua bio, legenda ou mensagem.</li>
+</ol>
+
+<h2>Os cinco estilos de posicionamento</h2>
+<table>
+<thead><tr><th>Estilo</th><th>O que faz</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td><strong>Ao redor</strong></td><td>Emojis nos dois lados do texto (4 variações de espaçamento)</td><td>Bios do Instagram, nomes de exibição</td></tr>
+<tr><td><strong>Início</strong></td><td>Emojis antes do texto</td><td>Listas, comunicados</td></tr>
+<tr><td><strong>Fim</strong></td><td>Emojis depois do texto</td><td>Despedidas, legendas</td></tr>
+<tr><td><strong>Espalhar</strong></td><td>Emojis distribuídos após cada palavra</td><td>Legendas divertidas, convites de festa</td></tr>
+<tr><td><strong>Entre palavras</strong></td><td>Emoji inserido entre cada palavra</td><td>Frases estilizadas, posts aesthetic</td></tr>
+</tbody>
+</table>
+
+<h2>Onde o texto decorado com emojis funciona</h2>
+<p>Como a saída é Unicode puro, funciona em qualquer lugar onde texto funciona. A tabela abaixo lista os usos mais comuns.</p>
+<table>
+<thead><tr><th>Plataforma</th><th>Bons usos</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>Instagram</td><td>Linhas de bio, legendas, comentários</td><td>Emojis aparecem em cores vivas</td></tr>
+<tr><td>TikTok</td><td>Bio, descrições de vídeo</td><td>Mantenha a bio curta — há limite de caracteres</td></tr>
+<tr><td>Discord</td><td>Mensagens, descrições de servidor</td><td>Nomes de exibição aceitam emojis; nomes de usuário, não</td></tr>
+<tr><td>WhatsApp</td><td>Status, mensagens</td><td>Renderiza com o conjunto de emojis do celular</td></tr>
+<tr><td>X (Twitter)</td><td>Nome de exibição, bio, posts</td><td>Cada emoji conta no limite de caracteres</td></tr>
+<tr><td>Jogos</td><td>Descrições de clã, bios de Fortnite/Roblox</td><td>Alguns jogos removem emojis dos nomes — teste antes</td></tr>
+</tbody>
+</table>
+
+<h2>Emojis vs. símbolos de texto</h2>
+<p>Vale saber a diferença entre esta ferramenta e nossos geradores de símbolos. Emojis (😊, 🌸, 🔥) são pictogramas coloridos desenhados pela fonte de emoji do seu aparelho — o mesmo ponto de código fica diferente em dispositivos Apple, Google e Samsung. Símbolos de texto (♥, ★, ✧) são caracteres Unicode monocromáticos que ficam idênticos em todo lugar. Se você quer uma decoração consistente que nunca muda de estilo entre celulares, use o <a href="/pt/gerador-de-simbolos-de-coracao/">Gerador de Símbolos de Coração</a> ou o <a href="/pt/gerador-de-simbolos-brilhantes/">Gerador de Símbolos Brilhantes</a>. Se quer decoração colorida e expressiva, você está no lugar certo.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>A renderização varia por aparelho.</strong> Emojis novos (Unicode 15+) podem aparecer como quadrados (□, "tofu") em celulares antigos sem fontes de emoji atualizadas.</li>
+<li><strong>Limites de caracteres contam emojis.</strong> Muitos emojis ocupam duas unidades de código UTF-16, e sequências com junção contam como vários caracteres — uma bio decorada "curta" pode estourar o limite da plataforma.</li>
+<li><strong>Leitores de tela anunciam emojis em voz alta.</strong> Dez emojis em sequência viram dez nomes falados ("sol", "flor de cerejeira"...), o que cansa usuários cegos. Use com moderação em posts públicos.</li>
+<li><strong>Buscadores enxergam pontos de código, não imagens.</strong> Excesso de emojis em títulos de página ou nomes de empresa pode parecer spam para os robôs.</li>
+<li><strong>Máximo de 10 emojis por decoração.</strong> O seletor limita a dez para manter a saída legível.</li>
+</ul>
+
+<h2>Criador de Texto com Emojis vs. alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que cria</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Criador de Texto com Emojis</strong> (esta página)</td><td>Suas palavras decoradas com emojis</td><td>Você quer frases estilizadas para bios e legendas</td></tr>
+<tr><td><a href="/pt/combinador-de-emojis/">Combinador de Emojis</a></td><td>Sequências só de emojis e misturas</td><td>Você quer uma sequência pura de emojis sem texto, ex.: 🎂🎉🥳</td></tr>
+<tr><td><a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a></td><td>Rostinhos de texto japoneses</td><td>Você quer carinhas como (◕‿◕) feitas só com caracteres</td></tr>
+<tr><td><a href="/pt/gerador-de-simbolos-de-coracao/">Gerador de Símbolos de Coração</a></td><td>Símbolos monocromáticos</td><td>Você quer decoração idêntica em todos os aparelhos</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Como adiciono emojis ao texto?</h3><div class="faq-answer"><p>Digite seu texto na caixa de entrada, clique em até 10 emojis no seletor (ou busque por palavra-chave), escolha um estilo de posicionamento como Ao redor ou Espalhar e copie o resultado. O texto decorado cola em qualquer app que aceite texto.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O criador de texto com emojis é grátis?</h3><div class="faq-answer"><p>Sim. É grátis, sem conta, sem marca d'água e sem limite de uso. Todo o processamento acontece no seu navegador, então seu texto nunca é enviado nem armazenado.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O texto decorado funciona no Instagram e no TikTok?</h3><div class="faq-answer"><p>Sim. A saída é texto Unicode padrão, que Instagram, TikTok, Discord, WhatsApp e X renderizam nativamente. Basta copiar da ferramenta e colar no campo de texto do app.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Por que alguns emojis aparecem como quadrados vazios?</h3><div class="faq-answer"><p>Quadrados (□) significam que a fonte do aparelho não tem aquele emoji — geralmente porque o sistema operacional é anterior ao lançamento Unicode do emoji. Atualizar o sistema ou escolher um emoji mais antigo e popular resolve.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Emojis são imagens ou texto?</h3><div class="faq-answer"><p>São texto: pontos de código Unicode que a fonte de emoji do seu aparelho desenha como figuras. Por isso dá para copiar, colar e buscar como qualquer outro caractere — e por isso a arte muda entre aparelhos Apple, Google e Samsung.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre esta ferramenta e o combinador de emojis?</h3><div class="faq-answer"><p>O criador de texto com emojis decora suas palavras com emojis (texto + emojis). O <a href="/pt/combinador-de-emojis/">Combinador de Emojis</a> monta sequências só de emojis, sem texto, como 🎂🎉🥳, e inclui um gerador aleatório de misturas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Emojis contam no limite de caracteres?</h3><div class="faq-answer"><p>Sim. A maioria das plataformas conta cada emoji como um ou mais caracteres — muitos ocupam duas unidades de código UTF-16, e sequências com várias pessoas ou bandeiras contam como várias. Fique de olho na contagem ao vivo da ferramenta ao escrever bios com limite apertado.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Posso usar texto decorado no meu nome de usuário?</h3><div class="faq-answer"><p>Geralmente só no nome de exibição. A maioria das plataformas restringe o nome de usuário/handle a letras ASCII simples, números e underlines, mas nomes de exibição no Instagram, TikTok, X e Discord aceitam emojis.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quantos emojis posso adicionar de uma vez?</h3><div class="faq-answer"><p>Você pode selecionar até 10 emojis por decoração. O seletor tem 725 emojis em 10 categorias — Rostos, Amor, Estrelas, Natureza, Animais, Comida, Atividades, Viagens, Objetos e Símbolos — com busca por palavra-chave.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/combinador-de-emojis/">Combinador de Emojis</a> — monte misturas só de emojis e combos aleatórios</li>
+<li><a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a> — rostinhos de texto japoneses fofos como (◕‿◕)</li>
+<li><a href="/pt/gerador-de-simbolos-de-coracao/">Gerador de Símbolos de Coração</a> — decorações ♥ ♡ ❤ idênticas em todo lugar</li>
+<li><a href="/pt/ferramentas-de-emojis-e-simbolos/">Todas as Ferramentas de Emojis e Símbolos</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+        const emojiData = {
+            'Rostos': ['😀', '😃', '😄', '😁', '😅', '😂', '🤣', '😊', '😇', '🙂', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😜', '🤪', '😝', '🤑', '🤗', '🤭', '🤫', '🤔', '🤐', '🤨', '😐', '😑', '😶', '😏', '😒', '🙄', '😬', '😮‍💨', '🤥', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😵', '🤯', '🤠', '🥳', '🥸', '😎', '🤓', '🧐'],
+            'Amor': ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔', '❣️', '💕', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥️', '😍', '🥰', '😘', '💋', '💑', '💏', '👩‍❤️‍👨', '👨‍❤️‍👨', '👩‍❤️‍👩', '🌹', '💐', '🎀'],
+            'Estrelas': ['⭐', '🌟', '✨', '💫', '🌠', '⚡', '🔆', '🔅', '💥', '🎇', '🎆', '🌃', '🏆', '🥇', '🎖️', '🏅', '✴️', '✳️', '❇️', '🌈'],
+            'Natureza': ['🌸', '🌺', '🌻', '🌼', '🌷', '🌹', '🥀', '💐', '🌲', '🌳', '🌴', '🌵', '🌾', '🌿', '☘️', '🍀', '🍁', '🍂', '🍃', '🪴', '🌱', '🌈', '☀️', '🌤️', '⛅', '🌥️', '☁️', '🌦️', '🌧️', '🌩️', '🌨️', '❄️', '☃️', '⛄', '🌊', '💧', '💦', '🌙', '🌛', '🌜', '🌝', '🌞'],
+            'Animais': ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵', '🐔', '🐧', '🐦', '🐤', '🦄', '🐝', '🦋', '🐌', '🐞', '🐜', '🦂', '🐢', '🐍', '🦎', '🐙', '🦑', '🦐', '🦀', '🐡', '🐠', '🐟', '🐬', '🐳', '🐋', '🦈'],
+            'Comida': ['🍎', '🍐', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🫐', '🍈', '🍒', '🍑', '🥭', '🍍', '🥥', '🥝', '🍅', '🍆', '🥑', '🥦', '🥬', '🥒', '🌶️', '🫑', '🌽', '🥕', '🧄', '🧅', '🥔', '🍠', '🥐', '🥯', '🍞', '🥖', '🥨', '🧀', '🥚', '🍳', '🧈', '🥞', '🧇', '🥓', '🥩', '🍗', '🍖', '🦴', '🌭', '🍔', '🍟', '🍕', '🫓', '🥪', '🥙', '🧆', '🌮', '🌯', '🫔', '🥗', '🥘', '🫕', '🍝', '🍜', '🍲', '🍛', '🍣', '🍱', '🥟', '🦪', '🍤', '🍙', '🍚', '🍘', '🍥', '🥠', '🥮', '🍢', '🍡', '🍧', '🍨', '🍦', '🥧', '🧁', '🍰', '🎂', '🍮', '🍭', '🍬', '🍫', '🍿', '🍩', '🍪', '🌰', '🥜', '🍯', '🥛', '🍼', '☕', '🫖', '🍵', '🧃', '🥤', '🧋', '🍶', '🍺', '🍻', '🥂', '🍷', '🥃', '🍸', '🍹', '🧉', '🍾'],
+            'Atividades': ['⚽', '🏀', '🏈', '⚾', '🥎', '🎾', '🏐', '🏉', '🥏', '🎱', '🪀', '🏓', '🏸', '🏒', '🏑', '🥍', '🏏', '🪃', '🥅', '⛳', '🪁', '🏹', '🎣', '🤿', '🥊', '🥋', '🎽', '🛹', '🛼', '🛷', '⛸️', '🥌', '🎿', '⛷️', '🏂', '🪂', '🏋️', '🤼', '🤸', '⛹️', '🤺', '🤾', '🏌️', '🏇', '⛑️', '🧘', '🏄', '🏊', '🤽', '🚣', '🧗', '🚵', '🚴', '🎪', '🎭', '🎨', '🎬', '🎤', '🎧', '🎼', '🎹', '🥁', '🪘', '🎷', '🎺', '🪗', '🎸', '🪕', '🎻', '🎲', '♟️', '🎯', '🎳', '🎮', '🎰', '🧩'],
+            'Viagens': ['🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚐', '🛻', '🚚', '🚛', '🚜', '🛵', '🏍️', '🚲', '🛴', '✈️', '🚀', '🛸', '🚁', '⛵', '🚤', '🛥️', '🛳️', '⛴️', '🚢', '🗼', '🗽', '🗿', '🏰', '🏯', '🏟️', '🎡', '🎢', '🎠', '⛲', '⛱️', '🏖️', '🏝️', '🏜️', '🌋', '⛰️', '🏔️', '🗻', '🏕️', '🛖', '🏠', '🏡', '🏢', '🏣', '🏤', '🏥', '🏦', '🏨', '🏩', '🏪', '🏫', '🏬', '🏭', '🏗️', '🧱', '🪨', '🪵', '🛤️', '🛣️'],
+            'Objetos': ['⌚', '📱', '💻', '⌨️', '🖥️', '🖨️', '🖱️', '🖲️', '💽', '💾', '💿', '📀', '📼', '📷', '📸', '📹', '🎥', '📽️', '🎞️', '📞', '☎️', '📟', '📠', '📺', '📻', '🎙️', '🎚️', '🎛️', '🧭', '⏱️', '⏲️', '⏰', '🕰️', '⌛', '⏳', '📡', '🔋', '🔌', '💡', '🔦', '🕯️', '🪔', '🧯', '🛢️', '💸', '💵', '💴', '💶', '💷', '🪙', '💰', '💳', '💎', '⚖️', '🪜', '🧰', '🪛', '🔧', '🔨', '⚒️', '🛠️', '⛏️', '🪚', '🔩', '⚙️', '🪤', '🧱', '⛓️', '🧲', '🔫', '💣', '🧨', '🪓', '🔪', '🗡️', '⚔️', '🛡️', '🚬', '⚰️', '🪦', '⚱️', '🏺', '🔮', '📿', '🧿', '💈', '⚗️', '🔭', '🔬', '🕳️', '🩹', '🩺', '💊', '💉', '🩸', '🧬', '🦠', '🧫', '🧪', '🌡️', '🧹', '🪠', '🧺', '🧻', '🚽', '🚰', '🚿', '🛁', '🛀', '🧼', '🪥', '🪒', '🧽', '🪣', '🧴', '🛎️', '🔑', '🗝️', '🚪', '🪑', '🛋️', '🛏️', '🛌', '🧸', '🪆', '🖼️', '🪞', '🪟', '🛍️', '🛒', '🎁', '🎈', '🎏', '🎀', '🪄', '🪅', '🎊', '🎉', '🎎', '🏮', '🎐', '🧧', '✉️', '📩', '📨', '📧', '💌', '📥', '📤', '📦', '🏷️', '🪧', '📪', '📫', '📬', '📭', '📮', '📯', '📜', '📃', '📄', '📑', '🧾', '📊', '📈', '📉', '🗒️', '🗓️', '📆', '📅', '🗑️', '📇', '🗃️', '🗳️', '🗄️', '📋', '📁', '📂', '🗂️', '🗞️', '📰', '📓', '📔', '📒', '📕', '📗', '📘', '📙', '📚', '📖', '🔖', '🧷', '🔗', '📎', '🖇️', '📐', '📏', '🧮', '📌', '📍', '✂️', '🖊️', '🖋️', '✒️', '🖌️', '🖍️', '📝', '✏️', '🔍', '🔎', '🔏', '🔐', '🔒', '🔓'],
+            'Símbolos': ['💯', '🔥', '✅', '❌', '❓', '❗', '‼️', '⁉️', '💢', '💬', '👁️‍🗨️', '🗨️', '🗯️', '💭', '💤', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛', '🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '🟤', '⚫', '⚪', '🟥', '🟧', '🟨', '🟩', '🟦', '🟪', '🟫', '⬛', '⬜', '◼️', '◻️', '◾', '◽', '▪️', '▫️', '🔶', '🔷', '🔸', '🔹', '🔺', '🔻', '💠', '🔘', '🔳', '🔲']
+        };
+
+        let selectedEmojis = [];
+        let currentPlacement = 'surround';
+        let currentCategory = 'Smileys';
+
+        function init() {
+            renderCategories();
+            renderEmojis(currentCategory);
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('emoji-categories');
+            container.innerHTML = Object.keys(emojiData).map(cat =>
+                `<button class="emoji-category-btn ${cat === currentCategory ? 'active' : ''}" onclick="selectCategory('${cat}')">${cat}</button>`
+            ).join('');
+        }
+
+        function selectCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.emoji-category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === category);
+            });
+            document.getElementById('emoji-search').value = '';
+            renderEmojis(category);
+        }
+
+        function renderEmojis(category) {
+            const emojis = emojiData[category] || [];
+            const container = document.getElementById('emoji-grid');
+            container.innerHTML = emojis.map(emoji =>
+                `<div class="emoji-item" onclick="addEmoji('${emoji}')">${emoji}</div>`
+            ).join('');
+        }
+
+        function filterEmojis() {
+            const query = document.getElementById('emoji-search').value.toLowerCase();
+            const container = document.getElementById('emoji-grid');
+
+            if (!query) {
+                renderEmojis(currentCategory);
+                return;
+            }
+
+            const allEmojis = Object.values(emojiData).flat();
+            const emojiNames = {
+                '❤️': 'heart love red', '💙': 'heart blue', '💚': 'heart green', '💛': 'heart yellow', '💜': 'heart purple',
+                '⭐': 'star', '🌟': 'star glowing', '✨': 'sparkles stars', '💫': 'dizzy star',
+                '😀': 'smile happy grin', '😂': 'laugh crying joy', '😍': 'love eyes heart',
+                '🔥': 'fire hot flame', '💯': 'hundred perfect', '✅': 'check done',
+                '🎉': 'party celebration', '🎊': 'confetti party', '🌈': 'rainbow',
+                '🌸': 'flower cherry blossom pink', '🌹': 'rose flower red', '🌻': 'sunflower',
+                '☀️': 'sun sunny', '🌙': 'moon night', '⚡': 'lightning bolt thunder',
+                '💕': 'hearts two love', '💖': 'heart sparkle', '💗': 'heart growing',
+                '🦋': 'butterfly', '🌊': 'wave water ocean', '🍀': 'clover lucky four leaf'
+            };
+
+            const filtered = allEmojis.filter(emoji => {
+                const name = emojiNames[emoji] || '';
+                return name.includes(query) || emoji.includes(query);
+            });
+
+            container.innerHTML = filtered.length > 0
+                ? filtered.map(emoji => `<div class="emoji-item" onclick="addEmoji('${emoji}')">${emoji}</div>`).join('')
+                : '<div style="padding: 1rem; color: var(--muted); text-align: center;">No emojis found</div>';
+        }
+
+        function addEmoji(emoji) {
+            if (selectedEmojis.length < 10) {
+                selectedEmojis.push(emoji);
+                updateSelectedEmojis();
+                generateText();
+            }
+        }
+
+        function removeEmoji(index) {
+            selectedEmojis.splice(index, 1);
+            updateSelectedEmojis();
+            generateText();
+        }
+
+        function updateSelectedEmojis() {
+            const container = document.getElementById('selected-emojis');
+            if (selectedEmojis.length === 0) {
+                container.innerHTML = '<span style="color: var(--muted); font-size: 0.9rem;">Clique nos emojis acima para selecioná-los</span>';
+            } else {
+                container.innerHTML = selectedEmojis.map((emoji, i) =>
+                    `<span class="selected-emoji" onclick="removeEmoji(${i})">${emoji}</span>`
+                ).join('');
+            }
+        }
+
+        function setPlacement(btn) {
+            document.querySelectorAll('.placement-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentPlacement = btn.dataset.placement;
+            generateText();
+        }
+
+        function generateText() {
+            const text = document.getElementById('text-input').value.trim();
+            const charCount = document.getElementById('text-input').value.length;
+            document.getElementById('char-count').textContent = `${charCount} caracteres`;
+
+            if (!text || selectedEmojis.length === 0) {
+                document.getElementById('results-container').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">😊</div>
+                        <p>${!text ? 'Digite algum texto acima' : 'Select some emojis to decorate your text'}</p>
+                    </div>`;
+                return;
+            }
+
+            const emojis = selectedEmojis.join('');
+            const emojiInício = selectedEmojis.slice(0, Math.ceil(selectedEmojis.length / 2)).join('');
+            const emojiFim = selectedEmojis.slice(Math.ceil(selectedEmojis.length / 2)).join('');
+
+            let results = [];
+
+            switch (currentPlacement) {
+                case 'surround':
+                    results = [
+                        { name: 'Ao redor', text: `${emojis} ${text} ${emojis}` },
+                        { name: 'Moldura dividida', text: `${emojiInício} ${text} ${emojiFim}` },
+                        { name: 'Tight Ao redor', text: `${emojis}${text}${emojis}` },
+                        { name: 'Emojis espaçados', text: `${selectedEmojis.join(' ')} ${text} ${selectedEmojis.join(' ')}` }
+                    ];
+                    break;
+                case 'start':
+                    results = [
+                        { name: 'Emojis no início', text: `${emojis} ${text}` },
+                        { name: 'Início espaçado', text: `${selectedEmojis.join(' ')} ${text}` },
+                        { name: 'Início justo', text: `${emojis}${text}` }
+                    ];
+                    break;
+                case 'end':
+                    results = [
+                        { name: 'Emojis no fim', text: `${text} ${emojis}` },
+                        { name: 'Fim espaçado', text: `${text} ${selectedEmojis.join(' ')}` },
+                        { name: 'Fim justo', text: `${text}${emojis}` }
+                    ];
+                    break;
+                case 'scatter':
+                    const words = text.split(' ');
+                    const scattered = words.map((word, i) => {
+                        const emoji = selectedEmojis[i % selectedEmojis.length];
+                        return i === words.length - 1 ? word : `${word} ${emoji}`;
+                    }).join(' ');
+                    results = [
+                        { name: 'Espalhared', text: scattered },
+                        { name: 'Cada palavra', text: words.map((w, i) => `${selectedEmojis[i % selectedEmojis.length]} ${w}`).join(' ') },
+                        { name: 'Mistura aleatória', text: `${emojiInício} ${text.split(' ').join(` ${selectedEmojis[0]} `)} ${emojiFim}` }
+                    ];
+                    break;
+                case 'between':
+                    const emoji = selectedEmojis[0] || '';
+                    results = [
+                        { name: 'Entre palavras', text: text.split(' ').join(` ${emoji} `) },
+                        { name: 'Alternado', text: text.split(' ').map((w, i) => `${w} ${selectedEmojis[i % selectedEmojis.length]}`).join(' ').trim() },
+                        { name: 'Espaçado', text: text.split(' ').join(` ${emojis} `) }
+                    ];
+                    break;
+            }
+
+            document.getElementById('results-container').innerHTML = results.map(r => `
+                <div class="result-item">
+                    <div class="result-content">
+                        <span class="result-name">${r.name}</span>
+                        <div class="result-text">${escapeHtml(r.text)}</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this, \`${r.text.replace(/`/g, '\\`')}\`)">📋 Copy</button>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function copyText(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => btn.textContent = '📋 Copy', 2000);
+            });
+        }
+
+        function copyAll() {
+            const results = document.querySelectorAll('.result-text');
+            if (results.length === 0) return;
+            const allText = Array.from(results).map(r => r.textContent).join('\n');
+            navigator.clipboard.writeText(allText).then(() => alert('Tudo copiado!'));
+        }
+
+        function clearAll() {
+            document.getElementById('text-input').value = '';
+            selectedEmojis = [];
+            updateSelectedEmojis();
+            generateText();
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        init();
+    
+    </script>
+
+</body>
+
+</html>
