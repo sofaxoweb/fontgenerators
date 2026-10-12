@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Metin Temizleyici — Ücretsiz | FontGenerators</title>
+  <meta content="Metin temizleyici ile fazla boşlukları, HTML etiketlerini ve URL'leri tek tıkla silin. Dokuz seçenekli ücretsiz çevrimiçi temizleme aracı, kayıtsız çalışır." name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  
+  <link href="https://fontgenerators.online/tr/metin-temizleyici/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Metin Temizleyici — Ücretsiz | FontGenerators">
+    <meta property="og:description" content="Metin temizleyici ile fazla boşlukları, HTML etiketlerini ve URL'leri tek tıkla silin. Dokuz seçenekli ücretsiz çevrimiçi temizleme aracı, kayıtsız çalışır.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/metin-temizleyici/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Metin Temizleyici — Ücretsiz | FontGenerators">
+    <meta name="twitter:description" content="Metin temizleyici ile fazla boşlukları, HTML etiketlerini ve URL'leri tek tıkla silin. Dokuz seçenekli ücretsiz çevrimiçi temizleme aracı, kayıtsız çalışır.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/limpiador-de-texto/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/limpador-de-texto/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/metin-temizleyici/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .option-item:hover {
+      border-color: var(--primary);
+    }
+
+    .option-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .option-item label {
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .output-section {
+      margin-top: 1.5rem;
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      background: var(--surface-secondary);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/text-cleaner/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/limpiador-de-texto/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/limpador-de-texto/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/metin-temizleyici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/text-cleaner/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/limpiador-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/limpador-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/metin-temizleyici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/text-cleaner/',es:'/es/limpiador-de-texto/',pt:'/pt/limpador-de-texto/',tr:'/tr/metin-temizleyici/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Metin Araçları
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../kelime-sayaci/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Kelime Sayacı</span>
+            </a>
+            <a class="sidebar-link" href="../karakter-sayaci/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Karakter Sayacı</span>
+            </a>
+            <a class="sidebar-link active" href="../metin-temizleyici/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Metin Temizleyici</span>
+            </a>
+            <a class="sidebar-link" href="../yinelenen-satirlari-kaldir/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Tekrarları Kaldır</span>
+            </a>
+            <a class="sidebar-link" href="../satir-sonu-duzeltici/">
+              <span class="link-icon">↵</span>
+              <span class="link-text">Satır Sonu Düzeltici</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Araçlara Göz At
+        </button>
+        <div class="tool-input-section">
+          <p class="tool-title">🧹 Metin Temizleyici</p>
+          <p class="tool-description">Clean up messy text by removing extra spaces, line breaks, and unwanted
+            characters</p>
+          <textarea class="tool-input" id="text-input" oninput="cleanText()" placeholder="Dağınık metninizi buraya yapıştırın..."
+            rows="6"></textarea>
+          <div class="options-grid">
+            <div class="option-item">
+              <input checked="" id="opt-spaces" onchange="cleanText()" type="checkbox" />
+              <label for="opt-spaces">Fazla boşlukları kaldır</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-lines" onchange="cleanText()" type="checkbox" />
+              <label for="opt-lines">Boş satırları kaldır</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-trim" onchange="cleanText()" type="checkbox" />
+              <label for="opt-trim">Satır kenarı boşluğunu kırp</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-breaks" onchange="cleanText()" type="checkbox" />
+              <label for="opt-breaks">Tüm satır sonlarını kaldır</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-punct" onchange="cleanText()" type="checkbox" />
+              <label for="opt-punct">Noktalamayı kaldır</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-numbers" onchange="cleanText()" type="checkbox" />
+              <label for="opt-numbers">Rakamları kaldır</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-special" onchange="cleanText()" type="checkbox" />
+              <label for="opt-special">Özel karakterleri kaldır</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-html" onchange="cleanText()" type="checkbox" />
+              <label for="opt-html">HTML etiketlerini kaldır</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-urls" onchange="cleanText()" type="checkbox" />
+              <label for="opt-urls">URL'leri kaldır</label>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="cleanText()">🧹 Metni Temizle</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🗑️ Temizle</button>
+          </div>
+        </div>
+        <div class="output-section">
+          <h3>Temizlenmiş Metin</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Temizlenmiş metin burada görünecek..."
+            readonly=""></textarea>
+          <div class="stats-row">
+            <span>Orijinal: <strong id="orig-chars">0</strong> chars</span>
+            <span>Temizlenmiş: <strong id="clean-chars">0</strong> chars</span>
+            <span>Silinen: <strong id="removed-chars">0</strong> chars</span>
+          </div>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Temizlenmiş Metni Kopyala</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <section class="seo-content-section">
+      <div class="container">
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/metin-araclari/">Metin Araçları</a> &rsaquo; <span>Metin Temizleyici</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Metin Temizleyici &mdash; Metni Çevrimiçi Temizleyin</h1>
+<p>Metin temizleyici, kopyalanan metindeki çöpleri ayıklar: fazla boşluklar, boş satırlar, HTML etiketleri, URL'ler ve başıboş noktalama işaretleri. Bu ücretsiz metin temizleyici dokuz ayrı seçenek sunar, yazdıkça canlı temizler ve kaç karakterin silindiğini tam olarak raporlar. Dağınık metni yukarı yapıştırın, ihtiyacınız olan seçenekleri işaretleyin ve tertemiz düz metni kopyalayın.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Öne çıkanlar</p>
+<ul style="margin: 0;">
+<li>Dokuz temizleme seçeneği: fazla boşluk, boş satır, satır kenarı boşluğu, satır sonu, noktalama, rakam, özel karakter, HTML etiketi, URL.</li>
+<li>Seçenekler sabit sırada çalışır &mdash; örneğin URL'ler noktalamadan önce silinir; bu, sonucu etkiler.</li>
+<li>"Noktalamayı kaldır" sabit bir listeyi hedefler (.,!?;:'"()[]{}); tireler, üç nokta ve akıllı tırnaklar kalır.</li>
+<li>Canlı orijinal/temizlenmiş/silinen karakter sayaçları neyin değiştiğini tam gösterir.</li>
+<li>Tamamen tarayıcınızda çalışır; metniniz cihazınızdan asla çıkmaz.</li>
+</ul>
+</div>
+<h2>Metin Temizleyici Nedir?</h2>
+<p><strong>Metin temizleyici, metindeki istenmeyen biçimlendirme ve karakterleri silen çevrimiçi araçtır.</strong> Web sayfalarından, PDF'lerden, Word belgelerinden ve e-postalardan kopyalama genelde çift boşluklar, boş satırlar, HTML etiketleri, izleme URL'leri ve başıboş noktalama işaretleriyle gelir. Temiz metin aracı bunların hepsini düz, tutarlı metne dönüştürür; böylece gizli biçimlendirme taşımadan bir CMS'e, kod editörüne, e-tabloya ya da yapay zekâ istemine güvenle yapıştırabilirsiniz.</p>
+<h2>Bu Metin Temizleyici Nasıl Çalışır?</h2>
+<p>Dokuz seçenekten istediğiniz kombinasyonu işaretleyin; temizleme her tuş vuruşunda canlı çalışır, şu sabit sırada:</p>
+<ol>
+<li><strong>HTML etiketlerini kaldır</strong> &mdash; <code>&lt;b&gt;</code> veya <code>&lt;a href=...&gt;</code> gibi her şeyi siler, iç metni bırakır.</li>
+<li><strong>URL'leri kaldır</strong> &mdash; <code>http://</code> ve <code>https://</code> bağlantılarını siler.</li>
+<li><strong>Noktalamayı kaldır</strong> &mdash; tam olarak şu karakterleri siler: <code>. , ! ? ; : ' " ( ) [ ] { }</code>.</li>
+<li><strong>Rakamları kaldır</strong> &mdash; 0&ndash;9 rakamlarını siler.</li>
+<li><strong>Özel karakterleri kaldır</strong> &mdash; harf, rakam ve boşluk dışındaki her şeyi siler (satır sonları korunur).</li>
+<li><strong>Satır kenarı boşluğunu kırp</strong> &mdash; her satırın başındaki ve sonundaki boşlukları siler. <em>(Varsayılan açık.)</em></li>
+<li><strong>Fazla boşlukları kaldır</strong> &mdash; art arda gelen boşluk/sekme dizilerini teke indirir. <em>(Varsayılan açık.)</em></li>
+<li><strong>Boş satırları kaldır</strong> &mdash; boş satırları tek satır sonuna indirir. <em>(Varsayılan açık.)</em></li>
+<li><strong>Tüm satır sonlarını kaldır</strong> &mdash; her şeyi tek satırda birleştirir, boşlukları normalize eder. <em>(Varsayılan kapalı.)</em></li>
+</ol>
+<p>Seçili tüm adımlardan sonra sonuç kırpılır ve üç sayaçla gösterilir: orijinal karakter, temizlenmiş karakter ve silinen karakter. <strong>Temizlenmiş Metni Kopyala</strong> sonucu panonuza kopyalar.</p>
+<h2>Uygulamalı Örnek</h2>
+<p>Şu dağınık yapıştırmayla başlayın (fazla boşluklar, kalın etiketi, URL ve boş satır):</p>
+<p><code>&nbsp;&nbsp;&lt;b&gt;Sitemizi&lt;/b&gt; ziyaret edin: https://ornek.com &mdash; ücreti 50$!<br><br>&nbsp;&nbsp;Hemen arayın...&nbsp;&nbsp;</code></p>
+<p><strong>HTML etiketleri + URL'ler</strong> açıkken (üç varsayılan seçenekle birlikte) çıktı şudur:</p>
+<p><code>Sitemizi ziyaret edin: &mdash; ücreti 50$!<br>Hemen arayın...</code></p>
+<p>Etiketler ve bağlantı gitti, boş satır çöktü, kenar boşlukları kırpıldı &mdash; oysa tire, dolar işareti ve üç nokta kaldı; çünkü açık seçeneklerin hiçbiri onları hedeflemiyor. <strong>Noktalamayı kaldır</strong>ı da işaretlerseniz <code>!</code> ve <code>...</code> da gider (tire yine kalır &mdash; noktalama listesinde yok).</p>
+<h2>Bu Metin Temizleyici Nasıl Kullanılır?</h2>
+<ol>
+<li><strong>Yapıştırın:</strong> dağınık metninizi giriş kutusuna yapıştırın &mdash; PDF, web sayfası ve e-postalardan kopyalanan metni temizlemenin en hızlı yolu.</li>
+<li><strong>Seçenekleri işaretleyin:</strong> üç boşluk seçeneği varsayılan açıktır ve kopyala-yapıştır dağınıklığının çoğunu düzeltir.</li>
+<li><strong>Sayaçları izleyin:</strong> kaç karakterin silindiğini doğrulayın.</li>
+<li><strong>Temizlenmiş Metni Kopyala</strong> ile sonucu ihtiyacınız olan yere yapıştırın.</li>
+</ol>
+<h2>İşlem Sırası Önemlidir</h2>
+<p>Dokuz adım sabit sırada çalıştığı için, aynı seçenekler farklı bir hayali sırada farklı sonuç verebilirdi. Bilinmesi gereken iki durum:</p>
+<ul>
+<li><strong>Önce URL, sonra noktalama:</strong> iki seçenek de açıkken <code>https://ornek.com</code> bütün olarak silinir. Yalnızca "noktalamayı kaldır" açıkken aynı URL <code>https//ornekcom</code> haline bozulur &mdash; <code>:</code> ve <code>.</code> silinir, harfler kalır. Bağlantıların gitmesini istiyorsanız "URL'leri kaldır"ı işaretleyin.</li>
+<li><strong>Önce özel karakter, sonra boşluk:</strong> "özel karakterleri kaldır" satır sonlarını korur; bu yüzden "boş satırları kaldır" ile birlikte açıldığında temiz paragraf yapısı elde edersiniz &mdash; semboller ayıklandıktan sonra yapı normalize edilir.</li>
+</ul>
+<p>Pratik kural: önce yapısal silmeleri (HTML, URL) düşünün, sonra karakter silmeleri, sonra boşluk normalizasyonu &mdash; ki bu tam olarak aracın kullandığı sıradır.</p>
+<h2>"Noktalamayı Kaldır" Neleri Kaldırmaz?</h2>
+<p>Noktalama seçeneği sabit, belgelenmiş bir listeyi hedefler: nokta, virgül, ünlem, soru işareti, noktalı virgül, iki nokta, düz tırnaklar, parantezler, köşeli ve süslü parantezler. Geri kalan her şey kalır:</p>
+<ul>
+<li>Tire ve çizgiler: <code>-</code>, <code>&ndash;</code>, <code>&mdash;</code></li>
+<li>Üç nokta <code>&hellip;</code> ve akıllı tırnaklar <code>&ldquo; &rdquo;</code></li>
+<li>Para ve matematik sembolleri: <code>$</code>, <code>%</code>, <code>+</code>, <code>=</code>, <code>/</code></li>
+<li>Alt çizgi ve liste dışı diğer semboller</li>
+</ul>
+<p>Bunları da ayıklamak için <strong>Özel karakterleri kaldır</strong>ı kullanın; harf, rakam ve boşluk dışındaki her şeyi siler. Aksanlı karakterleri ve Latin-dışı alfabeleri de sildiğini unutmayın &mdash; yalnızca A&ndash;Z harflerini korur.</p>
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Zengin metin dönüştürücü değildir.</strong> HTML etiketlerini ayıklamak işaretlemeyi siler ama dönüştürmez (bir <code>&lt;table&gt;</code> düzgün listeye değil, bitişik hücre metnine dönüşür).</li>
+<li><strong>Temizleme geri alınamaz.</strong> Sonucu kopyaladıktan sonra geri alma yoktur &mdash; emin olana kadar orijinal sekmeyi açık tutun.</li>
+<li><strong>"Özel karakterleri kaldır" ASCII odaklıdır:</strong> aksanlı harfler (&eacute;, &ntilde;) ve Latin-dışı alfabeler sembollerle birlikte silinir.</li>
+<li><strong>URL silme http(s):// gerektirir</strong> &mdash; şemasız <code>ornek.com</code> gibi çıplak alan adları olduğu gibi kalır.</li>
+<li><strong>Noktalama silme kelime içindeki noktaları da siler</strong> (ör. <code>T.D.K.</code> &rarr; <code>TDK</code>, ondalık <code>3.14</code> &rarr; <code>314</code>).</li>
+</ul>
+<h2>Metin Temizleyici ve Alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne için ideal</th><th>Detaylı seçenek?</th></tr></thead>
+<tbody>
+<tr><td><strong>Bu metin temizleyici</strong></td><td>Yapıştırılan metnin kategori bazlı düğmelerle tek seferde temizliği</td><td>Evet &mdash; 9 seçenek</td></tr>
+<tr><td><a href="/tr/satir-sonu-duzeltici/">Satır sonu düzeltici</a></td><td>Özellikle bozuk satır yapısını onarma (5 özel kip)</td><td>Kipler, düğme değil</td></tr>
+<tr><td><a href="/tr/yinelenen-satirlari-kaldir/">Yinelenen satırları kaldır</a></td><td>Listeleri satır satır tekrardan arındırma</td><td>4 tekilleştirme seçeneği</td></tr>
+<tr><td>Word'ün "Biçimlendirmeyi temizle"si</td><td>Word belgesi içinde biçimlendirme ayıklama</td><td>Hayır</td></tr>
+<tr><td>Düz metin olarak yapıştır (Ctrl+Shift+V)</td><td>Yapıştırma anında biçimlendirmeden kaçınma</td><td>Hayır</td></tr>
+</tbody>
+</table>
+<p>Saf satır yapısı onarımı için <a href="/tr/satir-sonu-duzeltici/">satır sonu düzeltici</a>yi, liste temizliği için <a href="/tr/yinelenen-satirlari-kaldir/">yinelenen satırları kaldır</a>ı, büyük-küçük harf sorunları için <a href="/tr/baslik-duzeni-cevirici/">başlık düzeni çevirici</a>yi ya da <a href="/tr/kucuk-harf-cevirici/">küçük harf çevirici</a>yi kullanın.</p>
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Kopyalanan metindeki biçimlendirme nasıl kaldırılır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Metni temizleyiciye yapıştırın ve üç varsayılan seçeneğin açık olduğundan emin olun: satır kenarı boşluğunu kırp, fazla boşlukları kaldır, boş satırları kaldır. En yaygın kopyala-yapıştır dağınıklığını anında düzeltirler. Web sayfasından yapıştırdıysanız 'HTML etiketlerini kaldır'ı ekleyin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">PDF'ten kopyalanan metin nasıl temizlenir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">PDF yapıştırmaları genelde bozuk satır sonları ve hece bölünmesi sorunu yaşar. Önce bu metin temizleyiciyi boşluk ve çöp karakterler için çalıştırın, ardından paragraf yapısını onarmak için <a href="/tr/satir-sonu-duzeltici/">satır sonu düzeltici</a>yi 'bozuk satırları birleştir' kipinde kullanın.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metin temizleyici HTML etiketlerini kaldırır mı?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Evet &mdash; 'HTML etiketlerini kaldır'ı işaretleyin; <code>&lt;...&gt;</code> kalıbına uyan her şey ayıklanır, iç metin kalır. İşaretlemeyi dönüştürmeden sildiğini unutmayın; tablo bitişik hücre metnine dönüşür.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">URL'm neden 'https//ornekcom' haline geldi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">'URL'leri kaldır' açık olmadan 'Noktalamayı kaldır' çalışınca olur: iki nokta ve noktalar silinir, harfler kalır. Bağlantıları bütün olarak silmek için 'URL'leri kaldır'ı işaretleyin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Tek paragraf yapmak için tüm satır sonları kaldırılabilir mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Evet &mdash; 'Tüm satır sonlarını kaldır'ı işaretleyin. Her satır sonu boşluğa dönüşür, metin tek satıra çöker ve fazla boşluklar normalize edilir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Bu araç aksanlı karakterleri siler mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yalnızca 'Özel karakterleri kaldır'ı işaretlerseniz; bu seçenek A&ndash;Z harfleri, rakamlar ve boşlukları koruyup geri kalan her şeyi &mdash; &eacute;, &ntilde; ve Latin-dışı alfabeler dahil &mdash; siler. Diğer seçenekler aksanlı karakterlere dokunmaz.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metnim bir yere yükleniyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Temizleme tamamen tarayıcınızda çalışır. Metniniz asla bir sunucuya gönderilmez ya da saklanmaz.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">"Fazla boşlukları kaldır" ile "satır kenarı boşluğunu kırp" arasındaki fark nedir?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">'Fazla boşlukları kaldır', kelimeler arasındaki çoklu boşluk ya da sekmeleri teke indirir. 'Satır kenarı boşluğunu kırp', her satırın başındaki ve sonundaki boşlukları siler. Birlikte iç ve kenar boşluklarını normalize ederler.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Temizleme geri alınabilir mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Geri alma düğmesi yoktur &mdash; giriş kutusu siz temizleyene kadar orijinalinizi korur; temizlenmiş sonucu kopyalayıp doğrulayana kadar sekmeyi açık tutun.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Metin Araçları</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    function cleanText() {
+      let text = document.getElementById('text-input').value;
+      const originalLength = text.length;
+
+      if (document.getElementById('opt-html').checked) {
+        text = text.replace(/<[^>]*>/g, '');
+      }
+      if (document.getElementById('opt-urls').checked) {
+        text = text.replace(/https?:\/\/[^\s]+/g, '');
+      }
+      if (document.getElementById('opt-punct').checked) {
+        text = text.replace(/[.,!?;:'"()\[\]{}]/g, '');
+      }
+      if (document.getElementById('opt-numbers').checked) {
+        text = text.replace(/[0-9]/g, '');
+      }
+      if (document.getElementById('opt-special').checked) {
+        text = text.replace(/[^a-zA-Z0-9\s\n]/g, '');
+      }
+      if (document.getElementById('opt-trim').checked) {
+        text = text.split('\n').map(line => line.trim()).join('\n');
+      }
+      if (document.getElementById('opt-spaces').checked) {
+        text = text.replace(/[ \t]+/g, ' ');
+      }
+      if (document.getElementById('opt-lines').checked) {
+        text = text.replace(/\n\s*\n/g, '\n');
+      }
+      if (document.getElementById('opt-breaks').checked) {
+        text = text.replace(/\n/g, ' ').replace(/\s+/g, ' ');
+      }
+
+      text = text.trim();
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-chars').textContent = originalLength;
+      document.getElementById('clean-chars').textContent = text.length;
+      document.getElementById('removed-chars').textContent = originalLength - text.length;
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-chars').textContent = '0';
+      document.getElementById('clean-chars').textContent = '0';
+      document.getElementById('removed-chars').textContent = '0';
+    }
+
+    function copyOutput() {
+      const output = document.getElementById('output-text');
+      navigator.clipboard.writeText(output.value).then(() => {
+        alert('Panoya kopyalandı!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kopyalanan metindeki biçimlendirme nasıl kaldırılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metni temizleyiciye yapıştırın ve üç varsayılan seçeneğin açık olduğundan emin olun: satır kenarı boşluğunu kırp, fazla boşlukları kaldır, boş satırları kaldır. En yaygın kopyala-yapıştır dağınıklığını anında düzeltirler. Web sayfasından yapıştırdıysanız 'HTML etiketlerini kaldır'ı ekleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PDF'ten kopyalanan metin nasıl temizlenir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF yapıştırmaları genelde bozuk satır sonları ve hece bölünmesi sorunu yaşar. Önce bu metin temizleyiciyi boşluk ve çöp karakterler için çalıştırın, ardından paragraf yapısını onarmak için satır sonu düzelticiyi 'bozuk satırları birleştir' kipinde kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metin temizleyici HTML etiketlerini kaldırır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — 'HTML etiketlerini kaldır'ı işaretleyin; <...> kalıbına uyan her şey ayıklanır, iç metin kalır. İşaretlemeyi dönüştürmeden sildiğini unutmayın; tablo bitişik hücre metnine dönüşür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "URL'm neden 'https//ornekcom' haline geldi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "'URL'leri kaldır' açık olmadan 'Noktalamayı kaldır' çalışınca olur: iki nokta ve noktalar silinir, harfler kalır. Bağlantıları bütün olarak silmek için 'URL'leri kaldır'ı işaretleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tek paragraf yapmak için tüm satır sonları kaldırılabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — 'Tüm satır sonlarını kaldır'ı işaretleyin. Her satır sonu boşluğa dönüşür, metin tek satıra çöker ve fazla boşluklar normalize edilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu araç aksanlı karakterleri siler mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yalnızca 'Özel karakterleri kaldır'ı işaretlerseniz; bu seçenek A–Z harfleri, rakamlar ve boşlukları koruyup geri kalan her şeyi — é, ñ ve Latin-dışı alfabeler dahil — siler. Diğer seçenekler aksanlı karakterlere dokunmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Temizleme tamamen tarayıcınızda çalışır. Metniniz asla bir sunucuya gönderilmez ya da saklanmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\"Fazla boşlukları kaldır\" ile \"satır kenarı boşluğunu kırp\" arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "'Fazla boşlukları kaldır', kelimeler arasındaki çoklu boşluk ya da sekmeleri teke indirir. 'Satır kenarı boşluğunu kırp', her satırın başındaki ve sonundaki boşlukları siler. Birlikte iç ve kenar boşluklarını normalize ederler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Temizleme geri alınabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Geri alma düğmesi yoktur — giriş kutusu siz temizleyene kadar orijinalinizi korur; temizlenmiş sonucu kopyalayıp doğrulayana kadar sekmeyi açık tutun."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
