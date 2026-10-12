@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Generador de Texto Brat | FontGenerators.online</title>
+  <meta content="Crea imágenes de texto estilo brat en línea: elige fuentes, colores y fondos y expórtalas como PNG o SVG. Gratis y sin registro. Perfectas para memes." name="description" />
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/generador-de-texto-brat/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/brat-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/brat-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-brat/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-brat/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/brat-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .brat-generator {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .brat-generator {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+      }
+    }
+
+    .controls-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .preview-size {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+
+    .control-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .control-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .control-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .text-input-large {
+      width: 100%;
+      min-height: 100px;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      background: var(--background);
+      transition: all var(--transition);
+    }
+
+    .text-input-large:focus {
+      outline: none;
+      border-color: #8ADE21;
+      box-shadow: 0 0 0 3px rgba(138, 222, 33, 0.2);
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .control-select,
+    .control-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      background: var(--background);
+      color: var(--foreground);
+      transition: all var(--transition);
+    }
+
+    .control-select:focus,
+    .control-input:focus {
+      outline: none;
+      border-color: #8ADE21;
+    }
+
+    .color-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-input {
+      width: 100%;
+      height: 42px;
+      padding: 0;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .color-input::-webkit-color-swatch-wrapper {
+      padding: 4px;
+    }
+
+    .color-input::-webkit-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+
+    .color-preview {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius);
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-toggle {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: 2px solid var(--border);
+      background: var(--background);
+      color: var(--foreground);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-toggle:hover {
+      border-color: #8ADE21;
+    }
+
+    .btn-toggle.active {
+      background: #8ADE21;
+      border-color: #8ADE21;
+      color: #000;
+    }
+
+    .style-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .style-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border);
+      background: var(--background);
+      color: var(--foreground);
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .style-btn:hover {
+      border-color: #8ADE21;
+    }
+
+    .style-btn.active {
+      background: #8ADE21;
+      border-color: #8ADE21;
+      color: #000;
+    }
+
+    .preview-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+
+    .canvas-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      background: repeating-conic-gradient(#f0f0f0 0% 25%, white 0% 50%) 50% / 20px 20px;
+      border-radius: var(--radius);
+      padding: 1rem;
+      min-height: 300px;
+    }
+
+    #preview-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: var(--shadow-lg);
+      border-radius: 4px;
+    }
+
+    .size-controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .size-control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .size-control label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .size-control input {
+      padding: 0.5rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      text-align: center;
+      background: var(--background);
+    }
+
+    .export-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .export-btn {
+      padding: 0.75rem 1.25rem;
+      border: 2px solid #8ADE21;
+      background: white;
+      color: #8ADE21;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .export-btn:hover {
+      background: #f0ffd9;
+    }
+
+    .export-btn.primary {
+      background: #8ADE21;
+      color: #000;
+    }
+
+    .export-btn.primary:hover {
+      background: #7ac91e;
+    }
+
+    .gradient-inputs {
+      display: none;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .gradient-inputs.show {
+      display: flex;
+    }
+
+    .image-upload-wrapper {
+      display: none;
+      margin-top: 0.75rem;
+    }
+
+    .image-upload-wrapper.show {
+      display: block;
+    }
+
+    .image-upload-btn {
+      width: 100%;
+      padding: 1rem;
+      border: 2px dashed var(--border);
+      background: var(--background);
+      color: var(--muted);
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .image-upload-btn:hover {
+      border-color: #8ADE21;
+      color: #8ADE21;
+    }
+
+    .tool-header {
+      background: linear-gradient(135deg, #8ADE21 0%, #6BC115 100%);
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #000;
+    }
+
+    .tool-header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-header p {
+      opacity: 0.8;
+      font-size: 1rem;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What font is the brat album cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The brat cover uses a plain bold sans-serif set in all lowercase on a lime-green square. In this generator, Montserrat (the default) and Arial Black come closest to that blunt, unstyled look."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to make brat text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type your words into the generator, keep them lowercase, pick a bold sans font like Montserrat, leave the lime-green background, and click Download PNG. For stacked lines like the album cover, press Enter between words."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is brat text lowercase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lowercase is part of the album's anti-glamour aesthetic — casual, deadpan, and deliberately unpolished. The generator defaults to whatever case you type, so type in lowercase for the authentic look."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy and paste brat text into my bio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not as styled text — this tool exports images (PNG/SVG), and the brat look only exists as a picture. For text you can paste into bios, use a Unicode tool like the aesthetic text generator or vaporwave text generator instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes can I export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can export SVG, a PNG at your custom canvas size, or one-click presets at 600×315 and 1200×630 pixels — the standard social-card ratio used by X, Facebook, and link previews."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own background image?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Switch the background mode to Image and upload any picture from your device. The image stays in your browser — nothing is uploaded to a server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a faster way to download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — press Ctrl+S (Windows) or Cmd+S (Mac) while on the page to download the current canvas as a PNG instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this generator affiliated with Charli XCX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It's an unofficial fan-style tool that recreates the general look of the brat artwork for personal memes and edits."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/brat-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/brat-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../herramientas-de-texto-aesthetic/">Herramientas Aesthetic</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Generador de Texto Brat</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="../../brat-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="./" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="../pt/gerador-de-texto-brat/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../tr/brat-metin-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+
+<section class="tool-hero" style="background: linear-gradient(135deg, #8ACE00 0%, #6B9E00 100%);">
+      <div class="container">
+        <div class="h1">💚 Generador de Texto Brat</div>
+        <p class="visually-muted">
+          Create brat aesthetic text, brat font images, and bold attitude-style visuals online.
+        </p>
+      </div>
+    </section>
+    <div class="brat-generator">
+      <!-- Controls Panel -->
+      <div class="controls-panel">
+        <div class="panel-header">
+          <span class="panel-title">Backgrounds, SVG export &amp; Typography FX</span>
+          <span class="preview-size">Preview: <span id="preview-dimensions">500×400</span></span>
+        </div>
+        <!-- Main Text -->
+        <div class="control-group">
+          <label class="control-label">Main Text</label>
+          <textarea class="text-input-large" id="main-text" placeholder="Escriba su texto... (admite varias líneas)">YOUR TEXT
+HERE</textarea>
+          <p class="control-hint">Use new lines for stacked text. Ctrl/Cmd + S to download PNG.</p>
+        </div>
+        <!-- Font Family & Size -->
+        <div class="control-row">
+          <div class="control-group">
+            <label class="control-label">Font</label>
+            <select class="control-select" id="font-family">
+              <option value="Arial Black">Arial Black</option>
+              <option selected="" value="Montserrat">Montserrat</option>
+              <option value="Roboto">Roboto</option>
+              <option value="Inter">Inter</option>
+              <option value="Oswald">Oswald</option>
+              <option value="Playfair Display">Playfair</option>
+              <option value="Impact">Impact</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Times New Roman">Times</option>
+              <option value="Courier New">Courier</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Size</label>
+            <input class="control-input" id="font-size" max="200" min="10" type="number" value="50" />
+          </div>
+        </div>
+        <!-- Text Color -->
+        <div class="control-row">
+          <div class="control-group">
+            <label class="control-label">Text Color</label>
+            <input class="color-input" id="text-color" type="color" value="#ffffff" />
+          </div>
+          <!-- Background Color -->
+          <div class="control-group">
+            <label class="control-label">Background Color</label>
+            <div class="color-input-wrapper">
+              <input class="color-input" id="bg-color" type="color" value="#8ADE21" />
+              <div class="color-preview" id="bg-preview" style="background: #8ADE21;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Background Mode -->
+        <div class="control-group">
+          <label class="control-label">Background Mode</label>
+          <div class="btn-group">
+            <button class="btn-toggle active" data-mode="solid" onclick="setBgMode('solid')">Solid</button>
+            <button class="btn-toggle" data-mode="gradient" onclick="setBgMode('gradient')">Gradient</button>
+            <button class="btn-toggle" data-mode="image" onclick="setBgMode('image')">Image</button>
+          </div>
+          <div class="gradient-inputs" id="gradient-inputs">
+            <input class="color-input" id="gradient-color-1" style="flex:1;" type="color" value="#000000" />
+            <input class="color-input" id="gradient-color-2" style="flex:1;" type="color" value="#de2121" />
+          </div>
+          <div class="image-upload-wrapper" id="image-upload-wrapper">
+            <label class="image-upload-btn">
+              📷 Click to upload background image
+              <input accept="image/*" id="bg-image-input" style="display:none;" type="file" />
+            </label>
+          </div>
+        </div>
+        <!-- Text Style & Alignment -->
+        <div class="control-row">
+          <div class="control-group">
+            <label class="control-label">Text Style</label>
+            <div class="style-buttons">
+              <button class="style-btn active" id="btn-bold" onclick="toggleStyle('bold')"><b>B</b></button>
+              <button class="style-btn" id="btn-italic" onclick="toggleStyle('italic')"><i>I</i></button>
+              <button class="style-btn" id="btn-underline" onclick="toggleStyle('underline')"><u>U</u></button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Alignment</label>
+            <div class="style-buttons">
+              <button class="style-btn" data-align="left" onclick="setAlign('left')">L</button>
+              <button class="style-btn active" data-align="center" onclick="setAlign('center')">C</button>
+              <button class="style-btn" data-align="right" onclick="setAlign('right')">R</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Preview Panel -->
+      <div class="preview-panel">
+        <div class="canvas-container">
+          <canvas height="400" id="preview-canvas" width="500"></canvas>
+        </div>
+        <!-- Size Controls -->
+        <div class="size-controls">
+          <div class="size-control">
+            <label>Padding (px)</label>
+            <input id="padding" max="100" min="0" type="number" value="24" />
+          </div>
+          <div class="size-control">
+            <label>Image Height (px)</label>
+            <input id="canvas-height" max="2000" min="100" type="number" value="400" />
+          </div>
+          <div class="size-control">
+            <label>Image Width (px)</label>
+            <input id="canvas-width" max="2000" min="100" type="number" value="500" />
+          </div>
+        </div>
+        <!-- Export Buttons -->
+        <div class="export-buttons">
+          <button class="export-btn" onclick="exportSVG()">Export SVG</button>
+          <button class="export-btn" onclick="downloadPNG()">Download PNG</button>
+          <button class="export-btn primary" onclick="downloadSize(600, 315)">Download 600×315</button>
+          <button class="export-btn primary" onclick="downloadSize(1200, 630)">Download 1200×630</button>
+          <button class="export-btn primary" onclick="downloadSize(2400, 1260)">Download 2400×1260</button>
+        </div>
+      </div>
+    </div>
+    <!-- content start -->
+    <div class="container" style="padding: 2rem 1rem;">
+    </div>
+    <!-- content end-->
+
+    
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+<h1>Generador de Texto Brat</h1>
+<p class="byline">Por el equipo editorial de FontGenerators · Actualizado: 12 de octubre de 2026</p>
+<p class="lead">Un <strong>generador de texto brat</strong> recrea el inconfundible look del arte del álbum <em>brat</em> de Charli XCX —tipografía negrita en minúsculas, ligeramente borrosa, sobre un chillón cuadrado verde lima— como imagen descargable. Esta herramienta gratuita te deja escribir tus propias palabras, darles estilo y exportar el resultado como PNG o SVG para memes, portadas y fotos de perfil. Sin registro y sin programas de diseño.</p>
+<div class="takeaways">
+<p><strong>Puntos clave</strong></p>
+<ul>
+<li>Esta herramienta crea <strong>imágenes</strong> estilo brat (PNG/SVG), no texto Unicode para copiar y pegar: perfecta para memes y publicaciones, no para biografías.</li>
+<li>Controlas la fuente (10 opciones), los colores del texto y del fondo, el modo de fondo, la alineación y el tamaño del lienzo.</li>
+<li>Los ajustes de exportación incluyen PNG, SVG y tamaños listos para redes de 600×315 y 1200×630; con Ctrl/Cmd+S descargas al instante.</li>
+<li>El fondo verde lima y el estilo en minúsculas replican la estética del álbum <em>brat</em> por defecto.</li>
+<li>Los fondos pueden ser de color sólido, degradado de dos colores o una imagen que subas tú.</li>
+</ul>
+</div>
+
+<h2>¿Qué es el texto brat?</h2>
+<div class="definition"><p>El <strong>texto brat</strong> es el estilo visual del álbum <em>brat</em> (2024) de Charli XCX: tipografía sans-serif negrita en minúsculas, ligeramente estirada, centrada sobre un cuadrado plano verde lima. Ese look deliberadamente simple y de «bajo esfuerzo» se convirtió en plantilla de memes: las ediciones en «verde brat» inundaron TikTok y X en el verano de 2024.</p></div>
+<p>A diferencia de los generadores de texto Unicode, el <strong>texto brat</strong> aquí se dibuja en un lienzo y se exporta como archivo de imagen. Eso significa que el estilo queda perfecto al píxel e idéntico en todos los dispositivos, pero no puedes pegarlo en una bio como texto. Usa este generador cuando quieras la imagen del meme en sí: fotos de reacción, portadas falsas, publicaciones para historias y fotos de perfil.</p>
+
+<h2>Cómo funciona este generador de fuente brat</h2>
+<p>La herramienta es un pequeño estudio de diseño en tu navegador. Dibuja tu texto sobre un lienzo HTML con controles en vivo y luego exporta el lienzo como PNG o SVG. Nada se sube a ningún lado: todo ocurre en tu dispositivo. Estos son los controles, tal como los ofrece la herramienta:</p>
+<table>
+<thead><tr><th>Control</th><th>Opciones</th><th>Por defecto</th></tr></thead>
+<tbody>
+<tr><td>Texto principal</td><td>Área de texto multilínea; los saltos de línea apilan el texto</td><td>«YOUR TEXT<br>HERE»</td></tr>
+<tr><td>Fuente</td><td>Arial Black, Montserrat, Roboto, Inter, Oswald, Playfair Display, Impact, Georgia, Times New Roman, Courier New</td><td>Montserrat</td></tr>
+<tr><td>Tamaño</td><td>10–200 px</td><td>50 px</td></tr>
+<tr><td>Color del texto</td><td>Selector de color</td><td>Blanco (#ffffff)</td></tr>
+<tr><td>Color de fondo</td><td>Selector de color</td><td>Verde brat (#8ADE21)</td></tr>
+<tr><td>Modo de fondo</td><td>Sólido, Degradado (dos colores), Subir imagen</td><td>Sólido</td></tr>
+<tr><td>Estilo de texto</td><td>Interruptores de negrita, cursiva y subrayado</td><td>Negrita activada</td></tr>
+<tr><td>Alineación</td><td>Izquierda, Centro, Derecha</td><td>Centro</td></tr>
+<tr><td>Relleno</td><td>0–100 px</td><td>24 px</td></tr>
+<tr><td>Tamaño del lienzo</td><td>100–2000 px de ancho × alto</td><td>500 × 400</td></tr>
+<tr><td>Exportación</td><td>SVG, PNG, PNG 600×315, PNG 1200×630</td><td>—</td></tr>
+</tbody>
+</table>
+<p>Pulsar <strong>Ctrl/Cmd + S</strong> descarga el lienzo actual como PNG sin tocar los botones.</p>
+[IMAGE: Ilustración estilo captura del generador brat con los controles etiquetados | alt="Interfaz del generador de texto brat con controles de texto, fuente, color y exportación"]
+
+<h2>Ejemplo paso a paso</h2>
+<p>Deja todos los valores por defecto, pero cambia el texto a:</p>
+<div class="example-box"><p>it's<br>brat<br>summer</p></div>
+<p>El lienzo muestra tres líneas apiladas en Montserrat negrita blanca sobre el cuadrado verde lima: la composición clásica de la portada. Haz clic en <strong>Descargar 1200×630</strong> y obtienes un PNG del tamaño de tarjeta social, listo para publicar. Cambia el modo de fondo a <strong>Imagen</strong>, sube una foto, y el mismo texto queda sobre tu imagen: un meme en dos minutos.</p>
+
+<h2>Cómo crear texto brat</h2>
+<ol>
+<li><strong>Escribe tu texto</strong> en el cuadro de texto principal. Usa Enter para apilar líneas, como en la portada del álbum.</li>
+<li><strong>Elige una fuente.</strong> Montserrat (por defecto) es la más cercana al look de la portada; Arial Black e Impact van más a lo bestia.</li>
+<li><strong>Ajusta los colores.</strong> Mantén el fondo verde lima para el auténtico look de <strong>texto verde brat</strong>, o cambia ambos colores a tu gusto.</li>
+<li><strong>Elige un modo de fondo</strong>: sólido, degradado de dos colores o una imagen que subas tú.</li>
+<li><strong>Ajusta estilo y alineación</strong> con los interruptores de negrita/cursiva/subrayado y los botones I/C/D.</li>
+<li><strong>Dimensiona el lienzo</strong> con los campos de ancho, alto y relleno.</li>
+<li><strong>Exporta</strong> como PNG o SVG, o usa los ajustes de 600×315 / 1200×630 para publicaciones sociales.</li>
+</ol>
+
+<h2>¿Qué fuente usa la portada del álbum brat?</h2>
+<p>La portada oficial de <em>brat</em> usa una negrita sans sencilla, ligeramente pixelada, toda en minúsculas sobre verde lima. Las más cercanas en el generador son <strong>Montserrat</strong> (la opción por defecto) y <strong>Arial Black</strong>: ambas te dan esa actitud directa y sin pulir. <strong>¿Por qué el texto brat va en minúsculas?</strong> Las minúsculas forman parte de la estética: se lee casual, inexpresivo y anti-glamour, que es justo el chiste visual del álbum.</p>
+
+<h2>Generador de texto brat vs. herramientas similares</h2>
+<p>Como esta herramienta exporta imágenes y no texto, juega en una categoría distinta a los generadores Unicode del sitio:</p>
+<table>
+<thead><tr><th>Herramienta</th><th>Resultado</th><th>Úsala cuando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/es/generador-de-texto-con-purpurina/">Generador de texto con purpurina</a></td><td>Imagen GIF animada</td><td>Quieras <strong>texto brillante</strong> como imagen animada</td></tr>
+<tr><td><a href="/es/generador-de-texto-neon/">Generador de texto neón</a></td><td>Texto Unicode para copiar y pegar</td><td>Necesites texto de letrero luminoso dentro de una bio o un chat</td></tr>
+<tr><td><a href="/es/generador-de-texto-retro/">Generador de texto retro</a></td><td>Texto Unicode para copiar y pegar</td><td>Quieras texto estilo 80s/VHS que puedas pegar</td></tr>
+<tr><td><a href="/es/generador-de-texto-cyber/">Generador de texto cyber</a></td><td>Texto Unicode para copiar y pegar</td><td>Quieras texto futurista para nombres gamer</td></tr>
+<tr><td><a href="/es/generador-de-texto-vaporwave/">Generador de texto vaporwave</a></td><td>Texto Unicode para copiar y pegar</td><td>Quieras letras aesthetic anchas como texto</td></tr>
+</tbody>
+</table>
+<p>Regla de oro: si el estilo tiene que vivir <em>dentro</em> de un nombre de usuario, una bio o un mensaje, usa una herramienta de texto Unicode. Si quieres una imagen para compartir, quédate aquí. Mira todas las <a href="/es/herramientas-de-texto-aesthetic/">herramientas de texto aesthetic</a> para ver ambos tipos.</p>
+
+<h2>Consejos para memes brat auténticos</h2>
+<p><strong>Texto corto e inexpresivo.</strong> El meme funciona porque el diseño es agresivamente simple: de una a cuatro palabras en minúsculas pegan más fuerte.</p>
+<p><strong>Usa el ajuste 1200×630</strong> para X/Twitter y vistas previas de enlaces; <strong>600×315</strong> es una versión más ligera de la misma proporción 1,91:1 de tarjeta social.</p>
+<p><strong>Prueba el SVG para escalar sin perder nitidez.</strong> La exportación SVG se mantiene nítida a cualquier tamaño, útil si vas a imprimir pegatinas o agrandar el meme.</p>
+
+<h2>Limitaciones</h2>
+<ul>
+<li>El resultado es un archivo de imagen, no texto: no puedes pegar el estilo «brat text» en biografías, nombres de usuario o chats.</li>
+<li>Las imágenes de fondo que subas se quedan en tu navegador; la herramienta no las aloja ni las comparte.</li>
+<li>Las fuentes se dibujan desde la pila de fuentes de tu sistema, así que el aspecto exacto puede variar un poco entre dispositivos.</li>
+<li>El generador recrea el <em>estilo</em> del arte del álbum para uso personal/fan: no está afiliado a la artista ni al sello.</li>
+</ul>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Qué fuente usa la portada del álbum brat?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">La portada de brat usa una sans-serif negrita y sencilla, toda en minúsculas, sobre un cuadrado verde lima. En este generador, Montserrat (la opción por defecto) y Arial Black son las que más se acercan a ese aspecto directo y sin adornos.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cómo se crea texto brat?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Escribe tus palabras en el generador, mantenlas en minúsculas, elige una sans-serif negrita como Montserrat, deja el fondo verde lima y haz clic en Descargar PNG. Para líneas apiladas como las de la portada, pulsa Enter entre palabra y palabra.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Por qué el texto brat va en minúsculas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Las minúsculas forman parte de la estética anti-glamour del álbum: casual, inexpresiva y deliberadamente poco pulida. El generador respeta las mayúsculas que escribas, así que escribe en minúsculas para el look auténtico.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Puedo copiar y pegar el texto brat en mi biografía?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No como texto con estilo: esta herramienta exporta imágenes (PNG/SVG), y el look brat solo existe como imagen. Para texto que puedas pegar en biografías, usa una herramienta Unicode como el generador de texto aesthetic o el generador de texto vaporwave.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿En qué tamaños puedo exportar?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Puedes exportar en SVG, en PNG con el tamaño de lienzo que definas, o con los ajustes predefinidos de un clic a 600×315 y 1200×630 píxeles: la proporción estándar de tarjeta social que usan X, Facebook y las vistas previas de enlaces.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Puedo usar mi propia imagen de fondo?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sí. Cambia el modo de fondo a Imagen y sube cualquier foto desde tu dispositivo. La imagen se queda en tu navegador: no se sube a ningún servidor.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Hay una forma más rápida de descargar?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sí: pulsa Ctrl+S (Windows) o Cmd+S (Mac) dentro de la página para descargar al instante el lienzo actual como PNG.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Este generador está afiliado a Charli XCX?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No. Es una herramienta no oficial, de estilo fan, que recrea el aspecto general del arte de brat para memes y ediciones personales.</p></div>
+</div>
+</div>
+    <!-- ═══ END SEO CONTENT ═══ -->
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+<script defer="">
+    // Brat Text Generator Pro - Internal JavaScript
+
+    // State
+    let state = {
+      bgMode: 'solid',
+      align: 'center',
+      bold: true,
+      italic: false,
+      underline: false,
+      bgImage: null
+    };
+
+    // DOM Elements
+    const canvas = document.getElementById('preview-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function () {
+      bindEvents();
+      render();
+    });
+
+    function bindEvents() {
+      // Text input
+      document.getElementById('main-text').addEventListener('input', render);
+
+      // Font controls
+      document.getElementById('font-family').addEventListener('change', render);
+      document.getElementById('font-size').addEventListener('input', render);
+
+      // Colors
+      document.getElementById('text-color').addEventListener('input', render);
+      document.getElementById('bg-color').addEventListener('input', function () {
+        document.getElementById('bg-preview').style.background = this.value;
+        render();
+      });
+      document.getElementById('gradient-color-1').addEventListener('input', render);
+      document.getElementById('gradient-color-2').addEventListener('input', render);
+
+
+
+      // Canvas size
+      document.getElementById('canvas-width').addEventListener('input', updateCanvasSize);
+      document.getElementById('canvas-height').addEventListener('input', updateCanvasSize);
+      document.getElementById('padding').addEventListener('input', render);
+
+      // Background image
+      document.getElementById('bg-image-input').addEventListener('change', handleImageUpload);
+
+      // Keyboard shortcut
+      document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+          downloadPNG();
+        }
+      });
+    }
+
+    function setBgMode(mode) {
+      state.bgMode = mode;
+
+      // Update buttons
+      document.querySelectorAll('[data-mode]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+
+      // Show/hide gradient inputs
+      document.getElementById('gradient-inputs').classList.toggle('show', mode === 'gradient');
+      document.getElementById('image-upload-wrapper').classList.toggle('show', mode === 'image');
+
+      render();
+    }
+
+    function setAlign(align) {
+      state.align = align;
+
+      document.querySelectorAll('[data-align]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.align === align);
+      });
+
+      render();
+    }
+
+    function toggleStyle(style) {
+      state[style] = !state[style];
+      document.getElementById('btn-' + style).classList.toggle('active', state[style]);
+      render();
+    }
+
+    function handleImageUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          const img = new Image();
+          img.onload = function () {
+            state.bgImage = img;
+            render();
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function updateCanvasSize() {
+      const width = parseInt(document.getElementById('canvas-width').value) || 500;
+      const height = parseInt(document.getElementById('canvas-height').value) || 400;
+
+      canvas.width = width;
+      canvas.height = height;
+
+      document.getElementById('preview-dimensions').textContent = `${width}×${height}`;
+
+      render();
+    }
+
+    function render() {
+      const width = canvas.width;
+      const height = canvas.height;
+      const padding = parseInt(document.getElementById('padding').value) || 24;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw background
+      if (state.bgMode === 'solid') {
+        ctx.fillStyle = document.getElementById('bg-color').value;
+        ctx.fillRect(0, 0, width, height);
+      } else if (state.bgMode === 'gradient') {
+        const gradient = ctx.createLinearGradient(0, 0, width, height);
+        gradient.addColorStop(0, document.getElementById('gradient-color-1').value);
+        gradient.addColorStop(1, document.getElementById('gradient-color-2').value);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+      } else if (state.bgMode === 'image' && state.bgImage) {
+        // Cover the canvas with the image
+        const imgRatio = state.bgImage.width / state.bgImage.height;
+        const canvasRatio = width / height;
+
+        let drawWidth, drawHeight, drawX, drawY;
+
+        if (imgRatio > canvasRatio) {
+          drawHeight = height;
+          drawWidth = height * imgRatio;
+          drawX = (width - drawWidth) / 2;
+          drawY = 0;
+        } else {
+          drawWidth = width;
+          drawHeight = width / imgRatio;
+          drawX = 0;
+          drawY = (height - drawHeight) / 2;
+        }
+
+        ctx.drawImage(state.bgImage, drawX, drawY, drawWidth, drawHeight);
+      } else {
+        // Default green if no image
+        ctx.fillStyle = '#8ADE21';
+        ctx.fillRect(0, 0, width, height);
+      }
+
+      // Get text settings
+      const text = document.getElementById('main-text').value || 'YOUR TEXT HERE';
+      const fontFamily = document.getElementById('font-family').value;
+      const fontSize = parseInt(document.getElementById('font-size').value) || 50;
+      const textColor = document.getElementById('text-color').value;
+      const lineHeight = 1.05;
+
+      // Build font string
+      let fontStyle = '';
+      if (state.italic) fontStyle += 'italic ';
+      if (state.bold) fontStyle += 'bold ';
+      fontStyle += `${fontSize}px "${fontFamily}", sans-serif`;
+
+      ctx.font = fontStyle;
+      ctx.fillStyle = textColor;
+      ctx.textAlign = state.align;
+      ctx.textBaseline = 'middle';
+
+      // Calculate text position
+      let x;
+      if (state.align === 'left') {
+        x = padding;
+      } else if (state.align === 'right') {
+        x = width - padding;
+      } else {
+        x = width / 2;
+      }
+
+      // Split text into lines
+      const lines = text.split('\n');
+      const totalTextHeight = lines.length * fontSize * lineHeight;
+      let startY = (height - totalTextHeight) / 2 + fontSize / 2;
+
+      // Draw each line
+      lines.forEach((line, index) => {
+        const y = startY + (index * fontSize * lineHeight);
+
+        ctx.fillText(line, x, y);
+
+        // Draw underline if enabled
+        if (state.underline) {
+          const textWidth = ctx.measureText(line).width;
+          let lineX = x;
+          if (state.align === 'center') lineX = x - textWidth / 2;
+          else if (state.align === 'right') lineX = x - textWidth;
+
+          ctx.beginPath();
+          ctx.strokeStyle = textColor;
+          ctx.lineWidth = fontSize / 15;
+          ctx.moveTo(lineX, y + fontSize / 2.5);
+          ctx.lineTo(lineX + textWidth, y + fontSize / 2.5);
+          ctx.stroke();
+        }
+      });
+    }
+
+    function downloadPNG() {
+      const link = document.createElement('a');
+      link.download = 'brat-text.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function downloadSize(w, h) {
+      // Store original size
+      const origWidth = canvas.width;
+      const origHeight = canvas.height;
+
+      // Temporarily resize
+      canvas.width = w;
+      canvas.height = h;
+      document.getElementById('canvas-width').value = w;
+      document.getElementById('canvas-height').value = h;
+
+      render();
+
+      const link = document.createElement('a');
+      link.download = `brat-text-${w}x${h}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+
+      // Restore original size
+      canvas.width = origWidth;
+      canvas.height = origHeight;
+      document.getElementById('canvas-width').value = origWidth;
+      document.getElementById('canvas-height').value = origHeight;
+      document.getElementById('preview-dimensions').textContent = `${origWidth}×${origHeight}`;
+
+      render();
+    }
+
+    function exportSVG() {
+      const width = canvas.width;
+      const height = canvas.height;
+      const padding = parseInt(document.getElementById('padding').value) || 24;
+
+      const text = document.getElementById('main-text').value || 'YOUR TEXT HERE';
+      const fontFamily = document.getElementById('font-family').value;
+      const fontSize = parseInt(document.getElementById('font-size').value) || 50;
+      const textColor = document.getElementById('text-color').value;
+      const lineHeight = 1.05;
+
+      let bgFill;
+      if (state.bgMode === 'solid') {
+        bgFill = document.getElementById('bg-color').value;
+      } else if (state.bgMode === 'gradient') {
+        bgFill = `url(#gradient)`;
+      } else {
+        bgFill = '#8ADE21';
+      }
+
+      let fontWeight = state.bold ? 'bold' : 'normal';
+      let fontStyle = state.italic ? 'italic' : 'normal';
+      let textDecoration = state.underline ? 'underline' : 'none';
+
+      let textAnchor = 'middle';
+      let x = width / 2;
+      if (state.align === 'left') {
+        textAnchor = 'start';
+        x = padding;
+      } else if (state.align === 'right') {
+        textAnchor = 'end';
+        x = width - padding;
+      }
+
+      const lines = text.split('\n');
+      const totalTextHeight = lines.length * fontSize * lineHeight;
+      let startY = (height - totalTextHeight) / 2 + fontSize / 2;
+
+      let textElements = lines.map((line, i) => {
+        const y = startY + (i * fontSize * lineHeight);
+        return `<text x="${x}" y="${y}" fill="${textColor}" font-family="${fontFamily}, sans-serif" font-size="${fontSize}" font-weight="${fontWeight}" font-style="${fontStyle}" text-anchor="${textAnchor}" dominant-baseline="middle" text-decoration="${textDecoration}">${escapeXML(line)}</text>`;
+      }).join('\n    ');
+
+      let gradientDef = '';
+      if (state.bgMode === 'gradient') {
+        const c1 = document.getElementById('gradient-color-1').value;
+        const c2 = document.getElementById('gradient-color-2').value;
+        gradientDef = `
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${c1}"/>
+      <stop offset="100%" style="stop-color:${c2}"/>
+    </linearGradient>
+  </defs>`;
+      }
+
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">${gradientDef}
+  <rect width="100%" height="100%" fill="${bgFill}"/>
+  ${textElements}
+</svg>`;
+
+      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = 'brat-text.svg';
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function escapeXML(str) {
+      return str.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+    }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué fuente usa la portada del álbum brat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La portada de brat usa una sans-serif negrita y sencilla, toda en minúsculas, sobre un cuadrado verde lima. En este generador, Montserrat (la opción por defecto) y Arial Black son las que más se acercan a ese aspecto directo y sin adornos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se crea texto brat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escribe tus palabras en el generador, mantenlas en minúsculas, elige una sans-serif negrita como Montserrat, deja el fondo verde lima y haz clic en Descargar PNG. Para líneas apiladas como las de la portada, pulsa Enter entre palabra y palabra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué el texto brat va en minúsculas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las minúsculas forman parte de la estética anti-glamour del álbum: casual, inexpresiva y deliberadamente poco pulida. El generador respeta las mayúsculas que escribas, así que escribe en minúsculas para el look auténtico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo copiar y pegar el texto brat en mi biografía?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No como texto con estilo: esta herramienta exporta imágenes (PNG/SVG), y el look brat solo existe como imagen. Para texto que puedas pegar en biografías, usa una herramienta Unicode como el generador de texto aesthetic o el generador de texto vaporwave."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué tamaños puedo exportar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes exportar en SVG, en PNG con el tamaño de lienzo que definas, o con los ajustes predefinidos de un clic a 600×315 y 1200×630 píxeles: la proporción estándar de tarjeta social que usan X, Facebook y las vistas previas de enlaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar mi propia imagen de fondo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cambia el modo de fondo a Imagen y sube cualquier foto desde tu dispositivo. La imagen se queda en tu navegador: no se sube a ningún servidor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay una forma más rápida de descargar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí: pulsa Ctrl+S (Windows) o Cmd+S (Mac) dentro de la página para descargar al instante el lienzo actual como PNG."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Este generador está afiliado a Charli XCX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es una herramienta no oficial, de estilo fan, que recrea el aspecto general del arte de brat para memes y ediciones personales."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
