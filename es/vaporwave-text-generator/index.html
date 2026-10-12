@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Generador de Texto Vaporwave - Crear Letras Anchas Estéticas (Ｗｉｄｅ)</title>
+  <meta
+    content="Convierte texto normal en fuentes vaporwave anchas de ancho completo (fullwidth). Copia y pega texto estético para biografías, Steam, Discord e Instagram."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/vaporwave-text-generator/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/vaporwave-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/vaporwave-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/vaporwave-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/vaporwave-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/vaporwave-text-generator/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Comparison Table */
+    .seo-content-section table {
+      width: 100%;
+      max-width: 780px;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .seo-content-section table th {
+      background: var(--cream-dark, #FAF5EE);
+      color: var(--black, #121212);
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid #e0d5c8;
+      font-size: 0.9rem;
+    }
+
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="header"></div>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb m-0 p-0">
+        <a href="../../">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../../aesthetic-text-tools/">Herramientas Aesthetic</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Generador de Texto Vaporwave</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="../../vaporwave-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="./" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="../../pt/vaporwave-text-generator/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../../tr/vaporwave-text-generator/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #ff6b9d 0%, #c44cd9 50%, #6e8efb 100%);">
+      <div class="container">
+        <h1>🌊 Generador de Texto Vaporwave</h1>
+        <p>Crea texto ancho y estético de ancho completo con estilo retro de los 80s y 90s</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Escribe o pega tu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('vaporwave')"
+            placeholder="Escribe algo aesthetic..."></textarea>
+          <div class="char-count" id="char-count">0 caracteres</div>
+        </div>
+        <div class="style-preview vaporwave" data-default="ａｅｓｔｈｅｔｉｃ" id="style-preview">
+          ａｅｓｔｈｅｔｉｃ
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Estilos Generados</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Todo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpiar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🌊</div>
+              <p>Escribe algún texto arriba para generar estilos vaporwave</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>¿Qué es el Texto Vaporwave?</h2>
+        <p>El vaporwave es un microgénero musical y estético de internet que surgió alrededor de 2010–2012,
+          caracterizado por
+          imágenes nostálgicas de los 80s y 90s, colores pastel, referencias visuales japonesas y su icónica
+          <strong>tipografía
+            de ancho completo (fullwidth)</strong>. Las letras anchas y espaciadas se convirtieron en el sello visual
+          del género.
+          Técnicamente, el texto vaporwave utiliza <strong>caracteres Unicode Fullwidth Latin</strong> (U+FF01–U+FF5E),
+          diseñados
+          originalmente para la compatibilidad con alfabetos asiáticos de doble byte, logrando letras con el doble de
+          ancho que los
+          caracteres ASCII estándar.
+        </p>
+
+        <h2>Cómo Crear Texto Vaporwave</h2>
+        <ol>
+          <li><strong>Escribe cualquier texto</strong> en el campo de entrada superior: una palabra, frase o título.
+          </li>
+          <li>La herramienta <strong>convierte al instante</strong> cada letra y número a su equivalente Unicode
+            fullwidth.</li>
+          <li>Los números y letras se expanden; la mayoría de símbolos conservan su armonía visual.</li>
+          <li>Haz clic en <strong>Copiar</strong> para guardar el texto vaporwave generado en tu portapapeles.</li>
+          <li><strong>Pega</strong> en Discord, Instagram, Steam, Twitter (X), Spotify, TikTok o tus chats favoritos.
+          </li>
+        </ol>
+
+        <h2>Dónde Usar Texto Estético Vaporwave</h2>
+        <p>El texto vaporwave funciona en cualquier plataforma moderna que admita caracteres Unicode. Los títulos de
+          listas de
+          reproducción de Spotify en texto ancho destacan visualmente. Los nombres de servidores y canales en Discord se
+          ven
+          únicos. Los perfiles de Steam en estilo vaporwave aportan un toque retro gamer inconfundible. En las
+          biografías y
+          publicaciones de Instagram, el espaciado ancho resalta frente a cualquier tipografía genérica.</p>
+
+        <h2>Ejemplos de Conversión Vaporwave</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Texto Normal</th>
+              <th>Resultado Vaporwave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SUEÑO</td>
+              <td>ＳＵＥÑＯ</td>
+            </tr>
+            <tr>
+              <td>lo-fi beats</td>
+              <td>ｌｏ－ｆｉ　ｂｅａｔｓ</td>
+            </tr>
+            <tr>
+              <td>vibra estetica</td>
+              <td>ｖｉｂｒａ　ｅｓｔｅｔｉｃａ</td>
+            </tr>
+            <tr>
+              <td>1 9 8 4</td>
+              <td>１　９　８　４</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Vaporwave vs Otros Estilos de Texto Estéticos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Estilo</th>
+              <th>Apariencia</th>
+              <th>Vibra</th>
+              <th>Mejor Plataforma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vaporwave (Fullwidth)</td>
+              <td>ＷＩＤＥ　ＴＥＸＴ</td>
+              <td>Retro, onírico, irónico</td>
+              <td>Spotify, Discord, Steam</td>
+            </tr>
+            <tr>
+              <td>Aesthetic Espaciado</td>
+              <td>a e s t h e t i c</td>
+              <td>Minimalista, limpio</td>
+              <td>Bio de Instagram</td>
+            </tr>
+            <tr>
+              <td>Negrita Aesthetic</td>
+              <td>𝐕𝐀𝐏𝐎𝐑</td>
+              <td>Fuerte, llamativa</td>
+              <td>Nombres de Twitter</td>
+            </tr>
+            <tr>
+              <td>Texto Glitch</td>
+              <td>V̵A̸P̶O̷R̴</td>
+              <td>Corrupto, cyberpunk</td>
+              <td>Perfiles de juegos</td>
+            </tr>
+            <tr>
+              <td>Neón / Cursiva</td>
+              <td>𝘝𝘈𝘗𝘖𝘙</td>
+              <td>Elegante, dinámico</td>
+              <td>Subtítulos y estados</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Es el texto vaporwave lo mismo que el texto fullwidth?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí. El texto vaporwave ES texto fullwidth (de ancho completo). El estilo fue
+                popularizado
+                por el movimiento estético vaporwave en internet y hoy en día son sinónimos, pero técnicamente se
+                compone
+                de caracteres estándar Unicode Fullwidth Latin.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué algunos caracteres se ven diferentes en vaporwave?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Existen equivalentes de ancho completo para letras (A–Z, a–z), dígitos (0–9) y la
+                mayoría de
+                signos de puntuación. Los caracteres que no cuentan con contraparte directa se muestran en su formato
+                estándar
+                sin romper la frase.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Funciona el texto vaporwave en nombres de videojuegos?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Depende del juego. Los nombres en Steam y muchas plataformas modernas admiten Unicode
+                por
+                completo. Algunos juegos antiguos que solo aceptan ASCII básico pueden mostrar signos de interrogación o
+                cajas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo mezclar texto vaporwave con texto normal?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">¡Claro que sí! Puedes combinar letras vaporwave con texto normal, emojis y otros
+                estilos
+                tipográficos para crear diseños únicos en tus mensajes y títulos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuáles son los colores característicos del vaporwave?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El vaporwave clásico combina tonos rosa chicle, morado, verde azulado (teal) y cian, a
+                menudo
+                sobre fondos oscuros o atardeceres en degradado neón retro.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="footer"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      const preview = document.getElementById('style-preview');
+      if (preview && this.value) {
+        const fullwidth = this.value.split('').map(c => {
+          const code = c.charCodeAt(0);
+          if (code >= 33 && code <= 126) return String.fromCharCode(code + 65248);
+          return c === ' ' ? '　' : c;
+        }).join('');
+        preview.textContent = fullwidth;
+      } else if (preview) {
+        preview.textContent = 'ａｅｓｔｈｅｔｉｃ';
+      }
+      generateText('vaporwave');
+    });
+  </script>
+</body>
+
+</html>

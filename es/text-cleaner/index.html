@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Limpiador de texto: elimina HTML, formato y caracteres especiales</title>
+  <meta
+    content="Limpia tu texto eliminando etiquetas HTML, espacios en blanco adicionales, saltos de línea o caracteres especiales. Herramienta rápida y gratuita."
+    name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/text-cleaner/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/text-cleaner/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/text-cleaner/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/text-cleaner/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/text-cleaner/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .option-item:hover {
+      border-color: var(--primary);
+    }
+
+    .option-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .option-item label {
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .output-section {
+      margin-top: 1.5rem;
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      background: var(--surface-secondary);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Utility Tools
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Word Counter</span>
+            </a>
+            <a class="sidebar-link" href="../character-counter/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Character Counter</span>
+            </a>
+            <a class="sidebar-link active" href="../text-cleaner/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Text Cleaner</span>
+            </a>
+            <a class="sidebar-link" href="../remove-duplicate-lines/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Remove Duplicates</span>
+            </a>
+            <a class="sidebar-link" href="../line-break-fixer/">
+              <span class="link-icon">↵</span>
+              <span class="link-text">Line Break Fixer</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Browse Tools
+        </button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">🧹 Limpiador de texto</h1>
+          <p class="tool-description">Clean up messy text by removing extra spaces, line breaks, and unwanted
+            characters</p>
+          <textarea class="tool-input" id="text-input" oninput="cleanText()"
+            placeholder="Pega tu texto desordenado aquí..." rows="6"></textarea>
+          <div class="options-grid">
+            <div class="option-item">
+              <input checked="" id="opt-spaces" onchange="cleanText()" type="checkbox" />
+              <label for="opt-spaces">Remove extra spaces</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-lines" onchange="cleanText()" type="checkbox" />
+              <label for="opt-lines">Remove empty lines</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="opt-trim" onchange="cleanText()" type="checkbox" />
+              <label for="opt-trim">Trim line whitespace</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-breaks" onchange="cleanText()" type="checkbox" />
+              <label for="opt-breaks">Remove all line breaks</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-punct" onchange="cleanText()" type="checkbox" />
+              <label for="opt-punct">Remove punctuation</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-numbers" onchange="cleanText()" type="checkbox" />
+              <label for="opt-numbers">Remove numbers</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-special" onchange="cleanText()" type="checkbox" />
+              <label for="opt-special">Remove special chars</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-html" onchange="cleanText()" type="checkbox" />
+              <label for="opt-html">Remove HTML tags</label>
+            </div>
+            <div class="option-item">
+              <input id="opt-urls" onchange="cleanText()" type="checkbox" />
+              <label for="opt-urls">Remove URLs</label>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="cleanText()">🧹 Clean Text</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🗑️ Clear</button>
+          </div>
+        </div>
+        <div class="output-section">
+          <h3>Texto limpio</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Cleaned text will appear here..."
+            readonly=""></textarea>
+          <div class="stats-row">
+            <span>Original: <strong id="orig-chars">0</strong> chars</span>
+            <span>Cleaned: <strong id="clean-chars">0</strong> chars</span>
+            <span>Removed: <strong id="removed-chars">0</strong> chars</span>
+          </div>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Copy Cleaned Text</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>¿Qué hace un limpiador de texto?</h2>
+        <p>Un limpiador de texto es una herramienta de normalización de formato que elimina elementos no deseados del
+          texto copiado o pegado.
+          Los problemas comunes que soluciona incluyen: <strong>Etiquetas HTML</strong> dejadas por el web scraping
+          (<código>
+            <p>
+          </código>, <código><span></código>, <código>
+            <div>
+          </código>); <strong>adicional
+            espacios en blanco</strong> como espacios dobles y caracteres de tabulación; <strong>caracteres especiales
+            Unicode</strong> como
+          comillas rizadas (" "), guiones (—) y espacios sin separación (&nbsp;); <strong>salto de línea
+            inconsistencias</strong> entre los sistemas Windows (CRLF) y Unix (LF); y <strong>control invisible
+            caracteres</strong> que pueden dañar bases de datos o archivos XML.</p>
+
+        <h2>Cómo utilizar el limpiador de texto</h2>
+        <ol>
+          <li><strong>Pegue su texto desordenado</strong> en el cuadro de entrada, copiado de Word, una página web, PDF
+            o correo electrónico.
+          </li>
+          <li><strong>Seleccione sus opciones de limpieza</strong>: eliminar HTML, eliminar espacios adicionales,
+            corregir saltos de línea, convertir
+            citas inteligentes, etc.</li>
+          <li>La <strong>salida limpia</strong> aparece instantáneamente en el panel de vista previa.</li>
+          <li><strong>Copia</strong> el texto limpio o <strong>descárgalo</strong> como un archivo .txt.</li>
+        </ol>
+
+        <h2>Por qué necesitas un limpiador de texto</h2>
+        <p>Cuando copia texto de Microsoft Word a un CMS como WordPress, aparecen etiquetas de formato ocultas. Estos
+          pueden
+          romper el diseño de su sitio, crear HTML no válido o provocar una tipografía inconsistente. Desarrolladores
+          que extraen datos web
+          Con frecuencia nos encontramos con entidades HTML y sopa de etiquetas que deben desinfectarse antes de la
+          inserción en la base de datos. Datos
+          los analistas que copian datos de Excel en scripts se enfrentan a valores separados por tabulaciones y
+          espacios finales que corrompen
+          consultas. Un limpiador de texto es la solución más rápida para todo esto: ahorra minutos de búsqueda y
+          reemplazo manual
+          trabajo.</p>
+
+        <h2>Ejemplos de antes y después</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Problem</th>
+              <th>Dirty Input</th>
+              <th>Clean Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML tags</td>
+              <td>&lt;p&gt;Hello &lt;b&gt;world&lt;/b&gt;&lt;/p&gt;</td>
+              <td>Hello world</td>
+            </tr>
+            <tr>
+              <td>Smart quotes</td>
+              <td>"It's a "great" day"</td>
+              <td>"It's a "great" day"</td>
+            </tr>
+            <tr>
+              <td>Extra spaces</td>
+              <td>Hello&nbsp;&nbsp;&nbsp;World</td>
+              <td>Hello World</td>
+            </tr>
+            <tr>
+              <td>HTML entities</td>
+              <td>&amp;amp; &amp;lt; &amp;gt;</td>
+              <td>&amp; &lt; &gt;</td>
+            </tr>
+            <tr>
+              <td>Mixed line endings</td>
+              <td>Line1
+
+                Line2
+                Line3
+              </td>
+              <td>Line1 / Line2 / Line3</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Opciones de limpieza explicadas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What It Removes / Fixes</th>
+              <th>Common Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Strip HTML Tags</td>
+              <td>All &lt;tag&gt; elements</td>
+              <td>Web scraping, CMS content</td>
+            </tr>
+            <tr>
+              <td>Remove Extra Spaces</td>
+              <td>Double/triple spaces, tabs</td>
+              <td>Copy from Word / PDF</td>
+            </tr>
+            <tr>
+              <td>Fix Line Breaks</td>
+              <td>Mixed CRLF/LF, double blank lines</td>
+              <td>Windows ↔ Linux files</td>
+            </tr>
+            <tr>
+              <td>Convert Smart Quotes</td>
+              <td>" " → " ", ' ' → '</td>
+              <td>Database input, code files</td>
+            </tr>
+            <tr>
+              <td>Remove Special Chars</td>
+              <td>Non-ASCII unicode symbols</td>
+              <td>CSV, SQL, email text</td>
+            </tr>
+            <tr>
+              <td>Decode HTML Entities</td>
+              <td>&amp;nbsp; &amp;amp; &amp;lt; etc.</td>
+              <td>Scraped web content</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El limpiador de texto eliminará mi contenido?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. El limpiador sólo elimina elementos de formato, no las palabras reales. Se desnuda
+                etiquetas, espacios y caracteres especiales conservando todo el contenido de texto legible.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puede eliminar palabras o frases específicas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Utilice la opción "Buscar y reemplazar" para eliminar o sustituir patrones de texto
+                específicos. tu puedes
+                También utilice expresiones regulares para reemplazos avanzados.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué el texto pegado en Word se ve diferente en mi CMS?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Microsoft Word utiliza formato XML propietario bajo el capó. Cuando pegas en un
+                editor web, aparecen esos estilos ocultos. El limpiador los elimina, dejando sólo texto semántico
+                simple.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿La limpieza afecta a los emoji o al texto que no está en inglés?
+            </h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La opción 'Eliminar caracteres especiales' puede eliminar emoji y caracteres que no
+                sean ASCII. si tu
+                Si necesita conservarlos, desmarque esa opción. El texto en idiomas distintos del inglés (chino, árabe,
+                cirílico) se conserva mediante
+                predeterminado.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Existe un límite de tamaño de archivo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La herramienta procesa texto en su navegador sin carga en el servidor. Bloques de texto
+                muy grandes
+                (más de 500 000 caracteres) puede ralentizarse en dispositivos más antiguos, pero los tamaños de
+                documentos típicos (hasta 50 000 palabras)
+                procesar al instante.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="../text-cleaner/">🧹 Text Cleaner</a>
+        <a class="sidebar-link" href="../remove-duplicate-lines/">📋 Remove Duplicates</a>
+        <a class="sidebar-link" href="../line-break-fixer/">↵ Line Break Fixer</a>
+      </nav>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    function cleanText() {
+      let text = document.getElementById('text-input').value;
+      const originalLength = text.length;
+
+      if (document.getElementById('opt-html').checked) {
+        text = text.replace(/<[^>]*>/g, '');
+      }
+      if (document.getElementById('opt-urls').checked) {
+        text = text.replace(/https?:\/\/[^\s]+/g, '');
+      }
+      if (document.getElementById('opt-punct').checked) {
+        text = text.replace(/[.,!?;:'"()\[\]{}]/g, '');
+      }
+      if (document.getElementById('opt-numbers').checked) {
+        text = text.replace(/[0-9]/g, '');
+      }
+      if (document.getElementById('opt-special').checked) {
+        text = text.replace(/[^a-zA-Z0-9\s\n]/g, '');
+      }
+      if (document.getElementById('opt-trim').checked) {
+        text = text.split('\n').map(line => line.trim()).join('\n');
+      }
+      if (document.getElementById('opt-spaces').checked) {
+        text = text.replace(/[ \t]+/g, ' ');
+      }
+      if (document.getElementById('opt-lines').checked) {
+        text = text.replace(/\n\s*\n/g, '\n');
+      }
+      if (document.getElementById('opt-breaks').checked) {
+        text = text.replace(/\n/g, ' ').replace(/\s+/g, ' ');
+      }
+
+      text = text.trim();
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-chars').textContent = originalLength;
+      document.getElementById('clean-chars').textContent = text.length;
+      document.getElementById('removed-chars').textContent = originalLength - text.length;
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-chars').textContent = '0';
+      document.getElementById('clean-chars').textContent = '0';
+      document.getElementById('removed-chars').textContent = '0';
+    }
+
+    function copyOutput() {
+      const output = document.getElementById('output-text');
+      navigator.clipboard.writeText(output.value).then(() => {
+        alert('Copied to clipboard!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

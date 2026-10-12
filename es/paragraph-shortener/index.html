@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Acortador de párrafos: herramientas de texto gratuitas en línea</title>
+  <meta
+    content="Herramienta gratuita en línea para acortar párrafos. Utilidades de estilo y formato de texto rápidas, seguras y respetuosas con la privacidad."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/paragraph-shortener/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/paragraph-shortener/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/paragraph-shortener/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/paragraph-shortener/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .stat {
+      color: var(--muted);
+    }
+
+    .stat strong {
+      color: var(--primary);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Utility Tools</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">📊 Word Counter</a>
+            <a class="sidebar-link" href="../sentence-expander/">📝 Sentence Expander</a>
+            <a class="sidebar-link active" href="../paragraph-shortener/">✂️ Paragraph Shortener</a>
+            <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">✂️ Acortador de párrafos</h1>
+          <p class="tool-description">Condense long paragraphs by removing filler words and shortening
+            sentences</p>
+          <textarea class="tool-input" id="text-input" placeholder="Pega tu texto largo aquí..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="shortenText()">✂️ Shorten Text</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Limpiar</button>
+          </div>
+        </div>
+        <div class="stats-row">
+          <span class="stat">Original: <strong id="orig-words">0</strong> words</span>
+          <span class="stat">Shortened: <strong id="short-words">0</strong> words</span>
+          <span class="stat">Reduced by: <strong id="reduction">0%</strong></span>
+        </div>
+        <div class="tool-output-section">
+          <h3>Texto abreviado</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>¿Qué es el acortamiento de párrafos?</h2>
+        <p>El acortamiento de párrafos (también llamado condensación o resumen de texto) es el proceso de reducir la
+          longitud del texto.
+          preservando al mismo tiempo el significado central y la información clave. Se diferencia del resumen en que la
+          abreviación
+          mantiene la voz en primera persona y el nivel de detalle: simplemente elimina frases redundantes, palabras de
+          relleno, pasivas.
+          voz y sobreexplicación. Las técnicas comunes incluyen: eliminar pares adverbio-adjetivo cuando uno es
+          suficiente,
+          reemplazar frases detalladas ("en el caso de que" → "si"), convertir la voz pasiva en activa y eliminar
+          repetición que no añade énfasis.</p>
+
+        <h2>Cómo acortar párrafos</h2>
+        <ol>
+          <li><strong>Pegue su párrafo</strong> en el cuadro de entrada de arriba.</li>
+          <li>Establece una <strong>longitud objetivo</strong> o elige un nivel de compresión (25 %, 50 %, 75 % más
+            corto).</li>
+          <li>La herramienta <strong>sugiere una versión condensada</strong> conservando los puntos clave.</li>
+          <li><strong>Revise el resultado</strong> y modifique todo lo que necesite ajustes.</li>
+          <li><strong>Copia</strong> la versión abreviada en tu documento.</li>
+        </ol>
+
+        <h2>Por qué una redacción más breve es más eficaz</h2>
+        <p>El lector web promedio escanea en lugar de leer; los estudios muestran que solo entre el 20% y el 28% de las
+          palabras de una página web son realmente
+          leer. Los párrafos más cortos y densos tienen tasas de comprensión más altas porque cada oración tiene más
+          peso. en
+          correo electrónico, los mensajes de menos de 100 palabras obtienen tasas de respuesta un 50% más altas que los
+          de más de 500 palabras. En textos de marketing,
+          Los mejores anuncios de conversión utilizan un lenguaje sencillo y directo. En la redacción académica, las
+          revistas tienen límites estrictos de palabras.
+          Precisamente porque la brevedad indica un pensamiento claro. Aprender a decir más con menos es uno de los
+          valores más valiosos
+          Habilidades de escritura que puedes desarrollar.</p>
+
+        <h2>Antes y después del acortamiento</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Text</th>
+              <th>Word Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Original</td>
+              <td>"It is absolutely essential that all team members make a concerted effort to ensure that all project
+                deliverables are completed in a timely manner and submitted to the appropriate stakeholders before the
+                deadline that has been previously established."</td>
+              <td>42 words</td>
+            </tr>
+            <tr>
+              <td>Shortened</td>
+              <td>"All team members must submit project deliverables to stakeholders before the established deadline."
+              </td>
+              <td>12 words</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frases de relleno comunes para eliminar</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Verbose Phrase</th>
+              <th>Shortened Alternative</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In the event that</td>
+              <td>If</td>
+            </tr>
+            <tr>
+              <td>Due to the fact that</td>
+              <td>Because</td>
+            </tr>
+            <tr>
+              <td>At this point in time</td>
+              <td>Now</td>
+            </tr>
+            <tr>
+              <td>In order to</td>
+              <td>To</td>
+            </tr>
+            <tr>
+              <td>It is important to note that</td>
+              <td>Note: (or just state it)</td>
+            </tr>
+            <tr>
+              <td>Has the ability to</td>
+              <td>Can</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Acortar mi texto cambiará su significado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La herramienta está diseñada para preservar el significado central y al mismo tiempo
+                eliminar la redundancia. Sin embargo,
+                Revise siempre el resultado: es posible que se eliminen algunos matices que sean importantes en su
+                contexto específico. Utilice el
+                versión abreviada como punto de partida.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuánto puedes acortar el texto de manera realista?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La mayoría de los párrafos se pueden reducir entre un 20% y un 40% sin perder
+                significado. Texto legal, que es
+                inherentemente detallado por diseño, es más difícil de acortar significativamente sin afectar la
+                interpretación.
+                El texto de marketing a menudo se puede reducir en más del 50% y volverse más efectivo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El acortamiento perjudica al SEO?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El contenido excesivamente breve (menos de 300 palabras para un artículo completo)
+                puede tener un rendimiento inferior en
+                buscar. Pero dentro de los artículos, los párrafos ajustados mejoran las métricas de legibilidad (tiempo
+                de permanencia, profundidad de desplazamiento)
+                que impactan positivamente en las clasificaciones. Recorte para mayor claridad, no para un número mínimo
+                de palabras.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo usar esto para escritura académica?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí, la escritura académica a menudo se beneficia de la condensación. Cortar las
+                nominalizaciones ('las
+                implementación de' → 'implementación'), voz pasiva y frases de cobertura. Algunos géneros académicos
+                requieren
+                convenciones detalladas específicas, por lo que se deben condensar dentro de esas normas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuál es la longitud mínima de un párrafo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Técnicamente, un párrafo puede ser una oración, pero de 3 a 5 oraciones es lo óptimo
+                para
+                legibilidad en la mayoría de los contextos. Un párrafo de una sola oración es poderoso para enfatizar
+                cuando se usa con moderación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const fillerWords = ['very', 'really', 'actually', 'basically', 'literally', 'absolutely', 'completely', 'totally', 'quite', 'rather', 'somewhat', 'just', 'simply', 'definitely', 'certainly', 'obviously', 'clearly', 'essentially', 'virtually', 'practically', 'in order to', 'due to the fact that', 'in the event that', 'at this point in time', 'in my opinion', 'i think that', 'i believe that', 'it is important to note that', 'it should be noted that', 'needless to say'];
+
+    const replacements = {
+      'in order to': 'to',
+      'due to the fact that': 'because',
+      'in the event that': 'if',
+      'at this point in time': 'now',
+      'at the present time': 'now',
+      'in the near future': 'soon',
+      'a large number of': 'many',
+      'a small number of': 'few',
+      'in spite of the fact that': 'although',
+      'for the purpose of': 'for',
+      'with regard to': 'about',
+      'in reference to': 'about',
+      'on a daily basis': 'daily',
+      'each and every': 'every',
+      'first and foremost': 'first',
+      'one and only': 'only'
+    };
+
+    function shortenText() {
+      let text = document.getElementById('text-input').value;
+      const originalWords = text.trim().split(/\s+/).filter(w => w).length;
+
+      // Apply phrase replacements
+      for (const [phrase, replacement] of Object.entries(replacements)) {
+        const regex = new RegExp(phrase, 'gi');
+        text = text.replace(regex, replacement);
+      }
+
+      // Remove standalone filler words
+      for (const filler of fillerWords) {
+        const regex = new RegExp(`\\b${filler}\\b\\s*`, 'gi');
+        text = text.replace(regex, '');
+      }
+
+      // Clean up extra spaces
+      text = text.replace(/\s+/g, ' ').replace(/\s+([.,!?])/g, '$1').trim();
+
+      const shortenedWords = text.trim().split(/\s+/).filter(w => w).length;
+      const reduction = originalWords > 0 ? Math.round((1 - shortenedWords / originalWords) * 100) : 0;
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-words').textContent = originalWords;
+      document.getElementById('short-words').textContent = shortenedWords;
+      document.getElementById('reduction').textContent = reduction + '%';
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-words').textContent = '0';
+      document.getElementById('short-words').textContent = '0';
+      document.getElementById('reduction').textContent = '0%';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Eliminar líneas duplicadas: limpiar y eliminar listas de texto duplicadas</title>
+  <meta
+    content="Limpie rápidamente su lista eliminando líneas duplicadas, espacios vacíos y elementos redundantes. Herramienta de limpieza de texto gratuita, rápida y segura."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/remove-duplicate-lines/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/remove-duplicate-lines/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/remove-duplicate-lines/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/remove-duplicate-lines/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/remove-duplicate-lines/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/remove-duplicate-lines/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .options-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .option-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .results-info {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      margin: 1rem 0;
+    }
+
+    .info-item {
+      text-align: center;
+    }
+
+    .info-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .info-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Utility Tools
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../word-counter/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Word Counter</span>
+            </a>
+            <a class="sidebar-link" href="../text-cleaner/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Text Cleaner</span>
+            </a>
+            <a class="sidebar-link active" href="../remove-duplicate-lines/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Remove Duplicates</span>
+            </a>
+            <a class="sidebar-link" href="../line-break-fixer/">
+              <span class="link-icon">↵</span>
+              <span class="link-text">Line Break Fixer</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Browse Tools
+        </button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">📋 Eliminar líneas duplicadas</h1>
+          <p class="tool-description">Remove duplicate lines from your text while keeping the original order
+          </p>
+          <textarea class="tool-input" id="text-input" placeholder="Pega tu texto con líneas duplicadas aquí..."
+            rows="8"></textarea>
+          <div class="options-row">
+            <div class="option-item">
+              <input id="case-sensitive" type="checkbox" />
+              <label for="case-sensitive">Case sensitive</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="trim-lines" type="checkbox" />
+              <label for="trim-lines">Trim whitespace</label>
+            </div>
+            <div class="option-item">
+              <input checked="" id="remove-empty" type="checkbox" />
+              <label for="remove-empty">Remove empty lines</label>
+            </div>
+            <div class="option-item">
+              <input id="sort-output" type="checkbox" />
+              <label for="sort-output">Sort output</label>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="removeDuplicates()">🗑️ Remove Duplicates</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Clear All</button>
+          </div>
+        </div>
+        <div class="results-info" id="results-info" style="display: none;">
+          <div class="info-item">
+            <div class="info-value" id="original-count">0</div>
+            <div class="info-label">Original Lines</div>
+          </div>
+          <div class="info-item">
+            <div class="info-value" id="unique-count">0</div>
+            <div class="info-label">Unique Lines</div>
+          </div>
+          <div class="info-item">
+            <div class="info-value" id="removed-count">0</div>
+            <div class="info-label">Duplicates Removed</div>
+          </div>
+        </div>
+        <div class="tool-output-section">
+          <h3>Resultado</h3>
+          <textarea class="output-textarea" id="output-text" placeholder="Result will appear here..."
+            readonly=""></textarea>
+          <div class="tool-actions" style="margin-top: 0.75rem;">
+            <button class="btn btn-primary" onclick="copyOutput()">📋 Copy Result</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>¿Qué es la Herramienta para Eliminar Líneas Duplicadas?</h2>
+        <p>La herramienta para eliminar líneas duplicadas es una utilidad de depuración de datos que analiza listas de
+          texto, URLs, correos electrónicos y listas de palabras clave para detectar y eliminar entradas repetidas.
+          Procesa grandes volúmenes de datos al instante en tu navegador, preservando el orden original y garantizando
+          listas limpias y únicas.</p>
+
+        <h2>Cómo eliminar líneas duplicadas</h2>
+        <ol>
+          <li><strong>Pega tu lista de texto</strong> en el área superior.</li>
+          <li><strong>Ajusta las opciones:</strong> distingue entre mayúsculas y minúsculas o limpia espacios en blanco.
+          </li>
+          <li>La herramienta <strong>elimina al instante las líneas repetidas</strong> y muestra el total de elementos
+            únicos.</li>
+          <li>Haz clic en <strong>Copiar</strong> para guardar tu lista depurada.</li>
+
+        </ol>
+
+        <h2>¿Por qué deduplicar texto?</h2>
+        <p>Los datos duplicados crean problemas reales. Una lista de correo con correos electrónicos duplicados envía a
+          los clientes varias copias de
+          el mismo mensaje, lo que perjudica los puntajes de capacidad de entrega y las tasas de cancelación de
+          suscripción. Una lista de palabras clave con duplicados
+          infla los resultados del análisis. Un archivo de registro con líneas de error repetidas dificulta la detección
+          de nuevos problemas. un vocabulario
+          La lista con palabras duplicadas confunde los modelos de PNL. Eliminar duplicados es un paso fundamental de
+          limpieza de datos que
+          mejora la precisión, ahorra almacenamiento y evita errores de procesamiento.</p>
+
+        <h2>Casos de uso comunes</h2>
+        <ul>
+          <li><strong>Listas de correo electrónico:</strong> combine dos archivos CSV de suscriptores y elimine
+            duplicados para evitar campañas de doble envío.
+          </li>
+          <li><strong>Investigación de palabras clave:</strong> combine exportaciones de palabras clave de Ahrefs,
+            SEMrush y la Búsqueda de Google.
+            Consola y luego deduplicar.</li>
+          <li><strong>Registros del servidor:</strong> filtre un registro de errores de 10 000 líneas solo para mensajes
+            de error únicos para acelerar
+            depuración.</li>
+          <li><strong>Listas de palabras:</strong> prepare un diccionario limpio para una aplicación de ortografía
+            eliminando palabras clave duplicadas.
+            entradas.</li>
+          <li><strong>Inventario:</strong> fusiona listas de productos de dos almacenes y elimina SKU duplicados.</li>
+        </ul>
+
+        <h2>Comparación de opciones coincidentes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Behavior</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Case-sensitive</td>
+              <td>"Apple" and "apple" are different</td>
+              <td>Keeps both entries</td>
+            </tr>
+            <tr>
+              <td>Case-insensitive</td>
+              <td>"Apple" and "apple" are the same</td>
+              <td>Keeps only first occurrence</td>
+            </tr>
+            <tr>
+              <td>Trim whitespace</td>
+              <td>" apple " = "apple"</td>
+              <td>Removes leading/trailing spaces before comparing</td>
+            </tr>
+            <tr>
+              <td>Sort output</td>
+              <td>Alphabetizes results A→Z</td>
+              <td>Easier to scan for outliers</td>
+            </tr>
+            <tr>
+              <td>Preserve order</td>
+              <td>Keeps first occurrence in original order</td>
+              <td>Useful for ranked lists</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿La herramienta conserva el orden original?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí, de forma predeterminada la herramienta mantiene la primera aparición de cada línea
+                en el orden original.
+                Habilite 'Ordenar salida' si desea obtener resultados alfabéticos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo comparar líneas sin distinguir entre mayúsculas y
+              minúsculas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí. Habilite el modo "No distingue entre mayúsculas y minúsculas" y "Apple", "APPLE" y
+                "apple" serán todos
+                se trata como la misma línea: solo se conserva la primera aparición.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué pasa si tengo espacios iniciales o finales?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Habilite 'Recortar espacios en blanco' para normalizar los espacios antes de comparar.
+                'hola' y 'hola'
+                serán tratados como duplicados en ese modo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Hay un límite de líneas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La herramienta maneja decenas de miles de líneas sin problemas ya que se ejecuta en su
+                navegador. Los archivos extremadamente grandes (más de 1 millón de líneas) pueden ser lentos en hardware
+                antiguo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo eliminar palabras duplicadas en lugar de líneas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Esta herramienta funciona por línea. Para eliminar palabras duplicadas dentro de una
+                oración, use
+                las opciones Buscar y reemplazar o manipulación de texto en la herramienta Limpiador de texto.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="../remove-duplicate-lines/">📋 Remove Duplicates</a>
+        <a class="sidebar-link" href="../text-cleaner/">🧹 Text Cleaner</a>
+      </nav>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    function removeDuplicates() {
+      const text = document.getElementById('text-input').value;
+      const caseSensitive = document.getElementById('case-sensitive').checked;
+      const trimLines = document.getElementById('trim-lines').checked;
+      const removeEmpty = document.getElementById('remove-empty').checked;
+      const sortOutput = document.getElementById('sort-output').checked;
+
+      let lines = text.split('\n');
+      const originalCount = lines.length;
+
+      if (trimLines) {
+        lines = lines.map(line => line.trim());
+      }
+      if (removeEmpty) {
+        lines = lines.filter(line => line.length > 0);
+      }
+
+      const seen = new Set();
+      const unique = [];
+
+      for (const line of lines) {
+        const key = caseSensitive ? line : line.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          unique.push(line);
+        }
+      }
+
+      let result = sortOutput ? unique.sort() : unique;
+
+      document.getElementById('output-text').value = result.join('\n');
+      document.getElementById('original-count').textContent = originalCount;
+      document.getElementById('unique-count').textContent = unique.length;
+      document.getElementById('removed-count').textContent = originalCount - unique.length;
+      document.getElementById('results-info').style.display = 'flex';
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('results-info').style.display = 'none';
+    }
+
+    function copyOutput() {
+      const output = document.getElementById('output-text');
+      navigator.clipboard.writeText(output.value).then(() => {
+        alert('Copied to clipboard!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

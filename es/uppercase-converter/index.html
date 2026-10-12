@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Convertidor de mayúsculas: convierte mayúsculas y formatos de texto en línea</title>
+  <meta
+    content="Formatee y modifique fácilmente su texto usando este convertidor de mayúsculas en línea gratuito. Controles instantáneos de conversión y copiar y pegar para su comodidad."
+    name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/uppercase-converter/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/uppercase-converter/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/uppercase-converter/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/uppercase-converter/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-box {
+      padding: 1rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      min-height: 100px;
+      font-size: 1.1rem;
+      word-break: break-word;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Case Converters</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../title-case-converter/">🔠 Title Case</a>
+            <a class="sidebar-link" href="../lowercase-converter/">🔡 Lowercase</a>
+            <a class="sidebar-link active" href="../uppercase-converter/">🔤 Uppercase</a>
+            <a class="sidebar-link" href="../camelcase-converter/">🐪 CamelCase</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">🔤 Convertidor de mayúsculas</h1>
+          <p class="tool-description">Convert all text to UPPERCASE letters</p>
+          <textarea class="tool-input" id="text-input" oninput="convertText()" placeholder="Introduce tu texto aquí..."
+            rows="5"></textarea>
+        </div>
+        <div class="tool-output-section">
+          <h3>RESULTADO EN MAYÚSCULAS</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>¿Qué es el texto en mayúsculas?</h2>
+        <p>El texto en mayúsculas convierte cada letra de una cadena a su forma mayúscula. En inglés, las 26 letras
+          minúsculas
+          (a – z) tienen equivalentes en mayúsculas correspondientes (A – Z). Más allá del inglés, la mayoría de las
+          escrituras latinas, el griego,
+          El cirílico y el armenio también tienen distinciones de casos. Las mayúsculas se utilizan en el diseño para
+          generar impacto visual y
+          jerarquía, en programación de constantes y variables de entorno, en documentos legales para énfasis y en
+          acrónimos y abreviaturas. El estilo comunica formalidad, importancia o volumen (en la cultura de la
+          mensajería,
+          Las mayúsculas a menudo indican gritos.</p>
+
+        <h2>Cómo convertir texto a mayúsculas</h2>
+        <ol>
+          <li><strong>Escriba o pegue su texto</strong> en el campo de entrada de arriba.</li>
+          <li>La herramienta <strong>convierte instantáneamente</strong> todas las letras a mayúsculas.</li>
+          <li>Vea el resultado TODO EN MAYÚSCULAS en el panel de resultados.</li>
+          <li>Haga clic en <strong>Copiar</strong> para copiar el texto en mayúsculas.</li>
+          <li><strong>Pegue</strong> en su documento, archivo de código, CMS o mensaje.</li>
+        </ol>
+
+        <h2>Cuándo utilizar texto en mayúsculas</h2>
+        <p>Las mayúsculas tienen usos específicos y apropiados. En el código, las constantes se escriben en
+          SCREAMING_SNAKE_CASE (MAX_TIMEOUT
+          = 30). En el diseño, el tipo de letra en mayúsculas en una fuente de visualización crea una fuerte jerarquía
+          visual para los titulares. en legal
+          En algunos documentos, los TÉRMINOS CRÍTICOS a veces se escriben con mayúscula para llamar la atención. En
+          contextos de seguridad, ADVERTENCIA y PRECAUCIÓN
+          las etiquetas están universalmente en mayúsculas. En mensajes informales, TODO EN MAYÚSCULAS expresa énfasis o
+          entusiasmo, aunque
+          el uso excesivo se lee como agresivo o grosero. Comprender el contexto mantiene el texto en mayúsculas
+          efectivo en lugar de
+          abrasivo.</p>
+
+        <h2>Ejemplos de conversión de mayúsculas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Input</th>
+              <th>Uppercase Output</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>hello world</td>
+              <td>HELLO WORLD</td>
+              <td>Display headline</td>
+            </tr>
+            <tr>
+              <td>max retry attempts</td>
+              <td>MAX RETRY ATTEMPTS</td>
+              <td>Code constant name</td>
+            </tr>
+            <tr>
+              <td>warning: hot surface</td>
+              <td>WARNING: HOT SURFACE</td>
+              <td>Safety label</td>
+            </tr>
+            <tr>
+              <td>united nations</td>
+              <td>UN (acronym)</td>
+              <td>Abbreviation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Referencia rápida de conversión de casos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Conversion</th>
+              <th>Example</th>
+              <th>Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>UPPERCASE</td>
+              <td>HELLO WORLD</td>
+              <td>Headlines, constants, warnings</td>
+            </tr>
+            <tr>
+              <td>lowercase</td>
+              <td>hello world</td>
+              <td>URLs, usernames, minimal style</td>
+            </tr>
+            <tr>
+              <td>Title Case</td>
+              <td>Hello World</td>
+              <td>Headlines, titles</td>
+            </tr>
+            <tr>
+              <td>Sentence case</td>
+              <td>Hello world</td>
+              <td>Body text, captions</td>
+            </tr>
+            <tr>
+              <td>aLtErNaTiNg</td>
+              <td>hElLo WoRlD</td>
+              <td>Mocking tone, humor</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Las mayúsculas perjudican el SEO?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Google lee el texto en mayúsculas igual que en minúsculas para la indexación de
+                búsqueda: 'HOLA' y
+                'hola' se tratan de manera idéntica. Sin embargo, los títulos de las páginas en mayúsculas pueden
+                afectar negativamente a las tasas de clics.
+                en los resultados de búsqueda, ya que son más difíciles de leer.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Es de mala educación escribir en mayúsculas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">En la comunicación digital TODO EN MAYÚSCULAS se interpreta ampliamente como grito o
+                fuerte
+                énfasis. Se considera apropiado para advertencias, etiquetas y diseño, pero de mala educación en una
+                conversación informal.
+                Usar contextualmente.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo volver a convertir el texto a minúsculas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí, utilice nuestra herramienta Convertidor de minúsculas para convertir rápidamente el
+                texto TODO EN MAYÚSCULAS a
+                todo en minúsculas, o a mayúsculas y minúsculas, a mayúsculas y minúsculas y a otros formatos.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El conversor maneja caracteres acentuados?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí. La mayoría de los caracteres minúsculos acentuados (é, ü, ñ) tienen equivalentes en
+                mayúsculas (É, Ü, Ñ)
+                y se convierten correctamente. Esto incluye la mayoría de los caracteres de escritura latina europea.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Existen lenguajes de programación en los que las mayúsculas sean
+              importantes?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí. En Python, los nombres de clases usan PascalCase pero las constantes usan
+                UPPERCASE_WITH_UNDERSCORES. Las palabras clave SQL (SELECT, FROM, WHERE) se escriben convencionalmente
+                en mayúsculas.
+                Las macros del preprocesador C/C++ están en mayúsculas por convención.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Convertidores de casos</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    function convertText() {
+      const text = document.getElementById('text-input').value;
+      document.getElementById('output-text').textContent = text.toUpperCase();
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html>
