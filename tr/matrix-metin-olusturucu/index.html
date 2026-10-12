@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Matrix Metin Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Matrix metin oluşturucu ile dijital yağmur animasyonu ve 8 hacker tarzı metin biçimi alın. Canlı önizleyin, tarzları kopyalayıp kullanın. Hemen deneyin.">
+<meta content="Watch live Matrix digital rain with your text glowing over it, plus 8 copyable hacker text styles. Free matrix text generator — paste text and try it now." name="description" />
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .matrix-preview {
+            background: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        #matrix-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .matrix-text-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            z-index: 10;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #0f0;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input,
+        .setting-item select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .text-styles {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .style-item {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .style-text {
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            font-size: 1.1rem;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/tr/matrix-metin-olusturucu/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Matrix Metin Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Matrix metin oluşturucu ile dijital yağmur animasyonu ve 8 hacker tarzı metin biçimi alın. Canlı önizleyin, tarzları kopyalayıp kullanın. Hemen deneyin.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/matrix-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Matrix Metin Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Matrix metin oluşturucu ile dijital yağmur animasyonu ve 8 hacker tarzı metin biçimi alın. Canlı önizleyin, tarzları kopyalayıp kullanın. Hemen deneyin.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/matrix-text-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/matrix-text-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-matrix/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-matrix/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/matrix-metin-olusturucu/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Matrix tarzı metin nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yukarıdaki oluşturucuya yazın. Metninizi canlı dijital yağmurun üstünde ışıldayarak gösterir ve sekiz kopyalanabilir hacker tarzı (Matrix, Binary, Hacker, System, Code, Glowing, Terminal, Access) üretir. Bir tarzı kopyalayıp her yere yapıştırın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dijital yağmurda hangi karakterler var?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yağmur katakana hecelerinden, büyük Latin harfleri A–Z ve 0–9 rakamlardan çeker — filmin ikonik efektiyle aynı karışım — siyahta ışıldayan yeşil tek aralıklı çizilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Matrix yağmur animasyonunu indirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır — yağmur bu sayfada canlı bir canvas animasyonudur, video ya da GIF dosyası değil. Götürebileceğiniz, sekiz stilize metin çıktısıdır. Video projeleri için canvas'ı ekran kaydıyla alın ya da yağmur video döngüsü kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yağmur hızını nasıl değiştiririm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canvas'ın üstündeki hız seçiciyi kullanın: yavaş, orta ya da hızlı. Yoğunluk seçici glif boyutunu değiştirir — sakin sinematik düşüş için hafif, yoğun anabilgisayar görünümü için ağır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Matrix metni Discord ve oyun takma adlarında çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sekiz metin tarzı çalışır — Discord'a, biyografilere ve takma adlara yapıştırılan sade Unicode'dur. Animasyonlu yağmurun kendisi yapıştırılamaz; yalnızca bu sayfada canlı önizlemedir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim tarzlarda neden büyük harf görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sekiz tarzdan yedisi klasik terminal görünümü için girdinizi büyük harfe çevirir; Code tarzı ($ sudo …) bunun yerine küçük tutar. Her durumda yazın — araç tarza göre normalleştirir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Animasyon performansa zararlı mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sekme açıkken sürekli yeniden çizer; biraz CPU kullanır — canvas efektleri için normaldir. Düşük donanımlı telefonlarda hafif yoğunluğa geçin ya da tarzları kopyalayınca sekmeden ayrılın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ekran okuyucular matrix metin tarzlarını okuyabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pek iyi değil — dekoratif semboller (▓, ✦,) harfi harfine okunur. Bu tarzları kısa görünen dizilerde tutun ve önemli bilgilerde asla kullanmayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Canvas animasyonu ve sekiz tarzın tamamı tarayıcınızda üretilir. Metniniz cihazınızdan asla çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/matrix-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-matrix/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-matrix/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/matrix-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/matrix-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-matrix/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-matrix/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/matrix-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">🎮</span>
+                        Eğlenceli Araçlar
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">
+                            <span class="link-icon">⌨️</span>
+                            <span class="link-text">Daktilo Efekti Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../glitch-metin-olusturucu/">
+                            <span class="link-icon">📺</span>
+                            <span class="link-text">Glitch Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link active" href="../matrix-metin-olusturucu/">
+                            <span class="link-icon">💊</span>
+                            <span class="link-text">Matrix Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../animasyonlu-metin-olusturucu/">
+                            <span class="link-icon">🎬</span>
+                            <span class="link-text">Animasyonlu Metin Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+<div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+<div class="tool-title">💊 Matris Metin Oluşturucu</div>
+<p class="tool-description">Matrix tarzı dijital yağmur ve metin efektleri oluşturun</p>
+<div class="setting-item" style="margin-bottom: 1rem;">
+<label>Metniniz</label>
+<input class="tool-input" id="text-input" oninput="updateDisplay()" style="font-size: 1.2rem;" type="text" value="THE MATRIX"/>
+</div>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Yağmur Hızı</label>
+<select id="rain-speed" onchange="restartMatrix()">
+<option value="slow">Yavaş</option>
+<option selected="" value="medium">Orta</option>
+<option value="fast">Hızlı</option>
+</select>
+</div>
+<div class="setting-item">
+<label>Yağmur Yoğunluğu</label>
+<select id="rain-density" onchange="restartMatrix()">
+<option value="light">Hafif</option>
+<option selected="" value="medium">Orta</option>
+<option value="heavy">Ağır</option>
+</select>
+</div>
+</div>
+<div class="tool-actions">
+<button class="btn btn-primary" onclick="restartMatrix()">🔄 Animasyonu Yeniden Başlat</button>
+<button class="btn btn-secondary" onclick="toggleText()">👁️ Metni Aç/Kapat</button>
+</div>
+</div>
+<div class="matrix-preview">
+<canvas id="matrix-canvas"></canvas>
+<div class="matrix-text-display" id="matrix-text">THE MATRIX</div>
+</div>
+<div class="tool-output-section">
+<h3>Matris Stili Metin (Kopyala ve Yapıştır)</h3>
+<div class="text-styles" id="text-styles"></div>
+</div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+<section class="seo-content-section">
+<div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+<a href="/tr/">Ana Sayfa</a>
+<span class="breadcrumb-separator">›</span>
+<a href="/tr/eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+<span class="breadcrumb-separator">›</span>
+<span>Matrix Metin Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Matrix Metin Oluşturucu</h1>
+
+<p>Matrix metin oluşturucu, ikonik dijital yağmur görünümünü yeniden yaratır — siyah üstünde akan yeşil katakana, harf ve sayılar — metniniz yağmurun üstünde parlayarak. Yukarıda yağmur hızını ve yoğunluğunu ayarlayın, metin katmanını açıp kapatın; biyografiler, sohbetler ve tasarımlar için sekiz hacker tarzı metin biçiminden birini kopyalayın.</p>
+
+<div class="key-takeaways">
+<p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+<ul>
+<li>Matrix tarzı dijital yağmurun canlı canvas animasyonu: ışıldayan yeşilde katakana + A–Z + 0–9.</li>
+<li>Hız (yavaş/orta/hızlı) ve yoğunluk (hafif/orta/ağır) kontrolleri yağmuru yeniden şekillendirir.</li>
+<li>Metniniz yağmurun üstünde ışıldayan katman olarak belirir; açılıp kapatılabilir.</li>
+<li>8 kopyalanabilir hacker metin tarzı üretir: Matrix, Binary, Hacker, System, Code, Glowing, Terminal, Access.</li>
+<li>Tamamen tarayıcınızda çalışır — hiçbir şey yüklenmez.</li>
+</ul>
+</div>
+
+<h2>Matrix dijital yağmur metni nedir?</h2>
+<p><strong>Matrix dijital yağmuru</strong>, 1999 yapımı <em>The Matrix</em> filminden akan karakterler görselidir — ham kod akışını çağrıştıran, siyaha karşı düşen yeşil glif sütunları (orijinalde aynalanmış katakana, rakam ve Latin harfleri). Hacking, terminaller ve siber uzayın evrensel görsel kısayolu haline geldi. Dijital yağmur efektli metin aramaları genelde iki şeyden birini ister: animasyonlu yağmurun kendisi (yukarıda canlı önizlenir) ya da stilize hacker metni (aşağıdaki sekiz kopyalanabilir biçim) — bu sayfa ikisini de verir.</p>
+
+<h2>Bu matrix metin oluşturucu nasıl çalışır?</h2>
+<p>Yağmurun kendisi tarayıcınızda çizilen canlı bir HTML canvas animasyonudur: her sütun katakana, büyük Latin harfleri ve rakamlardan oluşan bir havuzdan rastgele karakterler seçer; tek aralıklı yeşilde, solan iz efektiyle çizilir (her kare yarı saydam siyah bir katman boyar; karakterler düşerken erir). <strong>Hız</strong> seçici yavaş, orta ve hızlı arasındaki kare gecikmesini değiştirir; <strong>yoğunluk</strong> glif boyutunu değiştirir; bu canvas'a kaç sütun sığacağını belirler.</p>
+<p>Girdiniz yağmurun üstünde ortalanmış ışıldayan bir metin katmanı olarak belirir — açıp kapatabilirsiniz. Ayrı olarak, bir hacker metin oluşturucu olarak araç kelimelerinizden <strong>sekiz kopyala-yapıştır metin tarzı</strong> üretir: Matrix Style (<code></code>), Binary Frame (<code>01 TEXT 10</code>), Hacker (<code>&gt; TEXT _</code>), System (<code>[SYSTEM]: TEXT</code>), Code (<code>$ sudo text</code>), Glowing (<code>✦ TEXT ✦</code>), Terminal (<code>C:\&gt; TEXT</code>) — komut istemini taklit eden bir terminal metin tarzı — ve Access (<code>▓▓▓ TEXT ▓▓▓</code>). Canvas animasyonu burada izlemek içindir; kopyalayıp götüreceğiniz sekiz metin tarzıdır.</p>
+
+<h2>Uygulamalı örnek: matrix tarzı metin</h2>
+<p>Girdi: <code>neo</code> → araç büyük harfe çevirir ve şu matrix kodu metin tarzlarını üretir:</p>
+<table>
+<thead>
+<tr><th>Stil</th><th>Çıktı</th></tr>
+</thead>
+<tbody>
+<tr><td>Matrix Style</td><td><code></code></td></tr>
+<tr><td>Binary Frame</td><td><code>01 NEO 10</code></td></tr>
+<tr><td>Hacker</td><td><code>&gt; NEO _</code></td></tr>
+<tr><td>System</td><td><code>[SYSTEM]: NEO</code></td></tr>
+<tr><td>Code</td><td><code>$ sudo neo</code></td></tr>
+<tr><td>Glowing</td><td><code>✦ NEO ✦</code></td></tr>
+<tr><td>Terminal</td><td><code>C:\&gt; NEO</code></td></tr>
+<tr><td>Access</td><td><code>▓▓▓ NEO ▓▓▓</code></td></tr>
+</tbody>
+</table>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+<li><strong>Metninizi yazın</strong> — giriş alanına; yağmurun üstünde ışıldayarak belirir.</li>
+<li><strong>Yağmur hızını ve yoğunluğunu</strong> zevkinize ayarlayın; metin katmanını açıp kapatın.</li>
+<li>Canvas'ın altındaki <strong>sekiz metin tarzından birini</strong> kopyalama düğmesiyle kopyalayın.</li>
+<li>Stilize metni biyografinize, Discord'a ya da tasarımlarınıza <strong>yapıştırın</strong>.</li>
+</ol>
+
+<h2>Yağmur kontrollerinden en iyi verimi alma</h2>
+<p>Yoğunluk ruh halini beklediğinizden çok değiştirir: <strong>hafif</strong> (büyük glifler, az sütun) sakin ve sinematik okunur; bir manşetin arkasına iyi gider; <strong>ağır</strong> (küçük glifler, çok sütun) yoğun "anabilgisayar" görünümüdür. Hız yalındır — ambiyans için yavaş, enerji için hızlı. Pencereyi yeniden boyutlandırınca animasyon otomatik yeniden başlar; yağmur kabını hep doldurur. Bir pratik not: canvas bu sayfada canlı önizlemedir, dışa aktarılabilir video değil — kendi projenizde dijital yağmura ihtiyacınız varsa teknik (rastgele glif sütunları + yarı saydam soldurma) yeniden uygulayabileceğiniz, bilinen ~30 satırlık bir canvas tarifidir.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Sade gerçekler. Yağmur animasyonu <strong>indirilemez ya da kopyalanamaz</strong> — bu sayfada canlı bir canvas'tır, video dosyası ya da GIF değil; sizinle giden yalnızca sekiz metin tarzıdır. Canvas animasyonu sekme açıkken sürekli CPU kullanır; düşük donanımlı telefonları ısıtabilir — bu efektin doğasıdır, hata değil. Metin tarzları dekoratif Unicode'dur, gerçek terminal çıktısı değil; yakından bakanı kandırmaz. Dekoratif Unicode'da hep olduğu gibi ekran okuyucular sembolleri harfi harfine okur — bu tarzları kısa görünen dizilerde tutun.</p>
+
+<h2>Matrix metin ve alternatifler</h2>
+<table>
+<thead>
+<tr><th>Yöntem</th><th>Ne için ideal?</th><th>Neye dikkat?</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Bu matrix oluşturucu</strong></td><td>Canlı yağmur önizleme + 8 kopyalanabilir hacker tarzı</td><td>Animasyon dışa aktarılamaz</td></tr>
+<tr><td><a href="/tr/daktilo-efekti-olusturucu/">Daktilo efekti oluşturucu</a></td><td>Web siteleri için terminal daktilo CSS'i</td><td>Tek satırlık CSS, yağmur yok</td></tr>
+<tr><td><a href="/tr/glitch-metin-olusturucu/">Glitch efekti oluşturucu</a></td><td>Bozuk cyberpunk Unicode metin</td><td>Statik süslemeler, animasyon yok</td></tr>
+<tr><td>Video döngüleri / GIF'ler</td><td>Yayın ve düzenlemeler için yağmur arka planları</td><td>Büyük dosyalar; canlı metin değil</td></tr>
+</tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Matrix tarzı metin nasıl yapılır?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Yukarıdaki oluşturucuya yazın. Metninizi canlı dijital yağmurun üstünde ışıldayarak gösterir ve sekiz kopyalanabilir hacker tarzı (Matrix, Binary, Hacker, System, Code, Glowing, Terminal, Access) üretir. Bir tarzı kopyalayıp her yere yapıştırın.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Dijital yağmurda hangi karakterler var?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Yağmur katakana hecelerinden, büyük Latin harfleri A–Z ve 0–9 rakamlardan çeker — filmin ikonik efektiyle aynı karışım — siyahta ışıldayan yeşil tek aralıklı çizilir.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Matrix yağmur animasyonunu indirebilir miyim?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Hayır — yağmur bu sayfada canlı bir canvas animasyonudur, video ya da GIF dosyası değil. Götürebileceğiniz, sekiz stilize metin çıktısıdır. Video projeleri için canvas'ı ekran kaydıyla alın ya da yağmur video döngüsü kullanın.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Yağmur hızını nasıl değiştiririm?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Canvas'ın üstündeki hız seçiciyi kullanın: yavaş, orta ya da hızlı. Yoğunluk seçici glif boyutunu değiştirir — sakin sinematik düşüş için hafif, yoğun anabilgisayar görünümü için ağır.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Matrix metni Discord ve oyun takma adlarında çalışır mı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Sekiz metin tarzı çalışır — Discord'a, biyografilere ve takma adlara yapıştırılan sade Unicode'dur. Animasyonlu yağmurun kendisi yapıştırılamaz; yalnızca bu sayfada canlı önizlemedir.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Metnim tarzlarda neden büyük harf görünüyor?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Sekiz tarzdan yedisi klasik terminal görünümü için girdinizi büyük harfe çevirir; Code tarzı ($ sudo …) bunun yerine küçük tutar. Her durumda yazın — araç tarza göre normalleştirir.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Animasyon performansa zararlı mı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Sekme açıkken sürekli yeniden çizer; biraz CPU kullanır — canvas efektleri için normaldir. Düşük donanımlı telefonlarda hafif yoğunluğa geçin ya da tarzları kopyalayınca sekmeden ayrılın.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Ekran okuyucular matrix metin tarzlarını okuyabilir mi?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Pek iyi değil — dekoratif semboller (▓, ✦,) harfi harfine okunur. Bu tarzları kısa görünen dizilerde tutun ve önemli bilgilerde asla kullanmayın.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Metnim bir yere yükleniyor mu?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Hayır. Canvas animasyonu ve sekiz tarzın tamamı tarayıcınızda üretilir. Metniniz cihazınızdan asla çıkmaz.</p>
+</div>
+</div>
+</div>
+
+<p>Daha fazla hacker ve hareket estetiği: terminal daktilo CSS'i için <a href="/tr/daktilo-efekti-olusturucu/">daktilo efekti metin oluşturucu</a>, bozuk metin için <a href="/tr/glitch-metin-olusturucu/">glitch efekti metin oluşturucu</a> ve CSS hareket efektleri için <a href="/tr/animasyonlu-metin-olusturucu/">animasyonlu metin oluşturucu</a> — hepsi <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonumuzda.</p>
+
+
+</div>
+</section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>🎮 Eğlenceli Araçlar</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">⌨️ Daktilo Efekti Oluşturucu</a>
+                <a class="sidebar-link" href="../glitch-metin-olusturucu/">📺 Glitch Metin Oluşturucu</a>
+                <a class="sidebar-link active" href="../matrix-metin-olusturucu/">💊 Matrix Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../animasyonlu-metin-olusturucu/">🎬 Animasyonlu Metin Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        let animationId;
+        let showText = true;
+
+        const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const chars = katakana + latin + nums;
+
+        let columns, drops;
+
+        function initMatrix() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            const density = document.getElementById('rain-density').value;
+            const fontSize = density === 'light' ? 18 : density === 'medium' ? 14 : 10;
+            
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+            
+            return fontSize;
+        }
+
+        function drawMatrix() {
+            const speed = document.getElementById('rain-speed').value;
+            const fontSize = initMatrix();
+            
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+            
+            const delay = speed === 'slow' ? 80 : speed === 'medium' ? 50 : 30;
+            animationId = setTimeout(() => requestAnimationFrame(drawMatrix), delay);
+        }
+
+        function restartMatrix() {
+            if (animationId) {
+                clearTimeout(animationId);
+                cancelAnimationFrame(animationId);
+            }
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            drawMatrix();
+        }
+
+        function updateDisplay() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            document.getElementById('matrix-text').textContent = text;
+            generateStyles();
+        }
+
+        function toggleText() {
+            showText = !showText;
+            document.getElementById('matrix-text').style.display = showText ? 'block' : 'none';
+        }
+
+        function generateStyles() {
+            const text = document.getElementById('text-input').value || 'MATRIX';
+            const upper = text.toUpperCase();
+            
+            const styles = [
+                { name: 'Matrix Stil', text: '【 ' + upper + ' 】' },
+                { name: 'Binary Frame', text: '01 ' + upper + ' 10' },
+                { name: 'Hacker', text: '> ' + upper + ' _' },
+                { name: 'System', text: '[SYSTEM]: ' + upper },
+                { name: 'Code', text: '$ sudo ' + text.toLowerCase() },
+                { name: 'Glowing', text: '✦ ' + upper + ' ✦' },
+                { name: 'Terminal', text: 'C:\\> ' + upper },
+                { name: 'Access', text: '▓▓▓ ' + upper + ' ▓▓▓' }
+            ];
+
+            document.getElementById('text-styles').innerHTML = styles.map(s => `
+                <div class="style-item">
+                    <span class="style-text">${escapeHtml(s.text)}</span>
+                    <button class="btn btn-secondary btn-sm" onclick="copyStyle('${s.text.replace(/'/g, "\\'")}')">📋</button>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function copyStyle(text) {
+            navigator.clipboard.writeText(text).then(() => alert('Kopyalandı!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize
+        window.addEventListener('resize', () => {
+            restartMatrix();
+        });
+        
+        restartMatrix();
+        generateStyles();
+    </script>
+</body>
+</html></body>
+
+</html>
