@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Acortador de Párrafos Online | FontGenerators.online</title>
+  <meta content="Acorta párrafos eliminando muletillas y frases verbosas, gratis y online. Muestra el porcentaje exacto de reducción de palabras al instante. Sin registro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/acortador-de-parrafos/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/acortador-de-parrafos/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/encurtador-de-paragrafos/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/paragraf-kisaltici/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .stat {
+      color: var(--muted);
+    }
+
+    .stat strong {
+      color: var(--primary);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/paragraph-shortener/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/acortador-de-parrafos/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/encurtador-de-paragrafos/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/paragraf-kisaltici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/paragraph-shortener/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/acortador-de-parrafos/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/encurtador-de-paragrafos/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/paragraf-kisaltici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Herramientas de utilidad</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/contador-de-palabras/">📊 Contador de Palabras</a>
+            <a class="sidebar-link" href="/es/expansor-de-frases/">📝 Expansor de Frases</a>
+            <a class="sidebar-link active" href="/es/acortador-de-parrafos/">✂️ Acortador de Párrafos</a>
+            <a class="sidebar-link" href="/es/limpiador-de-texto/">🧹 Limpiador de Texto</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Explorar herramientas</button>
+        <div class="tool-input-section">
+          <p class="tool-title">✂️ Paragraph Shortener</p>
+          <p class="tool-description">Condense long paragraphs by removing filler palabras and shortening
+            sentences</p>
+          <textarea class="tool-input" id="text-input" placeholder="Pega tu texto largo aquí..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="shortenText()">✂️ Acortar texto</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Borrar</button>
+          </div>
+        </div>
+        <div class="stats-row">
+          <span class="stat">Original: <strong id="orig-palabras">0</strong> palabras</span>
+          <span class="stat">Acortado: <strong id="short-palabras">0</strong> palabras</span>
+          <span class="stat">Reducido en: <strong id="reduction">0%</strong></span>
+        </div>
+        <div class="tool-output-section">
+          <h3>Texto acortado</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copiar</button>
+        </div>
+      </div>
+    </div>
+
+    
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a> &rsaquo; <span>Acortador de párrafos</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Acortador de párrafos &mdash; Acorta texto</h1>
+<p>Un acortador de párrafos aprieta la escritura verbosa cortando muletillas y reemplazando frases infladas por equivalentes más cortos. Esta herramienta gratis elimina 30 muletillas comunes, aplica 16 reemplazos de frases concisas y muestra tu reducción exacta de palabras como porcentaje. Pega un párrafo arriba para acortar texto sin perder su significado.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Lo esencial</p>
+<ul style="margin: 0;">
+<li>Proceso en dos pasos: primero 16 reemplazos de frases verbosas, luego eliminación de 30 muletillas.</li>
+<li>Muestra palabras originales, palabras acortadas y porcentaje de reducción.</li>
+<li><strong>Basado en reglas, no es un resumidor:</strong> borra palabras de forma mecánica; no selecciona ideas clave.</li>
+<li>«con el fin de» &rarr; «para», «debido al hecho de que» &rarr; «porque», «cada uno de los» &rarr; «cada».</li>
+<li>Gratis, instantáneo y totalmente privado &mdash; todo se ejecuta en tu navegador.</li>
+</ul>
+</div>
+<h2>¿Qué es un acortador de párrafos?</h2>
+<p><strong>Un acortador de párrafos es una herramienta de escritura que reduce la longitud de un texto eliminando palabras innecesarias.</strong> A diferencia de un resumidor, que selecciona las oraciones más importantes, un acortador de párrafos trabaja a nivel de palabra: borra muletillas («muy», «realmente», «básicamente») e intercambia construcciones verbosas («debido al hecho de que») por otras concisas («porque»). El resultado es el mismo párrafo sin el relleno &mdash; más corto, más directo y más fácil de leer.</p>
+[IMAGE: Diagrama de antes y después de un párrafo con las muletillas resaltadas y tachadas, mostrando el resultado apretado &mdash; alt: "Párrafo antes y después de acortarlo, con las muletillas eliminadas"]
+<h2>Cómo funciona este acortador de párrafos</h2>
+<p>La herramienta aplica dos conjuntos de reglas en orden y luego limpia los espacios:</p>
+<p><strong>Paso 1 &mdash; reemplazos de frases (16 pares).</strong> Las construcciones verbosas se intercambian por equivalentes concisos, sin distinción de mayúsculas:</p>
+<table>
+<thead><tr><th>Frase verbosa</th><th>Se vuelve</th><th>Frase verbosa</th><th>Se vuelve</th></tr></thead>
+<tbody>
+<tr><td>con el fin de</td><td>para</td><td>debido al hecho de que</td><td>porque</td></tr>
+<tr><td>en caso de que</td><td>si</td><td>en este momento</td><td>ahora</td></tr>
+<tr><td>en un futuro próximo</td><td>pronto</td><td>una gran cantidad de</td><td>muchos</td></tr>
+<tr><td>una pequeña cantidad de</td><td>pocos</td><td>a pesar del hecho de que</td><td>aunque</td></tr>
+<tr><td>con el propósito de</td><td>para</td><td>con respecto a / en referencia a</td><td>sobre</td></tr>
+<tr><td>todos los días</td><td>a diario</td><td>cada uno de los</td><td>cada</td></tr>
+<tr><td>en primer lugar</td><td>primero</td><td>único y exclusivo</td><td>único</td></tr>
+<tr><td>en la actualidad</td><td>ahora</td><td>&mdash;</td><td>&mdash;</td></tr>
+</tbody>
+</table>
+<p><strong>Paso 2 &mdash; eliminación de muletillas (30 palabras).</strong> Las muletillas sueltas se borran donde aparezcan: <em>muy, realmente, actualmente, básicamente, literalmente, absolutamente, completamente, totalmente, bastante, más bien, algo, simplemente, definitivamente, ciertamente, obviamente, claramente, esencialmente, virtualmente, prácticamente, sinceramente</em> &mdash; más las frases <em>en mi opinión, creo que, es importante señalar que, cabe señalar que</em> y <em>ni que decir tiene</em>.</p>
+<p><strong>Paso 3 &mdash; limpieza.</strong> Los espacios extra colapsan a uno, se quitan los espacios antes de la puntuación y el resultado se recorta. La fila de estadísticas informa entonces palabras originales, palabras acortadas y porcentaje de reducción.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Entrada:</p>
+<p><em>«Es muy importante señalar que, con el fin de tener éxito, básicamente necesitas esforzarte realmente duro cada uno de los días.»</em> (21 palabras)</p>
+<p>Salida:</p>
+<p><em>«Es, para tener éxito, necesitas esforzarte duro cada días.»</em> (10 palabras &mdash; 52&nbsp;% de reducción)</p>
+<p>Qué pasó: «muy», «básicamente» y «realmente» se borraron como muletillas; «con el fin de» &rarr; «para»; «cada uno de los» &rarr; «cada»; «es importante señalar que» se eliminó como muletilla. Fíjate en el artefacto honesto: al quitar esa frase quedó una <strong>coma huérfana</strong> tras «Es» &mdash; la herramienta borra palabras de forma mecánica y no repuntúa. Revisa siempre el resultado.</p>
+<h2>Cómo usar el acortador de párrafos</h2>
+<ol>
+<li><strong>Pega</strong> tu párrafo o texto completo en el cuadro de entrada.</li>
+<li><strong>Haz clic en «Acortar texto»</strong> &mdash; los reemplazos y la eliminación de muletillas se aplican al instante.</li>
+<li><strong>Revisa las estadísticas:</strong> palabras originales, palabras acortadas y % de reducción. Después verifica la longitud final contra tu objetivo con el <a href="/es/contador-de-palabras/">contador de palabras</a>.</li>
+<li><strong>Corrige</strong> el resultado por si quedaron restos de puntuación, y <strong>Cópialo</strong>.</li>
+</ol>
+<h2>Acortador frente a resumidor: conoce la diferencia</h2>
+<p>Este es el punto más malentendido de herramientas como esta. Un <strong>acortador</strong> y un <strong>resumidor</strong> hacen trabajos distintos:</p>
+<table>
+<thead><tr><th></th><th>Este acortador de párrafos</th><th>Un verdadero resumidor</th></tr></thead>
+<tbody>
+<tr><td>Unidad de trabajo</td><td>Palabras y frases</td><td>Oraciones e ideas</td></tr>
+<tr><td>Método</td><td>Reglas fijas de borrado y sustitución</td><td>Selecciona o reescribe puntos clave</td></tr>
+<tr><td>¿Puede reducir un artículo de 10 párrafos a 3 oraciones?</td><td>No</td><td>Sí</td></tr>
+<tr><td>¿Conserva todas las ideas?</td><td>Sí &mdash; nada se «decide» fuera</td><td>No &mdash; el detalle se descarta por diseño</td></tr>
+</tbody>
+</table>
+<p>Usa esta herramienta para <strong>apretar</strong> un texto que quieras conservar íntegro. Si necesitas la <strong>esencia</strong> de un documento largo, necesitas un resumidor &mdash; esta herramienta nunca hará ese trabajo.</p>
+[IMAGE: Diagrama que contrasta el acortamiento a nivel de palabra (mismas ideas, menos palabras) con el resumen a nivel de oración (menos ideas) &mdash; alt: "Acortador de párrafos frente a resumidor de texto, comparados"]
+<h2>Cuando quitar muletillas cambia el significado</h2>
+<p>El borrado mecánico suele ser seguro, pero no siempre. Vigila:</p>
+<ul>
+<li><strong>Matices que aportan significado:</strong> quitar «algo» de «algo efectivo» o «más bien» de «más bien improbable» endurece la afirmación más de lo que querías.</li>
+<li><strong>«Literalmente» y «realmente»:</strong> a veces son relleno, a veces sostienen el sentido («el jarrón se rompió literalmente por la mitad»).</li>
+<li><strong>Frases de atribución:</strong> «creo que» y «en mi opinión» marcan una afirmación como opinión &mdash; quitarlas la presenta como un hecho.</li>
+<li><strong>Puntuación huérfana:</strong> como mostró el ejemplo, borrar una frase puede dejar una coma suelta o un doble espacio que la limpieza corrige.</li>
+</ul>
+<p>La herramienta es una primera pasada, no un editor final. Una revisión de treinta segundos detecta todo lo anterior.</p>
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>Solo conjuntos de reglas fijos.</strong> Las muletillas fuera de la lista de 30 no se tocan, y no reconoce verbosidad no programada (p.&nbsp;ej. «la razón por la que es porque»).</li>
+<li><strong>Sin repuntuación.</strong> Los borrados pueden dejar comas huérfanas o uniones torpes &mdash; hay que revisar.</li>
+<li><strong>Coincidencia sin distinción de mayúsculas</strong> aplica reemplazos en todas partes, incluso dentro de citas que quizá querías literales.</li>
+<li><strong>El % de reducción es por palabras</strong>, no por caracteres ni por ideas; un recorte del 50&nbsp;% de palabras no significa que se fue la mitad del significado.</li>
+</ul>
+<h2>Acortador de párrafos frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td><strong>Este acortador de párrafos</strong></td><td>Apretar borradores rápido y en privado, con reducción medible</td></tr>
+<tr><td><a href="/es/expansor-de-frases/">Expansor de frases</a></td><td>El trabajo opuesto: alargar textos cortos</td></tr>
+<tr><td><a href="/es/limpiador-de-texto/">Limpiador de texto</a></td><td>Quitar basura de formato en lugar de verbosidad</td></tr>
+<tr><td>Edición manual</td><td>Reestructurar oraciones y recortar ideas, no solo palabras</td></tr>
+</tbody>
+</table>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo acorto un párrafo online?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Pega tu texto y haz clic en «Acortar texto». La herramienta reemplaza frases verbosas («con el fin de» se vuelve «para»), borra 30 muletillas comunes («muy», «realmente», «básicamente») y muestra tu reducción de palabras como porcentaje.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Es esto un resumidor de párrafos?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No &mdash; y la distinción importa. Esta herramienta aprieta la escritura a nivel de palabra sin descartar ideas. Si necesitas resumir un texto a su esencia, necesitas un resumidor: condensa el contenido a los puntos clave, algo que esta herramienta no hace.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué muletillas elimina?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Treinta en total, entre ellas muy, realmente, actualmente, básicamente, literalmente, absolutamente, completamente, totalmente, bastante, simplemente, definitivamente, obviamente, claramente y esencialmente, más frases como «en mi opinión» o «ni que decir tiene».</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué reemplazos de frases aplica?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Dieciséis cambios, entre ellos «con el fin de» por «para», «debido al hecho de que» por «porque», «en caso de que» por «si», «en este momento» por «ahora», «una gran cantidad de» por «muchos» y «cada uno de los» por «cada».</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Acortar puede cambiar mi significado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Ocasionalmente. Borrar matices como «algo» o atribuciones como «en mi opinión» puede endurecer una afirmación más de lo que querías, y los borrados pueden dejar puntuación huérfana. Revisa siempre el resultado acortado.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo se calcula el porcentaje de reducción?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Desde los conteos de palabras: (1 &minus; palabras acortadas &divide; palabras originales) &times; 100, redondeado a un número entero. Mide palabras quitadas, no ideas quitadas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Funciona con artículos completos o solo con párrafos?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Con ambos &mdash; pega desde una oración hasta un artículo completo. Las reglas se aplican de forma uniforme en todo el texto.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Mi texto se sube o se guarda?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. El acortamiento se ejecuta por completo en tu navegador con JavaScript. Tu texto nunca sale de tu dispositivo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuál es la herramienta opuesta para alargar texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El expansor de frases de este sitio alarga oraciones cortas con frases de desarrollo en cuatro estilos.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Utility Tools</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const fillerWords = ['muy', 'realmente', 'actualmente', 'básicamente', 'literalmente', 'absolutamente', 'completamente', 'totalmente', 'bastante', 'más bien', 'algo', 'simplemente', 'definitivamente', 'ciertamente', 'obviamente', 'claramente', 'esencialmente', 'virtualmente', 'prácticamente', 'con el fin de', 'debido al hecho de que', 'en caso de que', 'en este momento', 'en mi opinión', 'creo que', 'es importante señalar que', 'cabe señalar que', 'ni que decir tiene'];
+
+    const replacements = {
+      'con el fin de': 'para',
+      'debido al hecho de que': 'porque',
+      'en caso de que': 'si',
+      'en este momento': 'ahora',
+      'en la actualidad': 'ahora',
+      'en un futuro próximo': 'pronto',
+      'una gran cantidad de': 'muchos',
+      'una pequeña cantidad de': 'pocos',
+      'a pesar del hecho de que': 'aunque',
+      'con el propósito de': 'para',
+      'con respecto a': 'sobre',
+      'en referencia a': 'sobre',
+      'todos los días': 'a diario',
+      'cada uno de los': 'cada',
+      'en primer lugar': 'primero',
+      'único y exclusivo': 'único'
+    };
+
+    function shortenText() {
+      let text = document.getElementById('text-input').value;
+      const originalWords = text.trim().split(/\s+/).filter(w => w).length;
+
+      // Apply phrase replacements
+      for (const [phrase, replacement] of Object.entries(replacements)) {
+        const regex = new RegExp(phrase, 'gi');
+        text = text.replace(regex, replacement);
+      }
+
+      // Remove standalone filler palabras
+      for (const filler of fillerWords) {
+        const regex = new RegExp(`\\b${filler}\\b\\s*`, 'gi');
+        text = text.replace(regex, '');
+      }
+
+      // Clean up extra spaces
+      text = text.replace(/\s+/g, ' ').replace(/\s+([.,!?])/g, '$1').trim();
+
+      const shortenedWords = text.trim().split(/\s+/).filter(w => w).length;
+      const reduction = originalWords > 0 ? Math.round((1 - shortenedWords / originalWords) * 100) : 0;
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-palabras').textContent = originalWords;
+      document.getElementById('short-palabras').textContent = shortenedWords;
+      document.getElementById('reduction').textContent = reduction + '%';
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-palabras').textContent = '0';
+      document.getElementById('short-palabras').textContent = '0';
+      document.getElementById('reduction').textContent = '0%';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('¡Copiado!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo acorto un párrafo online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pega tu texto y haz clic en «Acortar texto». La herramienta reemplaza frases verbosas («con el fin de» se vuelve «para»), borra 30 muletillas comunes («muy», «realmente», «básicamente») y muestra tu reducción de palabras como porcentaje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es esto un resumidor de párrafos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — y la distinción importa. Esta herramienta aprieta la escritura a nivel de palabra sin descartar ideas. Si necesitas resumir un texto a su esencia, necesitas un resumidor: condensa el contenido a los puntos clave, algo que esta herramienta no hace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué muletillas elimina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treinta en total, entre ellas muy, realmente, actualmente, básicamente, literalmente, absolutamente, completamente, totalmente, bastante, simplemente, definitivamente, obviamente, claramente y esencialmente, más frases como «en mi opinión» o «ni que decir tiene»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué reemplazos de frases aplica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dieciséis cambios, entre ellos «con el fin de» por «para», «debido al hecho de que» por «porque», «en caso de que» por «si», «en este momento» por «ahora», «una gran cantidad de» por «muchos» y «cada uno de los» por «cada»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Acortar puede cambiar mi significado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ocasionalmente. Borrar matices como «algo» o atribuciones como «en mi opinión» puede endurecer una afirmación más de lo que querías, y los borrados pueden dejar puntuación huérfana. Revisa siempre el resultado acortado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula el porcentaje de reducción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde los conteos de palabras: (1 − palabras acortadas ÷ palabras originales) × 100, redondeado a un número entero. Mide palabras quitadas, no ideas quitadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona con artículos completos o solo con párrafos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con ambos — pega desde una oración hasta un artículo completo. Las reglas se aplican de forma uniforme en todo el texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi texto se sube o se guarda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El acortamiento se ejecuta por completo en tu navegador con JavaScript. Tu texto nunca sale de tu dispositivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la herramienta opuesta para alargar texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El expansor de frases de este sitio alarga oraciones cortas con frases de desarrollo en cuatro estilos."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
