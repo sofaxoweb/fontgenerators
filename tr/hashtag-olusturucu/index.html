@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Hashtag Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Ücretsiz hashtag oluşturucu ile gönderilerinize uygun, erişimi artıran hashtag setleri üretin. Nişinize özel etiketleri tek tıkla kopyalayın. Ücretsizdir.">
+<meta content="Generate hashtags for Instagram & TikTok by topic — travel, food, fitness, fashion & more. Click to select, copy your set. Free hashtag maker for Reels." name="description"/>
+  <meta
+    content="Free online Hashtag Generator. Generate and copy unique custom font styles, letters, and text configurations for social media bios and posts."
+    name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/tr/hashtag-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hashtag Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Ücretsiz hashtag oluşturucu ile gönderilerinize uygun, erişimi artıran hashtag setleri üretin. Nişinize özel etiketleri tek tıkla kopyalayın. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/hashtag-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hashtag Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Ücretsiz hashtag oluşturucu ile gönderilerinize uygun, erişimi artıran hashtag setleri üretin. Nişinize özel etiketleri tek tıkla kopyalayın. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/hashtag-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/hashtag-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-hashtags/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-hashtags/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/hashtag-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .hashtag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hashtag-tag {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .hashtag-tag:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hashtag-tag.selected {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary-dark);
+    }
+
+    .selected-hashtags {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      min-height: 80px;
+      margin-top: 1rem;
+    }
+
+    .category-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .category-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/hashtag-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/hashtag-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">📱</span>
+                        Sosyal Medya Araçları
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../instagram-aciklama-olusturucu/">
+                            <span class="link-icon">📸</span>
+                            <span class="link-text">Instagram Açıklama Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../tiktok-aciklama-olusturucu/">
+                            <span class="link-icon">🎵</span>
+                            <span class="link-text">TikTok Açıklama Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link active" href="../hashtag-olusturucu/">
+                            <span class="link-icon">#️⃣</span>
+                            <span class="link-text">Hashtag Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../aciklama-uzunlugu-sayaci/">
+                            <span class="link-icon">📊</span>
+                            <span class="link-text">Açıklama Uzunluğu Sayacı</span>
+                        </a>
+                        <a class="sidebar-link" href="../emojili-aciklama-olusturucu/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Emojili Açıklama Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+      <div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+          <div class="tool-title">#️⃣ Hashtag Oluşturucu</div>
+          <p class="tool-description">İçeriğiniz için alakalı hashtagler oluşturun</p>
+          <label class="tool-label">İçeriğiniz neyle ilgili?</label>
+          <input class="tool-input" id="topic-input" oninput="generateHashtags()"
+            placeholder="örneğin seyahat, yemek, fitness, moda..." style="padding: 1rem; margin-bottom: 1rem;"
+            type="text" />
+          <div id="hashtags-container"></div>
+          <div class="selected-hashtags">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-weight: 600;">Seçili Hashtagler (<span id="selected-count">0</span>)</span>
+              <div>
+                <button class="btn btn-sm btn-secondary" onclick="clearSelected()">Temizle</button>
+                <button class="btn btn-sm btn-primary" onclick="copySelected()">📋 Tümünü Kopyala</button>
+              </div>
+            </div>
+            <div id="selected-display" style="word-wrap: break-word; color: var(--primary);">
+              Buraya eklemek için yukarıdaki hashtaglere tıklayın...
+            </div>
+          </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+<section class="seo-content-section">
+  <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#666"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/sosyal-medya-aciklama-araclari/">Sosyal Medya Açıklama Araçları</a> &rsaquo; <span>Hashtag Oluşturucu</span></nav>
+
+<h1>Hashtag Oluşturucu</h1>
+<p class="byline">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+
+<p>Hashtag oluşturucu; konunuzdan gönderilerinize ilgili hashtag setleri kuran ücretsiz bir araçtır. İçeriğinizin konusunu girin &mdash; seyahat, yemek, fitness, moda &mdash; ve 8 kategoride seçkin hashtagler artı konu kelimelerinizden üretilmiş özel etiketler alın. İstediklerinize tıklayıp seçin, seti kopyalayın ve yapıştırın. Kayıt gerekmez.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;max-width:780px">
+<p style="margin-bottom:.5rem"><strong>Öne çıkanlar</strong></p>
+<ul style="margin-bottom:0">
+<li>8 hashtag kategorisi &mdash; popüler, seyahat, yemek, fitness, moda, güzellik, fotoğrafçılık, sanat &mdash; her biri 15 etiket; viral hashtaglerden niş topluluk etiketlerine.</li>
+<li>Konu girmek, eşleşen kategorileri artı konu kelimelerinizden üretilmiş 10 özel hashtagi çıkarır.</li>
+<li>Etiketlere tıklayıp seçin, sonra yalnızca seçtiğiniz seti kopyalayın &mdash; elle yazmak yok.</li>
+<li>Çoğu hesap için 3&ndash;5 yüksek ilgili hashtag, 30 genelden daha iyi performans gösterir.</li>
+<li>Ücretsiz, anında, gizli: her şey tarayıcınızda çalışır.</li>
+</ul>
+</div>
+
+<h2>Hashtag Oluşturucu Nedir?</h2>
+<p><strong>Hashtag oluşturucu, içerik konunuza uygun hashtag setleri üreten bir çevrimiçi araçtır.</strong> Gönderinin konusunu girersiniz; araç gruplu hashtagler verir &mdash; geniş popüler etiketler artı seyahat, yemek ya da fitness gibi niş kategoriler &mdash; hatta konu kelimelerinizden özel etiketler uydurur (örneğin &ldquo;travel&rdquo;, #travellife, #travelgram, #travelvibes olur). İstediğiniz etiketlere dokunup seçimi kopyalarsınız. Her paylaşımda aynı 30 etiketi yeniden yazma &mdash; ya da daha kötüsü, tahmin etme &mdash; ritüelinin yerini alır.</p>
+<p>Bu hashtag üretici canlı trend verisi değil, seçkin bir kütüphane kullanır: 8 kategoride elle seçilmiş 120 etiket. Yani etiketler bu haftanın sıçramalarını kovalamak yerine istikrarlı ve ilgilidir &mdash; sınırlamalar bölümünde anlatılan bilinçli bir ödünleşme.</p>
+
+<h2>Bu Araç Nasıl Çalışır?</h2>
+<ol>
+<li><strong>Konu girişi.</strong> İçerik konunuzu yazın (&ldquo;travel,&rdquo; &ldquo;skincare,&rdquo; &ldquo;home workout&rdquo;). Araç eşleşme için küçük harfe çevirip kırpar.</li>
+<li><strong>Popüler etiketler hep görünür.</strong> &#128293; Popüler kategorisi (15 etiket: #fyp, #viral, #trending, #explorepage, #instagood, #photooftheday &hellip;) başlangıç havuzu olarak her seferinde belirir.</li>
+<li><strong>Akıllı kategori eşleşmesi.</strong> Konunuz bir kategori adıyla ya da içindeki bir etiketle eşleşirse &mdash; &ldquo;travel&rdquo; seyahat kategorisiyle eşleşir, &ldquo;yoga&rdquo; fitness içindeki etiketlerle &mdash; o kategorinin 15 etiketi de gösterilir.</li>
+<li><strong>Kelimelerinizden özel etiketler.</strong> Konunuz ayrıca 10 özel hashtag üretir: konunun kendisi artı <code>topic + s</code>, <code>topic + life</code>, <code>topic + lover</code>, <code>insta + topic</code>, <code>topic + gram</code>, <code>topic + photography</code>, <code>topic + vibes</code>, <code>topic + goals</code> ve <code>my + topic</code> gibi çeşitler (30 karakterle sınırlı).</li>
+<li><strong>Seç ve kopyala.</strong> Seçiminize almak için bir etikete tıklayın, sonra seçilen seti kopyalayın &mdash; tam istediğiniz etiketler, # ile biçimli ve aralıklı, yapıştırmaya hazır.</li>
+<li><strong>Konu yok mu?</strong> Kutuyu boş bırakmak 8 kategorinin tamamını gösterir; göz atıp elle seçebilirsiniz.</li>
+</ol>
+
+<h2>Uygulamalı Örnek: Gerçek Girdi, Gerçek Çıktı</h2>
+<p>Aracı <strong>&ldquo;travel&rdquo;</strong> konusuyla çalıştırdık. Gerçekten verdiği:</p>
+<ul>
+<li><strong>&#128293; Popüler:</strong> #fyp #viral #trending #explorepage #foryou #foryoupage #explore #instagood #photooftheday #love #beautiful #happy #cute #followme #picoftheday</li>
+<li><strong>&#128205; Travel</strong> (eşleşen kategori)<strong>:</strong> #travel #travelgram #travelphotography #instatravel #wanderlust #traveltheworld #vacation #adventure #explore #trip #traveling #travelblogger #tourism #holiday #getaway</li>
+<li><strong>&#10024; Özel:</strong> #travel #travels #travellife #travellover #instatravel #travelgram #travelphotography #travelvibes #travelgoals #mytravel</li>
+</ul>
+<p>Bu 40 etiketten 5'ini seçebilirsiniz &mdash; diyelim #travelphotography #wanderlust #travellife #instatravel #travelgram &mdash; bir geniş etiket, niş topluluk etiketleri ve bir özel etiket karışımı. Bir sonraki bölümün anlattığı strateji bu 5'li karışımdır.</p>
+
+<h2>Bu Hashtag Üretici Nasıl Kullanılır?</h2>
+<ol>
+<li>İçerik konunuzu yazın (bir-iki kelime idealdir: <em>travel</em>, <em>vegan recipes</em>, <em>streetwear</em>).</li>
+<li><strong>Hashtag Oluştur</strong>'a tıklayıp eşleşen kategorilerle özel etiketleri inceleyin.</li>
+<li>Gönderiniz için en iyi hashtaglere tıklayıp seçin (3&ndash;5): geniş (#travel), topluluk (#travelblogger) ve özel (#travellife) karışımı.</li>
+<li><strong>Seçilenleri Kopyala</strong>'ya tıklayıp açıklamanızdan sonra yapıştırın (temizlik için ayraç çizgisinin altı).</li>
+<li>En iyi setlerinizi not uygulamanıza kaydedin &mdash; tutarlı serilerde yeniden kullanmak, yeniden üretmekten iyidir.</li>
+</ol>
+
+<h2>Hashtag Oluşturucu ve İlgili Araçlar</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne yapar?</th><th>Ne zaman&hellip;</th></tr></thead>
+<tbody>
+<tr><td><strong>Hashtag Oluşturucu</strong></td><td>Tıklayıp seçmeli, konuya uygun hashtag setleri</td><td>Bir gönderi ya da Reels için keşfet etiketleri gerekiyorsa</td></tr>
+<tr><td><a href="/tr/instagram-aciklama-olusturucu/">Instagram açıklama oluşturucu</a></td><td>8 ruh halinde açıklama metnini yazar</td><td>Önce açıklama kelimelerine ihtiyacınız varsa</td></tr>
+<tr><td><a href="/tr/tiktok-aciklama-olusturucu/">TikTok açıklama oluşturucu</a></td><td>#fyp tarzı etiketleri gömülü video açıklamaları</td><td>TikTok'ta paylaşıyor ve etiketleri satır içinde istiyorsanız</td></tr>
+<tr><td><a href="/tr/sosyal-medya-aciklama-duzenleyici/">Sosyal medya açıklama düzenleyici</a></td><td>Bitmiş açıklamalar için aralık ve ayraçlar</td><td>Açıklamayla hashtagleri ayıran bir ayraç istiyorsanız</td></tr>
+</tbody>
+</table>
+
+<h2>3&ndash;5 Etiket Stratejisi (Az Neden 30'u Yener?)</h2>
+<p>Instagram gönderi başına 30 hashtage izin verir; bu herkesi 30 kullanmaya iter. Sorun: #love gibi etiketler (milyarlarca gönderi) sizi saniyeler içinde gömer; 30 etiket ise gönderinizin gerçekte ne hakkında olduğu sinyalini sulandırır. Çoğu hesap için işe yarayan yapı, <strong>azalan özgünlükte 3&ndash;5 etikettir</strong>: hacim için bir geniş etiket (#travel), sıralanabileceğiniz iki topluluk etiketi (#travelblogger, #travelphotography) ve bir özel ya da markalı etiket (#travellife). Her etiket gönderiyi o kadar doğru anlatmalı ki tıklayan bir yabancı tam beklediğini bulsun &mdash; kontrol ettiğiniz sıralama faktörü ilgililiktir.</p>
+<p>Döndürün, aynen tekrarlamayın. Her gönderide aynı 30 etiketi paylaşmak otomatik görünür ve test şansını heba eder. Seri tutarlılığı için 2&ndash;3 çapa etiketi sabit tutup gerisini bu oluşturucuyla gönderi başına değiştirin &mdash; özel etiket bölümünün amacı bu: bu gönderide #myparisguide, sonrakinde #myitalyguide.</p>
+
+<h2>Nişinize Gerçekten Uyan Etiketleri Bulma</h2>
+<p>Buradaki eşleşme mantığı özgün konuları ödüllendirir: &ldquo;travel&rdquo; seyahat kategorisini çıkarır ama &ldquo;vegan&rdquo; yemek içindeki etiketlerle eşleşir; &ldquo;skincare&rdquo; gibi bir konu güzelliğe isabet eder. Nişinizi üç yoldan deneyin &mdash; geniş terim, topluluk terimi (&ldquo;books&rdquo; değil &ldquo;bookstagram&rdquo;) ve aktivite (&ldquo;mealprep&rdquo;) &mdash; ve hangisinin en kullanılabilir etiketleri verdiğini karşılaştırın. Sonra karar vermeden önce etiket boyutlarını Instagram uygulamasında aklı başında denetleyin: küçük ve orta hesaplar için ideal nokta kabaca 50B&ndash;500B gönderili etiketlerdir; kitle olacak kadar büyük, gönderinizin Öne Çıkanlar'da yüzeye çıkabileceği kadar küçük. Bu oluşturucu kelimeleri verir; uygulama boyutları verir; birlikte seti kurarlar.</p>
+
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Seçkin kütüphane, canlı trend değil.</strong> 120 etiket elle seçilmiş ve istikrarlıdır &mdash; araç bu haftanın viral etiketini çıkarmaz ya da bir etiketin yasaklı/doygun olduğu konusunda uyarmaz. Önemli gönderilerde etiket sağlığını uygulamada denetleyin.</li>
+<li><strong>Yalnızca İngilizce etiketler.</strong> Tüm kategoriler ve özel kalıplar İngilizce'dir.</li>
+<li><strong>Özel etiketler formülseldir.</strong> <code>insta + topic</code> gibi kalıplar gerçekçi etiketler (#instatravel) de üretir, ıskalar da &mdash; her özel etiketi kullanmadan önce gözden geçirin.</li>
+<li><strong>Performans verisi yok.</strong> Araç hangi etiketlerin erişim getirdiğini söyleyemez; bunu Instagram Insights ya da TikTok analizlerinde takip edin.</li>
+<li><strong>Eşleşme anahtar kelime tabanlıdır.</strong> Alışılmadık konular Popüler dışında kategoriyle eşleşmeyebilir &mdash; o durumda yük özel etiketlerdedir.</li>
+</ul>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">En iyi Instagram hashtagleri nelerdir?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">En iyi Instagram hashtagleri gönderinize özgü ve hesabınıza göre boyutludur: bir geniş, iki topluluk (50B&ndash;500B gönderi) ve bir özel olmak üzere 3&ndash;5 etiket. Böyle bir set kurmak için konunuzu yukarıya girin &mdash; ilgililik ham popülerliği her zaman yener.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Trend hashtagler nasıl bulunur?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bu araç canlı trend verisi yerine istikrarlı, seçkin etiketler verir. Gerçekten trend etiketler için TikTok&rsquo;un Keşfet sayfasına ya da Instagram'ın nişinize arama önerilerine bakın &mdash; sonra dengeli bir karışım için bunları burada üretilen eskimez setlerle birleştirin.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Reels için hashtag oluşturucu var mı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Evet &mdash; bu. Reels, gönderilerle aynı hashtag sistemini kullanır; yukarıda 3&ndash;5'li bir set üretip Reels açıklamanızdan sonra yapıştırın. TikTok videoları için <a href="/tr/tiktok-aciklama-olusturucu/">TikTok açıklama oluşturucu</a> trend etiketleri açıklamalara doğrudan işler.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Gönderi başına kaç hashtag kullanılmalı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Instagram 30'a izin verir ama 3&ndash;5 yüksek ilgili etiket genelde daha iyi performans gösterir &mdash; dev etiketlerde boğulmak yerine orta ölçeklilerde gerçekten sıralanabilirsiniz. Yukarıda tıklayıp seçerek 3&ndash;5'inizi seçin ve yalnızca onları kopyalayın.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Hashtagler nereye konur &mdash; açıklama mı yorum mu?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Açıklamaya, metinden sonra &mdash; akış görünümü temiz kalsın diye birkaç satır sonu ya da ayraçla ayrılmış. Yorumlardaki hashtagler çalışır ama keşfet için daha az güvenilirdir ve sizin yönetmeniz zordur.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Hashtagler hesabımı gölge yasağa sokar mı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yasaklı ya da spamla ilişkili etiketler kullanmak bir gönderinin erişimini sınırlayabilir; buna gölge yasak denir. Buradaki seçkinler gibi ilgili, meşru etiketlerde kalın, her gönderide aynı 30'lu blokları tekrarlamaktan kaçının ve bilmediğiniz her etiketi kullanmadan önce Instagram aramada denetleyin.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Hashtagler 2026'da hâlâ işe yarıyor mu?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Evet ama rolleri daraldı: anahtar kelimeli açıklamalar ve algoritmanın kendi sınıflandırması, eskisine göre keşfet işinin çoğunu yapıyor. Hashtagler artık en iyi hassas sınıflandırma olarak işler &mdash; birkaç doğru etiket, umutlu bir duvarı yener.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Hashtagleri doğrudan kopyalayabilir miyim?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Evet &mdash; seçmek için etiketlere tıklayın, sonra Seçilenleri Kopyala'ya basın. Kopyalanan metin # işaretleri ve boşluklarla biçimlidir; Instagram ya da TikTok'a yapıştırmaya hazırdır.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Hashtag oluşturucu ücretsiz mi?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Tamamen ücretsiz, hesapsız, sınırsız &mdash; dilediğiniz kadar set üretin, seçin ve kopyalayın. Konularınız tarayıcınızdan asla çıkmaz.</p></div>
+</div>
+</div>
+
+<p>Paylaşım akışını açıklama metni için <a href="/tr/instagram-aciklama-olusturucu/">Instagram açıklama oluşturucuyla</a>, etiketleri temiz ayırmak için <a href="/tr/sosyal-medya-aciklama-duzenleyici/">açıklama düzenleyiciyle</a> ve gönderi Hikâyelere de gittiğinde <a href="/tr/hikaye-aciklama-olusturucu/">hikâye açıklama üreticiyle</a> tamamlayın.</p>
+
+
+  </div>
+</section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>📱 Sosyal Medya Araçları</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../instagram-aciklama-olusturucu/">📸 Instagram Açıklama Oluşturucu</a>
+                <a class="sidebar-link" href="../tiktok-aciklama-olusturucu/">🎵 TikTok Açıklama Oluşturucu</a>
+                <a class="sidebar-link active" href="../hashtag-olusturucu/">#️⃣ Hashtag Oluşturucu</a>
+                <a class="sidebar-link" href="../aciklama-uzunlugu-sayaci/">📊 Açıklama Uzunluğu Sayacı</a>
+                <a class="sidebar-link" href="../emojili-aciklama-olusturucu/">😊 Emojili Açıklama Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/script.js"></script>
+  <script defer="">
+    const hashtagCategories = {
+      popular: ['fyp', 'viral', 'trending', 'explorepage', 'foryou', 'foryoupage', 'explore', 'instagood', 'photooftheday', 'love', 'beautiful', 'happy', 'cute', 'followme', 'picoftheday'],
+      travel: ['travel', 'travelgram', 'travelphotography', 'instatravel', 'wanderlust', 'traveltheworld', 'vacation', 'adventure', 'explore', 'trip', 'traveling', 'travelblogger', 'tourism', 'holiday', 'getaway'],
+      food: ['food', 'foodie', 'foodporn', 'instafood', 'yummy', 'delicious', 'foodstagram', 'foodphotography', 'cooking', 'homemade', 'dinner', 'lunch', 'breakfast', 'recipe', 'foodlover'],
+      fitness: ['fitness', 'gym', 'workout', 'fit', 'motivation', 'fitnessmotivation', 'bodybuilding', 'training', 'health', 'healthy', 'exercise', 'muscle', 'gains', 'fitfam', 'lifestyle'],
+      fashion: ['fashion', 'style', 'ootd', 'fashionblogger', 'fashionista', 'streetstyle', 'outfit', 'instafashion', 'fashionstyle', 'lookoftheday', 'trendy', 'stylish', 'clothing', 'dress', 'fashionable'],
+      beauty: ['beauty', 'makeup', 'skincare', 'beautyblogger', 'makeupartist', 'cosmetics', 'beautytips', 'mua', 'glam', 'lipstick', 'skincareroutine', 'beautycommunity', 'makeuptutorial', 'selfcare', 'beautylover'],
+      photography: ['photography', 'photooftheday', 'photographer', 'photo', 'portrait', 'naturephotography', 'photographylovers', 'streetphotography', 'canon', 'nikon', 'photographyislife', 'instaphoto', 'photoshoot', 'camera', 'picoftheday'],
+      art: ['art', 'artist', 'artwork', 'artistsoninstagram', 'drawing', 'illustration', 'painting', 'sketch', 'creative', 'digitalart', 'design', 'artistsofinstagram', 'artoftheday', 'instaart', 'artsy']
+    };
+
+    let selectedHashtags = new Set();
+
+    function generateHashtags() {
+      const topic = document.getElementById('topic-input').value.toLowerCase().trim();
+      const container = document.getElementById('hashtags-container');
+
+      let html = '';
+
+      // Always show popular
+      html += renderCategory('🔥 Popular', hashtagCategories.popular);
+
+      // Show relevant categories based on topic
+      if (topic) {
+        Object.keys(hashtagCategories).forEach(cat => {
+          if (cat !== 'popular' && (cat.includes(topic) || topic.includes(cat) || hashtagCategories[cat].some(h => h.includes(topic)))) {
+            html += renderCategory(`📌 ${cat.charAt(0).toUpperCase() + cat.slice(1)}`, hashtagCategories[cat]);
+          }
+        });
+
+        // Generate custom hashtags from topic
+        const customTags = [topic, topic + 's', topic + 'life', topic + 'lover', 'insta' + topic, topic + 'gram', topic + 'photography', topic + 'vibes', topic + 'goals', 'my' + topic];
+        html += renderCategory('✨ Custom', customTags.filter(t => t.length <= 30));
+      }
+
+      // Show all categories if no specific match
+      if (!topic || html.split('category-section').length < 3) {
+        Object.keys(hashtagCategories).forEach(cat => {
+          if (cat !== 'popular') {
+            html += renderCategory(`📌 ${cat.charAt(0).toUpperCase() + cat.slice(1)}`, hashtagCategories[cat]);
+          }
+        });
+      }
+
+      container.innerHTML = html;
+      updateSelectedDisplay();
+    }
+
+    function renderCategory(title, hashtags) {
+      return `
+                <div class="category-section">
+                    <div class="category-title">${title}</div>
+                    <div class="hashtag-grid">
+                        ${hashtags.map(tag => `
+                            <span class="hashtag-tag ${selectedHashtags.has(tag) ? 'selected' : ''}" onclick="toggleHashtag('${tag}')">#${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+    }
+
+    function toggleHashtag(tag) {
+      if (selectedHashtags.has(tag)) {
+        selectedHashtags.delete(tag);
+      } else {
+        selectedHashtags.add(tag);
+      }
+      generateHashtags();
+    }
+
+    function updateSelectedDisplay() {
+      const display = document.getElementById('selected-display');
+      const count = document.getElementById('selected-count');
+
+      count.textContent = selectedHashtags.size;
+
+      if (selectedHashtags.size === 0) {
+        display.textContent = 'Buraya eklemek için yukarıdaki hashtaglere tıklayın...';
+        display.style.color = 'var(--muted)';
+      } else {
+        display.textContent = Array.from(selectedHashtags).map(t => '#' + t).join(' ');
+        display.style.color = 'var(--primary)';
+      }
+    }
+
+    function clearSelected() {
+      selectedHashtags.clear();
+      generateHashtags();
+    }
+
+    function copySelected() {
+      if (selectedHashtags.size === 0) {
+        alert('Önce birkaç hashtag seçin!');
+        return;
+      }
+      const text = Array.from(selectedHashtags).map(t => '#' + t).join(' ');
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Kopyalandı ' + selectedHashtags.size + ' hashtags!');
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Initialize
+    generateHashtags();
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "En iyi Instagram hashtagleri nelerdir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En iyi Instagram hashtagleri gönderinize özgü ve hesabınıza göre boyutludur: bir geniş, iki topluluk (50B–500B gönderi) ve bir özel olmak üzere 3–5 etiket. Böyle bir set kurmak için konunuzu yukarıya girin — ilgililik ham popülerliği her zaman yener."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trend hashtagler nasıl bulunur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu araç canlı trend verisi yerine istikrarlı, seçkin etiketler verir. Gerçekten trend etiketler için TikTok’un Keşfet sayfasına ya da Instagram'ın nişinize arama önerilerine bakın — sonra dengeli bir karışım için bunları burada üretilen eskimez setlerle birleştirin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reels için hashtag oluşturucu var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — bu. Reels, gönderilerle aynı hashtag sistemini kullanır; yukarıda 3–5'li bir set üretip Reels açıklamanızdan sonra yapıştırın. TikTok videoları için TikTok açıklama oluşturucu trend etiketleri açıklamalara doğrudan işler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gönderi başına kaç hashtag kullanılmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instagram 30'a izin verir ama 3–5 yüksek ilgili etiket genelde daha iyi performans gösterir — dev etiketlerde boğulmak yerine orta ölçeklilerde gerçekten sıralanabilirsiniz. Yukarıda tıklayıp seçerek 3–5'inizi seçin ve yalnızca onları kopyalayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtagler nereye konur — açıklama mı yorum mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Açıklamaya, metinden sonra — akış görünümü temiz kalsın diye birkaç satır sonu ya da ayraçla ayrılmış. Yorumlardaki hashtagler çalışır ama keşfet için daha az güvenilirdir ve sizin yönetmeniz zordur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtagler hesabımı gölge yasağa sokar mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yasaklı ya da spamla ilişkili etiketler kullanmak bir gönderinin erişimini sınırlayabilir; buna gölge yasak denir. Buradaki seçkinler gibi ilgili, meşru etiketlerde kalın, her gönderide aynı 30'lu blokları tekrarlamaktan kaçının ve bilmediğiniz her etiketi kullanmadan önce Instagram aramada denetleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtagler 2026'da hâlâ işe yarıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet ama rolleri daraldı: anahtar kelimeli açıklamalar ve algoritmanın kendi sınıflandırması, eskisine göre keşfet işinin çoğunu yapıyor. Hashtagler artık en iyi hassas sınıflandırma olarak işler — birkaç doğru etiket, umutlu bir duvarı yener."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtagleri doğrudan kopyalayabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — seçmek için etiketlere tıklayın, sonra Seçilenleri Kopyala'ya basın. Kopyalanan metin # işaretleri ve boşluklarla biçimlidir; Instagram ya da TikTok'a yapıştırmaya hazırdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hashtag oluşturucu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tamamen ücretsiz, hesapsız, sınırsız — dilediğiniz kadar set üretin, seçin ve kopyalayın. Konularınız tarayıcınızdan asla çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
