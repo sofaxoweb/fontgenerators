@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Simli Metin Oluşturucu | FontGenerators.online</title>
+  <meta content="Simli metin oluşturucu ile parıltılı dokulu yazı görselleri hazırlayın. PNG veya GIF olarak indirin; profil ve kapak görsellerinizde ücretsiz kullanın." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <script src="https://unpkg.com/gif.js.optimized/dist/gif.js"></script>
+  <link href="https://fontgenerators.online/tr/simli-metin-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FontGenerators.online">
+  <meta property="og:title" content="Simli Metin Oluşturucu | FontGenerators.online">
+  <meta property="og:description" content="Simli metin oluşturucu ile parıltılı dokulu yazı görselleri hazırlayın. PNG veya GIF olarak indirin; profil ve kapak görsellerinizde ücretsiz kullanın.">
+  <meta property="og:url" content="https://fontgenerators.online/tr/simli-metin-olusturucu/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Simli Metin Oluşturucu | FontGenerators.online">
+  <meta name="twitter:description" content="Simli metin oluşturucu ile parıltılı dokulu yazı görselleri hazırlayın. PNG veya GIF olarak indirin; profil ve kapak görsellerinizde ücretsiz kullanın.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/glitter-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/glitter-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-con-purpurina/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-com-purpurina/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/simli-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    /* MAIN LAYOUT */
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      background: #e9ecd3;
+      border: 1px solid #aaa;
+      padding: 15px;
+    }
+
+    .top-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* PANELS */
+    .panel {
+      background: #f3f5e6;
+      border: 1px solid #999;
+      padding: 10px;
+      max-height: 210px;
+      overflow: auto;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    /* FONT UI */
+    .font-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 3px;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .font-item.active {
+      border: 2px solid #2f6;
+    }
+
+    .font-preview {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* TEXTURES */
+    .texture-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .texture-grid img {
+      width: 100%;
+      height: 35px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .texture-grid img.active {
+      border-color: #2f6;
+    }
+
+    /* CONTROLS */
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 10px;
+    }
+
+    .downloadbtn {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #888;
+    }
+
+    button {
+      background: #7aa63a;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* CANVAS */
+    canvas {
+      width: 100%;
+      height: 200px;
+      margin-top: 15px;
+      background: #fff;
+      border: 1px solid #aaa;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Simli metin nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metninizi oluşturucuya yazın, bir yazı tipi ve sim dokusu seçin (ya da kendi görselinizi yükleyin), boyut ve kenarlığı ayarlayın, önizleme için Animasyonu Başlat'a basın, sonra GIF İndir'e tıklayın. Bunun yerine yapıştırılabilir parıltılı metin için parlak metin oluşturucuyu kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Simli metni kopyalayıp biyografime yapıştırabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu araçtan hayır — resim/GIF dosyaları dışa aktarır, biyografiler ise yalnızca metin kabul eder. Biyografi dostu ışıltı için parlak metin oluşturucudaki ✦✧✦ sparkle ✦✧✦ gibi karakter olarak kopyalanıp yapıştırılan Unicode stilleri kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Simli metnimi GIF olarak nasıl indiririm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuvade ışıltıyı önizlemek için Animasyonu Başlat düğmesine basın, sonra GIF İndir'e tıklayın. Animasyonlu dosya cihazınıza kaydedilir; profil fotoğrafı, pankart ya da forum imzası olarak yüklemeye hazırdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kendi sim dokumu kullanabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Görsel Yükle seçeneğiyle cihazınızdaki herhangi bir resim sim dolgusu olabilir — bir sim fotoğrafı, bir gradyan ya da herhangi bir desen. Görsel tarayıcınızda kalır; hiçbir sunucuya yüklenmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Simli metin için hangi yazı tipleri en iyisidir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kalın, tok yazı tipleri — sim dokusunun ışıldayacağı en geniş yüzeyi verirler. İnce ya da el yazısı yazı tipleri, yoğun dokularla doldurulunca yamalı görünebilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Simli metin görseli hangi boyuttadır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Önizleme tuvali 900×200 pikseldir — başlıklar ve imzalar için ideal, geniş pankart biçimidir. Tuval içindeki metin boyutu ayarlanabilir: Küçük (48px), Orta (72px) ya da Büyük (96px)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Animasyonlu GIF'im Discord'da çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paylaşılan görsel olarak ya da GIF'lerin gösterildiği \"hakkımda\" bölümlerinde evet. Bazı platformların bazı bağlamlarda (küçük avatarlar gibi) yalnızca ilk kareyi gösterdiğini unutmayın; kullanacağınız yerde önizleyin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Simli metin oluşturucu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — sınırsız kullanım, hesap yok, filigran yok. İstediğiniz kadar simli metin tasarlayıp hepsini indirin."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/glitter-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">TR</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/glitter-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+  <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/tr/">Ana Sayfa</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/tr/estetik-metin-araclari/">Estetik Araçlar</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Simli Metin Oluşturucu</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/glitter-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-con-purpurina/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-com-purpurina/" class="lang-link" title="Português">🇵🇹 PT</a>
+      <a href="./" class="lang-link active" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+  <main class="tool-page">
+
+    </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+      <div class="container">
+        <div class="h1">💎 Parıltılı Metin Oluşturucu</div>
+        <p>Parıltılı efektlerle ışıltılı, ışıltılı metinler oluşturun</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="wrapper">
+          <label>Text</label>
+          <input id="text" value="GLITTER TEXT" />
+          <div class="top-controls">
+            <!-- FONTS -->
+            <div class="panel">
+              <h3>Yazı tipleri</h3>
+              <div id="fontList"></div>
+            </div>
+            <!-- TEXTURES -->
+            <div class="panel">
+              <h3>Dokular</h3>
+              <div class="texture-grid" id="textures"></div>
+              <label>Upload Image</label>
+              <input id="imageUpload" type="file" />
+            </div>
+          </div>
+          <!-- OPTIONS -->
+          <div class="controls">
+            <select id="size">
+              <option value="48">Small</option>
+              <option selected="" value="72">Medium</option>
+              <option value="96">Large</option>
+            </select>
+            <select id="align">
+              <option value="center">Center</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+            <select id="border">
+              <option value="0">No Border</option>
+              <option value="2">Thin</option>
+              <option selected="" value="4">Medium</option>
+              <option value="7">Thick</option>
+            </select>
+            <input id="borderColor" type="color" value="#222222" />
+          </div>
+          <canvas height="200" id="preview" width="900"></canvas>
+          <div class="downloadbtn">
+            <button id="animateBtn">Start Animation</button>
+            <button id="downloadGif">Download GIF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<h1>Simli Metin Oluşturucu</h1>
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+<p class="lead"><strong>Simli metin oluşturucu</strong>, animasyonlu, ışıltılı metin görselleri tasarlar — bir <strong>simli yazı tipi</strong> seçin, sim dokusu belirleyin ve çalışmanızı GIF olarak indirin. Kopyala-yapıştır metin araçlarından farklı olarak bu ücretsiz üretici; profil fotoğrafları, forum imzaları ve Discord çalışmaları için ideal, ışıltı animasyonlu gerçek <strong>parıltılı metin</strong> grafikleri çizer. Kayıt gerekmez.</p>
+<div class="takeaways">
+<p><strong>Öne çıkanlar</strong></p>
+<ul>
+<li>Bu araç simli metin <strong>görselleri ve animasyonlu GIF'ler</strong> üretir — kopyala-yapıştır Unicode metin değil.</li>
+<li>Yazı tipini, sim dokusunu (ya da kendi görselinizi yükleyin), boyutu, hizalamayı, kenarlık kalınlığını ve kenarlık rengini siz kontrol edersiniz.</li>
+<li>Işıltıyı önizlemek için <strong>Animasyonu Başlat</strong>'a, kaydetmek için <strong>GIF İndir</strong>'e basın.</li>
+<li>Önizleme tuvali 900×200 px'tir — geniş ve kısa; pankartlar ve imzalar için idealdir.</li>
+<li>Yapıştırılabilir parıltılı metin (Unicode) için bunun yerine <a href="/tr/parlak-metin-olusturucu/">parlak metin oluşturucuyu</a> kullanın.</li>
+</ul>
+</div>
+
+<h2>Simli Metin Nedir?</h2>
+<div class="definition"><p><strong>Simli metin</strong>, ışıltılı, ışığı yakalayan dokuyla doldurulmuş ya da çevrelenmiş metindir — MySpace profillerini, forum imzalarını ve 2000'lerin başı kişisel sayfaları süsleyen sim grafiklerinin dijital torunudur.</p></div>
+<p>Çevrimiçi simli metnin iki türü vardır. <strong>Görsel simli metin</strong> — bu aracın ürettiği — gerçek sim dokularıyla piksel piksel çizilir, animasyonlandırılır ve GIF ya da durağan görsel olarak kaydedilir. <strong>Unicode "simli" metin</strong> ise efekti düz kelimelerin çevresindeki parıltı karakterleriyle (✦✧★) taklit eder; metin olarak yapıştırılır ama asla gerçekten ışıldamaz. Bu sayfanın oluşturucusu gerçeğini yapar: hareketini görebildiğiniz animasyonlu sim.</p>
+
+<h2>Bu Parıltılı Metin Oluşturucu Nasıl Çalışır?</h2>
+<p>Araç metninizi bir HTML tuvaline çizer, sim dokusuyla doldurur ve ışıltıyı animasyonlandırır. Her şey tarayıcınızda çalışır — hiçbir şey yüklenmez. Kontroller:</p>
+<table>
+<thead><tr><th>Kontrol</th><th>Seçenekler</th><th>Varsayılan</th></tr></thead>
+<tbody>
+<tr><td>Metin</td><td>Serbest giriş</td><td>"GLITTER TEXT"</td></tr>
+<tr><td>Yazı tipleri</td><td>Yerleşik yazı tipi seçici listesi</td><td>—</td></tr>
+<tr><td>Dokular</td><td>Sim dokusu ızgarası ya da kendi görselinizi yükleyin</td><td>—</td></tr>
+<tr><td>Boyut</td><td>Küçük (48px), Orta (72px), Büyük (96px)</td><td>Orta</td></tr>
+<tr><td>Hizalama</td><td>Sol, Orta, Sağ</td><td>Orta</td></tr>
+<tr><td>Kenarlık</td><td>Yok, İnce (2px), Orta (4px), Kalın (7px)</td><td>Orta</td></tr>
+<tr><td>Kenarlık rengi</td><td>Renk seçici</td><td>Koyu (#222222)</td></tr>
+<tr><td>Önizleme</td><td>900×200 px tuval</td><td>—</td></tr>
+<tr><td>Eylemler</td><td>Animasyonu Başlat, GIF İndir</td><td>—</td></tr>
+</tbody>
+</table>
+<p>Öne çıkan özellik <strong>doku yüklemedir</strong>: cihazınızdaki herhangi bir görsel sim dolgusu olabilir — gerçek sim fotoğrafı, bir gradyan, bir galaksi resmi. Yazı tipi seçiciyle birleşince her çıktı gerçekten benzersiz olur.</p>
+[IMAGE: Doku ızgarası, yazı tipi seçici ve animasyonlu önizlemesi etiketlenmiş sim oluşturucu arayüzünün çizimi | alt="Yazı tipi listesi, doku ızgarası ve GIF indirme düğmeli simli metin oluşturucu arayüzü"]
+
+<h2>Uygulamalı Örnek</h2>
+<p>Varsayılan <strong>GLITTER TEXT</strong> metnini bırakın, Orta boyutu ve Orta koyu kenarlığı koruyun, bir doku seçip <strong>Animasyonu Başlat</strong>'a basın. Tuval ışıldar — parıltılar harf biçimlerinin üzerinde gezinir. <strong>GIF İndir</strong>'e basın; forum imzası ya da Discord "hakkımda" (görsel/GIF gösteriminin desteklendiği yerlerde) için hazır animasyonlu simli bir pankartınız olur.</p>
+<p>Daha sade mi istiyorsunuz? Kenarlığı <strong>Yok</strong> yapıp ince bir doku seçin; kaba değil, zarif bir ışıltı elde edersiniz.</p>
+
+<h2>Simli Metin Nasıl Yapılır?</h2>
+<ol>
+<li><strong>Metninizi</strong> Metin alanına yazın (geniş tuvalde kısa ifadeler en iyisidir).</li>
+<li>Listeden bir <strong>yazı tipi seçin</strong> — kalın, tok yazı tipleri simi en iyi gösterir.</li>
+<li>Izgaradan bir <strong>doku seçin</strong> ya da sim dolgusu olarak <strong>kendi görselinizi yükleyin</strong>.</li>
+<li><strong>Boyut, hizalama ve kenarlığı ayarlayın</strong> — koyu Orta kenarlık harfleri öne çıkarır.</li>
+<li>Işıltıyı önizlemek için <strong>Animasyonu Başlat</strong>'a basın.</li>
+<li>Animasyonlu simli metninizi kaydetmek için <strong>GIF İndir</strong>'e basın.</li>
+</ol>
+
+<h2>Biyografiler İçin Simli Metin: Görsel ve Unicode</h2>
+<p><strong>Simli metni Instagram biyografime yapıştırabilir miyim?</strong> Bu aracın çıktısını hayır — o bir resim dosyasıdır, biyografiler ise yalnızca metin kabul eder. Biyografide <strong>simli harfler</strong> kullanımı için Unicode yoluna ihtiyacınız var: düz kelimelerin çevresinde ✦✧✦ sparkle ✦✧✦ gibi parıltı karakterleri. <a href="/tr/parlak-metin-olusturucu/">Parlak metin oluşturucu</a> ve <a href="/tr/parilti-sembol-olusturucu/">parıltı sembolleri</a> kütüphanesi, o tarzı tek tıkla kopyalamayla sunar.</p>
+<p><em>Bu</em> oluşturucuyu, hedefin görsel kabul ettiği durumlarda kullanın: profil fotoğrafları, başlıklar, forum imzaları, blog pankartları, Discord sunucu simgeleri ve hikâye paylaşımları.</p>
+
+<h2>Simli Metin Oluşturucu ve Benzer Araçlar</h2>
+<table>
+<thead><tr><th>Araç</th><th>Çıktı</th><th>Ne zaman kullanmalı?</th></tr></thead>
+<tbody>
+<tr><td><a href="/tr/parlak-metin-olusturucu/">Parlak metin oluşturucu</a></td><td>Kopyala-yapıştır Unicode (✧ glow ✧)</td><td>Biyografi ve sohbetler için <strong>simli metin kopyala yapıştır</strong> gerektiğinde</td></tr>
+<tr><td><a href="/tr/neon-metin-olusturucu/">Neon metin oluşturucu</a></td><td>Kopyala-yapıştır Unicode tabela çerçeveleri</td><td>Karakter olarak kalın tabela metni istediğinizde</td></tr>
+<tr><td><a href="/tr/animasyonlu-metin-olusturucu/">Animasyonlu metin oluşturucu</a></td><td>CSS animasyonlu web metni</td><td>Kendi web sayfanızda animasyon istediğinizde</td></tr>
+<tr><td><a href="/tr/kawaii-metin-olusturucu/">Kawaii metin oluşturucu</a></td><td>Kopyala-yapıştır sevimli süslü metin</td><td>Işıltılı değil, tatlı istediğinizde</td></tr>
+<tr><td><a href="/tr/retro-metin-olusturucu/">Retro metin oluşturucu</a></td><td>Kopyala-yapıştır 80'ler çerçeveleri</td><td>Metin olarak disko dönemi ışıltısı istediğinizde</td></tr>
+</tbody>
+</table>
+<p>Görsel ve metin efektlerinin ikisine de <a href="/tr/estetik-metin-araclari/">estetik metin araçlarından</a> göz atın.</p>
+
+<h2>En İyi Sim İçin İpuçları</h2>
+<p>Her <strong>parıltılı yazı tipi oluşturucu</strong> rehberinin söyleyeceği gibi: <strong>kalın yazı tipleri simi en iyi gösterir.</strong> İnce harf biçimleri dokuya az yüzey bırakır — mevcut en tok yazı tipini seçin.</p>
+<p><strong>Gerçek bir sim fotoğrafı yükleyin.</strong> Doku olarak el işi siminin yakın plan fotoğrafı, gerçekçilikte yerleşik her deseni yener.</p>
+<p><strong>Metni kısa tutun.</strong> 900×200 tuval pankart biçimindedir; 2-4 kelimeden fazlası sıkışık durur.</p>
+<p><strong>Kenarlığa dikkat.</strong> Zıt bir kenarlık rengi harfleri yoğun dokulardan ayırır — açık simde koyu kenarlık, koyu simde açık kenarlık.</p>
+
+<h2>Sınırlamalar</h2>
+<ul>
+<li>Çıktı resim/GIF'tir — biyografilere, kullanıcı adlarına ya da sohbetlere metin olarak yapıştırılamaz.</li>
+<li>GIF dosyaları büyüyebilir; çok uzun metin ya da büyük boyutlar dosya boyutunu artırır.</li>
+<li>Animasyonlu GIF'ler her yerde oynamaz (bazı platformlar yalnızca ilk kareyi gösterir).</li>
+<li>Yüklenen dokular tarayıcı oturumunuzda kalır — araç görselleri sizin için barındırmaz.</li>
+</ul>
+
+<h2>Sık Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metin nasıl yapılır?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Metninizi oluşturucuya yazın, bir yazı tipi ve sim dokusu seçin (ya da kendi görselinizi yükleyin), boyut ve kenarlığı ayarlayın, önizleme için Animasyonu Başlat'a basın, sonra GIF İndir'e tıklayın. Bunun yerine yapıştırılabilir parıltılı metin için parlak metin oluşturucuyu kullanın.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metni kopyalayıp biyografime yapıştırabilir miyim?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bu araçtan hayır — resim/GIF dosyaları dışa aktarır, biyografiler ise yalnızca metin kabul eder. Biyografi dostu ışıltı için parlak metin oluşturucudaki ✦✧✦ sparkle ✦✧✦ gibi karakter olarak kopyalanıp yapıştırılan Unicode stilleri kullanın.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metnimi GIF olarak nasıl indiririm?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Tuvade ışıltıyı önizlemek için Animasyonu Başlat düğmesine basın, sonra GIF İndir'e tıklayın. Animasyonlu dosya cihazınıza kaydedilir; profil fotoğrafı, pankart ya da forum imzası olarak yüklemeye hazırdır.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Kendi sim dokumu kullanabilir miyim?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Evet. Görsel Yükle seçeneğiyle cihazınızdaki herhangi bir resim sim dolgusu olabilir — bir sim fotoğrafı, bir gradyan ya da herhangi bir desen. Görsel tarayıcınızda kalır; hiçbir sunucuya yüklenmez.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metin için hangi yazı tipleri en iyisidir?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Kalın, tok yazı tipleri — sim dokusunun ışıldayacağı en geniş yüzeyi verirler. İnce ya da el yazısı yazı tipleri, yoğun dokularla doldurulunca yamalı görünebilir.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metin görseli hangi boyuttadır?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Önizleme tuvali 900×200 pikseldir — başlıklar ve imzalar için ideal, geniş pankart biçimidir. Tuval içindeki metin boyutu ayarlanabilir: Küçük (48px), Orta (72px) ya da Büyük (96px).</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Animasyonlu GIF'im Discord'da çalışır mı?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Paylaşılan görsel olarak ya da GIF'lerin gösterildiği "hakkımda" bölümlerinde evet. Bazı platformların bazı bağlamlarda (küçük avatarlar gibi) yalnızca ilk kareyi gösterdiğini unutmayın; kullanacağınız yerde önizleyin.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Simli metin oluşturucu ücretsiz mi?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Evet — sınırsız kullanım, hesap yok, filigran yok. İstediğiniz kadar simli metin tasarlayıp hepsini indirin.</p></div>
+</div>
+</div>
+
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    const canvas = document.getElementById("preview");
+    const ctx = canvas.getContext("2d");
+
+    let offset = 0;
+    let selectedFont = "Impact";
+    let selectedTexture = 0;
+    let imageTexture = null;
+
+    /* FONTS */
+    const fonts = [
+      "Impact", "Arial Black", "Comic Sans MS",
+      "Georgia", "Verdana", "Courier New", "Trebuchet MS"
+    ];
+
+    const fontList = document.getElementById("fontList");
+
+    fonts.forEach((f, i) => {
+      const div = document.createElement("div");
+      div.className = "font-item" + (i === 0 ? " active" : "");
+
+      div.innerHTML = `
+    <div class="font-preview" style="font-family:${f}">
+      PICK ME
+    </div>
+  `;
+
+      div.onclick = () => {
+        selectedFont = f;
+        document.querySelectorAll(".font-item").forEach(x => x.classList.remove("active"));
+        div.classList.add("active");
+        draw();
+      };
+
+      fontList.appendChild(div);
+    });
+
+    /* GLITTER */
+    function generateGlitter(color) {
+      const c = document.createElement("canvas");
+      c.width = 100; c.height = 100;
+      const g = c.getContext("2d");
+
+      g.fillStyle = color;
+      g.fillRect(0, 0, 100, 100);
+
+      for (let i = 0; i < 1200; i++) {
+        g.fillStyle = Math.random() > 0.8 ? "#fff" : "rgba(255,255,255,0.2)";
+        g.fillRect(Math.random() * 100, Math.random() * 100, 2, 2);
+      }
+
+      return c;
+    }
+
+    const glitterTextures = [
+      generateGlitter("#ff4fd8"),
+      generateGlitter("#d4af37"),
+      generateGlitter("#4f8fff")
+    ];
+
+    /* IMAGE TEXTURES */
+    const imagePaths = [
+      "images/DCglit1.gif",
+      "images/DCglit2.gif",
+      "images/DCglit3.gif",
+      "images/DCglit4.gif",
+      "images/DCglit5.gif",
+      "images/DCglit6.gif",
+      "images/DCglit7.gif",
+      "images/DCglit8.gif"
+    ];
+
+    const loadedImages = [];
+    imagePaths.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      loadedImages.push(img);
+    });
+
+    /* TEXTURE UI */
+    const textureBox = document.getElementById("textures");
+
+    const allTextures = [
+      ...glitterTextures.map(c => c.toDataURL()),
+      ...imagePaths
+    ];
+
+    allTextures.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src;
+
+      img.onclick = () => {
+        selectedTexture = i;
+        imageTexture = null;
+
+        document.querySelectorAll(".texture-grid img")
+          .forEach(x => x.classList.remove("active"));
+
+        img.classList.add("active");
+        draw();
+      };
+
+      if (i === 0) img.classList.add("active");
+      textureBox.appendChild(img);
+    });
+
+    /* UPLOAD */
+    document.getElementById("imageUpload").onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const img = new Image();
+      img.onload = () => {
+        imageTexture = img;
+        draw();
+      };
+      img.src = URL.createObjectURL(file);
+    };
+
+    /* DRAW */
+    function draw() {
+      const txt = document.getElementById("text").value;
+      const size = document.getElementById("size").value;
+      const align = document.getElementById("align").value;
+      const border = document.getElementById("border").value;
+      const borderColor = document.getElementById("borderColor").value;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = `${size}px ${selectedFont}`;
+      ctx.textAlign = align;
+      ctx.textBaseline = "middle";
+
+      const x = align === "left" ? 50 : align === "right" ? canvas.width - 50 : canvas.width / 2;
+      const y = canvas.height / 2;
+
+      ctx.save();
+
+      ctx.fillStyle = "#fff";
+      ctx.fillText(txt, x, y);
+
+      ctx.globalCompositeOperation = "source-in";
+
+      let pattern;
+
+      if (imageTexture) {
+        pattern = ctx.createPattern(imageTexture, "repeat");
+
+      } else if (selectedTexture >= glitterTextures.length) {
+        pattern = ctx.createPattern(
+          loadedImages[selectedTexture - glitterTextures.length],
+          "repeat"
+        );
+
+      } else {
+        pattern = ctx.createPattern(glitterTextures[selectedTexture], "repeat");
+      }
+
+      ctx.translate(offset, offset * 0.4);
+      ctx.fillStyle = pattern;
+      ctx.fillRect(-canvas.width, 0, canvas.width * 2, canvas.height);
+
+      ctx.restore();
+
+      if (border > 0) {
+        ctx.lineWidth = border;
+        ctx.strokeStyle = borderColor;
+        ctx.strokeText(txt, x, y);
+      }
+    }
+
+    /* ANIMATION */
+    function animate() {
+      draw();
+      offset += 2;
+      if (offset > 100) offset = 0;
+      requestAnimationFrame(animate);
+    }
+
+    document.getElementById("animateBtn").onclick = animate;
+
+    /* LIVE */
+    ["text", "size", "align", "border", "borderColor"].forEach(id => {
+      document.getElementById(id).oninput = draw;
+    });
+
+    /* GIF EXPORT */
+    document.getElementById("downloadGif").onclick = () => {
+
+      const gif = new GIF({
+        workers: 2,
+        quality: 10,
+        width: canvas.width,
+        height: canvas.height,
+        workerScript: "gif.js"
+      });
+
+      for (let i = 0; i < 40; i++) {
+        offset = i * 3;
+        draw();
+
+        gif.addFrame(ctx, { copy: true, delay: 50 });
+      }
+
+      gif.on("finished", blob => {
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "glitter-text.gif";
+        a.click();
+      });
+
+      gif.render();
+    };
+
+    draw();
+  </script>
+</body>
+
+</html>
