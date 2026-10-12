@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Generador de Letras Burbuja | FontGenerators.online</title>
+  <meta content="Crea letras burbuja con 4 alfabetos Unicode reales: circuladas, rellenas y cuadradas. Gratis y sin registro. Para copiar y pegar en apodos, bios y chats." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/generador-de-letras-burbuja/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/bubble-text-maker/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/bubble-text-maker/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-letras-burbuja/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-letras-bolha/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/balon-yazi-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to make bubble letters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type your text into the generator above and copy one of the four bubble alphabets — Circled (ⓗⓘ), Filled Circles (🅗🅘), Square (🄷🄸), or Negative Square (🅷🅸). Each letter becomes a dedicated Unicode character you can paste anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get circled letters copy paste?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Circled Letters style (Ⓐ–Ⓩ, ⓐ–ⓩ) copies from this page with one click and pastes into Discord, Instagram, TikTok, WhatsApp, and most games. It's the most widely supported bubble alphabet in Unicode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my lowercase text become uppercase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Filled Circles, Square, and Negative Square alphabets only exist as capitals in Unicode, so the tool uppercases your input first. For true lowercase bubble letters, use Circled Letters — it's the only alphabet with a lowercase set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my numbers look normal in square bubble text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The square Unicode blocks define no enclosed digits, so 0–9 pass through unchanged. Circled digits become ⓪①②… and filled digits become ⓿❶❷… — pick those alphabets if you need bubble numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between bubble text and bubble letters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On this site, the bubble text maker produces raw Unicode bubble alphabets (ⓗⓘ, 🅷🅸) — pure characters. The bubble letters generator creates decorated bubble name styles with frames and effects. Alphabets for nicknames and labels; decorated styles for display names and bios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use bubble text for nicknames?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — bubble alphabets are popular for gaming nicknames and Discord names. Circled letters work in the most games; always test your exact styled nickname in-game, since some titles filter enclosed characters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which bubble alphabet works on old phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Circled Letters (Ⓐ). The Enclosed Alphanumerics block is the oldest of the four and supported almost everywhere. The filled and squared styles come from newer supplement blocks that need current fonts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are bubble letters real fonts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — each bubble letter is a dedicated Unicode character (like ⓐ U+24D0), not a font style. That's why they work without installing anything and look identical on every device with proper font support."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/bubble-text-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/bubble-text-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../herramientas-de-texto-aesthetic/">Herramientas Aesthetic</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Generador de Letras Burbuja</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="../../bubble-text-maker/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="./" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="../pt/gerador-de-letras-bolha/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="../tr/balon-yazi-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+
+<section class="tool-hero" style="background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);">
+      <div class="container">
+        <div class="h1">🫧 Creador de texto de burbujas</div>
+        <p>Crea divertidos estilos de texto de letras de burbujas</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Escribe tu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('bubble')"
+            placeholder="Escribe algo burbujeante..."></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Estilos Generados</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar Todo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Limpiar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🫧</div>
+              <p>Ingrese algo de texto arriba para generar estilos de burbuja</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+<h1>Generador de Letras Burbuja</h1>
+<p class="byline">Por el equipo editorial de FontGenerators · Actualizado: 12 de octubre de 2026</p>
+<p class="lead">Un <strong>generador de letras burbuja</strong> convierte tus palabras en <strong>alfabetos burbuja</strong> Unicode reales —ⓗⓘ, 🅗🅘, 🄷🄸, 🅷🅸— usando los bloques de caracteres encerrados del estándar Unicode. Esta herramienta gratuita crea 4 verdaderos alfabetos de <strong>texto circulado</strong> más marcos burbuja decorados, listos para copiar y pegar en apodos, biografías y chats. Sin registro.</p>
+<div class="takeaways">
+<p><strong>Puntos clave</strong></p>
+<ul>
+<li>Esta herramienta produce <strong>alfabetos burbuja puros</strong>: Circuladas (Ⓐ), Círculos rellenos (🅐), Cuadradas (🄰) y Cuadrado negativo (🅰).</li>
+<li>Cada alfabeto viene de un bloque Unicode real: Alfanuméricos encerrados, Suplemento de alfanuméricos encerrados y Letras y meses CJK encerrados.</li>
+<li>Los estilos Relleno, Cuadrado y Cuadrado negativo convierten tu texto primero a <strong>MAYÚSCULAS</strong>; Circuladas conserva tus mayúsculas.</li>
+<li>Los dígitos se comportan distinto por alfabeto: los circulados se vuelven ⓪①②…, los rellenos ⓿❶❷…, los cuadrados dejan 0–9 en plano.</li>
+<li>¿Prefieres estilos decorados de nombres burbuja (marcos, efectos pop)? Eso es el <a href="/es/generador-de-letras-de-burbujas/">generador de letras de burbujas</a>: otra herramienta para otro trabajo.</li>
+</ul>
+</div>
+
+<h2>¿Qué es el texto burbuja?</h2>
+<div class="definition"><p>El <strong>texto burbuja</strong> es texto escrito con caracteres Unicode encerrados —letras dentro de círculos, cuadrados o burbujas redondeadas—, como ⓗⓘ o 🅷🅸. Cada «letra burbuja» es un punto de código Unicode dedicado, no un efecto de fuente.</p></div>
+<p>Unicode incluye varios <strong>alfabetos encerrados</strong> creados para cosas como marcadores de lista circulados y señalización cuadrada en Asia Oriental. Cuatro de ellos contienen juegos completos A–Z, y esta herramienta mapea tu entrada sobre cada uno. Como cada letra burbuja es su propio carácter, el texto se copia, se pega y se dibuja idéntico en todas partes: sin imágenes, sin fuentes, sin trucos.</p>
+<p><strong>Cómo crear letras burbuja:</strong> escribe abajo, elige un alfabeto, haz clic en Copiar. Ese es todo el proceso, pero lee primero las notas de los alfabetos, porque tres de los cuatro estilos cambian las mayúsculas de tu texto.</p>
+
+<h2>Cómo funciona este generador de alfabetos burbuja</h2>
+<p>La herramienta sustituye cada letra (y dígito) por su gemela encerrada de cuatro bloques Unicode. Comprobado con la salida real para «hi»:</p>
+<table>
+<thead><tr><th>Estilo</th><th>Ejemplo</th><th>Bloque Unicode</th><th>Comportamiento de mayúsculas</th></tr></thead>
+<tbody>
+<tr><td>Letras circuladas</td><td>ⓗⓘ</td><td>Alfanuméricos encerrados (U+2460–24FF)</td><td>Conserva tus mayúsculas: ⓗⓘ frente a ⓗⒾ</td></tr>
+<tr><td>Círculos rellenos</td><td>🅗🅘</td><td>Suplemento de alfanuméricos encerrados (U+1F100–1F1FF)</td><td>Fuerza MAYÚSCULAS</td></tr>
+<tr><td>Letras cuadradas</td><td>🄷🄸</td><td>Letras y meses CJK encerrados (U+3200–32FF)</td><td>Fuerza MAYÚSCULAS</td></tr>
+<tr><td>Cuadrado negativo</td><td>🅷🅸</td><td>Suplemento de alfanuméricos encerrados (U+1F100–1F1FF)</td><td>Fuerza MAYÚSCULAS</td></tr>
+<tr><td>Burbuja espaciada</td><td>ⓗ ⓘ</td><td>Circuladas, con espacios</td><td>Conserva tus mayúsculas</td></tr>
+<tr><td>Marco burbuja</td><td>🫧 ⓗⓘ 🫧</td><td>Circuladas + emoji de burbujas</td><td>Conserva tus mayúsculas</td></tr>
+<tr><td>Marco circular</td><td>○ ⓗⓘ ○</td><td>Circuladas + círculos geométricos</td><td>Conserva tus mayúsculas</td></tr>
+</tbody>
+</table>
+<p><strong>La regla de las mayúsculas importa:</strong> escribe «hi» y Círculos rellenos te da 🅗🅘: la herramienta pasa a mayúsculas primero porque los bloques rellenos/cuadrados solo definen mayúsculas. Si quieres letras burbuja en minúsculas, usa <strong>Letras circuladas</strong> (ⓗⓘ), el único alfabeto con un verdadero juego de minúsculas.</p>
+<p><strong>Dígitos, documentados con honestidad:</strong> los dígitos circulados se mapean a ⓪①②③④⑤⑥⑦⑧⑨; los rellenos a ⓿❶❷❸❹❺❻❼❽❾; Cuadradas y Cuadrado negativo dejan los dígitos como 0–9 planos, porque esos bloques no definen dígitos encerrados. Escribe «abc123» en Letras cuadradas y obtendrás 🄰🄱🄲123: es el comportamiento correcto, no un error.</p>
+[IMAGE: Los cuatro alfabetos burbuja A–Z mostrados como tabla de referencia con etiquetas de bloque Unicode | alt="Referencia del generador de letras burbuja: alfabetos circulado, de círculo relleno, cuadrado y de cuadrado negativo"]
+
+<h2>Ejemplo paso a paso</h2>
+<p>Escribe <strong>Hi</strong> (H mayúscula) y compara dos alfabetos:</p>
+<div class="example-box"><p><strong>Letras circuladas:</strong> Ⓗⓘ</p><p><strong>Cuadrado negativo:</strong> 🅷🅸</p></div>
+<p>Circuladas conserva tu H mayúscula y tu i minúscula (Ⓗⓘ). Cuadrado negativo pone todo en mayúsculas (🅷🅸). Misma entrada, distintos alfabetos, distintas reglas: ya sabes cuál elegir para tu <strong>texto burbuja para apodos</strong>.</p>
+
+<h2>Cómo usar el generador de letras burbuja</h2>
+<ol>
+<li><strong>Escribe tu texto</strong> en el cuadro de arriba: los nombres y las palabras cortas funcionan mejor.</li>
+<li>Elige tu alfabeto: <strong>Circuladas</strong> para minúsculas, <strong>Relleno/Cuadrado/Negativo</strong> para impacto en mayúsculas.</li>
+<li>Haz clic en <strong>Copiar</strong> en el estilo que quieras.</li>
+<li>Pégalo en tu apodo gamer, bio, nombre visible o chat.</li>
+<li>Recuerda los dígitos: prueba primero cualquier número en el alfabeto elegido.</li>
+</ol>
+
+<h2>Generador de letras burbuja vs. generador de letras de burbujas</h2>
+<p>Estas dos herramientas suenan parecido pero sirven a intenciones distintas, y el sitio las separa a propósito:</p>
+<table>
+<thead><tr><th></th><th>Generador de letras burbuja (esta página)</th><th><a href="/es/generador-de-letras-de-burbujas/">Generador de letras de burbujas</a></th></tr></thead>
+<tbody>
+<tr><td><strong>Qué crea</strong></td><td><em>Alfabetos</em> burbuja Unicode puros</td><td>Estilos decorados de <em>nombres</em> burbuja</td></tr>
+<tr><td><strong>Ejemplo</strong></td><td>ⓗⓘ · 🅷🅸 · 🄷🄸</td><td>Nombres burbuja enmarcados, con efecto pop y estilo</td></tr>
+<tr><td><strong>Ideal para</strong></td><td>Apodos, etiquetas compactas, listas</td><td>Nombres visibles y biografías que piden decoración</td></tr>
+<tr><td><strong>Origen de los caracteres</strong></td><td>Bloques Unicode encerrados</td><td>Efectos de texto con estilo y marcos</td></tr>
+</tbody>
+</table>
+<p>¿Quieres caracteres de <strong>alfabeto burbuja</strong> puros? Quédate aquí. ¿Quieres tu nombre vestido con decoraciones burbujeantes? Cambia al generador de letras de burbujas.</p>
+<h2>Más herramientas de letras redondas</h2>
+<p>Esta página es un verdadero <strong>generador de letras redondas</strong>: cada estilo está construido con alfabetos Unicode encerrados. Para <strong>copiar y pegar fuente burbuja</strong> en nombres visibles, combínalo con el <a href="/es/generador-de-texto-doodle/">generador de texto doodle</a> para marcos de boceto, el <a href="/es/generador-de-texto-kawaii/">generador de texto kawaii</a> para caritas tiernas, o el <a href="/es/generador-de-texto-minimalista/">generador de texto minimalista</a> para un contraste limpio. Encuéntralos todos en <a href="/es/herramientas-de-texto-aesthetic/">herramientas de texto aesthetic</a>.</p>
+
+<h2>Dónde funcionan las letras burbuja</h2>
+<table>
+<thead><tr><th>Plataforma</th><th>¿Funciona?</th><th>Notas</th></tr></thead>
+<tbody>
+<tr><td>Apodos gamer</td><td>Casi siempre</td><td>Las letras circuladas tienen el soporte más amplio; pruébalo en el juego</td></tr>
+<tr><td>Discord</td><td>Sí</td><td>Nombres, estados, mensajes: los cuatro alfabetos</td></tr>
+<tr><td>Instagram / TikTok</td><td>Sí</td><td>Nombres visibles y biografías</td></tr>
+<tr><td>WhatsApp</td><td>Sí</td><td>Mensajes y estado</td></tr>
+<tr><td>Dispositivos antiguos</td><td>Solo circuladas</td><td>Alfanuméricos encerrados (Ⓐ) es el bloque más antiguo y con mejor soporte; los bloques suplementarios (🅰) necesitan fuentes más nuevas</td></tr>
+</tbody>
+</table>
+
+<h2>Consejos para el mejor texto burbuja</h2>
+<p><strong>Los nombres cortos ganan.</strong> Las letras burbuja son anchas: «MAX» en Cuadrado negativo (🅼🅰🆇) es contundente; una frase entera agota.</p>
+<p><strong>Circuladas es la opción segura.</strong> El bloque Unicode más antiguo, con soporte de minúsculas y la mejor compatibilidad: ante la duda, ⓗⓘ.</p>
+<p><strong>Usa Cuadrado negativo para máximo impacto.</strong> El 🅷🅸 blanco sobre negro se lee como señalización y destaca en las listas de miembros.</p>
+
+<h2>Limitaciones</h2>
+<ul>
+<li>Tres de los cuatro alfabetos fuerzan las mayúsculas: no existe 🅰 ni 🄰 en minúsculas en Unicode.</li>
+<li>Los alfabetos cuadrados no tienen dígitos encerrados; los números quedan en plano.</li>
+<li>Los caracteres del Suplemento de alfanuméricos encerrados (🅰 🅐) necesitan una fuente moderna de emojis/símbolos; los dispositivos antiguos muestran cuadros.</li>
+<li>Los lectores de pantalla anuncian el nombre Unicode de cada carácter: mantén corto el texto burbuja.</li>
+<li>Las letras acentuadas (é, ñ, ü) no tienen formas encerradas y pasan intactas.</li>
+</ul>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cómo se crean letras burbuja?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Escribe tu texto en el generador de arriba y copia uno de los cuatro alfabetos burbuja —Circuladas (ⓗⓘ), Círculos rellenos (🅗🅘), Cuadradas (🄷🄸) o Cuadrado negativo (🅷🅸)—. Cada letra se convierte en un carácter Unicode dedicado que puedes pegar donde quieras.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Dónde consigo copiar y pegar letras circuladas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">El estilo Letras circuladas (Ⓐ–Ⓩ, ⓐ–ⓩ) se copia desde esta página con un clic y se pega en Discord, Instagram, TikTok, WhatsApp y la mayoría de los juegos. Es el alfabeto burbuja con más soporte en Unicode.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Por qué mi texto en minúsculas se volvió mayúsculas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Los alfabetos de Círculos rellenos, Cuadradas y Cuadrado negativo solo existen como mayúsculas en Unicode, así que la herramienta pasa tu entrada a mayúsculas primero. Para letras burbuja verdaderamente en minúsculas, usa Letras circuladas: es el único alfabeto con juego de minúsculas.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Por qué mis números se ven normales en el texto burbuja cuadrado?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Los bloques Unicode cuadrados no definen dígitos encerrados, así que 0–9 pasan intactos. Los dígitos circulados se convierten en ⓪①②… y los rellenos en ⓿❶❷…: elige esos alfabetos si necesitas números burbuja.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Cuál es la diferencia entre el texto burbuja y las letras de burbujas?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">En este sitio, el generador de letras burbuja produce alfabetos burbuja Unicode puros (ⓗⓘ, 🅷🅸): caracteres puros. El generador de letras de burbujas crea estilos decorados de nombres burbuja con marcos y efectos. Alfabetos para apodos y etiquetas; estilos decorados para nombres visibles y biografías.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Puedo usar texto burbuja en apodos?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sí: los alfabetos burbuja son populares para apodos gamer y nombres de Discord. Las letras circuladas funcionan en más juegos; prueba siempre tu apodo exacto con estilo dentro del juego, ya que algunos títulos filtran los caracteres encerrados.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Qué alfabeto burbuja funciona en teléfonos antiguos?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Letras circuladas (Ⓐ). El bloque Alfanuméricos encerrados es el más antiguo de los cuatro y tiene soporte en casi todas partes. Los estilos rellenos y cuadrados vienen de bloques suplementarios más nuevos que necesitan fuentes actuales.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">¿Las letras burbuja son fuentes de verdad?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No: cada letra burbuja es un carácter Unicode dedicado (como ⓐ U+24D0), no un estilo de fuente. Por eso funcionan sin instalar nada y se ven idénticas en todos los dispositivos con el soporte de fuentes adecuado.</p></div>
+</div>
+</div>
+    <!-- ═══ END SEO CONTENT ═══ -->
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+<script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('bubble');
+    });
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se crean letras burbuja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escribe tu texto en el generador de arriba y copia uno de los cuatro alfabetos burbuja —Circuladas (ⓗⓘ), Círculos rellenos (🅗🅘), Cuadradas (🄷🄸) o Cuadrado negativo (🅷🅸)—. Cada letra se convierte en un carácter Unicode dedicado que puedes pegar donde quieras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde consigo copiar y pegar letras circuladas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El estilo Letras circuladas (Ⓐ–Ⓩ, ⓐ–ⓩ) se copia desde esta página con un clic y se pega en Discord, Instagram, TikTok, WhatsApp y la mayoría de los juegos. Es el alfabeto burbuja con más soporte en Unicode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi texto en minúsculas se volvió mayúsculas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los alfabetos de Círculos rellenos, Cuadradas y Cuadrado negativo solo existen como mayúsculas en Unicode, así que la herramienta pasa tu entrada a mayúsculas primero. Para letras burbuja verdaderamente en minúsculas, usa Letras circuladas: es el único alfabeto con juego de minúsculas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué mis números se ven normales en el texto burbuja cuadrado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los bloques Unicode cuadrados no definen dígitos encerrados, así que 0–9 pasan intactos. Los dígitos circulados se convierten en ⓪①②… y los rellenos en ⓿❶❷…: elige esos alfabetos si necesitas números burbuja."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre el texto burbuja y las letras de burbujas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En este sitio, el generador de letras burbuja produce alfabetos burbuja Unicode puros (ⓗⓘ, 🅷🅸): caracteres puros. El generador de letras de burbujas crea estilos decorados de nombres burbuja con marcos y efectos. Alfabetos para apodos y etiquetas; estilos decorados para nombres visibles y biografías."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar texto burbuja en apodos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí: los alfabetos burbuja son populares para apodos gamer y nombres de Discord. Las letras circuladas funcionan en más juegos; prueba siempre tu apodo exacto con estilo dentro del juego, ya que algunos títulos filtran los caracteres encerrados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué alfabeto burbuja funciona en teléfonos antiguos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Letras circuladas (Ⓐ). El bloque Alfanuméricos encerrados es el más antiguo de los cuatro y tiene soporte en casi todas partes. Los estilos rellenos y cuadrados vienen de bloques suplementarios más nuevos que necesitan fuentes actuales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las letras burbuja son fuentes de verdad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: cada letra burbuja es un carácter Unicode dedicado (como ⓐ U+24D0), no un estilo de fuente. Por eso funcionan sin instalar nada y se ven idénticas en todos los dispositivos con el soporte de fuentes adecuado."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
