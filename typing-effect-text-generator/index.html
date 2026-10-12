@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Typing Effect Text Generator | FontGenerators.online</title>
+<meta content="Preview a typewriter typing animation with adjustable speed, cursor, and color — then copy the CSS code for your site. Free typing effect generator online." name="description" />
+<link href="../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/tools.css" rel="stylesheet"/>
+<style>
+        .typing-preview {
+            background: #1a1a2e;
+            padding: 2rem;
+            border-radius: var(--radius);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .typing-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: #0f0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: #0f0;
+            margin-left: 2px;
+            animation: blink 0.7s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .setting-item input,
+        .setting-item select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .color-options {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .color-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .color-btn:hover,
+        .color-btn.active {
+            border-color: var(--foreground);
+            transform: scale(1.1);
+        }
+
+        .code-output {
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/typing-effect-text-generator/" rel="canonical" />
+    <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/typing-effect-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/typing-effect-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/typing-effect-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/typing-effect-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/typing-effect-text-generator/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to add typing effect to website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type your text into the generator above, tune the speed, cursor, and color, then copy the generated CSS. Paste it into your stylesheet and add class=\"typing-effect\" to the element — no JavaScript required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the CSS typewriter effect work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It animates the element's width from 0 to 100% using steps() with one step per character, so letters appear one at a time. A blinking border-right serves as the cursor. The text stays real, selectable HTML."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy the typing animation to use in Instagram or TikTok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CSS animations only run where stylesheets run — websites, not social apps. For social video, recreate the effect in a video editor and export it as video."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What typing speeds are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The slider runs from 20 ms per character (very fast) to 200 ms (slow and deliberate), defaulting to 80 ms. The generated CSS duration is computed from your exact text length and chosen speed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What cursor styles can I choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three: a blinking block bar (the classic terminal cursor), an underscore cursor, or no cursor at all. Seven colors are available, from terminal green to white, cyan, and magenta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the typing effect hurt SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The text is ordinary HTML that search engines read in full — the animation is purely presentational. This is a real advantage over baking text into video."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does long text overflow with the generated CSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The technique needs white-space: nowrap to measure width in character steps, so it only supports single lines. Keep typewriter text to short headlines, or use a JavaScript library for multi-line sequences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make the effect accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wrap the animation in @media (prefers-reduced-motion: no-preference) so motion-sensitive visitors see static text. Screen readers announce the full text at once, which is acceptable for short lines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The preview and the CSS generation both run in your browser. Nothing is sent to a server."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Aesthetic Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/aesthetic-text-tools/" class="dropdown-link dropdown-header">All Aesthetic Tools →</a>
+                    <a href="/aesthetic-text-generator/" class="dropdown-link">🌸 Aesthetic Text Generator</a>
+                    <a href="/brat-text-generator/" class="dropdown-link">💚 Brat Text Generator</a>
+                    <a href="/soft-girl-text-generator/" class="dropdown-link">🌷 Soft Girl Text Generator</a>
+                    <a href="/vaporwave-text-generator/" class="dropdown-link">🌊 Vaporwave Text Generator</a>
+                    <a href="/kawaii-text-generator/" class="dropdown-link">🎀 Kawaii Text Generator</a>
+                    <a href="/neon-text-generator/" class="dropdown-link">💡 Neon Text Generator</a>
+                    <a href="/glow-text-generator/" class="dropdown-link">✨ Glow Text Generator</a>
+                    <a href="/glitter-text-generator/" class="dropdown-link">💎 Glitter Text Generator</a>
+                    <a href="/retro-text-generator/" class="dropdown-link">📺 Retro Text Generator</a>
+                    <a href="/cyber-text-generator/" class="dropdown-link">🤖 Cyber Text Generator</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Font Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/fancy-font-tools/" class="dropdown-link dropdown-header">All Font Tools →</a>
+                    <a href="/stylish-font-generator/" class="dropdown-link">💎 Stylish Font Generator</a>
+                    <a href="/fancy-text-generator/" class="dropdown-link">⭐ Fancy Text Generator</a>
+                    <a href="/unicode-text-generator/" class="dropdown-link">🔠 Unicode Text Generator</a>
+                    <a href="/bold-text-converter/" class="dropdown-link">🅱️ Bold Text Converter</a>
+                    <a href="/italic-text-converter/" class="dropdown-link">📝 Italic Text Converter</a>
+                    <a href="/cursive-text-generator/" class="dropdown-link">✒️ Cursive Text Generator</a>
+                    <a href="/gothic-text-generator/" class="dropdown-link">🖤 Gothic Text Generator</a>
+                    <a href="/bubble-letters-generator/" class="dropdown-link">🫧 Bubble Letters Generator</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Emoji & Symbols
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/emoji-symbol-tools/" class="dropdown-link dropdown-header">All Emoji & Symbol Tools →</a>
+                    <a href="/emoji-text-maker/" class="dropdown-link">😊 Emoji Text Maker</a>
+                    <a href="/emoji-combiner/" class="dropdown-link">🎨 Emoji Combiner</a>
+                    <a href="/kaomoji-generator/" class="dropdown-link">(◕‿◕) Kaomoji Generator</a>
+                    <a href="/emoticon-maker/" class="dropdown-link">:) Emoticon Maker</a>
+                    <a href="/heart-symbol-generator/" class="dropdown-link">♥ Heart Symbols</a>
+                    <a href="/sparkle-symbol-generator/" class="dropdown-link">✨ Sparkle Symbols</a>
+                    <a href="/arrow-symbol-generator/" class="dropdown-link">→ Arrow Symbols</a>
+                    <a href="/aesthetic-borders-generator/" class="dropdown-link">『』 Aesthetic Borders</a>
+                    <a href="/fancy-text-symbols-library/" class="dropdown-link">☆ Symbols Library</a>
+                    <a href="/divider-line-generator/" class="dropdown-link">═ Divider Lines</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Social Media
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/social-media-caption-tools/" class="dropdown-link dropdown-header">All Social Media Tools
+                        →</a>
+                    <a href="/instagram-caption-generator/" class="dropdown-link">📸 Instagram Caption</a>
+                    <a href="/tiktok-caption-generator/" class="dropdown-link">🎵 TikTok Caption</a>
+                    <a href="/youtube-title-generator/" class="dropdown-link">▶️ YouTube Title</a>
+                    <a href="/instagram-bio-generator/" class="dropdown-link">✨ Instagram Bio</a>
+                    <a href="/tiktok-bio-formatter/" class="dropdown-link">🎭 TikTok Bio</a>
+                    <a href="/hashtag-generator/" class="dropdown-link">#️⃣ Hashtag Generator</a>
+                    <a href="/caption-length-counter/" class="dropdown-link">📊 Length Counter</a>
+                    <a href="/story-caption-maker/" class="dropdown-link">📖 Story Caption</a>
+                    <a href="/emoji-caption-generator/" class="dropdown-link">😊 Emoji Caption</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    More Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/handwriting-text-generator/" class="dropdown-link">✍️ Handwriting Generator</a>
+                    <a href="/signature-text-maker/" class="dropdown-link">🖊️ Signature Text Maker</a>
+                    <a href="/calligraphy-text-generator/" class="dropdown-link">🖋️ Calligraphy Generator</a>
+                    <a href="/arabic-calligraphy-generator/" class="dropdown-link">🕌 Arabic Calligraphy</a>
+                    <a href="/bubble-text-maker/" class="dropdown-link">🫧 Bubble Text Maker</a>
+                    <a href="/doodle-text-generator/" class="dropdown-link">🎨 Doodle Text Generator</a>
+                    <a href="/minimal-text-generator/" class="dropdown-link">◻️ Minimal Text Generator</a>
+                    <a href="/small-caps-generator/" class="dropdown-link">🔡 Small Caps Generator</a>
+                    <a href="/monospace-text-generator/" class="dropdown-link">💻 Monospace Generator</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">EN</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/" class="mobile-nav-link">🏠 Home</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Aesthetic Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/aesthetic-text-tools/" class="mobile-dropdown-link">All Aesthetic Tools</a>
+            <a href="/aesthetic-text-generator/" class="mobile-dropdown-link">Aesthetic Text Generator</a>
+            <a href="/brat-text-generator/" class="mobile-dropdown-link">Brat Text Generator</a>
+            <a href="/soft-girl-text-generator/" class="mobile-dropdown-link">Soft Girl Text Generator</a>
+            <a href="/vaporwave-text-generator/" class="mobile-dropdown-link">Vaporwave Text Generator</a>
+            <a href="/kawaii-text-generator/" class="mobile-dropdown-link">Kawaii Text Generator</a>
+            <a href="/neon-text-generator/" class="mobile-dropdown-link">Neon Text Generator</a>
+            <a href="/glow-text-generator/" class="mobile-dropdown-link">Glow Text Generator</a>
+            <a href="/glitter-text-generator/" class="mobile-dropdown-link">Glitter Text Generator</a>
+            <a href="/retro-text-generator/" class="mobile-dropdown-link">Retro Text Generator</a>
+            <a href="/cyber-text-generator/" class="mobile-dropdown-link">Cyber Text Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Font Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/fancy-font-tools/" class="mobile-dropdown-link">All Font Tools</a>
+            <a href="/stylish-font-generator/" class="mobile-dropdown-link">Stylish Font Generator</a>
+            <a href="/fancy-text-generator/" class="mobile-dropdown-link">Fancy Text Generator</a>
+            <a href="/unicode-text-generator/" class="mobile-dropdown-link">Unicode Text Generator</a>
+            <a href="/bold-text-converter/" class="mobile-dropdown-link">Bold Text Converter</a>
+            <a href="/italic-text-converter/" class="mobile-dropdown-link">Italic Text Converter</a>
+            <a href="/cursive-text-generator/" class="mobile-dropdown-link">Cursive Text Generator</a>
+            <a href="/gothic-text-generator/" class="mobile-dropdown-link">Gothic Text Generator</a>
+            <a href="/bubble-letters-generator/" class="mobile-dropdown-link">Bubble Letters Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji & Symbols
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/emoji-symbol-tools/" class="mobile-dropdown-link">All Emoji & Symbol Tools</a>
+            <a href="/emoji-text-maker/" class="mobile-dropdown-link">Emoji Text Maker</a>
+            <a href="/emoji-combiner/" class="mobile-dropdown-link">Emoji Combiner</a>
+            <a href="/kaomoji-generator/" class="mobile-dropdown-link">Kaomoji Generator</a>
+            <a href="/emoticon-maker/" class="mobile-dropdown-link">Emoticon Maker</a>
+            <a href="/heart-symbol-generator/" class="mobile-dropdown-link">Heart Symbols</a>
+            <a href="/sparkle-symbol-generator/" class="mobile-dropdown-link">Sparkle Symbols</a>
+            <a href="/arrow-symbol-generator/" class="mobile-dropdown-link">Arrow Symbols</a>
+            <a href="/aesthetic-borders-generator/" class="mobile-dropdown-link">Aesthetic Borders</a>
+            <a href="/fancy-text-symbols-library/" class="mobile-dropdown-link">Symbols Library</a>
+            <a href="/divider-line-generator/" class="mobile-dropdown-link">Divider Lines</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Social Media
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/social-media-caption-tools/" class="mobile-dropdown-link">All Social Media Tools</a>
+            <a href="/instagram-caption-generator/" class="mobile-dropdown-link">Instagram Caption</a>
+            <a href="/tiktok-caption-generator/" class="mobile-dropdown-link">TikTok Caption</a>
+            <a href="/youtube-title-generator/" class="mobile-dropdown-link">YouTube Title</a>
+            <a href="/instagram-bio-generator/" class="mobile-dropdown-link">Instagram Bio</a>
+            <a href="/tiktok-bio-formatter/" class="mobile-dropdown-link">TikTok Bio</a>
+            <a href="/hashtag-generator/" class="mobile-dropdown-link">Hashtag Generator</a>
+            <a href="/caption-length-counter/" class="mobile-dropdown-link">Length Counter</a>
+            <a href="/story-caption-maker/" class="mobile-dropdown-link">Story Caption</a>
+            <a href="/emoji-caption-generator/" class="mobile-dropdown-link">Emoji Caption</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ More Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/handwriting-text-generator/" class="mobile-dropdown-link">Handwriting Generator</a>
+            <a href="/signature-text-maker/" class="mobile-dropdown-link">Signature Text Maker</a>
+            <a href="/calligraphy-text-generator/" class="mobile-dropdown-link">Calligraphy Generator</a>
+            <a href="/arabic-calligraphy-generator/" class="mobile-dropdown-link">Arabic Calligraphy</a>
+            <a href="/bubble-text-maker/" class="mobile-dropdown-link">Bubble Text Maker</a>
+            <a href="/doodle-text-generator/" class="mobile-dropdown-link">Doodle Text Generator</a>
+            <a href="/minimal-text-generator/" class="mobile-dropdown-link">Minimal Text Generator</a>
+            <a href="/small-caps-generator/" class="mobile-dropdown-link">Small Caps Generator</a>
+            <a href="/monospace-text-generator/" class="mobile-dropdown-link">Monospace Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){var p=location.pathname.replace(/\/index\.html$/,'').replace(/\/$/,'').split('/');var l=p.pop()||'';var L=['es','pt','tr','en'];var s=(L.indexOf(l)===-1&&l)?l:'';var b='../';document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');a.setAttribute('href',t==='en'?b+(s?s+'/':''):b+t+'/'+(s?s+'/':''));if(t==='en'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='EN';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='EN';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+<div class="sidebar-section">
+<div class="sidebar-header">
+<span class="icon">🎮</span>
+                        Fun Text Tools
+                    </div>
+<nav class="sidebar-nav">
+<a class="sidebar-link" href="../fake-message-generator/">
+<span class="link-icon">💬</span>
+<span class="link-text">Fake Message</span>
+</a>
+<a class="sidebar-link active" href="../typing-effect-text-generator/">
+<span class="link-icon">⌨️</span>
+<span class="link-text">Typing Effect</span>
+</a>
+<a class="sidebar-link" href="../glitch-effect-text-generator/">
+<span class="link-icon">📺</span>
+<span class="link-text">Glitch Effect</span>
+</a>
+<a class="sidebar-link" href="../matrix-text-generator/">
+<span class="link-icon">💊</span>
+<span class="link-text">Matrix Text</span>
+</a>
+<a class="sidebar-link" href="../animated-text-generator/">
+<span class="link-icon">🎬</span>
+<span class="link-text">Animated Text</span>
+</a>
+</nav>
+</div>
+</aside>
+<div class="tool-main-content">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Browse Tools
+                </button>
+<div class="tool-input-section">
+<h2 class="tool-title">⌨️ Typing Effect Generator</h2>
+<p class="tool-description">Create animated typewriter text effects</p>
+<div class="setting-item" style="margin-bottom: 1rem;">
+<label>Text to Type</label>
+<textarea class="tool-input" id="text-input" placeholder="Enter your text here..." rows="3">Hello, World! Welcome to the typing effect generator.</textarea>
+</div>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Typing Speed (ms)</label>
+<input id="speed" max="200" min="20" oninput="document.getElementById('speed-val').textContent = this.value + 'ms'" type="range" value="80"/>
+<span id="speed-val" style="font-size: 0.8rem; color: var(--muted);">80ms</span>
+</div>
+<div class="setting-item">
+<label>Cursor Style</label>
+<select id="cursor-style">
+<option value="block">Block |</option>
+<option value="underscore">Underscore _</option>
+<option value="none">No Cursor</option>
+</select>
+</div>
+</div>
+<div class="setting-item">
+<label>Text Color</label>
+<div class="color-options">
+<button class="color-btn active" onclick="setColor(this, '#0f0')" style="background: #0f0;"></button>
+<button class="color-btn" onclick="setColor(this, '#fff')" style="background: #fff;"></button>
+<button class="color-btn" onclick="setColor(this, '#00ffff')" style="background: #00ffff;"></button>
+<button class="color-btn" onclick="setColor(this, '#ff0')" style="background: #ff0;"></button>
+<button class="color-btn" onclick="setColor(this, '#f0f')" style="background: #f0f;"></button>
+<button class="color-btn" onclick="setColor(this, '#ff6b6b')" style="background: #ff6b6b;"></button>
+<button class="color-btn" onclick="setColor(this, '#4ecdc4')" style="background: #4ecdc4;"></button>
+</div>
+</div>
+<div class="tool-actions">
+<button class="btn btn-primary" onclick="startTyping()">▶️ Start Typing</button>
+<button class="btn btn-secondary" onclick="resetTyping()">🔄 Reset</button>
+</div>
+</div>
+<div class="typing-preview" id="typing-preview">
+<span class="typing-text" id="typing-text"></span><span class="cursor" id="cursor"></span>
+</div>
+<div class="tool-output-section">
+<h3>CSS Code for Your Website</h3>
+<div class="code-output" id="css-code"></div>
+<button class="btn btn-secondary" onclick="copyCode()" style="margin-top: 0.5rem;">📋 Copy CSS</button>
+</div>
+</div>
+</div>
+
+<!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/fun-text-tools/">Fun Text Tools</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Typing Effect Text Generator</span>
+</nav>
+
+<p class="byline">By FontGenerators Editorial Team · Last updated: October 12, 2026</p>
+
+<h1>Typing Effect Text Generator</h1>
+
+<p>A typing effect text generator — a typewriter text effect generator for the web — previews your words with a live typewriter animation — letters appearing one by one with a blinking cursor — and gives you the complete CSS code to add the same effect to your own website. Adjust the speed, cursor style, and color above, watch it type, then copy the code.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Key takeaways</strong></p>
+  <ul>
+    <li>Live terminal-style preview: your text types out character by character with a blinking cursor.</li>
+    <li>Controls for typing speed (20–200 ms per character), 3 cursor styles, and 7 colors.</li>
+    <li>Generates copy-paste CSS using the classic <code>steps()</code> typewriter technique — no JavaScript needed on your site.</li>
+    <li>The effect is pure CSS animation: real text that stays selectable and SEO-friendly.</li>
+    <li>Runs entirely in your browser — nothing is uploaded.</li>
+  </ul>
+</div>
+
+<h2>What is a typing effect?</h2>
+<p><strong>A typing effect is</strong> an animation that reveals text letter by letter, mimicking someone typing in real time, usually with a blinking cursor at the end. The classic web implementation uses CSS only: a <code>steps()</code> timing function advances the visible width of the text in discrete character-sized jumps while a blinking <code>border-right</code> acts as the cursor. It is a staple of hero sections, terminal-themed pages, and chatbot-style interfaces.</p>
+
+<h2>How this typing effect generator works</h2>
+<p>The preview on this page uses JavaScript to type your text into a terminal-styled box at your chosen speed — 20 ms per character for a rapid burst, 200 ms for a deliberate hunt-and-peck. You pick one of three cursors (block, underscore, or none) and one of seven colors, including the classic terminal green. Every change regenerates the text typing effect code below the preview.</p>
+<p>The generated code is the honest, standard typewriter recipe: <code>overflow: hidden</code> with <code>white-space: nowrap</code>, a <code>typing</code> keyframe animating <code>width</code> from 0 to 100% in <code>steps()</code> equal to your character count, plus a <code>blink</code> keyframe toggling the border color. The duration is computed from your text length and speed, so the CSS matches the preview exactly. Paste it into your stylesheet, apply the <code>typing-effect</code> class, and the animation runs with zero JavaScript.</p>
+
+<h2>Worked example: typing animation code</h2>
+<p>Input: <code>Hello, world!</code> at 80 ms per character produces CSS like this (duration auto-computed as 1.0 s for 13 characters):</p>
+<table>
+  <thead>
+    <tr><th>Setting</th><th>Value in this example</th><th>What it changes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Speed</td><td>80 ms/character</td><td>Animation duration (13 chars → 1.0 s)</td></tr>
+    <tr><td>Cursor</td><td>Block</td><td><code>border-right</code> blinking bar</td></tr>
+    <tr><td>Color</td><td>Terminal green (#0f0)</td><td>Text and cursor color</td></tr>
+    <tr><td>Technique</td><td><code>steps(13, end)</code></td><td>One discrete jump per character</td></tr>
+  </tbody>
+</table>
+<p>The <code>steps()</code> count always equals your text length — that is what makes letters pop in one at a time instead of sliding.</p>
+
+[IMAGE: Terminal window graphic showing green text mid-typing with a blinking block cursor | Suggested alt: "Typewriter text effect preview with blinking cursor in a terminal window"]
+
+<h2>How to use this tool</h2>
+<ol>
+  <li><strong>Type your text</strong> into the input field above.</li>
+  <li>Press <strong>Start</strong> to watch the typing preview; adjust <strong>speed</strong>, <strong>cursor style</strong>, and <strong>color</strong>.</li>
+  <li>Click <strong>Copy Code</strong> for typing animation copy paste — the generated CSS copies to your clipboard.</li>
+  <li><strong>Paste it</strong> into your stylesheet and add <code>class="typing-effect"</code> to your text element.</li>
+</ol>
+
+<h2>Where typewriter effects work best</h2>
+<p>Typewriter animations excel at short, high-impact lines: hero headlines ("We build websites."), terminal-themed portfolios, chatbot greetings, and loading-state messages. They focus attention because motion plus progressive revelation is inherently watchable. They fail at scale — never typewriter-animate paragraphs, navigation, or anything users need to skim. Also note the technique's constraint: <code>white-space: nowrap</code> means the effect suits single lines; multi-line typewriter effects need per-line wrappers or a JavaScript approach instead.</p>
+
+<h2>Limitations</h2>
+<p>Straight talk. The generated CSS is single-line only — long text will overflow its container instead of wrapping, so keep inputs short or add your own responsive handling. The <code>steps()</code> count is baked in for your exact character count; edit the text later and you must regenerate the code. The effect can't be copy-pasted into social media — like all CSS, it only works where stylesheets run. For visitors who prefer reduced motion, gate the animation behind <code>@media (prefers-reduced-motion: no-preference)</code>. And screen readers announce the full text at once (which is fine) — don't rely on the animation to sequence information.</p>
+
+<h2>Typing effect vs alternatives</h2>
+<table>
+  <thead>
+    <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>This generator</strong></td><td>Copy-paste CSS typewriter, zero dependencies</td><td>Single-line; fixed character count</td></tr>
+    <tr><td><a href="/animated-text-generator/">Animated text generator</a></td><td>Rainbow, neon, glitch, bounce CSS effects</td><td>Different effect family</td></tr>
+    <tr><td>JavaScript typing libraries (Typed.js)</td><td>Multi-line, looping, backspacing sequences</td><td>Adds a dependency; needs JS enabled</td></tr>
+    <tr><td>Video editors</td><td>Typewriter text in social videos</td><td>Exports video, not live text</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Code snippet graphic of CSS keyframes for typing and cursor blink animations | Suggested alt: "CSS code for typewriter typing and blinking cursor keyframes"]
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">How to add typing effect to website?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Type your text into the generator above, tune the speed, cursor, and color, then copy the generated CSS. Paste it into your stylesheet and add class="typing-effect" to the element — no JavaScript required.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">How does the CSS typewriter effect work?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">It animates the element's width from 0 to 100% using steps() with one step per character, so letters appear one at a time. A blinking border-right serves as the cursor. The text stays real, selectable HTML.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Can I copy the typing animation to use in Instagram or TikTok?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. CSS animations only run where stylesheets run — websites, not social apps. For social video, recreate the effect in a video editor and export it as video.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">What typing speeds are available?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The slider runs from 20 ms per character (very fast) to 200 ms (slow and deliberate), defaulting to 80 ms. The generated CSS duration is computed from your exact text length and chosen speed.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">What cursor styles can I choose?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Three: a blinking block bar (the classic terminal cursor), an underscore cursor, or no cursor at all. Seven colors are available, from terminal green to white, cyan, and magenta.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Does the typing effect hurt SEO?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. The text is ordinary HTML that search engines read in full — the animation is purely presentational. This is a real advantage over baking text into video.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Why does long text overflow with the generated CSS?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The technique needs white-space: nowrap to measure width in character steps, so it only supports single lines. Keep typewriter text to short headlines, or use a JavaScript library for multi-line sequences.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">How do I make the effect accessible?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Wrap the animation in @media (prefers-reduced-motion: no-preference) so motion-sensitive visitors see static text. Screen readers announce the full text at once, which is acceptable for short lines.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Is my text uploaded anywhere?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. The preview and the CSS generation both run in your browser. Nothing is sent to a server.</p>
+    </div>
+  </div>
+</div>
+
+<p>More text effects: the <a href="/animated-text-generator/">animated text generator</a> for rainbow, neon, and glitch CSS animations, and the <a href="/matrix-text-generator/">matrix text generator</a> for digital-rain aesthetics — all in our <a href="/fun-text-tools/">fun text tools</a> collection.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+<div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+<div class="mobile-sidebar-header">
+<h3>🎮 Fun Tools</h3>
+<button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+</div>
+</div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Utility Tools</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        let currentColor = '#0f0';
+        let typingInterval = null;
+
+        function setColor(btn, color) {
+            document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentColor = color;
+            document.getElementById('typing-text').style.color = color;
+            document.getElementById('cursor').style.background = color;
+            generateCSS();
+        }
+
+        function startTyping() {
+            const text = document.getElementById('text-input').value;
+            const speed = parseInt(document.getElementById('speed').value);
+            const cursorStyle = document.getElementById('cursor-style').value;
+            const display = document.getElementById('typing-text');
+            const cursor = document.getElementById('cursor');
+
+            // Reset
+            if (typingInterval) clearInterval(typingInterval);
+            display.textContent = '';
+            
+            // Cursor style
+            if (cursorStyle === 'block') {
+                cursor.style.display = 'inline-block';
+                cursor.textContent = '';
+            } else if (cursorStyle === 'underscore') {
+                cursor.style.display = 'inline';
+                cursor.style.background = 'none';
+                cursor.textContent = '_';
+                cursor.style.color = currentColor;
+            } else {
+                cursor.style.display = 'none';
+            }
+
+            let i = 0;
+            typingInterval = setInterval(() => {
+                if (i < text.length) {
+                    display.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingInterval);
+                }
+            }, speed);
+
+            generateCSS();
+        }
+
+        function resetTyping() {
+            if (typingInterval) clearInterval(typingInterval);
+            document.getElementById('typing-text').textContent = '';
+        }
+
+        function generateCSS() {
+            const text = document.getElementById('text-input').value;
+            const speed = parseInt(document.getElementById('speed').value);
+            const duration = (text.length * speed / 1000).toFixed(1);
+            
+            const css = `.typing-effect {
+  font-family: 'Courier New', monospace;
+  color: ${currentColor};
+  overflow: hidden;
+  border-right: 2px solid ${currentColor};
+  white-space: nowrap;
+  animation: 
+    typing ${duration}s steps(${text.length}, end),
+    blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}`;
+            
+            document.getElementById('css-code').textContent = css;
+        }
+
+        function copyCode() {
+            navigator.clipboard.writeText(document.getElementById('css-code').textContent)
+                .then(() => alert('CSS copied!'));
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize
+        generateCSS();
+    </script>
+</body>
+</html></body>
+
+</html>
