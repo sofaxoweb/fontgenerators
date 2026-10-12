@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Herramientas de Fuentes Elegantes | FontGenerators.online</title>
+  <meta name="description" content="15 generadores de fuentes elegantes gratis: negrita, cursiva, gótica, script, monoespaciada y más estilos Unicode. Copia y pega en redes sociales. Sin registro.">
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/herramientas-de-fuentes-elegantes/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/fancy-font-tools/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/fancy-font-tools/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/herramientas-de-fuentes-elegantes/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/ferramentas-de-fontes-elegantes/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/sekilli-yazi-araclari/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/fancy-font-tools/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/fancy-font-tools/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+    <script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+    <main>
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="/es/">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Herramientas de fuentes elegantes</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/es/herramientas-de-fuentes-elegantes/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="/es/herramientas-de-fuentes-elegantes/" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="/pt/ferramentas-de-fontes-elegantes/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="/tr/sekilli-yazi-araclari/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="pillar-hero" style="background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);">
+      <div class="container">
+        <h1>Herramientas de fuentes elegantes</h1>
+        <p>Transforma tu texto en elegantes fuentes Unicode, scripts decorativos y estilos tipográficos únicos.</p>
+      </div>
+    </section>
+
+    <section class="pillar-tools">
+      <div class="container">
+        <div class="tools-grid">
+          <a class="tool-card" href="/es/generador-de-fuentes-elegantes/">
+            <div class="tool-icon">💎</div>
+            <h3>Generador de Fuentes Elegantes</h3>
+            <p>Crea fuentes elegantes para perfiles de redes sociales</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-elegante/">
+            <div class="tool-icon">⭐</div>
+            <h3>Generador de Texto Elegante</h3>
+            <p>Convierte texto a elegantes estilos Unicode</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-unicode/">
+            <div class="tool-icon">🔠</div>
+            <h3>Generador de Texto Unicode</h3>
+            <p>Accede a todas las transformaciones de texto Unicode</p>
+          </a>
+          <a class="tool-card" href="/es/conversor-de-texto-negrita/">
+            <div class="tool-icon">🅱️</div>
+            <h3>Conversor de Texto Negrita</h3>
+            <p>Pon tu texto en negrita sin formato</p>
+          </a>
+          <a class="tool-card" href="/es/conversor-de-texto-cursiva/">
+            <div class="tool-icon">📝</div>
+            <h3>Conversor de Texto Cursiva</h3>
+            <p>Crea texto cursivo para cualquier plataforma</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-subrayado/">
+            <div class="tool-icon">⎯</div>
+            <h3>Generador de Texto Subrayado</h3>
+            <p>Añade subrayados a tu texto</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-tachado/">
+            <div class="tool-icon">✗</div>
+            <h3>Texto Tachado</h3>
+            <p>Crea efectos de texto tachado</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-monoespaciado/">
+            <div class="tool-icon">💻</div>
+            <h3>Generador de Texto Monoespaciado</h3>
+            <p>Genera texto estilo código de ancho fijo</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-versalitas/">
+            <div class="tool-icon">🔡</div>
+            <h3>Generador de Versalitas</h3>
+            <p>Convierte texto a letras versalitas</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-letras-de-burbujas/">
+            <div class="tool-icon">🫧</div>
+            <h3>Generador de Letras de Burbujas</h3>
+            <p>Crea divertidas letras burbuja circuladas</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-cursivo/">
+            <div class="tool-icon">✒️</div>
+            <h3>Generador de Texto Cursivo</h3>
+            <p>Genera elegante texto cursivo script</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-gotico/">
+            <div class="tool-icon">🖤</div>
+            <h3>Generador de Texto Gótico</h3>
+            <p>Crea oscuro texto gótico fraktur</p>
+          </a>
+          <a class="tool-card" href="/es/fuente-ingles-antiguo/">
+            <div class="tool-icon">📜</div>
+            <h3>Fuente Inglés Antiguo</h3>
+            <p>Tipografía blackletter medieval</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-fuente-anime/">
+            <div class="tool-icon">🎌</div>
+            <h3>Generador de Fuente Anime</h3>
+            <p>Crea estilos de texto inspirados en anime</p>
+          </a>
+          <a class="tool-card" href="/es/generador-de-texto-manga/">
+            <div class="tool-icon">📚</div>
+            <h3>Generador de Texto Manga</h3>
+            <p>Genera efectos de texto estilo manga</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-content-section">
+      <div class="container">
+        <p class="byline">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+
+        <h2>¿Qué son las herramientas de fuentes elegantes?</h2>
+        <p>Las herramientas de fuentes elegantes &mdash; conversores de estilo de fuente &mdash; reescriben tus letras normales como caracteres Unicode parecidos. Escribe &ldquo;hello&rdquo; y obtén negrita (&#119813;&#119812;&#119831;&#119831;&#119834;), cursiva, script, fraktur, double-struck, monoespaciada, versalitas y docenas más. Cada salida es texto normal, así que se pega en bios de Instagram, publicaciones de Facebook, mensajes de Discord y pies de foto de TikTok manteniendo su look.</p>
+        <p>Estas <em>no</em> son fuentes reales. No se instala ningún archivo de fuente ni se aplica estilo &mdash; cada carácter es un punto de código separado definido por el Consorcio Unicode, la mayoría en el bloque de Símbolos Alfanuméricos Matemáticos. Las limitaciones honestas: un dispositivo raro puede mostrar un cuadro (&#9633;) si sus fuentes no cubren un bloque, y los lectores de pantalla pueden leer las letras estilizadas una por una. Mantén corto el texto estilizado &mdash; nombres, bios, encabezados.</p>
+
+        <p><em>[IMAGE: Una palabra mostrada en variantes Unicode negrita, cursiva, script, fraktur, double-struck y monoespaciada — alt sugerido: "Estilos de fuente Unicode elegantes: negrita, cursiva, script, fraktur, double-struck y monoespaciada"]</em></p>
+
+        <h2>Elegante frente a stylish frente a bloques Unicode: ¿qué herramienta necesitas?</h2>
+        <p>Tres herramientas de nombre parecido hacen trabajos distintos. El <strong><a href="/es/generador-de-texto-elegante/">generador de texto elegante</a></strong> hace transformaciones puras de estilo de fuente (Bold Sans, Script, Fraktur, Double-Struck) para nombres y bios. El <strong><a href="/es/generador-de-fuentes-elegantes/">generador de fuentes elegantes</a></strong> añade estilos de apodo decorados con bordes ondulados, de brillo, estrellas, diamantes, corazones y flechas. El <strong><a href="/es/generador-de-texto-unicode/">generador de texto Unicode</a></strong> es un explorador <em>educativo</em> de bloques: Fullwidth, Enclosed, Indicadores Regionales, Math Bold y sub/superíndices.</p>
+        <p>La misma división para burbujas: el <a href="/es/generador-de-letras-de-burbujas/">generador de letras de burbujas</a> crea estilos de <em>nombre</em> burbuja decorados (Bubble Pop, Bubblegum Frame, Love Bubbles), mientras el <a href="/es/generador-de-letras-burbuja/">generador de letras burbuja</a> de la colección aesthetic produce <em>alfabetos</em> burbuja Unicode puros (letras circuladas, de círculo relleno, cuadradas).</p>
+
+        <h2>Las 15 herramientas de fuentes elegantes</h2>
+        <ul>
+          <li><a href="/es/generador-de-fuentes-elegantes/">Generador de fuentes elegantes</a> &mdash; apodos decorados con bordes ondulados, de brillo, estrellas, diamantes, corazones y flechas.</li>
+          <li><a href="/es/generador-de-texto-elegante/">Generador de texto elegante</a> &mdash; estilos de fuente Unicode (Bold Sans, Script, Fraktur, Double-Struck) para nombres y bios.</li>
+          <li><a href="/es/generador-de-texto-unicode/">Generador de texto Unicode</a> &mdash; explorador de referencia de bloques Unicode: fullwidth, enclosed, indicadores regionales, math bold, sub/superíndices.</li>
+          <li><a href="/es/conversor-de-texto-negrita/">Conversor de texto negrita</a> &mdash; texto Unicode &#119813;&#119812;&#119831;&#119833; para publicaciones de Facebook y bios sin negrita nativa.</li>
+          <li><a href="/es/conversor-de-texto-cursiva/">Conversor de texto cursiva</a> &mdash; texto inclinado estilo cursiva para bios, pies de foto y nombres visibles.</li>
+          <li><a href="/es/generador-de-texto-subrayado/">Generador de texto subrayado</a> &mdash; subrayados vía marcas combinantes que sobreviven al copiar-pegar.</li>
+          <li><a href="/es/generador-de-texto-tachado/">Generador de texto tachado</a> &mdash; texto tachado (t&#775;a&#775;c&#775;h&#775;a&#775;d&#775;o&#775;) para ediciones y bromas.</li>
+          <li><a href="/es/generador-de-texto-monoespaciado/">Generador de texto monoespaciado</a> &mdash; texto de máquina de escribir de ancho fijo para un look técnico.</li>
+          <li><a href="/es/generador-de-versalitas/">Generador de versalitas</a> &mdash; V&#7452;&#7431;&#7451;s&#7431;&#7431;&#923;&#923;&#7452;s versalitas para encabezados y bios.</li>
+          <li><a href="/es/generador-de-letras-de-burbujas/">Generador de letras de burbujas</a> &mdash; estilos de nombre burbuja decorados: Bubble Pop, Bubblegum Frame, Love Bubbles.</li>
+          <li><a href="/es/generador-de-texto-cursivo/">Generador de texto cursivo</a> &mdash; elegantes formas de letra script para nombres y citas.</li>
+          <li><a href="/es/generador-de-texto-gotico/">Generador de texto gótico</a> &mdash; la familia completa Fraktur/blackletter en 10 variantes, incluidas Dagger, Bat, Moon, Rose y Chain Gothic.</li>
+          <li><a href="/es/fuente-ingles-antiguo/">Generador de fuente inglés antiguo</a> &mdash; solo dos variantes &mdash; Gothic Old English y Bold Gothic &mdash; para un look medieval clásico.</li>
+          <li><a href="/es/generador-de-fuente-anime/">Generador de fuente anime</a> &mdash; lettering inspirado en anime para perfiles otaku y fan pages.</li>
+          <li><a href="/es/generador-de-texto-manga/">Generador de texto manga</a> &mdash; lettering de acción estilo cómic para titulares shonen.</li>
+        </ul>
+
+        <h2>Cómo usar estas herramientas</h2>
+        <ol>
+          <li>Abre cualquier herramienta de arriba y escribe o pega tu texto.</li>
+          <li>Elige el estilo de fuente que te guste de los resultados.</li>
+          <li>Haz clic en copiar y pega en tu perfil, publicación o mensaje &mdash; si un carácter se muestra como cuadro, elige una variante más simple en la misma página.</li>
+        </ol>
+
+        <h2>Elegir el conversor correcto</h2>
+        <table>
+          <thead>
+            <tr><th>Quieres&hellip;</th><th>Usa</th><th>Por qué</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Énfasis en una publicación de texto plano</td><td>Conversor de negrita o cursiva</td><td>Lo más cercano al texto enriquecido nativo; legible en todas partes</td></tr>
+            <tr><td>Un nombre visible que destaque</td><td>Generador de fuente elegante o de texto elegante</td><td>Docenas de variantes; bordes decorados para apodos</td></tr>
+            <tr><td>Encabezados de sección en un pie de foto largo</td><td>Generador de versalitas</td><td>Look limpio, compacto y profesional</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Notas de compatibilidad</h2>
+        <p>Los estilos de fuente Unicode funcionan en nombres visibles, bios, pies de foto y mensajes en Instagram, TikTok, Discord, WhatsApp, Facebook y X. Generalmente <em>no</em> funcionan en nombres de usuario de acceso o handles, que la mayoría de las plataformas limita a ASCII plano &mdash; evítalos en títulos de página y encabezados si la página necesita posicionar.</p>
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo funciona un generador de texto elegante?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Mapea cada letra a un carácter Unicode parecido &mdash; el bloque de Símbolos Alfanuméricos Matemáticos contiene alfabetos negrita, cursiva, script y fraktur. La salida es texto plano, así que mantiene su look al pegarse en apps que quitan el formato.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué diferencia hay entre el generador de texto elegante y el generador de fuentes elegantes?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El generador de texto elegante hace transformaciones puras de estilo de fuente &mdash; Bold Sans, Script, Fraktur, Double-Struck &mdash; para nombres y bios. El generador de fuentes elegantes añade estilos de apodo decorados con bordes ondulados, de brillo, estrellas, diamantes, corazones y flechas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Para qué sirve la página del generador de texto Unicode?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Es un explorador y referencia de bloques Unicode. En lugar de estilos de fuente, muestra juegos de caracteres bloque por bloque &mdash; Fullwidth, Enclosed Alphanumerics, Indicadores Regionales, Math Bold, sub/superíndices &mdash; para aprender y copiar.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué diferencia hay entre texto gótico y fuente inglés antiguo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">El generador de texto gótico ofrece la familia completa Fraktur/blackletter en 10 variantes, incluidas Dagger, Bat, Moon, Rose y Chain Gothic. El generador de fuente inglés antiguo tiene solo dos: Gothic Old English y Bold Gothic.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo pongo texto en negrita en Facebook?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Las publicaciones y comentarios de Facebook no tienen negrita nativa, así que el conversor de texto negrita cambia tus letras por caracteres Unicode negrita (&#119813;&#119812;&#119831;&#119833;) que se ven en negrita donde se muestre la publicación.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo usar estos estilos de fuente en mi nombre de usuario de Instagram?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Los handles de Instagram solo permiten letras, números, puntos y guiones bajos, así que el Unicode estilizado se rechaza ahí. Úsalo en tu nombre visible y tu bio &mdash; ambos aceptan Unicode.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Utility Tools</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona un generador de texto elegante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mapea cada letra a un carácter Unicode parecido — el bloque de Símbolos Alfanuméricos Matemáticos contiene alfabetos negrita, cursiva, script y fraktur. La salida es texto plano, así que mantiene su look al pegarse en apps que quitan el formato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre el generador de texto elegante y el generador de fuentes elegantes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El generador de texto elegante hace transformaciones puras de estilo de fuente — Bold Sans, Script, Fraktur, Double-Struck — para nombres y bios. El generador de fuentes elegantes añade estilos de apodo decorados con bordes ondulados, de brillo, estrellas, diamantes, corazones y flechas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve la página del generador de texto Unicode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un explorador y referencia de bloques Unicode. En lugar de estilos de fuente, muestra juegos de caracteres bloque por bloque — Fullwidth, Enclosed Alphanumerics, Indicadores Regionales, Math Bold, sub/superíndices — para aprender y copiar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre texto gótico y fuente inglés antiguo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El generador de texto gótico ofrece la familia completa Fraktur/blackletter en 10 variantes, incluidas Dagger, Bat, Moon, Rose y Chain Gothic. El generador de fuente inglés antiguo tiene solo dos: Gothic Old English y Bold Gothic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo pongo texto en negrita en Facebook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las publicaciones y comentarios de Facebook no tienen negrita nativa, así que el conversor de texto negrita cambia tus letras por caracteres Unicode negrita (𝐅𝐄𝐗𝐙) que se ven en negrita donde se muestre la publicación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar estos estilos de fuente en mi nombre de usuario de Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los handles de Instagram solo permiten letras, números, puntos y guiones bajos, así que el Unicode estilizado se rechaza ahí. Úsalo en tu nombre visible y tu bio — ambos aceptan Unicode."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
