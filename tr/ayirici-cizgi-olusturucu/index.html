@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Ayırıcı Çizgi Oluşturucu | FontGenerators.online</title>
+  <meta name="description" content="Ücretsiz ayırıcı çizgi oluşturucu ile şık metin bölücüler yaratın: ─── ✦ ───. Biyografi ve gönderilerinizi düzenli, estetik bölümlere ayırın. Ücretsizdir.">
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/tr/ayirici-cizgi-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ayırıcı Çizgi Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Ücretsiz ayırıcı çizgi oluşturucu ile şık metin bölücüler yaratın: ─── ✦ ───. Biyografi ve gönderilerinizi düzenli, estetik bölümlere ayırın. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/ayirici-cizgi-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ayırıcı Çizgi Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Ücretsiz ayırıcı çizgi oluşturucu ile şık metin bölücüler yaratın: ─── ✦ ───. Biyografi ve gönderilerinizi düzenli, estetik bölümlere ayırın. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/divider-line-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/divider-line-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-lineas-divisorias/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-linhas-divisorias/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/ayirici-cizgi-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .divider-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .control-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--foreground);
+    }
+
+    .control-group select,
+    .control-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      background: var(--surface);
+    }
+
+    .divider-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+
+    .divider-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .divider-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+      font-family: monospace;
+      font-size: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .divider-item:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .divider-item.copied {
+      background: var(--success);
+      color: white;
+      border-color: var(--success);
+    }
+
+    .custom-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .preview-divider {
+      font-family: monospace;
+      font-size: 1.2rem;
+      padding: 1rem;
+      background: var(--background);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow-x: auto;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ayraç çizgileri nasıl kopyalanıp yapıştırılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kütüphanedeki bir ayraca tıklayın — anında kopyalanır. Ya da özel bir tane tasarlayıp Kopyala'ya basın. Çizgiyi biyografinizin, gönderinizin ya da belgenizin bölümleri arasına yapıştırın; ayraçlar sade Unicode metindir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Özel metin ayraç nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Özel tasarımcıyı kullanın: çizgi karakteri seçin (═ ─ ━ — ~ • ★ ♥ ✦ ✿), kaydırıcıyla uzunluğu 5–50 arası ayarlayın ve isteğe bağlı ♥ ya da ✦ gibi bir orta sembol ekleyin. Önizleme canlı güncellenir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Instagram biyografisi için sevimli ayraçlar nelerdir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Popüler tercihler: ─── ♡ ───, ·:*¨¨*:·, ✿ ❀ ─── ❀ ✿ ve ══════♥══════. Telefonlarda kaymaması için ~25 karakterin altında tutun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "─ ile ═ arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İkisi de Unicode'un Kutu Çizimi bloğundandır: ─ (U+2500) ince tek çizgi, ═ (U+2550) kalın çift çizgidir. ━ (U+2501) kalın tek çizgidir. Estetiğinize uyan ağırlığı seçin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ayraç çizgileri Discord'da çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — mesajlara ve kanal açıklamalarına yapıştırın. Discord sohbetinde yerleşik yatay çizgi yoktur; metin ayraçlar bölümleri ayırmanın standart yoludur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ayraç ne uzunlukta olmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biyografiler ve mobil ekranlar için 15–25 karakter kaymayı önler. Masaüstü belgeler için 40–50 karakter satırı güzel doldurur. Tasarımcı varsayılanı 20'dir; güvenli bir orta yoldur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ayraç ile çerçeve arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ayraçlar bölümleri ayıran yatay çizgilerdir (───); çerçeveler metni sarar (『 text 』). Çerçeveli metin için estetik çerçeve oluşturucumuza bakın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ayırıcı çizgi oluşturucu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — ücretsiz, sınırsız, hesapsız. 45 hazır ayraç da özel tasarımcı da tamamen tarayıcınızda çalışır."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/divider-line-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/divider-line-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">😊</span>
+                        Emoji Araçları
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../emojili-metin-olusturucu/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Emojili Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../emoji-birlestirici/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Emoji Birleştirici</span>
+                        </a>
+                        <a class="sidebar-link" href="../kaomoji-olusturucu/">
+                            <span class="link-icon">(◕‿◕)</span>
+                            <span class="link-text">Kaomoji Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ifade-olusturucu/">
+                            <span class="link-icon">:)</span>
+                            <span class="link-text">İfade Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../kalp-sembol-olusturucu/">
+                            <span class="link-icon">♥</span>
+                            <span class="link-text">Kalp Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../parilti-sembol-olusturucu/">
+                            <span class="link-icon">✨</span>
+                            <span class="link-text">Parıltı Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ok-sembol-olusturucu/">
+                            <span class="link-icon">→</span>
+                            <span class="link-text">Ok Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">
+                            <span class="link-icon">『』</span>
+                            <span class="link-text">Estetik Çerçeve Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../sembol-kutuphanesi/">
+                            <span class="link-icon">☆</span>
+                            <span class="link-text">Sembol Kütüphanesi</span>
+                        </a>
+                        <a class="sidebar-link active" href="../ayirici-cizgi-olusturucu/">
+                            <span class="link-icon">═</span>
+                            <span class="link-text">Ayırıcı Çizgi Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+      <div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+          <div class="tool-title">═══ Bölücü Hat Jeneratörü</div>
+          <p class="tool-description">Güzel metin ayırıcılar oluşturun - kopyalamak için tıklayın!</p>
+          <div class="custom-preview">
+            <h3 style="margin-bottom: 1rem;">✨ Özel Bölücü Oluşturucu</h3>
+            <div class="divider-controls">
+              <div class="control-group">
+                <label>Stil</label>
+                <select id="divider-style" onchange="updatePreview()">
+                  <option value="═">═ Çift Çizgi</option>
+                  <option value="─">─ Tek Çizgi</option>
+                  <option value="━">━ Kalın Çizgi</option>
+                  <option value="—">— Uzun Çizgi</option>
+                  <option value="~">~ Tilde İşareti</option>
+                  <option value="•">• Madde İşareti</option>
+                  <option value="★">★ Yıldız</option>
+                  <option value="♥">♥ Kalp</option>
+                  <option value="✦">✦ Elmas</option>
+                  <option value="✿">✿ Çiçek</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label>Uzunluk</label>
+                <input id="divider-length" max="50" min="5" oninput="updatePreview()" type="range" value="20" />
+              </div>
+              <div class="control-group">
+                <label>Orta Sembol</label>
+                <select id="center-symbol" onchange="updatePreview()">
+                  <option value="">Yok</option>
+                  <option value="♥">♥ Kalp</option>
+                  <option value="★">★ Yıldız</option>
+                  <option value="✦">✦ Elmas</option>
+                  <option value="✿">✿ Çiçek</option>
+                  <option value="◆">◆ Siyah Elmas</option>
+                  <option value="●">● Daire</option>
+                  <option value="❤">❤ Kalın Kalp</option>
+                  <option value="✨">✨ Parıltılar</option>
+                </select>
+              </div>
+            </div>
+            <div class="preview-divider" id="preview-divider">════════════════════</div>
+            <button class="btn btn-primary" onclick="copyPreview()">📋 Ayırıcıyı Kopyala</button>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">═══ Çift Hat</h3>
+            <div class="divider-grid" id="double-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">─── Tek Hatlar</h3>
+            <div class="divider-grid" id="single-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">✦✦✦ Dekoratif</h3>
+            <div class="divider-grid" id="decorative-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">♥♥♥ Kalpler ve Yıldızlar</h3>
+            <div class="divider-grid" id="fancy-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">✿❀✿ Çiçek</h3>
+            <div class="divider-grid" id="floral-lines"></div>
+          </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/tr/">Ana Sayfa</a> &nbsp;/&nbsp; <a href="/tr/emoji-sembol-araclari/">Emoji ve Semboller</a> &nbsp;/&nbsp; <span>Ayırıcı Çizgi Oluşturucu</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+<h1>Ayırıcı Çizgi Oluşturucu</h1>
+<p><strong>Ayırıcı çizgi oluşturucu</strong>, estetik metin ayraçları üretir — biyografiler, gönderiler ve belgeler için ═══════════ ya da ♡ ⋆ ── ⋆ ♡ gibi yatay çizgi ayraçlar. 5 tarzda 45 hazır ayraçtan seçin ya da karakter, uzunluk ve orta sembol tercihinizle özel bir ayraç tasarlayın.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Öne çıkanlar</h3>
+<ul style="margin-bottom:0">
+<li>5 kategoride 45 hazır ayraç: çift, tek, dekoratif, süslü ve çiçekli.</li>
+<li>Özel tasarımcıda 10 çizgi karakteri, 5–50 arası uzunluk ve isteğe bağlı orta sembol bulunur.</li>
+<li>Ayraçlar sade Unicode metindir — Instagram, Discord, Notion ve Word'e yapıştırılır.</li>
+<li>Çizgi karakterleri Kutu Çizimi bloğundandır (U+2500–U+257F): ═ ─ ━.</li>
+<li>Ayraçlar bölümleri ayırır; metni çerçevelemek için çerçeveleri kullanın.</li>
+</ul>
+</div>
+
+<h2>Ayırıcı çizgi oluşturucu nedir?</h2>
+<p><strong>Tanım:</strong> Ayırıcı çizgi oluşturucu, metin ayraç çizgileri üreten ücretsiz bir çevrimiçi araçtır — biyografi, gönderi, sohbet ve belgelerdeki bölümleri görsel olarak ayırmak için tekrarlanan Unicode karakterlerden oluşan, ────────── ya da ══════♥══════ gibi yatay ayraçlar.</p>
+<p>Ayraçlar, estetik biçimlendirmenin sessiz çalışkanlarıdır. Biyografi bölümleri arasına tek bir çizgi, metin duvarını taranabilir bloklara dönüştürür; zengin biçimlendirmesi olmayan platformlarda (Discord, düz metin gönderiler) ayraç, mevcut tek "yatay çizgi"dir. Düz metin platformlarının orijinal estetik satır sonlarıdırlar.</p>
+
+<h2>Bu araç nasıl çalışır?</h2>
+<p>Sayfanın iki bölümü var. <strong>Kütüphane</strong>, beş kategoriye ayrılmış 45 hazır ── ayraç gösterir — çift çizgiler (═══), tek çizgiler (───), dekoratif, süslü ve çiçekli (✿ ❀) — her biri tıklayarak kopyalanır. <strong>Özel tasarımcı</strong> kendi ayracınızı tasarlamanızı sağlar: çizgi karakteri seçin (═ ─ ━ — ~ • ★ ♥ ✦ ✿), uzunluk kaydırıcısını sürükleyin (5–50, varsayılan 20) ve isteğe bağlı bir orta sembol seçin (♥ ★ ✦ ✿ ◆ ● ❤ ✨ ya da hiçbiri).</p>
+<p>Tasarımcının mantığı basit dizi tekrarıdır: orta sembol yoksa çizgi karakteri tam uzunlukta tekrarlanır. Orta sembolle, çizgi sembolün her iki yanında floor((uzunluk−1)/2) kez tekrarlanır — yani uzunluk 20, ═ ve ♥ ile ═════════♥═════════ verir (9 + 1 + 9). Önizleme ayarladıkça canlı güncellenir; tek tık kopyalar.</p>
+
+<h2>Uygulamalı örnek</h2>
+<p>Instagram biyografiniz için kalp ayraç istiyorsunuz. Tasarımcıda karakteri <code>─</code>, uzunluğu <code>24</code>, orta sembolü <code>♥</code> yapın. Önizlemede şunu görürsünüz:</p>
+<p><code>───────────♥───────────</code></p>
+<p><strong>Kopyala</strong>'ya tıklayın, sonra biyografi bölümlerinizin arasına yapıştırın:</p>
+<p><code>📍 paris<br />───────────♥───────────<br />📸 photography</code></p>
+<p>Hazır mı tercih edersiniz? Çiçekli kategorisinde <code>✿ ❀ ─── ❀ ✿</code> gibi ayraçlar var — tek tık kopyalar.</p>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+<li><strong>5 ayraç kategorisine göz atın</strong> ve bir ayraca tıklayıp kopyalayın, ya da</li>
+<li><strong>Özel tasarımcıyı açın:</strong> çizgi karakteri seçin, uzunluğu ayarlayın (5–50) ve isteğe bağlı orta sembol seçin.</li>
+<li>Ayarladıkça ayracınızı canlı <strong>önizleyin</strong>.</li>
+<li><strong>Kopyalayıp</strong> biyografinizin, gönderinizin ya da belgenizin bölümleri arasına yapıştırın.</li>
+</ol>
+
+<h2>Beş ayraç kategorisi</h2>
+<table>
+<thead><tr><th>Kategori</th><th>Stil</th><th>Örnek</th><th>Ne için ideal?</th></tr></thead>
+<tbody>
+<tr><td>Çift</td><td>Kalın çift çizgiler</td><td>═══════════</td><td>Güçlü bölüm geçişleri</td></tr>
+<tr><td>Tek</td><td>Temiz ince çizgiler</td><td>───────────</td><td>Minimalist biyografiler, belgeler</td></tr>
+<tr><td>Dekoratif</td><td>Sembollü çizgiler</td><td>─── ✦ ───</td><td>Estetik gönderiler</td></tr>
+<tr><td>Süslü</td><td>Gösterişli kombinasyonlar</td><td>♡ ⋆ ── ⋆ ♡</td><td>Şık biyografiler, davetler</td></tr>
+<tr><td>Çiçekli</td><td>Çiçek motifleri</td><td>✿ ❀ ─── ❀ ✿</td><td>Yumuşak, sevimli estetik</td></tr>
+</tbody>
+</table>
+
+<h2>Metin ayraçlarının en iyi işlediği yerler</h2>
+<ul>
+<li><strong>Instagram/TikTok biyografileri:</strong> konum, ilgi alanları ve bağlantıları taranabilir satırlara ayırın.</li>
+<li><strong>Discord:</strong> markdown çizgisinin olmadığı uzun sunucu bilgi gönderilerini bölün.</li>
+<li><strong>Notion ve belgeler:</strong> metin blokları içinde hafif ayraçlar.</li>
+<li><strong>WhatsApp durumu ve Tumblr:</strong> metin gönderilerde estetik bölüm geçişleri.</li>
+<li><strong>Düz metin e-posta:</strong> ─── çizgiler, HTML'siz bültenleri yapılandırır.</li>
+</ul>
+
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Sabit genişlik varsayımı.</strong> Ayraçlar tek aralıklı ortamlarda en düzgün görünür; orantılı yazı tiplerinde uzun çizgiler hafif dengesiz görünebilir.</li>
+<li><strong>Mobilde kayma.</strong> 50 karakterlik ayraç dar telefon ekranlarında kayar — biyografi ayraçlarını ~25 karakterin altında tutun.</li>
+<li><strong>Ekran okuyucular karakterleri okur.</strong> Tekrarlanan "kutu çizimi kalın yatay" gürültüdür — ayraçlar görseldir, anlamsal değil.</li>
+<li><strong>HTML'in yerini tutmaz.</strong> Kontrol ettiğiniz web sayfalarında gerçek bir &lt;hr&gt;, metin ayraçtan daha erişilebilirdir.</li>
+</ul>
+
+<h2>Ayırıcı Çizgi Oluşturucu ve alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne üretir?</th><th>Ne zaman kullanmalı?</th></tr></thead>
+<tbody>
+<tr><td><strong>Ayırıcı Çizgi Oluşturucu</strong> (bu sayfa)</td><td>Yatay ayraçlar + özel tasarımcı</td><td>Bölüm geçişlerine ihtiyacınız varsa</td></tr>
+<tr><td><a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeve Oluşturucu</a></td><td>Metninizi saran çerçeveler</td><td>Metnin kendisinin çerçevelenmesini istiyorsanız, örn. 『 hello 』</td></tr>
+<tr><td><a href="/tr/sembol-kutuphanesi/">Metin Sembolü Kütüphanesi</a></td><td>─ │ ♥ gibi tek semboller</td><td>Ayracınızı elle kurmak istiyorsanız</td></tr>
+<tr><td><a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografi Oluşturucu</a></td><td>Tam biyografi düzenleri</td><td>Ayraç değil, komple biyografi fikri istiyorsanız</td></tr>
+</tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Ayraç çizgileri nasıl kopyalanıp yapıştırılır?</h3><div class="faq-answer"><p>Kütüphanedeki bir ayraca tıklayın — anında kopyalanır. Ya da özel bir tane tasarlayıp Kopyala'ya basın. Çizgiyi biyografinizin, gönderinizin ya da belgenizin bölümleri arasına yapıştırın; ayraçlar sade Unicode metindir.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Özel metin ayraç nasıl yapılır?</h3><div class="faq-answer"><p>Özel tasarımcıyı kullanın: çizgi karakteri seçin (═ ─ ━ — ~ • ★ ♥ ✦ ✿), kaydırıcıyla uzunluğu 5–50 arası ayarlayın ve isteğe bağlı ♥ ya da ✦ gibi bir orta sembol ekleyin. Önizleme canlı güncellenir.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Instagram biyografisi için sevimli ayraçlar nelerdir?</h3><div class="faq-answer"><p>Popüler tercihler: ─── ♡ ───, ·:*¨¨*:·, ✿ ❀ ─── ❀ ✿ ve ══════♥══════. Telefonlarda kaymaması için ~25 karakterin altında tutun.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">─ ile ═ arasındaki fark nedir?</h3><div class="faq-answer"><p>İkisi de Unicode'un Kutu Çizimi bloğundandır: ─ (U+2500) ince tek çizgi, ═ (U+2550) kalın çift çizgidir. ━ (U+2501) kalın tek çizgidir. Estetiğinize uyan ağırlığı seçin.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Ayraç çizgileri Discord'da çalışır mı?</h3><div class="faq-answer"><p>Evet — mesajlara ve kanal açıklamalarına yapıştırın. Discord sohbetinde yerleşik yatay çizgi yoktur; metin ayraçlar bölümleri ayırmanın standart yoludur.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Ayraç ne uzunlukta olmalı?</h3><div class="faq-answer"><p>Biyografiler ve mobil ekranlar için 15–25 karakter kaymayı önler. Masaüstü belgeler için 40–50 karakter satırı güzel doldurur. Tasarımcı varsayılanı 20'dir; güvenli bir orta yoldur.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Ayraç ile çerçeve arasındaki fark nedir?</h3><div class="faq-answer"><p>Ayraçlar bölümleri ayıran yatay çizgilerdir (───); çerçeveler metni sarar (『 text 』). Çerçeveli metin için <a href="/tr/estetik-cerceve-olusturucu/">estetik çerçeve oluşturucumuza</a> bakın.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Ayırıcı çizgi oluşturucu ücretsiz mi?</h3><div class="faq-answer"><p>Evet — ücretsiz, sınırsız, hesapsız. 45 hazır ayraç da özel tasarımcı da tamamen tarayıcınızda çalışır.</p></div></div>
+</div>
+
+<h2>İlgili araçlar</h2>
+<ul>
+<li><a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeve Oluşturucu</a> — metni dekoratif çerçevelere alın</li>
+<li><a href="/tr/sembol-kutuphanesi/">Metin Sembolü Kütüphanesi</a> — el yapımı ayraçlar için 707 tek sembol</li>
+<li><a href="/tr/ok-sembol-olusturucu/">Ok Sembolü Oluşturucu</a> — işaretçiler ve madde işaretleri için 151 ok</li>
+<li><a href="/tr/emoji-sembol-araclari/">Tüm Emoji ve Sembol Araçları</a> — koleksiyonun tamamına göz atın</li>
+</ul>
+</div>
+
+</section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>😊 Emoji Araçları</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../emojili-metin-olusturucu/">😊 Emojili Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../emoji-birlestirici/">🎨 Emoji Birleştirici</a>
+                <a class="sidebar-link" href="../kaomoji-olusturucu/">(◕‿◕) Kaomoji Oluşturucu</a>
+                <a class="sidebar-link" href="../ifade-olusturucu/">:) İfade Oluşturucu</a>
+                <a class="sidebar-link" href="../kalp-sembol-olusturucu/">♥ Kalp Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../parilti-sembol-olusturucu/">✨ Parıltı Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../ok-sembol-olusturucu/">→ Ok Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">『』 Estetik Çerçeve Oluşturucu</a>
+                <a class="sidebar-link" href="../sembol-kutuphanesi/">☆ Sembol Kütüphanesi</a>
+                <a class="sidebar-link active" href="../ayirici-cizgi-olusturucu/">═ Ayırıcı Çizgi Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/script.js"></script>
+  <script defer="">
+    const dividers = {
+      double: [
+        '════════════════════',
+        '═══════════♥═══════════',
+        '═══════════★═══════════',
+        '═══════════✦═══════════',
+        '═══════════◆═══════════',
+        '╔══════════════════════╗',
+        '╚══════════════════════╝',
+        '╠══════════════════════╣',
+        '═════════════════════════'
+      ],
+      single: [
+        '────────────────────',
+        '───────────♥───────────',
+        '───────────★───────────',
+        '───────────✦───────────',
+        '┌──────────────────────┐',
+        '└──────────────────────┘',
+        '├──────────────────────┤',
+        '━━━━━━━━━━━━━━━━━━━━━━━━',
+        '───────────•───────────'
+      ],
+      decorative: [
+        '•═════════════════════•',
+        '◦═══════════════════════◦',
+        '✧═══════════════════════✧',
+        '★═══════════════════════★',
+        '◇═══════════════════════◇',
+        '◈═══════════════════════◈',
+        '✶═══════════════════════✶',
+        '⊱═══════════════════════⊰',
+        '⋆═══════════════════════⋆'
+      ],
+      fancy: [
+        '♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥',
+        '★☆★☆★☆★☆★☆★☆★☆★☆★',
+        '✦✧✦✧✦✧✦✧✦✧✦✧✦✧✦✧✦',
+        '•♥•♥•♥•♥•♥•♥•♥•♥•',
+        '★·.·´¯`·.·★·.·´¯`·.·★',
+        '☆.。.:*・°☆.。.:*・°☆',
+        '·:*¨¨*:·.·:*¨¨*:·.·:*¨¨*:·.',
+        '❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥',
+        '✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿'
+      ],
+      floral: [
+        '✿═══════════════════════✿',
+        '❀═══════════════════════❀',
+        '✾═══════════════════════✾',
+        '❁═══════════════════════❁',
+        '✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿',
+        '❀•❀•❀•❀•❀•❀•❀•❀•❀',
+        '✿•✿•✿•✿•✿•✿•✿•✿•✿',
+        '╭✿╮══════════════════╭✿╮',
+        '❀❁❀❁❀❁❀❁❀❁❀❁❀❁❀❁❀'
+      ]
+    };
+
+    function init() {
+      renderDividers('double-lines', dividers.double);
+      renderDividers('single-lines', dividers.single);
+      renderDividers('decorative-lines', dividers.decorative);
+      renderDividers('fancy-lines', dividers.fancy);
+      renderDividers('floral-lines', dividers.floral);
+      updatePreview();
+    }
+
+    function renderDividers(containerId, items) {
+      document.getElementById(containerId).innerHTML = items.map(d =>
+        `<div class="divider-item" onclick="copyDivider(this, \`${d}\`)">${d}</div>`
+      ).join('');
+    }
+
+    function updatePreview() {
+      const style = document.getElementById('divider-style').value;
+      const length = parseInt(document.getElementById('divider-length').value);
+      const center = document.getElementById('center-symbol').value;
+
+      let divider;
+      if (center) {
+        const half = Math.floor((length - 1) / 2);
+        divider = style.repeat(half) + center + style.repeat(half);
+      } else {
+        divider = style.repeat(length);
+      }
+
+      document.getElementById('preview-divider').textContent = divider;
+    }
+
+    function copyPreview() {
+      const text = document.getElementById('preview-divider').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.btn-primary');
+        btn.textContent = '✓ Kopyalandı!';
+        setTimeout(() => btn.textContent = '📋 Ayırıcıyı Kopyala', 1500);
+      });
+    }
+
+    function copyDivider(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        const orig = el.textContent;
+        el.textContent = '✓ Kopyalandı!';
+        setTimeout(() => {
+          el.classList.remove('copied');
+          el.textContent = orig;
+        }, 1000);
+      });
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) { document.getElementById('mobile-sidebar').classList.remove('active'); document.body.style.overflow = ''; } }
+
+    init();
+  </script>
+</body>
+
+</html>
