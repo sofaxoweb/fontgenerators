@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Reverse Text Generator - Copy &amp; Paste Stylish Fonts</title>
+  <meta
+    content="Free online Reverse Text Generator. Generate and copy unique custom font styles, letters, and text configurations for social media bios and posts."
+    name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/reverse-text-generator/" rel="canonical" />
+  <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/reverse-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/reverse-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/reverse-text-generator/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/reverse-text-generator/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/reverse-text-generator/" />
+  <link href="../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/tools.css" rel="stylesheet" />
+  <style>
+    .results-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .result-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .result-content {
+      flex: 1;
+    }
+
+    .result-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .result-value {
+      font-size: 1.1rem;
+      word-break: break-all;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Text Transformations</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="../reverse-text-generator/">🔄 Reverse Text</a>
+            <a class="sidebar-link" href="../mirror-text-generator/">🪞 Mirror Text</a>
+            <a class="sidebar-link" href="../zalgo-text-generator/">👻 Zalgo Text</a>
+            <a class="sidebar-link" href="../spoiler-text-generator/">🙈 Spoiler Text</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h1 class="tool-title">🔄 Reverse Text Generator</h1>
+          <p class="tool-description">Reverse your text in different ways</p>
+          <textarea class="tool-input" id="text-input" oninput="reverseText()"
+            placeholder="Enter your text to reverse..." rows="4"></textarea>
+        </div>
+        <div class="results-grid" id="results"></div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+        <h2>What Is Reversed Text?</h2>
+        <p>Reversed text can mean several different things: <strong>Character reversal</strong> flips the sequence of
+          letters in your text (hello → olleh). <strong>Word reversal</strong> inverts the order of words while keeping
+          each word's letters intact (hello world → world hello). <strong>Mirror text</strong> uses unicode characters
+          that are visual horizontal flips of letters — not just reordering, but actually replacing each letter with its
+          unicode mirror equivalent (ɥəllo). Each type creates a different visual effect and serves different creative
+          purposes.</p>
+
+        <h2>How to Reverse Your Text</h2>
+        <ol>
+          <li><strong>Enter your text</strong> in the input area above.</li>
+          <li>Select a reversal mode: <strong>Reverse Characters</strong>, <strong>Reverse Words</strong>, or
+            <strong>Mirror Text</strong>.
+          </li>
+          <li>The <strong>reversed output</strong> appears instantly below.</li>
+          <li>Click <strong>Copy</strong> to grab the result.</li>
+          <li><strong>Paste</strong> into any social post, message, or creative project.</li>
+        </ol>
+
+        <h2>Creative Uses for Reversed Text</h2>
+        <p>Backwards text has a long history in creative culture. Leonardo da Vinci famously wrote his notes in mirror
+          script. QR code art sometimes encodes backwards text for visual contrast. Social media puzzles ("decode
+          this!") using reversed text get significantly higher comment engagement. Text tattoo artists show clients
+          reversed text to demonstrate how it reads in a mirror. Teachers use word reversal exercises for reading
+          development activities. Cipher enthusiasts use character reversal as a basic encoding method for puzzle games
+          and escape rooms.</p>
+
+        <h2>Reversal Examples</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Mode</th>
+              <th>Input</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reverse Characters</td>
+              <td>Hello World</td>
+              <td>dlroW olleH</td>
+            </tr>
+            <tr>
+              <td>Reverse Words</td>
+              <td>Hello World</td>
+              <td>World Hello</td>
+            </tr>
+            <tr>
+              <td>Mirror Text</td>
+              <td>Hello</td>
+              <td>oʃʃǝH</td>
+            </tr>
+            <tr>
+              <td>Upside Down</td>
+              <td>Hello</td>
+              <td>ǝlloH</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Reverse Text Styles Compared</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Style</th>
+              <th>What Happens</th>
+              <th>Readable?</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Character Reverse</td>
+              <td>Letters in reverse order</td>
+              <td>Only if read backwards</td>
+              <td>Puzzles, codes</td>
+            </tr>
+            <tr>
+              <td>Word Reverse</td>
+              <td>Word order flipped</td>
+              <td>Words readable, order reversed</td>
+              <td>Sentence games</td>
+            </tr>
+            <tr>
+              <td>Mirror Text</td>
+              <td>Unicode mirror characters</td>
+              <td>Partly, in a mirror</td>
+              <td>Tattoo design, art</td>
+            </tr>
+            <tr>
+              <td>Upside Down</td>
+              <td>Rotated unicode characters</td>
+              <td>If viewed upside down</td>
+              <td>Social posts, fun</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Can I reverse text and have it still be readable?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Word-order reversal keeps each word readable while flipping the sentence structure. For
+                a sentence that reads backwards as meaningful English, you'd need to craft it as a palindrome (e.g.,
+                'Was it a car or a cat I saw?').</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">What is mirror text?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Mirror text uses unicode characters that are horizontally flipped versions of Latin
+                letters — for example, 'd' becomes 'b' visually. It simulates how text looks in a mirror without
+                actually reflecting an image.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Does reversed text work as a cipher?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Simple reversal (ROT-0 variant) is one of the oldest and easiest ciphers. It's easily
+                broken but makes a fun visual puzzle. For real encryption, use proper cryptographic methods.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Can I flip an entire paragraph?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes. The tool processes any length of text. For a paragraph, character reversal
+                produces the entire paragraph reversed as one string. Word reversal flips the order of all words across
+                the entire paragraph.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Why would someone want their text upside down?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Upside-down text is popular for social media novelty, confusing screenshots, or
+                creating visual art with text. It's also used in accessibility testing to simulate how dyslexic readers
+                may perceive text rotation.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Text Transformations</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script defer="" src="../js/includes.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const flipMap = { 'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ', 'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'p': 'd', 'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z', 'A': '∀', 'B': 'q', 'C': 'Ɔ', 'D': 'p', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'H': 'H', 'I': 'I', 'J': 'ſ', 'K': 'ʞ', 'L': '˥', 'M': 'W', 'N': 'N', 'O': 'O', 'P': 'Ԁ', 'Q': 'Q', 'R': 'ɹ', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z', '1': 'Ɩ', '2': 'ᄅ', '3': 'Ɛ', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8', '9': '6', '0': '0', '.': '˙', ',': '\'', '\'': ',', '!': '¡', '?': '¿', '[': ']', ']': '[', '(': ')', ')': '(', '{': '}', '}': '{', '<': '>', '>': '<' };
+
+    function reverseText() {
+      const text = document.getElementById('text-input').value;
+      if (!text.trim()) {
+        document.getElementById('results').innerHTML = '';
+        return;
+      }
+
+      const reversed = text.split('').reverse().join('');
+      const wordsReversed = text.split(' ').reverse().join(' ');
+      const eachWordReversed = text.split(' ').map(w => w.split('').reverse().join('')).join(' ');
+      const flipped = text.split('').map(c => flipMap[c] || c).reverse().join('');
+
+      const results = [
+        { name: 'Reversed Text', value: reversed },
+        { name: 'Reversed Words Order', value: wordsReversed },
+        { name: 'Each Word Reversed', value: eachWordReversed },
+        { name: 'Upside Down (Flipped)', value: flipped }
+      ];
+
+      document.getElementById('results').innerHTML = results.map(r => `
+                <div class="result-item">
+                    <div class="result-content">
+                        <div class="result-label">${r.name}</div>
+                        <div class="result-value">${escapeHtml(r.value)}</div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="copyText(\`${r.value.replace(/`/g, '\\`')}\`)">📋 Copy</button>
+                </div>
+            `).join('');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html>
