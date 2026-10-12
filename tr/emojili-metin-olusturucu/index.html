@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Emojili Metin Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Emojili metin oluşturucu ile sade yazınızı renkli emoji&#x27;li ifadelere çevirin. Ücretsiz, çevrimiçi ve tek tıkla kopyala-yapıştır ile her yerde kullanın.">
+    <link href="../../css/variables.css" rel="stylesheet" />
+    <script crossorigin="anonymous" defer=""
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+    <link href="https://fontgenerators.online/tr/emojili-metin-olusturucu/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Emojili Metin Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Emojili metin oluşturucu ile sade yazınızı renkli emoji&#x27;li ifadelere çevirin. Ücretsiz, çevrimiçi ve tek tıkla kopyala-yapıştır ile her yerde kullanın.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/emojili-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Emojili Metin Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Emojili metin oluşturucu ile sade yazınızı renkli emoji&#x27;li ifadelere çevirin. Ücretsiz, çevrimiçi ve tek tıkla kopyala-yapıştır ile her yerde kullanın.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/emoji-text-maker/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/emoji-text-maker/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/creador-de-texto-con-emojis/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/criador-de-texto-com-emojis/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/emojili-metin-olusturucu/" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/tools.css" rel="stylesheet" />
+    <style>
+        .emoji-picker {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-search {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-search:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .emoji-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .emoji-category-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            background: var(--surface);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+        }
+
+        .emoji-category-btn:hover,
+        .emoji-category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+            gap: 0.25rem;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            background: var(--background);
+            border-radius: var(--radius);
+        }
+
+        .emoji-item {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+
+        .emoji-item:hover {
+            background: var(--primary-light);
+            transform: scale(1.2);
+        }
+
+        .selected-emojis {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            min-height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .selected-emoji {
+            font-size: 1.5rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .selected-emoji:hover::after {
+            content: '×';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placement-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .placement-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all var(--transition);
+        }
+
+        .placement-btn:hover,
+        .placement-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Language Switcher */
+        .breadcrumb-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+        }
+
+        .lang-switcher .lang-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-muted, #555);
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid #e0d5c8;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switcher .lang-link:hover {
+            background: #fff;
+            color: var(--red, #C8102E);
+            border-color: var(--red, #C8102E);
+        }
+
+        .lang-switcher .lang-link.active {
+            background: var(--red, #C8102E);
+            color: #fff;
+            border-color: var(--red, #C8102E);
+        }
+    </style>
+
+    <style>
+        /* ─── SEO Content Section ─── */
+        .seo-content-section {
+            padding: 3rem 0 2rem;
+            background: var(--cream, #FDF9F4);
+        }
+
+        .seo-content-section h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            color: var(--black, #121212);
+
+            padding-bottom: 0.4rem;
+        }
+
+        .seo-content-section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--off-black, #1a1a1a);
+        }
+
+        .seo-content-section p {
+            line-height: 1.8;
+            color: var(--text-muted, #444);
+            margin-bottom: 1rem;
+            max-width: 780px;
+        }
+
+        .seo-content-section ul,
+        .seo-content-section ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .seo-content-section li {
+            line-height: 1.75;
+            margin-bottom: 0.4rem;
+            color: var(--text-muted, #444);
+        }
+
+        /* Table */
+        .seo-content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .seo-content-section table thead tr {
+            background: var(--black, #121212);
+            color: #fff;
+        }
+
+        .seo-content-section table th,
+        .seo-content-section table td {
+            padding: 0.65rem 1rem;
+            border: 1px solid #e0d5c8;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .seo-content-section table tbody tr:nth-child(even) {
+            background: var(--cream-dark, #FAF5EE);
+        }
+
+        /* FAQ */
+        .faq-container {
+            margin-top: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid #e0d5c8;
+            border-left: 4px solid var(--red, #C8102E);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            padding: 1rem 1.25rem;
+            background: #fff;
+        }
+
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black, #121212);
+            margin: 0 0 0.5rem;
+            cursor: pointer;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: var(--text-muted, #555);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .seo-content-section {
+                padding: 2rem 0;
+            }
+
+            .seo-content-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Metne emoji nasıl eklenir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metninizi giriş kutusuna yazın, seçiciden en fazla 10 emojiye tıklayın (ya da anahtar kelimeyle arayın), Çevreleme ya da Serpme gibi bir yerleştirme stili seçin ve sonucu kopyalayın. Süslü metin, metin kabul eden her uygulamaya yapıştırılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emojili metin oluşturucu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Hesap yok, filigran yok, kullanım sınırı yok — tamamen ücretsiz. Tüm işlemler tarayıcınızda yapılır; metniniz asla yüklenmez ya da saklanmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Süslü metin Instagram ve TikTok'ta çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Çıktı standart Unicode metindir; Instagram, TikTok, Discord, WhatsApp ve X bunu doğal olarak gösterir. Araçtan kopyalayıp uygulamanın metin alanına yapıştırmanız yeterli."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bazı emojiler neden boş kutu olarak görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kutular (□), cihazın yazı tipinde o emojinin olmadığı anlamına gelir — genellikle işletim sistemi, emojinin Unicode sürümünden daha eskidir. İşletim sistemini güncellemek ya da daha eski, yaygın desteklenen bir emoji seçmek sorunu çözer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emojiler resim mi metin mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metindir: cihazınızın emoji yazı tipinin resim olarak çizdiği Unicode kod noktaları. Bu yüzden diğer karakterler gibi kopyalanıp yapıştırılıp aranabilirler; çizimleri Apple, Google ve Samsung cihazlarda farklıdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bununla emoji birleştirici arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emojili metin oluşturucu, kelimelerinizi emojilerle süsler (metin + emoji). Emoji birleştirici ise metinsiz, yalnızca emoji dizileri kurar — 🎂🎉🥳 gibi — ve rastgele karışım üretici içerir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emojiler karakter sınırına dahil mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Çoğu platform her emojiyi bir ya da daha fazla karakter sayar — birçoğu iki UTF-16 kod birimi kaplar; çok kişili ya da bayraklı diziler birkaç karakter sayılır. Sınırı dar biyografiler yazarken araçtaki anlık karakter sayacını takip edin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Süslü metni kullanıcı adımda kullanabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genellikle yalnızca görünen adlarda. Çoğu platform gerçek kullanıcı adı / takma adı sade ASCII harf, rakam ve alt çizgiyle sınırlar; ancak Instagram, TikTok, X ve Discord'da görünen adlar emoji kabul eder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir seferde kaç emoji ekleyebilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Süsleme başına en fazla 10 emoji seçebilirsiniz. Seçicinin kendisi 10 kategoride 725 emoji barındırır — Gülümseyenler, Aşk, Yıldızlar, Doğa, Hayvanlar, Yiyecek, Aktiviteler, Seyahat, Nesneler ve Semboller — ve anahtar kelimeyle arama yapar."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+    <header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/emoji-text-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/emoji-text-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+            <aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">😊</span>
+                        Emoji Araçları
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link active" href="../emojili-metin-olusturucu/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Emojili Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../emoji-birlestirici/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Emoji Birleştirici</span>
+                        </a>
+                        <a class="sidebar-link" href="../emoji-birlestirici/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Emoji Birleştirici</span>
+                        </a>
+                        <a class="sidebar-link" href="../kaomoji-olusturucu/">
+                            <span class="link-icon">(◕‿◕)</span>
+                            <span class="link-text">Kaomoji Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ifade-olusturucu/">
+                            <span class="link-icon">:)</span>
+                            <span class="link-text">İfade Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../kalp-sembol-olusturucu/">
+                            <span class="link-icon">♥</span>
+                            <span class="link-text">Kalp Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../parilti-sembol-olusturucu/">
+                            <span class="link-icon">✨</span>
+                            <span class="link-text">Parıltı Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ok-sembol-olusturucu/">
+                            <span class="link-icon">→</span>
+                            <span class="link-text">Ok Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">
+                            <span class="link-icon">『』</span>
+                            <span class="link-text">Estetik Çerçeve Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../sembol-kutuphanesi/">
+                            <span class="link-icon">☆</span>
+                            <span class="link-text">Sembol Kütüphanesi</span>
+                        </a>
+                        <a class="sidebar-link" href="../ayirici-cizgi-olusturucu/">
+                            <span class="link-icon">═</span>
+                            <span class="link-text">Ayırıcı Çizgi Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+            <div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+                    <div class="tool-title">😊 Emoji Metin Oluşturucu</div>
+                    <p class="tool-description">Metninize güzel emoji süslemeleri ekleyin</p>
+                    <label class="tool-label">Metniniz</label>
+                    <textarea class="tool-input" id="text-input" oninput="generateText()"
+                        placeholder="Metninizi buraya girin..." style="min-height: 80px;"></textarea>
+                    <div class="char-count" id="char-count">0 karakter</div>
+                    <div class="emoji-picker">
+                        <label class="tool-label">🔍 Emoji Ara &amp; Seç</label>
+                        <input class="emoji-search" id="emoji-search" oninput="filterEmojis()"
+                            placeholder="Emoji ara (örn. kalp, yıldız, yüz...)" type="text" />
+                        <div class="emoji-categories" id="emoji-categories"></div>
+                        <div class="emoji-grid" id="emoji-grid"></div>
+                    </div>
+                    <label class="tool-label">Seçili Emojiler (kaldırmak için tıklayın)</label>
+                    <div class="selected-emojis" id="selected-emojis">
+                        <span style="color: var(--muted); font-size: 0.9rem;">Seçmek için yukarıdaki emojilere tıklayın</span>
+                    </div>
+                    <label class="tool-label">Emoji Yerleşimi</label>
+                    <div class="placement-options">
+                        <button class="placement-btn active" data-placement="surround" onclick="setPlacement(this)">🔄 Çevreleme</button>
+                        <button class="placement-btn" data-placement="start" onclick="setPlacement(this)">⬅️ Başlangıç</button>
+                        <button class="placement-btn" data-placement="end" onclick="setPlacement(this)">➡️ Bitiş</button>
+                        <button class="placement-btn" data-placement="scatter" onclick="setPlacement(this)">✨ Serpme</button>
+                        <button class="placement-btn" data-placement="between" onclick="setPlacement(this)">↔️ Between
+                            Kelimeler</button>
+                    </div>
+                </div>
+                <div class="tool-output-section">
+                    <div class="output-header">
+                        <span class="output-title">Oluşturulan Metin</span>
+                        <div class="output-actions">
+                            <button class="btn btn-sm btn-secondary" onclick="copyAll()">Tümünü Kopyala</button>
+                            <button class="btn btn-sm btn-secondary" onclick="clearAll()">Temizle</button>
+                        </div>
+                    </div>
+                    <div class="results-container" id="results-container">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">😊</div>
+                            <p>Süslenmiş metin oluşturmak için metni girin ve emojiyi seçin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/tr/">Ana Sayfa</a> &nbsp;/&nbsp; <a href="/tr/emoji-sembol-araclari/">Emoji ve Semboller</a> &nbsp;/&nbsp; <span>Emojili Metin Oluşturucu</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+<h1>Emojili Metin Oluşturucu</h1>
+<p><strong>Emojili metin oluşturucu</strong>, kelimelerinizi emojilerle süsler — etrafına, arasına ya da içine serpiştirerek — böylece sıradan bir cümle, biyografilerde, açıklamalarda ve sohbetlerde öne çıkan emojili bir metne dönüşür. Metninizi yazın, 725 emojilik aranabilir kütüphaneden en fazla 10 emoji seçin, beş yerleştirme stilinden birini tercih edin ve sonucu kopyalayın.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Öne çıkanlar</h3>
+<ul style="margin-bottom:0">
+<li>Bu araç, kendi kelimelerinizi emojilerle süsler — harfleri emojiye çevirmez.</li>
+<li>Beş yerleştirme stili: çevreleme, başa, sona, serpme ve kelime aralarına; her birinin birden fazla düzen çeşidi var.</li>
+<li>Seçici, 10 kategoride 725 emoji içerir ve anahtar kelimeyle arama yapar ("kalp" ya da "yıldız" yazmayı deneyin).</li>
+<li>Çıktı, sade Unicode emojili metindir; Instagram, TikTok, Discord ve WhatsApp'e uygulama gerektirmeden yapıştırılır.</li>
+<li>Emoji tasarımları iPhone, Android ve Windows'ta farklı görünür — karakterler aynıdır, çizimler farklı.</li>
+</ul>
+</div>
+
+<h2>Emojili metin oluşturucu nedir?</h2>
+<p><strong>Tanım:</strong> Emojili metin oluşturucu, kullanıcının verdiği metne emoji süslemeleri ekleyen ücretsiz bir çevrimiçi araçtır. Bir kelime ya da cümle yazarsınız, yerleşik seçiciden emojiler seçersiniz ve araç — ☀️ günaydın 🌸 gibi — kopyalayıp her yere yapıştırabileceğiniz süslü düzenler üretir.</p>
+<p>Bir emoji yazı tipi ya da harf değiştiren bir oyuncaktan farklı olarak bu araç metninizi okunur tutar. Kelimeler olduğu gibi kalır; emojiler onları çerçeveler. Bu; arama, ekran okuyucular ve hızlıca göz gezdiren herkes için önemlidir — karakterleri değiştiren "emoji harfler" eğlenceli görünür ama okunurluğu bozar; süslü metin ise hem stili hem anlamı korur.</p>
+
+<h2>Bu araç nasıl çalışır?</h2>
+<p>Her şey tarayıcınızda gerçekleşir. Emoji seçip metin yazdığınızda JavaScript, parçaları basit metin şablonlarıyla birleştirir — sunucu yok, hesap yok, yüklenen hiçbir şey yok. Çıktı standart Unicode olduğu için neredeyse her uygulamaya yapıştırılabilir.</p>
+<p>Emojilerin kendisi, Unicode Konsorsiyumu'nun yönettiği çeşitli Unicode bloklarından gelir: İfadeler (U+1F600–U+1F64F), Çeşitli Semboller (U+2600–U+26FF), Dingbatlar (U+2700–U+27BF), Ulaşım ve Harita Sembolleri ile Ek Semboller ve Piktogramlar. Bazı girdiler çok kod noktalı dizilerdir — örneğin ❤️, U+2764'ün ardından varyasyon seçici-16'dır; 👩‍❤️‍👨 ise üç emojiyi sıfır genişlikli birleştiricilerle (U+200D) birleştirir. Çizimi işletim sisteminiz yapar; bu yüzden aynı metin iPhone, Pixel ve Windows PC'de biraz farklı görünür.</p>
+
+<h2>Uygulamalı örnek</h2>
+<p>Girdi: <code>good morning</code>. Seçilen emojiler: ☀️ ve 🌸. Yerleştirme: <strong>Çevreleme</strong>. Araç dört çeşit üretir:</p>
+<ul>
+<li><strong>Çevreleme:</strong> ☀️🌸 good morning ☀️🌸</li>
+<li><strong>Bölünmüş çevreleme:</strong> ☀️ good morning 🌸</li>
+<li><strong>Sıkı çevreleme:</strong> ☀️🌸good morning☀️🌸</li>
+<li><strong>Aralıklı emojiler:</strong> ☀️ 🌸 good morning ☀️ 🌸</li>
+</ul>
+<p>Yerleştirmeyi aynı girdiyle <strong>Kelime Aralarına</strong> alırsanız <code>good ☀️ morning</code> elde edersiniz (dönüşümlü ve aralıklı çeşitleriyle birlikte). Her çeşidin kendi Kopyala düğmesi vardır; "Tümünü Kopyala" tüm düzenleri birden alır.</p>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+<li><strong>Metninizi yazın</strong> — giriş kutusunun altında anlık karakter sayacı bulunur.</li>
+<li><strong>Emoji seçicide arayın ya da göz atın</strong> — Gülümseyenler'den Semboller'e 10 kategori; arama alanına "ateş" gibi bir anahtar kelime yazabilirsiniz.</li>
+<li><strong>En fazla 10 emojiye tıklayın</strong>; seçili bir emojiye tıklamak seçimi kaldırır.</li>
+<li><strong>Yerleştirme stili seçin:</strong> Çevreleme, Başa, Sona, Serpme ya da Kelime Aralarına.</li>
+<li><strong>Kopyalayın</strong> ve beğendiğiniz düzeni biyografinize, açıklamanıza ya da mesajınıza yapıştırın.</li>
+</ol>
+
+<h2>Beş yerleştirme stili</h2>
+<table>
+<thead><tr><th>Stil</th><th>Ne yapar?</th><th>Ne için ideal?</th></tr></thead>
+<tbody>
+<tr><td>Çevreleme</td><td>Metnin iki yanına emoji koyar (4 aralık çeşidi)</td><td>Instagram biyografileri, görünen adlar</td></tr>
+<tr><td>Başa</td><td>Metnin başına emoji koyar</td><td>Madde listeleri, duyurular</td></tr>
+<tr><td>Sona</td><td>Metnin sonuna emoji koyar</td><td>Kapanışlar, açıklamalar</td></tr>
+<tr><td>Serpme</td><td>Her kelimenin ardına emoji dağıtır</td><td>Eğlenceli açıklamalar, parti davetleri</td></tr>
+<tr><td>Kelime Aralarına</td><td>Her kelimenin arasına emoji yerleştirir</td><td>Stilize alıntılar, estetik paylaşımlar</td></tr>
+</tbody>
+</table>
+
+<h2>Emojili metin nerelerde işe yarar?</h2>
+<p>Çıktı sade Unicode olduğu için metnin geçtiği her yerde çalışır. Yaygın kullanımları aşağıdaki tabloda bulabilirsiniz.</p>
+<table>
+<thead><tr><th>Platform</th><th>İyi kullanımlar</th><th>Not</th></tr></thead>
+<tbody>
+<tr><td>Instagram</td><td>Biyografi satırları, açıklamalar, yorumlar</td><td>Emojiler tam renkli görünür</td></tr>
+<tr><td>TikTok</td><td>Biyografi, video açıklamaları</td><td>Biyografileri kısa tutun — karakter sınırı uygulanır</td></tr>
+<tr><td>Discord</td><td>Mesajlar, sunucu açıklamaları</td><td>Görünen adlar emoji destekler; kullanıcı adları desteklemez</td></tr>
+<tr><td>WhatsApp</td><td>Durum, mesajlar</td><td>Telefonun kendi emoji setiyle görünür</td></tr>
+<tr><td>X (Twitter)</td><td>Görünen ad, biyografi, gönderiler</td><td>Her emoji karakter sınırına dahildir</td></tr>
+<tr><td>Oyunlar</td><td>Klan açıklamaları, Fortnite / Roblox biyografileri</td><td>Bazı oyunlar isimlerdeki emojileri siler — önce test edin</td></tr>
+</tbody>
+</table>
+
+<h2>Emojiler ve metin sembolleri</h2>
+<p>Bu araçla sembol oluşturucularımız arasındaki farkı bilmek işe yarar. Emojiler (😊, 🌸, 🔥), cihazınızın emoji yazı tipinin çizdiği renkli resimlerdir — aynı kod noktası Apple, Google ve Samsung cihazlarda farklı görünür. Metin sembolleri (♥, ★, ✧) ise her yerde birebir aynı görünen tek renkli Unicode karakterlerdir. Telefonlar arasında asla değişmeyen, her cihazda aynı duran bir süsleme istiyorsanız bunun yerine <a href="/tr/kalp-sembol-olusturucu/">kalp sembolü oluşturucuyu</a> ya da <a href="/tr/parilti-sembol-olusturucu/">parıltı sembolü oluşturucuyu</a> kullanın. Renkli, etkileyici bir süsleme istiyorsanız doğru yerdesiniz.</p>
+
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Görünüm cihaza göre değişir.</strong> Yeni emojiler (Unicode 15+), güncel emoji yazı tipi olmayan eski telefonlarda kutu (□, "tofu") olarak görünebilir.</li>
+<li><strong>Karakter sınırları emojileri de sayar.</strong> Çoğu emoji iki UTF-16 kod birimi kaplar; ZWJ dizileri birkaç karakter sayılır — "kısa" görünen süslü bir biyografi platformun sınırını aşabilir.</li>
+<li><strong>Ekran okuyucular emojileri sesli okur.</strong> Art arda on emoji, on ayrı isim demektir ("güneş", "kiraz çiçeği"...); bu, görme engelli kullanıcılar için yorucudur. Herkese açık paylaşımlarda ölçülü kullanın.</li>
+<li><strong>Arama motorları resim değil kod noktası görür.</strong> Sayfa başlıklarında ya da işletme adlarında aşırı emoji süslemesi, tarayıcılara spam gibi görünebilir.</li>
+<li><strong>Süsleme başına en fazla 10 emoji.</strong> Seçici, çıktıyı okunur tutmak için seçimi onla sınırlar.</li>
+</ul>
+
+<h2>Emojili Metin Oluşturucu ve alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne üretir?</th><th>Ne zaman kullanmalı?</th></tr></thead>
+<tbody>
+<tr><td><strong>Emojili Metin Oluşturucu</strong> (bu sayfa)</td><td>Kelimeleriniz emojilerle süslenmiş</td><td>Biyografi ve açıklamalar için stilize cümleler istiyorsanız</td></tr>
+<tr><td><a href="/tr/emoji-birlestirici/">Emoji birleştirici</a></td><td>Yalnızca emoji dizileri ve karışımlar</td><td>Metinsiz, saf bir emoji dizisi istiyorsanız, örn. 🎂🎉🥳</td></tr>
+<tr><td><a href="/tr/emojili-aciklama-olusturucu/">Emojili açıklama oluşturucu</a></td><td>Emojili, hazır açıklamalar</td><td>Süslemeden çok açıklama fikrine ihtiyacınız varsa</td></tr>
+<tr><td><a href="/tr/kalp-sembol-olusturucu/">Kalp sembolü oluşturucu</a></td><td>Tek renk ♥ ♡ süslemeler</td><td>Her cihazda aynı görünen semboller istiyorsanız</td></tr>
+</tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Metne emoji nasıl eklenir?</h3><div class="faq-answer"><p>Metninizi giriş kutusuna yazın, seçiciden en fazla 10 emojiye tıklayın (ya da anahtar kelimeyle arayın), Çevreleme ya da Serpme gibi bir yerleştirme stili seçin ve sonucu kopyalayın. Süslü metin, metin kabul eden her uygulamaya yapıştırılır.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Emojili metin oluşturucu ücretsiz mi?</h3><div class="faq-answer"><p>Evet. Hesap yok, filigran yok, kullanım sınırı yok — tamamen ücretsiz. Tüm işlemler tarayıcınızda yapılır; metniniz asla yüklenmez ya da saklanmaz.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Süslü metin Instagram ve TikTok'ta çalışır mı?</h3><div class="faq-answer"><p>Evet. Çıktı standart Unicode metindir; Instagram, TikTok, Discord, WhatsApp ve X bunu doğal olarak gösterir. Araçtan kopyalayıp uygulamanın metin alanına yapıştırmanız yeterli.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Bazı emojiler neden boş kutu olarak görünüyor?</h3><div class="faq-answer"><p>Kutular (□), cihazın yazı tipinde o emojinin olmadığı anlamına gelir — genellikle işletim sistemi, emojinin Unicode sürümünden daha eskidir. İşletim sistemini güncellemek ya da daha eski, yaygın desteklenen bir emoji seçmek sorunu çözer.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Emojiler resim mi metin mi?</h3><div class="faq-answer"><p>Metindir: cihazınızın emoji yazı tipinin resim olarak çizdiği Unicode kod noktaları. Bu yüzden diğer karakterler gibi kopyalanıp yapıştırılıp aranabilirler; çizimleri Apple, Google ve Samsung cihazlarda farklıdır.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Bununla emoji birleştirici arasındaki fark nedir?</h3><div class="faq-answer"><p>Emojili metin oluşturucu, kelimelerinizi emojilerle süsler (metin + emoji). <a href="/tr/emoji-birlestirici/">Emoji birleştirici</a> ise metinsiz, yalnızca emoji dizileri kurar — 🎂🎉🥳 gibi — ve rastgele karışım üretici içerir.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Emojiler karakter sınırına dahil mi?</h3><div class="faq-answer"><p>Evet. Çoğu platform her emojiyi bir ya da daha fazla karakter sayar — birçoğu iki UTF-16 kod birimi kaplar; çok kişili ya da bayraklı diziler birkaç karakter sayılır. Sınırı dar biyografiler yazarken araçtaki anlık karakter sayacını takip edin.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Süslü metni kullanıcı adımda kullanabilir miyim?</h3><div class="faq-answer"><p>Genellikle yalnızca görünen adlarda. Çoğu platform gerçek kullanıcı adı / takma adı sade ASCII harf, rakam ve alt çizgiyle sınırlar; ancak Instagram, TikTok, X ve Discord'da görünen adlar emoji kabul eder.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Bir seferde kaç emoji ekleyebilirim?</h3><div class="faq-answer"><p>Süsleme başına en fazla 10 emoji seçebilirsiniz. Seçicinin kendisi 10 kategoride 725 emoji barındırır — Gülümseyenler, Aşk, Yıldızlar, Doğa, Hayvanlar, Yiyecek, Aktiviteler, Seyahat, Nesneler ve Semboller — ve anahtar kelimeyle arama yapar.</p></div></div>
+</div>
+
+<h2>İlgili araçlar</h2>
+<ul>
+<li><a href="/tr/emoji-birlestirici/">Emoji Birleştirici</a> — saf emoji karışımları ve rastgele emoji kombinasyonları oluşturun</li>
+<li><a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a> — (◕‿◕) gibi sevimli Japon metin yüzleri</li>
+<li><a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolü Oluşturucu</a> — her yerde aynı görünen ♥ ♡ ❤ süslemeler</li>
+<li><a href="/tr/emoji-sembol-araclari/">Tüm Emoji ve Sembol Araçları</a> — koleksiyonun tamamına göz atın</li>
+</ul>
+</div>
+
+</section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+
+    </main>
+    <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>😊 Emoji Araçları</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link active" href="../emojili-metin-olusturucu/">😊 Emojili Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../emoji-birlestirici/">🎨 Emoji Birleştirici</a>
+                <a class="sidebar-link" href="../emoji-birlestirici/">🎨 Emoji Birleştirici</a>
+                <a class="sidebar-link" href="../kaomoji-olusturucu/">(◕‿◕) Kaomoji Oluşturucu</a>
+                <a class="sidebar-link" href="../ifade-olusturucu/">:) İfade Oluşturucu</a>
+                <a class="sidebar-link" href="../kalp-sembol-olusturucu/">♥ Kalp Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../parilti-sembol-olusturucu/">✨ Parıltı Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../ok-sembol-olusturucu/">→ Ok Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">『』 Estetik Çerçeve Oluşturucu</a>
+                <a class="sidebar-link" href="../sembol-kutuphanesi/">☆ Sembol Kütüphanesi</a>
+                <a class="sidebar-link" href="../ayirici-cizgi-olusturucu/">═ Ayırıcı Çizgi Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+        const emojiData = {
+            'Smileys': ['😀', '😃', '😄', '😁', '😅', '😂', '🤣', '😊', '😇', '🙂', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😜', '🤪', '😝', '🤑', '🤗', '🤭', '🤫', '🤔', '🤐', '🤨', '😐', '😑', '😶', '😏', '😒', '🙄', '😬', '😮‍💨', '🤥', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😵', '🤯', '🤠', '🥳', '🥸', '😎', '🤓', '🧐'],
+            'Love': ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔', '❣️', '💕', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥️', '😍', '🥰', '😘', '💋', '💑', '💏', '👩‍❤️‍👨', '👨‍❤️‍👨', '👩‍❤️‍👩', '🌹', '💐', '🎀'],
+            'Stars': ['⭐', '🌟', '✨', '💫', '🌠', '⚡', '🔆', '🔅', '💥', '🎇', '🎆', '🌃', '🏆', '🥇', '🎖️', '🏅', '✴️', '✳️', '❇️', '🌈'],
+            'Nature': ['🌸', '🌺', '🌻', '🌼', '🌷', '🌹', '🥀', '💐', '🌲', '🌳', '🌴', '🌵', '🌾', '🌿', '☘️', '🍀', '🍁', '🍂', '🍃', '🪴', '🌱', '🌈', '☀️', '🌤️', '⛅', '🌥️', '☁️', '🌦️', '🌧️', '🌩️', '🌨️', '❄️', '☃️', '⛄', '🌊', '💧', '💦', '🌙', '🌛', '🌜', '🌝', '🌞'],
+            'Animals': ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵', '🐔', '🐧', '🐦', '🐤', '🦄', '🐝', '🦋', '🐌', '🐞', '🐜', '🦂', '🐢', '🐍', '🦎', '🐙', '🦑', '🦐', '🦀', '🐡', '🐠', '🐟', '🐬', '🐳', '🐋', '🦈'],
+            'Food': ['🍎', '🍐', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🫐', '🍈', '🍒', '🍑', '🥭', '🍍', '🥥', '🥝', '🍅', '🍆', '🥑', '🥦', '🥬', '🥒', '🌶️', '🫑', '🌽', '🥕', '🧄', '🧅', '🥔', '🍠', '🥐', '🥯', '🍞', '🥖', '🥨', '🧀', '🥚', '🍳', '🧈', '🥞', '🧇', '🥓', '🥩', '🍗', '🍖', '🦴', '🌭', '🍔', '🍟', '🍕', '🫓', '🥪', '🥙', '🧆', '🌮', '🌯', '🫔', '🥗', '🥘', '🫕', '🍝', '🍜', '🍲', '🍛', '🍣', '🍱', '🥟', '🦪', '🍤', '🍙', '🍚', '🍘', '🍥', '🥠', '🥮', '🍢', '🍡', '🍧', '🍨', '🍦', '🥧', '🧁', '🍰', '🎂', '🍮', '🍭', '🍬', '🍫', '🍿', '🍩', '🍪', '🌰', '🥜', '🍯', '🥛', '🍼', '☕', '🫖', '🍵', '🧃', '🥤', '🧋', '🍶', '🍺', '🍻', '🥂', '🍷', '🥃', '🍸', '🍹', '🧉', '🍾'],
+            'Activities': ['⚽', '🏀', '🏈', '⚾', '🥎', '🎾', '🏐', '🏉', '🥏', '🎱', '🪀', '🏓', '🏸', '🏒', '🏑', '🥍', '🏏', '🪃', '🥅', '⛳', '🪁', '🏹', '🎣', '🤿', '🥊', '🥋', '🎽', '🛹', '🛼', '🛷', '⛸️', '🥌', '🎿', '⛷️', '🏂', '🪂', '🏋️', '🤼', '🤸', '⛹️', '🤺', '🤾', '🏌️', '🏇', '⛑️', '🧘', '🏄', '🏊', '🤽', '🚣', '🧗', '🚵', '🚴', '🎪', '🎭', '🎨', '🎬', '🎤', '🎧', '🎼', '🎹', '🥁', '🪘', '🎷', '🎺', '🪗', '🎸', '🪕', '🎻', '🎲', '♟️', '🎯', '🎳', '🎮', '🎰', '🧩'],
+            'Travel': ['🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚐', '🛻', '🚚', '🚛', '🚜', '🛵', '🏍️', '🚲', '🛴', '✈️', '🚀', '🛸', '🚁', '⛵', '🚤', '🛥️', '🛳️', '⛴️', '🚢', '🗼', '🗽', '🗿', '🏰', '🏯', '🏟️', '🎡', '🎢', '🎠', '⛲', '⛱️', '🏖️', '🏝️', '🏜️', '🌋', '⛰️', '🏔️', '🗻', '🏕️', '🛖', '🏠', '🏡', '🏢', '🏣', '🏤', '🏥', '🏦', '🏨', '🏩', '🏪', '🏫', '🏬', '🏭', '🏗️', '🧱', '🪨', '🪵', '🛤️', '🛣️'],
+            'Objects': ['⌚', '📱', '💻', '⌨️', '🖥️', '🖨️', '🖱️', '🖲️', '💽', '💾', '💿', '📀', '📼', '📷', '📸', '📹', '🎥', '📽️', '🎞️', '📞', '☎️', '📟', '📠', '📺', '📻', '🎙️', '🎚️', '🎛️', '🧭', '⏱️', '⏲️', '⏰', '🕰️', '⌛', '⏳', '📡', '🔋', '🔌', '💡', '🔦', '🕯️', '🪔', '🧯', '🛢️', '💸', '💵', '💴', '💶', '💷', '🪙', '💰', '💳', '💎', '⚖️', '🪜', '🧰', '🪛', '🔧', '🔨', '⚒️', '🛠️', '⛏️', '🪚', '🔩', '⚙️', '🪤', '🧱', '⛓️', '🧲', '🔫', '💣', '🧨', '🪓', '🔪', '🗡️', '⚔️', '🛡️', '🚬', '⚰️', '🪦', '⚱️', '🏺', '🔮', '📿', '🧿', '💈', '⚗️', '🔭', '🔬', '🕳️', '🩹', '🩺', '💊', '💉', '🩸', '🧬', '🦠', '🧫', '🧪', '🌡️', '🧹', '🪠', '🧺', '🧻', '🚽', '🚰', '🚿', '🛁', '🛀', '🧼', '🪥', '🪒', '🧽', '🪣', '🧴', '🛎️', '🔑', '🗝️', '🚪', '🪑', '🛋️', '🛏️', '🛌', '🧸', '🪆', '🖼️', '🪞', '🪟', '🛍️', '🛒', '🎁', '🎈', '🎏', '🎀', '🪄', '🪅', '🎊', '🎉', '🎎', '🏮', '🎐', '🧧', '✉️', '📩', '📨', '📧', '💌', '📥', '📤', '📦', '🏷️', '🪧', '📪', '📫', '📬', '📭', '📮', '📯', '📜', '📃', '📄', '📑', '🧾', '📊', '📈', '📉', '🗒️', '🗓️', '📆', '📅', '🗑️', '📇', '🗃️', '🗳️', '🗄️', '📋', '📁', '📂', '🗂️', '🗞️', '📰', '📓', '📔', '📒', '📕', '📗', '📘', '📙', '📚', '📖', '🔖', '🧷', '🔗', '📎', '🖇️', '📐', '📏', '🧮', '📌', '📍', '✂️', '🖊️', '🖋️', '✒️', '🖌️', '🖍️', '📝', '✏️', '🔍', '🔎', '🔏', '🔐', '🔒', '🔓'],
+            'Symbols': ['💯', '🔥', '✅', '❌', '❓', '❗', '‼️', '⁉️', '💢', '💬', '👁️‍🗨️', '🗨️', '🗯️', '💭', '💤', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛', '🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '🟤', '⚫', '⚪', '🟥', '🟧', '🟨', '🟩', '🟦', '🟪', '🟫', '⬛', '⬜', '◼️', '◻️', '◾', '◽', '▪️', '▫️', '🔶', '🔷', '🔸', '🔹', '🔺', '🔻', '💠', '🔘', '🔳', '🔲']
+        };
+
+        let selectedEmojis = [];
+        let currentPlacement = 'surround';
+        let currentCategory = 'Smileys';
+
+        function init() {
+            renderCategories();
+            renderEmojis(currentCategory);
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('emoji-categories');
+            container.innerHTML = Object.keys(emojiData).map(cat =>
+                `<button class="emoji-category-btn ${cat === currentCategory ? 'active' : ''}" onclick="selectCategory('${cat}')">${cat}</button>`
+            ).join('');
+        }
+
+        function selectCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.emoji-category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === category);
+            });
+            document.getElementById('emoji-search').value = '';
+            renderEmojis(category);
+        }
+
+        function renderEmojis(category) {
+            const emojis = emojiData[category] || [];
+            const container = document.getElementById('emoji-grid');
+            container.innerHTML = emojis.map(emoji =>
+                `<div class="emoji-item" onclick="addEmoji('${emoji}')">${emoji}</div>`
+            ).join('');
+        }
+
+        function filterEmojis() {
+            const query = document.getElementById('emoji-search').value.toLowerCase();
+            const container = document.getElementById('emoji-grid');
+
+            if (!query) {
+                renderEmojis(currentCategory);
+                return;
+            }
+
+            const allEmojis = Object.values(emojiData).flat();
+            const emojiNames = {
+                '❤️': 'heart love red', '💙': 'heart blue', '💚': 'heart green', '💛': 'heart yellow', '💜': 'heart purple',
+                '⭐': 'star', '🌟': 'star glowing', '✨': 'sparkles stars', '💫': 'dizzy star',
+                '😀': 'smile happy grin', '😂': 'laugh crying joy', '😍': 'love eyes heart',
+                '🔥': 'fire hot flame', '💯': 'hundred perfect', '✅': 'check done',
+                '🎉': 'party celebration', '🎊': 'confetti party', '🌈': 'rainbow',
+                '🌸': 'flower cherry blossom pink', '🌹': 'rose flower red', '🌻': 'sunflower',
+                '☀️': 'sun sunny', '🌙': 'moon night', '⚡': 'lightning bolt thunder',
+                '💕': 'hearts two love', '💖': 'heart sparkle', '💗': 'heart growing',
+                '🦋': 'butterfly', '🌊': 'wave water ocean', '🍀': 'clover lucky four leaf'
+            };
+
+            const filtered = allEmojis.filter(emoji => {
+                const name = emojiNames[emoji] || '';
+                return name.includes(query) || emoji.includes(query);
+            });
+
+            container.innerHTML = filtered.length > 0
+                ? filtered.map(emoji => `<div class="emoji-item" onclick="addEmoji('${emoji}')">${emoji}</div>`).join('')
+                : '<div style="padding: 1rem; color: var(--muted); text-align: center;">No emojis found</div>';
+        }
+
+        function addEmoji(emoji) {
+            if (selectedEmojis.length < 10) {
+                selectedEmojis.push(emoji);
+                updateSelectedEmojis();
+                generateText();
+            }
+        }
+
+        function removeEmoji(index) {
+            selectedEmojis.splice(index, 1);
+            updateSelectedEmojis();
+            generateText();
+        }
+
+        function updateSelectedEmojis() {
+            const container = document.getElementById('selected-emojis');
+            if (selectedEmojis.length === 0) {
+                container.innerHTML = '<span style="color: var(--muted); font-size: 0.9rem;">Seçmek için yukarıdaki emojilere tıklayın</span>';
+            } else {
+                container.innerHTML = selectedEmojis.map((emoji, i) =>
+                    `<span class="selected-emoji" onclick="removeEmoji(${i})">${emoji}</span>`
+                ).join('');
+            }
+        }
+
+        function setPlacement(btn) {
+            document.querySelectorAll('.placement-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentPlacement = btn.dataset.placement;
+            generateText();
+        }
+
+        function generateText() {
+            const text = document.getElementById('text-input').value.trim();
+            const charCount = document.getElementById('text-input').value.length;
+            document.getElementById('char-count').textContent = `${charCount} karakter`;
+
+            if (!text || selectedEmojis.length === 0) {
+                document.getElementById('results-container').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">😊</div>
+                        <p>${!text ? 'Enter some text above' : 'Select some emojis to decorate your text'}</p>
+                    </div>`;
+                return;
+            }
+
+            const emojis = selectedEmojis.join('');
+            const emojiStart = selectedEmojis.slice(0, Math.ceil(selectedEmojis.length / 2)).join('');
+            const emojiEnd = selectedEmojis.slice(Math.ceil(selectedEmojis.length / 2)).join('');
+
+            let results = [];
+
+            switch (currentPlacement) {
+                case 'surround':
+                    results = [
+                        { name: 'Surrounding', text: `${emojis} ${text} ${emojis}` },
+                        { name: 'Split Surround', text: `${emojiStart} ${text} ${emojiEnd}` },
+                        { name: 'Tight Surround', text: `${emojis}${text}${emojis}` },
+                        { name: 'Spaced Emojiler', text: `${selectedEmojis.join(' ')} ${text} ${selectedEmojis.join(' ')}` }
+                    ];
+                    break;
+                case 'start':
+                    results = [
+                        { name: 'Emojiler at Start', text: `${emojis} ${text}` },
+                        { name: 'Spaced Start', text: `${selectedEmojis.join(' ')} ${text}` },
+                        { name: 'Tight Start', text: `${emojis}${text}` }
+                    ];
+                    break;
+                case 'end':
+                    results = [
+                        { name: 'Emojiler at End', text: `${text} ${emojis}` },
+                        { name: 'Spaced End', text: `${text} ${selectedEmojis.join(' ')}` },
+                        { name: 'Tight End', text: `${text}${emojis}` }
+                    ];
+                    break;
+                case 'scatter':
+                    const words = text.split(' ');
+                    const scattered = words.map((word, i) => {
+                        const emoji = selectedEmojis[i % selectedEmojis.length];
+                        return i === words.length - 1 ? word : `${word} ${emoji}`;
+                    }).join(' ');
+                    results = [
+                        { name: 'Scattered', text: scattered },
+                        { name: 'Every Word', text: words.map((w, i) => `${selectedEmojis[i % selectedEmojis.length]} ${w}`).join(' ') },
+                        { name: 'Random Mix', text: `${emojiStart} ${text.split(' ').join(` ${selectedEmojis[0]} `)} ${emojiEnd}` }
+                    ];
+                    break;
+                case 'between':
+                    const emoji = selectedEmojis[0] || '';
+                    results = [
+                        { name: 'Between Kelimeler', text: text.split(' ').join(` ${emoji} `) },
+                        { name: 'Alternating', text: text.split(' ').map((w, i) => `${w} ${selectedEmojis[i % selectedEmojis.length]}`).join(' ').trim() },
+                        { name: 'Spaced', text: text.split(' ').join(` ${emojis} `) }
+                    ];
+                    break;
+            }
+
+            document.getElementById('results-container').innerHTML = results.map(r => `
+                <div class="result-item">
+                    <div class="result-content">
+                        <span class="result-name">${r.name}</span>
+                        <div class="result-text">${escapeHtml(r.text)}</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this, \`${r.text.replace(/`/g, '\\`')}\`)">📋 Kopyala</button>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function copyText(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Kopyalandı!';
+                setTimeout(() => btn.textContent = '📋 Kopyala', 2000);
+            });
+        }
+
+        function copyAll() {
+            const results = document.querySelectorAll('.result-text');
+            if (results.length === 0) return;
+            const allText = Array.from(results).map(r => r.textContent).join('\n');
+            navigator.clipboard.writeText(allText).then(() => alert('Tümü kopyalandı!'));
+        }
+
+        function clearAll() {
+            document.getElementById('text-input').value = '';
+            selectedEmojis = [];
+            updateSelectedEmojis();
+            generateText();
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
