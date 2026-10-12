@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Ferramentas de Texto Online Grátis</title>
+  <meta name="description" content="Use as ferramentas de texto online grátis: contador de palavras, limpador de texto, conversores de caixa alta e baixa e mais. Tudo no navegador, sem cadastro.">
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/ferramentas-de-texto/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ferramentas de Texto Online Grátis">
+  <meta property="og:description" content="Use as ferramentas de texto online grátis: contador de palavras, limpador de texto, conversores de caixa alta e baixa e mais. Tudo no navegador, sem cadastro.">
+  <meta property="og:url" content="https://fontgenerators.online/pt/ferramentas-de-texto/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ferramentas de Texto Online Grátis">
+  <meta name="twitter:description" content="Use as ferramentas de texto online grátis: contador de palavras, limpador de texto, conversores de caixa alta e baixa e mais. Tudo no navegador, sem cadastro.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/text-utility-tools/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/text-utility-tools/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/herramientas-de-texto/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/ferramentas-de-texto/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/metin-araclari/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/text-utility-tools/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/herramientas-de-texto/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/ferramentas-de-texto/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/metin-araclari/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/text-utility-tools/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/herramientas-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/ferramentas-de-texto/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/metin-araclari/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/text-utility-tools/", "es": "/es/herramientas-de-texto/", "pt": "/pt/ferramentas-de-texto/", "tr": "/tr/metin-araclari/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main>
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="/pt/">Início</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Ferramentas de Texto</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/text-utility-tools/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="/es/herramientas-de-texto/" class="lang-link" title="Español">🇪🇸 ES</a>
+        <a href="/pt/ferramentas-de-texto/" class="lang-link active" title="Português">🇵🇹 PT</a>
+        <a href="/tr/metin-araclari/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="pillar-hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <div class="container">
+        <h1>Ferramentas de Texto</h1>
+        <p>Ferramentas poderosas de formatação, limpeza e conversão de texto para escritores, desenvolvedores e criadores de conteúdo.
+        </p>
+      </div>
+    </section>
+    <section class="pillar-tools">
+      <div class="container">
+        <h2 class="section-title">Contagem e Análise</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/pt/contador-de-palavras/">
+            <div class="tool-icon">📊</div>
+            <h3>Contador de Palavras</h3>
+            <p>Conte palavras, caracteres, frases e tempo de leitura</p>
+          </a>
+          <a class="tool-card" href="/pt/contador-de-caracteres/">
+            <div class="tool-icon">🔢</div>
+            <h3>Contador de Caracteres</h3>
+            <p>Análise detalhada de caracteres com contagem de densidade</p>
+          </a>
+        </div>
+        <h2 class="section-title">Limpeza de Texto</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/pt/limpador-de-texto/">
+            <div class="tool-icon">🧹</div>
+            <h3>Limpador de Texto</h3>
+            <p>Remova espaços extras, quebras de linha e caracteres indesejados</p>
+          </a>
+          <a class="tool-card" href="/pt/remover-linhas-duplicadas/">
+            <div class="tool-icon">📋</div>
+            <h3>Removedor de Linhas Duplicadas</h3>
+            <p>Encontre e remova linhas duplicadas do texto</p>
+          </a>
+          <a class="tool-card" href="/pt/corretor-de-quebras-de-linha/">
+            <div class="tool-icon">↵</div>
+            <h3>Corretor de Quebras de Linha</h3>
+            <p>Corrija linhas quebradas e formatação de parágrafos</p>
+          </a>
+        </div>
+        <h2 class="section-title">Expansão e Encurtamento</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/pt/expansor-de-frases/">
+            <div class="tool-icon">📝</div>
+            <h3>Expansor de Frases</h3>
+            <p>Expanda frases curtas em textos mais longos e detalhados</p>
+          </a>
+          <a class="tool-card" href="/pt/encurtador-de-paragrafos/">
+            <div class="tool-icon">✂️</div>
+            <h3>Encurtador de Parágrafos</h3>
+            <p>Condense parágrafos longos em versões mais curtas</p>
+          </a>
+        </div>
+        <h2 class="section-title">Conversores de Caixa</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/pt/conversor-para-titulo/">
+            <div class="tool-icon">🔠</div>
+            <h3>Conversor para Title Case</h3>
+            <p>Converta textos para capitalização correta de títulos</p>
+          </a>
+          <a class="tool-card" href="/pt/conversor-para-minusculas/">
+            <div class="tool-icon">🔡</div>
+            <h3>Conversor para Minúsculas</h3>
+            <p>Converta todo o texto para letras minúsculas</p>
+          </a>
+          <a class="tool-card" href="/pt/conversor-para-maiusculas/">
+            <div class="tool-icon">🔤</div>
+            <h3>Conversor para Maiúsculas</h3>
+            <p>Converta todo o texto para LETRAS MAIÚSCULAS</p>
+          </a>
+          <a class="tool-card" href="/pt/conversor-camelcase/">
+            <div class="tool-icon">🐪</div>
+            <h3>Conversor CamelCase</h3>
+            <p>Converta para camelCase, PascalCase, snake_case</p>
+          </a>
+        </div>
+        <h2 class="section-title">Transformações de Texto</h2>
+        <div class="tools-grid">
+          <a class="tool-card" href="/pt/gerador-de-texto-invertido/">
+            <div class="tool-icon">🔄</div>
+            <h3>Gerador de Texto Invertido</h3>
+            <p>Inverta textos, palavras ou vire de ponta-cabeça</p>
+          </a>
+          <a class="tool-card" href="/pt/gerador-de-texto-espelhado/">
+            <div class="tool-icon">🪞</div>
+            <h3>Gerador de Texto Espelhado</h3>
+            <p>Crie efeitos de texto espelhado e invertido</p>
+          </a>
+          <a class="tool-card" href="/pt/gerador-de-texto-zalgo/">
+            <div class="tool-icon">👻</div>
+            <h3>Gerador de Texto Zalgo</h3>
+            <p>Crie efeitos de texto glitch assustadores</p>
+          </a>
+          <a class="tool-card" href="/pt/gerador-de-texto-spoiler/">
+            <div class="tool-icon">🙈</div>
+            <h3>Gerador de Texto Spoiler</h3>
+            <p>Crie spoilers ocultos para Discord e Reddit</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+<section class="seo-content-section">
+      <div class="container">
+        <p class="byline">Por FontGenerators Editorial Team &middot; Última atualização: 12 de outubro de 2026</p>
+
+        <h2>O Que São Ferramentas de Texto?</h2>
+        <p>Ferramentas de texto são os cavalos de força deste site: contadores, limpadores, conversores de caixa e transformadores de texto para a escrita e edição do dia a dia. Sem estilo, sem decoração &mdash; só operações práticas como contar palavras, tirar formatação bagunçada, converter caixa, remover linhas duplicadas e consertar parágrafos quebrados. Estudantes, redatores, desenvolvedores e social medias usam diariamente.</p>
+        <p>Como tudo aqui, elas rodam inteiramente no seu navegador. Cole seu texto, receba o resultado na hora, e nada é enviado nem armazenado &mdash; o que também as torna seguras para rascunhos que você prefere não mandar para um servidor.</p>
+
+        <p><em>[IMAGEM: Ilustração estilo mesa de escritor mostrando ícones de contagem de palavras, conversão de caixa e limpeza de texto — alt sugerido: "Ferramentas de texto: contador de palavras, conversor de caixa e limpador de texto"]</em></p>
+
+        <h2>Quem Usa Estas Ferramentas</h2>
+        <ul>
+          <li><strong>Estudantes</strong> conferem contagens de palavras de redações, consertam citações coladas com quebras quebradas e convertem títulos para title case.</li>
+          <li><strong>Redatores e revisores</strong> limpam manuscritos, eliminam duplicatas de listas e apertam parágrafos até o tamanho.</li>
+          <li><strong>Desenvolvedores</strong> convertem nomes de variáveis entre camelCase, PascalCase, snake_case e kebab-case.</li>
+          <li><strong>Tratadores de dados</strong> removem linhas duplicadas de listas exportadas e normalizam texto copiado bagunçado.</li>
+        </ul>
+
+        <h2>As 15 Ferramentas de Texto</h2>
+        <ul>
+          <li><a href="/pt/contador-de-palavras/">Contador de palavras</a> &mdash; conta palavras, caracteres, frases e parágrafos, com tempo de leitura estimado.</li>
+          <li><a href="/pt/contador-de-caracteres/">Contador de caracteres</a> &mdash; análise detalhada de caracteres com contagem de densidade.</li>
+          <li><a href="/pt/limpador-de-texto/">Limpador de texto</a> &mdash; tira espaços extras, quebras soltas e caracteres indesejados de texto copiado.</li>
+          <li><a href="/pt/remover-linhas-duplicadas/">Removedor de linhas duplicadas</a> &mdash; encontra e apaga linhas repetidas, deixando uma lista única limpa.</li>
+          <li><a href="/pt/corretor-de-quebras-de-linha/">Corretor de quebras de linha</a> &mdash; repara linhas quebradas e formatação de parágrafos.</li>
+          <li><a href="/pt/expansor-de-frases/">Expansor de frases</a> &mdash; desenvolve frases curtas em frases mais longas e detalhadas.</li>
+          <li><a href="/pt/encurtador-de-paragrafos/">Encurtador de parágrafos</a> &mdash; condensa parágrafos longos em versões mais enxutas sem perder a ideia.</li>
+          <li><a href="/pt/conversor-para-titulo/">Conversor para title case</a> &mdash; converte texto para capitalização correta de títulos e manchetes.</li>
+          <li><a href="/pt/conversor-para-minusculas/">Conversor para minúsculas</a> &mdash; converte texto TODO EM CAPS ou misto para minúsculas limpas.</li>
+          <li><a href="/pt/conversor-para-maiusculas/">Conversor para maiúsculas</a> &mdash; converte texto para MAIÚSCULAS para títulos, rótulos e ênfase.</li>
+          <li><a href="/pt/conversor-camelcase/">Conversor CamelCase</a> &mdash; converte entre camelCase, PascalCase, snake_case e kebab-case para código e identificadores.</li>
+          <li><a href="/pt/gerador-de-texto-invertido/">Gerador de texto invertido</a> &mdash; inverte texto caractere por caractere ou palavra por palavra, incluindo viradas de ponta-cabeça.</li>
+          <li><a href="/pt/gerador-de-texto-espelhado/">Gerador de texto espelhado</a> &mdash; cria efeitos de texto espelhado e virado para posts divertidos.</li>
+          <li><a href="/pt/gerador-de-texto-zalgo/">Gerador de texto zalgo</a> &mdash; texto glitch assustador feito empilhando marcas diacríticas combinantes nas suas letras.</li>
+          <li><a href="/pt/gerador-de-texto-spoiler/">Gerador de texto spoiler</a> &mdash; formata texto spoiler oculto para Discord e Reddit, para os leitores escolherem quando revelar.</li>
+        </ul>
+
+        <h2>Guia 1: Atingindo a Contagem de Palavras</h2>
+        <p>Trabalhando numa redação de 500 palavras ou num descritivo de produto de 150? Cole seu rascunho no <a href="/pt/contador-de-palavras/">contador de palavras</a> para ver palavras, caracteres e tempo de leitura. Passou do limite: passe os trechos longos pelo <a href="/pt/encurtador-de-paragrafos/">encurtador de parágrafos</a>. Faltou: desenvolva as frases magras com o <a href="/pt/expansor-de-frases/">expansor de frases</a>. Itere até a contagem cair onde precisa.</p>
+
+        <h2>Guia 2: Limpando Texto Copiado Bagunçado</h2>
+        <p>Texto copiado de PDFs e sites chega com espaços duplos, quebras soltas e caracteres fantasma. Passe primeiro pelo <a href="/pt/limpador-de-texto/">limpador de texto</a> para normalizar os espaços, depois pelo <a href="/pt/corretor-de-quebras-de-linha/">corretor de quebras de linha</a> para reconstruir parágrafos de verdade. Se colou uma lista com repetições &mdash; comum em dados exportados &mdash; finalize com o <a href="/pt/remover-linhas-duplicadas/">removedor de linhas duplicadas</a>. Três passos, um documento limpo.</p>
+
+        <h2>Guia 3: Conversão de Caixa para Código e Conteúdo</h2>
+        <p>O <a href="/pt/conversor-camelcase/">conversor CamelCase</a> troca identificadores entre camelCase, PascalCase, snake_case e kebab-case para JavaScript, Python, CSS e URLs. Para prosa, o <a href="/pt/conversor-para-titulo/">conversor para title case</a> arruma manchetes, e os conversores para <a href="/pt/conversor-para-minusculas/">minúsculas</a> e <a href="/pt/conversor-para-maiusculas/">maiúsculas</a> normalizam texto em um clique.</p>
+
+        <h2>Como a Contagem de Palavras Funciona</h2>
+        <p>O contador de palavras divide seu texto nas fronteiras de espaços e pontuação &mdash; o mesmo método da maioria dos editores &mdash; então a contagem bate com Google Docs e Word na maioria dos casos. O tempo de leitura pressupõe cerca de 200&ndash;250 palavras por minuto.</p>
+
+        <p><em>[IMAGEM: Maquete estilo captura do contador de palavras mostrando palavras, caracteres e tempo de leitura — alt sugerido: "Ferramenta contador de palavras mostrando contagem de palavras, caracteres e tempo de leitura"]</em></p>
+
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como conto palavras do meu texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cole seu texto no contador de palavras. Ele informa na hora palavras, caracteres (com e sem espaços), frases, parágrafos e tempo estimado de leitura. Não há limite de palavras, e seu texto nunca sai do seu navegador.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como removo linhas duplicadas de uma lista?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cole a lista na ferramenta de remover linhas duplicadas. Ela percorre cada linha, mantém a primeira ocorrência de cada linha única e apaga as repetições &mdash; deixando uma lista limpa sem duplicatas para copiar de volta.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como corrijo quebras de linha quebradas de texto copiado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">PDFs e páginas da web costumam colar com quebra de linha após cada linha visual. O corretor de quebras de linha junta esses fragmentos de volta em parágrafos de verdade, e o limpador de texto remove os espaços duplos e caracteres soltos restantes na mesma passada.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">O que é texto zalgo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Texto zalgo é aquele texto assustador, com cara de glitch, feito empilhando marcas diacríticas combinantes &mdash; os caracteres Unicode normalmente usados para acentos &mdash; acima e abaixo de cada letra. O gerador de texto zalgo faz isso automaticamente; use com moderação, já que zalgo pesado pode quebrar layouts e irritar leitores de tela.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como faço texto spoiler no Discord?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O Discord esconde texto entre barras duplas: ||assim||. O gerador de texto spoiler formata seu texto desse jeito automaticamente &mdash; também funciona no Reddit com sua própria marcação de spoiler &mdash; para os leitores clicarem para revelar em vez de serem estragados.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Estas ferramentas de texto são grátis?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim &mdash; as 15 são grátis, ilimitadas e privadas. O processamento acontece no seu navegador, então nem rascunhos sensíveis são enviados para lugar nenhum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como conto palavras do meu texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cole seu texto no contador de palavras. Ele informa na hora palavras, caracteres (com e sem espaços), frases, parágrafos e tempo estimado de leitura. Não há limite de palavras, e seu texto nunca sai do seu navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como removo linhas duplicadas de uma lista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cole a lista na ferramenta de remover linhas duplicadas. Ela percorre cada linha, mantém a primeira ocorrência de cada linha única e apaga as repetições — deixando uma lista limpa sem duplicatas para copiar de volta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como corrijo quebras de linha quebradas de texto copiado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDFs e páginas da web costumam colar com quebra de linha após cada linha visual. O corretor de quebras de linha junta esses fragmentos de volta em parágrafos de verdade, e o limpador de texto remove os espaços duplos e caracteres soltos restantes na mesma passada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é texto zalgo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texto zalgo é aquele texto assustador, com cara de glitch, feito empilhando marcas diacríticas combinantes — os caracteres Unicode normalmente usados para acentos — acima e abaixo de cada letra. O gerador de texto zalgo faz isso automaticamente; use com moderação, já que zalgo pesado pode quebrar layouts e irritar leitores de tela."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço texto spoiler no Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Discord esconde texto entre barras duplas: ||assim||. O gerador de texto spoiler formata seu texto desse jeito automaticamente — também funciona no Reddit com sua própria marcação de spoiler — para os leitores clicarem para revelar em vez de serem estragados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Estas ferramentas de texto são grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — as 15 são grátis, ilimitadas e privadas. O processamento acontece no seu navegador, então nem rascunhos sensíveis são enviados para lugar nenhum."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
