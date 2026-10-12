@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Paragraf Kısaltıcı — Ücretsiz Metin Aracı</title>
+  <meta content="Paragraf kısaltıcı ile dolgu kelimelerini silin, gereksiz sözcüklü öbekleri kısaltın. Azalma yüzdesi gösteren ücretsiz çevrimiçi kısaltma aracı; anında çalışır." name="description" />
+  
+  <link href="https://fontgenerators.online/tr/paragraf-kisaltici/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Paragraf Kısaltıcı — Ücretsiz Metin Aracı">
+    <meta property="og:description" content="Paragraf kısaltıcı ile dolgu kelimelerini silin, gereksiz sözcüklü öbekleri kısaltın. Azalma yüzdesi gösteren ücretsiz çevrimiçi kısaltma aracı; anında çalışır.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/paragraf-kisaltici/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Paragraf Kısaltıcı — Ücretsiz Metin Aracı">
+    <meta name="twitter:description" content="Paragraf kısaltıcı ile dolgu kelimelerini silin, gereksiz sözcüklü öbekleri kısaltın. Azalma yüzdesi gösteren ücretsiz çevrimiçi kısaltma aracı; anında çalışır.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/paragraph-shortener/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/acortador-de-parrafos/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/encurtador-de-paragrafos/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/paragraf-kisaltici/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .stat {
+      color: var(--muted);
+    }
+
+    .stat strong {
+      color: var(--primary);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/paragraph-shortener/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/acortador-de-parrafos/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/encurtador-de-paragrafos/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/paragraf-kisaltici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/paragraph-shortener/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/acortador-de-parrafos/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/encurtador-de-paragrafos/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/paragraf-kisaltici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/paragraph-shortener/',es:'/es/acortador-de-parrafos/',pt:'/pt/encurtador-de-paragrafos/',tr:'/tr/paragraf-kisaltici/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Metin Araçları</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../kelime-sayaci/">📊 Word Counter</a>
+            <a class="sidebar-link" href="../cumle-genisletici/">📝 Sentence Expander</a>
+            <a class="sidebar-link active" href="../paragraf-kisaltici/">✂️ Paragraph Shortener</a>
+            <a class="sidebar-link" href="../metin-temizleyici/">🧹 Text Cleaner</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Araçlara Göz At</button>
+        <div class="tool-input-section">
+          <p class="tool-title">✂️ Paragraf Kısaltıcı</p>
+          <p class="tool-description">Condense long paragraphs by removing filler words and shortening
+            sentences</p>
+          <textarea class="tool-input" id="text-input" placeholder="Uzun metninizi buraya yapıştırın..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-primary" onclick="shortenText()">✂️ Metni Kısalt</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Temizle</button>
+          </div>
+        </div>
+        <div class="stats-row">
+          <span class="stat">Orijinal: <strong id="orig-words">0</strong> words</span>
+          <span class="stat">Kısaltılmış: <strong id="short-words">0</strong> words</span>
+          <span class="stat">Azalma: <strong id="reduction">0%</strong></span>
+        </div>
+        <div class="tool-output-section">
+          <h3>Kısaltılmış Metin</h3>
+          <textarea class="output-textarea" id="output-text" readonly=""></textarea>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <section class="seo-content-section">
+      <div class="container">
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/metin-araclari/">Metin Araçları</a> &rsaquo; <span>Paragraf Kısaltıcı</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">FontGenerators Editör Ekibi &middot; Son güncelleme: 12 Ekim 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Paragraf Kısaltıcı &mdash; Metni Kısaltın</h1>
+<p>Paragraf kısaltıcı, gereksiz sözcüklü yazıyı dolgu kelimeleri atarak ve şişkin öbekleri daha kısa karşılıklarıyla değiştirerek sıkılaştırır. Bu ücretsiz araç 30 yaygın dolgu kelimesini siler, 16 özlü öbek değişimi uygular ve kelime azalmanızı yüzde olarak tam gösterir. Anlamı kaybetmeden metni kısaltmak için paragrafınızı yukarı yapıştırın.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Öne çıkanlar</p>
+<ul style="margin: 0;">
+<li>İki aşamalı işlem: önce 16 gereksiz sözcüklü öbek değişimi, sonra 30 dolgu kelimesi silme.</li>
+<li>Orijinal kelime, kısaltılmış kelime ve azalma yüzdesini gösterir.</li>
+<li><strong>Kural tabanlıdır, özetleyici değildir:</strong> kelimeleri mekanik siler; ana fikir seçmez.</li>
+<li>"in order to" &rarr; "to", "due to the fact that" &rarr; "because", "each and every" &rarr; "every".</li>
+<li>Ücretsiz, anında ve tamamen gizli &mdash; her şey tarayıcınızda çalışır.</li>
+</ul>
+</div>
+<h2>Paragraf Kısaltıcı Nedir?</h2>
+<p><strong>Paragraf kısaltıcı, gereksiz kelimeleri atarak metnin uzunluğunu azaltan bir yazım aracıdır.</strong> En önemli cümleleri seçen özetleyicinin aksine, paragraf kısaltıcı kelime düzeyinde çalışır: dolgu kelimelerini ("very", "really", "basically") siler, gereksiz sözcüklü yapıları ("due to the fact that") sıkı karşılıklarıyla ("because") değiştirir. Sonuç aynı paragrafın dolgusu alınmış halidir &mdash; daha kısa, daha vurucu, daha okunaklı.</p>
+<h2>Bu Paragraf Kısaltıcı Nasıl Çalışır?</h2>
+<p>Araç iki kural setini sırayla uygular, ardından boşlukları temizler:</p>
+<p><strong>Adım 1 &mdash; öbek değişimleri (16 çift).</strong> Gereksiz sözcüklü yapılar özlü karşılıklarıyla değiştirilir (büyük-küçük harf duyarsız):</p>
+<table>
+<thead><tr><th>Gereksiz sözcüklü öbek</th><th>Olur</th><th>Gereksiz sözcüklü öbek</th><th>Olur</th></tr></thead>
+<tbody>
+<tr><td>in order to</td><td>to</td><td>due to the fact that</td><td>because</td></tr>
+<tr><td>in the event that</td><td>if</td><td>at this point in time</td><td>now</td></tr>
+<tr><td>in the near future</td><td>soon</td><td>a large number of</td><td>many</td></tr>
+<tr><td>a small number of</td><td>few</td><td>in spite of the fact that</td><td>although</td></tr>
+<tr><td>for the purpose of</td><td>for</td><td>with regard to / in reference to</td><td>about</td></tr>
+<tr><td>on a daily basis</td><td>daily</td><td>each and every</td><td>every</td></tr>
+<tr><td>first and foremost</td><td>first</td><td>one and only</td><td>only</td></tr>
+<tr><td>at the present time</td><td>now</td><td>&mdash;</td><td>&mdash;</td></tr>
+</tbody>
+</table>
+<p><strong>Adım 2 &mdash; dolgu kelimesi silme (30 kelime).</strong> Tek başına duran dolgu kelimeleri geçtikleri her yerde silinir: <em>very, really, actually, basically, literally, absolutely, completely, totally, quite, rather, somewhat, just, simply, definitely, certainly, obviously, clearly, essentially, virtually, practically, in my opinion, I think that, I believe that, needless to say</em> &mdash; artı <em>in order to, due to the fact that, in the event that, at this point in time</em> ve <em>it is important to note that / it should be noted that</em> gibi uzun öbekler.</p>
+<p><strong>Adım 3 &mdash; temizlik.</strong> Fazla boşluklar teke indirilir, noktalama öncesi boşluklar silinir, sonuç kırpılır. İstatistik satırı orijinal kelime, kısaltılmış kelime ve azalma yüzdesini raporlar.</p>
+<h2>Uygulamalı Örnek</h2>
+<p>Girdi (aracın kural listeleri İngilizce öbeklere göre çalışır):</p>
+<p><em>"It is very important to note that, in order to succeed, you basically need to try really hard each and every day."</em> (22 kelime)</p>
+<p>Çıktı:</p>
+<p><em>", to succeed, you need to try hard every day."</em> (10 kelime &mdash; %55 azalma)</p>
+<p>Ne oldu: "very", "basically" ve "really" dolgu olarak silindi; "in order to" &rarr; "to"; "each and every" &rarr; "every"; "It is important to note that" dolgu öbeği olarak atıldı. Dürüst bir artefakta dikkat: öbeğin silinmesi başta bir <strong>virgül</strong> bıraktı &mdash; araç kelimeleri mekanik siler, noktalamayı düzeltmez. Çıktıyı mutlaka gözden geçirin.</p>
+<h2>Paragraf Kısaltıcı Nasıl Kullanılır?</h2>
+<ol>
+<li><strong>Yapıştırın:</strong> paragrafınızı ya da metnin tamamını giriş kutusuna yapıştırın.</li>
+<li><strong>"Metni Kısalt"a tıklayın</strong> &mdash; değişimler ve dolgu silme anında uygulanır.</li>
+<li><strong>İstatistikleri denetleyin:</strong> orijinal kelime, kısaltılmış kelime ve azalma %. Ardından hedefinizle son uzunluğu <a href="/tr/kelime-sayaci/">kelime sayacı</a> ile doğrulayın.</li>
+<li><strong>Gözden geçirin:</strong> kalan noktalama artefaktlarını kontrol edin, sonra <strong>Kopyalayın</strong>.</li>
+</ol>
+<h2>Kısaltıcı ve Özetleyici: Farkı Bilin</h2>
+<p>Bu tür araçlarla ilgili en yanlış anlaşılan nokta budur. <strong>Kısaltıcı</strong> ile <strong>özetleyici</strong> farklı iş yapar:</p>
+<table>
+<thead><tr><th></th><th>Bu paragraf kısaltıcı</th><th>Gerçek özetleyici</th></tr></thead>
+<tbody>
+<tr><td>Çalışma birimi</td><td>Kelimeler ve öbekler</td><td>Cümleler ve fikirler</td></tr>
+<tr><td>Yöntem</td><td>Sabit silme/değiştirme kuralları</td><td>Ana noktaları seçer ya da yeniden yazar</td></tr>
+<tr><td>10 paragraflık makaleyi 3 cümleye indirebilir mi?</td><td>Hayır</td><td>Evet</td></tr>
+<tr><td>Her fikri korur mu?</td><td>Evet &mdash; hiçbir şeye "karar" verilmez</td><td>Hayır &mdash; ayrıntı tasarım gereği atılır</td></tr>
+</tbody>
+</table>
+<p>Tamamını korumak istediğiniz yazıyı <strong>sıkılaştırmak</strong> için bu aracı kullanın. Uzun bir belgenin <strong>özüne</strong> ihtiyacınız varsa özetleyici gerekir &mdash; bu araç o işi asla yapmaz.</p>
+<h2>Dolgu Kelimesi Silme Ne Zaman Anlamı Değiştirir?</h2>
+<p>Mekanik silme genelde güvenlidir, ama her zaman değil. Dikkat edin:</p>
+<ul>
+<li><strong>Anlam taşıyan yumuşatıcılar:</strong> "somewhat effective"ten "somewhat"ı ya da "rather unlikely"tan "rather"ı silmek iddiayı kastettiğinizden güçlü kılar.</li>
+<li><strong>"Literally" ve "actually":</strong> bazen dolgu, bazen yük taşır ("the vase literally broke in half").</li>
+<li><strong>Atıf öbekleri:</strong> "I think that" ve "in my opinion" bir iddiayı görüş olarak işaretler &mdash; silmek onu olgu gibi sunar.</li>
+<li><strong>Kalan noktalama:</strong> uygulamalı örnekte görüldüğü gibi öbek silme virgülü ortada bırakabilir ya da çift boşluk oluşturabilir (temizlik düzeltir).</li>
+</ul>
+<p>Araç ilk geçiştir, son editör değil. Otuz saniyelik gözden geçirme yukarıdakilerin hepsini yakalar.</p>
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Yalnızca sabit kural setleri.</strong> 30'luk listedeki dolgu kelimeleri dışındakilere dokunulmaz; programlanmadığı gereksiz sözcüklülüğü tanıyamaz (ör. "the reason why is because").</li>
+<li><strong>Noktalama düzeltilmez.</strong> Silmeler virgülleri ortada bırakabilir ya da tuhaf eklemler yaratabilir &mdash; gözden geçirme şart.</li>
+<li><strong>Büyük-küçük harf duyarsız eşleşme</strong> alıntı içi metin dahil her yerde değişim uygular; olduğu gibi kalmasını istedikleriniz de değişebilir.</li>
+<li><strong>Azalma % kelime bazlıdır</strong>, karakter ya da fikir bazlı değil; %50 kelime kesintisi anlamın yarısının gittiği anlamına gelmez.</li>
+</ul>
+<h2>Paragraf Kısaltıcı ve Alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne için ideal</th></tr></thead>
+<tbody>
+<tr><td><strong>Bu paragraf kısaltıcı</strong></td><td>Taslakların ölçülebilir azalmayla hızlı, gizli sıkılaştırılması</td></tr>
+<tr><td><a href="/tr/cumle-genisletici/">Cümle genişletici</a></td><td>Tersi iş: kısa metni uzatma</td></tr>
+<tr><td><a href="/tr/metin-temizleyici/">Metin temizleyici</a></td><td>Gereksiz sözcüklülükten çok biçimlendirme çöpünü ayıklama</td></tr>
+<tr><td>Elle düzenleme</td><td>Cümleleri yeniden yapılandırma, yalnızca kelime değil fikir kesme</td></tr>
+</tbody>
+</table>
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Paragraf çevrimiçi nasıl kısaltılır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Metninizi yapıştırıp 'Metni Kısalt'a tıklayın. Araç gereksiz sözcüklü öbekleri değiştirir ('in order to' yerine 'to'), 30 yaygın dolgu kelimesini siler ('very', 'really', 'basically') ve kelime azalmanızı yüzde olarak gösterir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Bu bir paragraf özetleyici mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır &mdash; ve ayrım önemlidir. Bu araç yazıyı fikir atmadan kelime düzeyinde sıkılaştırır. Metni özüne indirmeniz gerekiyorsa özetleyici gerekir: ayrıntıyı atarak içeriği ana noktalara indirir. Metni vurucu yapmak için bu kısaltıcıyı, uzun belgenin ana noktalarını almak için özetleyici kullanın.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Hangi dolgu kelimelerini siler?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Toplam otuz: very, really, actually, basically, literally, absolutely, completely, totally, quite, rather, somewhat, just, simply, definitely, certainly, obviously, clearly, essentially, virtually, practically ile 'in my opinion' ve 'needless to say' gibi öbekler dahil.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Hangi öbek değişimlerini uygular?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">On altı değişim: 'in order to' yerine 'to', 'due to the fact that' yerine 'because', 'in the event that' yerine 'if', 'at this point in time' yerine 'now', 'a large number of' yerine 'many', 'each and every' yerine 'every' dahil.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Kısaltma anlamımı değiştirebilir mi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Ara sıra. 'Somewhat' gibi yumuşatıcıları ya da 'in my opinion' gibi atıfları silmek iddiayı kastettiğinizden güçlü kılabilir; silmeler noktalamayı ortada bırakabilir. Kısaltılmış sonucu mutlaka gözden geçirin &mdash; ilk geçiştir, son düzenleme değil.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Azalma yüzdesi nasıl hesaplanır?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Kelime sayılarından: (1 &minus; kısaltılmış kelime &divide; orijinal kelime) &times; 100, tam sayıya yuvarlanır. Silinen kelimeyi ölçer, silinen fikri değil.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Tam makalelerde de çalışır mı, yalnızca paragrafta mı?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">İkisinde de &mdash; cümleden tam makaleye her şeyi yapıştırın. Kurallar metnin tamamına aynı şekilde uygulanır.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metnim yükleniyor ya da saklanıyor mu?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Hayır. Kısaltma tamamen tarayıcınızda JavaScript ile çalışır. Metniniz cihazınızdan asla çıkmaz.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Metni uzatmanın tersi aracı hangisi?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Bu sitedeki <a href="/tr/cumle-genisletici/">cümle genişletici</a> kısa cümleleri dört üslupta açıklayıcı öbeklerle uzatır.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Metin Araçları</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    const fillerWords = ['very', 'really', 'actually', 'basically', 'literally', 'absolutely', 'completely', 'totally', 'quite', 'rather', 'somewhat', 'just', 'simply', 'definitely', 'certainly', 'obviously', 'clearly', 'essentially', 'virtually', 'practically', 'in order to', 'due to the fact that', 'in the event that', 'at this point in time', 'in my opinion', 'i think that', 'i believe that', 'it is important to note that', 'it should be noted that', 'needless to say'];
+
+    const replacements = {
+      'in order to': 'to',
+      'due to the fact that': 'because',
+      'in the event that': 'if',
+      'at this point in time': 'now',
+      'at the present time': 'now',
+      'in the near future': 'soon',
+      'a large number of': 'many',
+      'a small number of': 'few',
+      'in spite of the fact that': 'although',
+      'for the purpose of': 'for',
+      'with regard to': 'about',
+      'in reference to': 'about',
+      'on a daily basis': 'daily',
+      'each and every': 'every',
+      'first and foremost': 'first',
+      'one and only': 'only'
+    };
+
+    function shortenText() {
+      let text = document.getElementById('text-input').value;
+      const originalWords = text.trim().split(/\s+/).filter(w => w).length;
+
+      // Apply phrase replacements
+      for (const [phrase, replacement] of Object.entries(replacements)) {
+        const regex = new RegExp(phrase, 'gi');
+        text = text.replace(regex, replacement);
+      }
+
+      // Remove standalone filler words
+      for (const filler of fillerWords) {
+        const regex = new RegExp(`\\b${filler}\\b\\s*`, 'gi');
+        text = text.replace(regex, '');
+      }
+
+      // Clean up extra spaces
+      text = text.replace(/\s+/g, ' ').replace(/\s+([.,!?])/g, '$1').trim();
+
+      const shortenedWords = text.trim().split(/\s+/).filter(w => w).length;
+      const reduction = originalWords > 0 ? Math.round((1 - shortenedWords / originalWords) * 100) : 0;
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('orig-words').textContent = originalWords;
+      document.getElementById('short-words').textContent = shortenedWords;
+      document.getElementById('reduction').textContent = reduction + '%';
+    }
+
+    function clearAll() {
+      document.getElementById('text-input').value = '';
+      document.getElementById('output-text').value = '';
+      document.getElementById('orig-words').textContent = '0';
+      document.getElementById('short-words').textContent = '0';
+      document.getElementById('reduction').textContent = '0%';
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').value).then(() => alert('Kopyalandı!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Paragraf çevrimiçi nasıl kısaltılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metninizi yapıştırıp 'Metni Kısalt'a tıklayın. Araç gereksiz sözcüklü öbekleri değiştirir ('in order to' yerine 'to'), 30 yaygın dolgu kelimesini siler ('very', 'really', 'basically') ve kelime azalmanızı yüzde olarak gösterir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu bir paragraf özetleyici mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır — ve ayrım önemlidir. Bu araç yazıyı fikir atmadan kelime düzeyinde sıkılaştırır. Metni özüne indirmeniz gerekiyorsa özetleyici gerekir: ayrıntıyı atarak içeriği ana noktalara indirir. Metni vurucu yapmak için bu kısaltıcıyı, uzun belgenin ana noktalarını almak için özetleyici kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi dolgu kelimelerini siler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toplam otuz: very, really, actually, basically, literally, absolutely, completely, totally, quite, rather, somewhat, just, simply, definitely, certainly, obviously, clearly, essentially, virtually, practically ile 'in my opinion' ve 'needless to say' gibi öbekler dahil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi öbek değişimlerini uygular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On altı değişim: 'in order to' yerine 'to', 'due to the fact that' yerine 'because', 'in the event that' yerine 'if', 'at this point in time' yerine 'now', 'a large number of' yerine 'many', 'each and every' yerine 'every' dahil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kısaltma anlamımı değiştirebilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ara sıra. 'Somewhat' gibi yumuşatıcıları ya da 'in my opinion' gibi atıfları silmek iddiayı kastettiğinizden güçlü kılabilir; silmeler noktalamayı ortada bırakabilir. Kısaltılmış sonucu mutlaka gözden geçirin — ilk geçiştir, son düzenleme değil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Azalma yüzdesi nasıl hesaplanır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kelime sayılarından: (1 − kısaltılmış kelime ÷ orijinal kelime) × 100, tam sayıya yuvarlanır. Silinen kelimeyi ölçer, silinen fikri değil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tam makalelerde de çalışır mı, yalnızca paragrafta mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İkisinde de — cümleden tam makaleye her şeyi yapıştırın. Kurallar metnin tamamına aynı şekilde uygulanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim yükleniyor ya da saklanıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Kısaltma tamamen tarayıcınızda JavaScript ile çalışır. Metniniz cihazınızdan asla çıkmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metni uzatmanın tersi aracı hangisi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu sitedeki cümle genişletici kısa cümleleri dört üslupta açıklayıcı öbeklerle uzatır."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
