@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Contador de Caracteres Online Gratis | FontGenerators.online</title>
+  <meta content="Cuenta caracteres con o sin espacios, letras, dígitos y límites de plataforma al instante con este contador de caracteres online gratis. Sin registro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link rel="canonical" href="https://fontgenerators.online/es/contador-de-caracteres/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/character-counter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/character-counter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/contador-de-caracteres/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/contador-de-caracteres/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/karakter-sayaci/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .platform-limits {
+      margin-top: 1.5rem;
+    }
+
+    .platform-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.5rem;
+    }
+
+    .platform-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .platform-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--surface-secondary);
+      border-radius: 4px;
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+
+    .platform-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .platform-fill.safe {
+      background: var(--success);
+    }
+
+    .platform-fill.warning {
+      background: var(--warning);
+    }
+
+    .platform-fill.danger {
+      background: var(--danger);
+    }
+
+    .platform-count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/character-counter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/contador-de-caracteres/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/contador-de-caracteres/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/karakter-sayaci/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/character-counter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/contador-de-caracteres/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/contador-de-caracteres/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/karakter-sayaci/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Herramientas de utilidad</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/contador-de-palabras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palabras</span>
+            </a>
+            <a class="sidebar-link active" href="/es/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/es/limpiador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpiador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/es/eliminar-lineas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Eliminar Líneas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/es/conversor-a-tipo-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Tipo Título</span>
+            </a>
+            <a class="sidebar-link" href="/es/conversor-a-minusculas/">
+              <span class="link-icon">🔡</span>
+              <span class="link-text">Conversor a Minúsculas</span>
+            </a>
+            <a class="sidebar-link" href="/es/conversor-a-mayusculas/">
+              <span class="link-icon">🔤</span>
+              <span class="link-text">Conversor a Mayúsculas</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar herramientas
+        </button>
+        <div class="tool-input-section">
+          <p class="tool-title">🔢 Contador de caracteres</p>
+          <p class="tool-description">Cuenta caracteres, letras, dígitos y revisa los límites de las plataformas</p>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Pega o escribe tu texto aquí..." rows="6"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Borrar</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Pegar</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="total-chars">0</div>
+            <div class="stat-label">Caracteres totales</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="chars-no-space">0</div>
+            <div class="stat-label">Sin espacios</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="letter-count">0</div>
+            <div class="stat-label">Letras</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="digit-count">0</div>
+            <div class="stat-label">Dígitos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="space-count">0</div>
+            <div class="stat-label">Espacios</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="special-count">0</div>
+            <div class="stat-label">Caracteres especiales</div>
+          </div>
+        </div>
+        <div class="platform-limits">
+          <h3>Límites de caracteres por plataforma</h3>
+          <div id="platform-checks"></div>
+        </div>
+      </div>
+    </div>
+
+    
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a> &rsaquo; <span>Contador de caracteres</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última actualización: 12 de octubre de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Contador de caracteres online gratis</h1>
+<p>Un contador de caracteres te dice exactamente cuántos caracteres tiene tu texto &mdash; con y sin espacios &mdash; para que quepa en los límites de bios, subtítulos, títulos y mensajes de cada plataforma. Este contador de caracteres gratis también desglosa tu texto en letras, dígitos, espacios y caracteres especiales, y lo compara en vivo con los límites de X, Instagram, TikTok, YouTube, SMS y las meta etiquetas SEO. Pega tu texto y cuenta los caracteres al instante.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Lo esencial</p>
+<ul style="margin: 0;">
+<li>Muestra caracteres totales, caracteres sin espacios, letras, dígitos, espacios y caracteres especiales.</li>
+<li>Las letras se cuentan como A&ndash;Z únicamente; las letras acentuadas y no latinas caen en «caracteres especiales».</li>
+<li>Barras de límites de plataforma en vivo para X/Twitter (280), bio de Instagram (150), subtítulo de TikTok (2200), título de YouTube (100), SMS (160), título meta (60) y descripción meta (160).</li>
+<li>Contar con o sin espacios responde a preguntas distintas &mdash; precios de traducción frente a límites de escritura.</li>
+<li>100&nbsp;% en el navegador: nada de lo que pegues se sube ni se guarda.</li>
+</ul>
+</div>
+<h2>¿Qué es un contador de caracteres?</h2>
+<p><strong>Un contador de caracteres es una herramienta online que cuenta cada carácter de un texto.</strong> A diferencia de un contador de palabras, que agrupa el texto en palabras, una herramienta de conteo de caracteres cuenta unidades individuales &mdash; letras, dígitos, puntuación, espacios y símbolos &mdash; e informa totales con y sin espacios en blanco. Los redactores usan un contador de caracteres online para respetar límites estrictos: las bios de redes sociales, los subtítulos de publicaciones, los mensajes SMS, los títulos SEO y las meta descripciones limitan caracteres, no palabras.</p>
+[IMAGE: Captura anotada del contador de caracteres con las seis tarjetas de estadísticas y las barras de límites de plataforma etiquetadas &mdash; alt: "Contador de caracteres con estadísticas y barras de límites de plataforma"]
+<h2>Cómo funciona este contador de caracteres</h2>
+<p>Escribe o pega texto y cada métrica se actualiza con cada tecla. Esta es la lógica exacta del conteo:</p>
+<ul>
+<li><strong>Caracteres totales:</strong> la longitud completa del texto, incluidos cada espacio, salto de línea y símbolo.</li>
+<li><strong>Sin espacios:</strong> el mismo conteo tras eliminar todos los espacios en blanco (espacios, tabulaciones, saltos de línea).</li>
+<li><strong>Letras:</strong> solo caracteres de A&ndash;Z y a&ndash;z. Si necesitas un contador de letras puro para contraseñas o nombres de usuario, esta es la estadística a vigilar. Las letras acentuadas (&eacute;, &ntilde;, &uuml;) y los alfabetos no latinos no se cuentan aquí &mdash; aparecen en caracteres especiales.</li>
+<li><strong>Dígitos:</strong> 0&ndash;9.</li>
+<li><strong>Espacios:</strong> cada carácter de espacio en blanco, incluidas tabulaciones y saltos de línea.</li>
+<li><strong>Caracteres especiales:</strong> todo lo demás &mdash; puntuación, emojis, símbolos y letras no ASCII.</li>
+</ul>
+<p>Debajo de las estadísticas, el <strong>verificador de límites de plataforma</strong> dibuja una barra en vivo para cada uno de los siete límites más comunes. La barra se mantiene verde hasta el 80&nbsp;% del límite, se vuelve ámbar al acercarte y roja si lo superas &mdash; así ves de un vistazo si un subtítulo o una bio todavía cabe.</p>
+<table>
+<thead><tr><th>Plataforma</th><th>Límite de caracteres</th><th>A qué aplica</th></tr></thead>
+<tbody>
+<tr><td>X (Twitter)</td><td>280</td><td>Texto de la publicación</td></tr>
+<tr><td>Instagram</td><td>150</td><td>Bio del perfil</td></tr>
+<tr><td>TikTok</td><td>2.200</td><td>Subtítulo del video</td></tr>
+<tr><td>YouTube</td><td>100</td><td>Título del video</td></tr>
+<tr><td>SMS</td><td>160</td><td>Un segmento de mensaje de texto</td></tr>
+<tr><td>Título meta SEO</td><td>60</td><td>Guía de visualización de Google</td></tr>
+<tr><td>Descripción meta SEO</td><td>160</td><td>Guía de visualización de Google</td></tr>
+</tbody>
+</table>
+<h2>Ejemplo resuelto</h2>
+<p>Pega <em>"Hello, World! 123"</em> en el contador de caracteres:</p>
+<table>
+<thead><tr><th>Métrica</th><th>Resultado</th><th>Por qué</th></tr></thead>
+<tbody>
+<tr><td>Caracteres totales</td><td>17</td><td>Cada carácter, incluidos los espacios</td></tr>
+<tr><td>Sin espacios</td><td>15</td><td>17 menos 2 espacios</td></tr>
+<tr><td>Letras</td><td>10</td><td>H-e-l-l-o + W-o-r-l-d</td></tr>
+<tr><td>Dígitos</td><td>3</td><td>1, 2, 3</td></tr>
+<tr><td>Espacios</td><td>2</td><td>Dos caracteres de espacio</td></tr>
+<tr><td>Caracteres especiales</td><td>2</td><td>La coma y el signo de exclamación</td></tr>
+</tbody>
+</table>
+<p>Esos 17 caracteres apenas llegan al 6&nbsp;% del límite de 280 de X/Twitter (barra verde), pero ya superarían un título meta de 60 caracteres &mdash; las barras de plataforma lo muestran al instante.</p>
+<h2>Cómo usar este contador de caracteres</h2>
+<ol>
+<li><strong>Pega o escribe</strong> tu texto en el cuadro de entrada.</li>
+<li><strong>Lee las seis tarjetas de estadísticas</strong> &mdash; los totales se actualizan en vivo con cada tecla.</li>
+<li><strong>Revisa las barras de plataforma</strong> para ver si tu texto cabe en los límites de X, Instagram, TikTok, YouTube, SMS o SEO.</li>
+<li><strong>Recorta o reescribe</strong> hasta que las barras que te importan estén en verde, y copia tu texto.</li>
+</ol>
+<h2>Con o sin espacios: ¿qué conteo importa?</h2>
+<p>Los dos totales responden a preguntas distintas, y confundirlos causa errores reales:</p>
+<ul>
+<li><strong>Cuenta con espacios</strong> cuando la plataforma impone el límite &mdash; X, Instagram y los SMS cuentan los espacios. Una bio de «150 caracteres sin espacios» igual puede ser rechazada.</li>
+<li><strong>Cuenta sin espacios</strong> para precios de traducción y algunas tarifas editoriales, que suelen cotizarse por carácter sin espacios. También refleja mejor la longitud «de contenido» de un texto.</li>
+<li><strong>Solo letras</strong> sirve para reglas de contraseñas y nombres de usuario que limitan la longitud a caracteres alfabéticos.</li>
+</ul>
+<p>Ante la duda, usa el total con espacios: es el número más estricto, y todos los límites del verificador lo usan.</p>
+<h2>Por qué un emoji puede contar como dos caracteres aquí</h2>
+<p>Esta herramienta mide el texto como lo hace JavaScript: en unidades de código UTF-16. La mayoría de los caracteres cotidianos ocupan una unidad, pero muchos emojis (😀, 🎉) se almacenan como dos. Así que una comprobación de longitud de tuit aquí puede dar un número algo mayor que el contador propio de la plataforma en textos con muchos emojis.</p>
+<p>Las plataformas también difieren: X históricamente cuenta la mayoría de los emojis como dos caracteres de su límite de 280, mientras que Instagram los cuenta como uno en el campo de bio. Si tu texto tiene muchos emojis y roza un límite, verifícalo en la propia plataforma &mdash; usa esta herramienta para el borrador y la plataforma para la comprobación final.</p>
+[IMAGE: Diagrama que compara cómo un emoji se cuenta como 2 unidades de código en JavaScript frente a 1 carácter en algunas plataformas &mdash; alt: "Diferencias de conteo de caracteres de emojis entre JavaScript y las plataformas sociales"]
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>Letras significa solo A&ndash;Z.</strong> &Eacute;, &ntilde;, el cirílico, el árabe, el chino/japonés/coreano y otros alfabetos caen en «caracteres especiales», no en «letras».</li>
+<li><strong>Los emojis cuentan como dos caracteres</strong> en los totales (UTF-16), lo que puede no coincidir con el contador propio de una plataforma.</li>
+<li><strong>Los límites de plataforma cambian.</strong> Los siete límites reflejan valores ampliamente publicados, pero las redes los ajustan &mdash; confirma siempre en la plataforma cuando una publicación deba caber exacta.</li>
+<li><strong>Los saltos de línea cuentan</strong> como caracteres (y como espacios en el total de espacios); pegar desde editores con formato puede añadir caracteres invisibles.</li>
+</ul>
+<h2>Contador de caracteres frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Ideal para</th><th>¿Verifica límites de plataforma?</th></tr></thead>
+<tbody>
+<tr><td><strong>Este contador de caracteres</strong></td><td>Estadísticas por carácter más barras de límite en vivo, sin registro</td><td>Sí &mdash; 7 plataformas</td></tr>
+<tr><td><a href="/es/contador-de-palabras/">Contador de palabras</a></td><td>Límites por palabras (ensayos, artículos) con tiempo de lectura</td><td>No</td></tr>
+<tr><td><a href="/es/contador-de-caracteres-subtitulos/">Contador de longitud de subtítulos</a></td><td>Límites de subtítulos sociales en concreto</td><td>Sí &mdash; enfocado en subtítulos</td></tr>
+<tr><td>El editor de la propia plataforma</td><td>Verificación final antes de publicar</td><td>Sí &mdash; autoritativo</td></tr>
+</tbody>
+</table>
+<p>Cuenta palabras con el <a href="/es/contador-de-palabras/">contador de palabras</a>, cuenta caracteres aquí y da formato al espaciado de tus subtítulos con el <a href="/es/formateador-de-subtitulos/">formateador de subtítulos</a> antes de publicar.</p>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo cuento los caracteres de un texto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Pega tu texto en el cuadro y los totales se actualizan en vivo &mdash; caracteres totales, caracteres sin espacios, letras, dígitos, espacios y caracteres especiales. No hay que pulsar ningún botón ni registrarse.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Este contador de caracteres incluye los espacios?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Ambos. La herramienta muestra lado a lado los caracteres totales (con espacios) y los caracteres sin espacios, para que uses la cifra que necesite tu tarea. Las barras de límites de plataforma siempre usan el total con espacios.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuántos caracteres permite un tuit?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">X (Twitter) permite 280 caracteres por publicación, así que esta página también sirve como contador de caracteres de Twitter: la barra en vivo de 280 caracteres muestra cómo tu borrador se acerca al límite mientras escribes, volviéndose ámbar pasado el 80&nbsp;% y roja si lo superas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cuál es el límite de caracteres de la bio de Instagram?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">150 caracteres. El verificador de plataformas incluye una barra para la bio de Instagram que se vuelve ámbar pasado el 80&nbsp;% (120 caracteres) y roja si superas los 150.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Por qué los emojis cuentan como 2 caracteres?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La herramienta cuenta unidades de código UTF-16 de JavaScript, y la mayoría de los emojis se almacenan como dos unidades. Las plataformas cuentan los emojis de otra forma &mdash; X históricamente muchos como dos, Instagram como uno &mdash;, así que verifica los textos con muchos emojis en la propia plataforma.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Los saltos de línea cuentan como caracteres?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí. Cada salto de línea cuenta como un carácter en el total y como una unidad de espacio en blanco en el conteo de espacios. Pegar desde Word o páginas web puede añadir saltos extra &mdash; el total refleja exactamente lo que hay en el cuadro.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué diferencia hay entre un contador de caracteres y uno de palabras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Un contador de caracteres cuenta caracteres individuales (letras, espacios, puntuación); uno de palabras agrupa el texto en palabras separadas por espacios. Usa el <a href="/es/contador-de-palabras/">contador de palabras</a> para la longitud de ensayos y artículos, y esta herramienta para bios, subtítulos, SMS y meta etiquetas.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Mi texto se guarda al usar esta herramienta?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. El conteo se ejecuta por completo en tu navegador con JavaScript. Nada se sube, se guarda ni se comparte.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué cuenta como «carácter especial»?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Todo lo que no sea una letra de A&ndash;Z, un dígito de 0&ndash;9 o un espacio en blanco: puntuación, emojis, símbolos y letras acentuadas o no latinas como &eacute;, &ntilde; o caracteres cirílicos.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Herramientas de utilidad</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/es/contador-de-palabras/">📊 Contador de Palabras</a>
+        <a class="sidebar-link active" href="/es/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/es/limpiador-de-texto/">🧹 Limpiador de Texto</a>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const platforms = [
+      { name: 'Twitter/X', icon: '🐦', limit: 280 },
+      { name: 'Bio de Instagram', icon: '📸', limit: 150 },
+      { name: 'Título de TikTok', icon: '🎵', limit: 2200 },
+      { name: 'Título de YouTube', icon: '▶️', limit: 100 },
+      { name: 'SMS', icon: '📱', limit: 160 },
+      { name: 'Título meta', icon: '🔍', limit: 60 },
+      { name: 'Descripción meta', icon: '📝', limit: 160 }
+    ];
+
+    function analyzeText() {
+      const text = document.getElementById('text-input').value;
+
+      document.getElementById('total-chars').textContent = text.length;
+      document.getElementById('chars-no-space').textContent = text.replace(/\s/g, '').length;
+      document.getElementById('letter-count').textContent = (text.match(/[a-zA-Z]/g) || []).length;
+      document.getElementById('digit-count').textContent = (text.match(/[0-9]/g) || []).length;
+      document.getElementById('space-count').textContent = (text.match(/\s/g) || []).length;
+      document.getElementById('special-count').textContent = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
+
+      updatePlatformLimits(text.length);
+    }
+
+    function updatePlatformLimits(charCount) {
+      const container = document.getElementById('platform-checks');
+      container.innerHTML = platforms.map(p => {
+        const percent = Math.min((charCount / p.limit) * 100, 100);
+        const status = percent <= 80 ? 'safe' : percent <= 100 ? 'warning' : 'danger';
+        return `
+                    <div class="platform-item">
+                        <span class="platform-name">${p.icon} ${p.name}</span>
+                        <div class="platform-bar">
+                            <div class="platform-fill ${status}" style="width: ${percent}%"></div>
+                        </div>
+                        <span class="platform-count">${charCount}/${p.limit}</span>
+                    </div>
+                `;
+      }).join('');
+    }
+
+    function clearText() {
+      document.getElementById('text-input').value = '';
+      analyzeText();
+    }
+
+    function pasteText() {
+      navigator.clipboard.readText().then(text => {
+        document.getElementById('text-input').value = text;
+        analyzeText();
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    analyzeText();
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo cuento los caracteres de un texto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pega tu texto en el cuadro y los totales se actualizan en vivo — caracteres totales, caracteres sin espacios, letras, dígitos, espacios y caracteres especiales. No hay que pulsar ningún botón ni registrarse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Este contador de caracteres incluye los espacios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambos. La herramienta muestra lado a lado los caracteres totales (con espacios) y los caracteres sin espacios, para que uses la cifra que necesite tu tarea. Las barras de límites de plataforma siempre usan el total con espacios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos caracteres permite un tuit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "X (Twitter) permite 280 caracteres por publicación, así que esta página también sirve como contador de caracteres de Twitter: la barra en vivo de 280 caracteres muestra cómo tu borrador se acerca al límite mientras escribes, volviéndose ámbar pasado el 80 % y roja si lo superas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el límite de caracteres de la bio de Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "150 caracteres. El verificador de plataformas incluye una barra para la bio de Instagram que se vuelve ámbar pasado el 80 % (120 caracteres) y roja si superas los 150."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué los emojis cuentan como 2 caracteres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La herramienta cuenta unidades de código UTF-16 de JavaScript, y la mayoría de los emojis se almacenan como dos unidades. Las plataformas cuentan los emojis de otra forma — X históricamente muchos como dos, Instagram como uno —, así que verifica los textos con muchos emojis en la propia plataforma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los saltos de línea cuentan como caracteres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cada salto de línea cuenta como un carácter en el total y como una unidad de espacio en blanco en el conteo de espacios. Pegar desde Word o páginas web puede añadir saltos extra — el total refleja exactamente lo que hay en el cuadro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre un contador de caracteres y uno de palabras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un contador de caracteres cuenta caracteres individuales (letras, espacios, puntuación); uno de palabras agrupa el texto en palabras separadas por espacios. Usa el contador de palabras para la longitud de ensayos y artículos, y esta herramienta para bios, subtítulos, SMS y meta etiquetas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi texto se guarda al usar esta herramienta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El conteo se ejecuta por completo en tu navegador con JavaScript. Nada se sube, se guarda ni se comparte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué cuenta como «carácter especial»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todo lo que no sea una letra de A–Z, un dígito de 0–9 o un espacio en blanco: puntuación, emojis, símbolos y letras acentuadas o no latinas como é, ñ o caracteres cirílicos."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
