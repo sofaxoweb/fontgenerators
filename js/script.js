@@ -5,14 +5,14 @@
 /* ---------- Configuration ---------- */
 // You can toggle booleans here if you want to relax certain protections.
 const CONFIG = {
-  disableContextMenu: true,     // blocks right-click menu
-  disableSelect: true,          // disables text selection via CSS & JS
-  disableCopyCut: true,         // prevents copy and cut events
-  disableDrag: true,            // prevents dragging (images, links)
-  blockDevKeys: true,           // blocks F12, Ctrl+Shift+I, Ctrl+U, etc.
-  blockPrintSave: true,         // blocks Ctrl+S, Ctrl+P (printing/saving)
-  observeDOM: true,             // re-apply protections if DOM changes
-  noisyConsole: true            // clears and prints warning in console to discourage snooping
+  disableContextMenu: false,     // blocks right-click menu
+  disableSelect: false,          // disables text selection via CSS & JS
+  disableCopyCut: false,         // prevents copy and cut events
+  disableDrag: false,            // prevents dragging (images, links)
+  blockDevKeys: false,           // blocks F12, Ctrl+Shift+I, Ctrl+U, etc.
+  blockPrintSave: false,         // blocks Ctrl+S, Ctrl+P (printing/saving)
+  observeDOM: false,             // re-apply protections if DOM changes
+  noisyConsole: false            // clears and prints warning in console to discourage snooping
 };
 
 /* ---------- Utility helpers ---------- */

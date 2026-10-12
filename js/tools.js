@@ -485,10 +485,6 @@ const TextTransformers = {
         return styles;
     },
 
-    oldenglish: function (text) {
-        return TextTransformers.gothic(text);
-    },
-
     cursive: function (text) {
         const normal = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         const script = '𝒜𝐵𝒞𝒟𝐸𝐹𝒢𝐻𝐼𝒥𝒦𝐿𝑀𝒩𝒪𝒫𝒬𝑅𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝑜𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏';
@@ -513,9 +509,124 @@ const TextTransformers = {
         return styles;
     },
 
-    unicode: function (text) {
-        return this.fancy(text);
-    },
+unicode: function (text) {
+// Unicode Blocks Explorer — each variant showcases a real Unicode block.
+// Distinct from 'fancy' (stylish fonts): this one is educational/reference.
+const styles = [];
+const map = (fn) => text.split('').map(fn).join('');
+
+const fullwidth = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 33 && code <= 126) return String.fromCharCode(code + 65248);
+return c === ' '? '　': c;
+});
+styles.push({ name: 'Fullwidth Block', text: fullwidth});
+
+const circled = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + (code - 65));
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + (code - 97));
+if (code === 48) return '⓪';
+if (code >= 49 && code <= 57) return String.fromCodePoint(0x245F + code);
+return c;
+});
+styles.push({ name: 'Enclosed Alphanumerics', text: circled});
+
+const squared = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + (code - 65));
+return c;
+});
+styles.push({ name: 'Squared Letters', text: squared});
+
+const negSquared = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F170 + (code - 65));
+return c;
+});
+styles.push({ name: 'Negative Squared', text: negSquared});
+
+const parens = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x249C + (code - 97));
+return c;
+});
+styles.push({ name: 'Parenthesized Letters', text: parens});
+
+const regional = map(c => {
+const code = c.toUpperCase().charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F1E6 + (code - 65));
+return c === ' '? ' ': c;
+});
+styles.push({ name: 'Regional Indicators', text: regional});
+
+const smallCapsMap = 'ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ';
+const smallCaps = map(c => {
+const i = 'abcdefghijklmnopqrstuvwxyz'.indexOf(c.toLowerCase());
+return i!== -1? smallCapsMap[i]: c;
+});
+styles.push({ name: 'Phonetic Small Caps', text: smallCaps});
+
+const supMap = { a: 'ᵃ', b: 'ᵇ', c: 'ᶜ', d: 'ᵈ', e: 'ᵉ', f: 'ᶠ', g: 'ᵍ', h: 'ʰ', i: 'ⁱ', j: 'ʲ', k: 'ᵏ', l: 'ˡ', m: 'ᵐ', n: 'ⁿ', o: 'ᵒ', p: 'ᵖ', r: 'ʳ', s: 'ˢ', t: 'ᵗ', u: 'ᵘ', v: 'ᵛ', w: 'ʷ', x: 'ˣ', y: 'ʸ', z: 'ᶻ', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾'};
+const superscript = map(c => supMap[c.toLowerCase()] || c);
+styles.push({ name: 'Superscript Block', text: superscript});
+
+const subMap = { a: 'ₐ', e: 'ₑ', o: 'ₒ', x: 'ₓ', h: 'ₕ', k: 'ₖ', l: 'ₗ', m: 'ₘ', n: 'ₙ', p: 'ₚ', s: 'ₛ', t: 'ₜ', '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎'};
+const subscript = map(c => subMap[c.toLowerCase()] || c);
+styles.push({ name: 'Subscript Block', text: subscript});
+
+const mathBold = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D400 + (code - 65));
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D41A + (code - 97));
+if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48));
+return c;
+});
+styles.push({ name: 'Math Bold Block', text: mathBold});
+
+const mathItalic = map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D434 + (code - 65));
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D44E + (code - 97));
+return c;
+});
+styles.push({ name: 'Math Italic Block', text: mathItalic});
+
+const dsExceptions = { C: 'ℂ', H: 'ℍ', N: 'ℕ', P: 'ℙ', Q: 'ℚ', R: 'ℝ', Z: 'ℤ'};
+const doubleStruck = map(c => {
+if (dsExceptions[c]) return dsExceptions[c];
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D538 + (code - 65));
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D552 + (code - 97));
+if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7D8 + (code - 48));
+return c;
+});
+styles.push({ name: 'Double-Struck Block', text: doubleStruck});
+
+return styles;
+},
+
+bubbleletters: function (text) {
+// Decorated bubble-letter NAME styles — distinct from 'bubble' (raw unicode alphabets).
+const styles = [];
+const circled = text.split('').map(c => {
+const code = c.charCodeAt(0);
+if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + (code - 65));
+if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + (code - 97));
+if (code === 48) return '⓪';
+if (code >= 49 && code <= 57) return String.fromCodePoint(0x245F + code);
+return c;
+}).join('');
+styles.push({ name: 'Bubble Pop', text: '★ ' + circled + ' ★'});
+styles.push({ name: 'Bubblegum Frame', text: '｡･:*˚:✧ ' + circled + ' ✧:˚*:･｡'});
+styles.push({ name: 'Bubble Wave', text: '～ ' + circled + ' ～'});
+styles.push({ name: 'Love Bubbles', text: '♡ ' + circled + ' ♡'});
+styles.push({ name: 'Star Bubbles', text: '☆ ' + circled + ' ☆'});
+styles.push({ name: 'Double Bubble', text: '\u3010 ' + circled + ' \u3011'});
+styles.push({ name: 'Bubble Wrap', text: '『 ' + circled + ' 』'});
+styles.push({ name: 'Fizzy Bubbles', text: '･ﾟ ' + circled + ' ﾟ･'});
+return styles;
+},
 
     bold: function (text) {
         const normal = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -686,10 +797,7 @@ const TextTransformers = {
             'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ',
             'a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝔮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷'
         };
-        const boldGothic = {
-            'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅',
-            'a':'𝖆','b':'𝖇','c':'𝖈','d':'𝖉','e':'𝖊','f':'𝖋','g':'𝖌','h':'𝖍','i':'𝖎','j':'𝖏','k':'𝖐','l':'𝖑','m':'𝖒','n':'𝖓','o':'𝖕','p':'𝖖','q':'𝖗','r':'𝖘','s':'𝖙','t':'𝖚','u':'𝖛','v':'𝖜','w':'𝖝','x':'𝖞','y':'𝖟'
-        };
+        const boldGothic = {'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅','a':'𝖆','b':'𝖇','c':'𝖈','d':'𝖉','e':'𝖊','f':'𝖋','g':'𝖌','h':'𝖍','i':'𝖎','j':'𝖏','k':'𝖐','l':'𝖑','m':'𝖒','n':'𝖓','o':'𝖔','p':'𝖕','q':'𝖖','r':'𝖗','s':'𝖘','t':'𝖙','u':'𝖚','v':'𝖛','w':'𝖜','x':'𝖝','y':'𝖞','z':'𝖟'};
 
         const convert = (str, map) => str.split('').map(c => map[c] || c).join('');
 
@@ -788,11 +896,11 @@ function escapeHtml(text) {
 }
 
 function escapeForAttribute(text) {
-    return text.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, "&quot;");
+    return text.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/\r/g, '\\r').replace(/'/g, "\\'").replace(/"/g, "&quot;");
 }
 
 function copyText(button, text) {
-    const decodedText = text.replace(/&quot;/g, '"').replace(/\\'/g, "'").replace(/\\\\/g, '\\');
+    const decodedText = text.replace(/&quot;/g, '"').split('\\\\').map(function (part) { return part.replace(/\\n/g, '\n').replace(/\\r/g, '\r').replace(/\\'/g, "'"); }).join('\\');
 
     navigator.clipboard.writeText(decodedText).then(() => {
         const originalText = button.innerHTML;
