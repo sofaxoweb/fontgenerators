@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Calculadora de Tempo de Leitura</title>
+  <meta content="Calcule o tempo de leitura de qualquer texto grátis com a calculadora de tempo de leitura online. Velocidade ajustável e resultado instantâneo. Teste agora!" name="description" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .time-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .time-card {
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .time-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+  
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <link href="https://fontgenerators.online/pt/calculadora-de-tempo-de-leitura/" rel="canonical" />
+    <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Tempo de Leitura">
+  <meta property="og:description" content="Calcule o tempo de leitura de qualquer texto grátis com a calculadora de tempo de leitura online. Velocidade ajustável e resultado instantâneo. Teste agora!">
+  <meta property="og:url" content="https://fontgenerators.online/pt/calculadora-de-tempo-de-leitura/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Calculadora de Tempo de Leitura">
+  <meta name="twitter:description" content="Calcule o tempo de leitura de qualquer texto grátis com a calculadora de tempo de leitura online. Velocidade ajustável e resultado instantâneo. Teste agora!">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/reading-time-calculator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/reading-time-calculator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/calculadora-de-tiempo-de-lectura/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/calculadora-de-tempo-de-leitura/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/okuma-suresi-hesaplayici/" />
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/reading-time-calculator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/calculadora-de-tiempo-de-lectura/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/calculadora-de-tempo-de-leitura/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/okuma-suresi-hesaplayici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/reading-time-calculator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/calculadora-de-tiempo-de-lectura/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/calculadora-de-tempo-de-leitura/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/okuma-suresi-hesaplayici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/reading-time-calculator/", "es": "/es/calculadora-de-tiempo-de-lectura/", "pt": "/pt/calculadora-de-tempo-de-leitura/", "tr": "/tr/okuma-suresi-hesaplayici/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Ferramentas de Texto
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/contador-de-palavras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palavras</span>
+            </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/pt/limpador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/pt/remover-linhas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Removedor de Linhas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/pt/conversor-para-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Conversor para Title Case</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Gerador de Texto Invertido</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Gerador de Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+
+        <div class="tool-input-section">
+          <p class="tool-title">⏱️ Calculadora de tempo de leitura</p>
+          <p class="tool-description">Estimate reading time and speaking time for any text</p>
+          <textarea class="tool-input" id="text-input" oninput="analyzeText()"
+            placeholder="Cole ou digite seu texto aqui..." rows="8"></textarea>
+          <div class="tool-actions">
+            <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
+            <button class="btn btn-secondary" onclick="pasteText()">📋 Paste</button>
+            <button class="btn btn-secondary" onclick="sampleText()">📝 Sample</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="word-count">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="reading-time">0 min</div>
+            <div class="stat-label">📖 Reading Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="speaking-time">0 min</div>
+            <div class="stat-label">🎤 Speaking Time</div>
+          </div>
+        </div>
+        <!-- content start -->
+      </div>
+    </div>
+
+    
+        <!-- content start -->
+<section class="seo-content-section">
+      <div class="container">
+
+<nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/ferramentas-de-texto/">Ferramentas de Texto</a> &rsaquo; <span>Calculadora de Tempo de Leitura</span></nav>
+<p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Por FontGenerators Editorial Team &middot; Última atualização: 12 de outubro de 2026</p>
+<h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Calculadora de Tempo de Leitura Online</h1>
+<p>Uma calculadora de tempo de leitura estima quanto tempo leva para ler um texto &mdash; o rótulo "5 min de leitura" que você vê em artigos. Esta ferramenta grátis também estima o <strong>tempo de fala</strong> para discursos, roteiros e apresentações, usando as médias padrão de 200/150 palavras por minuto. Cole qualquer texto acima para uma estimativa instantânea de tempo de leitura.</p>
+<div style="background: #f0f4ff; border: 1px solid #dbe4ff; border-left: 4px solid #4f46e5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+<p style="font-weight: 700; margin: 0 0 0.5rem;">Pontos principais</p>
+<ul style="margin: 0;">
+<li>Tempo de leitura = palavras &divide; 200 PPM; tempo de fala = palavras &divide; 150 PPM &mdash; ambos arredondados para minutos cheios. Serve também como calculadora de palavras por minuto: divida qualquer contagem por 200 (leitura) ou 150 (fala).</li>
+<li>200 PPM reflete a velocidade média de leitura silenciosa de um adulto; 150 PPM reflete o ritmo típico de apresentação.</li>
+<li>Mostra a contagem de palavras ao vivo junto das duas estimativas de tempo.</li>
+<li>O arredondamento para cima faz textos curtos mostrarem sempre pelo menos "1 min".</li>
+<li>Grátis, sem cadastro, roda todo no seu navegador.</li>
+</ul>
+</div>
+<h2>O Que É uma Calculadora de Tempo de Leitura?</h2>
+<p><strong>Uma calculadora de tempo de leitura é uma ferramenta que estima quanto tempo leva para ler um texto.</strong> Ela conta as palavras e divide por uma velocidade média de leitura (palavras por minuto), produzindo o conhecido rótulo "X min de leitura" usado pelo Medium, sites de notícias e blogs. Um estimador de tempo de leitura ajuda redatores a criar expectativa, ajuda palestrantes a cronometrar apresentações e ajuda leitores a decidir se têm tempo para um artigo agora.</p>
+[IMAGEM: Diagrama mostrando a fórmula do tempo de leitura: contagem de palavras dividida por 200 PPM igual a minutos, com um cálculo de exemplo &mdash; alt: "Fórmula de cálculo do tempo de leitura com palavras por minuto"]
+<h2>Como Esta Calculadora de Tempo de Leitura Funciona</h2>
+<p>A conta é propositalmente simples e transparente:</p>
+<ul>
+<li><strong>Contagem de palavras:</strong> seu texto é aparado e dividido nos espaços em branco &mdash; cada sequência conta como uma palavra.</li>
+<li><strong>Tempo de leitura:</strong> contagem de palavras &divide; <strong>200 palavras por minuto</strong> (velocidade média de leitura silenciosa de um adulto), arredondado <strong>para cima</strong> até o minuto cheio seguinte.</li>
+<li><strong>Tempo de fala:</strong> contagem de palavras &divide; <strong>150 palavras por minuto</strong> (ritmo típico de fala para apresentações e narração), arredondado <strong>para cima</strong>.</li>
+</ul>
+<p>Os resultados atualizam ao vivo enquanto você digita. O botão <strong>Exemplo</strong> carrega um parágrafo de demonstração, <strong>Colar</strong> puxa da sua área de transferência e <strong>Limpar</strong> zera. Por causa do arredondamento para cima, um texto de 201 palavras mostra "2 min" e qualquer coisa abaixo de 200 palavras mostra "1 min" &mdash; a estimativa é conservadora por design.</p>
+<h2>Exemplo Prático</h2>
+<p>Pegue um rascunho de artigo de 400 palavras:</p>
+<table>
+<thead><tr><th>Métrica</th><th>Cálculo</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td>Palavras</td><td>contadas</td><td>400</td></tr>
+<tr><td>Tempo de leitura</td><td>400 &divide; 200 = 2,0</td><td><strong>2 min</strong></td></tr>
+<tr><td>Tempo de fala</td><td>400 &divide; 150 = 2,67 &rarr; arredonda para cima</td><td><strong>3 min</strong></td></tr>
+</tbody>
+</table>
+<p>Uma redação de 1.500 palavras: 1.500 &divide; 200 = 7,5 &rarr; <strong>8 min de leitura</strong>; falada: 1.500 &divide; 150 = 10 &rarr; <strong>10 min</strong>. Esses 8 minutos explicam por que "8 min de leitura" é um rótulo tão comum em artigos de tamanho médio.</p>
+<h2>Como Usar a Calculadora de Tempo de Leitura</h2>
+<ol>
+<li><strong>Cole ou digite</strong> seu texto na caixa (ou clique em Exemplo para testar a demonstração).</li>
+<li><strong>Leia os três cartões:</strong> contagem de palavras, tempo de leitura e tempo de fala atualizam ao vivo.</li>
+<li><strong>Use o tempo de leitura</strong> para rótulos de artigo ("5 min de leitura") e o <strong>tempo de fala</strong> &mdash; esta página funciona como calculadora de tempo de fala &mdash; para discursos, locuções e roteiros de vídeo.</li>
+</ol>
+<h2>De Onde Vêm os 200 e 150 PPM?</h2>
+<p>Não são números arbitrários:</p>
+<ul>
+<li><strong>200&ndash;250 PPM</strong> é a faixa amplamente citada para a leitura silenciosa média de um adulto em textos gerais de não ficção em inglês. Esta ferramenta usa o extremo conservador (200), então as estimativas pecam pelo "demora um pouquinho mais".</li>
+<li><strong>130&ndash;160 PPM</strong> é a faixa típica para o inglês falado &mdash; leitores de telejornal ficam perto de 160, a fala conversacional perto de 130. Os 150 PPM da ferramenta caem no meio, adequados para apresentações e narração.</li>
+</ul>
+<p>Ambos são médias: material técnico, vocabulário desconhecido e leitura em segunda língua são mais lentos; ficção leve e leitura dinâmica são mais rápidos. Encare a saída como estimativa de planejamento e ajuste para seu público e a dificuldade do conteúdo. Note que isto é um estimador, não um teste de velocidade de leitura &mdash; ele aplica uma média fixa em vez de medir seu ritmo pessoal.</p>
+[IMAGEM: Gráfico de barras comparando velocidades de leitura: leitura dinâmica, leitura silenciosa média, leitura técnica e ritmo de fala em PPM &mdash; alt: "Velocidades médias de leitura em palavras por minuto comparadas"]
+<h2>Tempo de Leitura vs Tempo de Fala: Qual Usar?</h2>
+<table>
+<thead><tr><th>Use tempo de leitura para</th><th>Use tempo de fala para</th></tr></thead>
+<tbody>
+<tr><td>Rótulos "X min de leitura" de blogs</td><td>Cronometragem de discursos e apresentações</td></tr>
+<tr><td>Planejamento de tamanho de newsletter</td><td>Roteiros de vídeo e locuções</td></tr>
+<tr><td>Estimativa de carga de estudo</td><td>Planejamento de episódios de podcast</td></tr>
+<tr><td>Estimativas de progresso de e-book</td><td>Estimativas de duração de audiolivro</td></tr>
+</tbody>
+</table>
+<p>Regra prática: se olhos vão ler, use tempo de leitura; se uma voz vai interpretar, use tempo de fala &mdash; e ensaie uma vez, porque a entrega real com pausas dura mais que a conta crua de PPM. Combine com o <a href="/pt/contador-de-caracteres/">contador de caracteres</a> quando a plataforma limita caracteres, e enxugue rascunhos longos antes com o <a href="/pt/encurtador-de-paragrafos/">encurtador de parágrafos</a>.</p>
+<h2>Limitações</h2>
+<ul>
+<li><strong>Só arredonda para cima:</strong> tudo abaixo de 200 palavras mostra "1 min" &mdash; a ferramenta não exibe segundos.</li>
+<li><strong>Velocidades fixas:</strong> não dá para ajustar o PPM para leitores rápidos, crianças ou público técnico.</li>
+<li><strong>Só por palavras:</strong> imagens, vídeos, blocos de código e tabelas num artigo somam tempo real de consumo que a calculadora ignora.</li>
+<li><strong>Diferenças de idioma:</strong> as médias de 200/150 são calibradas para o inglês; outros idiomas têm outros ritmos.</li>
+<li><strong>Tokenização por espaço:</strong> palavras hifenizadas e números contam como uma palavra cada, igual ao <a href="/pt/contador-de-palavras/">contador de palavras</a> do site.</li>
+</ul>
+<h2>Calculadora de Tempo de Leitura vs Alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td><strong>Esta calculadora de tempo de leitura</strong></td><td>Estimativas rápidas de leitura/fala com contagem de palavras ao vivo, sem cadastro</td></tr>
+<tr><td><a href="/pt/contador-de-palavras/">Contador de palavras</a></td><td>Estatísticas completas de texto (frases, parágrafos, legibilidade) incluindo tempo de leitura</td></tr>
+<tr><td>Cronometragem manual</td><td>Tempo exato de entrega de um discurso importante &mdash; ensaie com cronômetro</td></tr>
+</tbody>
+</table>
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Como o tempo de leitura é calculado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Contagem de palavras dividida por 200 palavras por minuto, arredondada para o minuto cheio seguinte. Um texto de 400 palavras dá exatamente 2 minutos; um de 450 palavras dá 3 minutos (2,25 arredondado para cima).</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Qual a velocidade média de leitura em PPM?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cerca de 200&ndash;250 palavras por minuto para leitura silenciosa média de um adulto em textos gerais em inglês. Esta calculadora usa 200 PPM &mdash; o extremo conservador &mdash; então as estimativas tendem a superestimar levemente em vez de subestimar o tempo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Quanto tempo leva para ler 1.000 palavras?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Cerca de 5 minutos de leitura silenciosa (1.000 &divide; 200) e cerca de 7 minutos em voz alta (1.000 &divide; 150 = 6,67, arredondado para cima).</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Qual um bom ritmo de fala em palavras por minuto?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Em torno de 130&ndash;160 PPM para o inglês. Leitores de telejornal chegam perto de 160, a fala conversacional fica perto de 130. A estimativa de tempo de fala desta ferramenta usa 150 PPM, um meio-termo sólido para apresentações e narração.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Quanto tempo leva para ler um livro de 300 páginas?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Depende das palavras por página &mdash; em torno de 250&ndash;300 num livro de bolso típico, ou seja, 75.000&ndash;90.000 palavras no total. A 200 PPM, isso dá 6&ndash;8 horas de leitura. Cole o texto de verdade para um número exato.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Por que tudo abaixo de 200 palavras mostra "1 min"?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">A calculadora arredonda para minutos cheios e não exibe segundos, então qualquer texto de 1 a 200 palavras mostra 1 minuto. É conservadora por design.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Devo usar tempo de leitura ou de fala para um roteiro de vídeo?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Tempo de fala. Roteiros são interpretados, não lidos em silêncio &mdash; e some uma margem para pausas, ênfases e refações, que a conta crua de PPM não inclui.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Imagens ou vídeos no meu artigo afetam o tempo de leitura?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sim na realidade, não nesta ferramenta. A calculadora é só por palavras; imagens, embeds e blocos de código somam tempo de consumo que ela não enxerga. Para páginas cheias de mídia, some sua própria margem por cima.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">Meu texto é enviado ou armazenado?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Não. O cálculo roda inteiramente no seu navegador. Nada sai do seu aparelho.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas de Texto</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/contador-de-palavras/">📊 Contador de Palavras</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/pt/limpador-de-texto/">🧹 Limpador de Texto</a>
+        <a class="sidebar-link" href="/pt/conversor-para-titulo/">🔠 Conversor para Title Case</a>
+      </nav>
+    </div>
+  </div>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+
+    function analyzeText() {
+      const text = document.getElementById('text-input').value.trim();
+      const words = text ? text.split(/\s+/).filter(w => w.length > 0) : [];
+      const wordCount = words.length;
+      document.getElementById('word-count').textContent = wordCount;
+
+      // Reading time 200 wpm
+      const readingMinutes = Math.ceil(wordCount / 200);
+      document.getElementById('reading-time').textContent = readingMinutes + ' min';
+
+      // Speaking time 150 wpm
+      const speakingMinutes = Math.ceil(wordCount / 150);
+      document.getElementById('speaking-time').textContent = speakingMinutes + ' min';
+    }
+
+    function clearText() {
+      document.getElementById('text-input').value = '';
+      analyzeText();
+    }
+
+    function pasteText() {
+      navigator.clipboard.readText().then(text => {
+        document.getElementById('text-input').value = text;
+        analyzeText();
+      });
+    }
+
+    function sampleText() {
+      document.getElementById('text-input').value = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+      analyzeText();
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    analyzeText();
+  
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como o tempo de leitura é calculado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contagem de palavras dividida por 200 palavras por minuto, arredondada para o minuto cheio seguinte. Um texto de 400 palavras dá exatamente 2 minutos; um de 450 palavras dá 3 minutos (2,25 arredondado para cima)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a velocidade média de leitura em PPM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cerca de 200–250 palavras por minuto para leitura silenciosa média de um adulto em textos gerais em inglês. Esta calculadora usa 200 PPM — o extremo conservador — então as estimativas tendem a superestimar levemente em vez de subestimar o tempo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para ler 1.000 palavras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cerca de 5 minutos de leitura silenciosa (1.000 ÷ 200) e cerca de 7 minutos em voz alta (1.000 ÷ 150 = 6,67, arredondado para cima)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual um bom ritmo de fala em palavras por minuto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em torno de 130–160 PPM para o inglês. Leitores de telejornal chegam perto de 160, a fala conversacional fica perto de 130. A estimativa de tempo de fala desta ferramenta usa 150 PPM, um meio-termo sólido para apresentações e narração."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para ler um livro de 300 páginas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende das palavras por página — em torno de 250–300 num livro de bolso típico, ou seja, 75.000–90.000 palavras no total. A 200 PPM, isso dá 6–8 horas de leitura. Cole o texto de verdade para um número exato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que tudo abaixo de 200 palavras mostra \"1 min\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A calculadora arredonda para minutos cheios e não exibe segundos, então qualquer texto de 1 a 200 palavras mostra 1 minuto. É conservadora por design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Devo usar tempo de leitura ou de fala para um roteiro de vídeo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tempo de fala. Roteiros são interpretados, não lidos em silêncio — e some uma margem para pausas, ênfases e refações, que a conta crua de PPM não inclui."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Imagens ou vídeos no meu artigo afetam o tempo de leitura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim na realidade, não nesta ferramenta. A calculadora é só por palavras; imagens, embeds e blocos de código somam tempo de consumo que ela não enxerga. Para páginas cheias de mídia, some sua própria margem por cima."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meu texto é enviado ou armazenado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O cálculo roda inteiramente no seu navegador. Nada sai do seu aparelho."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
