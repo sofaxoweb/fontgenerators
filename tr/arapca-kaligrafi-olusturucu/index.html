@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Arapça Kaligrafi Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Arapça kaligrafi oluşturucu ile Latinceyi Arap alfabesine çevirin ya da Arapça metni 10 kaligrafik yazı tipiyle stilize edip PNG olarak indirin. Ücretsizdir.">
+  <meta content="Transliterate Latin to Arabic script phonetically and style Arabic text in 10 calligraphic fonts. Export PNG or SVG. Free Arabic calligraphy generator." name="description" />
+  <link href="https://fontgenerators.online/tr/arapca-kaligrafi-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arapça Kaligrafi Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Arapça kaligrafi oluşturucu ile Latinceyi Arap alfabesine çevirin ya da Arapça metni 10 kaligrafik yazı tipiyle stilize edip PNG olarak indirin. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/arapca-kaligrafi-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Arapça Kaligrafi Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Arapça kaligrafi oluşturucu ile Latinceyi Arap alfabesine çevirin ya da Arapça metni 10 kaligrafik yazı tipiyle stilize edip PNG olarak indirin. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/arabic-calligraphy-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/arabic-calligraphy-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-caligrafia-arabe/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-caligrafia-arabe/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/arapca-kaligrafi-olusturucu/" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Scheherazade+New:wght@400;700&amp;family=Lateef&amp;family=Harmattan:wght@400;700&amp;family=Reem+Kufi:wght@400;700&amp;family=Aref+Ruqaa:wght@400;700&amp;family=Marhey:wght@400;700&amp;family=Rakkas&amp;family=Lalezar&amp;family=Katibeh&amp;display=swap"
+    rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <style>
+    .arabic-generator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .generator-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    /* Make the preview canvas sticky */
+    .preview-section {
+      position: relative;
+      /* parent needs position relative */
+    }
+
+    .canvas-wrapperstiky {
+      position: sticky;
+      /* sticky within parent */
+      top: 30px;
+      /* distance from top of viewport */
+    }
+
+    @media (min-width: 1024px) {
+      .generator-layout {
+        grid-template-columns: 1fr 320px;
+      }
+    }
+
+    .preview-section {
+      padding: 1.5rem;
+      background: var(--background);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .preview-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--foreground);
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .canvas-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      min-height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    #preview-canvas {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .controls-section {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .canvas-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      /* so sticky aligns to top */
+      min-height: 400px;
+    }
+
+    .canvas-wrapper-sticky {
+      position: sticky;
+      top: 30px;
+      /* distance from top of viewport */
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px;
+      /* match canvas width */
+    }
+
+    @media (max-width: 1024px) {
+      .canvas-wrapper-sticky {
+        top: 10px;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .controls-section {
+        border-top: none;
+        border-left: 1px solid var(--border);
+        max-height: none;
+      }
+    }
+
+    .control-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .control-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .control-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      background: var(--background);
+      color: var(--foreground);
+      transition: all var(--transition);
+    }
+
+    .control-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .control-textarea {
+      min-height: 100px;
+      resize: vertical;
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .control-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.5rem;
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .color-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-input {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: none;
+    }
+
+    .color-input::-webkit-color-swatch-wrapper {
+      padding: 2px;
+    }
+
+    .color-input::-webkit-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+
+    .color-hex {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-family: monospace;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .style-btn {
+      padding: 0.6rem 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .style-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .style-btn.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+
+    .range-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .range-input {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .range-input::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .range-value {
+      min-width: 45px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--foreground);
+      background: var(--background);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .export-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .export-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .export-btn {
+      padding: 0.75rem;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .export-btn-primary {
+      background: var(--primary);
+      color: white;
+      grid-column: span 2;
+    }
+
+    .export-btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .export-btn-secondary {
+      background: var(--surface-secondary);
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+
+    .export-btn-secondary:hover {
+      background: var(--border);
+    }
+
+    .presets-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .preset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .preset-btn {
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+      font-size: 0.7rem;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .sample-text-section {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .sample-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .sample-btn {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      background: var(--background);
+      font-size: 0.75rem;
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: 'Amiri', serif;
+    }
+
+    .sample-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .font-preview {
+      font-size: 1.1rem;
+      padding: 0.4rem 0;
+      direction: rtl;
+    }
+
+    /* Decorative pattern option */
+    .pattern-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pattern-checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .pattern-label {
+      font-size: 0.85rem;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .preview-section {
+        min-height: 300px;
+      }
+
+      .canvas-container {
+        min-height: 250px;
+      }
+
+      .style-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .export-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .export-btn-primary {
+        grid-column: span 1;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "İngilizce Arap alfabesine nasıl çevrilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harf çevirisi düğmesi açıkken kelimenizi Latin harflerle yazın. Araç ses uyumuna göre dönüştürür — \"salam\" سالام, \"noor\" نور olur. Bunun anlam çevirisi değil, ses tabanlı yaklaşım olduğunu unutmayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arapça sohbette 3, 7 ve 5 rakamları ne anlama gelir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Latin karşılığı olmayan Arapça seslerin yerine geçerler: 3 = ع (ayn), 7 = ح (ha), 5 = خ (kha) ve 2 = ء (hemze). Bu araç onları anlar; \"7abibi 3albi\" حابيبي عالبي olur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Harf çevirisi çeviriyle aynı şey mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Harf çevirisi sesleri harflere eşler (\"salam\" → سالام); çeviri diller arası anlam dönüştürür. Bu araç harf çevirisi yapar — İngilizce cümleleri Arapçaya çevirmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kendim yazdığım Arapça metni stilize edebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Harf çevirisi düğmesini kapatıp Arapçayı doğrudan yazın ya da yapıştırın. Sonra 10 yazı tipinden seçin, renkleri ve boyutu ayarlayın, kenarlık ya da süsleme ekleyin; PNG ya da SVG olarak dışa aktarın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arapçayı Kopyala düğmesi ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arapça metni (harf çevirili diziyi) sade metin olarak panonuza kopyalar — canvas tasarımı olmadan Word, Canva, Photoshop ya da sosyal medyaya yapıştırmada işe yarar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Klasik kaligrafiye en çok benzeyen yazı tipi hangisi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amiri en klasik nesih hissini verir; ayetlere ve resmî ifadelere uyar. Reem Kufi cesur tasarımlar için geometrik Kufi tarzını yakalar. Onu da kaliteli web yazı tipleridir ama resmî işlerde insan hattatın yerini hiçbiri tutmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tasarımımı indirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — baskı ve tasarım işleri için PNG (piksel görsel) ya da SVG (ölçeklenebilir vektör) olarak dışa aktarın ya da çizilen görseli doğrudan panonuza kopyalayın. Arapçayı Kopyala düğmesi yalnızca metni kopyalar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Adım standart Arapça yazımdan neden farklı görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çünkü harf çevirisi ses uyumlu, sözlük tabanlı değildir — harflerin sesini çizer; bu yerleşik yazımlardan sık farklıdır (muhammad → موهامماد, standart محمد'e karşı). Adların doğru yazımları için ana dili Arapça olana danışın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Metnim bir yere yükleniyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Harf çevirisi, çizim ve dışa aktarma hepsi tarayıcınızda olur. Metniniz cihazınızdan asla çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/arabic-calligraphy-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/arabic-calligraphy-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">✨</span>
+                        Estetik Araçlar
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../estetik-metin-olusturucu/">
+                            <span class="link-icon">🌸</span>
+                            <span class="link-text">Estetik Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../brat-metin-olusturucu/">
+                            <span class="link-icon">💚</span>
+                            <span class="link-text">Brat Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../kaligrafi-metin-olusturucu/">
+                            <span class="link-icon">🖋️</span>
+                            <span class="link-text">Kaligrafi Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link active" href="../arapca-kaligrafi-olusturucu/">
+                            <span class="link-icon">🕌</span>
+                            <span class="link-text">Arapça Kaligrafi Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../el-yazisi-olusturucu/">
+                            <span class="link-icon">✍️</span>
+                            <span class="link-text">El Yazısı Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../imza-olusturucu/">
+                            <span class="link-icon">🖊️</span>
+                            <span class="link-text">İmza Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../gotik-metin-olusturucu/">
+                            <span class="link-icon">🖤</span>
+                            <span class="link-text">Gotik Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../suslu-metin-olusturucu/">
+                            <span class="link-icon">⭐</span>
+                            <span class="link-text">Süslü Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../bitisik-el-yazisi-olusturucu/">
+                            <span class="link-icon">✒️</span>
+                            <span class="link-text">Bitişik El Yazısı Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+      <!-- Main Content -->
+      <div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+        <div class="arabic-generator">
+          <div class="generator-layout">
+            <!-- Preview Section -->
+            <div class="preview-section">
+              <div class="preview-header">
+                <span class="preview-title">🕌 Arap\u00e7a Kaligrafi \u00d6nizlemesi</span>
+                <div class="preview-actions">
+                  <button class="btn btn-sm btn-secondary" onclick="resetToDefault()">S\u0131f\u0131rla</button>
+                </div>
+              </div>
+              <div class="canvas-container">
+                <div class="canvas-wrapper-sticky">
+                  <canvas height="400" id="preview-canvas" width="800"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- Controls Section -->
+            <div class="controls-section">
+              <div class="control-group">
+                <label class="control-label" for="transliterate-toggle">Girdi modu</label>
+                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer;">
+                  <input type="checkbox" id="transliterate-toggle" class="pattern-checkbox" checked>
+                  <span class="pattern-label">Latinceden Arapçaya harf çevirisi (örn. "salam" &rarr; "&#1587;&#1604;&#1575;&#1605;")</span>
+                </label>
+                <p style="font-size:0.8rem;color:var(--text-muted,#555);margin:0.4rem 0 0;">A\u00e7\u0131k: Latin harfler ses uyumuna g\u00f6re Arap alfabesine \u00e7evrilir. Kapal\u0131: Arap\u00e7ay\u0131 do\u011frudan yaz\u0131n veya yap\u0131\u015ft\u0131r\u0131n.</p>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-input">Metniniz</label>
+                <textarea id="text-input" class="control-input control-textarea" rows="3">&#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607; &#1575;&#1604;&#1585;&#1581;&#1605;&#1606; &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;</textarea>
+                <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                  <button class="btn btn-secondary btn-sm" onclick="copyArabic()">&#128203; Arap\u00e7ay\u0131 Kopyala</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Kaligrafi yaz\u0131 tipi</label>
+                <div class="style-grid">
+                  <button class="style-btn active" data-font="Amiri" onclick="setFont(this, 'Amiri')">Amiri</button>
+                  <button class="style-btn" data-font="Scheherazade New" onclick="setFont(this, 'Scheherazade New')">Scheherazade</button>
+                  <button class="style-btn" data-font="Lateef" onclick="setFont(this, 'Lateef')">Lateef</button>
+                  <button class="style-btn" data-font="Harmattan" onclick="setFont(this, 'Harmattan')">Harmattan</button>
+                  <button class="style-btn" data-font="Reem Kufi" onclick="setFont(this, 'Reem Kufi')">Reem Kufi</button>
+                  <button class="style-btn" data-font="Aref Ruqaa" onclick="setFont(this, 'Aref Ruqaa')">Aref Ruqaa</button>
+                  <button class="style-btn" data-font="Marhey" onclick="setFont(this, 'Marhey')">Marhey</button>
+                  <button class="style-btn" data-font="Rakkas" onclick="setFont(this, 'Rakkas')">Rakkas</button>
+                  <button class="style-btn" data-font="Lalezar" onclick="setFont(this, 'Lalezar')">Lalezar</button>
+                  <button class="style-btn" data-font="Katibeh" onclick="setFont(this, 'Katibeh')">Katibeh</button>
+                </div>
+              </div>
+              <div class="sample-text-section">
+                <label class="control-label">\u00d6rnek metinler</label>
+                <div class="sample-grid">
+                  <button class="sample-btn" onclick="setSampleText('&#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607; &#1575;&#1604;&#1585;&#1581;&#1605;&#1606; &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;')">Besmele</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1575;&#1604;&#1587;&#1604;&#1575;&#1605; &#1593;&#1604;&#1610;&#1603;&#1605;')">Selam</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1605;&#1581;&#1605;&#1583;')">Muhammed</button>
+                  <button class="sample-btn" onclick="setSampleText('&#1606;&#1608;&#1585;')">Nur</button>
+                </div>
+              </div>
+              <div class="control-group" style="margin-top:1.25rem;">
+                <label class="control-label" for="font-size">Yaz\u0131 tipi boyutu</label>
+                <div class="range-wrapper">
+                  <input type="range" id="font-size" class="range-input" min="24" max="160" value="72">
+                  <span class="range-value" id="font-size-value">72px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-color">Metin rengi</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="text-color" class="color-input" value="#1a1a2e">
+                  <input type="text" id="text-color-hex" class="color-hex" value="#1a1a2e">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="bg-color">Arka plan rengi</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="bg-color" class="color-input" value="#f5f0e8">
+                  <input type="text" id="bg-color-hex" class="color-hex" value="#f5f0e8">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="canvas-width">Canvas boyutu</label>
+                <div class="control-row">
+                  <input type="number" id="canvas-width" class="control-input" value="800" min="200" max="2000">
+                  <input type="number" id="canvas-height" class="control-input" value="400" min="200" max="2000">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="shadow-blur">Metin g\u00f6lgesi</label>
+                <div class="range-wrapper">
+                  <input type="range" id="shadow-blur" class="range-input" min="0" max="30" value="0">
+                  <span class="range-value" id="shadow-blur-value">0px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
+                  <input type="checkbox" id="show-border" class="pattern-checkbox">
+                  <span class="pattern-label">Dekoratif kenarl\u0131k</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:0.5rem;margin-top:0.75rem;cursor:pointer;">
+                  <input type="checkbox" id="add-ornament" class="pattern-checkbox">
+                  <span class="pattern-label">\u0130slami s\u00fcsleme (&#1758;)</span>
+                </label>
+              </div>
+              <div class="presets-section">
+                <label class="control-label">Renk haz\u0131r ayarlar\u0131</label>
+                <div class="preset-grid">
+                  <button class="preset-btn" onclick="applyPreset('#1a1a2e', '#f5f0e8')">Klasik</button>
+                  <button class="preset-btn" onclick="applyPreset('#ffffff', '#0f0f23')">Gece</button>
+                  <button class="preset-btn" onclick="applyPreset('#b8860b', '#1a1a1a')">Alt\u0131n</button>
+                </div>
+              </div>
+              <div class="export-section">
+                <label class="control-label">D\u0131\u015fa aktar</label>
+                <div class="export-grid">
+                  <button class="export-btn export-btn-primary" onclick="downloadPNG()">&#128190; PNG \u0130ndir</button>
+                  <button class="export-btn export-btn-secondary" onclick="downloadSVG()">SVG \u0130ndir</button>
+                  <button class="export-btn export-btn-secondary" onclick="copyToClipboard()">&#128203; G\u00f6rseli Kopyala</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Arapça Kaligrafi Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Arapça Kaligrafi Oluşturucu</h1>
+
+<p>Arapça kaligrafi oluşturucu — bir Arapça metin dönüştürücü ve tasarım aracı — kelimelerinizi güzel Arap alfabesi tasarımlarına çevirir — ve bu ikili çalışır. <strong>Harf çevirisi modu</strong> (varsayılan açık) Latin harfleri ses uyumuna göre Arap alfabesine çevirir; "salam" yazınca "سالام" üretilir. <strong>Doğrudan mod</strong>, Arapça metni yazıp yapıştırmanıza ve canvas üstünde kaligrafik yazı tipleri, renkler ve süslemelerle stilize etmenize, ardından PNG ya da SVG olarak dışa aktarmanıza izin verir.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li><strong>İki mod:</strong> Latin→Arapça ses uyumlu harf çevirisi ve Arap alfabesi metnin canvas üstünde doğrudan stilize edilmesi.</li>
+    <li>Harf çevirisi <strong>ses uyumlu yaklaşımdır, çeviri değildir</strong> — sesleri harflere eşler.</li>
+    <li>Arabizi rakam kurallarını destekler: 3=ع, 7=ح, 5=خ, 2=ء; büyük harfler vurgulu harf verir (S=ص, H=ح, T=ط).</li>
+    <li>10 Arapça web yazı tipi (Amiri, Reem Kufi, Aref Ruqaa, Rakkas…), renkler, gölgeler, kenarlıklar ve süslemeler.</li>
+    <li>PNG ya da SVG olarak dışa aktarın, görseli panoya kopyalayın ya da Arapça metni tek tıkla kopyalayın.</li>
+  </ul>
+</div>
+
+<h2>Arapça kaligrafi oluşturucu nedir?</h2>
+<p><strong>Arapça kaligrafi oluşturucu</strong>, metni İslami hat geleneğinde kaligrafik stilizasyonla Arap alfabesiyle çizen araçtır — İslami kaligrafi metninin ardındaki sanat. Klasik tarzlar: Kufi (geometrik, köşeli), Naskh (yuvarlak ve okunaklı), Sülüs (zarif akan kıvrımlar), Divani (süslü Osmanlı), Rika (sade el yazısı) ve Nastalik (eğimli İran tarzı). Bu araç iki işi birleştirir: Latin girdiyi ses uyumuna göre Arap harflerine çevirmek ve Arapça metni tasarım canvas'ında stilize etmek.</p>
+
+<h2>Bu araç nasıl çalışır: iki mod</h2>
+<p><strong>Mod 1 — Latinceyi Arapçaya çevir</strong> (kutucuk açık, varsayılan). İngilizceden Arapçaya metin dönüştürmede Latin harfleri yazın; araç çizimden önce onları ses ses Arap alfabesine eşler. Bu İngilizceden Arapçaya metin dönüştürme ses uyumludur: sesleri eşler, anlamı değil. En uzun eşleşme öncelikli digraflar kullanır — "sh" ش olur, "th" ث olur, "kh" خ olur, "gh" غ olur — sonra tek harfler; "shams" شامس çizilir. Bu <strong>çeviri değil harf çevirisidir</strong>: telaffuzu yaklaştırır; anlamı dönüştürmez. "salam" سالام verir (ses uyumlu bir çizim); bu standart yazım سلام ile yakın ama birebir aynı değildir.</p>
+<p><strong>Mod 2 — Arapça metni doğrudan stilize et</strong> (kutucuğu kapatın). Arap alfabesini kendiniz yazın ya da yapıştırın — bir isim, bir ayet, bir ifade — ve canvas seçtiğiniz kaligrafik yazı tipinde tam stil kontrolüyle çizer: 10 yazı tipi, boyut, mürekkep rengi, arka plan, gölge, dekoratif kenarlık ve İslami süsleme. Bitmiş tasarımı PNG ya da SVG olarak dışa aktarın, görseli panonuza kopyalayın ya da <strong>Arapçayı Kopyala</strong> düğmesini Word, Canva, Photoshop ya da sosyal uygulamalara arapça kaligrafi kopyala-yapıştır için kullanın.</p>
+<p>İki mod da tamamen tarayıcınızda çalışır; hiçbir şey yüklenmez.</p>
+
+<h2>Uygulamalı örnek: Latince→Arapça harf çevirisi</h2>
+<p>Harf çevirisi düğmesi açıkken Latin girdi yazdıkça dönüşür (aracın gerçek eşlemesine karşı doğrulanmıştır):</p>
+<table>
+  <thead>
+    <tr><th>Yazdığınız</th><th>Araç üretir</th><th>Notlar</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>salam</code></td><td>سالام</td><td>Ses uyumlu — standart سلام ile karşılaştırın</td></tr>
+    <tr><td><code>noor</code></td><td>نور</td><td>"oo" digrafı → و</td></tr>
+    <tr><td><code>shams</code></td><td>شامس</td><td>"sh" digrafı → ش</td></tr>
+    <tr><td><code>7abibi 3albi</code></td><td>حابيبي عالبي</td><td>Arabizi rakamları: 7→ح, 3→ع</td></tr>
+    <tr><td><code>Salam</code> (büyük S)</td><td>صالام</td><td>Büyük harfler vurgululara eşlenir: S→ص</td></tr>
+  </tbody>
+</table>
+
+<h2>Sohbet Arapçası rakam kuralları</h2>
+<p>Çevrimiçi Arapça konuşanlar Arapça sesleri uzun süredir Latin harf ve rakamlarla yazar — "Arabizi" ya da Franco-Arapça. Bu araç temel kuralları anlar: ع (ayn) için <strong>3</strong>, ح (ha) için <strong>7</strong>, خ (kha) için <strong>5</strong>, ء (hemze) için <strong>2</strong>; ayrıca sh/th/kh/gh gibi digraflar. Büyük harfler bir katman daha ekler: <strong>H</strong>→ح, <strong>S</strong>→ص, <strong>D</strong>→ض, <strong>T</strong>→ط, <strong>Z</strong>→ظ — "vurgulu" ünsüzler. Yani "7abibi" حابيبي, "Salam" صالام olur. Sonuçlar tuhaf görünürse büyük harf mi rakam mı kastettiğinizi kontrol edin.</p>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li><strong>Modunuzu seçin:</strong> Latin yazmak için <em>Latinceyi Arapçaya Çevir</em>'i işaretli bırakın; doğrudan Arapça yazmak için kapatın.</li>
+  <li><strong>Metninizi yazın</strong> — dönüşümü (mod 1) ya da olduğu gibi görünümü (mod 2) izleyin.</li>
+  <li><strong>Yazı tipini seçin:</strong> Amiri, Scheherazade New, Lateef, Harmattan, Reem Kufi, Aref Ruqaa, Marhey, Rakkas, Lalezar ya da Katibeh.</li>
+  <li><strong>Stilize edin:</strong> yazı tipi boyutu, mürekkep ve arka plan renkleri, gölge, dekoratif kenarlık, İslami süsleme.</li>
+  <li><strong>Dışa aktarın:</strong> PNG ya da SVG indirin, görseli kopyalayın ya da metin için <strong>Arapçayı Kopyala</strong>'ya tıklayın.</li>
+</ol>
+
+<h2>10 kaligrafik yazı tipi, dürüstçe anlatıldı</h2>
+<p>Bir arap alfabesi oluşturucu olarak canvas metninizi Google Fonts'tan yüklenen Arapça web yazı tipleriyle çizer — el yazısı motoru değil, kaligrafik tarzlarda profesyonel yazı karakterleri. <strong>Amiri</strong> ve <strong>Scheherazade New</strong> rafine nesih tarzlarıdır; uzun ifadelerde en okunaklıdır. <strong>Reem Kufi</strong> geometrik Kufi esintilidir; logo ve cesur tasarımlarda harikadır. <strong>Aref Ruqaa</strong> rika el yazısı tarzını izler. <strong>Rakkas</strong>, <strong>Marhey</strong>, <strong>Lalezar</strong> ve <strong>Katibeh</strong> dekoratif ışıltılı teşhir yüzleridir; <strong>Lateef</strong> ve <strong>Harmattan</strong> temiz ve çok okunaklıdır. Kuran ayeti görünümü için Amiri ile başlayın; modern logo için Reem Kufi ya da Rakkas deneyin.</p>
+
+<h2>Sınırlamalar — dövme yaptırmadan önce bunu okuyun</h2>
+<p>Bu bölüm önemlidir. <strong>Harf çevirisi ses uyumlu yaklaşımdır, çeviri değildir.</strong> Anlamı, dilbilgiyi ya da standart yazımı anlamadan sesleri harflere eşler — "muhammad" موهامماد üretir; oysa standart yazım محمد'dir. <strong>Hareke yok:</strong> araç teşkil (sesli işaretleri) eklemez; çıktı harekesiz metindir. <strong>Lehçe farklılığı:</strong> aynı Latin yazım Mısır, Levant, Körfez ve Mağrip lehçelerinde farklı telaffuzları temsil edebilir — tek eşleme hepsine hizmet edemez. <strong>Hat sanatkârı değil:</strong> yazı tipleri klasik tarzları yaklaştırır; gerçek hat, hiçbir otomatik aracın yeniden üretemediği katı orantı kuralları izler. Pratik tavsiye: dövme, logo, düğün davetiyesi ya da kalıcı her şey için çıktıyı önce ana dili Arapça olan birine ya da profesyonel hattata inceletin.</p>
+
+<h2>Arapça kaligrafi oluşturucu ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal?</th><th>Neye dikkat?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu oluşturucu</strong></td><td>Latin→Arapça harf çevirisi + stilize canvas dışa aktarma</td><td>Ses uyumlu yaklaşım; önemli işleri inceletin</td></tr>
+    <tr><td>Profesyonel hattat</td><td>Dövme, logo, resmî sanat</td><td>Maliyet ve teslim süresi</td></tr>
+    <tr><td>Makine çevirisi (Google Çeviri)</td><td>Gerçek anlam çevirisi</td><td>Kaligrafik stilizasyon yapmaz</td></tr>
+    <tr><td><a href="/tr/kaligrafi-metin-olusturucu/">Kaligrafi metin oluşturucu</a></td><td>Latin alfabesi kaligrafik tarzlar</td><td>Arap alfabesi desteği yok</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">İngilizce Arap alfabesine nasıl çevrilir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Harf çevirisi düğmesi açıkken kelimenizi Latin harflerle yazın. Araç ses uyumuna göre dönüştürür — "salam" سالام, "noor" نور olur. Bunun anlam çevirisi değil, ses tabanlı yaklaşım olduğunu unutmayın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Arapça sohbette 3, 7 ve 5 rakamları ne anlama gelir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Latin karşılığı olmayan Arapça seslerin yerine geçerler: 3 = ع (ayn), 7 = ح (ha), 5 = خ (kha) ve 2 = ء (hemze). Bu araç onları anlar; "7abibi 3albi" حابيبي عالبي olur.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Harf çevirisi çeviriyle aynı şey mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Harf çevirisi sesleri harflere eşler ("salam" → سالام); çeviri diller arası anlam dönüştürür. Bu araç harf çevirisi yapar — İngilizce cümleleri Arapçaya çevirmez.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kendim yazdığım Arapça metni stilize edebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet. Harf çevirisi düğmesini kapatıp Arapçayı doğrudan yazın ya da yapıştırın. Sonra 10 yazı tipinden seçin, renkleri ve boyutu ayarlayın, kenarlık ya da süsleme ekleyin; PNG ya da SVG olarak dışa aktarın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Arapçayı Kopyala düğmesi ne işe yarar?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Arapça metni (harf çevirili diziyi) sade metin olarak panonuza kopyalar — canvas tasarımı olmadan Word, Canva, Photoshop ya da sosyal medyaya yapıştırmada işe yarar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Klasik kaligrafiye en çok benzeyen yazı tipi hangisi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Amiri en klasik nesih hissini verir; ayetlere ve resmî ifadelere uyar. Reem Kufi cesur tasarımlar için geometrik Kufi tarzını yakalar. Onu da kaliteli web yazı tipleridir ama resmî işlerde insan hattatın yerini hiçbiri tutmaz.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Tasarımımı indirebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet — baskı ve tasarım işleri için PNG (piksel görsel) ya da SVG (ölçeklenebilir vektör) olarak dışa aktarın ya da çizilen görseli doğrudan panonuza kopyalayın. Arapçayı Kopyala düğmesi yalnızca metni kopyalar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Adım standart Arapça yazımdan neden farklı görünüyor?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Çünkü harf çevirisi ses uyumlu, sözlük tabanlı değildir — harflerin sesini çizer; bu yerleşik yazımlardan sık farklıdır (muhammad → موهامماد, standart محمد'e karşı). Adların doğru yazımları için ana dili Arapça olana danışın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Metnim bir yere yükleniyor mu?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Harf çevirisi, çizim ve dışa aktarma hepsi tarayıcınızda olur. Metniniz cihazınızdan asla çıkmaz.</p>
+    </div>
+  </div>
+</div>
+
+<p>İlgili araçlar: Latin alfabesi kaligrafik tarzlar için <a href="/tr/kaligrafi-metin-olusturucu/">kaligrafi metin oluşturucu</a>, dekoratif Unicode metin için <a href="/tr/estetik-metin-olusturucu/">estetik metin oluşturucu</a> ve şık yazı tipleri için <a href="/tr/suslu-metin-olusturucu/">süslü metin oluşturucu</a> — hepsi <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonumuzda.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+
+        </main>
+      </div>
+    </div>
+  </main>
+  <!-- Mobile Sidebar Drawer -->
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>✨ Estetik Araçlar</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../estetik-metin-olusturucu/">🌸 Estetik Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../brat-metin-olusturucu/">💚 Brat Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../kaligrafi-metin-olusturucu/">🖋️ Kaligrafi Oluşturucu</a>
+                <a class="sidebar-link active" href="../arapca-kaligrafi-olusturucu/">🕌 Arapça Kaligrafi Oluşturucu</a>
+                <a class="sidebar-link" href="../el-yazisi-olusturucu/">✍️ El Yazısı Oluşturucu</a>
+                <a class="sidebar-link" href="../imza-olusturucu/">🖊️ İmza Oluşturucu</a>
+                <a class="sidebar-link" href="../gotik-metin-olusturucu/">🖤 Gotik Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../suslu-metin-olusturucu/">⭐ Süslü Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../bitisik-el-yazisi-olusturucu/">✒️ Bitişik El Yazısı Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+// Longest-match-first so digraphs (sh, th, kh...) win over single letters.
+function transliterateLatinToArabic(input) {
+  const DIGRAPHS = {
+    'th': 'ث', 'sh': 'ش', 'kh': 'خ', 'dh': 'ذ', 'gh': 'غ', 'ch': 'تش',
+    'aa': 'ا', 'ee': 'ي', 'oo': 'و', 'ai': 'اي', 'au': 'او'
+  };
+  const SINGLE = {
+    'a': 'ا', 'b': 'ب', 't': 'ت', 'j': 'ج', 'h': 'ه', 'd': 'د',
+    'r': 'ر', 'z': 'ز', 's': 'س', 'c': 'ك', 'f': 'ف', 'v': 'ف',
+    'q': 'ق', 'k': 'ك', 'l': 'ل', 'm': 'م', 'n': 'ن',
+    'w': 'و', 'y': 'ي', 'i': 'ي', 'o': 'و', 'u': 'و', 'e': 'ي',
+    'p': 'ب', 'g': 'ج', 'x': 'كس',
+    '3': 'ع', '7': 'ح', '5': 'خ', "'": 'ء', '`': 'ء', '2': 'ء'
+  };
+  // capital H/S/D/T/Z map to ح ص ض ط ظ (emphatic consonants)
+  const EMPHATIC = { 'H': 'ح', 'S': 'ص', 'D': 'ض', 'T': 'ط', 'Z': 'ظ' };
+  let out = '', i = 0;
+  const s = input;
+  while (i < s.length) {
+    const two = s.slice(i, i + 2).toLowerCase();
+    const one = s[i];
+    if (EMPHATIC[one]) { out += EMPHATIC[one]; i += 1; continue; }
+    if (DIGRAPHS[two]) { out += DIGRAPHS[two]; i += 2; continue; }
+    const lo = one.toLowerCase();
+    if (SINGLE[lo] !== undefined) { out += SINGLE[lo]; i += 1; continue; }
+    out += one; i += 1; // keep spaces, punctuation, existing Arabic as-is
+  }
+  return out;
+}
+if (typeof module !== 'undefined') module.exports = transliterateLatinToArabic;
+
+function copyArabic() {
+  var t = (typeof state !== 'undefined' && state.text) ? state.text : document.getElementById('text-input').value;
+  navigator.clipboard.writeText(t).then(function(){ alert('Arapça metin kopyalandı!'); });
+}
+</script>
+  <script defer="">
+    // State
+    let state = {
+      text: 'بسم الله الرحمن الرحيم',
+      font: 'Amiri',
+      fontSize: 72,
+      textColor: '#1a1a2e',
+      bgColor: '#f5f0e8',
+      canvasWidth: 800,
+      canvasHeight: 400,
+      shadowBlur: 0,
+      showBorder: false,
+      addOrnament: false
+    };
+
+    // DOM Elements
+    const canvas = document.getElementById('preview-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      setupEventListeners();
+      render();
+    });
+
+    function setupEventListeners() {
+      // Text input
+      document.getElementById('text-input').addEventListener('input', (e) => {
+        let val = e.target.value;
+        const transliterateToggle = document.getElementById('transliterate-toggle');
+        if (transliterateToggle && transliterateToggle.checked && /[a-zA-Z]/.test(val)) {
+          val = transliterateLatinToArabic(val);
+          e.target.value = val;
+        }
+        state.text = val;
+        render();
+      });
+
+      // Font size
+      document.getElementById('font-size').addEventListener('input', (e) => {
+        state.fontSize = parseInt(e.target.value);
+        document.getElementById('font-size-value').textContent = state.fontSize + 'px';
+        render();
+      });
+
+      // Text color
+      document.getElementById('text-color').addEventListener('input', (e) => {
+        state.textColor = e.target.value;
+        document.getElementById('text-color-hex').value = e.target.value;
+        render();
+      });
+      document.getElementById('text-color-hex').addEventListener('change', (e) => {
+        state.textColor = e.target.value;
+        document.getElementById('text-color').value = e.target.value;
+        render();
+      });
+
+      // Background color
+      document.getElementById('bg-color').addEventListener('input', (e) => {
+        state.bgColor = e.target.value;
+        document.getElementById('bg-color-hex').value = e.target.value;
+        render();
+      });
+      document.getElementById('bg-color-hex').addEventListener('change', (e) => {
+        state.bgColor = e.target.value;
+        document.getElementById('bg-color').value = e.target.value;
+        render();
+      });
+
+      // Canvas size
+      document.getElementById('canvas-width').addEventListener('change', (e) => {
+        state.canvasWidth = parseInt(e.target.value) || 800;
+        render();
+      });
+      document.getElementById('canvas-height').addEventListener('change', (e) => {
+        state.canvasHeight = parseInt(e.target.value) || 400;
+        render();
+      });
+
+      // Shadow
+      document.getElementById('shadow-blur').addEventListener('input', (e) => {
+        state.shadowBlur = parseInt(e.target.value);
+        document.getElementById('shadow-blur-value').textContent = state.shadowBlur + 'px';
+        render();
+      });
+
+      // Decorative options
+      document.getElementById('show-border').addEventListener('change', (e) => {
+        state.showBorder = e.target.checked;
+        render();
+      });
+      document.getElementById('add-ornament').addEventListener('change', (e) => {
+        state.addOrnament = e.target.checked;
+        render();
+      });
+    }
+
+    function setFont(btn, fontName) {
+      state.font = fontName;
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    }
+
+    function setSampleText(text) {
+      state.text = text;
+      document.getElementById('text-input').value = text;
+      render();
+    }
+
+    function applyPreset(textColor, bgColor) {
+      state.textColor = textColor;
+      state.bgColor = bgColor;
+      document.getElementById('text-color').value = textColor;
+      document.getElementById('text-color-hex').value = textColor;
+      document.getElementById('bg-color').value = bgColor;
+      document.getElementById('bg-color-hex').value = bgColor;
+      render();
+    }
+
+    function resetToDefault() {
+      state = {
+        text: 'بسم الله الرحمن الرحيم',
+        font: 'Amiri',
+        fontSize: 72,
+        textColor: '#1a1a2e',
+        bgColor: '#f5f0e8',
+        canvasWidth: 800,
+        canvasHeight: 400,
+        shadowBlur: 0,
+        showBorder: false,
+        addOrnament: false
+      };
+
+      document.getElementById('text-input').value = state.text;
+      document.getElementById('font-size').value = state.fontSize;
+      document.getElementById('font-size-value').textContent = state.fontSize + 'px';
+      document.getElementById('text-color').value = state.textColor;
+      document.getElementById('text-color-hex').value = state.textColor;
+      document.getElementById('bg-color').value = state.bgColor;
+      document.getElementById('bg-color-hex').value = state.bgColor;
+      document.getElementById('canvas-width').value = state.canvasWidth;
+      document.getElementById('canvas-height').value = state.canvasHeight;
+      document.getElementById('shadow-blur').value = state.shadowBlur;
+      document.getElementById('shadow-blur-value').textContent = '0px';
+      document.getElementById('show-border').checked = false;
+      document.getElementById('add-ornament').checked = false;
+
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.style-btn[data-font="Amiri"]').classList.add('active');
+
+      render();
+    }
+
+    function render() {
+      canvas.width = state.canvasWidth;
+      canvas.height = state.canvasHeight;
+
+      // Background
+      ctx.fillStyle = state.bgColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Decorative border
+      if (state.showBorder) {
+        drawDecorativeBorder();
+      }
+
+      // Islamic ornament
+      if (state.addOrnament) {
+        drawIslamicOrnament();
+      }
+
+      // Text shadow
+      if (state.shadowBlur > 0) {
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = state.shadowBlur;
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+      } else {
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+      }
+
+      // Draw text
+      ctx.fillStyle = state.textColor;
+      ctx.font = `${state.fontSize}px "${state.font}", serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.direction = 'rtl';
+
+      // Wrap text if needed
+      const text = state.text || 'اكتب النص هنا';
+      const maxWidth = canvas.width - 80;
+      const lines = wrapText(text, maxWidth);
+      const lineHeight = state.fontSize * 1.4;
+      const totalHeight = lines.length * lineHeight;
+      const startY = (canvas.height - totalHeight) / 2 + lineHeight / 2;
+
+      lines.forEach((line, index) => {
+        ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);
+      });
+    }
+
+    function wrapText(text, maxWidth) {
+      const words = text.split(' ');
+      const lines = [];
+      let currentLine = '';
+
+      words.forEach(word => {
+        const testLine = currentLine ? currentLine + ' ' + word : word;
+        const metrics = ctx.measureText(testLine);
+
+        if (metrics.width > maxWidth && currentLine) {
+          lines.push(currentLine);
+          currentLine = word;
+        } else {
+          currentLine = testLine;
+        }
+      });
+
+      if (currentLine) {
+        lines.push(currentLine);
+      }
+
+      return lines.length ? lines : [text];
+    }
+
+    function drawDecorativeBorder() {
+      const padding = 20;
+      const borderWidth = 3;
+
+      ctx.strokeStyle = state.textColor;
+      ctx.lineWidth = borderWidth;
+
+      // Outer border
+      ctx.strokeRect(padding, padding, canvas.width - padding * 2, canvas.height - padding * 2);
+
+      // Inner border
+      ctx.lineWidth = 1;
+      ctx.strokeRect(padding + 8, padding + 8, canvas.width - padding * 2 - 16, canvas.height - padding * 2 - 16);
+
+      // Corner decorations
+      const cornerSize = 15;
+      const corners = [
+        [padding, padding],
+        [canvas.width - padding, padding],
+        [padding, canvas.height - padding],
+        [canvas.width - padding, canvas.height - padding]
+      ];
+
+      ctx.fillStyle = state.textColor;
+      corners.forEach(([x, y]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function drawIslamicOrnament() {
+      const ornament = '۞';
+      ctx.font = '40px "Amiri", serif';
+      ctx.fillStyle = state.textColor;
+      ctx.globalAlpha = 0.3;
+
+      // Top center
+      ctx.fillText(ornament, canvas.width / 2, 50);
+      // Bottom center
+      ctx.fillText(ornament, canvas.width / 2, canvas.height - 30);
+
+      ctx.globalAlpha = 1;
+    }
+
+    function downloadPNG() {
+      const link = document.createElement('a');
+      link.download = 'arabic-calligraphy.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function downloadSVG() {
+      const text = state.text || 'اكتب النص هنا';
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${state.canvasWidth}" height="${state.canvasHeight}" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="${state.bgColor}"/>
+    <text x="50%" y="50%" 
+          font-family="${state.font}, serif" 
+          font-size="${state.fontSize}px" 
+          fill="${state.textColor}" 
+          text-anchor="middle" 
+          dominant-baseline="middle"
+          direction="rtl">${escapeXML(text)}</text>
+</svg>`;
+
+      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = 'arabic-calligraphy.svg';
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function copyToClipboard() {
+      canvas.toBlob(blob => {
+        const item = new ClipboardItem({ 'image/png': blob });
+        navigator.clipboard.write([item]).then(() => {
+          alert('Görsel panoya kopyalandı!');
+        }).catch(() => {
+          alert('Kopyalanamadı. İndirmeyi deneyin.');
+        });
+      });
+    }
+
+    function escapeXML(str) {
+      return str.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+</script>
+  <!-- faq schema -->
+  <!-- entity schema -->
+  <!-- web advance schema -->
+  </body>
+
+</html></body>
+
+</html>
