@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Uppercase Converter | FontGenerators.online</title>
+  <meta content="Make any text UPPERCASE instantly with our free uppercase converter. Paste, convert, and copy — ideal for headings, labels, SKUs, and codes. No signup needed." name="description" />
+  <link href="../css/variables.css" rel="stylesheet" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/uppercase-converter/" rel="canonical" />
+  <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/uppercase-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/uppercase-converter/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/uppercase-converter/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/uppercase-converter/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/tools.css" rel="stylesheet" />
+  <style>
+    .output-box {
+      padding: 1rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      min-height: 100px;
+      font-size: 1.1rem;
+      word-break: break-word;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to make text uppercase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paste your text into the converter above. Every lowercase letter becomes its capital form instantly — \"hello\" becomes \"HELLO\" — while numbers, punctuation, and spacing stay the same. Click Copy to use the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the uppercase generator work online for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This uppercase generator is free, works in any modern browser, and needs no signup. Conversion happens on your device, so it works offline once the page has loaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it change numbers or punctuation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Only letters with case are affected. \"order #4821 – shipped\" becomes \"ORDER #4821 – SHIPPED\": the digits, hash, and dash are untouched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does ß become SS in uppercase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The German ß (Eszett) historically had no capital form, so Unicode's default uppercase mapping renders it as \"SS\". A capital ẞ exists since 2017, but standard case conversion still produces \"SS\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is writing in all caps considered shouting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In chats, emails, and social posts, yes — a full message in caps reads as shouting. In labels, headings, codes, and legal text, all-caps is a neutral convention. Match the format to the context."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does uppercase text hurt readability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For passages longer than a line or two, yes. Readers recognize words partly by their outline, and all-caps makes every word a rectangle. Keep uppercase to short strings and use bold or size for longer emphasis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert uppercase back to normal text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The lowercase converter reverses the mechanics, turning \"HELLO\" into \"hello\". But information lost in the first conversion — like which words were proper nouns — cannot be restored automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it handle accented letters like é and ñ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unicode case mapping covers accented Latin letters (é→É, ñ→Ñ) as well as Greek and Cyrillic scripts. Only locale-specific edge cases like Turkish dotted İ need special handling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The conversion runs entirely in your browser using built-in JavaScript. Nothing is sent to a server, stored, or logged."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Aesthetic Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/aesthetic-text-tools/" class="dropdown-link dropdown-header">All Aesthetic Tools →</a>
+                    <a href="/aesthetic-text-generator/" class="dropdown-link">🌸 Aesthetic Text Generator</a>
+                    <a href="/brat-text-generator/" class="dropdown-link">💚 Brat Text Generator</a>
+                    <a href="/soft-girl-text-generator/" class="dropdown-link">🌷 Soft Girl Text Generator</a>
+                    <a href="/vaporwave-text-generator/" class="dropdown-link">🌊 Vaporwave Text Generator</a>
+                    <a href="/kawaii-text-generator/" class="dropdown-link">🎀 Kawaii Text Generator</a>
+                    <a href="/neon-text-generator/" class="dropdown-link">💡 Neon Text Generator</a>
+                    <a href="/glow-text-generator/" class="dropdown-link">✨ Glow Text Generator</a>
+                    <a href="/glitter-text-generator/" class="dropdown-link">💎 Glitter Text Generator</a>
+                    <a href="/retro-text-generator/" class="dropdown-link">📺 Retro Text Generator</a>
+                    <a href="/cyber-text-generator/" class="dropdown-link">🤖 Cyber Text Generator</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Font Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/fancy-font-tools/" class="dropdown-link dropdown-header">All Font Tools →</a>
+                    <a href="/stylish-font-generator/" class="dropdown-link">💎 Stylish Font Generator</a>
+                    <a href="/fancy-text-generator/" class="dropdown-link">⭐ Fancy Text Generator</a>
+                    <a href="/unicode-text-generator/" class="dropdown-link">🔠 Unicode Text Generator</a>
+                    <a href="/bold-text-converter/" class="dropdown-link">🅱️ Bold Text Converter</a>
+                    <a href="/italic-text-converter/" class="dropdown-link">📝 Italic Text Converter</a>
+                    <a href="/cursive-text-generator/" class="dropdown-link">✒️ Cursive Text Generator</a>
+                    <a href="/gothic-text-generator/" class="dropdown-link">🖤 Gothic Text Generator</a>
+                    <a href="/bubble-letters-generator/" class="dropdown-link">🫧 Bubble Letters Generator</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Emoji & Symbols
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/emoji-symbol-tools/" class="dropdown-link dropdown-header">All Emoji & Symbol Tools →</a>
+                    <a href="/emoji-text-maker/" class="dropdown-link">😊 Emoji Text Maker</a>
+                    <a href="/emoji-combiner/" class="dropdown-link">🎨 Emoji Combiner</a>
+                    <a href="/kaomoji-generator/" class="dropdown-link">(◕‿◕) Kaomoji Generator</a>
+                    <a href="/emoticon-maker/" class="dropdown-link">:) Emoticon Maker</a>
+                    <a href="/heart-symbol-generator/" class="dropdown-link">♥ Heart Symbols</a>
+                    <a href="/sparkle-symbol-generator/" class="dropdown-link">✨ Sparkle Symbols</a>
+                    <a href="/arrow-symbol-generator/" class="dropdown-link">→ Arrow Symbols</a>
+                    <a href="/aesthetic-borders-generator/" class="dropdown-link">『』 Aesthetic Borders</a>
+                    <a href="/fancy-text-symbols-library/" class="dropdown-link">☆ Symbols Library</a>
+                    <a href="/divider-line-generator/" class="dropdown-link">═ Divider Lines</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    Social Media
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/social-media-caption-tools/" class="dropdown-link dropdown-header">All Social Media Tools
+                        →</a>
+                    <a href="/instagram-caption-generator/" class="dropdown-link">📸 Instagram Caption</a>
+                    <a href="/tiktok-caption-generator/" class="dropdown-link">🎵 TikTok Caption</a>
+                    <a href="/youtube-title-generator/" class="dropdown-link">▶️ YouTube Title</a>
+                    <a href="/instagram-bio-generator/" class="dropdown-link">✨ Instagram Bio</a>
+                    <a href="/tiktok-bio-formatter/" class="dropdown-link">🎭 TikTok Bio</a>
+                    <a href="/hashtag-generator/" class="dropdown-link">#️⃣ Hashtag Generator</a>
+                    <a href="/caption-length-counter/" class="dropdown-link">📊 Length Counter</a>
+                    <a href="/story-caption-maker/" class="dropdown-link">📖 Story Caption</a>
+                    <a href="/emoji-caption-generator/" class="dropdown-link">😊 Emoji Caption</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    More Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/handwriting-text-generator/" class="dropdown-link">✍️ Handwriting Generator</a>
+                    <a href="/signature-text-maker/" class="dropdown-link">🖊️ Signature Text Maker</a>
+                    <a href="/calligraphy-text-generator/" class="dropdown-link">🖋️ Calligraphy Generator</a>
+                    <a href="/arabic-calligraphy-generator/" class="dropdown-link">🕌 Arabic Calligraphy</a>
+                    <a href="/bubble-text-maker/" class="dropdown-link">🫧 Bubble Text Maker</a>
+                    <a href="/doodle-text-generator/" class="dropdown-link">🎨 Doodle Text Generator</a>
+                    <a href="/minimal-text-generator/" class="dropdown-link">◻️ Minimal Text Generator</a>
+                    <a href="/small-caps-generator/" class="dropdown-link">🔡 Small Caps Generator</a>
+                    <a href="/monospace-text-generator/" class="dropdown-link">💻 Monospace Generator</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">EN</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/" class="mobile-nav-link">🏠 Home</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Aesthetic Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/aesthetic-text-tools/" class="mobile-dropdown-link">All Aesthetic Tools</a>
+            <a href="/aesthetic-text-generator/" class="mobile-dropdown-link">Aesthetic Text Generator</a>
+            <a href="/brat-text-generator/" class="mobile-dropdown-link">Brat Text Generator</a>
+            <a href="/soft-girl-text-generator/" class="mobile-dropdown-link">Soft Girl Text Generator</a>
+            <a href="/vaporwave-text-generator/" class="mobile-dropdown-link">Vaporwave Text Generator</a>
+            <a href="/kawaii-text-generator/" class="mobile-dropdown-link">Kawaii Text Generator</a>
+            <a href="/neon-text-generator/" class="mobile-dropdown-link">Neon Text Generator</a>
+            <a href="/glow-text-generator/" class="mobile-dropdown-link">Glow Text Generator</a>
+            <a href="/glitter-text-generator/" class="mobile-dropdown-link">Glitter Text Generator</a>
+            <a href="/retro-text-generator/" class="mobile-dropdown-link">Retro Text Generator</a>
+            <a href="/cyber-text-generator/" class="mobile-dropdown-link">Cyber Text Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Font Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/fancy-font-tools/" class="mobile-dropdown-link">All Font Tools</a>
+            <a href="/stylish-font-generator/" class="mobile-dropdown-link">Stylish Font Generator</a>
+            <a href="/fancy-text-generator/" class="mobile-dropdown-link">Fancy Text Generator</a>
+            <a href="/unicode-text-generator/" class="mobile-dropdown-link">Unicode Text Generator</a>
+            <a href="/bold-text-converter/" class="mobile-dropdown-link">Bold Text Converter</a>
+            <a href="/italic-text-converter/" class="mobile-dropdown-link">Italic Text Converter</a>
+            <a href="/cursive-text-generator/" class="mobile-dropdown-link">Cursive Text Generator</a>
+            <a href="/gothic-text-generator/" class="mobile-dropdown-link">Gothic Text Generator</a>
+            <a href="/bubble-letters-generator/" class="mobile-dropdown-link">Bubble Letters Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji & Symbols
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/emoji-symbol-tools/" class="mobile-dropdown-link">All Emoji & Symbol Tools</a>
+            <a href="/emoji-text-maker/" class="mobile-dropdown-link">Emoji Text Maker</a>
+            <a href="/emoji-combiner/" class="mobile-dropdown-link">Emoji Combiner</a>
+            <a href="/kaomoji-generator/" class="mobile-dropdown-link">Kaomoji Generator</a>
+            <a href="/emoticon-maker/" class="mobile-dropdown-link">Emoticon Maker</a>
+            <a href="/heart-symbol-generator/" class="mobile-dropdown-link">Heart Symbols</a>
+            <a href="/sparkle-symbol-generator/" class="mobile-dropdown-link">Sparkle Symbols</a>
+            <a href="/arrow-symbol-generator/" class="mobile-dropdown-link">Arrow Symbols</a>
+            <a href="/aesthetic-borders-generator/" class="mobile-dropdown-link">Aesthetic Borders</a>
+            <a href="/fancy-text-symbols-library/" class="mobile-dropdown-link">Symbols Library</a>
+            <a href="/divider-line-generator/" class="mobile-dropdown-link">Divider Lines</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Social Media
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/social-media-caption-tools/" class="mobile-dropdown-link">All Social Media Tools</a>
+            <a href="/instagram-caption-generator/" class="mobile-dropdown-link">Instagram Caption</a>
+            <a href="/tiktok-caption-generator/" class="mobile-dropdown-link">TikTok Caption</a>
+            <a href="/youtube-title-generator/" class="mobile-dropdown-link">YouTube Title</a>
+            <a href="/instagram-bio-generator/" class="mobile-dropdown-link">Instagram Bio</a>
+            <a href="/tiktok-bio-formatter/" class="mobile-dropdown-link">TikTok Bio</a>
+            <a href="/hashtag-generator/" class="mobile-dropdown-link">Hashtag Generator</a>
+            <a href="/caption-length-counter/" class="mobile-dropdown-link">Length Counter</a>
+            <a href="/story-caption-maker/" class="mobile-dropdown-link">Story Caption</a>
+            <a href="/emoji-caption-generator/" class="mobile-dropdown-link">Emoji Caption</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ More Tools
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/handwriting-text-generator/" class="mobile-dropdown-link">Handwriting Generator</a>
+            <a href="/signature-text-maker/" class="mobile-dropdown-link">Signature Text Maker</a>
+            <a href="/calligraphy-text-generator/" class="mobile-dropdown-link">Calligraphy Generator</a>
+            <a href="/arabic-calligraphy-generator/" class="mobile-dropdown-link">Arabic Calligraphy</a>
+            <a href="/bubble-text-maker/" class="mobile-dropdown-link">Bubble Text Maker</a>
+            <a href="/doodle-text-generator/" class="mobile-dropdown-link">Doodle Text Generator</a>
+            <a href="/minimal-text-generator/" class="mobile-dropdown-link">Minimal Text Generator</a>
+            <a href="/small-caps-generator/" class="mobile-dropdown-link">Small Caps Generator</a>
+            <a href="/monospace-text-generator/" class="mobile-dropdown-link">Monospace Generator</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){var p=location.pathname.replace(/\/index\.html$/,'').replace(/\/$/,'').split('/');var l=p.pop()||'';var L=['es','pt','tr','en'];var s=(L.indexOf(l)===-1&&l)?l:'';var b='../';document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');a.setAttribute('href',t==='en'?b+(s?s+'/':''):b+t+'/'+(s?s+'/':''));if(t==='en'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='EN';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='EN';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Case Converters</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../title-case-converter/">🔠 Title Case</a>
+            <a class="sidebar-link" href="../lowercase-converter/">🔡 Lowercase</a>
+            <a class="sidebar-link active" href="../uppercase-converter/">🔤 Uppercase</a>
+            <a class="sidebar-link" href="../camelcase-converter/">🐪 CamelCase</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Browse Tools</button>
+        <div class="tool-input-section">
+          <h2 class="tool-title">🔤 Uppercase Converter</h2>
+          <p class="tool-description">Convert all text to UPPERCASE letters</p>
+          <textarea class="tool-input" id="text-input" oninput="convertText()" placeholder="Enter your text here..."
+            rows="5"></textarea>
+        </div>
+        <div class="tool-output-section">
+          <h3>UPPERCASE RESULT</h3>
+          <div class="output-box" id="output-text"></div>
+          <button class="btn btn-primary" onclick="copyOutput()" style="margin-top: 0.5rem;">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/text-utility-tools/">Text Utility Tools</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Uppercase Converter</span>
+</nav>
+
+<p class="byline">By FontGenerators Editorial Team · Last updated: October 12, 2026</p>
+
+<h1>Uppercase Converter</h1>
+
+<p>An uppercase converter turns every small letter in your text into its capital form — "hello world" becomes "HELLO WORLD" — instantly and in your browser. To convert to uppercase, paste any text above and get an all-caps version with numbers, punctuation, and spacing preserved exactly.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Key takeaways</strong></p>
+  <ul>
+    <li>Converts all lowercase letters (a–z plus accented forms) to uppercase; everything else is untouched.</li>
+    <li>Runs 100% in your browser — no upload, no account, no waiting.</li>
+    <li>Useful for headings, legal boilerplate, SKU codes, and normalizing shouted text for analysis.</li>
+    <li>Reserve all-caps for short strings: long uppercase paragraphs are measurably harder to read.</li>
+    <li>Uppercase can look like shouting online — use it deliberately.</li>
+  </ul>
+</div>
+
+<h2>What is uppercase text?</h2>
+<p><strong>Uppercase text is</strong> writing that uses the capital form of alphabetic letters (A, B, C) throughout — whether you call it upper case text or all-caps. The name comes from letterpress printing, where capital letters were stored in the upper half of the type case. In modern use, uppercase signals emphasis, marks headings and labels, and is required for certain codes, constants, and legal text.</p>
+
+<h2>How this uppercase converter works</h2>
+<p>The tool applies Unicode uppercase case mapping in your browser with JavaScript's built-in conversion. Each character is checked: if it has an uppercase form — including accented letters like é, ü, and ñ, plus Greek and Cyrillic scripts — it is replaced. Caseless characters (digits, punctuation, emoji, spaces) are copied through unchanged.</p>
+<p>Everything runs client-side, so there is no server delay and your text never leaves your device. The mapping follows the Unicode Consortium's standard, which also handles special cases such as the German ß (which uppercases to "SS" in standard mapping).</p>
+
+<h2>Worked example: make text uppercase</h2>
+<table>
+  <thead>
+    <tr><th>Input</th><th>Uppercase output</th><th>Typical use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>hello world</td><td>HELLO WORLD</td><td>Emphatic heading</td></tr>
+    <tr><td>order #4821 – shipped</td><td>ORDER #4821 – SHIPPED</td><td>Status labels</td></tr>
+    <tr><td>straße</td><td>STRASSE</td><td>German ß → SS mapping</td></tr>
+    <tr><td>user@example.com</td><td>USER@EXAMPLE.COM</td><td>Normalized code display</td></tr>
+    <tr><td>sale ends friday!</td><td>SALE ENDS FRIDAY!</td><td>Banner copy</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Before/after diagram of lowercase text converted to uppercase | Suggested alt: "Example of text converted from lowercase to uppercase"]
+
+<h2>How to use this tool</h2>
+<ol>
+  <li><strong>Paste your text</strong> into the input box above.</li>
+  <li>The tool <strong>instantly capitalizes</strong> every letter.</li>
+  <li>Digits, punctuation, and line breaks stay <strong>exactly where they were</strong>.</li>
+  <li>Click <strong>Copy</strong> and paste the result wherever you need it.</li>
+</ol>
+
+<h2>When uppercase is the right choice</h2>
+<p>Uppercase earns its place in short, high-visibility strings: navigation labels, table headers, warning banners, SKU and serial codes, and legal phrases like "AS IS" that must stand out. Programmers also rely on it — constants in most languages are written in UPPER_SNAKE_CASE (for example, <code>MAX_RETRIES</code>), and as a capital letters converter this tool is the fastest way to normalize identifiers to that style. Our <a href="/camelcase-converter/">CamelCase converter</a> can also produce that style from plain words.</p>
+<p>The caution is about length. Readability research consistently finds that all-caps paragraphs slow reading because words lose their distinctive shapes — the eye reads word outlines as much as letters. Keep uppercase to a line or two; for longer emphasis, bold or a larger size works better. Online, a full message in caps reads as shouting, so match the tone to your audience.</p>
+
+<h2>Uppercase conventions by context</h2>
+<table>
+  <thead>
+    <tr><th>Context</th><th>Convention</th><th>Example</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Programming constants</td><td>UPPER_SNAKE_CASE</td><td>API_TIMEOUT_MS</td></tr>
+    <tr><td>Legal documents</td><td>Key terms in caps</td><td>LIMITATION OF LIABILITY</td></tr>
+    <tr><td>Serial / SKU codes</td><td>Uppercase alphanumerics</td><td>XJ-2024-Q9</td></tr>
+    <tr><td>Warning labels</td><td>All caps, short</td><td>DO NOT SHAKE</td></tr>
+    <tr><td>Database (style)</td><td>Uppercase SQL keywords</td><td>SELECT * FROM orders</td></tr>
+    <tr><td>Aviation &amp; radio</td><td>Uppercase callsigns</td><td>BAW249</td></tr>
+  </tbody>
+</table>
+
+<h2>Limitations</h2>
+<p>A few honest caveats. First, case mapping is locale-insensitive here: Turkish text is the classic edge case, where lowercase "i" should uppercase to "İ" (dotted capital I) — this tool produces "I". Second, uppercasing is lossy in one direction only: you can always go back with the <a href="/lowercase-converter/">lowercase converter</a>, but proper nouns and acronyms in the original are gone either way, so keep a backup. Third, the German ß becomes "SS", which changes word length and can affect fixed-width layouts. Finally, never uppercase passwords or case-sensitive tokens to "normalize" them — "aB3$xQ" and "AB3$XQ" are different credentials on most systems.</p>
+
+<h2>Uppercase converter vs alternatives</h2>
+<table>
+  <thead>
+    <tr><th>Method</th><th>Best for</th><th>Watch out for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>This online converter</strong></td><td>Fast one-off conversion of pasted text</td><td>Manual copy-paste step</td></tr>
+    <tr><td><a href="/lowercase-converter/">Lowercase converter</a></td><td>The reverse: all-small text for URLs and code</td><td>Loses proper-noun capitals</td></tr>
+    <tr><td><a href="/title-case-converter/">Title case converter</a></td><td>Headline-style capitalization</td><td>Style guides disagree on minor words</td></tr>
+    <tr><td>CSS <code>text-transform: uppercase</code></td><td>Display-only caps on websites</td><td>Underlying text unchanged (screen readers may spell it out)</td></tr>
+    <tr><td>Phone keyboards</td><td>Short bursts of caps on mobile</td><td>Double-tap shift is fiddly for long text</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Side-by-side readability comparison of an uppercase paragraph versus a normal paragraph | Suggested alt: "Readability comparison showing uppercase text is harder to scan than normal text"]
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">How to make text uppercase?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Paste your text into the converter above. Every lowercase letter becomes its capital form instantly — "hello" becomes "HELLO" — while numbers, punctuation, and spacing stay the same. Click Copy to use the result.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Does the uppercase generator work online for free?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. This uppercase generator is free, works in any modern browser, and needs no signup. Conversion happens on your device, so it works offline once the page has loaded.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Will it change numbers or punctuation?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. Only letters with case are affected. "order #4821 – shipped" becomes "ORDER #4821 – SHIPPED": the digits, hash, and dash are untouched.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Why does ß become SS in uppercase?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The German ß (Eszett) historically had no capital form, so Unicode's default uppercase mapping renders it as "SS". A capital ẞ exists since 2017, but standard case conversion still produces "SS".</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Is writing in all caps considered shouting?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">In chats, emails, and social posts, yes — a full message in caps reads as shouting. In labels, headings, codes, and legal text, all-caps is a neutral convention. Match the format to the context.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Does uppercase text hurt readability?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">For passages longer than a line or two, yes. Readers recognize words partly by their outline, and all-caps makes every word a rectangle. Keep uppercase to short strings and use bold or size for longer emphasis.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Can I convert uppercase back to normal text?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The <a href="/lowercase-converter/">lowercase converter</a> reverses the mechanics, turning "HELLO" into "hello". But information lost in the first conversion — like which words were proper nouns — cannot be restored automatically.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Does it handle accented letters like é and ñ?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. Unicode case mapping covers accented Latin letters (é→É, ñ→Ñ) as well as Greek and Cyrillic scripts. Only locale-specific edge cases like Turkish dotted İ need special handling.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Is my text uploaded anywhere?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. The conversion runs entirely in your browser using built-in JavaScript. Nothing is sent to a server, stored, or logged.</p>
+    </div>
+  </div>
+</div>
+
+<p>Explore more case tools: the <a href="/lowercase-converter/">lowercase converter</a> for the reverse job, the <a href="/title-case-converter/">title case converter</a> for headlines, and the <a href="/camelcase-converter/">CamelCase converter</a> for programmer-style identifiers — all in our <a href="/text-utility-tools/">text utility tools</a> collection.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Case Converters</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
+                    text for social media, gaming, and creative projects.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Aesthetic Tools</h4>
+                <a href="/aesthetic-text-generator/">Aesthetic Text</a>
+                <a href="/brat-text-generator/">Brat Text</a>
+                <a href="/vaporwave-text-generator/">Vaporwave Text</a>
+                <a href="/kawaii-text-generator/">Kawaii Text</a>
+                <a href="/neon-text-generator/">Neon Text</a>
+                <a href="/glow-text-generator/">Glow Text</a>
+            </div>
+            <div class="footer-section">
+                <h4>Font Tools</h4>
+                <a href="/stylish-font-generator/">Stylish Font</a>
+                <a href="/fancy-text-generator/">Fancy Text</a>
+                <a href="/gothic-text-generator/">Gothic Text</a>
+                <a href="/cursive-text-generator/">Cursive Text</a>
+                <a href="/bold-text-converter/">Bold Text</a>
+                <a href="/arabic-calligraphy-generator/">Arabic Calligraphy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji & Symbols</h4>
+                <a href="/emoji-text-maker/">Emoji Text Maker</a>
+                <a href="/kaomoji-generator/">Kaomoji Generator</a>
+                <a href="/heart-symbol-generator/">Heart Symbols</a>
+                <a href="/sparkle-symbol-generator/">Sparkle Symbols</a>
+                <a href="/aesthetic-borders-generator/">Aesthetic Borders</a>
+                <a href="/divider-line-generator/">Divider Lines</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="/instagram-caption-generator/">Instagram Caption</a>
+                <a href="/tiktok-caption-generator/">TikTok Caption</a>
+                <a href="/youtube-title-generator/">YouTube Title</a>
+                <a href="/hashtag-generator/">Hashtag Generator</a>
+                <a href="/instagram-bio-generator/">Instagram Bio</a>
+                <a href="/caption-length-counter/">Length Counter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Utility Tools</h4>
+                <a href="/word-counter/">Word Counter</a>
+                <a href="/character-counter/">Character Counter</a>
+                <a href="/text-cleaner/">Text Cleaner</a>
+                <a href="/title-case-converter/">Title Case</a>
+                <a href="/zalgo-text-generator/">Zalgo Text</a>
+                <a href="/reverse-text-generator/">Reverse Text</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. All rights reserved. Create beautiful text styles for free.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    function convertText() {
+      const text = document.getElementById('text-input').value;
+      document.getElementById('output-text').textContent = text.toUpperCase();
+    }
+
+    function copyOutput() {
+      navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+</body>
+
+</html></body>
+
+</html>
