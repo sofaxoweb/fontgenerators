@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sahte Mesaj Oluşturucu | FontGenerators.online</title>
+    <meta name="description" content="Sahte mesaj oluşturucu ile gerçekçi sohbet ekran görüntüleri tasarlayın. Eğlence ve içerik üretimi için iMessage tarzı konuşmalar oluşturun. Ücretsizdir.">
+<meta content="Build realistic iPhone-style fake text message mockups right in your browser. Free fake message generator for pranks, memes, and video props — no signup needed." name="description" />
+<link href="../../css/variables.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<link href="../../css/tools.css" rel="stylesheet"/>
+<style>
+        .phone-preview {
+            max-width: 375px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .phone-screen {
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            min-height: 500px;
+        }
+        .phone-header {
+            background: #f6f6f6;
+            padding: 50px 15px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .phone-header .back-btn {
+            color: #007aff;
+            font-size: 24px;
+        }
+        .phone-header .contact-info {
+            flex: 1;
+            text-align: center;
+        }
+        .phone-header .contact-avatar {
+            width: 40px;
+            height: 40px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .phone-header .contact-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .messages-container {
+            padding: 15px;
+            min-height: 350px;
+            background: #fff;
+        }
+        .message {
+            max-width: 75%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.4;
+            position: relative;
+            clear: both;
+        }
+        .message.sent {
+            background: #007aff;
+            color: white;
+            float: right;
+            border-bottom-right-radius: 4px;
+        }
+        .message.received {
+            background: #e5e5ea;
+            color: #000;
+            float: left;
+            border-bottom-left-radius: 4px;
+        }
+        .message-time {
+            font-size: 11px;
+            color: #8e8e93;
+            text-align: center;
+            clear: both;
+            padding: 10px 0;
+        }
+        .message-input-area {
+            margin-top: 1.5rem;
+        }
+        .message-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            align-items: center;
+        }
+        .message-row input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .message-row select {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
+        .message-row button {
+            padding: 0.75rem 1rem;
+        }
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .setting-item label {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .setting-item input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .disclaimer {
+            background: var(--warning-light);
+            border: 1px solid var(--warning);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+    
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+
+  </style>
+
+<style>
+/* ─── SEO Content Section ─── */
+.seo-content-section {
+  padding: 3rem 0 2rem;
+  background: var(--cream, #FDF9F4);
+}
+.seo-content-section h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--black, #121212);
+  
+  padding-bottom: 0.4rem;
+}
+.seo-content-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--off-black, #1a1a1a);
+}
+.seo-content-section p {
+  line-height: 1.8;
+  color: var(--text-muted, #444);
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+.seo-content-section ul, .seo-content-section ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.seo-content-section li {
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted, #444);
+}
+/* Table */
+.seo-content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  overflow-x: auto;
+  display: block;
+}
+.seo-content-section table thead tr {
+  background: var(--black, #121212);
+  color: #fff;
+}
+.seo-content-section table th,
+.seo-content-section table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid #e0d5c8;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content-section table tbody tr:nth-child(even) {
+  background: var(--cream-dark, #FAF5EE);
+}
+/* FAQ */
+.faq-container {
+  margin-top: 1rem;
+}
+.faq-item {
+  border: 1px solid #e0d5c8;
+  border-left: 4px solid var(--red, #C8102E);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #121212);
+  margin: 0 0 0.5rem;
+  cursor: pointer;
+}
+.faq-answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .seo-content-section { padding: 2rem 0; }
+  .seo-content-section h2 { font-size: 1.2rem; }
+}
+</style>
+
+  <link href="https://fontgenerators.online/tr/sahte-mesaj-olusturucu/" rel="canonical" />
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sahte Mesaj Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Sahte mesaj oluşturucu ile gerçekçi sohbet ekran görüntüleri tasarlayın. Eğlence ve içerik üretimi için iMessage tarzı konuşmalar oluşturun. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/sahte-mesaj-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sahte Mesaj Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Sahte mesaj oluşturucu ile gerçekçi sohbet ekran görüntüleri tasarlayın. Eğlence ve içerik üretimi için iMessage tarzı konuşmalar oluşturun. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/fake-message-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/fake-message-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-mensajes-falsos/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-mensagens-falsas/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/sahte-mesaj-olusturucu/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Sahte mesajlar nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yukarıdaki araçta kişi adı ve saat belirleyin, sonra mesajları Gönderilen (mavi) ya da Alınan (gri) olarak ekleyin. Önizleme, resim olarak indirebileceğiniz gerçekçi bir iPhone tarzı dizi kurar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu kimseye gerçek mesaj gönderir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Yalnızca tarayıcınızda bir konuşmanın resmini çizer. Hiçbir şey gönderilmez, telefon numarası söz konusu değildir ve karşıdaki \"kişi\" yoktur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sahte sohbeti resim olarak nasıl indiririm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İndirme düğmesine tıklayın: yakalama kütüphanesi mevcutsa PNG'yi doğrudan kaydeder. Değilse önizlemenin ekran görüntüsünü alın — araç bu yedek için talimat gösterir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yanlışlıkla eklediğim mesajı silebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — bir mesaj balonuna tıklayın, anında kaldırılır. Tüm diziyi silip baştan başlamanızı sağlayan bir temizleme düğmesi de var."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatsApp sürümü var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — sahte WhatsApp sohbet oluşturucumuz , başlığı, durum satırı ve mesaj tikleriyle WhatsApp tarzında aynı tür maketi kurar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sohbette gösterilen saati değiştirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Zaman damgası alanı serbest metindir — \"Bugün 15:42\" ya da \"Dün\" gibi her şeyi yazın. Maketin parçasıdır, cihazınızın saati değil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sahte mesaj ekran görüntüsü yapmak yasal mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Şaka, aksesuar ya da tasarım maketi olarak yapmakta sorun yok. Uydurma sohbetleri kandırmak, karalamak ya da dolandırıcılık için kullanmak sorun — şakaları açık ve zararsız tutun, maketi asla gerçek kanıt gibi sunmayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kullanmak için hesap gerekli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Araç ücretsizdir, kayıt istemez ve her şey tarayıcınızda olur — maket verileriniz cihazınızdan asla çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/fake-message-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-mensajes-falsos/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-mensagens-falsas/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/sahte-mesaj-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/fake-message-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-mensajes-falsos/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-mensagens-falsas/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/sahte-mesaj-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+<div class="tool-layout">
+<aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">🎮</span>
+                        Eğlenceli Araçlar
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link active" href="../sahte-mesaj-olusturucu/">
+                            <span class="link-icon">💬</span>
+                            <span class="link-text">Sahte Mesaj Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../sahte-whatsapp-sohbet-olusturucu/">
+                            <span class="link-icon">📱</span>
+                            <span class="link-text">Sahte WhatsApp Sohbeti</span>
+                        </a>
+                        <a class="sidebar-link" href="../glitch-metin-olusturucu/">
+                            <span class="link-icon">📺</span>
+                            <span class="link-text">Glitch Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../matrix-metin-olusturucu/">
+                            <span class="link-icon">💊</span>
+                            <span class="link-text">Matrix Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">
+                            <span class="link-icon">⌨️</span>
+                            <span class="link-text">Daktilo Efekti Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+<div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+<div class="tool-title">💬 Sahte Mesaj Oluşturucu</div>
+<p class="tool-description">Eğlence için gerçekçi iMessage tarzı konuşmalar oluşturun</p>
+<div class="settings-grid">
+<div class="setting-item">
+<label>Kişi Adı</label>
+<input id="contact-name" oninput="updatePreview()" type="text" value="Ahmet"/>
+</div>
+<div class="setting-item">
+<label>Time</label>
+<input id="msg-time" oninput="updatePreview()" type="text" value="Bugün 15:42"/>
+</div>
+</div>
+<div class="message-input-area">
+<h3>Mesaj Ekle</h3>
+<div class="message-row">
+<input id="new-message" placeholder="Bir mesaj yazın..." type="text"/>
+<select id="msg-type">
+<option value="sent">Gönderilen (Mavi)</option>
+<option value="received">Alınan (Gri)</option>
+</select>
+<button class="btn btn-primary" onclick="addMessage()">Ekle</button>
+</div>
+</div>
+<div class="tool-actions" style="margin-top: 1rem;">
+<button class="btn btn-secondary" onclick="clearMessages()">Tümünü Temizle</button>
+<button class="btn btn-primary" onclick="downloadImage()">📷 Görseli İndir</button>
+</div>
+<div class="disclaimer">
+                        ⚠️ <strong>Yasal Uyarı:</strong> This tool is for entertainment purposes only. Do not use to deceive, harass, or impersonate others. Misuse may be illegal.
+                    </div>
+</div>
+<div class="phone-preview" id="phone-preview">
+<div class="phone-screen">
+<div class="phone-header">
+<span class="back-btn">‹</span>
+<div class="contact-info">
+<div class="contact-avatar" id="contact-avatar">J</div>
+<div class="contact-name" id="display-name">John</div>
+</div>
+<span style="width: 24px;"></span>
+</div>
+<div class="messages-container" id="messages-container">
+<div class="message-time" id="display-time">Today 3:42 PM</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/eglenceli-metin-araclari/">Eğlenceli Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Sahte Mesaj Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Sahte Mesaj Oluşturucu</h1>
+
+<p>Sahte mesaj oluşturucu, tarayıcınızda gerçekçi görünümlü iPhone tarzı mesaj maketi kurar — kişi adını ve zaman damgasını siz belirlersiniz, gönderilen ve alınan balonlar eklersiniz ve konuşmayı ekranda görüneceği gibi önizlersiniz. Şaka ekran görüntüleri, video aksesuarları, uygulama maketleri ve hikâye anlatımı görselleri için kullanın.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li>iPhone tarzı sohbet maketi oluşturur: kişi adı, zaman damgası başlığı, mavi gönderilen balonlar, gri alınan balonlar.</li>
+    <li>Sınırsız mesaj ekleyin, herhangi birini tıkla kaldırın ya da tüm diziyi temizleyin.</li>
+    <li>İndirme düğmesiyle dışa aktarın (mümkünse PNG çizer) ya da ekran görüntüsü alın.</li>
+    <li>Şakalar, memler, video aksesuarları ve tasarım maketleri içindir — insanları kandırmak için değil.</li>
+    <li>Tamamen tarayıcınızda çalışır — hiçbir şey yüklenmez.</li>
+  </ul>
+</div>
+
+<h2>Sahte mesaj oluşturucu nedir?</h2>
+<p><strong>Sahte mesaj oluşturucu</strong>, gerçek bir telefon ekran görüntüsü gibi görünen bir mesajlaşma maketi çizen araçtır — klasik sahte iPhone mesajları tarzı. Her öğeyi siz kontrol edersiniz — kişi adı, üstte gösterilen saat ve her mesaj balonu — araç onu bir telefon çerçevesinde çizer. Sonuç, eğlence ya da tasarım için görsel bir aksesuardır; kimseye gönderilen gerçek bir mesaj değildir.</p>
+
+<h2>Bu sahte mesaj oluşturucu nasıl çalışır?</h2>
+<p>Araç, iPhone mesaj dizisi tarzında bir telefon önizlemesi çizer. <strong>Kişi adını</strong> (başlıkta görünür) ve <strong>zaman damgasını</strong> (örn. "Bugün 15:42") belirlersiniz. Sonra mesajları yazıp sizin tarafınız için <strong>Gönderilen (Mavi)</strong>, karşı taraf için <strong>Alınan (Gri)</strong> seçersiniz; her mesaj dizide anında balon olarak belirir. Bir balona tıklamak onu kaldırır; temizleme düğmesi baştan başlamak için konuşmayı siler.</p>
+<p>Maket doğru göründüğünde <strong>indirme düğmesi</strong>, mümkünse html2canvas kütüphanesiyle önizlemeyi PNG resim olarak yakalar; değilse ekran görüntüsü alma talimatlarını gösterir. İki durumda da elinize cihazınızda bir resim dosyası geçer — hiçbir mesaj gerçekten gönderilmez ve hiçbir konuşma tarayıcınızdan çıkmaz.</p>
+
+<h2>Uygulamalı örnek: şaka sohbeti kurun</h2>
+<table>
+  <thead>
+    <tr><th>Adım</th><th>Ne ayarladınız</th><th>Sonuç</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Kişi adı: "Annem"</td><td>Başlıkta Annem görünür</td></tr>
+    <tr><td>2</td><td>Saat: "Bugün 15:42"</td><td>Başlığın altında zaman damgası</td></tr>
+    <tr><td>3</td><td>Alınan: "Yemek hazır!"</td><td>Solda gri balon</td></tr>
+    <tr><td>4</td><td>Gönderilen: "Geliyorum 🏃"</td><td>Sağda mavi balon</td></tr>
+    <tr><td>5</td><td>İndir</td><td>Dizinin PNG ekran görüntüsü</td></tr>
+  </tbody>
+</table>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li>Önizlemenin üstündeki alanlara <strong>kişi adını</strong> ve <strong>zaman damgasını</strong> girin.</li>
+  <li><strong>Bir mesaj yazın</strong>, Gönderilen ya da Alınan seçip diziye ekleyin.</li>
+  <li><strong>Konuşmayı kurmak</strong> için tekrarlayın; silmek için bir balona tıklayın.</li>
+  <li>Maketi resim olarak kaydetmek için <strong>İndir</strong>'e tıklayın (ya da önizlemenin ekran görüntüsünü alın).</li>
+</ol>
+
+<h2>Sahte sohbet maketlerinin iyi kullanımları</h2>
+<p>Bu maketler meşru yaratıcı aksesuarlardır: arkadaşları güldüren şaka ekran görüntüleri (hemen ardından açıklama ile), YouTube videoları ve TikTok'lar için diyalog görselleri, uygulama tasarım maketlerinde yer tutucu konuşmalar, filmciler için storyboard ve şaka memleri. <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">Sahte WhatsApp sohbet oluşturucu</a> aynı fikri WhatsApp'in görsel tarzında — yeşil başlık, çift tik estetiği — o görünümün daha uyduğu içerikler için sunar.</p>
+<p>Tek bir sorumlu kullanım cümlesi, açıkça: sahte sohbetleri insanları kandırmak için kullanmayın — uydurma konuşma "kanıtları" gerçek ilişkilere zarar verebilir ve bazı bağlamlarda yasayı çiğner.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Dürüst sınırlar. Maket genel iMessage görünümünü taklit eder ama gerçek bir ekran görüntüsüyle adli karşılaştırmadan geçemez — yazı tipleri, boşluklar ve durum çubuğu detayları farklıdır. PNG dışa aktarma html2canvas'in mevcut olmasına bağlıdır; değilse elle ekran görüntüsü alırsınız ki bu da aynı derecede etkilidir. Mesaj içeriği sade metindir — gerçek mesaj efektleri, tepki ya da bağlantı önizlemesi yok. Ve tabii ki buradaki hiçbir şey mesaj göndermez: bir konuşmanın resmidir, konuşmanın kendisi değil.</p>
+
+<h2>Sahte mesaj oluşturucu ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal?</th><th>Neye dikkat?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu oluşturucu</strong></td><td>Tarayıcıda hızlı iPhone tarzı maketler</td><td>Tek görsel tarz</td></tr>
+    <tr><td><a href="/tr/sahte-whatsapp-sohbet-olusturucu/">Sahte WhatsApp sohbet oluşturucu</a></td><td>WhatsApp tarzı maketler</td><td>Farklı uygulama estetiği</td></tr>
+    <tr><td>Telefon ekran görüntüsü + düzenleme</td><td>Piksel kusursuz gerçek arayüz</td><td>Gerçek bir konuşma sahnelemeyi gerektirir</td></tr>
+    <tr><td>Tasarım araçları (Figma telefon çerçeveleri)</td><td>Profesyoneller için tam yaratıcı kontrol</td><td>Daha yavaş; elle düzen işi</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Sahte mesajlar nasıl yapılır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yukarıdaki araçta kişi adı ve saat belirleyin, sonra mesajları Gönderilen (mavi) ya da Alınan (gri) olarak ekleyin. Önizleme, resim olarak indirebileceğiniz gerçekçi bir iPhone tarzı dizi kurar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Bu kimseye gerçek mesaj gönderir mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Yalnızca tarayıcınızda bir konuşmanın resmini çizer. Hiçbir şey gönderilmez, telefon numarası söz konusu değildir ve karşıdaki "kişi" yoktur.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Sahte sohbeti resim olarak nasıl indiririm?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">İndirme düğmesine tıklayın: yakalama kütüphanesi mevcutsa PNG'yi doğrudan kaydeder. Değilse önizlemenin ekran görüntüsünü alın — araç bu yedek için talimat gösterir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Yanlışlıkla eklediğim mesajı silebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet — bir mesaj balonuna tıklayın, anında kaldırılır. Tüm diziyi silip baştan başlamanızı sağlayan bir temizleme düğmesi de var.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">WhatsApp sürümü var mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet — <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">sahte WhatsApp sohbet oluşturucumuz</a>, başlığı, durum satırı ve mesaj tikleriyle WhatsApp tarzında aynı tür maketi kurar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Sohbette gösterilen saati değiştirebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet. Zaman damgası alanı serbest metindir — "Bugün 15:42" ya da "Dün" gibi her şeyi yazın. Maketin parçasıdır, cihazınızın saati değil.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Sahte mesaj ekran görüntüsü yapmak yasal mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Şaka, aksesuar ya da tasarım maketi olarak yapmakta sorun yok. Uydurma sohbetleri kandırmak, karalamak ya da dolandırıcılık için kullanmak sorun — şakaları açık ve zararsız tutun, maketi asla gerçek kanıt gibi sunmayın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kullanmak için hesap gerekli mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Araç ücretsizdir, kayıt istemez ve her şey tarayıcınızda olur — maket verileriniz cihazınızdan asla çıkmaz.</p>
+    </div>
+  </div>
+</div>
+
+<p>İlgili: WhatsApp tarzı diziler için <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">sahte WhatsApp sohbet oluşturucu</a> ve daha fazla eğlenceli oluşturucu için <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonumuz. Bu sahte sohbet üretici, memler ve video aksesuarları için şaka mesajı oluşturucu olarak da iş görür — özellikle WhatsApp görünümü için <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">şaka sohbet oluşturucumuzu</a> kullanın.</p>
+
+
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+
+</main>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>🎮 Eğlenceli Araçlar</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link active" href="../sahte-mesaj-olusturucu/">💬 Sahte Mesaj Oluşturucu</a>
+                <a class="sidebar-link" href="../sahte-whatsapp-sohbet-olusturucu/">📱 Sahte WhatsApp Sohbeti</a>
+                <a class="sidebar-link" href="../glitch-metin-olusturucu/">📺 Glitch Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../matrix-metin-olusturucu/">💊 Matrix Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../daktilo-efekti-olusturucu/">⌨️ Daktilo Efekti Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+<script crossorigin="anonymous" defer="" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+        let messages = [];
+
+        function updatePreview() {
+            const name = document.getElementById('contact-name').value || 'Contact';
+            const time = document.getElementById('msg-time').value || 'Now';
+            
+            document.getElementById('display-name').textContent = name;
+            document.getElementById('contact-avatar').textContent = name.charAt(0).toUpperCase();
+            document.getElementById('display-time').textContent = time;
+        }
+
+        function addMessage() {
+            const text = document.getElementById('new-message').value.trim();
+            const type = document.getElementById('msg-type').value;
+            
+            if (!text) return;
+            
+            messages.push({ text, type });
+            document.getElementById('new-message').value = '';
+            renderMessages();
+        }
+
+        function renderMessages() {
+            const container = document.getElementById('messages-container');
+            const time = document.getElementById('msg-time').value || 'Now';
+            
+            container.innerHTML = `<div class="message-time">${time}</div>`;
+            
+            messages.forEach((msg, i) => {
+                const div = document.createElement('div');
+                div.className = `message ${msg.type}`;
+                div.textContent = msg.text;
+                div.onclick = () => removeMessage(i);
+                div.title = 'Click to remove';
+                div.style.cursor = 'pointer';
+                container.appendChild(div);
+            });
+            
+            // Clear float
+            const clearDiv = document.createElement('div');
+            clearDiv.style.clear = 'both';
+            container.appendChild(clearDiv);
+        }
+
+        function removeMessage(index) {
+            messages.splice(index, 1);
+            renderMessages();
+        }
+
+        function clearMessages() {
+            messages = [];
+            renderMessages();
+        }
+
+        function downloadImage() {
+            const preview = document.getElementById('phone-preview');
+            
+            // Use html2canvas if available, otherwise show instructions
+            if (typeof html2canvas !== 'undefined') {
+                html2canvas(preview).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'fake-message.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            } else {
+                alert('To download: Take a screenshot of the preview, or right-click and use browser\'s screenshot tool.');
+            }
+        }
+
+        function toggleMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileSidebar(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('mobile-sidebar').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Handle Enter key
+        document.getElementById('new-message').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addMessage();
+        });
+
+        // Add sample messages
+        messages = [
+            { text: 'Hey! How are you?', type: 'received' },
+            { text: 'I\'m good! What\'s up?', type: 'sent' }
+        ];
+        renderMessages();
+    </script>
+</body>
+</html>
+</body>
+
+</html>
