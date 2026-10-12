@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Creador de Emoticonos | FontGenerators.online</title>
+  <meta name="description" content="Copia 90 emoticonos clásicos en 6 categorías: sonrisas, guiños, amor y más. Emoticonos de texto ASCII puro que funcionan en todas partes. Herramienta gratis." />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/es/creador-de-emoticonos/" rel="canonical" />
+  <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Creador de Emoticonos | FontGenerators.online">
+    <meta property="og:description" content="Copia 90 emoticonos clásicos en 6 categorías: sonrisas, guiños, amor y más. Emoticonos de texto ASCII puro que funcionan en todas partes. Herramienta gratis.">
+    <meta property="og:url" content="https://fontgenerators.online/es/creador-de-emoticonos/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Creador de Emoticonos | FontGenerators.online">
+    <meta name="twitter:description" content="Copia 90 emoticonos clásicos en 6 categorías: sonrisas, guiños, amor y más. Emoticonos de texto ASCII puro que funcionan en todas partes. Herramienta gratis.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/emoticon-maker/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/emoticon-maker/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/creador-de-emoticonos/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/criador-de-emoticons/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/ifade-olusturucu/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .emoticon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .emoticon-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .emoticon-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .emoticon-text {
+      font-size: 1.5rem;
+      font-family: monospace;
+      margin-bottom: 0.25rem;
+    }
+
+    .emoticon-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es un emoticono?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un emoticono es una carita hecha con caracteres del teclado, que se lee de lado: :-) es una sonrisa, :-( es un ceño fruncido. Fueron la forma original de internet para mostrar el tono en el texto, propuesta en 1982, mucho antes de los emojis gráficos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo copio y pego emoticonos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haz clic en cualquier emoticono de la biblioteca y se copiará automáticamente. Pégalo en chats, correos, bios o documentos. Como los emoticonos son texto ASCII puro, se pegan y se muestran bien en todas partes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre emoticonos y emojis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los emoticonos son caritas de puntuación que escribes (:-D); los emojis son caracteres con dibujo a color del estándar Unicode (😄). Los emoticonos funcionan hasta en texto plano; los emojis necesitan una fuente de emojis moderna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién inventó el emoticono?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El profesor Scott Fahlman, de la Universidad Carnegie Mellon, propuso :-) y :-( en septiembre de 1982 en un tablón de anuncios universitario para señalar qué mensajes eran bromas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los emoticonos funcionan en todos los teléfonos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Al ser ASCII puro, se muestran idénticos en cualquier dispositivo, fuente o app del planeta, desde terminales antiguas hasta smartphones modernos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué :-) a veces se interpreta como pasivo-agresivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre usuarios jóvenes acostumbrados a emojis y kaomoji, el clásico :-) puede leerse como seco o formal según el contexto. En chats casuales, una carita más expresiva como :D o un kaomoji suele transmitir mejor el tono."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar emoticonos en nombres de usuario?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la plataforma: muchos nombres de usuario solo aceptan letras, números y guion bajo. Los emoticonos sí funcionan en nombres visibles, bios, mensajes y casi cualquier campo de texto libre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia con los kaomoji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los emoticonos se leen inclinando la cabeza a la izquierda y usan solo ASCII (:-P). Los kaomoji se leen de frente y usan caracteres japoneses (◕‿◕), lo que los hace más detallados. Prueba el generador kaomoji si prefieres ese estilo."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/emoticon-maker/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link lang-choice active" data-lang="es" style="font-weight:bold;">🇪🇸 Español</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/emoticon-maker/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link lang-choice active" data-lang="es" style="font-weight:bold;">🇪🇸 Español</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-header">
+              <span class="icon">😊</span> Herramientas de Emojis y Símbolos
+            </div>
+            <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/es/creador-de-texto-con-emojis/">
+              <span class="link-icon">😊</span>
+              <span class="link-text">Creador de Texto con Emojis</span>
+            </a>
+            <a class="sidebar-link" href="/es/combinador-de-emojis/">
+              <span class="link-icon">🎨</span>
+              <span class="link-text">Combinador de Emojis</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-kaomoji/">
+              <span class="link-icon">(◕‿◕)</span>
+              <span class="link-text">Generador Kaomoji</span>
+            </a>
+            <a class="sidebar-link active" href="/es/creador-de-emoticonos/">
+              <span class="link-icon">:)</span>
+              <span class="link-text">Creador de Emoticonos</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-simbolos-de-corazon/">
+              <span class="link-icon">♥</span>
+              <span class="link-text">Símbolos de Corazón</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-simbolos-brillantes/">
+              <span class="link-icon">✨</span>
+              <span class="link-text">Símbolos Brillantes</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-simbolos-de-flechas/">
+              <span class="link-icon">→</span>
+              <span class="link-text">Símbolos de Flechas</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-bordes-aesthetic/">
+              <span class="link-icon">『』</span>
+              <span class="link-text">Bordes Aesthetic</span>
+            </a>
+            <a class="sidebar-link" href="/es/biblioteca-de-simbolos/">
+              <span class="link-icon">☆</span>
+              <span class="link-text">Biblioteca de Símbolos</span>
+            </a>
+            <a class="sidebar-link" href="/es/generador-de-lineas-divisorias/">
+              <span class="link-icon">═</span>
+              <span class="link-text">Líneas Divisorias</span>
+            </a>
+            </nav>
+          </div>
+        </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar herramientas
+        </button>
+        <div class="tool-input-section">
+          <div class="tool-title">:) Creador de Emoticonos</div>
+          <p class="tool-description">Emoticonos de texto clásicos: ¡haz clic para copiar!</p>
+          <h3 style="margin: 1.5rem 0 1rem;">😊 Feliz</h3>
+          <div class="emoticon-grid" id="happy-grid"></div>
+          <h3 style="margin: 1.5rem 0 1rem;">😢 Triste</h3>
+          <div class="emoticon-grid" id="sad-grid"></div>
+          <h3 style="margin: 1.5rem 0 1rem;">😉 Guiño y juguetón</h3>
+          <div class="emoticon-grid" id="wink-grid"></div>
+          <h3 style="margin: 1.5rem 0 1rem;">😮 Sorprendido</h3>
+          <div class="emoticon-grid" id="surprised-grid"></div>
+          <h3 style="margin: 1.5rem 0 1rem;">❤️ Amor</h3>
+          <div class="emoticon-grid" id="love-grid"></div>
+          <h3 style="margin: 1.5rem 0 1rem;">😎 Genial</h3>
+          <div class="emoticon-grid" id="cool-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/es/">Inicio</a> &nbsp;/&nbsp; <a href="/es/herramientas-de-emojis-y-simbolos/">Herramientas de Emojis y Símbolos</a> &nbsp;/&nbsp; <span>Creador de Emoticonos</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por el equipo editorial de FontGenerators · Última actualización: 12 de octubre de 2026</p>
+<h1>Creador de Emoticonos</h1>
+<p>Un <strong>creador de emoticonos</strong> reúne los emoticonos de texto clásicos — las caritas ASCII de lado como :-) y ;-) — en una biblioteca de emoticonos ascii para copiar y pegar. Explora 90 emoticonos de la vieja escuela en 6 categorías, haz clic en cualquier carita y pégala donde quieras, incluso donde los emojis no llegan.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Conclusiones clave</h3>
+<ul style="margin-bottom:0">
+<li>90 emoticonos clásicos en 6 categorías: feliz, triste, guiño, sorpresa, amor y genial.</li>
+<li>Cada emoticono es ASCII puro: las caritas más compatibles de internet.</li>
+<li>Haz clic en cualquier emoticono para copiarlo al instante; pégalo en chats, correos, bios y código.</li>
+<li>Los emoticonos se leen de lado (inclina la cabeza a la izquierda), a diferencia de los kaomoji.</li>
+<li>El primer emoticono, :-), lo propuso Scott Fahlman en 1982.</li>
+</ul>
+</div>
+
+<h2>¿Qué es un emoticono?</h2>
+<p><strong>Definición:</strong> un emoticono es una expresión facial construida con caracteres ordinarios del teclado — normalmente puntuación — que se lee de lado, como :-) para sonreír o :-( para el ceño fruncido. La palabra mezcla "emoción" e "icono".</p>
+<p>Los emoticonos son anteriores a los emojis gráficos por más de una década. El profesor Scott Fahlman, de Carnegie Mellon, propuso :-) y :-( en un tablón universitario en septiembre de 1982 para marcar los chistes, y la idea se extendió por la cultura temprana de internet. Como usan solo caracteres ASCII básicos, los emoticonos sobreviven en entornos de texto plano — correo, terminales, subtítulos — donde los emojis a color quizá no se muestren.</p>
+
+<h2>Cómo funciona esta herramienta</h2>
+<p>La biblioteca guarda 90 emoticonos agrupados en seis categorías de ánimo. Al hacer clic en una carita, su secuencia exacta de caracteres se copia a tu portapapeles; nada se transforma ni se "estiliza", porque el encanto de un emoticono está en sus caracteres crudos. No hay buscador que mantener ni paso de renderizado: la cuadrícula es una referencia directa de copiar y pegar.</p>
+<p>Todas las caritas están dentro del rango ASCII (U+0000–U+007F): dos puntos, guiones, paréntesis, punto y coma y letras. Esa limitación es la clave. ASCII es el único juego de caracteres en el que todos los dispositivos, fuentes y protocolos del planeta están de acuerdo, así que :-) se muestra idéntico en un buscapersonas de 1998 y en un smartphone de 2026: una garantía que ningún emoji a color puede dar.</p>
+
+<h2>Ejemplo práctico</h2>
+<p>Estás escribiendo un correo amistoso y quieres un toque ligero. Abre la categoría Feliz — hogar de las caritas :-) originales — y haz clic en :-) : se copia al instante. Pégalo al final de tu frase: "Gracias por tu rápida respuesta :-)". ¿Quieres más energía? La misma categoría tiene :D (sonrisa grande) y xD (carcajada). Para un guiño coqueto, la categoría Guiño tiene ;-). Cada carita es un clic, sin malabares de puntuación.</p>
+
+<h2>Cómo usar esta herramienta</h2>
+<ol>
+<li>Elige una categoría: Feliz, Triste, Guiño, Sorpresa, Amor o Genial.</li>
+<li>Haz clic en cualquier emoticono para copiarlo a tu portapapeles.</li>
+<li>Pégalo en tu mensaje, correo, bio o documento.</li>
+<li>Combina libremente: los emoticonos se mezclan con palabras, kaomoji y emojis sin conflicto.</li>
+</ol>
+
+<h2>Las seis categorías</h2>
+<table>
+<thead><tr><th>Categoría</th><th>Ánimo</th><th>Ejemplos</th></tr></thead>
+<tbody>
+<tr><td><strong>Feliz</strong></td><td>Sonrisas y risas</td><td>:-) :D xD ^_^</td></tr>
+<tr><td><strong>Triste</strong></td><td>Caños fruncidos y lágrimas</td><td>:-( :'( T_T</td></tr>
+<tr><td><strong>Guiño</strong></td><td>Guiños juguetones</td><td>;-) ;-D</td></tr>
+<tr><td><strong>Sorpresa</strong></td><td>Asombro</td><td>:-O :-o</td></tr>
+<tr><td><strong>Amor</strong></td><td>Cariño</td><td>:-* &lt;3</td></tr>
+<tr><td><strong>Genial</strong></td><td>Confianza</td><td>B-) 8-)</td></tr>
+</tbody>
+</table>
+
+<h2>Dónde los emoticonos aún ganan a los emojis</h2>
+<ul>
+<li><strong>Correo en texto plano y terminales:</strong> el ASCII siempre se muestra; los emojis a color, no siempre.</li>
+<li><strong>Código y documentación:</strong> los desarrolladores siguen dejando :-) en comentarios y mensajes de commit.</li>
+<li><strong>Campos con límite de caracteres:</strong> un emoticono cuesta 2 o 3 caracteres; un emoji puede costar más en UTF-16 y mostrarse de forma inconsistente.</li>
+<li><strong>Estética retro:</strong> los emoticonos de la vieja escuela evocan la nostalgia del internet temprano: una elección de estilo deliberada en bios y fanzines.</li>
+<li><strong>Claridad para lectores de pantalla:</strong> "dos puntos, guion, paréntesis" al menos es predecible, a diferencia de una cadena de diez emojis.</li>
+</ul>
+
+<h2>Limitaciones</h2>
+<ul>
+<li><strong>Lectura de lado.</strong> Los recién llegados no siempre saben que hay que inclinar la cabeza; los kaomoji les resultan más intuitivos.</li>
+<li><strong>Expresividad limitada.</strong> Noventa caritas dan para muchos ánimos, pero los emoticonos no hacen animales, encogimientos de hombros ni volteretas de mesa como los kaomoji.</li>
+<li><strong>Pueden parecer anticuados.</strong> En chats informales entre gente joven, :-) puede leerse como formal o incluso pasivo-agresivo: el contexto importa.</li>
+<li><strong>Ambigüedad.</strong> Caritas como :-/ o :-| dependen de la interpretación compartida; no tienen un significado fijo.</li>
+</ul>
+
+<h2>Creador de emoticonos frente a alternativas</h2>
+<table>
+<thead><tr><th>Herramienta</th><th>Qué crea</th><th>Úsala cuando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Creador de emoticonos (esta página)</strong></td><td>Emoticonos ASCII clásicos, de lado</td><td>Necesites caritas que funcionen en absolutamente todas partes</td></tr>
+<tr><td><a href="/es/generador-kaomoji/">Generador kaomoji</a></td><td>Caritas japonesas, de frente</td><td>Quieras caritas más expresivas y detalladas</td></tr>
+<tr><td><a href="/es/combinador-de-emojis/">Combinador de emojis</a></td><td>Secuencias de emojis a color</td><td>Prefieras pictogramas modernos antes que puntuación</td></tr>
+<tr><td><a href="/es/biblioteca-de-simbolos/">Biblioteca de símbolos</a></td><td>Símbolos Unicode monocromos</td><td>Quieras decoraciones ★ ♥ → en lugar de caritas</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">¿Qué es un emoticono?</h3><div class="faq-answer"><p>Un emoticono es una carita hecha con caracteres del teclado, que se lee de lado: :-) es una sonrisa, :-( es un ceño fruncido. Fueron la forma original de internet para mostrar el tono en el texto, propuesta en 1982, mucho antes de los emojis gráficos.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Cómo copio y pego emoticonos?</h3><div class="faq-answer"><p>Haz clic en cualquier emoticono de la biblioteca y se copiará automáticamente. Pégalo en chats, correos, bios o documentos. Como los emoticonos son texto ASCII puro, se pegan y se muestran bien en todas partes.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Cuál es la diferencia entre emoticonos y emojis?</h3><div class="faq-answer"><p>Los emoticonos son caritas de puntuación que escribes (:-D); los emojis son caracteres con dibujo a color del estándar Unicode (😄). Los emoticonos funcionan hasta en texto plano; los emojis necesitan una fuente de emojis moderna.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Quién inventó el emoticono?</h3><div class="faq-answer"><p>El profesor Scott Fahlman, de la Universidad Carnegie Mellon, propuso :-) y :-( en septiembre de 1982 en un tablón de anuncios universitario para señalar qué mensajes eran bromas.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Los emoticonos funcionan en todos los teléfonos?</h3><div class="faq-answer"><p>Sí. Al ser ASCII puro, se muestran idénticos en cualquier dispositivo, fuente o app del planeta, desde terminales antiguas hasta smartphones modernos.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Por qué :-) a veces se interpreta como pasivo-agresivo?</h3><div class="faq-answer"><p>Entre usuarios jóvenes acostumbrados a emojis y kaomoji, el clásico :-) puede leerse como seco o formal según el contexto. En chats casuales, una carita más expresiva como :D o un kaomoji suele transmitir mejor el tono.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Puedo usar emoticonos en nombres de usuario?</h3><div class="faq-answer"><p>Depende de la plataforma: muchos nombres de usuario solo aceptan letras, números y guion bajo. Los emoticonos sí funcionan en nombres visibles, bios, mensajes y casi cualquier campo de texto libre.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">¿Cuál es la diferencia con los kaomoji?</h3><div class="faq-answer"><p>Los emoticonos se leen inclinando la cabeza a la izquierda y usan solo ASCII (:-P). Los kaomoji se leen de frente y usan caracteres japoneses (◕‿◕), lo que los hace más detallados. Prueba el <a href="/es/generador-kaomoji/">generador kaomoji</a> si prefieres ese estilo.</p></div></div>
+</div>
+
+<h2>Herramientas relacionadas</h2>
+<ul>
+<li><a href="/es/generador-kaomoji/">Generador Kaomoji</a> — caritas japonesas de frente como (◕‿◕)</li>
+<li><a href="/es/combinador-de-emojis/">Combinador de Emojis</a> — secuencias de emojis a color</li>
+<li><a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a> — decora tus palabras con emojis</li>
+<li><a href="/es/herramientas-de-emojis-y-simbolos/">Todas las Herramientas de Emojis y Símbolos</a> — explora la colección completa</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+          <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+              <h3>😊 Herramientas de Emojis</h3>
+              <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+              <a class="sidebar-link" href="/es/creador-de-texto-con-emojis/">😊 Creador de Texto con Emojis</a> <a class="sidebar-link" href="/es/combinador-de-emojis/">🎨 Combinador de Emojis</a> <a class="sidebar-link" href="/es/generador-kaomoji/">(◕‿◕) Generador Kaomoji</a> <a class="sidebar-link active" href="/es/creador-de-emoticonos/">:) Creador de Emoticonos</a> <a class="sidebar-link" href="/es/generador-de-simbolos-de-corazon/">♥ Símbolos de Corazón</a>
+            </nav>
+          </div>
+        </div>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/script.js"></script>
+  <script defer="">
+    const emoticons = {
+      happy: [
+        { text: ':)', label: 'Sonrisa' },
+        { text: ':-)', label: 'Sonrisa' },
+        { text: ':D', label: 'Sonrisota' },
+        { text: ':-D', label: 'Sonrisota' },
+        { text: 'xD', label: 'Riendo' },
+        { text: 'XD', label: 'Riendo' },
+        { text: '=)', label: 'Feliz' },
+        { text: '=D', label: 'Muy feliz' },
+        { text: ':3', label: 'Cara de gato' },
+        { text: '^_^', label: 'Feliz' },
+        { text: '^.^', label: 'Tierno' },
+        { text: 'n_n', label: 'Contento' },
+        { text: ':>', label: 'Sonrisa pícara' },
+        { text: 'c:', label: 'Feliz' },
+        { text: 'C:', label: 'Muy feliz' }
+      ],
+      sad: [
+        { text: ':(', label: 'Triste' },
+        { text: ':-(', label: 'Triste' },
+        { text: ":'(", label: 'Llorando' },
+        { text: ':\'(', label: 'Llorando' },
+        { text: 'T_T', label: 'Llorando' },
+        { text: 'T.T', label: 'Lágrimas' },
+        { text: 'TT_TT', label: 'Sobbing' },
+        { text: ';_;', label: 'Llorando' },
+        { text: 'D:', label: 'Distressed' },
+        { text: 'D;<', label: 'Llorando' },
+        { text: ':<', label: 'Frown' },
+        { text: '>:(', label: 'Angry' },
+        { text: ':c', label: 'Triste' },
+        { text: 'v_v', label: 'Tired' },
+        { text: '-_-', label: 'Annoyed' }
+      ],
+      wink: [
+        { text: ';)', label: 'Guiño' },
+        { text: ';-)', label: 'Guiño' },
+        { text: ';D', label: 'Wink Grin' },
+        { text: ';P', label: 'Wink Tongue' },
+        { text: ':P', label: 'Tongue' },
+        { text: ':-P', label: 'Tongue' },
+        { text: ':p', label: 'Tongue' },
+        { text: 'xP', label: 'Silly' },
+        { text: 'XP', label: 'Silly' },
+        { text: '=P', label: 'Juguetón' },
+        { text: ':b', label: 'Tongue' },
+        { text: 'd:', label: 'Silly' },
+        { text: '>;)', label: 'Evil Wink' },
+        { text: '>;D', label: 'Mischievous' },
+        { text: ':J', label: 'Smirk' }
+      ],
+      surprised: [
+        { text: ':O', label: 'Sorprendido' },
+        { text: ':-O', label: 'Sorprendido' },
+        { text: ':o', label: 'Sorprendido' },
+        { text: 'o_o', label: 'Sorprendido' },
+        { text: 'O_O', label: 'En shock' },
+        { text: 'O.O', label: 'En shock' },
+        { text: '0_0', label: 'En shock' },
+        { text: 'o.O', label: 'Confundido' },
+        { text: 'O.o', label: 'Confundido' },
+        { text: '@_@', label: 'Dizzy' },
+        { text: ':$', label: 'Embarrassed' },
+        { text: '://', label: 'Nervous' }, { text: 'D8', label: 'Horror' },
+        { text: '8D', label: 'Excited' },
+        { text: ':0', label: 'Gasp' }
+      ],
+      love: [
+        { text: '<3', label: 'Heart' },
+        { text: '</3', label: 'Broken Heart' },
+        { text: '<33', label: 'Double Heart' },
+        { text: '<333', label: 'Triple Heart' },
+        { text: '(*_*)', label: 'Love Eyes' },
+        { text: '(^3^)', label: 'Beso' },
+        { text: ':*', label: 'Beso' },
+        { text: ':-*', label: 'Beso' },
+        { text: ';*', label: 'Wink Kiss' },
+        { text: 'xoxo', label: 'Hugs Kisses' },
+        { text: '(L)', label: 'Amor' },
+        { text: '♡', label: 'Heart' },
+        { text: '♥', label: 'Heart' },
+        { text: '❤', label: 'Red Heart' },
+        { text: '💕', label: 'Hearts' }
+      ],
+      cool: [
+        { text: 'B)', label: 'Genial' },
+        { text: 'B-)', label: 'Genial' },
+        { text: '8)', label: 'Genial' },
+        { text: '8-)', label: 'Genial' },
+        { text: ':B', label: 'Buck Teeth' },
+        { text: '|_|', label: 'Robot' },
+        { text: '[:|]', label: 'Robot' },
+        { text: ':]', label: 'Feliz' },
+        { text: ':-]', label: 'Feliz' },
+        { text: ':/', label: 'Unsure' },
+        { text: ':-/', label: 'Skeptical' },
+        { text: ':\\', label: 'Unsure' },
+        { text: ':|', label: 'Straight Face' },
+        { text: ':-|', label: 'Neutral' },
+        { text: '>:)', label: 'Evil' }
+      ]
+    };
+
+    function renderEmoticons() {
+      Object.keys(emoticons).forEach(category => {
+        const grid = document.getElementById(`${category}-grid`);
+        if (grid) {
+          grid.innerHTML = emoticons[category].map(e =>
+            `<div class="emoticon-item" onclick="copyEmoticon('${e.text.replace(/'/g, "\\'")}')">
+                            <div class="emoticon-text">${escapeHtml(e.text)}</div>
+                            <div class="emoticon-label">${e.label}</div>
+                        </div>`
+          ).join('');
+        }
+      });
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function copyEmoticon(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copiado: ' + text);
+      });
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobile-sidebar').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar(event) {
+      if (!event || event.target === event.currentTarget) {
+        document.getElementById('mobile-sidebar').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    renderEmoticons();
+  </script>
+</body>
+
+</html>
