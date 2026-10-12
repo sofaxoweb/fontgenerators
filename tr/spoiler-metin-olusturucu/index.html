@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Spoiler Metin Oluşturucu | FontGenerators</title>
+  <meta content="Spoiler metin oluşturucu ile Discord, Reddit ve Telegram için gizli metin formatları üretin. Beş hazır sözdizimli ücretsiz çevrimiçi araç; hemen deneyin." name="description" />
+  
+  <link href="https://fontgenerators.online/tr/spoiler-metin-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Spoiler Metin Oluşturucu | FontGenerators">
+    <meta property="og:description" content="Spoiler metin oluşturucu ile Discord, Reddit ve Telegram için gizli metin formatları üretin. Beş hazır sözdizimli ücretsiz çevrimiçi araç; hemen deneyin.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/spoiler-metin-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Spoiler Metin Oluşturucu | FontGenerators">
+    <meta name="twitter:description" content="Spoiler metin oluşturucu ile Discord, Reddit ve Telegram için gizli metin formatları üretin. Beş hazır sözdizimli ücretsiz çevrimiçi araç; hemen deneyin.">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/spoiler-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/spoiler-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-spoiler/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-spoiler/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/spoiler-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .results-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .result-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+
+    .result-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .result-value {
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 0.75rem;
+      background: var(--surface-secondary);
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      margin-bottom: 0.5rem;
+    }
+
+    .spoiler-demo {
+      display: inline-block;
+      background: #333;
+      color: #333;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .spoiler-demo:hover {
+      color: #fff;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/spoiler-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-spoiler/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-spoiler/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/spoiler-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/spoiler-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-spoiler/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-spoiler/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/spoiler-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var urls={en:'/spoiler-text-generator/',es:'/es/generador-de-texto-spoiler/',pt:'/pt/gerador-de-texto-spoiler/',tr:'/tr/spoiler-metin-olusturucu/'};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(urls[t])a.setAttribute('href',urls[t]);});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">🔧 Metin Dönüşümleri</div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../ters-metin-olusturucu/">🔄 Reverse Text</a>
+            <a class="sidebar-link" href="../aynali-metin-olusturucu/">🪞 Mirror Text</a>
+            <a class="sidebar-link" href="../zalgo-metin-olusturucu/">👻 Zalgo Text</a>
+            <a class="sidebar-link active" href="../spoiler-metin-olusturucu/">🙈 Spoiler Text</a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Araçlara Göz At</button>
+        <div class="tool-input-section">
+          <h2 class="tool-title">🙈 Spoiler Metin Oluşturucu</h2>
+          <p class="tool-description">Discord, Reddit ve daha fazlası için gizli spoiler metni oluşturun</p>
+          <textarea class="tool-input" id="text-input" oninput="generateSpoilers()"
+            placeholder="Spoiler olarak gizlenecek metni girin..." rows="4"></textarea>
+        </div>
+        <div class="results-grid" id="results"></div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+      <div class="container">
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/tr/">Ana Sayfa</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/tr/metin-araclari/">Metin Araçları</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Spoiler Metin Oluşturucu</span>
+</nav>
+
+<p class="byline">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+
+<h1>Spoiler Metin Oluşturucu</h1>
+
+<p>Spoiler metin oluşturucu mesajınızı platforma özgü spoiler işaretlemesiyle sarar; böylece tıklanana kadar gizli kalır &mdash; Discord ve Telegram'da <code>||böyle||</code>, Reddit'te <code>&gt;!böyle!&lt;</code>. Bu gizli metin üretici beş kopyala-yapıştır formatını birden üretir; olay örgüsü sürprizlerini, quiz yanıtlarını ya da sürpriz duyuruları her yerde gizleyebilirsiniz.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Öne çıkanlar</strong></p>
+  <ul>
+    <li>5 format üretir: Discord spoiler, Reddit spoiler, Discord kelime kelime, Telegram spoiler ve HTML spoiler etiketi.</li>
+    <li>Discord/Telegram sözdizimi: <code>||metin||</code>. Reddit sözdizimi: <code>&gt;!metin!&lt;</code>. Birbirinin yerine kullanılmaz.</li>
+    <li>Spoiler işaretlemesi metni her platformda doğal gizler &mdash; bot ya da eklenti gerekmez.</li>
+    <li>Gizli metin mesajda hâlâ vardır: gizlenmiştir, şifrelenmemiştir.</li>
+    <li>Tamamen tarayıcınızda çalışır &mdash; hiçbir şey yüklenmez.</li>
+  </ul>
+</div>
+
+<h2>Spoiler metni nedir?</h2>
+<p><strong>Spoiler metni,</strong> tıklanabilir bir kapağın &mdash; genelde siyah çubuk ya da bulanık blok &mdash; arkasına gizlenmiş, okur açmayı seçene kadar içeriği göstermeyen metindir. Sohbet platformları bunu basit işaretlemeyle yapar: Discord ve Telegram'da çift dikey çizgi (<code>||</code>), Reddit'te <code>&gt;! !&lt;</code>. Topluluklar film, oyun ve kitapları başkalarının sürprizini bozmadan tartışabilsin diye vardır.</p>
+
+<h2>Bu spoiler metin oluşturucu nasıl çalışır?</h2>
+<p>Mesajınızı yazın; araç her platformun doğal spoiler sözdizimiyle sarar. <strong>Discord Spoiler</strong> <code>||metniniz||</code> üretir; Discord tıklanana kadar siyah çubuk gösterir. <strong>Reddit Spoiler</strong> <code>&gt;!metniniz!&lt;</code> üretir; Reddit'in doğal gizli metin biçimidir. <strong>Discord (Kelime Kelime)</strong> her kelimeyi ayrı sarar (<code>||kelime1|| ||kelime2||</code>); kademeli açığa çıkarma efekti verir. <strong>Telegram Spoiler</strong> Telegram'ın benimsediği aynı <code>|| ||</code> sözdizimini kullanır. <strong>HTML Spoiler Etiketi</strong> kendi siteniz için <code>&lt;span class="spoiler"&gt;…&lt;/span&gt;</code> verir; CSS ile biçimlendirebilirsiniz (örneğin üzerine gelince açılan siyah arka plan).</p>
+<p>Sarma tamamen tarayıcınızda saf dize şablonlamadır &mdash; araç "spoiler"ınızı hiçbir yere göndermez; zaten bütün mesele paylaşmayı seçene kadar gizli tutmaktır.</p>
+
+<h2>Uygulamalı örnek: spoiler gizleme</h2>
+<p>Girdi: <code>Katil uşakmış</code></p>
+<table>
+  <thead>
+    <tr><th>Format</th><th>Kopyaladığınız çıktı</th><th>Çalıştığı yer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Discord Spoiler</td><td><code>||Katil uşakmış||</code></td><td>Discord</td></tr>
+    <tr><td>Reddit Spoiler</td><td><code>&gt;!Katil uşakmış!&lt;</code></td><td>Reddit</td></tr>
+    <tr><td>Discord (Kelime Kelime)</td><td><code>||Katil|| ||uşakmış||</code></td><td>Discord</td></tr>
+    <tr><td>Telegram Spoiler</td><td><code>||Katil uşakmış||</code></td><td>Telegram</td></tr>
+    <tr><td>HTML Spoiler Etiketi</td><td><code>&lt;span class="spoiler"&gt;Katil uşakmış&lt;/span&gt;</code></td><td>Siteniz</td></tr>
+  </tbody>
+</table>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+  <li><strong>Gizlemek istediğiniz metni yazın:</strong> yukarıdaki giriş alanına.</li>
+  <li>Beş spoiler formatı <strong>anında</strong> belirir; her biri platformuyla etiketlidir.</li>
+  <li>Gönderi yapacağınız platformun <strong>formatını kopyalayın</strong>.</li>
+  <li><strong>Mesajınıza yapıştırın</strong> &mdash; platform otomatik gizler.</li>
+</ol>
+
+<h2>Platforma göre spoiler sözdizimi</h2>
+<p>En yaygın hata yanlış platformda yanlış sözdizimidir. Discord ve Telegram ikisi de çift dikey çizgi kullanır: <code>||</code> yazın, metniniz, <code>||</code> &mdash; çizgilerle metin arasında boşluk yok. Reddit açmak için <code>&gt;!</code>, kapatmak için <code>!&lt;</code> kullanır; işaretlerin içinde de boşluk yok. WhatsApp'ta doğal spoiler etiketi yoktur (bu aracın formatları orada metni gizlemez), Instagram yorumları da spoiler işaretlemesini desteklemez &mdash; bu platformlarda insanlar satır sonları ya da "spoiler uyarısı" etiketleriyle idare eder. Şüphede kalırsanız formatı burada üretip önce özel kanalda test edin.</p>
+
+<h2>Sınırlamalar</h2>
+<p>Spoiler etiketlerinin ne yaptığına ayık bakın: metni <strong>gizlerler</strong>, şifrelemezler. Herkes tıklayıp açabilir, mesajı alıntılayabilir ya da ham işaretlemeyi görebilir &mdash; şifreleri, kişisel verileri ya da gerçekten hassas içerikleri spoiler etiketinin arkasına asla koymayın. Spoiler işaretlemesi her bağlamda da yaşamaz: bazı platformlarda bildirimler ve mesaj önizlemeleri gizli metni gösterir; spoilerlı mesajı başka uygulamaya kopyalamak genelde açığa çıkarır. Son olarak, toplulukta spoilerı aşırı kullanmak okurları bıktırır; gerçek spoilerlar, quiz yanıtları ve sürpriz açıklamalar için saklayın.</p>
+
+<h2>Spoiler metni ve alternatifler</h2>
+<table>
+  <thead>
+    <tr><th>Yöntem</th><th>Ne için ideal</th><th>Dikkat</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Bu spoiler üretici</strong></td><td>5 format için doğru sözdizimi birden</td><td>Platformun formatını yine siz seçersiniz</td></tr>
+    <tr><td>Elle <code>|| ||</code> yazma</td><td>Hızlı Discord/Telegram spoilerları</td><td>Yanlış yazmak kolay; Reddit'te işe yaramaz</td></tr>
+    <tr><td>Reddit'in yerleşik spoiler düğmesi</td><td>Resmi düzenleyiciyle Reddit gönderileri</td><td>Yalnızca Reddit'in kendi düzenleyicisinde çalışır</td></tr>
+    <tr><td>ROT13 / şifreler</td><td>Bulmaca üslubu gizleme</td><td>Doğal değil; okur elle çözmeli</td></tr>
+    <tr><td>Gizli metinli görseller</td><td>Spoiler desteği olmayan platformlar</td><td>Aranamaz, erişilebilir değil</td></tr>
+  </tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Spoiler metni nasıl yapılır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Metninizi yukarıdaki üreticiye yazın, platformunuzun formatını kopyalayın: Discord ve Telegram için ||metin||, Reddit için &gt;!metin!&lt;. Mesajınıza yapıştırın; platform tıklanabilir kapağın arkasına gizler.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Discord spoiler etiketi nedir?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Discord spoiler etiketi metnin iki yanında ikişer dikey çizgidir: ||spoiler burada||. Discord tıklanınca açılan siyah çubuk gösterir. Görsel eklerini gizlemekte de işe yarar.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Reddit'te spoilerlar nasıl çalışır?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Reddit &gt;!spoiler burada!&lt; kullanır &mdash; büyüktür, ünlem, metin, ünlem, küçüktür &mdash; işaretlerin içinde boşluk yok. Bu üreticinin Reddit formatı tam bu sözdizimini üretir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Telegram'da spoiler etiketi var mı?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Evet. Telegram Discord ile aynı çift dikey çizgi sözdizimi ||spoiler||'ı destekler; gizli metni dokunulana kadar animasyonlu bulanık gösterir. Bunun için aracın Telegram formatını kullanın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">WhatsApp'ta spoiler etiketiyle metin gizleyebilir miyim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır &mdash; WhatsApp'ta doğal spoiler işaretlemesi yoktur; ||metin|| birebir görünür. WhatsApp kullanıcıları genelde "SPOILER" etiketleri ve satır sonlarıyla uyarır. WhatsApp üslubu taslaklar için <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">sahte WhatsApp sohbet oluşturucu</a>muza bakın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Kelime kelime Discord spoilerı ne işe yarar?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Her kelimeyi kendi || || çiftine sarar; okurlar cümleyi birden değil kelime kelime açar. Discord sohbetlerinde quiz yanıtları ve dramatik açıklamalar için popülerdir.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Siteme spoiler etiketi nasıl eklerim?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Aracın HTML formatını kullanın: &lt;span class="spoiler"&gt;gizli metin&lt;/span&gt;. Ardından .spoiler{background:#000;color:#000} ve .spoiler:hover{color:#fff} gibi CSS ekleyin; metin üzerine gelince açılır.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Spoiler metni güvenli mi, şifreli mi?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Hayır. Spoiler etiketleri metni yalnızca görsel gizler &mdash; herkes tıklayıp açabilir, ham metin mesaj verisinde vardır. Spoilerları şifre, kişisel bilgi ya da gerçekten hassas hiçbir şey için kullanmayın.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Spoiler etiketim neden çalışmıyor?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yaygın nedenler: platforma yanlış sözdizimi (Reddit'te || || çalışmaz), işaretlerin içinde boşluk ya da WhatsApp/Instagram yorumları gibi spoiler desteği olmayan platform. Bu araçtan platformunuzun birebir formatını kopyalayın.</p>
+    </div>
+  </div>
+</div>
+
+<p>İlgili araçlar: ürkütücü gizli mesaj estetiği için <a href="/tr/zalgo-metin-olusturucu/">Zalgo metin oluşturucu</a>, sohbet taslakları için <a href="/tr/sahte-whatsapp-sohbet-olusturucu/">sahte WhatsApp sohbet oluşturucu</a>, tersten metin için <a href="/tr/ters-metin-olusturucu/">ters metin oluşturucu</a> &mdash; hepsi <a href="/tr/metin-araclari/">metin araçları</a> ve <a href="/tr/eglenceli-metin-araclari/">eğlenceli metin araçları</a> koleksiyonlarımızdadır.</p>
+      </div>
+    </section>
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="">
+    function generateSpoilers() {
+      const text = document.getElementById('text-input').value;
+      if (!text.trim()) {
+        document.getElementById('results').innerHTML = '';
+        return;
+      }
+
+      const formats = [
+        { name: 'Discord Spoiler', value: `||${text}||`, platform: 'Discord\u0027da çalışır' },
+        { name: 'Reddit Spoiler', value: `>!${text}!<`, platform: 'Reddit\u0027te çalışır' },
+        { name: 'Discord (Kelime Kelime)', value: text.split(' ').map(w => `||${w}||`).join(' '), platform: 'Her kelime gizli' },
+        { name: 'Telegram Spoiler', value: `||${text}||`, platform: 'Telegram\u0027da çalışır' },
+        { name: 'HTML Spoiler Etiketi', value: `<span class="spoiler">${escapeHtml(text)}</span>`, platform: 'Web siteleri için' }
+      ];
+
+      document.getElementById('results').innerHTML = formats.map(f => `
+                <div class="result-item">
+                    <div class="result-label">${f.name} <small>(${f.platform})</small></div>
+                    <div class="result-value">${escapeHtml(f.value)}</div>
+                    <button class="btn btn-secondary" onclick="copyText(\`${f.value.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">📋 Kopyala</button>
+                </div>
+            `).join('');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => alert('Kopyalandı!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Spoiler metni nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Metninizi yukarıdaki üreticiye yazın, platformunuzun formatını kopyalayın: Discord ve Telegram için ||metin||, Reddit için >!metin!<. Mesajınıza yapıştırın; platform tıklanabilir kapağın arkasına gizler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Discord spoiler etiketi nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Discord spoiler etiketi metnin iki yanında ikişer dikey çizgidir: ||spoiler burada||. Discord tıklanınca açılan siyah çubuk gösterir. Görsel eklerini gizlemekte de işe yarar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reddit'te spoilerlar nasıl çalışır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reddit >!spoiler burada!< kullanır — büyüktür, ünlem, metin, ünlem, küçüktür — işaretlerin içinde boşluk yok. Bu üreticinin Reddit formatı tam bu sözdizimini üretir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Telegram'da spoiler etiketi var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Telegram Discord ile aynı çift dikey çizgi sözdizimi ||spoiler||'ı destekler; gizli metni dokunulana kadar animasyonlu bulanık gösterir. Bunun için aracın Telegram formatını kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatsApp'ta spoiler etiketiyle metin gizleyebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır — WhatsApp'ta doğal spoiler işaretlemesi yoktur; ||metin|| birebir görünür. WhatsApp kullanıcıları genelde \"SPOILER\" etiketleri ve satır sonlarıyla uyarır. WhatsApp üslubu taslaklar için sahte WhatsApp sohbet oluşturucumuza bakın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kelime kelime Discord spoilerı ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Her kelimeyi kendi || || çiftine sarar; okurlar cümleyi birden değil kelime kelime açar. Discord sohbetlerinde quiz yanıtları ve dramatik açıklamalar için popülerdir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siteme spoiler etiketi nasıl eklerim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aracın HTML formatını kullanın: <span class=\"spoiler\">gizli metin</span>. Ardından .spoiler{background:#000;color:#000} ve .spoiler:hover{color:#fff} gibi CSS ekleyin; metin üzerine gelince açılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Spoiler metni güvenli mi, şifreli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Spoiler etiketleri metni yalnızca görsel gizler — herkes tıklayıp açabilir, ham metin mesaj verisinde vardır. Spoilerları şifre, kişisel bilgi ya da gerçekten hassas hiçbir şey için kullanmayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Spoiler etiketim neden çalışmıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yaygın nedenler: platforma yanlış sözdizimi (Reddit'te || || çalışmaz), işaretlerin içinde boşluk ya da WhatsApp/Instagram yorumları gibi spoiler desteği olmayan platform. Bu araçtan platformunuzun birebir formatını kopyalayın."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
