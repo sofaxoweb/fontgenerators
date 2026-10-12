@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto Spoiler Online</title>
+  <meta content="Crie spoilers ocultos online grátis com o gerador de texto spoiler: formate textos escondidos para Discord e Reddit. Simples, rápido e sem cadastro. Já!" name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-spoiler/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gerador de Texto Spoiler Online">
+  <meta property="og:description" content="Crie spoilers ocultos online grátis com o gerador de texto spoiler: formate textos escondidos para Discord e Reddit. Simples, rápido e sem cadastro. Já!">
+  <meta property="og:url" content="https://fontgenerators.online/pt/gerador-de-texto-spoiler/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gerador de Texto Spoiler Online">
+  <meta name="twitter:description" content="Crie spoilers ocultos online grátis com o gerador de texto spoiler: formate textos escondidos para Discord e Reddit. Simples, rápido e sem cadastro. Já!">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/spoiler-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/spoiler-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-spoiler/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-spoiler/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/spoiler-metin-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .results-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .result-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+
+    .result-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .result-value {
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 0.75rem;
+      background: var(--surface-secondary);
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      margin-bottom: 0.5rem;
+    }
+
+    .spoiler-demo {
+      display: inline-block;
+      background: #333;
+      color: #333;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .spoiler-demo:hover {
+      color: #fff;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+  
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/spoiler-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-spoiler/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-spoiler/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/spoiler-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/spoiler-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-spoiler/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-spoiler/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/spoiler-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var u={"en": "/spoiler-text-generator/", "es": "/es/generador-de-texto-spoiler/", "pt": "/pt/gerador-de-texto-spoiler/", "tr": "/tr/spoiler-metin-olusturucu/"};document.querySelectorAll('.lang-choice').forEach(function(a){var t=a.getAttribute('data-lang');if(u[t])a.setAttribute('href',u[t]);if(t==='pt'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+<main class="tool-page">
+    <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">🔧</span>
+            Ferramentas de Texto
+          </div>
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="/pt/contador-de-palavras/">
+              <span class="link-icon">📊</span>
+              <span class="link-text">Contador de Palavras</span>
+            </a>
+            <a class="sidebar-link" href="/pt/contador-de-caracteres/">
+              <span class="link-icon">🔢</span>
+              <span class="link-text">Contador de Caracteres</span>
+            </a>
+            <a class="sidebar-link" href="/pt/limpador-de-texto/">
+              <span class="link-icon">🧹</span>
+              <span class="link-text">Limpador de Texto</span>
+            </a>
+            <a class="sidebar-link" href="/pt/remover-linhas-duplicadas/">
+              <span class="link-icon">📋</span>
+              <span class="link-text">Removedor de Linhas Duplicadas</span>
+            </a>
+            <a class="sidebar-link" href="/pt/conversor-para-titulo/">
+              <span class="link-icon">🔠</span>
+              <span class="link-text">Conversor para Title Case</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-invertido/">
+              <span class="link-icon">🔄</span>
+              <span class="link-text">Gerador de Texto Invertido</span>
+            </a>
+            <a class="sidebar-link" href="/pt/gerador-de-texto-zalgo/">
+              <span class="link-icon">👻</span>
+              <span class="link-text">Gerador de Texto Zalgo</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+          ☰ Explorar Ferramentas
+        </button>
+
+        <div class="tool-input-section">
+          <p class="tool-title">🙈 Gerador de texto de spoiler</p>
+          <p class="tool-description">Create hidden spoiler text for Discord, Reddit, and more</p>
+          <textarea class="tool-input" id="text-input" oninput="generateSpoilers()"
+            placeholder="Digite o texto para ocultar como spoiler..." rows="4"></textarea>
+        </div>
+        <div class="results-grid" id="results"></div>
+      </div>
+    </div>
+
+    
+        <!-- content start -->
+<section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/pt/">Início</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/pt/ferramentas-de-texto/">Ferramentas de Texto</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Gerador de Texto Spoiler</span>
+</nav>
+
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+
+<h1>Gerador de Texto Spoiler</h1>
+
+<p>Um gerador de texto spoiler envolve sua mensagem na marcação de spoiler de cada plataforma, para ela ficar escondida até alguém clicar &mdash; <code>||assim||</code> no Discord e no Telegram, <code>&gt;!assim!&lt;</code> no Reddit. Este gerador de texto oculto produz cinco formatos prontos para colar de uma vez, para você esconder reviravoltas, respostas de quiz ou anúncios surpresa onde quiser.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Pontos principais</strong></p>
+  <ul>
+    <li>Gera 5 formatos: spoiler do Discord, spoiler do Reddit, Discord palavra por palavra, spoiler do Telegram e uma tag spoiler em HTML.</li>
+    <li>Sintaxe do Discord/Telegram: <code>||texto||</code>. Sintaxe do Reddit: <code>&gt;!texto!&lt;</code>. Não são intercambiáveis.</li>
+    <li>A marcação de spoiler esconde o texto nativamente em cada plataforma &mdash; sem bots nem extensões.</li>
+    <li>O texto oculto continua existindo na mensagem: está obscurecido, não criptografado.</li>
+    <li>Roda todo no seu navegador &mdash; nada é enviado.</li>
+  </ul>
+</div>
+
+<h2>O que é texto spoiler?</h2>
+<p><strong>Texto spoiler é</strong> texto escondido atrás de uma capa clicável &mdash; geralmente uma barra preta ou um bloco embaçado &mdash; que só revela o conteúdo quando o leitor escolhe descobrir. As plataformas de conversa implementam com marcação simples: pipes duplos (<code>||</code>) no Discord e no Telegram, e <code>&gt;! !&lt;</code> no Reddit. Existe para comunidades discutirem filmes, jogos e livros sem estragar surpresas para os outros.</p>
+
+<h2>Como este gerador de texto spoiler funciona</h2>
+<p>Digite sua mensagem e a ferramenta a envolve na sintaxe nativa de spoiler de cada plataforma. <strong>Spoiler do Discord</strong> produz <code>||seu texto||</code>, que o Discord mostra como barra preta até clicar. <strong>Spoiler do Reddit</strong> produz <code>&gt;!seu texto!&lt;</code>, o formato nativo de texto oculto do Reddit. <strong>Discord (Palavra por Palavra)</strong> envolve cada palavra separadamente (<code>||palavra1|| ||palavra2||</code>) para um efeito de revelação escalonada. <strong>Spoiler do Telegram</strong> usa a mesma sintaxe <code>|| ||</code> que o Telegram adotou. <strong>Tag Spoiler em HTML</strong> dá <code>&lt;span class="spoiler"&gt;…&lt;/span&gt;</code> para seu próprio site, que você estiliza com CSS (por exemplo, fundo preto que limpa no hover).</p>
+<p>O envolvimento é puro modelo de string no seu navegador &mdash; a ferramenta não manda seu "spoiler" para lugar nenhum, o que combina, já que a graça é mantê-lo em segredo até você escolher compartilhar.</p>
+
+<h2>Exemplo prático: esconda um spoiler</h2>
+<p>Entrada: <code>The villain is the butler</code></p>
+<table>
+  <thead>
+    <tr><th>Formato</th><th>Saída para copiar</th><th>Funciona em</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Spoiler do Discord</td><td><code>||The villain is the butler||</code></td><td>Discord</td></tr>
+    <tr><td>Spoiler do Reddit</td><td><code>&gt;!The villain is the butler!&lt;</code></td><td>Reddit</td></tr>
+    <tr><td>Discord (Palavra por Palavra)</td><td><code>||The|| ||villain|| ||is|| ||the|| ||butler||</code></td><td>Discord</td></tr>
+    <tr><td>Spoiler do Telegram</td><td><code>||The villain is the butler||</code></td><td>Telegram</td></tr>
+    <tr><td>Tag Spoiler em HTML</td><td><code>&lt;span class="spoiler"&gt;The villain is the butler&lt;/span&gt;</code></td><td>Seu site</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: Diagrama mostrando uma mensagem do Discord com barra preta de spoiler ao lado do estado revelado | alt sugerido: "Tag spoiler do Discord escondendo texto atrás de barra preta até clicar"]
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+  <li><strong>Digite o texto</strong> que quer esconder no campo de entrada acima.</li>
+  <li>Os cinco formatos de spoiler <strong>aparecem na hora</strong>, cada um com o rótulo da plataforma.</li>
+  <li><strong>Copie o formato</strong> da plataforma onde vai postar.</li>
+  <li><strong>Cole</strong> na sua mensagem &mdash; a plataforma esconde automaticamente.</li>
+</ol>
+
+<h2>Sintaxe de spoiler por plataforma</h2>
+<p>O erro mais comum é usar a sintaxe errada na plataforma errada. Discord e Telegram usam pipes duplos: digite <code>||</code>, seu texto, <code>||</code> &mdash; sem espaços entre os pipes e o texto. O Reddit usa <code>&gt;!</code> para abrir e <code>!&lt;</code> para fechar, também sem espaços internos. O WhatsApp não tem tag nativa de spoiler (os formatos desta ferramenta não escondem texto lá), e os comentários do Instagram também não suportam marcação de spoiler &mdash; nessas plataformas, as pessoas improvisam com quebras de linha ou rótulos de "aviso de spoiler". Na dúvida, gere o formato aqui e teste num canal privado antes.</p>
+
+<h2>Limitações</h2>
+<p>Seja realista sobre o que tags de spoiler fazem: elas <strong>obscurecem</strong> o texto, não o criptografam. Qualquer um pode clicar para revelar, citar a mensagem ou ver a marcação crua &mdash; nunca ponha senhas, dados pessoais ou conteúdo genuinamente sensível atrás de tag de spoiler. A marcação de spoiler também não sobrevive a todo contexto: notificações e prévias de mensagem em algumas plataformas mostram o texto oculto, e copiar uma mensagem com spoiler para outro app costuma revelá-la. Por fim, abusar de spoilers numa comunidade irrita os leitores; reserve para spoilers de verdade, respostas de quiz e revelações surpresa.</p>
+
+<h2>Texto spoiler vs alternativas</h2>
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ideal para</th><th>Atenção</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Este gerador de spoiler</strong></td><td>Sintaxe correta para 5 formatos de uma vez</td><td>Você ainda escolhe o formato da plataforma certa</td></tr>
+    <tr><td>Digitar <code>|| ||</code> manualmente</td><td>Spoilers rápidos de Discord/Telegram</td><td>Fácil errar a digitação; não ajuda no Reddit</td></tr>
+    <tr><td>Botão de spoiler nativo do Reddit</td><td>Posts no Reddit pelo editor oficial</td><td>Só funciona no editor do próprio Reddit</td></tr>
+    <tr><td>ROT13 / cifras</td><td>Ocultação estilo enigma</td><td>Não é nativo; leitores decodificam manualmente</td></tr>
+    <tr><td>Imagens com texto oculto</td><td>Plataformas sem suporte a spoiler</td><td>Não é pesquisável, não é acessível</td></tr>
+  </tbody>
+</table>
+
+[IMAGEM: Gráfico estilo tabela comparando a sintaxe de spoiler do Discord, Reddit e Telegram | alt sugerido: "Comparação da sintaxe de tags spoiler para Discord, Reddit e Telegram"]
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Como faço texto spoiler?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Digite seu texto no gerador acima e copie o formato da sua plataforma: ||texto|| para Discord e Telegram, &gt;!texto!&lt; para Reddit. Cole na sua mensagem e a plataforma esconde atrás de uma capa clicável.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Qual é a tag de spoiler do Discord?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">A tag de spoiler do Discord são dois caracteres pipe de cada lado do texto: ||spoiler aqui||. O Discord mostra como uma barra preta que revela o texto ao clicar. Também funciona para esconder anexos de imagem.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Como funcionam spoilers no Reddit?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">O Reddit usa &gt;!spoiler aqui!&lt; &mdash; maior-que, exclamação, texto, exclamação, menor-que &mdash; sem espaços dentro dos marcadores. O formato Reddit deste gerador produz exatamente essa sintaxe.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">O Telegram tem tag de spoiler?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Sim. O Telegram suporta ||spoiler|| com a mesma sintaxe de pipes duplos do Discord, mostrando o texto oculto como um borrão animado até tocar. Use o formato Telegram desta ferramenta para isso.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Dá para esconder texto no WhatsApp com tag de spoiler?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não &mdash; o WhatsApp não tem marcação nativa de spoiler, então ||texto|| aparece literalmente. Usuários de WhatsApp costumam avisar com rótulos "SPOILER" e quebras de linha. Para simulações estilo WhatsApp, veja nosso <a href="/pt/gerador-de-conversas-falsas-whatsapp/">gerador de conversas falsas de WhatsApp</a>.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">O que o spoiler palavra por palavra do Discord faz?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Ele envolve cada palavra no seu próprio par || ||, então os leitores revelam a frase uma palavra por vez em vez de tudo de uma vez. É popular para respostas de quiz e revelações dramáticas em conversas do Discord.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Como adiciono tag de spoiler no meu site?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Use o formato HTML desta ferramenta: &lt;span class="spoiler"&gt;texto oculto&lt;/span&gt;. Depois adicione CSS como .spoiler{background:#000;color:#000} e .spoiler:hover{color:#fff} para o texto revelar no hover.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Texto spoiler é seguro ou criptografado?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Não. Tags de spoiler só escondem o texto visualmente &mdash; qualquer um pode clicar para revelar, e o texto cru existe nos dados da mensagem. Nunca use spoilers para senhas, dados pessoais ou nada realmente sensível.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="faq-question" itemprop="name">Por que minha tag de spoiler não funciona?</h3>
+    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">As causas comuns: sintaxe errada para a plataforma (|| || no Reddit não funciona), espaços dentro dos marcadores, ou plataforma sem suporte a spoiler como WhatsApp ou comentários do Instagram. Copie desta ferramenta o formato exato da sua plataforma.</p>
+    </div>
+  </div>
+</div>
+
+<p>Ferramentas relacionadas: o <a href="/pt/gerador-de-texto-zalgo/">gerador de texto zalgo</a> para estética assustadora de mensagem oculta, o <a href="/pt/gerador-de-conversas-falsas-whatsapp/">gerador de conversas falsas de WhatsApp</a> para simulações de conversa, e o <a href="/pt/gerador-de-texto-invertido/">gerador de texto invertido</a> para texto de trás para frente &mdash; todos nas nossas coleções de <a href="/pt/ferramentas-de-texto/">ferramentas de texto</a> e <a href="/pt/ferramentas-de-texto-divertido/">ferramentas de texto divertido</a>.</p>
+
+
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>🔧 Ferramentas de Texto</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="/pt/contador-de-palavras/">📊 Contador de Palavras</a>
+        <a class="sidebar-link" href="/pt/contador-de-caracteres/">🔢 Contador de Caracteres</a>
+        <a class="sidebar-link" href="/pt/limpador-de-texto/">🧹 Limpador de Texto</a>
+        <a class="sidebar-link" href="/pt/conversor-para-titulo/">🔠 Conversor para Title Case</a>
+      </nav>
+    </div>
+  </div>
+<script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tool js -->
+  <script defer="">
+
+    function generateSpoilers() {
+      const text = document.getElementById('text-input').value;
+      if (!text.trim()) {
+        document.getElementById('results').innerHTML = '';
+        return;
+      }
+
+      const formats = [
+        { name: 'Discord Spoiler', value: `||${text}||`, platform: 'Works on Discord' },
+        { name: 'Reddit Spoiler', value: `>!${text}!<`, platform: 'Works on Reddit' },
+        { name: 'Discord (Word by Word)', value: text.split(' ').map(w => `||${w}||`).join(' '), platform: 'Each word hidden' },
+        { name: 'Telegram Spoiler', value: `||${text}||`, platform: 'Works on Telegram' },
+        { name: 'HTML Spoiler Tag', value: `<span class="spoiler">${escapeHtml(text)}</span>`, platform: 'For websites' }
+      ];
+
+      document.getElementById('results').innerHTML = formats.map(f => `
+                <div class="result-item">
+                    <div class="result-label">${f.name} <small>(${f.platform})</small></div>
+                    <div class="result-value">${escapeHtml(f.value)}</div>
+                    <button class="btn btn-secondary" onclick="copyText(\`${f.value.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">📋 Copy</button>
+                </div>
+            `).join('');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) document.getElementById('mobile-sidebar').classList.remove('active'); }
+  
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como faço texto spoiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite seu texto no gerador acima e copie o formato da sua plataforma: ||texto|| para Discord e Telegram, >!texto!< para Reddit. Cole na sua mensagem e a plataforma esconde atrás de uma capa clicável."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a tag de spoiler do Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tag de spoiler do Discord são dois caracteres pipe de cada lado do texto: ||spoiler aqui||. O Discord mostra como uma barra preta que revela o texto ao clicar. Também funciona para esconder anexos de imagem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funcionam spoilers no Reddit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Reddit usa >!spoiler aqui!< — maior-que, exclamação, texto, exclamação, menor-que — sem espaços dentro dos marcadores. O formato Reddit deste gerador produz exatamente essa sintaxe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Telegram tem tag de spoiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O Telegram suporta ||spoiler|| com a mesma sintaxe de pipes duplos do Discord, mostrando o texto oculto como um borrão animado até tocar. Use o formato Telegram desta ferramenta para isso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para esconder texto no WhatsApp com tag de spoiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não — o WhatsApp não tem marcação nativa de spoiler, então ||texto|| aparece literalmente. Usuários de WhatsApp costumam avisar com rótulos \"SPOILER\" e quebras de linha. Para simulações estilo WhatsApp, veja nosso gerador de conversas falsas de WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que o spoiler palavra por palavra do Discord faz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ele envolve cada palavra no seu próprio par || ||, então os leitores revelam a frase uma palavra por vez em vez de tudo de uma vez. É popular para respostas de quiz e revelações dramáticas em conversas do Discord."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como adiciono tag de spoiler no meu site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use o formato HTML desta ferramenta: <span class=\"spoiler\">texto oculto</span>. Depois adicione CSS como .spoiler{background:#000;color:#000} e .spoiler:hover{color:#fff} para o texto revelar no hover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texto spoiler é seguro ou criptografado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Tags de spoiler só escondem o texto visualmente — qualquer um pode clicar para revelar, e o texto cru existe nos dados da mensagem. Nunca use spoilers para senhas, dados pessoais ou nada realmente sensível."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que minha tag de spoiler não funciona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As causas comuns: sintaxe errada para a plataforma (|| || no Reddit não funciona), espaços dentro dos marcadores, ou plataforma sem suporte a spoiler como WhatsApp ou comentários do Instagram. Copie desta ferramenta o formato exato da sua plataforma."
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
