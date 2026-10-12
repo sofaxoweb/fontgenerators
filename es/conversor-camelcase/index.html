@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Conversor CamelCase Online | FontGenerators.online</title>
+  <meta content="Convierte palabras a camelCase, PascalCase, snake_case, kebab-case, dot.notation y path/notation gratis y online. Ideal para programadores. Sin registro." name="description" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <link rel="canonical" href="https://fontgenerators.online/es/conversor-camelcase/" />
+  <meta property="og:locale" content="es_ES">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/camelcase-converter/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/camelcase-converter/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/conversor-camelcase/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/conversor-camelcase/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/camelcase-cevirici/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to convert to camelCase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type plain words like \"user profile\" into the tool above. It instantly returns lowerCamelCase (userProfile) plus five other styles. Copy the one you need — no signup, no upload."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between camelCase and PascalCase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "camelCase lowercases the first word (userName) and is used for variables and functions. PascalCase capitalizes every word (UserName) and is used for classes and types. This tool generates both from the same input."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which case should I use for programmers' identifiers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow your language's convention: camelCase variables in JavaScript/Java, snake_case in Python/Ruby, kebab-case for CSS classes and URL slugs, PascalCase for class names almost everywhere. The table above maps each language."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the converter handle snake_case and kebab-case too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — every input produces six outputs: PascalCase, lowerCamelCase, snake_case, kebab-case, dot.notation, and path/notation. You get all of them at once instead of converting six separate times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to punctuation and apostrophes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Punctuation is stripped before conversion because identifiers can't contain it. \"don't stop!\" becomes dontStop / dont_stop. Review contractions manually if the exact wording matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it convert a single word?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but a single word has no boundaries to join: \"user\" returns user, User, user, user, user, user. That is correct behavior — case styles only differ when there are two or more words."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are numbers treated in conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digits stay attached to their word: \"level 2 boss\" becomes level2Boss, Level2Boss, level_2_boss, and so on. Leading digits are kept as-is, though some languages forbid identifiers that start with a number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my input sent to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All six conversions run in your browser with JavaScript. Your words never leave your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert snake_case back to normal words?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with this tool — it converts words into identifiers, not the reverse. Splitting an existing identifier back into words is a separate job; for quick cleanup of pasted text, try the text cleaner instead."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header>
+    <div class="container header-content">
+        <a href="/es/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/es/" class="nav-link">Inicio</a>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-texto-aesthetic/" class="nav-link">
+                     Herramientas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas las Herramientas Aesthetic →</a>
+                    <a href="/es/generador-de-texto-aesthetic/" class="dropdown-link">🌸 Generador de Texto Aesthetic</a>
+                    <a href="/es/generador-de-texto-brat/" class="dropdown-link">💚 Generador de Texto Brat</a>
+                    <a href="/es/generador-de-texto-soft-girl/" class="dropdown-link">🌷 Generador de Texto Soft Girl</a>
+                    <a href="/es/generador-de-texto-vaporwave/" class="dropdown-link">🌊 Generador de Texto Vaporwave</a>
+                    <a href="/es/generador-de-texto-kawaii/" class="dropdown-link">🎀 Generador de Texto Kawaii</a>
+                    <a href="/es/generador-de-texto-neon/" class="dropdown-link">💡 Generador de Texto Neón</a>
+                    <a href="/es/generador-de-texto-con-brillo/" class="dropdown-link">✨ Generador de Texto con Brillo</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link">💎 Generador de Texto con Purpurina</a>
+                    <a href="/es/generador-de-texto-retro/" class="dropdown-link">📺 Generador de Texto Retro</a>
+                    <a href="/es/generador-de-texto-cyber/" class="dropdown-link">🤖 Generador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-fuentes-elegantes/" class="nav-link">
+                     Herramientas de Fuentes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-fuentes-elegantes/" class="dropdown-link dropdown-header">Todas las Herramientas de Fuentes →</a>
+                    <a href="/es/generador-de-fuentes-elegantes/" class="dropdown-link">💎 Generador de Fuentes Elegantes</a>
+                    <a href="/es/generador-de-texto-elegante/" class="dropdown-link">⭐ Generador de Texto Elegante</a>
+                    <a href="/es/generador-de-texto-unicode/" class="dropdown-link">🔠 Generador de Texto Unicode</a>
+                    <a href="/es/conversor-de-texto-negrita/" class="dropdown-link">🅱️ Conversor de Texto en Negrita</a>
+                    <a href="/es/conversor-de-texto-cursiva/" class="dropdown-link">📝 Conversor de Texto en Cursiva</a>
+                    <a href="/es/generador-de-texto-cursivo/" class="dropdown-link">✒️ Generador de Texto Cursivo</a>
+                    <a href="/es/generador-de-texto-gotico/" class="dropdown-link">🖤 Generador de Texto Gótico</a>
+                    <a href="/es/generador-de-letras-de-burbujas/" class="dropdown-link">🫧 Generador de Letras de Burbujas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-emojis-y-simbolos/" class="nav-link">
+                     Emojis y Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-emojis-y-simbolos/" class="dropdown-link dropdown-header">Todas las Herramientas de Emojis →</a>
+                    <a href="/es/creador-de-texto-con-emojis/" class="dropdown-link">😊 Creador de Texto con Emojis</a>
+                    <a href="/es/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/es/generador-kaomoji/" class="dropdown-link">(◕‿◕) Generador Kaomoji</a>
+                    <a href="/es/creador-de-emoticonos/" class="dropdown-link">:) Creador de Emoticonos</a>
+                    <a href="/es/generador-de-simbolos-de-corazon/" class="dropdown-link">♥ Símbolos de Corazón</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link">✨ Símbolos Brillantes</a>
+                    <a href="/es/generador-de-simbolos-de-flechas/" class="dropdown-link">→ Símbolos de Flechas</a>
+                    <a href="/es/generador-de-bordes-aesthetic/" class="dropdown-link">『』 Bordes Aesthetic</a>
+                    <a href="/es/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link">═ Líneas Divisorias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/es/herramientas-de-subtitulos/" class="nav-link">
+                     Redes Sociales<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/herramientas-de-subtitulos/" class="dropdown-link dropdown-header">Todas las Herramientas de Redes Sociales →</a>
+                    <a href="/es/generador-de-subtitulos-instagram/" class="dropdown-link">📸 Subtítulos de Instagram</a>
+                    <a href="/es/generador-de-subtitulos-tiktok/" class="dropdown-link">🎵 Subtítulos de TikTok</a>
+                    <a href="/es/generador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos de YouTube</a>
+                    <a href="/es/generador-de-bios-instagram/" class="dropdown-link">✨ Bios de Instagram</a>
+                    <a href="/es/formateador-de-bios-tiktok/" class="dropdown-link">🎭 Bios de TikTok</a>
+                    <a href="/es/generador-de-hashtags/" class="dropdown-link">#️⃣ Generador de Hashtags</a>
+                    <a href="/es/contador-de-caracteres-subtitulos/" class="dropdown-link">📊 Contador de Longitud</a>
+                    <a href="/es/creador-de-subtitulos-historias/" class="dropdown-link">📖 Subtítulos para Historias</a>
+                    <a href="/es/generador-de-subtitulos-con-emojis/" class="dropdown-link">😊 Subtítulos con Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Más Herramientas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/es/generador-de-texto-manuscrito/" class="dropdown-link">✍️ Generador de Texto Manuscrito</a>
+                    <a href="/es/creador-de-firmas/" class="dropdown-link">🖊️ Creador de Firmas</a>
+                    <a href="/es/generador-de-caligrafia/" class="dropdown-link">🖋️ Generador de Caligrafía</a>
+                    <a href="/es/generador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafía Árabe</a>
+                    <a href="/es/generador-de-letras-burbuja/" class="dropdown-link">🫧 Generador de Letras Burbuja</a>
+                    <a href="/es/generador-de-texto-doodle/" class="dropdown-link">🎨 Generador de Texto Doodle</a>
+                    <a href="/es/generador-de-texto-minimalista/" class="dropdown-link">◻️ Generador de Texto Minimalista</a>
+                    <a href="/es/generador-de-versalitas/" class="dropdown-link">🔡 Generador de Versalitas</a>
+                    <a href="/es/generador-de-texto-monoespaciado/" class="dropdown-link">💻 Generador Monoespaciado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">ES</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/camelcase-converter/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/conversor-camelcase/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/conversor-camelcase/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/camelcase-cevirici/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/es/" class="mobile-nav-link">🏠 Inicio</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Herramientas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas las Herramientas Aesthetic</a>
+            <a href="/es/generador-de-texto-aesthetic/" class="mobile-dropdown-link">Generador de Texto Aesthetic</a>
+            <a href="/es/generador-de-texto-brat/" class="mobile-dropdown-link">Generador de Texto Brat</a>
+            <a href="/es/generador-de-texto-soft-girl/" class="mobile-dropdown-link">Generador de Texto Soft Girl</a>
+            <a href="/es/generador-de-texto-vaporwave/" class="mobile-dropdown-link">Generador de Texto Vaporwave</a>
+            <a href="/es/generador-de-texto-kawaii/" class="mobile-dropdown-link">Generador de Texto Kawaii</a>
+            <a href="/es/generador-de-texto-neon/" class="mobile-dropdown-link">Generador de Texto Neón</a>
+            <a href="/es/generador-de-texto-con-brillo/" class="mobile-dropdown-link">Generador de Texto con Brillo</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link">Generador de Texto con Purpurina</a>
+            <a href="/es/generador-de-texto-retro/" class="mobile-dropdown-link">Generador de Texto Retro</a>
+            <a href="/es/generador-de-texto-cyber/" class="mobile-dropdown-link">Generador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Herramientas de Fuentes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-fuentes-elegantes/" class="mobile-dropdown-link">Todas las Herramientas de Fuentes</a>
+            <a href="/es/generador-de-fuentes-elegantes/" class="mobile-dropdown-link">Generador de Fuentes Elegantes</a>
+            <a href="/es/generador-de-texto-elegante/" class="mobile-dropdown-link">Generador de Texto Elegante</a>
+            <a href="/es/generador-de-texto-unicode/" class="mobile-dropdown-link">Generador de Texto Unicode</a>
+            <a href="/es/conversor-de-texto-negrita/" class="mobile-dropdown-link">Conversor de Texto en Negrita</a>
+            <a href="/es/conversor-de-texto-cursiva/" class="mobile-dropdown-link">Conversor de Texto en Cursiva</a>
+            <a href="/es/generador-de-texto-cursivo/" class="mobile-dropdown-link">Generador de Texto Cursivo</a>
+            <a href="/es/generador-de-texto-gotico/" class="mobile-dropdown-link">Generador de Texto Gótico</a>
+            <a href="/es/generador-de-letras-de-burbujas/" class="mobile-dropdown-link">Generador de Letras de Burbujas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis y Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-emojis-y-simbolos/" class="mobile-dropdown-link">Todas las Herramientas de Emojis</a>
+            <a href="/es/creador-de-texto-con-emojis/" class="mobile-dropdown-link">Creador de Texto con Emojis</a>
+            <a href="/es/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/es/generador-kaomoji/" class="mobile-dropdown-link">Generador Kaomoji</a>
+            <a href="/es/creador-de-emoticonos/" class="mobile-dropdown-link">Creador de Emoticonos</a>
+            <a href="/es/generador-de-simbolos-de-corazon/" class="mobile-dropdown-link">Símbolos de Corazón</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link">Símbolos Brillantes</a>
+            <a href="/es/generador-de-simbolos-de-flechas/" class="mobile-dropdown-link">Símbolos de Flechas</a>
+            <a href="/es/generador-de-bordes-aesthetic/" class="mobile-dropdown-link">Bordes Aesthetic</a>
+            <a href="/es/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link">Líneas Divisorias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociales
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/herramientas-de-subtitulos/" class="mobile-dropdown-link">Todas las Herramientas de Redes Sociales</a>
+            <a href="/es/generador-de-subtitulos-instagram/" class="mobile-dropdown-link">Subtítulos de Instagram</a>
+            <a href="/es/generador-de-subtitulos-tiktok/" class="mobile-dropdown-link">Subtítulos de TikTok</a>
+            <a href="/es/generador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos de YouTube</a>
+            <a href="/es/generador-de-bios-instagram/" class="mobile-dropdown-link">Bios de Instagram</a>
+            <a href="/es/formateador-de-bios-tiktok/" class="mobile-dropdown-link">Bios de TikTok</a>
+            <a href="/es/generador-de-hashtags/" class="mobile-dropdown-link">Generador de Hashtags</a>
+            <a href="/es/contador-de-caracteres-subtitulos/" class="mobile-dropdown-link">Contador de Longitud</a>
+            <a href="/es/creador-de-subtitulos-historias/" class="mobile-dropdown-link">Subtítulos para Historias</a>
+            <a href="/es/generador-de-subtitulos-con-emojis/" class="mobile-dropdown-link">Subtítulos con Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Más Herramientas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/es/generador-de-texto-manuscrito/" class="mobile-dropdown-link">Generador de Texto Manuscrito</a>
+            <a href="/es/creador-de-firmas/" class="mobile-dropdown-link">Creador de Firmas</a>
+            <a href="/es/generador-de-caligrafia/" class="mobile-dropdown-link">Generador de Caligrafía</a>
+            <a href="/es/generador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafía Árabe</a>
+            <a href="/es/generador-de-letras-burbuja/" class="mobile-dropdown-link">Generador de Letras Burbuja</a>
+            <a href="/es/generador-de-texto-doodle/" class="mobile-dropdown-link">Generador de Texto Doodle</a>
+            <a href="/es/generador-de-texto-minimalista/" class="mobile-dropdown-link">Generador de Texto Minimalista</a>
+            <a href="/es/generador-de-versalitas/" class="mobile-dropdown-link">Generador de Versalitas</a>
+            <a href="/es/generador-de-texto-monoespaciado/" class="mobile-dropdown-link">Generador Monoespaciado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Idioma (<span id="mobile-lang-label">ES</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/camelcase-converter/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/conversor-camelcase/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/conversor-camelcase/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/camelcase-cevirici/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='es'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='ES';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='ES';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+
+<main class="tool-page">
+    <div class="container breadcrumb-row">
+      <nav class="breadcrumb container">
+        <a href="../">Inicio</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Conversor CamelCase</span>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/camelcase-converter/" class="lang-link" title="English">🇺🇸 EN</a>
+        <a href="/es/conversor-camelcase/" class="lang-link active" title="Español">🇪🇸 ES</a>
+        <a href="/pt/conversor-camelcase/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="/tr/camelcase-cevirici/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
+    <section class="tool-hero" style="background: var(--gradient-primary);">
+      <div class="container">
+        <h2>🐪 Conversor CamelCase</h2>
+        <p>Convierte tu texto a formatos CamelCase, snake_case y kebab-case</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="tool-input-section">
+          <label class="tool-label" for="text-input">Escribe tu texto</label>
+          <textarea class="tool-input" id="text-input" oninput="updateCharCount(); generateText('camelcase')"
+            placeholder="Type something to convert to CamelCase..."></textarea>
+          <div class="char-count" id="char-count">0 caracteres</div>
+        </div>
+        <div class="tool-output-section">
+          <div class="output-header">
+            <span class="output-title">Casos convertidos</span>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-secondary" onclick="copyAll()">Copiar todo</button>
+              <button class="btn btn-sm btn-secondary" onclick="clearInput()">Borrar</button>
+            </div>
+          </div>
+          <div class="results-container" id="results-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">🐪</div>
+              <p>Escribe un texto arriba para convertir el formato</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="/es/">Inicio</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/es/herramientas-de-texto/">Herramientas de utilidad</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Conversor CamelCase</span>
+</nav>
+
+<p class="byline">Por FontGenerators Editorial Team · Última actualización: 12 de octubre de 2026</p>
+
+<h1>Conversor CamelCase</h1>
+
+<p>Un conversor CamelCase reescribe palabras normales como identificadores estilo programador &mdash; «hello world» se vuelve <code>helloWorld</code> &mdash; y este produce seis formatos a la vez: PascalCase, camelCase, snake_case, kebab-case, dot.notation y path/notation. Escribe o pega palabras arriba y copia el estilo que espere tu lenguaje o plataforma.</p>
+
+<div class="key-takeaways">
+  <p class="takeaways-heading"><strong>Lo esencial</strong></p>
+  <ul>
+    <li>Genera 6 estilos de identificadores desde una entrada: PascalCase, lowerCamelCase, snake_case, kebab-case, dot.notation, path/notation.</li>
+    <li>La puntuación se elimina antes de convertir; los dígitos se quedan con su palabra.</li>
+    <li>Usa camelCase para variables en JavaScript/Java, PascalCase para clases, snake_case para Python, kebab-case para URL y CSS.</li>
+    <li>Las palabras sueltas se devuelven sin cambios en lowerCamelCase y snake_case &mdash; es correcto, no un error.</li>
+    <li>Conversor de caja completo para programadores: seis estilos de identificadores desde una entrada, sin registro.</li>
+    <li>La conversión se ejecuta en tu navegador; nada sale de tu dispositivo.</li>
+  </ul>
+</div>
+
+<h2>¿Qué es el camel case?</h2>
+<p><strong>El camelCase es una convención de nomenclatura en la que varias palabras se unen sin espacios y cada palabra interior empieza con mayúscula</strong> &mdash; como las jorobas de un camello: <code>userProfileName</code>. Es el estándar para variables y funciones en JavaScript, Java y muchos otros lenguajes. Sus parientes cercanos: <strong>PascalCase</strong> (también capitaliza la primera palabra: <code>UserProfileName</code>), <strong>snake_case</strong> (palabras en minúscula unidas con guiones bajos), <strong>kebab-case</strong> (unidas con guiones), <strong>dot.notation</strong> (unidas con puntos) y <strong>path/notation</strong> (unidas con barras).</p>
+
+<h2>Cómo funciona este conversor CamelCase</h2>
+<p>Escribe palabras normales y la herramienta divide tu entrada por espacios en tokens de palabra, quitando primero puntuación y símbolos (así «user's data!» se vuelve las palabras «users» y «data»). Después reconstruye los tokens de seis formas: capitalizando cada palabra para PascalCase, pasando la primera a minúscula para lowerCamelCase, y uniendo con guiones bajos, guiones, puntos o barras para los otros cuatro. Necesites un generador de camel case, un conversor de pascal case o un conversor de snake case y kebab case, esta sola página los cubre todos &mdash; los dígitos quedan pegados a su palabra, así «level 2» se vuelve <code>level2</code> en camelCase y <code>level_2</code> en snake_case.</p>
+<p>Las seis transformaciones son operaciones puras de texto ejecutadas en tu navegador por el motor conversor de la página &mdash; sin servidor, sin demora, sin datos que salgan de tu dispositivo.</p>
+
+<h2>Ejemplo resuelto: convertir a camelCase y amigos</h2>
+<p>Entrada: <code>hello world example</code>. Una entrada, seis salidas listas para copiar:</p>
+<table>
+  <thead>
+    <tr><th>Estilo</th><th>Salida</th><th>Dónde lo verás</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>PascalCase (UpperCamelCase)</td><td><code>HelloWorldExample</code></td><td>Nombres de clase en Java, C#, Python</td></tr>
+    <tr><td>lowerCamelCase</td><td><code>helloWorldExample</code></td><td>Variables en JavaScript, Java</td></tr>
+    <tr><td>snake_case</td><td><code>hello_world_example</code></td><td>Variables en Python, Ruby, columnas SQL</td></tr>
+    <tr><td>kebab-case</td><td><code>hello-world-example</code></td><td>Slugs de URL, clases CSS, atributos HTML</td></tr>
+    <tr><td>dot.notation</td><td><code>hello.world.example</code></td><td>Paquetes Java, claves de configuración</td></tr>
+    <tr><td>path/notation</td><td><code>hello/world/example</code></td><td>Rutas de archivo, segmentos de ruta</td></tr>
+  </tbody>
+</table>
+
+[IMAGE: Diagrama que muestra una frase convertida a seis estilos de nomenclatura con flechas | Suggested alt: "Una frase de entrada convertida a PascalCase, camelCase, snake_case, kebab-case, dot notation y path notation"]
+
+<h2>Cómo usar esta herramienta</h2>
+<ol>
+  <li><strong>Escribe o pega</strong> palabras normales en el campo de entrada (p.&nbsp;ej. «user profile name»).</li>
+  <li>La herramienta <strong>genera al instante</strong> los seis estilos de identificadores abajo.</li>
+  <li><strong>Copia el estilo</strong> que espere tu lenguaje o plataforma.</li>
+  <li>Ten en cuenta que la puntuación se <strong>elimina automáticamente</strong> &mdash; «don't stop» se vuelve <code>dontStop</code>.</li>
+</ol>
+
+<h2>CamelCase frente a PascalCase: ¿cuál necesitas?</h2>
+<p>Se confunden constantemente, así que aquí va la regla práctica de las guías de estilo mayoritarias: <strong>lowerCamelCase</strong> (primera palabra en minúscula) para variables, funciones y propiedades &mdash; <code>fetchUserData()</code> en JavaScript. <strong>PascalCase</strong> (cada palabra capitalizada) para clases, tipos y componentes &mdash; <code>UserProfile</code> en Java o un componente React. El estilo Java de Google, la guía JavaScript de Airbnb y PEP 8 para Python coinciden en esta división, y este conversor te da ambos desde la misma entrada para que encajes en cualquier código.</p>
+
+<h2>Qué estilo de caja para qué lenguaje</h2>
+<table>
+  <thead>
+    <tr><th>Lenguaje / plataforma</th><th>Variables</th><th>Clases / tipos</th><th>Constantes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>JavaScript / TypeScript</td><td>lowerCamelCase</td><td>PascalCase</td><td>UPPER_SNAKE_CASE</td></tr>
+    <tr><td>Python</td><td>snake_case</td><td>PascalCase</td><td>UPPER_SNAKE_CASE</td></tr>
+    <tr><td>Java / C#</td><td>lowerCamelCase</td><td>PascalCase</td><td>UPPER_SNAKE_CASE</td></tr>
+    <tr><td>Go</td><td>lowerCamelCase (privado) / PascalCase (exportado)</td><td>PascalCase</td><td>PascalCase o UPPER_SNAKE</td></tr>
+    <tr><td>CSS / HTML</td><td colspan="2">kebab-case para clases y atributos</td><td>—</td></tr>
+    <tr><td>URL / nombres de archivo</td><td colspan="2">kebab-case (minúsculas, guiones)</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h2>Limitaciones</h2>
+<p>Bordes honestos: la puntuación se elimina en lugar de convertirse, así que «don't» se vuelve «dont» &mdash; revisa posesivos y contracciones en identificadores a mano. Los acrónimos se tratan como palabras normales («API key» → <code>apiKey</code>, <code>ApiKey</code>), mientras algunos equipos prefieren <code>APIKey</code>; la herramienta sigue la convención común de acrónimo en minúscula y no adivinará la regla de tu equipo. Los alfabetos no latinos pasan por el divisor pero no capitalizarán con sentido. Y como toda herramienta de caja, no puede deducir límites de palabra desde un identificador ya unido &mdash; <code>userprofilename</code> no se separará de vuelta en palabras.</p>
+
+<h2>Conversor CamelCase frente a alternativas</h2>
+<table>
+  <thead>
+    <tr><th>Método</th><th>Ideal para</th><th>Cuidado con</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Este conversor</strong></td><td>Seis estilos a la vez desde palabras normales</td><td>Un cuadro de entrada; copia manual por estilo</td></tr>
+    <tr><td>Refactor/rename del IDE</td><td>Renombrar identificadores en todo un código con seguridad</td><td>Excesivo para un solo nombre</td></tr>
+    <tr><td><a href="/es/conversor-a-minusculas/">Conversor a minúsculas</a></td><td>Texto plano en minúsculas (paso previo para slugs)</td><td>Sin lógica de unión de palabras</td></tr>
+    <tr><td>Lodash <code>_.camelCase()</code></td><td>Conversión dentro del código en proyectos JS</td><td>Requiere añadir una dependencia</td></tr>
+  </tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo convierto a camelCase?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Escribe palabras normales como «user profile» en la herramienta de arriba. Devuelve al instante lowerCamelCase (userProfile) más otros cinco estilos. Copia el que necesites &mdash; sin registro, sin subida.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué diferencia hay entre camelCase y PascalCase?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">camelCase pone la primera palabra en minúscula (userName) y se usa para variables y funciones. PascalCase capitaliza cada palabra (UserName) y se usa para clases y tipos. Esta herramienta genera ambos desde la misma entrada.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué caja debería usar para identificadores de programador?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sigue la convención de tu lenguaje: variables camelCase en JavaScript/Java, snake_case en Python/Ruby, kebab-case para clases CSS y slugs de URL, PascalCase para nombres de clase casi en todas partes. La tabla de arriba lo resume.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿El conversor también maneja snake_case y kebab-case?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí &mdash; cada entrada produce seis salidas: PascalCase, lowerCamelCase, snake_case, kebab-case, dot.notation y path/notation. Las obtienes todas a la vez en lugar de convertir seis veces por separado.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Qué pasa con la puntuación y los apóstrofes?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">La puntuación se elimina antes de convertir porque los identificadores no pueden contenerla. «don't stop!» se vuelve dontStop / dont_stop. Revisa las contracciones a mano si la redacción exacta importa.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puede convertir una sola palabra?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Sí, pero una sola palabra no tiene límites que unir: «user» devuelve user, User, user, user, user, user. Es el comportamiento correcto &mdash; los estilos de caja solo difieren con dos o más palabras.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Cómo se tratan los números en la conversión?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Los dígitos quedan pegados a su palabra: «level 2 boss» se vuelve level2Boss, Level2Boss, level_2_boss, etc. Los dígitos iniciales se conservan tal cual, aunque algunos lenguajes prohíben identificadores que empiecen con número.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Mi entrada se envía a un servidor?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. Las seis conversiones se ejecutan en tu navegador con JavaScript. Tus palabras nunca salen de tu dispositivo.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq-question" itemprop="name">¿Puedo convertir snake_case de vuelta a palabras normales?</h3>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">No con esta herramienta &mdash; convierte palabras en identificadores, no al revés. Dividir un identificador existente en palabras es otro trabajo; para una limpieza rápida de texto pegado, prueba el limpiador de texto.</p>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+<!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Herramientas gratuitas en línea para generar texto. Crea textos hermosos, elegantes y únicos para redes sociales, videojuegos y proyectos creativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas Aesthetic</h4>
+                <a href="/es/generador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/es/generador-de-texto-brat/">Texto Brat</a>
+                <a href="/es/generador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/es/generador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/es/generador-de-texto-neon/">Texto Neón</a>
+                <a href="/es/generador-de-texto-con-brillo/">Texto con Brillo</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Fuentes</h4>
+                <a href="/es/generador-de-fuentes-elegantes/">Fuente Elegante</a>
+                <a href="/es/generador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/es/generador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/es/generador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/es/conversor-de-texto-negrita/">Texto en Negrita</a>
+                <a href="/es/generador-de-caligrafia-arabe/">Caligrafía Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis y Símbolos</h4>
+                <a href="/es/creador-de-texto-con-emojis/">Creador de Texto con Emojis</a>
+                <a href="/es/generador-kaomoji/">Generador Kaomoji</a>
+                <a href="/es/generador-de-simbolos-de-corazon/">Símbolos de Corazón</a>
+                <a href="/es/generador-de-simbolos-brillantes/">Símbolos Brillantes</a>
+                <a href="/es/generador-de-bordes-aesthetic/">Bordes Aesthetic</a>
+                <a href="/es/generador-de-lineas-divisorias/">Líneas Divisorias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="/es/generador-de-subtitulos-instagram/">Subtítulos de Instagram</a>
+                <a href="/es/generador-de-subtitulos-tiktok/">Subtítulos de TikTok</a>
+                <a href="/es/generador-de-titulos-youtube/">Títulos de YouTube</a>
+                <a href="/es/generador-de-hashtags/">Generador de Hashtags</a>
+                <a href="/es/generador-de-bios-instagram/">Bios de Instagram</a>
+                <a href="/es/contador-de-caracteres-subtitulos/">Contador de Longitud</a>
+            </div>
+            <div class="footer-section">
+                <h4>Herramientas de Utilidad</h4>
+                <a href="/es/contador-de-palabras/">Contador de Palabras</a>
+                <a href="/es/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/es/limpiador-de-texto/">Limpiador de Texto</a>
+                <a href="/es/conversor-a-tipo-titulo/">Tipo Título</a>
+                <a href="/es/generador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/es/generador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos los derechos reservados. Crea estilos de texto hermosos gratis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/tools.js"></script>
+  <script defer="">
+    document.getElementById('text-input').addEventListener('input', function () {
+      generateText('camelcase');
+    });
+  </script>
+</body>
+
+</html></body>
+
+</html>
