@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Texto com Purpurina | FontGenerators.online</title>
+  <meta content="Desenhe imagens de texto animadas com purpurina — escolha a fonte e a textura e baixe como GIF. Criador grátis de texto brilhante para posts. Sem cadastro." name="description" />
+  <link href="https://fontgenerators.online/pt/gerador-de-texto-com-purpurina/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/glitter-text-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/glitter-text-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-texto-con-purpurina/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-texto-com-purpurina/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/simli-metin-olusturucu/" />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <script src="https://unpkg.com/gif.js.optimized/dist/gif.js"></script>
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    /* MAIN LAYOUT */
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      background: #e9ecd3;
+      border: 1px solid #aaa;
+      padding: 15px;
+    }
+
+    .top-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* PANELS */
+    .panel {
+      background: #f3f5e6;
+      border: 1px solid #999;
+      padding: 10px;
+      max-height: 210px;
+      overflow: auto;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    /* FONT UI */
+    .font-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 3px;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .font-item.active {
+      border: 2px solid #2f6;
+    }
+
+    .font-preview {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* TEXTURES */
+    .texture-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .texture-grid img {
+      width: 100%;
+      height: 35px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .texture-grid img.active {
+      border-color: #2f6;
+    }
+
+    /* CONTROLS */
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 10px;
+    }
+
+    .downloadbtn {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #888;
+    }
+
+    button {
+      background: #7aa63a;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* CANVAS */
+    canvas {
+      width: 100%;
+      height: 200px;
+      margin-top: 15px;
+      background: #fff;
+      border: 1px solid #aaa;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  
+    /* Article extras (W1 rewrite) */
+    .seo-content-section .byline { font-size: 0.85rem; color: var(--text-muted, #777); margin-bottom: 1.25rem; }
+    .seo-content-section .lead { font-size: 1.05rem; line-height: 1.8; }
+    .seo-content-section .takeaways { background: #fff; border: 1px solid #e0d5c8; border-left: 4px solid var(--red, #C8102E); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: 780px; }
+    .seo-content-section .takeaways p { margin-bottom: 0.5rem; }
+    .seo-content-section .takeaways ul { margin-bottom: 0; }
+    .seo-content-section .definition { background: #fff; border: 1px solid #e0d5c8; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; }
+    .seo-content-section .definition p { margin-bottom: 0; }
+    .seo-content-section .example-box { background: var(--black, #121212); color: #fff; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; max-width: 780px; font-size: 1.1rem; }
+    .seo-content-section .example-box p { color: #fff; margin-bottom: 0.5rem; }
+    .seo-content-section .example-box p:last-child { margin-bottom: 0; }
+    /* Widget title demoted from h1 (single-H1 rule); keeps original h1 visuals */
+    .tool-card-container .h1, .tool-hero .h1 { font-family: var(--font-serif, Georgia, serif); font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--black, #121212); }
+    @media (min-width: 768px) { .tool-hero .h1 { font-size: 2.75rem; } }
+
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como criar texto com purpurina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digite seu texto no gerador, escolha uma fonte e uma textura de glitter (ou envie sua própria imagem), ajuste tamanho e borda, pressione Iniciar Animação para ver, depois Baixar GIF. Para texto de brilho colável, use o gerador de texto com brilho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para copiar e colar texto com purpurina na minha bio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não a partir desta ferramenta — ela exporta arquivos de imagem/GIF, e bios só aceitam texto. Para brilho amigável à bio, use estilos Unicode como ✦✧✦ sparkle ✦✧✦ do gerador de texto com brilho, que copiam e colam como caracteres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como baixar meu texto com purpurina como GIF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pressione o botão Iniciar Animação para ver o cintilar no canvas, depois clique em Baixar GIF. O arquivo animado salva no seu dispositivo, pronto para enviar como foto de perfil, banner ou assinatura de fórum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso usar minha própria textura de glitter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A opção Enviar Imagem permite que qualquer foto do seu dispositivo vire o preenchimento de glitter — uma foto de purpurina, um gradiente ou qualquer padrão. A imagem fica no seu navegador; nada é enviado para um servidor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais fontes funcionam melhor para texto com purpurina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fontes em negrito e grossas — elas dão à textura de glitter mais superfície para brilhar. Fontes finas ou manuscritas podem ficar falhadas quando preenchidas com texturas cheias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o tamanho da imagem do texto com purpurina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O canvas de prévia tem 900×200 pixels — um formato largo de banner ideal para cabeçalhos e assinaturas. O tamanho do texto dentro do canvas é ajustável: Pequeno (48px), Médio (72px) ou Grande (96px)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meu GIF animado vai funcionar no Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Como imagem postada ou em seções \"sobre mim\" onde GIFs aparecem, sim. Note que algumas plataformas mostram só o primeiro quadro em certos contextos (como avatares pequenos), então confira onde você vai usar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O gerador de texto com purpurina é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — uso ilimitado, sem conta, sem marca d'água. Desenhe quantos textos com purpurina quiser e baixe todos."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/glitter-text-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-texto-con-purpurina/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+            <a href="/pt/gerador-de-texto-sublinhado/" class="mobile-dropdown-link">Gerador de Texto Sublinhado</a>
+            <a href="/pt/gerador-de-texto-riscado/" class="mobile-dropdown-link">Gerador de Texto Riscado</a>
+            <a href="/pt/fonte-ingles-antigo/" class="mobile-dropdown-link">Gerador de Fonte Old English</a>
+            <a href="/pt/gerador-de-fonte-anime/" class="mobile-dropdown-link">Gerador de Fonte Anime</a>
+            <a href="/pt/gerador-de-texto-manga/" class="mobile-dropdown-link">Gerador de Texto Mangá</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/glitter-text-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-texto-con-purpurina/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="container breadcrumb-row">
+    <nav class="breadcrumb container">
+      <a href="/pt/">Início</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="/pt/ferramentas-de-texto-aesthetic/">Ferramentas de Texto Aesthetic</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Gerador de Texto com Purpurina</span>
+    </nav>
+    <div class="lang-switcher">
+      <a href="/glitter-text-generator/" class="lang-link" title="English">🇺🇸 EN</a>
+      <a href="/es/generador-de-texto-con-purpurina/" class="lang-link" title="Español">🇪🇸 ES</a>
+      <a href="/pt/gerador-de-texto-com-purpurina/" class="lang-link active" title="Português">🇵🇹 PT</a>
+      <a href="/tr/simli-metin-olusturucu/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+    </div>
+  </div>
+    <section class="tool-hero" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+      <div class="container">
+        <p class="h1 mb-0">💎 Gerador de Texto com Purpurina</p>
+        <p>Crie texto brilhante e cintilante com efeitos de brilho</p>
+      </div>
+    </section>
+    <div class="tool-container">
+      <div class="tool-main">
+        <div class="wrapper">
+          <label>Text</label>
+          <input id="text" value="GLITTER TEXT" />
+          <div class="top-controls">
+            <!-- FONTS -->
+            <div class="panel">
+              <h3>Fontes</h3>
+              <div id="fontList"></div>
+            </div>
+            <!-- TEXTURES -->
+            <div class="panel">
+              <h3>Texturas</h3>
+              <div class="texture-grid" id="textures"></div>
+              <label>Upload Image</label>
+              <input id="imageUpload" type="file" />
+            </div>
+          </div>
+          <!-- OPTIONS -->
+          <div class="controls">
+            <select id="size">
+              <option value="48">Small</option>
+              <option selected="" value="72">Medium</option>
+              <option value="96">Large</option>
+            </select>
+            <select id="align">
+              <option value="center">Center</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+            <select id="border">
+              <option value="0">No Border</option>
+              <option value="2">Thin</option>
+              <option selected="" value="4">Medium</option>
+              <option value="7">Thick</option>
+            </select>
+            <input id="borderColor" type="color" value="#222222" />
+          </div>
+          <canvas height="200" id="preview" width="900"></canvas>
+          <div class="downloadbtn">
+            <button id="animateBtn">Start Animation</button>
+            <button id="downloadGif">Download GIF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+      <div class="container">
+
+<h1>Gerador de Texto com Purpurina</h1>
+<p class="byline">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<p class="lead">Um <strong>gerador de texto com purpurina</strong> que desenha imagens de texto animadas e cintilantes — escolha uma <strong>fonte com glitter</strong>, selecione uma textura de purpurina e baixe sua criação como GIF. Diferente das ferramentas de texto para copiar e colar, este criador gratuito renderiza gráficos de <strong>texto brilhante</strong> de verdade com animação de cintilação, perfeito para fotos de perfil, assinaturas de fórum e arte do Discord. Sem cadastro.</p>
+<div class="takeaways">
+<p><strong>Principais conclusões</strong></p>
+<ul>
+<li>Esta ferramenta cria <strong>imagens e GIFs animados</strong> de texto com purpurina — não texto Unicode para copiar e colar.</li>
+<li>Você controla a fonte, a textura de glitter (ou envia sua própria imagem), o tamanho, o alinhamento, a espessura da borda e a cor da borda.</li>
+<li>Pressione <strong>Iniciar Animação</strong> para ver o cintilar, depois <strong>Baixar GIF</strong> para salvar.</li>
+<li>O canvas de prévia tem 900×200 px — largo e baixo, ideal para banners e assinaturas.</li>
+<li>Para texto de brilho colável (Unicode), use o <a href="/pt/gerador-de-texto-com-brilho/">gerador de texto com brilho</a>.</li>
+</ul>
+</div>
+
+<h2>O Que É Texto com Purpurina?</h2>
+<div class="definition"><p><strong>Texto com purpurina</strong> é texto preenchido ou cercado de textura cintilante que captura a luz — o descendente digital dos gráficos de glitter que decoravam perfis do MySpace, assinaturas de fórum e páginas pessoais do início dos anos 2000.</p></div>
+<p>Existem dois tipos de texto com purpurina online. O <strong>texto com glitter em imagem</strong> — o que esta ferramenta faz — é renderizado pixel a pixel com texturas de brilho reais e animação, depois salvo como GIF ou imagem estática. O <strong>"glitter" Unicode</strong> finge o efeito com caracteres de brilho (✦✧★) em volta de palavras normais; ele cola como texto, mas nunca cintila de verdade. O gerador desta página faz a coisa real: purpurina animada que você vê se mexer.</p>
+
+<h2>Como Este Gerador de Texto Brilhante Funciona</h2>
+<p>A ferramenta desenha seu texto num canvas HTML, preenche com uma textura de glitter e anima o brilho. Tudo roda no seu navegador — nada é enviado. Os controles:</p>
+<table>
+<thead><tr><th>Controle</th><th>Opções</th><th>Padrão</th></tr></thead>
+<tbody>
+<tr><td>Texto</td><td>Entrada livre</td><td>"GLITTER TEXT"</td></tr>
+<tr><td>Fontes</td><td>Lista de fontes embutida</td><td>—</td></tr>
+<tr><td>Texturas</td><td>Grade de texturas de glitter, ou envie sua própria imagem</td><td>—</td></tr>
+<tr><td>Tamanho</td><td>Pequeno (48px), Médio (72px), Grande (96px)</td><td>Médio</td></tr>
+<tr><td>Alinhamento</td><td>Esquerda, Centro, Direita</td><td>Centro</td></tr>
+<tr><td>Borda</td><td>Nenhuma, Fina (2px), Média (4px), Grossa (7px)</td><td>Média</td></tr>
+<tr><td>Cor da borda</td><td>Seletor de cor</td><td>Escura (#222222)</td></tr>
+<tr><td>Prévia</td><td>Canvas de 900×200 px</td><td>—</td></tr>
+<tr><td>Ações</td><td>Iniciar Animação, Baixar GIF</td><td>—</td></tr>
+</tbody>
+</table>
+<p>O recurso matador é o <strong>envio de textura</strong>: qualquer imagem do seu dispositivo pode virar o preenchimento de glitter — uma foto de purpurina de verdade, um gradiente, uma imagem de galáxia. Combinado com o seletor de fontes, isso faz cada saída genuinamente única.</p>
+[IMAGE: Ilustração da interface do gerador de purpurina com grade de texturas, seletor de fontes e prévia animada rotulados | alt="Interface do gerador de texto com purpurina com lista de fontes, grade de texturas e botão de baixar GIF"]
+
+<h2>Exemplo Prático</h2>
+<p>Mantenha o texto padrão <strong>GLITTER TEXT</strong>, o tamanho Médio e a borda Média escura, escolha qualquer textura e pressione <strong>Iniciar Animação</strong>. O canvas cintila — brilhos deslizam pelas formas das letras. Pressione <strong>Baixar GIF</strong> e você tem um banner de glitter animado pronto para assinatura de fórum ou "sobre mim" do Discord (onde imagens/GIFs são exibidos).</p>
+<p>Quer algo mais limpo? Defina a borda como <strong>Nenhuma</strong> e escolha uma textura fina para um brilho elegante em vez de pesado.</p>
+
+<h2>Como Criar Texto com Purpurina</h2>
+<ol>
+<li><strong>Digite seu texto</strong> no campo Texto (frases curtas funcionam melhor no canvas largo).</li>
+<li><strong>Escolha uma fonte</strong> na lista — fontes em negrito e grossas mostram melhor o glitter.</li>
+<li><strong>Escolha uma textura</strong> na grade, ou <strong>envie sua própria imagem</strong> como preenchimento de glitter.</li>
+<li><strong>Defina tamanho, alinhamento e borda</strong> — a borda Média escura faz as letras saltarem.</li>
+<li>Pressione <strong>Iniciar Animação</strong> para ver o cintilar.</li>
+<li>Pressione <strong>Baixar GIF</strong> para salvar seu texto com purpurina animado.</li>
+</ol>
+
+<h2>Texto com Purpurina para Bios: Imagem vs. Unicode</h2>
+<p><strong>Dá para colar texto com purpurina na minha bio do Instagram?</strong> Não a saída desta ferramenta — é um arquivo de imagem, e bios só aceitam texto. Para <strong>letras com glitter para bio</strong>, você precisa da abordagem Unicode: caracteres de brilho em volta de palavras normais, como ✦✧✦ sparkle ✦✧✦. O <a href="/pt/gerador-de-texto-com-brilho/">gerador de texto com brilho</a> e a biblioteca de <a href="/pt/gerador-de-simbolos-brilhantes/">símbolos brilhantes</a> cobrem esse estilo com copiar em um clique.</p>
+<p>Use <em>este</em> gerador quando o destino aceitar imagens: fotos de perfil, cabeçalhos, assinaturas de fórum, banners de blog, ícones de servidor do Discord e posts de story.</p>
+
+<h2>Gerador de Texto com Purpurina vs. Ferramentas Parecidas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>Saída</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><a href="/pt/gerador-de-texto-com-brilho/">Gerador de texto com brilho</a></td><td>Unicode para copiar e colar (✧ glow ✧)</td><td>Você precisa de <strong>copiar e colar texto com glitter</strong> para bios e chats</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-neon/">Gerador de texto neon</a></td><td>Molduras de letreiro Unicode para copiar e colar</td><td>Você quer texto de letreiro ousado como caracteres</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-animado/">Gerador de texto animado</a></td><td>Texto web animado em CSS</td><td>Você quer animação na sua própria página web</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-kawaii/">Gerador de texto kawaii</a></td><td>Texto decorado fofo para copiar e colar</td><td>Você quer doce em vez de brilhante</td></tr>
+<tr><td><a href="/pt/gerador-de-texto-retro/">Gerador de texto retrô</a></td><td>Molduras anos 80 para copiar e colar</td><td>Você quer brilho da era disco como texto</td></tr>
+</tbody>
+</table>
+<p>Explore efeitos de imagem e de texto em <a href="/pt/ferramentas-de-texto-aesthetic/">ferramentas de texto aesthetic</a>.</p>
+
+<h2>Dicas para a Melhor Purpurina</h2>
+<p>Como qualquer guia de <strong>gerador de fonte brilhante</strong> vai dizer, <strong>fontes em negrito brilham melhor.</strong> Formas de letra finas deixam pouca superfície para a textura — escolha a fonte mais pesada disponível.</p>
+<p><strong>Envie uma foto de purpurina de verdade.</strong> Um close de purpurina de artesanato como textura supera qualquer padrão embutido em realismo.</p>
+<p><strong>Texto curto.</strong> O canvas 900×200 tem formato de banner; mais de 2 a 4 palavras fica apertado.</p>
+<p><strong>Atenção à borda.</strong> Uma cor de borda contrastante separa as letras de texturas cheias — bordas escuras em glitter claro, bordas claras no escuro.</p>
+
+<h2>Limitações</h2>
+<ul>
+<li>A saída é imagem/GIF — não dá para colar como texto em bios, nomes de usuário ou chats.</li>
+<li>Arquivos GIF podem ficar grandes; textos muito longos ou tamanhos grandes aumentam o arquivo.</li>
+<li>GIFs animados não animam em todo lugar (algumas plataformas mostram só o primeiro quadro).</li>
+<li>Texturas enviadas ficam na sessão do seu navegador — a ferramenta não hospeda imagens para você.</li>
+</ul>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como criar texto com purpurina?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Digite seu texto no gerador, escolha uma fonte e uma textura de glitter (ou envie sua própria imagem), ajuste tamanho e borda, pressione Iniciar Animação para ver, depois Baixar GIF. Para texto de brilho colável, use o gerador de texto com brilho.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Dá para copiar e colar texto com purpurina na minha bio?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Não a partir desta ferramenta — ela exporta arquivos de imagem/GIF, e bios só aceitam texto. Para brilho amigável à bio, use estilos Unicode como ✦✧✦ sparkle ✦✧✦ do gerador de texto com brilho, que copiam e colam como caracteres.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Como baixar meu texto com purpurina como GIF?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Pressione o botão Iniciar Animação para ver o cintilar no canvas, depois clique em Baixar GIF. O arquivo animado salva no seu dispositivo, pronto para enviar como foto de perfil, banner ou assinatura de fórum.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Posso usar minha própria textura de glitter?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sim. A opção Enviar Imagem permite que qualquer foto do seu dispositivo vire o preenchimento de glitter — uma foto de purpurina, um gradiente ou qualquer padrão. A imagem fica no seu navegador; nada é enviado para um servidor.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Quais fontes funcionam melhor para texto com purpurina?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Fontes em negrito e grossas — elas dão à textura de glitter mais superfície para brilhar. Fontes finas ou manuscritas podem ficar falhadas quando preenchidas com texturas cheias.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Qual o tamanho da imagem do texto com purpurina?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">O canvas de prévia tem 900×200 pixels — um formato largo de banner ideal para cabeçalhos e assinaturas. O tamanho do texto dentro do canvas é ajustável: Pequeno (48px), Médio (72px) ou Grande (96px).</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">Meu GIF animado vai funcionar no Discord?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Como imagem postada ou em seções "sobre mim" onde GIFs aparecem, sim. Note que algumas plataformas mostram só o primeiro quadro em certos contextos (como avatares pequenos), então confira onde você vai usar.</p></div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<h3 class="faq-question" itemprop="name">O gerador de texto com purpurina é grátis?</h3>
+<div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sim — uso ilimitado, sem conta, sem marca d'água. Desenhe quantos textos com purpurina quiser e baixe todos.</p></div>
+</div>
+</div>
+
+      </div>
+    </section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+  </main>
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script defer="" src="../../js/tools.js"></script>
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="">
+    const canvas = document.getElementById("preview");
+    const ctx = canvas.getContext("2d");
+
+    let offset = 0;
+    let selectedFont = "Impact";
+    let selectedTexture = 0;
+    let imageTexture = null;
+
+    /* FONTS */
+    const fonts = [
+      "Impact", "Arial Black", "Comic Sans MS",
+      "Georgia", "Verdana", "Courier New", "Trebuchet MS"
+    ];
+
+    const fontList = document.getElementById("fontList");
+
+    fonts.forEach((f, i) => {
+      const div = document.createElement("div");
+      div.className = "font-item" + (i === 0 ? " active" : "");
+
+      div.innerHTML = `
+    <div class="font-preview" style="font-family:${f}">
+      PICK ME
+    </div>
+  `;
+
+      div.onclick = () => {
+        selectedFont = f;
+        document.querySelectorAll(".font-item").forEach(x => x.classList.remove("active"));
+        div.classList.add("active");
+        draw();
+      };
+
+      fontList.appendChild(div);
+    });
+
+    /* GLITTER */
+    function generateGlitter(color) {
+      const c = document.createElement("canvas");
+      c.width = 100; c.height = 100;
+      const g = c.getContext("2d");
+
+      g.fillStyle = color;
+      g.fillRect(0, 0, 100, 100);
+
+      for (let i = 0; i < 1200; i++) {
+        g.fillStyle = Math.random() > 0.8 ? "#fff" : "rgba(255,255,255,0.2)";
+        g.fillRect(Math.random() * 100, Math.random() * 100, 2, 2);
+      }
+
+      return c;
+    }
+
+    const glitterTextures = [
+      generateGlitter("#ff4fd8"),
+      generateGlitter("#d4af37"),
+      generateGlitter("#4f8fff")
+    ];
+
+    /* IMAGE TEXTURES */
+    const imagePaths = [
+      "images/DCglit1.gif",
+      "images/DCglit2.gif",
+      "images/DCglit3.gif",
+      "images/DCglit4.gif",
+      "images/DCglit5.gif",
+      "images/DCglit6.gif",
+      "images/DCglit7.gif",
+      "images/DCglit8.gif"
+    ];
+
+    const loadedImages = [];
+    imagePaths.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      loadedImages.push(img);
+    });
+
+    /* TEXTURE UI */
+    const textureBox = document.getElementById("textures");
+
+    const allTextures = [
+      ...glitterTextures.map(c => c.toDataURL()),
+      ...imagePaths
+    ];
+
+    allTextures.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src;
+
+      img.onclick = () => {
+        selectedTexture = i;
+        imageTexture = null;
+
+        document.querySelectorAll(".texture-grid img")
+          .forEach(x => x.classList.remove("active"));
+
+        img.classList.add("active");
+        draw();
+      };
+
+      if (i === 0) img.classList.add("active");
+      textureBox.appendChild(img);
+    });
+
+    /* UPLOAD */
+    document.getElementById("imageUpload").onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const img = new Image();
+      img.onload = () => {
+        imageTexture = img;
+        draw();
+      };
+      img.src = URL.createObjectURL(file);
+    };
+
+    /* DRAW */
+    function draw() {
+      const txt = document.getElementById("text").value;
+      const size = document.getElementById("size").value;
+      const align = document.getElementById("align").value;
+      const border = document.getElementById("border").value;
+      const borderColor = document.getElementById("borderColor").value;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = `${size}px ${selectedFont}`;
+      ctx.textAlign = align;
+      ctx.textBaseline = "middle";
+
+      const x = align === "left" ? 50 : align === "right" ? canvas.width - 50 : canvas.width / 2;
+      const y = canvas.height / 2;
+
+      ctx.save();
+
+      ctx.fillStyle = "#fff";
+      ctx.fillText(txt, x, y);
+
+      ctx.globalCompositeOperation = "source-in";
+
+      let pattern;
+
+      if (imageTexture) {
+        pattern = ctx.createPattern(imageTexture, "repeat");
+
+      } else if (selectedTexture >= glitterTextures.length) {
+        pattern = ctx.createPattern(
+          loadedImages[selectedTexture - glitterTextures.length],
+          "repeat"
+        );
+
+      } else {
+        pattern = ctx.createPattern(glitterTextures[selectedTexture], "repeat");
+      }
+
+      ctx.translate(offset, offset * 0.4);
+      ctx.fillStyle = pattern;
+      ctx.fillRect(-canvas.width, 0, canvas.width * 2, canvas.height);
+
+      ctx.restore();
+
+      if (border > 0) {
+        ctx.lineWidth = border;
+        ctx.strokeStyle = borderColor;
+        ctx.strokeText(txt, x, y);
+      }
+    }
+
+    /* ANIMATION */
+    function animate() {
+      draw();
+      offset += 2;
+      if (offset > 100) offset = 0;
+      requestAnimationFrame(animate);
+    }
+
+    document.getElementById("animateBtn").onclick = animate;
+
+    /* LIVE */
+    ["text", "size", "align", "border", "borderColor"].forEach(id => {
+      document.getElementById(id).oninput = draw;
+    });
+
+    /* GIF EXPORT */
+    document.getElementById("downloadGif").onclick = () => {
+
+      const gif = new GIF({
+        workers: 2,
+        quality: 10,
+        width: canvas.width,
+        height: canvas.height,
+        workerScript: "gif.js"
+      });
+
+      for (let i = 0; i < 40; i++) {
+        offset = i * 3;
+        draw();
+
+        gif.addFrame(ctx, { copy: true, delay: 50 });
+      }
+
+      gif.on("finished", blob => {
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "glitter-text.gif";
+        a.click();
+      });
+
+      gif.render();
+    };
+
+    draw();
+  </script>
+</body>
