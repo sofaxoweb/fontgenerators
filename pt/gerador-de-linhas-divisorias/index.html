@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gerador de Linhas Divisórias | FontGenerators.online</title>
+  <meta name="description" content="Crie linhas divisórias decorativas para Instagram e Tumblr — ━━━ ✦ ━━━. Digite seu texto, escolha o estilo e copie. Funciona em bios, posts e legendas." />
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/pt/gerador-de-linhas-divisorias/" rel="canonical" />
+  <meta property="og:locale" content="pt_BR">
+  <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/divider-line-generator/" />
+  <link rel="alternate" hreflang="en" href="https://fontgenerators.online/divider-line-generator/" />
+  <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-lineas-divisorias/" />
+  <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-linhas-divisorias/" />
+  <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/ayirici-cizgi-olusturucu/" />
+  <link href="https://fontgenerators.online/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .divider-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .control-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--foreground);
+    }
+
+    .control-group select,
+    .control-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      background: var(--surface);
+    }
+
+    .divider-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+
+    .divider-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .divider-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+      font-family: monospace;
+      font-size: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .divider-item:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .divider-item.copied {
+      background: var(--success);
+      color: white;
+      border-color: var(--success);
+    }
+
+    .custom-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .preview-divider {
+      font-family: monospace;
+      font-size: 1.2rem;
+      padding: 1rem;
+      background: var(--background);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow-x: auto;
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como copio e colo linhas divisórias?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clique em qualquer divisória da biblioteca — ela copia na hora. Ou monte uma personalizada e aperte Copiar. Cole a linha entre seções da sua bio, post ou documento; divisórias são texto Unicode puro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço uma divisória de texto personalizada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use o construtor personalizado: escolha um caractere de linha (═ ─ ━ — ~ • ★ ♥ ✦ ✿), defina o comprimento de 5 a 50 com o controle e opcionalmente adicione um símbolo central como ♥ ou ✦. A prévia atualiza ao vivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os separadores fofos para bio do Instagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escolhas populares: ─── ♡ ───, ·:*¨¨*:·, ✿ ❀ ─── ❀ ✿ e ══════♥══════. Mantenha abaixo de ~25 caracteres para não quebrar no celular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre ─ e ═?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambos são do bloco Desenho de Caixa do Unicode: ─ (U+2500) é uma linha simples leve, ═ (U+2550) é uma linha dupla grossa. ━ (U+2501) é uma linha simples grossa. Escolha o peso que combina com sua estética."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Linhas divisórias funcionam no Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — cole em mensagens e descrições de canal. O Discord não tem régua horizontal nativa no chat, então divisórias de texto são o jeito padrão de separar seções."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual deve ser o comprimento da divisória?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para bios e telas de celular, 15–25 caracteres evitam quebra. Para documentos de desktop, 40–50 caracteres preenchem bem a linha. O construtor usa 20 como padrão, um meio-termo seguro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre divisórias e bordas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divisórias são linhas horizontais que separam seções (───); bordas envolvem o texto (『 texto 』). Para texto emoldurado, veja nosso Gerador de Bordas Aesthetic ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O gerador de linhas divisórias é grátis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim — grátis, ilimitado, sem conta. As 45 divisórias prontas e o construtor personalizado rodam inteiramente no seu navegador."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<header>
+    <div class="container header-content">
+        <a href="/pt/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/pt/" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-texto-aesthetic/" class="nav-link">
+                     Ferramentas Aesthetic<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-texto-aesthetic/" class="dropdown-link dropdown-header">Todas as Ferramentas Aesthetic →</a>
+                    <a href="/pt/gerador-de-texto-aesthetic/" class="dropdown-link">🌸 Gerador de Texto Aesthetic</a>
+                    <a href="/pt/gerador-de-texto-brat/" class="dropdown-link">💚 Gerador de Texto Brat</a>
+                    <a href="/pt/gerador-de-texto-soft-girl/" class="dropdown-link">🌷 Gerador de Texto Soft Girl</a>
+                    <a href="/pt/gerador-de-texto-vaporwave/" class="dropdown-link">🌊 Gerador de Texto Vaporwave</a>
+                    <a href="/pt/gerador-de-texto-kawaii/" class="dropdown-link">🎀 Gerador de Texto Kawaii</a>
+                    <a href="/pt/gerador-de-texto-neon/" class="dropdown-link">💡 Gerador de Texto Neon</a>
+                    <a href="/pt/gerador-de-texto-com-brilho/" class="dropdown-link">✨ Gerador de Texto com Brilho</a>
+                    <a href="/pt/gerador-de-texto-com-purpurina/" class="dropdown-link">💎 Gerador de Texto com Purpurina</a>
+                    <a href="/pt/gerador-de-texto-retro/" class="dropdown-link">📺 Gerador de Texto Retrô</a>
+                    <a href="/pt/gerador-de-texto-cyber/" class="dropdown-link">🤖 Gerador de Texto Cyber</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-fontes-elegantes/" class="nav-link">
+                     Ferramentas de Fontes<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-fontes-elegantes/" class="dropdown-link dropdown-header">Todas as Ferramentas de Fontes →</a>
+                    <a href="/pt/gerador-de-fontes-elegantes/" class="dropdown-link">💎 Gerador de Fontes Elegantes</a>
+                    <a href="/pt/gerador-de-texto-elegante/" class="dropdown-link">⭐ Gerador de Texto Elegante</a>
+                    <a href="/pt/gerador-de-texto-unicode/" class="dropdown-link">🔠 Gerador de Texto Unicode</a>
+                    <a href="/pt/conversor-de-texto-negrito/" class="dropdown-link">🅱️ Conversor de Texto em Negrito</a>
+                    <a href="/pt/conversor-de-texto-italico/" class="dropdown-link">📝 Conversor de Texto em Itálico</a>
+                    <a href="/pt/gerador-de-texto-cursivo/" class="dropdown-link">✒️ Gerador de Texto Cursivo</a>
+                    <a href="/pt/gerador-de-texto-gotico/" class="dropdown-link">🖤 Gerador de Texto Gótico</a>
+                    <a href="/pt/gerador-de-letras-de-bolhas/" class="dropdown-link">🫧 Gerador de Letras de Bolhas</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="nav-link">
+                     Emojis e Símbolos<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="dropdown-link dropdown-header">Todas as Ferramentas de Emojis →</a>
+                    <a href="/pt/criador-de-texto-com-emojis/" class="dropdown-link">😊 Criador de Texto com Emojis</a>
+                    <a href="/pt/combinador-de-emojis/" class="dropdown-link">🎨 Combinador de Emojis</a>
+                    <a href="/pt/gerador-kaomoji/" class="dropdown-link">(◕‿◕) Gerador Kaomoji</a>
+                    <a href="/pt/criador-de-emoticons/" class="dropdown-link">:) Criador de Emoticons</a>
+                    <a href="/pt/gerador-de-simbolos-de-coracao/" class="dropdown-link">♥ Símbolos de Coração</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link">✨ Símbolos Brilhantes</a>
+                    <a href="/pt/gerador-de-simbolos-de-setas/" class="dropdown-link">→ Símbolos de Setas</a>
+                    <a href="/pt/gerador-de-bordas-aesthetic/" class="dropdown-link">『』 Bordas Aesthetic</a>
+                    <a href="/pt/biblioteca-de-simbolos/" class="dropdown-link">☆ Biblioteca de Símbolos</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link">═ Linhas Divisórias</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/pt/ferramentas-de-legendas/" class="nav-link">
+                     Redes Sociais<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/ferramentas-de-legendas/" class="dropdown-link dropdown-header">Todas as Ferramentas de Redes Sociais →</a>
+                    <a href="/pt/gerador-de-legendas-instagram/" class="dropdown-link">📸 Legendas do Instagram</a>
+                    <a href="/pt/gerador-de-legendas-tiktok/" class="dropdown-link">🎵 Legendas do TikTok</a>
+                    <a href="/pt/gerador-de-titulos-youtube/" class="dropdown-link">▶️ Títulos do YouTube</a>
+                    <a href="/pt/gerador-de-bios-instagram/" class="dropdown-link">✨ Bios do Instagram</a>
+                    <a href="/pt/formatador-de-bios-tiktok/" class="dropdown-link">🎭 Bios do TikTok</a>
+                    <a href="/pt/gerador-de-hashtags/" class="dropdown-link">#️⃣ Gerador de Hashtags</a>
+                    <a href="/pt/contador-de-caracteres-legendas/" class="dropdown-link">📊 Contador de Comprimento</a>
+                    <a href="/pt/criador-de-legendas-stories/" class="dropdown-link">📖 Legendas para Stories</a>
+                    <a href="/pt/gerador-de-legendas-com-emojis/" class="dropdown-link">😊 Legendas com Emojis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Mais Ferramentas<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/pt/gerador-de-texto-manuscrito/" class="dropdown-link">✍️ Gerador de Texto Manuscrito</a>
+                    <a href="/pt/criador-de-assinaturas/" class="dropdown-link">🖊️ Criador de Assinaturas</a>
+                    <a href="/pt/gerador-de-caligrafia/" class="dropdown-link">🖋️ Gerador de Caligrafia</a>
+                    <a href="/pt/gerador-de-caligrafia-arabe/" class="dropdown-link">🕌 Caligrafia Árabe</a>
+                    <a href="/pt/gerador-de-letras-bolha/" class="dropdown-link">🫧 Gerador de Letras Bolha</a>
+                    <a href="/pt/gerador-de-texto-doodle/" class="dropdown-link">🎨 Gerador de Texto Doodle</a>
+                    <a href="/pt/gerador-de-texto-minimalista/" class="dropdown-link">◻️ Gerador de Texto Minimalista</a>
+                    <a href="/pt/gerador-de-versalete/" class="dropdown-link">🔡 Gerador de Versalete</a>
+                    <a href="/pt/gerador-de-texto-monoespacado/" class="dropdown-link">💻 Gerador Monoespaçado</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">PT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/divider-line-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-lineas-divisorias/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-linhas-divisorias/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/pt/" class="mobile-nav-link">🏠 Início</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Ferramentas Aesthetic
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-texto-aesthetic/" class="mobile-dropdown-link">Todas as Ferramentas Aesthetic</a>
+            <a href="/pt/gerador-de-texto-aesthetic/" class="mobile-dropdown-link">Gerador de Texto Aesthetic</a>
+            <a href="/pt/gerador-de-texto-brat/" class="mobile-dropdown-link">Gerador de Texto Brat</a>
+            <a href="/pt/gerador-de-texto-soft-girl/" class="mobile-dropdown-link">Gerador de Texto Soft Girl</a>
+            <a href="/pt/gerador-de-texto-vaporwave/" class="mobile-dropdown-link">Gerador de Texto Vaporwave</a>
+            <a href="/pt/gerador-de-texto-kawaii/" class="mobile-dropdown-link">Gerador de Texto Kawaii</a>
+            <a href="/pt/gerador-de-texto-neon/" class="mobile-dropdown-link">Gerador de Texto Neon</a>
+            <a href="/pt/gerador-de-texto-com-brilho/" class="mobile-dropdown-link">Gerador de Texto com Brilho</a>
+            <a href="/pt/gerador-de-texto-com-purpurina/" class="mobile-dropdown-link">Gerador de Texto com Purpurina</a>
+            <a href="/pt/gerador-de-texto-retro/" class="mobile-dropdown-link">Gerador de Texto Retrô</a>
+            <a href="/pt/gerador-de-texto-cyber/" class="mobile-dropdown-link">Gerador de Texto Cyber</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Ferramentas de Fontes
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-fontes-elegantes/" class="mobile-dropdown-link">Todas as Ferramentas de Fontes</a>
+            <a href="/pt/gerador-de-fontes-elegantes/" class="mobile-dropdown-link">Gerador de Fontes Elegantes</a>
+            <a href="/pt/gerador-de-texto-elegante/" class="mobile-dropdown-link">Gerador de Texto Elegante</a>
+            <a href="/pt/gerador-de-texto-unicode/" class="mobile-dropdown-link">Gerador de Texto Unicode</a>
+            <a href="/pt/conversor-de-texto-negrito/" class="mobile-dropdown-link">Conversor de Texto em Negrito</a>
+            <a href="/pt/conversor-de-texto-italico/" class="mobile-dropdown-link">Conversor de Texto em Itálico</a>
+            <a href="/pt/gerador-de-texto-cursivo/" class="mobile-dropdown-link">Gerador de Texto Cursivo</a>
+            <a href="/pt/gerador-de-texto-gotico/" class="mobile-dropdown-link">Gerador de Texto Gótico</a>
+            <a href="/pt/gerador-de-letras-de-bolhas/" class="mobile-dropdown-link">Gerador de Letras de Bolhas</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emojis e Símbolos
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-emojis-e-simbolos/" class="mobile-dropdown-link">Todas as Ferramentas de Emojis</a>
+            <a href="/pt/criador-de-texto-com-emojis/" class="mobile-dropdown-link">Criador de Texto com Emojis</a>
+            <a href="/pt/combinador-de-emojis/" class="mobile-dropdown-link">Combinador de Emojis</a>
+            <a href="/pt/gerador-kaomoji/" class="mobile-dropdown-link">Gerador Kaomoji</a>
+            <a href="/pt/criador-de-emoticons/" class="mobile-dropdown-link">Criador de Emoticons</a>
+            <a href="/pt/gerador-de-simbolos-de-coracao/" class="mobile-dropdown-link">Símbolos de Coração</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link">Símbolos Brilhantes</a>
+            <a href="/pt/gerador-de-simbolos-de-setas/" class="mobile-dropdown-link">Símbolos de Setas</a>
+            <a href="/pt/gerador-de-bordas-aesthetic/" class="mobile-dropdown-link">Bordas Aesthetic</a>
+            <a href="/pt/biblioteca-de-simbolos/" class="mobile-dropdown-link">Biblioteca de Símbolos</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link">Linhas Divisórias</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Redes Sociais
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/ferramentas-de-legendas/" class="mobile-dropdown-link">Todas as Ferramentas de Redes Sociais</a>
+            <a href="/pt/gerador-de-legendas-instagram/" class="mobile-dropdown-link">Legendas do Instagram</a>
+            <a href="/pt/gerador-de-legendas-tiktok/" class="mobile-dropdown-link">Legendas do TikTok</a>
+            <a href="/pt/gerador-de-titulos-youtube/" class="mobile-dropdown-link">Títulos do YouTube</a>
+            <a href="/pt/gerador-de-bios-instagram/" class="mobile-dropdown-link">Bios do Instagram</a>
+            <a href="/pt/formatador-de-bios-tiktok/" class="mobile-dropdown-link">Bios do TikTok</a>
+            <a href="/pt/gerador-de-hashtags/" class="mobile-dropdown-link">Gerador de Hashtags</a>
+            <a href="/pt/contador-de-caracteres-legendas/" class="mobile-dropdown-link">Contador de Comprimento</a>
+            <a href="/pt/criador-de-legendas-stories/" class="mobile-dropdown-link">Legendas para Stories</a>
+            <a href="/pt/gerador-de-legendas-com-emojis/" class="mobile-dropdown-link">Legendas com Emojis</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Mais Ferramentas
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/pt/gerador-de-texto-manuscrito/" class="mobile-dropdown-link">Gerador de Texto Manuscrito</a>
+            <a href="/pt/criador-de-assinaturas/" class="mobile-dropdown-link">Criador de Assinaturas</a>
+            <a href="/pt/gerador-de-caligrafia/" class="mobile-dropdown-link">Gerador de Caligrafia</a>
+            <a href="/pt/gerador-de-caligrafia-arabe/" class="mobile-dropdown-link">Caligrafia Árabe</a>
+            <a href="/pt/gerador-de-letras-bolha/" class="mobile-dropdown-link">Gerador de Letras Bolha</a>
+            <a href="/pt/gerador-de-texto-doodle/" class="mobile-dropdown-link">Gerador de Texto Doodle</a>
+            <a href="/pt/gerador-de-texto-minimalista/" class="mobile-dropdown-link">Gerador de Texto Minimalista</a>
+            <a href="/pt/gerador-de-versalete/" class="mobile-dropdown-link">Gerador de Versalete</a>
+            <a href="/pt/gerador-de-texto-monoespacado/" class="mobile-dropdown-link">Gerador Monoespaçado</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Language (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/divider-line-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-lineas-divisorias/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-linhas-divisorias/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var d=document.getElementById('current-lang-label');if(d)d.textContent='PT';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='PT';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+    <main class="tool-page">
+        <div class="tool-layout">
+<aside class="tool-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            <span class="icon">😊</span>
+                        Ferramentas de Emojis e Símbolos
+          <nav class="sidebar-nav">
+            <a class="sidebar-link" href="../emoji-text-maker/"><span class="link-icon">😊</span><span
+                class="link-text">Emoji Text Maker</span></a>
+            <a class="sidebar-link" href="../emoji-combiner/"><span class="link-icon">🎨</span><span
+                class="link-text">Emoji Combiner</span></a>
+            <a class="sidebar-link" href="../kaomoji-generator/"><span class="link-icon">(◕‿◕)</span><span
+                class="link-text">Kaomoji Generator</span></a>
+            <a class="sidebar-link" href="../emoticon-maker/"><span class="link-icon">:)</span><span
+                class="link-text">Emoticon Maker</span></a>
+            <a class="sidebar-link" href="../heart-symbol-generator/"><span class="link-icon">♥</span><span
+                class="link-text">Heart Symbols</span></a>
+            <a class="sidebar-link" href="../sparkle-symbol-generator/"><span class="link-icon">✨</span><span
+                class="link-text">Sparkle Symbols</span></a>
+            <a class="sidebar-link" href="../arrow-symbol-generator/"><span class="link-icon">→</span><span
+                class="link-text">Arrow Symbols</span></a>
+            <a class="sidebar-link" href="../aesthetic-borders-generator/"><span class="link-icon">『』</span><span
+                class="link-text">Aesthetic Borders</span></a>
+            <a class="sidebar-link" href="../fancy-text-symbols-library/"><span class="link-icon">☆</span><span
+                class="link-text">Symbols Library</span></a>
+            <a class="sidebar-link active" href="../divider-line-generator/"><span class="link-icon">═</span><span
+                class="link-text">Divider Lines</span></a>
+          </nav>
+        </div>
+      </aside>
+<div class="tool-main-content">
+        <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">☰ Explorar Ferramentas</button>
+        <div class="tool-input-section">
+          <div class="tool-title">═══ Gerador de Linhas Divisórias</h1>
+          <p class="tool-description">Crie divisórias de texto lindas — clique para copiar!</p>
+          <div class="custom-preview">
+            <h3 style="margin-bottom: 1rem;">✨ Construtor de divisória personalizada</h3>
+            <div class="divider-controls">
+              <div class="control-group">
+                <label>Estilo</label>
+                <select id="divider-style" onchange="updatePreview()">
+                  <option value="═">═ Linha dupla</option>
+                  <option value="─">─ Linha simples</option>
+                  <option value="━">━ Linha grossa</option>
+                  <option value="—">— Travessão</option>
+                  <option value="~">~ Til</option>
+                  <option value="•">• Marcador</option>
+                  <option value="★">★ Estrela</option>
+                  <option value="♥">♥ Coração</option>
+                  <option value="✦">✦ Diamante</option>
+                  <option value="✿">✿ Flor</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label>Comprimento</label>
+                <input id="divider-length" max="50" min="5" oninput="updatePreview()" type="range" value="20" />
+              </div>
+              <div class="control-group">
+                <label>Center Symbol</label>
+                <select id="center-symbol" onchange="updatePreview()">
+                  <option value="">None</option>
+                  <option value="♥">♥ Coração</option>
+                  <option value="★">★ Estrela</option>
+                  <option value="✦">✦ Diamante</option>
+                  <option value="✿">✿ Flor</option>
+                  <option value="◆">◆ Black Diamante</option>
+                  <option value="●">● Circle</option>
+                  <option value="❤">❤ Heavy Coração</option>
+                  <option value="✨">✨ Sparkles</option>
+                </select>
+              </div>
+            </div>
+            <div class="preview-divider" id="preview-divider">════════════════════</div>
+            <button class="btn btn-primary" onclick="copyPreview()">📋 Copy Divider</button>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">═══ Linhas Duplas</h3>
+            <div class="divider-grid" id="double-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">─── Linhas Únicas</h3>
+            <div class="divider-grid" id="single-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">✦✦✦ Decorativo</h3>
+            <div class="divider-grid" id="decorative-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">♥♥♥ Corações e estrelas</h3>
+            <div class="divider-grid" id="fancy-lines"></div>
+          </div>
+          <div class="divider-section">
+            <h3 class="section-header">✿❀✿ Florais</h3>
+            <div class="divider-grid" id="floral-lines"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+<div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+    <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+      <div class="mobile-sidebar-header">
+        <h3>😊 Ferramentas de Emojis</h3>
+        <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="/pt/gerador-de-linhas-divisorias/">═ Gerador de Linhas Divisórias</a>
+        <a class="sidebar-link" href="/pt/gerador-de-bordas-aesthetic/">『』 Gerador de Bordas Aesthetic</a>
+        <a class="sidebar-link" href="/pt/biblioteca-de-simbolos/">☆ Biblioteca de Símbolos</a>
+      </nav>
+    </div>
+  </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+        <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/pt/">Início</a> &nbsp;/&nbsp; <a href="/pt/ferramentas-de-emojis-e-simbolos/">Ferramentas de Emojis e Símbolos</a> &nbsp;/&nbsp; <span>Gerador de Linhas Divisórias</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">Por FontGenerators Editorial Team · Última atualização: 12 de outubro de 2026</p>
+<h1>Gerador de Linhas Divisórias</h1>
+<p>Um <strong>gerador de linhas divisórias</strong> cria divisórias de texto aesthetic — separadores de linha horizontal como ═══════════ ou ♡ ⋆ ── ⋆ ♡ — para bios, posts e documentos. Escolha entre 45 divisórias prontas em 5 estilos, ou monte uma divisória personalizada com o caractere, o comprimento e o símbolo central da sua escolha.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Pontos principais</h3>
+<ul style="margin-bottom:0">
+<li>45 divisórias prontas em 5 categorias: duplas, únicas, decorativas, chiques e florais.</li>
+<li>O construtor personalizado oferece 10 caracteres de linha, comprimentos de 5 a 50 e um símbolo central opcional.</li>
+<li>Divisórias são texto Unicode puro — colam no Instagram, Discord, Notion e Word.</li>
+<li>Caracteres de linha vêm do bloco Desenho de Caixa (U+2500–U+257F): ═ ─ ━.</li>
+<li>Divisórias separam seções; para envolver texto em molduras, use bordas.</li>
+</ul>
+</div>
+
+<h2>O que é um gerador de linhas divisórias?</h2>
+<p><strong>Definição:</strong> um gerador de linhas divisórias é uma ferramenta online grátis que produz linhas divisórias de texto — separadores horizontais feitos de caracteres Unicode repetidos, como ────────── ou ══════♥══════ — para dividir visualmente seções em bios, posts, chats e documentos.</p>
+<p>Divisórias são as operárias silenciosas da formatação aesthetic. Uma única linha entre seções da bio transforma uma parede de texto em blocos escaneáveis, e em plataformas sem formatação rica (Discord, posts em texto simples), uma divisória é a única "régua horizontal" disponível. São as quebras de linha aesthetic originais das plataformas de texto puro.</p>
+
+<h2>Como esta ferramenta funciona</h2>
+<p>A página tem duas partes. A biblioteca mostra 45 divisórias prontas agrupadas em cinco categorias — linhas duplas (═══), linhas únicas (───), decorativas, chiques e florais (✿ ❀) — cada uma clicável para copiar. O construtor personalizado deixa você desenhar a sua: escolha um caractere de linha (═ ─ ━ — ~ • ★ ♥ ✦ ✿), arraste o controle de comprimento (5–50, padrão 20) e opcionalmente escolha um símbolo central (♥ ★ ✦ ✿ ◆ ● ❤ ✨ ou nenhum). A lógica do construtor é uma repetição simples de string: sem símbolo central, o caractere de linha se repete até o comprimento exato. Com símbolo central, a linha se repete floor((comprimento−1)/2) vezes de cada lado do símbolo — então comprimento 20 com ═ e ♥ dá ═════════♥═════════ (9 + 1 + 9). A prévia atualiza ao vivo enquanto você ajusta, e um clique copia.</p>
+
+<h2>Exemplo prático</h2>
+<p>Você quer uma divisória de coração para a bio do Instagram. No construtor, defina o caractere como ─, o comprimento como 24, o símbolo central como ♥. A prévia mostra: ───────────♥───────────. Clique em <strong>Copiar</strong> e cole entre as seções da sua bio: 📍 paris ───────────♥─────────── 📸 fotografia. Prefere pronta? A categoria floral tem divisórias como ✿ ❀ ─── ❀ ✿ — um clique copia.</p>
+
+<h2>Como usar esta ferramenta</h2>
+<ol>
+<li><strong>Navegue pelas 5 categorias de divisórias</strong> e clique em qualquer divisória para copiar, ou</li>
+<li><strong>Abra o construtor personalizado:</strong> escolha um caractere de linha, defina o comprimento (5–50) e um símbolo central opcional.</li>
+<li><strong>Veja sua divisória ao vivo</strong> enquanto ajusta.</li>
+<li><strong>Copie e cole</strong> entre seções da sua bio, post ou documento.</li>
+</ol>
+
+<h2>As cinco categorias de divisórias</h2>
+<table>
+<thead><tr><th>Categoria</th><th>Estilo</th><th>Exemplo</th><th>Ideal para</th></tr></thead>
+<tbody>
+<tr><td><strong>Duplas</strong></td><td>Linhas duplas grossas</td><td>═══════════</td><td>Quebras de seção marcantes</td></tr>
+<tr><td><strong>Únicas</strong></td><td>Linhas finas limpas</td><td>───────────</td><td>Bios minimalistas, documentos</td></tr>
+<tr><td><strong>Decorativas</strong></td><td>Linhas com símbolos</td><td>─── ✦ ───</td><td>Posts aesthetic</td></tr>
+<tr><td><strong>Chiques</strong></td><td>Combinações ornamentadas</td><td>♡ ⋆ ── ⋆ ♡</td><td>Bios chiques, convites</td></tr>
+<tr><td><strong>Florais</strong></td><td>Motivos de flores</td><td>✿ ❀ ─── ❀ ✿</td><td>Estética suave e fofa</td></tr>
+</tbody>
+</table>
+
+<h2>Onde divisórias de texto funcionam melhor</h2>
+<ul>
+<li><strong>Bios do Instagram/TikTok:</strong> separe localização, interesses e links em linhas escaneáveis.</li>
+<li><strong>Discord:</strong> divida posts longos de informações do servidor onde não há régua de markdown.</li>
+<li><strong>Notion e documentos:</strong> separadores leves dentro de blocos de texto.</li>
+<li><strong>Status do WhatsApp e Tumblr:</strong> quebras de seção aesthetic em posts de texto.</li>
+<li><strong>E-mail em texto simples:</strong> linhas ─── estruturam newsletters sem HTML.</li>
+</ul>
+
+<h2>Limitações</h2>
+<ul>
+<li><strong>Suposição de largura fixa.</strong> Divisórias ficam mais retas em contextos monoespaçados; em fontes proporcionais, linhas longas podem parecer levemente irregulares.</li>
+<li><strong>Quebra em celular.</strong> Uma divisória de 50 caracteres quebra em telas estreitas de celular — mantenha divisórias de bio abaixo de ~25 caracteres.</li>
+<li><strong>Leitores de tela leem os caracteres.</strong> "Desenho de caixa horizontal grosso" repetido é ruído — divisórias são visuais, não semânticas.</li>
+<li><strong>Não substituem HTML.</strong> Em páginas web que você controla, um &lt;hr&gt; de verdade é mais acessível que uma divisória de texto.</li>
+</ul>
+
+<h2>Gerador de Linhas Divisórias vs. alternativas</h2>
+<table>
+<thead><tr><th>Ferramenta</th><th>O que cria</th><th>Use quando…</th></tr></thead>
+<tbody>
+<tr><td><strong>Gerador de Linhas Divisórias</strong> (esta página)</td><td>Separadores horizontais + construtor personalizado</td><td>Você precisa de quebras de seção</td></tr>
+<tr><td><a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a></td><td>Molduras envolvendo seu texto</td><td>Você quer o texto emoldurado, ex.: 『 olá 』</td></tr>
+<tr><td><a href="/pt/biblioteca-de-simbolos/">Biblioteca de Símbolos</a></td><td>Símbolos avulsos como ─ │ ♥</td><td>Você quer montar sua divisória à mão</td></tr>
+<tr><td><a href="/pt/gerador-de-bios-instagram/">Gerador de Bios do Instagram</a></td><td>Layouts de bio completos</td><td>Você quer ideias de bio inteiras, não só separadores</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas Frequentes</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Como copio e colo linhas divisórias?</h3><div class="faq-answer"><p>Clique em qualquer divisória da biblioteca — ela copia na hora. Ou monte uma personalizada e aperte Copiar. Cole a linha entre seções da sua bio, post ou documento; divisórias são texto Unicode puro.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Como faço uma divisória de texto personalizada?</h3><div class="faq-answer"><p>Use o construtor personalizado: escolha um caractere de linha (═ ─ ━ — ~ • ★ ♥ ✦ ✿), defina o comprimento de 5 a 50 com o controle e opcionalmente adicione um símbolo central como ♥ ou ✦. A prévia atualiza ao vivo.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Quais são os separadores fofos para bio do Instagram?</h3><div class="faq-answer"><p>Escolhas populares: ─── ♡ ───, ·:*¨¨*:·, ✿ ❀ ─── ❀ ✿ e ══════♥══════. Mantenha abaixo de ~25 caracteres para não quebrar no celular.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre ─ e ═?</h3><div class="faq-answer"><p>Ambos são do bloco Desenho de Caixa do Unicode: ─ (U+2500) é uma linha simples leve, ═ (U+2550) é uma linha dupla grossa. ━ (U+2501) é uma linha simples grossa. Escolha o peso que combina com sua estética.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Linhas divisórias funcionam no Discord?</h3><div class="faq-answer"><p>Sim — cole em mensagens e descrições de canal. O Discord não tem régua horizontal nativa no chat, então divisórias de texto são o jeito padrão de separar seções.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual deve ser o comprimento da divisória?</h3><div class="faq-answer"><p>Para bios e telas de celular, 15–25 caracteres evitam quebra. Para documentos de desktop, 40–50 caracteres preenchem bem a linha. O construtor usa 20 como padrão, um meio-termo seguro.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Qual a diferença entre divisórias e bordas?</h3><div class="faq-answer"><p>Divisórias são linhas horizontais que separam seções (───); bordas envolvem o texto (『 texto 』). Para texto emoldurado, veja nosso <a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a>.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">O gerador de linhas divisórias é grátis?</h3><div class="faq-answer"><p>Sim — grátis, ilimitado, sem conta. As 45 divisórias prontas e o construtor personalizado rodam inteiramente no seu navegador.</p></div></div>
+</div>
+
+<h2>Ferramentas relacionadas</h2>
+<ul>
+<li><a href="/pt/gerador-de-bordas-aesthetic/">Gerador de Bordas Aesthetic</a> — envolva texto em molduras decorativas</li>
+<li><a href="/pt/biblioteca-de-simbolos/">Biblioteca de Símbolos</a> — 707 símbolos avulsos para montar divisórias à mão</li>
+<li><a href="/pt/gerador-de-simbolos-de-setas/">Gerador de Símbolos de Setas</a> — 151 setas para ponteiros e marcadores</li>
+<li><a href="/pt/ferramentas-de-emojis-e-simbolos/">Todas as Ferramentas de Emojis e Símbolos</a> — navegue pela coleção completa</li>
+</ul>
+</div>
+        </section>
+        <!-- ═══ END SEO CONTENT ═══ -->
+
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ferramentas gratuitas online para gerar texto. Crie textos bonitos, elegantes e únicos para redes sociais, jogos e projetos criativos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas Aesthetic</h4>
+                <a href="/pt/gerador-de-texto-aesthetic/">Texto Aesthetic</a>
+                <a href="/pt/gerador-de-texto-brat/">Texto Brat</a>
+                <a href="/pt/gerador-de-texto-vaporwave/">Texto Vaporwave</a>
+                <a href="/pt/gerador-de-texto-kawaii/">Texto Kawaii</a>
+                <a href="/pt/gerador-de-texto-neon/">Texto Neon</a>
+                <a href="/pt/gerador-de-texto-com-brilho/">Texto com Brilho</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Fontes</h4>
+                <a href="/pt/gerador-de-fontes-elegantes/">Fonte Elegante</a>
+                <a href="/pt/gerador-de-texto-elegante/">Texto Elegante</a>
+                <a href="/pt/gerador-de-texto-gotico/">Texto Gótico</a>
+                <a href="/pt/gerador-de-texto-cursivo/">Texto Cursivo</a>
+                <a href="/pt/conversor-de-texto-negrito/">Texto em Negrito</a>
+                <a href="/pt/gerador-de-caligrafia-arabe/">Caligrafia Árabe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emojis e Símbolos</h4>
+                <a href="/pt/criador-de-texto-com-emojis/">Criador de Texto com Emojis</a>
+                <a href="/pt/gerador-kaomoji/">Gerador Kaomoji</a>
+                <a href="/pt/gerador-de-simbolos-de-coracao/">Símbolos de Coração</a>
+                <a href="/pt/gerador-de-simbolos-brilhantes/">Símbolos Brilhantes</a>
+                <a href="/pt/gerador-de-bordas-aesthetic/">Bordas Aesthetic</a>
+                <a href="/pt/gerador-de-linhas-divisorias/">Linhas Divisórias</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="/pt/gerador-de-legendas-instagram/">Legendas do Instagram</a>
+                <a href="/pt/gerador-de-legendas-tiktok/">Legendas do TikTok</a>
+                <a href="/pt/gerador-de-titulos-youtube/">Títulos do YouTube</a>
+                <a href="/pt/gerador-de-hashtags/">Gerador de Hashtags</a>
+                <a href="/pt/gerador-de-bios-instagram/">Bios do Instagram</a>
+                <a href="/pt/contador-de-caracteres-legendas/">Contador de Comprimento</a>
+            </div>
+            <div class="footer-section">
+                <h4>Ferramentas de Utilidade</h4>
+                <a href="/pt/contador-de-palavras/">Contador de Palavras</a>
+                <a href="/pt/contador-de-caracteres/">Contador de Caracteres</a>
+                <a href="/pt/limpador-de-texto/">Limpador de Texto</a>
+                <a href="/pt/conversor-para-titulo/">Caixa de Título</a>
+                <a href="/pt/gerador-de-texto-zalgo/">Texto Zalgo</a>
+                <a href="/pt/gerador-de-texto-invertido/">Texto Invertido</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Todos os direitos reservados. Crie estilos de texto bonitos grátis.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script crossorigin="anonymous" defer=""
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer="" src="../../js/script.js"></script>
+    <script defer="">
+
+    const dividers = {
+      double: [
+        '════════════════════',
+        '═══════════♥═══════════',
+        '═══════════★═══════════',
+        '═══════════✦═══════════',
+        '═══════════◆═══════════',
+        '╔══════════════════════╗',
+        '╚══════════════════════╝',
+        '╠══════════════════════╣',
+        '═════════════════════════'
+      ],
+      single: [
+        '────────────────────',
+        '───────────♥───────────',
+        '───────────★───────────',
+        '───────────✦───────────',
+        '┌──────────────────────┐',
+        '└──────────────────────┘',
+        '├──────────────────────┤',
+        '━━━━━━━━━━━━━━━━━━━━━━━━',
+        '───────────•───────────'
+      ],
+      decorative: [
+        '•═════════════════════•',
+        '◦═══════════════════════◦',
+        '✧═══════════════════════✧',
+        '★═══════════════════════★',
+        '◇═══════════════════════◇',
+        '◈═══════════════════════◈',
+        '✶═══════════════════════✶',
+        '⊱═══════════════════════⊰',
+        '⋆═══════════════════════⋆'
+      ],
+      fancy: [
+        '♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥',
+        '★☆★☆★☆★☆★☆★☆★☆★☆★',
+        '✦✧✦✧✦✧✦✧✦✧✦✧✦✧✦✧✦',
+        '•♥•♥•♥•♥•♥•♥•♥•♥•',
+        '★·.·´¯`·.·★·.·´¯`·.·★',
+        '☆.。.:*・°☆.。.:*・°☆',
+        '·:*¨¨*:·.·:*¨¨*:·.·:*¨¨*:·.',
+        '❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥',
+        '✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿'
+      ],
+      floral: [
+        '✿═══════════════════════✿',
+        '❀═══════════════════════❀',
+        '✾═══════════════════════✾',
+        '❁═══════════════════════❁',
+        '✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿❀✿',
+        '❀•❀•❀•❀•❀•❀•❀•❀•❀',
+        '✿•✿•✿•✿•✿•✿•✿•✿•✿',
+        '╭✿╮══════════════════╭✿╮',
+        '❀❁❀❁❀❁❀❁❀❁❀❁❀❁❀❁❀'
+      ]
+    };
+
+    function init() {
+      renderDividers('double-lines', dividers.double);
+      renderDividers('single-lines', dividers.single);
+      renderDividers('decorative-lines', dividers.decorative);
+      renderDividers('fancy-lines', dividers.fancy);
+      renderDividers('floral-lines', dividers.floral);
+      updatePreview();
+    }
+
+    function renderDividers(containerId, items) {
+      document.getElementById(containerId).innerHTML = items.map(d =>
+        `<div class="divider-item" onclick="copyDivider(this, \`${d}\`)">${d}</div>`
+      ).join('');
+    }
+
+    function updatePreview() {
+      const style = document.getElementById('divider-style').value;
+      const length = parseInt(document.getElementById('divider-length').value);
+      const center = document.getElementById('center-symbol').value;
+
+      let divider;
+      if (center) {
+        const half = Math.floor((length - 1) / 2);
+        divider = style.repeat(half) + center + style.repeat(half);
+      } else {
+        divider = style.repeat(length);
+      }
+
+      document.getElementById('preview-divider').textContent = divider;
+    }
+
+    function copyPreview() {
+      const text = document.getElementById('preview-divider').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.btn-primary');
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Divider', 1500);
+      });
+    }
+
+    function copyDivider(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        const orig = el.textContent;
+        el.textContent = '✓ Copied!';
+        setTimeout(() => {
+          el.classList.remove('copied');
+          el.textContent = orig;
+        }, 1000);
+      });
+    }
+
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) { document.getElementById('mobile-sidebar').classList.remove('active'); document.body.style.overflow = ''; } }
+
+    init();
+  
+    </script>
+
+</body>
+
+</html>
