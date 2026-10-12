@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Parıltı Sembol Oluşturucu | FontGenerators.online</title>
+  <meta name="description" content="Ücretsiz parıltı sembol oluşturucu ile ✦ ⋆ ˚ ✧ gibi ışıltılı semboller yaratın. Estetik biyografi ve başlıklarınız için tek tıkla kopyalayın. Ücretsizdir.">
+  <script crossorigin="anonymous" defer=""
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"></script>
+  <link href="https://fontgenerators.online/tr/parilti-sembol-olusturucu/" rel="canonical" />
+  <meta property="og:locale" content="tr_TR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Parıltı Sembol Oluşturucu | FontGenerators.online">
+    <meta property="og:description" content="Ücretsiz parıltı sembol oluşturucu ile ✦ ⋆ ˚ ✧ gibi ışıltılı semboller yaratın. Estetik biyografi ve başlıklarınız için tek tıkla kopyalayın. Ücretsizdir.">
+    <meta property="og:url" content="https://fontgenerators.online/tr/parilti-sembol-olusturucu/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Parıltı Sembol Oluşturucu | FontGenerators.online">
+    <meta name="twitter:description" content="Ücretsiz parıltı sembol oluşturucu ile ✦ ⋆ ˚ ✧ gibi ışıltılı semboller yaratın. Estetik biyografi ve başlıklarınız için tek tıkla kopyalayın. Ücretsizdir.">
+    <link rel="alternate" hreflang="x-default" href="https://fontgenerators.online/sparkle-symbol-generator/" />
+    <link rel="alternate" hreflang="en" href="https://fontgenerators.online/sparkle-symbol-generator/" />
+    <link rel="alternate" hreflang="es" href="https://fontgenerators.online/es/generador-de-simbolos-brillantes/" />
+    <link rel="alternate" hreflang="pt" href="https://fontgenerators.online/pt/gerador-de-simbolos-brilhantes/" />
+    <link rel="alternate" hreflang="tr" href="https://fontgenerators.online/tr/parilti-sembol-olusturucu/" />
+  <link href="../../css/variables.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/tools.css" rel="stylesheet" />
+  <style>
+    .symbol-search {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .symbol-search:focus {
+      outline: none;
+      border-color: var(--warning);
+      box-shadow: 0 0 0 4px var(--warning-light);
+    }
+
+    .symbol-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+
+    .symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .symbol-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .symbol-item:hover {
+      border-color: var(--warning);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+    }
+
+    .symbol-char {
+      font-size: 2rem;
+    }
+
+    .symbol-name {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .symbol-item.copied::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      background: var(--success);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .pattern-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .pattern-item:hover {
+      border-color: var(--warning);
+      background: var(--warning-light);
+    }
+
+    .text-decorator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .decorator-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .decorator-results {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .decorator-result {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: var(--background);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+
+    .decorator-result:hover {
+      background: var(--warning-light);
+    }
+
+    /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
+
+  <style>
+    /* ─── SEO Content Section ─── */
+    .seo-content-section {
+      padding: 3rem 0 2rem;
+      background: var(--cream, #FDF9F4);
+    }
+
+    .seo-content-section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--black, #121212);
+
+      padding-bottom: 0.4rem;
+    }
+
+    .seo-content-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--off-black, #1a1a1a);
+    }
+
+    .seo-content-section p {
+      line-height: 1.8;
+      color: var(--text-muted, #444);
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+
+    .seo-content-section ul,
+    .seo-content-section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-section li {
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted, #444);
+    }
+
+    /* Table */
+    .seo-content-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .seo-content-section table thead tr {
+      background: var(--black, #121212);
+      color: #fff;
+    }
+
+    .seo-content-section table th,
+    .seo-content-section table td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #e0d5c8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seo-content-section table tbody tr:nth-child(even) {
+      background: var(--cream-dark, #FAF5EE);
+    }
+
+    /* FAQ */
+    .faq-container {
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e0d5c8;
+      border-left: 4px solid var(--red, #C8102E);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black, #121212);
+      margin: 0 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text-muted, #555);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-section {
+        padding: 2rem 0;
+      }
+
+      .seo-content-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Parıltı sembolleri nasıl kopyalanıp yapıştırılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Izgaradaki bir sembole tıklayın; otomatik olarak panonuza kopyalanır — simli semboller tek adımda kopyalanıp yapıştırılır. Biyografinize, açıklamanıza, takma adınıza ya da mesajınıza yapıştırın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "✧ parıltı sembolü nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "✧, Unicode'un Dingbatlar bloğundan U+2727 WHITE FOUR POINTED STAR'dır. İmza \"estetik parıltı\"dır — renkli ✨ emojisinin aksine her cihazda birebir aynı görünen, tek renkli dört köşeli bir yıldız."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "★ ile ☆ arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "★ (U+2605 BLACK STAR) dolgulu, ☆ (U+2606 WHITE STAR) konturdur; ikisi de Çeşitli Semboller bloğundandır. Dolgulu yıldızlar derecelendirme ve vurguya; kontur yıldızlar hafif, havadar süslemeye uyar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Biyografime parıltı nasıl eklerim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biyografi satırınızı bu sayfadaki metin süsleyiciye yazın ve ✨ dreamer ✨ gibi parıltıyla çerçevelenmiş 10 çeşitten birini seçin. Ya da tek ✧ sembollerini kopyayıp kelimelerin arasına elle yerleştirin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Parıltı sembolleri Instagram ve TikTok'ta çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Metin parıltılar (✧ ★) da ✨ emojisi de Instagram, TikTok, Discord ve X'te biyografilere, açıklamalara ve yorumlara yapıştırılır. Tutarlı bir görünüm için metin parıltılar daha güvenli tercihtir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Parıltılar arkadaşımın telefonunda neden farklı görünüyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yalnızca emoji parıltılar (✨ 💫 🌟) değişir — her işletim sistemi kendi çizimini yapar. ✧ ★ ☆ gibi metin parıltılar yazı tipi glifidir ve her yerde aynı görünür. Piksel tutarlılığında biyografiler için metin olanları tercih edin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Biyografi için sevimli parıltı sembolleri nelerdir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En çok kullanılanlar ✧, ˚₊·, ⋆ ve ★·.·´¯`·.·★ tarzı desenlerdir. Tüm biyografiyi doldurmak yerine bir-iki tanesini kelimelerinizle birleştirin — örn. ｡･:*˚:✧｡ dreamer ｡✧:˚*:･｡ ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Parıltı sembolü oluşturucu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet — ücretsiz, sınırsız, hesapsız. Her şey tarayıcınızda çalışır; metniniz cihazınızdan asla çıkmaz."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+        <a href="/tr/" class="logo">
+            <span class="logo-icon">✨</span>
+            <span>FontGenerators</span>.online
+        </a>
+
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="/tr/" class="nav-link">Ana Sayfa</a>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/estetik-metin-araclari/" class="nav-link">
+                     Estetik Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/estetik-metin-araclari/" class="dropdown-link dropdown-header">Tüm Estetik Araçlar →</a>
+                    <a href="/tr/estetik-metin-olusturucu/" class="dropdown-link">🌸 Estetik Metin Oluşturucu</a>
+                    <a href="/tr/brat-metin-olusturucu/" class="dropdown-link">💚 Brat Metin Oluşturucu</a>
+                    <a href="/tr/soft-girl-metin-olusturucu/" class="dropdown-link">🌷 Soft Girl Metin Oluşturucu</a>
+                    <a href="/tr/vaporwave-metin-olusturucu/" class="dropdown-link">🌊 Vaporwave Metin Oluşturucu</a>
+                    <a href="/tr/kawaii-metin-olusturucu/" class="dropdown-link">🎀 Kawaii Metin Oluşturucu</a>
+                    <a href="/tr/neon-metin-olusturucu/" class="dropdown-link">💡 Neon Metin Oluşturucu</a>
+                    <a href="/tr/parlak-metin-olusturucu/" class="dropdown-link">✨ Parlak Metin Oluşturucu</a>
+                    <a href="/tr/simli-metin-olusturucu/" class="dropdown-link">💎 Simli Metin Oluşturucu</a>
+                    <a href="/tr/retro-metin-olusturucu/" class="dropdown-link">📺 Retro Metin Oluşturucu</a>
+                    <a href="/tr/siber-metin-olusturucu/" class="dropdown-link">🤖 Siber Metin Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sekilli-yazi-araclari/" class="nav-link">
+                     Yazı Tipi Araçları<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sekilli-yazi-araclari/" class="dropdown-link dropdown-header">Tüm Yazı Tipi Araçları →</a>
+                    <a href="/tr/sekilli-yazi-olusturucu/" class="dropdown-link">💎 Şekilli Yazı Oluşturucu</a>
+                    <a href="/tr/suslu-metin-olusturucu/" class="dropdown-link">⭐ Süslü Metin Oluşturucu</a>
+                    <a href="/tr/unicode-metin-olusturucu/" class="dropdown-link">🔠 Unicode Metin Oluşturucu</a>
+                    <a href="/tr/kalin-metin-cevirici/" class="dropdown-link">🅱️ Kalın Metin Çevirici</a>
+                    <a href="/tr/italik-metin-cevirici/" class="dropdown-link">📝 İtalik Metin Çevirici</a>
+                    <a href="/tr/bitisik-el-yazisi-olusturucu/" class="dropdown-link">✒️ Bitişik El Yazısı Oluşturucu</a>
+                    <a href="/tr/gotik-metin-olusturucu/" class="dropdown-link">🖤 Gotik Metin Oluşturucu</a>
+                    <a href="/tr/balon-harf-olusturucu/" class="dropdown-link">🫧 Balon Harf Oluşturucu</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/emoji-sembol-araclari/" class="nav-link">
+                     Emoji ve Semboller<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/emoji-sembol-araclari/" class="dropdown-link dropdown-header">Tüm Emoji Araçları →</a>
+                    <a href="/tr/emojili-metin-olusturucu/" class="dropdown-link">😊 Emojili Metin Oluşturucu</a>
+                    <a href="/tr/emoji-birlestirici/" class="dropdown-link">🎨 Emoji Birleştirici</a>
+                    <a href="/tr/kaomoji-olusturucu/" class="dropdown-link">(◕‿◕) Kaomoji Oluşturucu</a>
+                    <a href="/tr/ifade-olusturucu/" class="dropdown-link">:) İfade Oluşturucu</a>
+                    <a href="/tr/kalp-sembol-olusturucu/" class="dropdown-link">♥ Kalp Sembolleri</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link">✨ Parıltı Sembolleri</a>
+                    <a href="/tr/ok-sembol-olusturucu/" class="dropdown-link">→ Ok Sembolleri</a>
+                    <a href="/tr/estetik-cerceve-olusturucu/" class="dropdown-link">『』 Estetik Çerçeveler</a>
+                    <a href="/tr/sembol-kutuphanesi/" class="dropdown-link">☆ Sembol Kütüphanesi</a>
+                    <a href="/tr/ayirici-cizgi-olusturucu/" class="dropdown-link">═ Ayırıcı Çizgiler</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/tr/sosyal-medya-aciklama-araclari/" class="nav-link">
+                     Sosyal Medya<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/sosyal-medya-aciklama-araclari/" class="dropdown-link dropdown-header">Tüm Sosyal Medya Araçları →</a>
+                    <a href="/tr/instagram-aciklama-olusturucu/" class="dropdown-link">📸 Instagram Açıklamaları</a>
+                    <a href="/tr/tiktok-aciklama-olusturucu/" class="dropdown-link">🎵 TikTok Açıklamaları</a>
+                    <a href="/tr/youtube-baslik-olusturucu/" class="dropdown-link">▶️ YouTube Başlıkları</a>
+                    <a href="/tr/instagram-biyografi-olusturucu/" class="dropdown-link">✨ Instagram Biyografileri</a>
+                    <a href="/tr/tiktok-biyografi-duzenleyici/" class="dropdown-link">🎭 TikTok Biyografileri</a>
+                    <a href="/tr/hashtag-olusturucu/" class="dropdown-link">#️⃣ Hashtag Oluşturucu</a>
+                    <a href="/tr/aciklama-uzunlugu-sayaci/" class="dropdown-link">📊 Uzunluk Sayacı</a>
+                    <a href="/tr/hikaye-aciklama-olusturucu/" class="dropdown-link">📖 Hikaye Açıklamaları</a>
+                    <a href="/tr/emojili-aciklama-olusturucu/" class="dropdown-link">😊 Emojili Açıklamalar</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                     Diğer Araçlar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown">
+                    <a href="/tr/el-yazisi-olusturucu/" class="dropdown-link">✍️ El Yazısı Oluşturucu</a>
+                    <a href="/tr/imza-olusturucu/" class="dropdown-link">🖊️ İmza Oluşturucu</a>
+                    <a href="/tr/kaligrafi-metin-olusturucu/" class="dropdown-link">🖋️ Kaligrafi Oluşturucu</a>
+                    <a href="/tr/arapca-kaligrafi-olusturucu/" class="dropdown-link">🕌 Arapça Kaligrafi</a>
+                    <a href="/tr/balon-yazi-olusturucu/" class="dropdown-link">🫧 Balon Yazı Oluşturucu</a>
+                    <a href="/tr/karalama-metin-olusturucu/" class="dropdown-link">🎨 Karalama Metin Oluşturucu</a>
+                    <a href="/tr/minimal-metin-olusturucu/" class="dropdown-link">◻️ Minimal Metin Oluşturucu</a>
+                    <a href="/tr/kucuk-harfler-olusturucu/" class="dropdown-link">🔡 Küçük Harf Oluşturucu</a>
+                    <a href="/tr/monospace-metin-olusturucu/" class="dropdown-link">💻 Monospace Oluşturucu</a>
+                </div>
+            </div>
+
+            <div class="nav-item lang-nav-item">
+                <a href="javascript:void(0)" class="nav-link lang-toggle-btn" aria-label="Language Selector">
+                    🌐 <span id="current-lang-label">TR</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </a>
+                <div class="dropdown lang-dropdown" style="min-width: 150px; right: 0; left: auto;">
+                    <a href="/sparkle-symbol-generator/" class="dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+                    <a href="/es/generador-de-simbolos-brillantes/" class="dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+                    <a href="/pt/gerador-de-simbolos-brilhantes/" class="dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+                    <a href="/tr/parilti-sembol-olusturucu/" class="dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <a href="/tr/" class="mobile-nav-link">🏠 Ana Sayfa</a>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            ✨ Estetik Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/estetik-metin-araclari/" class="mobile-dropdown-link">Tüm Estetik Araçlar</a>
+            <a href="/tr/estetik-metin-olusturucu/" class="mobile-dropdown-link">Estetik Metin Oluşturucu</a>
+            <a href="/tr/brat-metin-olusturucu/" class="mobile-dropdown-link">Brat Metin Oluşturucu</a>
+            <a href="/tr/soft-girl-metin-olusturucu/" class="mobile-dropdown-link">Soft Girl Metin Oluşturucu</a>
+            <a href="/tr/vaporwave-metin-olusturucu/" class="mobile-dropdown-link">Vaporwave Metin Oluşturucu</a>
+            <a href="/tr/kawaii-metin-olusturucu/" class="mobile-dropdown-link">Kawaii Metin Oluşturucu</a>
+            <a href="/tr/neon-metin-olusturucu/" class="mobile-dropdown-link">Neon Metin Oluşturucu</a>
+            <a href="/tr/parlak-metin-olusturucu/" class="mobile-dropdown-link">Parlak Metin Oluşturucu</a>
+            <a href="/tr/simli-metin-olusturucu/" class="mobile-dropdown-link">Simli Metin Oluşturucu</a>
+            <a href="/tr/retro-metin-olusturucu/" class="mobile-dropdown-link">Retro Metin Oluşturucu</a>
+            <a href="/tr/siber-metin-olusturucu/" class="mobile-dropdown-link">Siber Metin Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🔤 Yazı Tipi Araçları
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sekilli-yazi-araclari/" class="mobile-dropdown-link">Tüm Yazı Tipi Araçları</a>
+            <a href="/tr/sekilli-yazi-olusturucu/" class="mobile-dropdown-link">Şekilli Yazı Oluşturucu</a>
+            <a href="/tr/suslu-metin-olusturucu/" class="mobile-dropdown-link">Süslü Metin Oluşturucu</a>
+            <a href="/tr/unicode-metin-olusturucu/" class="mobile-dropdown-link">Unicode Metin Oluşturucu</a>
+            <a href="/tr/kalin-metin-cevirici/" class="mobile-dropdown-link">Kalın Metin Çevirici</a>
+            <a href="/tr/italik-metin-cevirici/" class="mobile-dropdown-link">İtalik Metin Çevirici</a>
+            <a href="/tr/bitisik-el-yazisi-olusturucu/" class="mobile-dropdown-link">Bitişik El Yazısı Oluşturucu</a>
+            <a href="/tr/gotik-metin-olusturucu/" class="mobile-dropdown-link">Gotik Metin Oluşturucu</a>
+            <a href="/tr/balon-harf-olusturucu/" class="mobile-dropdown-link">Balon Harf Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            😊 Emoji ve Semboller
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/emoji-sembol-araclari/" class="mobile-dropdown-link">Tüm Emoji Araçları</a>
+            <a href="/tr/emojili-metin-olusturucu/" class="mobile-dropdown-link">Emojili Metin Oluşturucu</a>
+            <a href="/tr/emoji-birlestirici/" class="mobile-dropdown-link">Emoji Birleştirici</a>
+            <a href="/tr/kaomoji-olusturucu/" class="mobile-dropdown-link">Kaomoji Oluşturucu</a>
+            <a href="/tr/ifade-olusturucu/" class="mobile-dropdown-link">İfade Oluşturucu</a>
+            <a href="/tr/kalp-sembol-olusturucu/" class="mobile-dropdown-link">Kalp Sembolleri</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link">Parıltı Sembolleri</a>
+            <a href="/tr/ok-sembol-olusturucu/" class="mobile-dropdown-link">Ok Sembolleri</a>
+            <a href="/tr/estetik-cerceve-olusturucu/" class="mobile-dropdown-link">Estetik Çerçeveler</a>
+            <a href="/tr/sembol-kutuphanesi/" class="mobile-dropdown-link">Sembol Kütüphanesi</a>
+            <a href="/tr/ayirici-cizgi-olusturucu/" class="mobile-dropdown-link">Ayırıcı Çizgiler</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            📱 Sosyal Medya
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/sosyal-medya-aciklama-araclari/" class="mobile-dropdown-link">Tüm Sosyal Medya Araçları</a>
+            <a href="/tr/instagram-aciklama-olusturucu/" class="mobile-dropdown-link">Instagram Açıklamaları</a>
+            <a href="/tr/tiktok-aciklama-olusturucu/" class="mobile-dropdown-link">TikTok Açıklamaları</a>
+            <a href="/tr/youtube-baslik-olusturucu/" class="mobile-dropdown-link">YouTube Başlıkları</a>
+            <a href="/tr/instagram-biyografi-olusturucu/" class="mobile-dropdown-link">Instagram Biyografileri</a>
+            <a href="/tr/tiktok-biyografi-duzenleyici/" class="mobile-dropdown-link">TikTok Biyografileri</a>
+            <a href="/tr/hashtag-olusturucu/" class="mobile-dropdown-link">Hashtag Oluşturucu</a>
+            <a href="/tr/aciklama-uzunlugu-sayaci/" class="mobile-dropdown-link">Uzunluk Sayacı</a>
+            <a href="/tr/hikaye-aciklama-olusturucu/" class="mobile-dropdown-link">Hikaye Açıklamaları</a>
+            <a href="/tr/emojili-aciklama-olusturucu/" class="mobile-dropdown-link">Emojili Açıklamalar</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🛠️ Diğer Araçlar
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/tr/el-yazisi-olusturucu/" class="mobile-dropdown-link">El Yazısı Oluşturucu</a>
+            <a href="/tr/imza-olusturucu/" class="mobile-dropdown-link">İmza Oluşturucu</a>
+            <a href="/tr/kaligrafi-metin-olusturucu/" class="mobile-dropdown-link">Kaligrafi Oluşturucu</a>
+            <a href="/tr/arapca-kaligrafi-olusturucu/" class="mobile-dropdown-link">Arapça Kaligrafi</a>
+            <a href="/tr/balon-yazi-olusturucu/" class="mobile-dropdown-link">Balon Yazı Oluşturucu</a>
+            <a href="/tr/karalama-metin-olusturucu/" class="mobile-dropdown-link">Karalama Metin Oluşturucu</a>
+            <a href="/tr/minimal-metin-olusturucu/" class="mobile-dropdown-link">Minimal Metin Oluşturucu</a>
+            <a href="/tr/kucuk-harfler-olusturucu/" class="mobile-dropdown-link">Küçük Harf Oluşturucu</a>
+            <a href="/tr/monospace-metin-olusturucu/" class="mobile-dropdown-link">Monospace Oluşturucu</a>
+        </div>
+
+        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+            🌐 Dil (<span id="mobile-lang-label">EN</span>)
+            <span>▼</span>
+        </button>
+        <div class="mobile-dropdown-content">
+            <a href="/sparkle-symbol-generator/" class="mobile-dropdown-link lang-choice" data-lang="en">🇺🇸 English</a>
+            <a href="/es/generador-de-simbolos-brillantes/" class="mobile-dropdown-link lang-choice" data-lang="es">🇪🇸 Español</a>
+            <a href="/pt/gerador-de-simbolos-brilhantes/" class="mobile-dropdown-link lang-choice" data-lang="pt">🇵🇹 Português</a>
+            <a href="/tr/parilti-sembol-olusturucu/" class="mobile-dropdown-link lang-choice" data-lang="tr">🇹🇷 Türkçe</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function(){document.querySelectorAll('.lang-choice').forEach(function(a){if(a.getAttribute('data-lang')==='tr'){a.style.fontWeight='bold';a.classList.add('active');}});var d=document.getElementById('current-lang-label');if(d)d.textContent='TR';var m=document.getElementById('mobile-lang-label');if(m)m.textContent='TR';})();
+</script>
+<script>
+// Mobile menu + dropdown toggles (the old header/footer loader is no longer
+// used since header/footer are inlined; without these the hamburger button
+// and mobile dropdowns are inert).
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (mobileNav) {
+        mobileNav.classList.toggle('active');
+        if (menuIcon) {
+            menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function toggleMobileDropdown(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('span');
+
+    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+        if (dropdown !== content) {
+            dropdown.classList.remove('active');
+            const prevArrow = dropdown.previousElementSibling.querySelector('span');
+            if (prevArrow) prevArrow.textContent = '▼';
+        }
+    });
+
+    if (content) {
+        content.classList.toggle('active');
+        if (arrow) {
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu-btn')) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            if (menuIcon) menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+    }
+});
+</script>
+  <main class="tool-page">
+    <div class="tool-layout">
+      <aside class="tool-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">
+                        <span class="icon">😊</span>
+                        Emoji Araçları
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a class="sidebar-link" href="../emojili-metin-olusturucu/">
+                            <span class="link-icon">😊</span>
+                            <span class="link-text">Emojili Metin Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../emoji-birlestirici/">
+                            <span class="link-icon">🎨</span>
+                            <span class="link-text">Emoji Birleştirici</span>
+                        </a>
+                        <a class="sidebar-link" href="../kaomoji-olusturucu/">
+                            <span class="link-icon">(◕‿◕)</span>
+                            <span class="link-text">Kaomoji Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ifade-olusturucu/">
+                            <span class="link-icon">:)</span>
+                            <span class="link-text">İfade Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../kalp-sembol-olusturucu/">
+                            <span class="link-icon">♥</span>
+                            <span class="link-text">Kalp Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link active" href="../parilti-sembol-olusturucu/">
+                            <span class="link-icon">✨</span>
+                            <span class="link-text">Parıltı Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../ok-sembol-olusturucu/">
+                            <span class="link-icon">→</span>
+                            <span class="link-text">Ok Sembol Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">
+                            <span class="link-icon">『』</span>
+                            <span class="link-text">Estetik Çerçeve Oluşturucu</span>
+                        </a>
+                        <a class="sidebar-link" href="../sembol-kutuphanesi/">
+                            <span class="link-icon">☆</span>
+                            <span class="link-text">Sembol Kütüphanesi</span>
+                        </a>
+                        <a class="sidebar-link" href="../ayirici-cizgi-olusturucu/">
+                            <span class="link-icon">═</span>
+                            <span class="link-text">Ayırıcı Çizgi Oluşturucu</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+      <div class="tool-main-content">
+                <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+                    ☰ Araçlara Göz At
+                </button>
+<div class="tool-input-section">
+          <div class="tool-title">✨ Işıltı Sembolü Oluşturucu</div>
+          <p class="tool-description">Anında kopyalamak için bir sembole tıklayın!</p>
+          <input class="symbol-search" id="symbol-search" oninput="filterSymbols()"
+            placeholder="🔍 Arama (ör. yıldız, ışıltı, güneş...)" type="text" />
+          <div class="text-decorator">
+            <h3 style="margin-bottom: 1rem;">✨ Metninizi Parıltılarla Süsleyin</h3>
+            <input class="decorator-input" id="text-input" oninput="decorateText()" placeholder="Metninizi girin..."
+              type="text" />
+            <div class="decorator-results" id="decorator-results">
+              <div style="color: var(--muted); text-align: center; padding: 1rem;">Parıltı süslemelerini görmek için bir şeyler yazın</div>
+            </div>
+          </div>
+          <div class="symbol-section" id="sparkle-emojis-section">
+            <h3 class="section-header">✨ Işıltılı Emojiler</h3>
+            <div class="symbol-grid" id="sparkle-emojis"></div>
+          </div>
+          <div class="symbol-section" id="star-symbols-section">
+            <h3 class="section-header">⭐ Yıldız Sembolleri</h3>
+            <div class="symbol-grid" id="star-symbols"></div>
+          </div>
+          <div class="symbol-section" id="sun-symbols-section">
+            <h3 class="section-header">☀️ Güneş ve Işık Sembolleri</h3>
+            <div class="symbol-grid" id="sun-symbols"></div>
+          </div>
+          <div class="symbol-section" id="patterns-section">
+            <h3 class="section-header">💫 Işıltılı Desenler</h3>
+            <div class="pattern-grid" id="sparkle-patterns"></div>
+          </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- ═══ SEO CONTENT SECTION ═══ -->
+    <section class="seo-content-section">
+<div class="container">
+<nav aria-label="Breadcrumb" style="font-size:.85rem;margin-bottom:1rem;color:#777"><a href="/tr/">Ana Sayfa</a> &nbsp;/&nbsp; <a href="/tr/emoji-sembol-araclari/">Emoji ve Semboller</a> &nbsp;/&nbsp; <span>Parıltı Sembolü Oluşturucu</span></nav>
+<p style="font-size:.9rem;color:#666;margin-bottom:.5rem">FontGenerators Editör Ekibi · Son güncelleme: 12 Ekim 2026</p>
+<h1>Parıltı Sembolü Oluşturucu</h1>
+<p><strong>Parıltı sembolü oluşturucu</strong>, ışıltılı kopyala-yapıştır sembollerini — ✧ parıltılar, ★ yıldızlar ve dekoratif yıldız desenleri — aranabilir tek bir kütüphanede toplar. 68 ışıltı sembolünden herhangi birini tek tıkla kopyalayıp yapıştırın ya da kendi metninizi biyografiler, açıklamalar ve takma adlar için parıltılarla süsleyin.</p>
+
+<div style="background:#fff;border:1px solid #e0d5c8;border-left:4px solid #C8102E;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;max-width:780px">
+<h3 style="margin-top:0">Öne çıkanlar</h3>
+<ul style="margin-bottom:0">
+<li>4 grupta 68 sembol: parıltılar, yıldızlar, güneş sembolleri ve dekoratif desenler.</li>
+<li>Metin parıltıları (✧ U+2727, ★ U+2605) her cihazda aynı görünür; ✨ emojisi işletim sistemine göre değişir.</li>
+<li>İsme göre arayın ya da göz atın; her sembol tek tıkla kopyalanır.</li>
+<li>Metin süsleyici, kelimelerinizi 10 parıltı stiliyle çerçeveler, örn. ✨ shine ✨ ya da ·:*¨¨*:· shine ·:*¨¨*:·.</li>
+<li>Çıktı sade Unicode'dur — Instagram, TikTok, Discord ve belgelere yapıştırılır.</li>
+</ul>
+</div>
+
+<h2>Parıltı sembolü oluşturucu nedir?</h2>
+<p><strong>Tanım:</strong> Parıltı sembolü oluşturucu, kopyala-yapıştır parıltı ve yıldız sembolleri sunan ücretsiz bir çevrimiçi araçtır — dört köşeli ✧ parıltıdan ışıldayan ★ yıldızlara ve tam dekoratif desenlere — ayrıca kelimelerinizi simle çerçeveleyen bir metin süsleyici içerir.</p>
+<p>Parıltılar, çevrimiçi kawaii, coquette ve soft-estetik stilin imzasıdır. Birkaç ✧ karakteri, düz bir biyografi satırını ışıldayan bir şeye dönüştürür — ve bu yıldız süslemeleri en çok aranan biyografi süslerindendir; "biyografi için parıltı sembolleri" en çok aranan süsleme sorgularından biridir.</p>
+
+<h2>Bu araç nasıl çalışır?</h2>
+<p>Kütüphane dört grupta 68 girdi barındırır. <strong>Parıltılar</strong>; ✧ (U+2727 WHITE FOUR POINTED STAR), ✨, 💫 ve simli emojileri içerir. <strong>Yıldızlar</strong>; Çeşitli Semboller ve Dingbatlar bloklarından ★ (U+2605 BLACK STAR), ☆ (U+2606 WHITE STAR), ✦, ✪ ve onlarca yıldız çeşidini kapsar. <strong>Güneş sembolleri</strong> ☀ tarzı ışınlar ekler; <strong>desenler</strong> ise hazır, çok karakterli simli tasarımlardır. Arama kutusu yazdıkça isme göre süzer; tıklamak kopyalar.</p>
+<p><strong>Metin süsleyici</strong>, yazdığınız her metnin 10 çerçeveli halini üretir: <code>✨ shine ✨</code>, <code>★ shine ★</code>, <code>·:*¨¨*:· shine ·:*¨¨*:·</code>, <code>★·.·´¯`·.·★ shine ★·.·´¯`·.·★</code>, <code>✦ shine ✦</code> ve dahası — her biri tıklayarak kopyalanır.</p>
+
+<h2>Uygulamalı örnek</h2>
+<p>Biyografiniz için ışıltılı bir ayraç istiyorsunuz. Süsleyiciye <code>dreamer</code> yazın ve şu sonuçlardan seçin:</p>
+<ul>
+<li>✨ dreamer ✨</li>
+<li>·:*¨¨*:· dreamer ·:*¨¨*:·</li>
+<li>★·.·´¯`·.·★ dreamer ★·.·´¯`·.·★</li>
+</ul>
+<p>Tek sembol mü tercih edersiniz? ✧'yi bulmak için <code>four point</code> aratın, tıklayın ve görünen adınızdaki kelimelerin arasına yapıştırın: <code>nova ✧ stargazer</code>.</p>
+
+<h2>Bu araç nasıl kullanılır?</h2>
+<ol>
+<li><strong>Gruplara göz atın</strong> — Parıltılar, Yıldızlar, Güneş, Desenler — ya da isme göre arayın.</li>
+<li><strong>Bir sembole tıklayın</strong>; anında kopyalanır.</li>
+<li><strong>Ya da süsleyiciye yazın</strong>; metninizin parıltıyla çerçevelenmiş 10 halini alın.</li>
+<li>Biyografilere, açıklamalara, takma adlara ya da mesajlara <strong>yapıştırın</strong>.</li>
+</ol>
+
+<h2>✧, ✨ ve ★: hangisi, ne zaman?</h2>
+<table>
+<thead><tr><th>Sembol</th><th>Unicode</th><th>Görünüm</th><th>Ne için ideal?</th></tr></thead>
+<tbody>
+<tr><td>✧</td><td>U+2727</td><td>Dört köşeli kontur parıltı, tek renkli</td><td>Estetik biyografiler — tüm cihazlarda aynı</td></tr>
+<tr><td>✨</td><td>U+2728 + VS16</td><td>Renkli parıltı emojisi</td><td>Rengin hoş karşılandığı eğlenceli mesajlar</td></tr>
+<tr><td>★ / ☆</td><td>U+2605 / U+2606</td><td>Dolgulu / kontur yıldız</td><td>Derecelendirme, madde işaretleri, vurgu</td></tr>
+<tr><td>💫</td><td>U+1F4AB</td><td>Başı dönen yıldız emojisi</td><td>Kaprisli süsleme</td></tr>
+<tr><td>·:*¨¨*:·</td><td>Desen</td><td>Metin sanatı simi</td><td>Vintage forum / Tumblr estetiği</td></tr>
+</tbody>
+</table>
+
+<h2>Sınırlamalar</h2>
+<ul>
+<li><strong>Emoji parıltılar işletim sistemine göre değişir.</strong> ✨ ve 💫 her platformun emoji yazı tipiyle çizilir — yalnızca metin parıltılar (✧ ★ ☆) her yerde piksel piksel aynıdır.</li>
+<li><strong>Desenler kayabilir.</strong> Çok karakterli simli sanat, tek aralıklı boşluk varsayar; orantılı yazı tiplerinde dengesiz görünebilir.</li>
+<li><strong>Ekran okuyucular her sembolü okur.</strong> Sesli okunduğunda süs parıltı dizileri gürültüye dönüşür — paragraf gibi değil, vurgu gibi kullanın.</li>
+<li><strong>Aşırı kullanım etkiyi azaltır.</strong> Bir-iki parıltı metni çerçeveler; yirmisi gömer.</li>
+</ul>
+
+<h2>Parıltı Sembolü Oluşturucu ve alternatifler</h2>
+<table>
+<thead><tr><th>Araç</th><th>Ne üretir?</th><th>Ne zaman kullanmalı?</th></tr></thead>
+<tbody>
+<tr><td><strong>Parıltı Sembolü Oluşturucu</strong> (bu sayfa)</td><td>Parıltılar, yıldızlar ve simli desenler</td><td>Işıltılı, yıldızlı süsleme istiyorsanız</td></tr>
+<tr><td><a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolü Oluşturucu</a></td><td>♥ ♡ ❤ kalpler</td><td>Simli yerine romantik süsleme istiyorsanız</td></tr>
+<tr><td><a href="/tr/simli-metin-olusturucu/">Simli Metin Oluşturucu</a></td><td>Simli metin efektleri</td><td>Çerçeve değil, kelimelerin kendisinin stilize olmasını istiyorsanız</td></tr>
+<tr><td><a href="/tr/sembol-kutuphanesi/">Metin Sembolü Kütüphanesi</a></td><td>16 kategoride 707 sembol</td><td>Parıltıları oklar, kalpler ve daha fazlasıyla karıştırmanız gerekiyorsa</td></tr>
+</tbody>
+</table>
+
+<h2>Sıkça Sorulan Sorular</h2>
+<div class="faq-container">
+<div class="faq-item"><h3 class="faq-question">Parıltı sembolleri nasıl kopyalanıp yapıştırılır?</h3><div class="faq-answer"><p>Izgaradaki bir sembole tıklayın; otomatik olarak panonuza kopyalanır — simli semboller tek adımda kopyalanıp yapıştırılır. Biyografinize, açıklamanıza, takma adınıza ya da mesajınıza yapıştırın.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">✧ parıltı sembolü nedir?</h3><div class="faq-answer"><p>✧, Unicode'un Dingbatlar bloğundan U+2727 WHITE FOUR POINTED STAR'dır. İmza "estetik parıltı"dır — renkli ✨ emojisinin aksine her cihazda birebir aynı görünen, tek renkli dört köşeli bir yıldız.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">★ ile ☆ arasındaki fark nedir?</h3><div class="faq-answer"><p>★ (U+2605 BLACK STAR) dolgulu, ☆ (U+2606 WHITE STAR) konturdur; ikisi de Çeşitli Semboller bloğundandır. Dolgulu yıldızlar derecelendirme ve vurguya; kontur yıldızlar hafif, havadar süslemeye uyar.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Biyografime parıltı nasıl eklerim?</h3><div class="faq-answer"><p>Biyografi satırınızı bu sayfadaki metin süsleyiciye yazın ve ✨ dreamer ✨ gibi parıltıyla çerçevelenmiş 10 çeşitten birini seçin. Ya da tek ✧ sembollerini kopyayıp kelimelerin arasına elle yerleştirin.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Parıltı sembolleri Instagram ve TikTok'ta çalışır mı?</h3><div class="faq-answer"><p>Evet. Metin parıltılar (✧ ★) da ✨ emojisi de Instagram, TikTok, Discord ve X'te biyografilere, açıklamalara ve yorumlara yapıştırılır. Tutarlı bir görünüm için metin parıltılar daha güvenli tercihtir.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Parıltılar arkadaşımın telefonunda neden farklı görünüyor?</h3><div class="faq-answer"><p>Yalnızca emoji parıltılar (✨ 💫 🌟) değişir — her işletim sistemi kendi çizimini yapar. ✧ ★ ☆ gibi metin parıltılar yazı tipi glifidir ve her yerde aynı görünür. Piksel tutarlılığında biyografiler için metin olanları tercih edin.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Biyografi için sevimli parıltı sembolleri nelerdir?</h3><div class="faq-answer"><p>En çok kullanılanlar ✧, ˚₊·, ⋆ ve ★·.·´¯`·.·★ tarzı desenlerdir. Tüm biyografiyi doldurmak yerine bir-iki tanesini kelimelerinizle birleştirin — örn. <code>｡･:*˚:✧｡ dreamer ｡✧:˚*:･｡</code>.</p></div></div>
+<div class="faq-item"><h3 class="faq-question">Parıltı sembolü oluşturucu ücretsiz mi?</h3><div class="faq-answer"><p>Evet — ücretsiz, sınırsız, hesapsız. Her şey tarayıcınızda çalışır; metniniz cihazınızdan asla çıkmaz.</p></div></div>
+</div>
+
+<h2>İlgili araçlar</h2>
+<ul>
+<li><a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolü Oluşturucu</a> — ♥ ♡ romantik sembol süslemeleri</li>
+<li><a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeve Oluşturucu</a> — metni dekoratif çerçevelere alın</li>
+<li><a href="/tr/simli-metin-olusturucu/">Simli Metin Oluşturucu</a> — simli metin efektleri</li>
+<li><a href="/tr/emoji-sembol-araclari/">Tüm Emoji ve Sembol Araçları</a> — koleksiyonun tamamına göz atın</li>
+</ul>
+</div>
+
+</section>
+    <!-- ═══ END SEO CONTENT ═══ -->
+
+
+  </main>
+  <div class="mobile-sidebar-drawer" id="mobile-sidebar" onclick="closeMobileSidebar(event)">
+        <div class="mobile-sidebar-content" onclick="event.stopPropagation()">
+            <div class="mobile-sidebar-header">
+                <h3>😊 Emoji Araçları</h3>
+                <button class="mobile-sidebar-close" onclick="closeMobileSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link" href="../emojili-metin-olusturucu/">😊 Emojili Metin Oluşturucu</a>
+                <a class="sidebar-link" href="../emoji-birlestirici/">🎨 Emoji Birleştirici</a>
+                <a class="sidebar-link" href="../kaomoji-olusturucu/">(◕‿◕) Kaomoji Oluşturucu</a>
+                <a class="sidebar-link" href="../ifade-olusturucu/">:) İfade Oluşturucu</a>
+                <a class="sidebar-link" href="../kalp-sembol-olusturucu/">♥ Kalp Sembol Oluşturucu</a>
+                <a class="sidebar-link active" href="../parilti-sembol-olusturucu/">✨ Parıltı Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../ok-sembol-olusturucu/">→ Ok Sembol Oluşturucu</a>
+                <a class="sidebar-link" href="../estetik-cerceve-olusturucu/">『』 Estetik Çerçeve Oluşturucu</a>
+                <a class="sidebar-link" href="../sembol-kutuphanesi/">☆ Sembol Kütüphanesi</a>
+                <a class="sidebar-link" href="../ayirici-cizgi-olusturucu/">═ Ayırıcı Çizgi Oluşturucu</a>
+            </nav>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span>FontGenerators</span>.online
+                </a>
+                <p>Ücretsiz çevrimiçi metin oluşturma araçları. Sosyal medya, oyun ve yaratıcı projeler için güzel, şık ve benzersiz metinler oluşturun.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Estetik Araçlar</h4>
+                <a href="/tr/estetik-metin-olusturucu/">Estetik Metin</a>
+                <a href="/tr/brat-metin-olusturucu/">Brat Metin</a>
+                <a href="/tr/vaporwave-metin-olusturucu/">Vaporwave Metin</a>
+                <a href="/tr/kawaii-metin-olusturucu/">Kawaii Metin</a>
+                <a href="/tr/neon-metin-olusturucu/">Neon Metin</a>
+                <a href="/tr/parlak-metin-olusturucu/">Parlak Metin</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yazı Tipi Araçları</h4>
+                <a href="/tr/sekilli-yazi-olusturucu/">Şekilli Yazı</a>
+                <a href="/tr/suslu-metin-olusturucu/">Süslü Metin</a>
+                <a href="/tr/gotik-metin-olusturucu/">Gotik Metin</a>
+                <a href="/tr/bitisik-el-yazisi-olusturucu/">El Yazısı</a>
+                <a href="/tr/kalin-metin-cevirici/">Kalın Metin</a>
+                <a href="/tr/arapca-kaligrafi-olusturucu/">Arapça Kaligrafi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Emoji ve Semboller</h4>
+                <a href="/tr/emojili-metin-olusturucu/">Emojili Metin Oluşturucu</a>
+                <a href="/tr/kaomoji-olusturucu/">Kaomoji Oluşturucu</a>
+                <a href="/tr/kalp-sembol-olusturucu/">Kalp Sembolleri</a>
+                <a href="/tr/parilti-sembol-olusturucu/">Parıltı Sembolleri</a>
+                <a href="/tr/estetik-cerceve-olusturucu/">Estetik Çerçeveler</a>
+                <a href="/tr/ayirici-cizgi-olusturucu/">Ayırıcı Çizgiler</a>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <a href="/tr/instagram-aciklama-olusturucu/">Instagram Açıklamaları</a>
+                <a href="/tr/tiktok-aciklama-olusturucu/">TikTok Açıklamaları</a>
+                <a href="/tr/youtube-baslik-olusturucu/">YouTube Başlıkları</a>
+                <a href="/tr/hashtag-olusturucu/">Hashtag Oluşturucu</a>
+                <a href="/tr/instagram-biyografi-olusturucu/">Instagram Biyografileri</a>
+                <a href="/tr/aciklama-uzunlugu-sayaci/">Uzunluk Sayacı</a>
+            </div>
+            <div class="footer-section">
+                <h4>Yardımcı Araçlar</h4>
+                <a href="/tr/kelime-sayaci/">Kelime Sayacı</a>
+                <a href="/tr/karakter-sayaci/">Karakter Sayacı</a>
+                <a href="/tr/metin-temizleyici/">Metin Temizleyici</a>
+                <a href="/tr/baslik-duzeni-cevirici/">Başlık Düzeni</a>
+                <a href="/tr/zalgo-metin-olusturucu/">Zalgo Metin</a>
+                <a href="/tr/ters-metin-olusturucu/">Ters Metin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FontGenerators.online. Tüm hakları saklıdır. Ücretsiz güzel metin stilleri oluşturun.</p>
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="/dmca/">DMCA</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--foreground);
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1.5fr repeat(6, 1fr);
+        }
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+        .footer-brand {
+            grid-column: span 1;
+        }
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+        transition: color var(--transition);
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+</style>
+
+  <script crossorigin="anonymous" defer=""
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer="" src="../../js/script.js"></script>
+  <script defer="">
+    const sparkleData = {
+      sparkles: [
+        { char: '✨', name: 'Sparkles' },
+        { char: '💫', name: 'Dizzy Star' },
+        { char: '🌟', name: 'Glowing Star' },
+        { char: '⭐', name: 'Star' },
+        { char: '🌠', name: 'Shooting Star' },
+        { char: '💥', name: 'Collision' },
+        { char: '🎇', name: 'Sparkler' },
+        { char: '🎆', name: 'Fireworks' },
+        { char: '🔆', name: 'High Bright' },
+        { char: '🔅', name: 'Low Bright' },
+        { char: '⚡', name: 'Lightning' },
+        { char: '🌈', name: 'Rainbow' },
+        { char: '🏆', name: 'Trophy' },
+        { char: '🥇', name: 'Gold Medal' },
+        { char: '💎', name: 'Diamond' },
+        { char: '🪩', name: 'Disco Ball' }
+      ],
+      stars: [
+        { char: '★', name: 'Black Star' },
+        { char: '☆', name: 'White Star' },
+        { char: '✩', name: 'Stress Star' },
+        { char: '✪', name: 'Circled Star' },
+        { char: '✫', name: 'Open Star' },
+        { char: '✬', name: 'Shadow Star' },
+        { char: '✭', name: 'Outlined Star' },
+        { char: '✮', name: 'Ağır Star' },
+        { char: '✯', name: 'Pinwheel Star' },
+        { char: '✰', name: 'Shadowed Star' },
+        { char: '✴', name: 'Eight Point Star' },
+        { char: '✵', name: 'Eight Point Open' },
+        { char: '✶', name: 'Six Point Star' },
+        { char: '✷', name: 'Eight Point Rectilinear' },
+        { char: '✸', name: 'Ağır Eight Point' },
+        { char: '✹', name: 'Twelve Point Star' },
+        { char: '⁂', name: 'Asterism' },
+        { char: '⁑', name: 'Two Asterisks' },
+        { char: '⁎', name: 'Low Asterisk' },
+        { char: '✱', name: 'Ağır Asterisk' },
+        { char: '✲', name: 'Open Asterisk' },
+        { char: '✳', name: 'Eight Spoked' },
+        { char: '❂', name: 'Circled Open' },
+        { char: '❃', name: 'Ağır Teardrop' },
+        { char: '❉', name: 'Balloon Star' },
+        { char: '❊', name: 'Eight Teardrop' },
+        { char: '❋', name: 'Ağır Eight Teardrop' },
+        { char: '✺', name: 'Sixteen Point' },
+        { char: '✻', name: 'Teardrop Star' },
+        { char: '✼', name: 'Open Teardrop' },
+        { char: '✽', name: 'Ağır Teardrop' },
+        { char: '✾', name: 'Six Petal Flower' }
+      ],
+      sun: [
+        { char: '☀', name: 'Sun' },
+        { char: '☀️', name: 'Sun Emoji' },
+        { char: '🌞', name: 'Sun Face' },
+        { char: '🌅', name: 'Sunrise' },
+        { char: '🌄', name: 'Sunrise Mountain' },
+        { char: '☼', name: 'White Sun' },
+        { char: '☉', name: 'Sun Symbol' },
+        { char: '✦', name: 'Four Point Star' },
+        { char: '✧', name: 'White Four Point' },
+        { char: '❖', name: 'Black Diamond' },
+        { char: '◆', name: 'Diamond' },
+        { char: '◇', name: 'White Diamond' },
+        { char: '◈', name: 'Diamond Dot' },
+        { char: '❇', name: 'Sparkle' },
+        { char: '❈', name: 'Ağır Sparkle' },
+        { char: '✵', name: 'Eight Point Open' },
+        { char: '🔶', name: 'Orange Diamond' },
+        { char: '🔷', name: 'Blue Diamond' },
+        { char: '🔸', name: 'Small Orange' },
+        { char: '🔹', name: 'Small Blue' }
+      ],
+      patterns: [
+        '✨✨✨',
+        '⭐✨⭐',
+        '★·.·✧·.·★',
+        '☆.。.:*・°☆',
+        '·:*¨¨*:·.',
+        '✧･ﾟ: *✧･ﾟ:*',
+        '━━━✧━━━',
+        '✦✧✦✧✦',
+        '｡･:*:･ﾟ★',
+        '˚✧₊⁎',
+        '･ﾟ✧',
+        '✩°｡⋆⸜',
+        '⁺˚*･༓☾',
+        '✮⋆˙',
+        '★☆★☆★',
+        '✦•·················•✦'
+      ]
+    };
+
+    function init() {
+      renderSymbols('sparkle-emojis', sparkleData.sparkles);
+      renderSymbols('star-symbols', sparkleData.stars);
+      renderSymbols('sun-symbols', sparkleData.sun);
+      renderPatterns();
+    }
+
+    function renderSymbols(containerId, items) {
+      document.getElementById(containerId).innerHTML = items.map(item => `
+                <div class="symbol-item" onclick="copySymbol(this, '${escapeAttr(item.char)}')" data-name="${item.name.toLowerCase()}">
+                    <div class="symbol-char">${item.char}</div>
+                    <div class="symbol-name">${item.name}</div>
+                </div>
+            `).join('');
+    }
+
+    function renderPatterns() {
+      document.getElementById('sparkle-patterns').innerHTML = sparkleData.patterns.map(p => `
+                <div class="pattern-item" onclick="copySymbol(this, '${escapeAttr(p)}')">${p}</div>
+            `).join('');
+    }
+
+    function filterSymbols() {
+      const query = document.getElementById('symbol-search').value.toLowerCase().trim();
+      document.querySelectorAll('.symbol-item').forEach(item => {
+        const name = item.dataset.name || '';
+        const char = item.querySelector('.symbol-char')?.textContent || '';
+        item.style.display = (name.includes(query) || char.includes(query)) ? '' : 'none';
+      });
+      document.querySelectorAll('.symbol-section').forEach(section => {
+        const visible = section.querySelectorAll('.symbol-item:not([style*="display: none"])');
+        section.style.display = visible.length > 0 ? '' : 'none';
+      });
+    }
+
+    function decorateText() {
+      const text = document.getElementById('text-input').value.trim();
+      const container = document.getElementById('decorator-results');
+      if (!text) {
+        container.innerHTML = '<div style="color: var(--muted); text-align: center; padding: 1rem;">Parıltı süslemelerini görmek için bir şeyler yazın</div>';
+        return;
+      }
+      const decorations = [
+        `✨ ${text} ✨`, `⭐ ${text} ⭐`, `★ ${text} ★`, `☆ ${text} ☆`,
+        `✧ ${text} ✧`, `💫 ${text} 💫`, `·:*¨¨*:· ${text} ·:*¨¨*:·`,
+        `★·.·´¯\`·.·★ ${text} ★·.·´¯\`·.·★`, `✦ ${text} ✦`, `❋ ${text} ❋`
+      ];
+      container.innerHTML = decorations.map(d => `
+                <div class="decorator-result" onclick="copyText(this, '${escapeAttr(d)}')">
+                    <span>${d}</span>
+                    <span style="color: var(--muted); font-size: 0.8rem;">Kopyalamak için tıklayın</span>
+                </div>
+            `).join('');
+    }
+
+    function copySymbol(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 800);
+      });
+    }
+
+    function copyText(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = el.innerHTML;
+        el.innerHTML = '<span style="color: var(--success);">✓ Kopyalandı!</span>';
+        setTimeout(() => el.innerHTML = orig, 1000);
+      });
+    }
+
+    function escapeAttr(text) { return text.replace(/'/g, "\\'").replace(/"/g, '\\"'); }
+    function toggleMobileSidebar() { document.getElementById('mobile-sidebar').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileSidebar(e) { if (!e || e.target === e.currentTarget) { document.getElementById('mobile-sidebar').classList.remove('active'); document.body.style.overflow = ''; } }
+
+    init();
+  </script>
+</body>
+
+</html>
