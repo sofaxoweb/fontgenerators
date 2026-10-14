@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pitchdetectors.com/sitemap.xml
-Sitemap: https://pitchdetectors.com/site_map.xml
+Sitemap: https://fontgenerators.online/sitemap.xml
