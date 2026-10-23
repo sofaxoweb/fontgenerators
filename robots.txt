@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fontgenerators.online/sitemap.xml
+Sitemap: https://fontgenio.com/sitemap.xml
