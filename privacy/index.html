@@ -70,7 +70,50 @@
             font-size: 2rem;
             margin-right: 0.5rem;
         }
-    </style>
+        /* Language Switcher */
+    .breadcrumb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .lang-switcher .lang-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted, #555);
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid #e0d5c8;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .lang-switcher .lang-link:hover {
+      background: #fff;
+      color: var(--red, #C8102E);
+      border-color: var(--red, #C8102E);
+    }
+
+    .lang-switcher .lang-link.active {
+      background: var(--red, #C8102E);
+      color: #fff;
+      border-color: var(--red, #C8102E);
+    }
+  </style>
     <link href="https://fontgenio.com/privacy/" rel="canonical" />
     <meta property="og:locale" content="en_US">
     <link rel="alternate" hreflang="x-default" href="https://fontgenio.com/privacy/" />
@@ -84,7 +127,7 @@
     <div class="container header-content">
         <a href="/" class="logo">
             <span class="logo-icon">✨</span>
-            <span>FontGenio</span>.online
+            <span>FontGenio</span>.com
         </a>
 
         <nav class="main-nav">
@@ -374,6 +417,14 @@ document.addEventListener('click', function (e) {
 
 
     <main>
+    <div class="container breadcrumb-row" style="justify-content:flex-end">
+      <div class="lang-switcher">
+        <a href="/privacy/" class="lang-link active" title="English">🇺🇸 EN</a>
+        <a href="/es/" class="lang-link" title="Español">🇪🇸 ES</a>
+        <a href="/pt/" class="lang-link" title="Português">🇵🇹 PT</a>
+        <a href="/tr/" class="lang-link" title="Türkçe">🇹🇷 TR</a>
+      </div>
+    </div>
         <section class="legal-hero">
             <div class="container">
                 <h1>Privacy Policy</h1>
@@ -498,7 +549,7 @@ document.addEventListener('click', function (e) {
             <div class="footer-section footer-brand">
                 <a href="/" class="footer-logo">
                     <span class="logo-icon">✨</span>
-                    <span>FontGenio</span>.online
+                    <span>FontGenio</span>.com
                 </a>
                 <p class="footer-description">Free online text generator tools. Create beautiful, stylish, and unique
                     text for social media, gaming, and creative projects.</p>
